@@ -85,27 +85,27 @@
 &gt; 文章仅阐述核心研究主张与方法论，不涉及未公开的项目细节；所有可落地验证的内容，后续将在对应文章中补充关联说明
 
 #### 【艺术与技术研究方向】
-1. 核心主张｜VIRTURA：从手工作坊到工程化的沉浸式内容创作思维重构
+1. [核心主张｜VIRTURA：从手工作坊到工程化的沉浸式内容创作思维重构](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/01_Art_Tech_Research/01-core-proposition.md)
    &gt; 核心摘要：拆解沉浸式内容创作的行业共性痛点，提出全流程工程化创作的核心理念与框架，定义可复用、可持续的创作模式，面向所有沉浸式内容创作者与制作团队
-2. 项目复盘｜DropFlow2：裸眼3D空间叙事的工程化设计与实践
+2. [项目复盘｜DropFlow2：裸眼3D空间叙事的工程化设计与实践](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/01_Art_Tech_Research/02-dropflow2-review.md)
    &gt; 核心摘要：围绕裸眼3D空间叙事的核心探索，拆解视觉工程化设计的底层逻辑与可复用方法，面向空间视觉设计师与新媒体艺术家
-3. 项目复盘｜Timer：音画联动的工程化标准化技术底座开发
+3. [项目复盘｜Timer：音画联动的工程化标准化技术底座开发](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/01_Art_Tech_Research/03-timer-review.md)
    &gt; 核心摘要：梳理音画联动从手工卡点到全链路工程化的升级路径，搭建可跨场景复用的音画联动技术框架，面向音画互动创作者与现场演出视觉团队
-4. 技术底层｜Blender程序化：工程化复用与Git式迭代实践
+4. [技术底层｜Blender程序化：工程化复用与Git式迭代实践](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/01_Art_Tech_Research/04-blender-procedural.md)
    &gt; 核心摘要：基于Blender几何节点/模拟节点，总结程序化视觉资产的搭建、复用、版本化迭代的完整方法，面向独立创作者与中小制作团队
-5. 研究中（预计2024年Q4更新）｜空间计算媒介：Apple Vision Pro 沉浸内容迁移的实践方法论
+5. [空间计算媒介：Apple Vision Pro 沉浸内容迁移的实践方法论](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/01_Art_Tech_Research/05-audio-visual-advanced.md)
 6. 更新中｜给独立创作者的工程化入门：从0到1搭建可复用视觉资产库
 
 #### 【商业实践与工程化方向】
-1. 工具实践｜SceneForge：沉浸式IP跨媒介复用的工程化发布框架
+1. [工具实践｜SceneForge：沉浸式IP跨媒介复用的工程化发布框架](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/02_Business_Practice/06-sceneforge-tool.md)
    &gt; 核心摘要：自研沉浸式内容跨媒介发布工具的设计逻辑与应用场景，解决多终端适配的行业痛点，面向内容制作团队与IP运营方
-2. 工具实践｜Stage Viewer：沉浸式内容的场景模拟工程化工具实践
+2. [工具实践｜Stage Viewer：沉浸式内容的场景模拟工程化工具实践](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/02_Business_Practice/07-stage-viewer-tool.md)
    &gt; 核心摘要：1:1演出场景模拟工具的开发思路，解决沉浸式内容落地前的效果预判与沟通偏差问题，面向演出制作团队与商业项目甲方
-3. IP运营｜DropFlow×Timer：沉浸式内容的IP化打造与跨场景复用
+3. [IP运营｜DropFlow×Timer：沉浸式内容的IP化打造与跨场景复用](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/02_Business_Practice/08-ip-operations.md)
    &gt; 核心摘要：从单次艺术项目到可运营IP的全流程方法，实现一次创作、多场景价值复用，面向艺术家与内容创作团队
-4. 资产运营｜沉浸式内容数字资产的工程化运营核心逻辑
+4. [资产运营｜沉浸式内容数字资产的工程化运营核心逻辑](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/02_Business_Practice/09-asset-operations.md)
    &gt; 核心摘要：从沉淀、管理、适配、复用、迭代的全流程，搭建数字资产的标准化运营体系，面向演出团队、展览机构与内容创作者
-5. 研究中（预计2024年Q4更新）｜中小演出项目的隐性成本规避指南：基于大屏工程的落地经验
+5. [中小演出项目的隐性成本规避指南：基于大屏工程的落地经验](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/02_Core_Research/02_Business_Practice/10-ecosystem-extension.md)
 
 ---
 
