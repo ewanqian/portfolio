@@ -17,6 +17,10 @@
 
 在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。
 
+2026年，我把之前散落在各处的项目重新梳理了一下，形成了一个小小的体系，我叫它FORGE。FORGE不是一个单一的工具，也不是一个单一的概念，而是一套完整的工作流体系——从沉浸式内容的创作、到新媒体艺术的落地、到AI工具的辅助、再到所有仓库的自动化管理，形成了一个闭环。
+
+**FORGE体系的标志是带"锻造"后缀的项目——RepoForge、SceneForge、LiveForge——这些项目是真的在考虑或者已经在运行的，是将Agent作为交流的一部分的。**
+
 *Building on this practice, I focus on a core question: how to extend one-off performances and exhibitions into preservable, re-experiencable, and transferable digital assets. I help consolidate works into reusable digital assets and an atmosphere/world-building asset library, enabling tour reuse, exhibition re-screening, and multi-format distribution, while exploring further productization. In parallel, I'm advancing migration practices for spatial computing (Apple Vision Pro) to create distributable immersive versions with a lower barrier—so a single production can gain a longer lifecycle and more sustainable value.*
 
 ---
