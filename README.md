@@ -110,9 +110,9 @@
 | 时间 | 项目 | 角色 |
 |------|------|------|
 | 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 高斯扫描/方法分享 |
-| 25/10 | [杭州双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 沉浸式大屏+VR头显 |
-| 25/11 | [重庆「流光绘影」滴流](./projects/digital-garden-visual-2025.md) | 异形屏幕装置 |
-| 25/09 | [杭电作曲比赛「滴流」一等奖](./projects/derive-dual-city-2024.md) | 多媒体视觉合作 |
+| 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 沉浸式大屏+VR头显 |
+| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏幕装置 |
+| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 多媒体视觉合作 |
 | 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画互动现场 |
 | 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph |
 | 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 |
@@ -135,7 +135,6 @@
 | [Timer系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series) | 5 | 音画联动，Chinagraph 2024二等奖 |
 | [滴流系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series) | 7 | 空间叙事，杭州双年展开幕 |
 | [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 20+ | 日本音乐人合作 |
-| [@onefive系列](./visual-arts/onefive-series/) | 3 | 日本艺人视觉合作 |
 | [日常练习](./visual-arts/daily-practice/) | 持续更新 | Blender/扫描/点云 |
 
 ---
