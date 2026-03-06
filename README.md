@@ -25,15 +25,7 @@
 ---
 
 ### 关于我
-我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。
-
-在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。
-
-2026年，我把之前散落在各处的项目重新梳理了一下，形成了一个小小的体系，我叫它FORGE。FORGE不是一个单一的工具，也不是一个单一的概念，而是一套完整的工作流体系——从沉浸式内容的创作、到新媒体艺术的落地、到AI工具的辅助、再到所有仓库的自动化管理，形成了一个闭环。
-
-**FORGE体系的标志是带"锻造"后缀的项目——RepoForge、SceneForge、LiveForge——这些项目是真的在考虑或者已经在运行的，是将Agent作为交流的一部分的。**
-
-*Building on this practice, I focus on a core question: how to extend one-off performances and exhibitions into preservable, re-experiencable, and transferable digital assets. I help consolidate works into reusable digital assets and an atmosphere/world-building asset library, enabling tour reuse, exhibition re-screening, and multi-format distribution, while exploring further productization. In parallel, I'm advancing migration practices for spatial computing (Apple Vision Pro) to create distributable immersive versions with a lower barrier—so a single production can gain a longer lifecycle and more sustainable value.*
+我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于Blender程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉Resolume Arena等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家/客户的概念与内容系统迁移到空间计算（沉浸呈现）或网页端，重点解决呈现链路与体验一致性：内容格式、播放稳定性与空间观感。2026年，我把之前散落在各处的项目重新梳理了一下，形成了一个小小的体系，我叫它FORGE。FORGE不是一个单一的工具，也不是一个单一的概念，而是一套完整的工作流体系——从沉浸式内容的创作、到新媒体艺术的落地、到AI工具的辅助、再到所有仓库的自动化管理，形成了一个闭环。**FORGE体系的标志是带"锻造"后缀的项目——RepoForge、SceneForge、LiveForge——这些项目是真的在考虑或者已经在运行的，是将Agent作为交流的一部分的。**在此基础上，我也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。同时也在推进面向二三线城市快闪空间的低成本复刻多媒体艺术实践，打造白天卖票+晚上包场双收入模式，投资回收期2-13个月，IRR 80%+。我也在深度研究TeamLab等沉浸式展览的成本优化策略，实现85-90%的成本压缩空间，验证用国内中端设备替代进口高端设备、投影/灯球数量减半用更高规格单台替代、Unity/Unreal现成资源替代原创内容等核心策略的可行性。
 
 ---
 
@@ -59,10 +51,12 @@
 
 核心研究与理论体系请查看 **[VIRTURA-SpacePort团队仓库](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)**：
 
-- [智力装备理论](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/intellectual-equipment)
-- [数字情感容器理论](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container)
-- [工程控制论](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics)
-- [视觉创作者空间创作框架](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework)
+| 标题 | 完整名称 | 描述 | 核心要点 | 链接 |
+|------|----------|------|----------|------|
+| 智力装备理论 | 智力装备理论：从静态知识到动态网络的知识学习范式变革研究 | 破解静态知识传播效率低下、高等教育与市场需求脱节、学习者入门期高放弃率等核心困境，构建"静态知识→动态知识网络→可部署智力装备"的三阶转化模型 | 知识形态困境、无公式的核心突破、7天入门的科学依据、可控与可观 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/intellectual-equipment) |
+| 数字情感容器理论 | 视觉创作者空间原生作品创作全体系总纲：基于空间计算的从认知到落地全链路方法论 | 构建一套适配视觉创作者思维模式、无前置技术门槛、可复用、可迭代、经得住时间检验的空间创作通识方法论，将空间计算的底层逻辑、原生开发的工程化方法转化为创作者可理解、可掌控、可落地的创作工具与表达路径 | 六大核心知识块、创作优先技术服务、最小可用先闭环再优化、工程化拆解消除未知焦虑 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework) |
+| 工程控制论 | 无公式、强思维、结合AI时代的工程控制论：驯服复杂世界的底层通用逻辑 | 彻底去掉所有公式、代码与数学计算，用生活化类比讲透工具背后的底层思维，70%内容守住工程控制论的完整体系，30%内容结合2026年AI、人形机器人、智能社会的拐点做延伸 | 闭环反馈、稳快准三大标准、频域法万能工具箱、从外部操控到内部掌控 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics) |
+| 空间创作框架 | 数字情感容器理论：低成本高质量复刻多媒体艺术，给人带来感动 | 低成本高质量复刻多媒体艺术，白天卖票+晚上包场双收入模式，社交媒体传播带来免费流量，感动点设计：沉浸式体验、互动参与、打卡拍照、情感共鸣 | 空间原生作品的本质认知、零基础创作的三大黄金法则、能力边界清晰划定、情感容器的设计原则 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container) |
 
 ---
 
