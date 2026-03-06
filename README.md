@@ -57,18 +57,12 @@
 
 ### 研究与文章
 
-| 标题 | 描述 |
-|------|------|
-| [核心主张｜VIRTURA：从手工作坊到工程化的沉浸式内容创作思维重构](./articles/01-core-proposition.md) | 拆解沉浸式内容创作的行业共性痛点，提出全流程工程化创作的核心理念与框架... |
-| [项目复盘｜DropFlow2：裸眼3D空间叙事的工程化设计与实践](./articles/02-dropflow2-review.md) | 围绕裸眼3D空间叙事的核心探索，拆解视觉工程化设计的底层逻辑与可复用方法... |
-| [项目复盘｜Timer：音画联动的工程化标准化技术底座开发](./articles/03-timer-review.md) | 梳理音画联动从手工卡点到全链路工程化的升级路径，搭建可跨场景复用的音画联动技术框架... |
-| [技术底层｜Blender程序化：工程化复用与Git式迭代实践](./articles/04-blender-procedural.md) | 基于Blender几何节点/模拟节点，总结程序化视觉资产的搭建、复用、版本化迭代的完整方法... |
-| [空间计算媒介：Apple Vision Pro 沉浸内容迁移的实践方法论](./articles/05-audio-visual-advanced.md) | 探索空间计算媒介的沉浸内容迁移实践方法... |
-| [工具实践｜SceneForge：沉浸式IP跨媒介复用的工程化发布框架](./articles/06-sceneforge-tool.md) | 自研沉浸式内容跨媒介发布工具的设计逻辑与应用场景，解决多终端适配的行业痛点... |
-| [工具实践｜Stage Viewer：沉浸式内容的场景模拟工程化工具实践](./articles/07-stage-viewer-tool.md) | 1:1演出场景模拟工具的开发思路，解决沉浸式内容落地前的效果预判与沟通偏差问题... |
-| [IP运营｜DropFlow×Timer：沉浸式内容的IP化打造与跨场景复用](./articles/08-ip-operations.md) | 从单次艺术项目到可运营IP的全流程方法，实现一次创作、多场景价值复用... |
-| [资产运营｜沉浸式内容数字资产的工程化运营核心逻辑](./articles/09-asset-operations.md) | 从沉淀、管理、适配、复用、迭代的全流程，搭建数字资产的标准化运营体系... |
-| [中小演出项目的隐性成本规避指南](./articles/10-ecosystem-extension.md) | 基于大屏工程的落地经验，拆解中小演出项目常见隐性成本及规避方案... |
+核心研究与理论体系请查看 **[VIRTURA-SpacePort团队仓库](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)**：
+
+- [智力装备理论](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/intellectual-equipment)
+- [数字情感容器理论](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container)
+- [工程控制论](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics)
+- [视觉创作者空间创作框架](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework)
 
 ---
 
