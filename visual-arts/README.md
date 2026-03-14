@@ -20,3 +20,5 @@
 ## 团队仓库
 
 Timer和滴流系列的完整文档请参考 [团队仓库 Works](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works)
+
+公开视频、官网和公众号原文的独立索引请参考 [已核对外部链接与公开资料索引](./已核对外部链接与公开资料索引.md)
