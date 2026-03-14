@@ -1,10 +1,26 @@
 
-<!-- VIRTURA定位开始 自动生成请勿手动修改 -->
-# 钱誉文 个人作品集 portfolio
-> 生态角色：个人介绍与作品集
-> 核心定位：钱誉文 Ewan Qian 个人作品集 - 现场演出与沉浸视觉制作人，专注于音乐现场、舞蹈/剧场与展演空间的视觉交付与沉浸内容制作
-> 官方文档：https://ewanqian.github.io/portfolio
-<!-- VIRTURA定位结束 -->
+# portfolio
+
+钱誉文 Ewan Qian 的个人单点入口。
+
+这里负责三件事：
+
+- 个人身份与方法说明
+- 作品与项目展示
+- 对外合作与联系入口
+
+这里不承担团队入口和产品主线说明：
+
+- 团队公开入口请看 [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
+- 核心产品主线请看 [SceneForge](https://github.com/ewanqian/SceneForge)
+
+## 团队与档案入口
+
+这个仓库保留对团队仓的引用，但这些引用承担的是“延伸阅读”和“完整档案入口”，不是要把团队仓内容重复搬到这里。
+
+- 团队公开入口与档案层：[VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
+- 团队理论与方法长文：[our-theory](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)
+- 核心工具主线：[SceneForge](https://github.com/ewanqian/SceneForge)
 
 # 钱誉文 Ewan Qian | 现场演出与沉浸视觉制作人
 ## Live & Immersive Visual Producer
@@ -25,7 +41,7 @@
 ---
 
 ### 关于我
-我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于Blender程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉Resolume Arena等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家/客户的概念与内容系统迁移到空间计算（沉浸呈现）或网页端，重点解决呈现链路与体验一致性：内容格式、播放稳定性与空间观感。2026年，我把之前散落在各处的项目重新梳理了一下，形成了一个小小的体系，我叫它FORGE。FORGE不是一个单一的工具，也不是一个单一的概念，而是一套完整的工作流体系——从沉浸式内容的创作、到新媒体艺术的落地、到AI工具的辅助、再到所有仓库的自动化管理，形成了一个闭环。**FORGE体系的标志是带"锻造"后缀的项目——RepoForge、SceneForge、LiveForge——这些项目是真的在考虑或者已经在运行的，是将Agent作为交流的一部分的。**在此基础上，我也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。同时也在推进面向二三线城市快闪空间的低成本复刻多媒体艺术实践，打造白天卖票+晚上包场双收入模式，投资回收期2-13个月，IRR 80%+。我也在深度研究TeamLab等沉浸式展览的成本优化策略，实现85-90%的成本压缩空间，验证用国内中端设备替代进口高端设备、投影/灯球数量减半用更高规格单台替代、Unity/Unreal现成资源替代原创内容等核心策略的可行性。
+我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于 Blender 程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉 Resolume Arena 等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家或客户的概念与内容系统迁移到空间计算或网页端时，我重点解决的是呈现链路与体验一致性：内容格式、播放稳定性与空间观感。近阶段我把散落的实践分成几条更清晰的线：个人入口由这里承载，团队入口放在 `VIRTURA-SpacePort`，工具主线聚焦到 `SceneForge`，仓库治理由 `RepoForge` 与私有 `Forge` 处理。
 
 ---
 
@@ -49,7 +65,7 @@
 
 ### 研究与文章
 
-核心研究与理论体系请查看 **[VIRTURA-SpacePort团队仓库](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)**：
+核心研究与理论体系的完整版本保存在 **[VIRTURA-SpacePort 团队仓库](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)**。这里保留索引和精选引用，便于从个人作品与实践直接跳到完整档案：
 
 | 标题 | 完整名称 | 描述 | 核心要点 | 链接 |
 |------|----------|------|----------|------|
@@ -133,10 +149,10 @@
 
 | 项目 | 说明 | 链接 |
 |------|------|------|
-| VIRTURA-SpacePort | 知识网络主仓库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
-| SceneForge | 沉浸式场景快速生成工具 | [GitHub](https://github.com/ewanqian/SceneForge) |
-| LiveForge | 实时音画演出工程化工具 | [GitHub](https://github.com/ewanqian/LiveForge) |
-| RepoForge | 仓库自动化管理工具 | [GitHub](https://github.com/ewanqian/RepoForge) |
+| VIRTURA-SpacePort | 团队公开入口、档案数据库与叙事门面 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
+| SceneForge | 网页端场景查看器 / 舞台预演器 | [GitHub](https://github.com/ewanqian/SceneForge) |
+| LiveForge | 冻结中的历史概念仓，后续并入 SceneForge | [GitHub](https://github.com/ewanqian/LiveForge) |
+| RepoForge | 仓库自动化管理工具壳，对应私有 Forge | [GitHub](https://github.com/ewanqian/RepoForge) |
 | Senia-Digital-Resort | Minecraft空间感知实验 | - |
 
 ---
