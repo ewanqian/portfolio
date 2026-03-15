@@ -80,6 +80,7 @@
 
 | 时间 | 主题 | 角色 |
 |------|------|------|
+| 2025.07.12 | [杭州·中心美术馆｜「巴别瓶」展览公共活动2｜游戏化 AI 生活解构师](./workshops/202507-杭州中心-AI-Agent工作坊.md) | 活动导师 |
 | 2026.01 | [上海·愚见观池｜情感容器构建工作坊](./workshops/202601-愚见观池-情感容器工作坊.md) | 主讲人 |
 | 2025.05 | [线上（B站/小红书/CCtalk）｜5天直播工作坊](./workshops/202505-线上-5天直播工作坊.md) | 主讲人&课程设计 |
 | 2025.04.03 | [上海·巨鹿路Cedar Kitchen｜重新定义数字空间](./workshops/202504-巨鹿路-半成品沙龙.md) | 分享嘉宾 |
@@ -120,7 +121,7 @@
 | 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画互动现场 |
 | 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph |
 | 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 |
-| 25/08 | [杭州中心「巴别瓶」](./projects/new-media-artist-simulator-2025.md) | 交互作品参展 |
+| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 2025“ECP-星星策展人”计划获选展览 / 参展艺术家 / 公共活动导师 |
 | 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 |
 | 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 |
 | 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 |

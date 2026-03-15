@@ -37,7 +37,7 @@
 | 25/07 | 深圳坪山「观察与共生」 | 数据可视化 | [查看](./observe-symbiosis-k11-2023.md) |
 | 25/06 | WWDC Flatland: Mixed Reality Dreams | Apple Vision Pro | [查看](./flatland-mr-content-2025.md) |
 | 25/05 | 中央音乐学院王楚婷毕业音乐会 | Audiovisual | [查看](./future-string-tianhua-2025.md) |
-| 25/08 | 杭州中心美术馆「巴别瓶」 | 交互作品 | [查看](./new-media-artist-simulator-2025.md) |
+| 25/07-08 | 杭州中心美术馆「巴别瓶」 | 2025“ECP-星星策展人”计划获选展览 / 参展艺术家 | [查看](./babel-bottle-art-2025.md) |
 | 25/08 | 上海西岸漩心"Round a Clock" | 环境视觉 | [查看](./westbund-ambient-visual-2025.md) |
 | 24/11 | FutureLab 2024「Dérive双城记」 | 数字空间扫描 | [查看](./derive-dual-city-2024.md) |
 | 24/06 | THE BOXX「幻觉共振」 | 沉浸式投影 | [查看](./hallu-resonance-live-2024.md) |
