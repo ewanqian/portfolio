@@ -45,6 +45,19 @@
 
 ---
 
+### 精选项目 | Selected
+
+| 项目 | 说明 |
+|------|------|
+| [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目视觉 / 跨年 Opening |
+| [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 地坪联动 |
+| [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕 / 裸眼3D |
+| [杭州双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
+| [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
+| [SceneForge](https://github.com/ewanqian/SceneForge) | 舞台查看器 / 网页预演 |
+
+---
+
 ### 核心能力 | Tooling & Method
 #### 程序化生成 × 音频分析
 以 Blender 程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力。
