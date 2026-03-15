@@ -12,10 +12,7 @@
 | 25/11 | 余佳运「45㎡」个人演唱会 | Opening / 地坪联动 | [查看](./yujiayun-45ping-visual-2025.md) |
 | 25/10 | Kashiwa Daisuke 深圳专场「机械光合」 | 全息纱幕 / 裸眼3D | [查看](./kashiwa-titan-visual-2025.md) |
 | 25/10 | Can Festival Kashiwa Daisuke 舟山 | 舞台视觉 / 乐队专场 | [查看](./kashiwa-band-visual-2025.md) |
-| 25/08 | 爱丁堡艺术节 Focus China《山海浮生II》 | 舞台视觉 / Focus China | [查看](./shanhaifusheng2-visual-2025.md) |
-| 24/01 | @onefive「ChocoLove」Official Lyric Video | 视频制作 | [查看](./onefive-chocolove-video-2024.md) |
-| 23/12 | @onefive「Underground」东京 | 视觉制作 / 东京 | [查看](./onefive-underground-visual-2023.md) |
-| 23/11 | @onefive「Overground」大阪 | 视觉制作 / 大阪 | [查看](./onefive-overground-visual-2023.md) |
+| 25/08 | 爱丁堡《山海浮生II：八荒祭》 | 视觉制作 / 工程交付 | [查看](./shanhaifusheng2-visual-2025.md) |
 | 23/10 | 上海广播艺术中心「孤独？」 | 舞台视觉 / 广播艺术中心 | [查看](./lonely-av-live-2023.md) |
 | 22/11 | Germany Hamburg China Time《Water Music》 | 多媒体视觉 / Hamburg | [查看](./watermusic-multi-visual-2022.md) |
 | 22/10 | 谢欣舞蹈剧场《四相》《汞》 | 影像视觉 / 舞蹈剧场 | [查看](./xiexindance-sixiang-gong-visual-2022.md) |
@@ -29,10 +26,9 @@
 | 时间 | 项目 | 角色 | 文档 |
 |------|------|------|------|
 | 26/01 | 《观察与共生》Workshop | 工作坊 / 方法分享 | [查看](./observe-symbiosis-workshop-2026.md) |
-| 25/11 | 重庆「流光绘影」滴流 | 异形屏装置 / 滴流 | [查看](./dropflow-expo-2025.md) |
 | 25/10 | 杭州双年展开幕式「滴流」 | 开幕式视觉 / VR头显 | [查看](./drop-flow-visual-2025.md) |
 | 25/09 | 杭州国际电子音乐作曲比赛「滴流」 | 竞赛获奖 / 滴流 | [查看](./dropflow-award-2025.md) |
-| 25/08 | 上海西岸漩心"Round a Clock" | 环境视觉 / 西岸 | [查看](./westbund-ambient-visual-2025.md) |
+| 25/08 | 上海西岸漩心「Round a Clock」 | 视觉制作 / Round a Clock | [查看](./westbund-ambient-visual-2025.md) |
 | 25/07-08 | 杭州中心美术馆「巴别瓶」 | 参展艺术家 / 工作坊导师 | [查看](./babel-bottle-art-2025.md) |
 | 25/07 | UFO Terminal「滴流3.0」 | 音画现场 / 滴流3.0 | [查看](./dropflow3-live-2025.md) |
 | 25/07 | 西安万象城「数字游园」 | Unity VFX / 商业空间 | [查看](./digital-garden-visual-2025.md) |

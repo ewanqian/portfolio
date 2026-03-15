@@ -1,7 +1,7 @@
 
 # portfolio
 
-钱誉文 Ewan Qian 的个人单点入口。
+钱誉文 Ewan Qian 的个人作品与项目入口。
 
 这里负责三件事：
 
@@ -9,14 +9,14 @@
 - 作品与项目展示
 - 对外合作与联系入口
 
-这里不承担团队入口和产品主线说明：
+这里保留对团队与工具仓的引用，但不重复展开完整内容：
 
 - 团队公开入口请看 [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
 - 核心产品主线请看 [SceneForge](https://github.com/ewanqian/SceneForge)
 
-## 团队与档案入口
+## 团队档案与延伸阅读
 
-这个仓库保留对团队仓的引用，但这些引用承担的是“延伸阅读”和“完整档案入口”，不是要把团队仓内容重复搬到这里。
+这个仓库保留对团队仓的引用，但这些链接承担的是“延伸阅读”和“完整档案入口”，不是把团队仓内容重复搬到这里。
 
 - 团队公开入口与档案层：[VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
 - 团队理论与方法长文：[our-theory](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)
@@ -41,7 +41,7 @@
 ---
 
 ### 关于我
-我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于 Blender 程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉 Resolume Arena 等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家或客户的概念与内容系统迁移到空间计算或网页端时，我重点解决的是呈现链路与体验一致性：内容格式、播放稳定性与空间观感。近阶段我把散落的实践分成几条更清晰的线：个人入口由这里承载，团队入口放在 `VIRTURA-SpacePort`，工具主线聚焦到 `SceneForge`，仓库治理由 `RepoForge` 与私有 `Forge` 处理。
+我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于 Blender 程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉 Resolume Arena 等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家或客户的概念与内容系统迁移到空间计算或网页端时，我重点解决的是呈现链路与体验一致性：内容格式、播放稳定性与空间观感。近阶段我把散落的实践分成几条更清晰的线：这个仓库主要放个人作品与项目，团队档案与方法长文放在 `VIRTURA-SpacePort`，工具主线集中在 `SceneForge`，仓库治理由 `RepoForge` 与私有 `Forge` 处理。
 
 ---
 
@@ -78,7 +78,9 @@
 
 ### 研究与文章
 
-核心研究与理论体系的完整版本保存在 **[VIRTURA-SpacePort 团队仓库](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)**。这里保留索引和精选引用，便于从个人作品与实践直接跳到完整档案：
+这里保留两类索引：一类是团队仓中的理论长文，一类是个人仓中保留的项目复盘与文章归档。
+
+#### 理论与方法
 
 | 标题 | 完整名称 | 描述 | 核心要点 | 链接 |
 |------|----------|------|----------|------|
@@ -86,6 +88,21 @@
 | 数字情感容器理论 | 视觉创作者空间原生作品创作全体系总纲：基于空间计算的从认知到落地全链路方法论 | 构建一套适配视觉创作者思维模式、无前置技术门槛、可复用、可迭代、经得住时间检验的空间创作通识方法论，将空间计算的底层逻辑、原生开发的工程化方法转化为创作者可理解、可掌控、可落地的创作工具与表达路径 | 六大核心知识块、创作优先技术服务、最小可用先闭环再优化、工程化拆解消除未知焦虑 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework) |
 | 工程控制论 | 无公式、强思维、结合AI时代的工程控制论：驯服复杂世界的底层通用逻辑 | 彻底去掉所有公式、代码与数学计算，用生活化类比讲透工具背后的底层思维，70%内容守住工程控制论的完整体系，30%内容结合2026年AI、人形机器人、智能社会的拐点做延伸 | 闭环反馈、稳快准三大标准、频域法万能工具箱、从外部操控到内部掌控 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics) |
 | 空间创作框架 | 数字情感容器理论：低成本高质量复刻多媒体艺术，给人带来感动 | 低成本高质量复刻多媒体艺术，白天卖票+晚上包场双收入模式，社交媒体传播带来免费流量，感动点设计：沉浸式体验、互动参与、打卡拍照、情感共鸣 | 空间原生作品的本质认知、零基础创作的三大黄金法则、能力边界清晰划定、情感容器的设计原则 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container) |
+
+#### 文章归档
+
+| 类型 | 标题 | 链接 |
+|------|------|------|
+| 核心主张 | 从手工作坊到工程化的沉浸式内容创作思维重构 | [查看](./articles-hidden/core-proposition.md) |
+| 项目复盘 | DropFlow2：裸眼 3D 空间叙事的工程化设计与实践 | [查看](./articles-hidden/02-dropflow2-review.md) |
+| 项目复盘 | Timer：音画联动的工程化技术底座开发 | [查看](./articles-hidden/03-timer-review.md) |
+| 技术底层 | Blender 程序化：工程复用与 Git 式迭代实践 | [查看](./articles-hidden/04-blender-procedural.md) |
+| 技术底层 | 音画联动进阶：从基础分析到 AI 协同 | [查看](./articles-hidden/05-audio-visual-advanced.md) |
+| 工具实践 | SceneForge：跨媒介发布框架 | [查看](./articles-hidden/06-sceneforge-tool.md) |
+| 工具实践 | Stage Viewer：场景模拟工程化工具 | [查看](./articles-hidden/07-stage-viewer-tool.md) |
+| 运营与延伸 | DropFlow × Timer IP 运营 | [查看](./articles-hidden/08-ip-operations.md) |
+| 运营与延伸 | 数字资产的工程化运营逻辑 | [查看](./articles-hidden/09-asset-operations.md) |
+| 运营与延伸 | 新媒体艺术工程化生态延伸 | [查看](./articles-hidden/10-ecosystem-extension.md) |
 
 ---
 
@@ -115,9 +132,7 @@
 | 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 地坪联动 |
 | 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕 / 裸眼3D |
 | 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉 / 乐队专场 |
-| 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 / Focus China |
-| 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 / 东京 |
-| 23/11 | [@onefive Overground](./projects/onefive-overground-visual-2023.md) | 视觉制作 / 大阪 |
+| 25/08 | [爱丁堡《山海浮生II：八荒祭》](./projects/shanhaifusheng2-visual-2025.md) | 视觉制作 / 工程交付 |
 | 23/10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 / 广播艺术中心 |
 | 22/11 | [Germany Hamburg《Water Music》](./projects/watermusic-multi-visual-2022.md) | 多媒体视觉 / Hamburg |
 | 22/10 | [谢欣舞蹈剧场《四相》《汞》](./projects/xiexindance-sixiang-gong-visual-2022.md) | 影像视觉 / 舞蹈剧场 |
@@ -128,10 +143,9 @@
 | 时间 | 项目 | 角色 |
 |------|------|------|
 | 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 工作坊 / 方法分享 |
-| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/dropflow-expo-2025.md) | 异形屏装置 / 滴流 |
 | 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
 | 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/dropflow-award-2025.md) | 竞赛获奖 / 滴流 |
-| 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 / 西岸 |
+| 25/08 | [上海西岸漩心「Round a Clock」](./projects/westbund-ambient-visual-2025.md) | 视觉制作 / Round a Clock |
 | 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
 | 25/07 | [UFO Terminal「滴流3.0」](./projects/dropflow3-live-2025.md) | 音画现场 / 滴流3.0 |
 | 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX / 商业空间 |
@@ -164,7 +178,7 @@
 
 | 项目 | 说明 | 链接 |
 |------|------|------|
-| VIRTURA-SpacePort | 团队入口 / 公开档案 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
+| VIRTURA-SpacePort | 团队档案 / 公开资料库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
 | SceneForge | 舞台查看器 / 网页预演 | [GitHub](https://github.com/ewanqian/SceneForge) |
 | LiveForge | 演出工作流 / 已冻结 | [GitHub](https://github.com/ewanqian/LiveForge) |
 | RepoForge | 仓库治理 / 自动化运维 | [GitHub](https://github.com/ewanqian/RepoForge) |
