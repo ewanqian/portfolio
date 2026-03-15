@@ -98,36 +98,36 @@
 
 | 时间 | 项目 | 角色 |
 |------|------|------|
-| 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目视觉 / Opening |
-| 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 舞台视觉 |
+| 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目视觉 / 跨年 Opening |
+| 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 地坪联动 |
 | 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕 / 裸眼3D |
-| 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉 |
-| 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 |
-| 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 |
-| 23/11 | [@onefive Overground](./projects/onefive-overground-visual-2023.md) | 视觉制作 |
-| 23/10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 |
-| 22/10 | [谢欣舞蹈剧场《四相》《汞》](./projects/xiexindance-sixiang-gong-visual-2022.md) | 影像视觉 |
-| 22/09 | [上海时装周XTEP-XDNA](./projects/xtep-xdna22aw-visual-2022.md) | 视频制作 |
-| 22/11 | [Germany Hamburg《Water Music》](./projects/watermusic-multi-visual-2022.md) | 多媒体视觉 |
+| 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉 / 乐队专场 |
+| 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 / Focus China |
+| 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 / 东京 |
+| 23/11 | [@onefive Overground](./projects/onefive-overground-visual-2023.md) | 视觉制作 / 大阪 |
+| 23/10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 / 广播艺术中心 |
+| 22/11 | [Germany Hamburg《Water Music》](./projects/watermusic-multi-visual-2022.md) | 多媒体视觉 / Hamburg |
+| 22/10 | [谢欣舞蹈剧场《四相》《汞》](./projects/xiexindance-sixiang-gong-visual-2022.md) | 影像视觉 / 舞蹈剧场 |
+| 22/09 | [上海时装周XTEP-XDNA](./projects/xtep-xdna22aw-visual-2022.md) | 视频制作 / 时装周 |
 
 #### 混合媒介
 
 | 时间 | 项目 | 角色 |
 |------|------|------|
 | 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 工作坊 / 方法分享 |
-| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏装置 |
+| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏装置 / 滴流 |
 | 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
-| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 竞赛版 / 多媒体视觉 |
-| 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画互动现场 |
-| 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph |
-| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 |
-| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 公教导师 |
-| 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 |
-| 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 |
-| 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 |
-| 23/01 | [安昌光影艺术季](./projects/glance-thousand-install-2023.md) | 古桥投影 |
-| 22/12 | [深圳光影艺术季AR](./projects/ar-shenzhen-resort-2022.md) | AR作品 |
-| 22/09 | [西岸凤巢AI PLAZA](./projects/meta-speaker-install-2022.md) | 数字艺术 |
+| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 竞赛获奖 / 滴流 |
+| 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 / 西岸 |
+| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
+| 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画现场 / 滴流3.0 |
+| 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX / 商业空间 |
+| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 / 坪山 |
+| 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 / 艺博会 |
+| 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 / K11 |
+| 23/01 | [安昌光影艺术季](./projects/glance-thousand-install-2023.md) | 古桥投影 / 光影艺术季 |
+| 22/12 | [深圳光影艺术季AR](./projects/ar-shenzhen-resort-2022.md) | AR作品 / 光影艺术季 |
+| 22/09 | [西岸凤巢AI PLAZA](./projects/meta-speaker-install-2022.md) | 数字艺术 / AI PLAZA |
 
 ---
 
@@ -151,11 +151,11 @@
 
 | 项目 | 说明 | 链接 |
 |------|------|------|
-| VIRTURA-SpacePort | 团队入口 / 档案数据库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
-| SceneForge | 网页场景查看器 / 舞台预演 | [GitHub](https://github.com/ewanqian/SceneForge) |
-| LiveForge | 冻结中 / 后续并入 SceneForge | [GitHub](https://github.com/ewanqian/LiveForge) |
-| RepoForge | 公开治理工具 / 对应私有 Forge | [GitHub](https://github.com/ewanqian/RepoForge) |
-| Senia-Digital-Resort | Minecraft 空间实验 | - |
+| VIRTURA-SpacePort | 团队入口 / 公开档案 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
+| SceneForge | 舞台查看器 / 网页预演 | [GitHub](https://github.com/ewanqian/SceneForge) |
+| LiveForge | 演出工作流 / 已冻结 | [GitHub](https://github.com/ewanqian/LiveForge) |
+| RepoForge | 仓库治理 / 自动化运维 | [GitHub](https://github.com/ewanqian/RepoForge) |
+| Senia-Digital-Resort | 空间实验 / Minecraft | - |
 
 ---
 
