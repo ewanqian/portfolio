@@ -9,17 +9,20 @@
 - 作品与项目展示
 - 对外合作与联系入口
 
-这里保留对团队与工具仓的引用，但不重复展开完整内容：
+这里保留对团队、前台与工具仓的引用，但不重复展开完整内容：
 
-- 团队公开入口请看 [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
+- 团队主入口请看 [VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective)
+- 团队公共导览与档案前台请看 [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
 - 核心产品主线请看 [SceneForge](https://github.com/ewanqian/SceneForge)
 
-## 团队档案与延伸阅读
+## 团队与生态入口
 
-这个仓库保留对团队仓的引用，但这些链接承担的是“延伸阅读”和“完整档案入口”，不是把团队仓内容重复搬到这里。
+这个仓库保留对团队体系的引用，但这些链接承担的是“延伸阅读”和“完整入口”，不是把团队仓内容重复搬到这里。
 
-- 团队公开入口与档案层：[VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
+- 团队主入口：[VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective)
+- 团队公共导览与档案层：[VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
 - 团队理论与方法长文：[our-theory](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)
+- 团队发布出口：[VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom)
 - 核心工具主线：[SceneForge](https://github.com/ewanqian/SceneForge)
 
 # 钱誉文 Ewan Qian | 现场演出与沉浸视觉制作人
@@ -41,7 +44,7 @@
 ---
 
 ### 关于我
-我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于 Blender 程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉 Resolume Arena 等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家或客户的概念与内容系统迁移到空间计算或网页端时，我重点解决的是呈现链路与体验一致性：内容格式、播放稳定性与空间观感。近阶段我把散落的实践分成几条更清晰的线：这个仓库主要放个人作品与项目，团队档案与方法长文放在 `VIRTURA-SpacePort`，工具主线集中在 `SceneForge`，仓库治理由 `RepoForge` 与私有 `Forge` 处理。
+我在音乐现场、舞蹈/剧场与展演空间中从事现场演出视觉交付与沉浸内容制作，关注影像如何成为舞台、装置与观看关系的一部分。我并不把"多媒体"当作天然加分项：媒介越复杂，越需要更严格的审美准则与制作标准，才能让作品在真实场域里既强、又稳定、还能持续迭代。在此基础上，我关注一个核心问题：**如何把一次性发生的演出与展览，延伸为可保存、可再体验、可迁移的数字资产**。我推动将作品沉淀为可复用的数字资产与氛围资产库，便于后续巡演复用、展陈复映与多端传播，并探索进一步的内容产品化路径；同时也在推进面向空间计算媒介（Apple Vision Pro）的迁移实践，以更低门槛的方式形成可分发的沉浸版本，让一次制作获得更长的生命周期与更可持续的回报。我基于 Blender 程序化系统（几何节点/模拟节点）为底座，用音频分析与时间线节拍控制作为驱动信号，实现从屏幕/投影的空间建构到空间计算与网页端迁移的可交付流程；并具备现场同步与实时演出控制能力，熟悉 Resolume Arena 等现场播放与控制工具，可承担舞台现场的视觉播放控制与实时演出配合。我通过纵深、层级与光影策略延展有限空间，善用投影与墙面/环境的关系：不强调"这是一块屏幕"，而是让影像融入材质与结构，用最少的设备完成"以假乱真"的空间叙事与概念表达。将艺术家或客户的概念与内容系统迁移到空间计算或网页端时，我重点解决的是呈现链路与体验一致性：内容格式、播放稳定性与空间观感。近阶段我把散落的实践分成几条更清晰的线：这个仓库主要放个人作品与项目，团队主入口放在 `VIRTURA-Collective`，团队导览与公开档案前台放在 `VIRTURA-SpacePort`，工具主线集中在 `SceneForge`，仓库治理由 `RepoForge` 与私有 `Forge` 处理。
 
 ---
 
@@ -178,7 +181,8 @@
 
 | 项目 | 说明 | 链接 |
 |------|------|------|
-| VIRTURA-SpacePort | 团队档案 / 公开资料库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
+| VIRTURA-Collective | 团队主入口 | [GitHub](https://github.com/ewanqian/VIRTURA-Collective) |
+| VIRTURA-SpacePort | 公共导览前台 / 公开资料库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
 | SceneForge | 舞台查看器 / 网页预演 | [GitHub](https://github.com/ewanqian/SceneForge) |
 | LiveForge | 演出工作流 / 已冻结 | [GitHub](https://github.com/ewanqian/LiveForge) |
 | RepoForge | 仓库治理 / 自动化运维 | [GitHub](https://github.com/ewanqian/RepoForge) |
@@ -215,6 +219,8 @@
 ### 🔗 链接与开源仓库
 - 个人GitHub：[https://github.com/ewanqian](https://github.com/ewanqian)
 - 个人作品集官网：[https://ewanqian.github.io/portfolio](https://ewanqian.github.io/portfolio)
+- VIRTURA-Collective：[https://github.com/ewanqian/VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective)
+- VIRTURA-SpacePort：[https://github.com/ewanqian/VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
 - VIRTURA-Newsroom：[https://github.com/ewanqian/VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom)
 
 ---
