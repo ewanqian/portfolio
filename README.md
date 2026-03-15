@@ -115,14 +115,14 @@
 | 时间 | 项目 | 角色 |
 |------|------|------|
 | 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 工作坊 / 方法分享 |
-| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏装置 / 滴流 |
+| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/dropflow-expo-2025.md) | 异形屏装置 / 滴流 |
 | 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
-| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 竞赛获奖 / 滴流 |
+| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/dropflow-award-2025.md) | 竞赛获奖 / 滴流 |
 | 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 / 西岸 |
 | 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
-| 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画现场 / 滴流3.0 |
+| 25/07 | [UFO Terminal「滴流3.0」](./projects/dropflow3-live-2025.md) | 音画现场 / 滴流3.0 |
 | 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX / 商业空间 |
-| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 / 坪山 |
+| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-exhibit-2025.md) | 数据可视化 / 坪山 |
 | 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 / 艺博会 |
 | 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 / K11 |
 | 23/01 | [安昌光影艺术季](./projects/glance-thousand-install-2023.md) | 古桥投影 / 光影艺术季 |
