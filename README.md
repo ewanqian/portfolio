@@ -98,9 +98,9 @@
 
 | 时间 | 项目 | 角色 |
 |------|------|------|
-| 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目+Opening视觉 |
-| 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening+舞台视觉 |
-| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕+裸眼3D |
+| 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目视觉 / Opening |
+| 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 舞台视觉 |
+| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕 / 裸眼3D |
 | 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉 |
 | 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 |
 | 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 |
@@ -114,14 +114,14 @@
 
 | 时间 | 项目 | 角色 |
 |------|------|------|
-| 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 高斯扫描/方法分享 |
-| 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 沉浸式大屏+VR头显 |
-| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏幕装置 |
-| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 多媒体视觉合作 |
+| 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 工作坊 / 方法分享 |
+| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏装置 |
+| 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
+| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 竞赛版 / 多媒体视觉 |
 | 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画互动现场 |
 | 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph |
 | 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 |
-| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 2025“ECP-星星策展人”计划获选展览 / 参展艺术家 / 公共活动导师 |
+| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 公教导师 |
 | 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 |
 | 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 |
 | 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 |
@@ -138,10 +138,10 @@
 
 | 系列 | 版本数 | 说明 |
 |------|--------|------|
-| [Timer系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series) | 5 | 音画联动，Chinagraph 2024二等奖 |
-| [滴流系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series) | 7 | 空间叙事，杭州双年展开幕 |
-| [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 20+ | 日本音乐人合作 |
-| [日常练习](./visual-arts/daily-practice/) | 持续更新 | Blender/扫描/点云 |
+| [Timer系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series) | 5 | 音画联动 / Chinagraph 2024 二等奖 |
+| [滴流系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series) | 7 | 空间叙事 / 杭州双年展开幕 |
+| [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 20+ | 日本音乐人合作 / 巡演视觉 |
+| [日常练习](./visual-arts/daily-practice/) | 持续更新 | Blender / 扫描 / 点云 |
 
 ---
 
@@ -151,11 +151,11 @@
 
 | 项目 | 说明 | 链接 |
 |------|------|------|
-| VIRTURA-SpacePort | 团队公开入口、档案数据库与叙事门面 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
-| SceneForge | 网页端场景查看器 / 舞台预演器 | [GitHub](https://github.com/ewanqian/SceneForge) |
-| LiveForge | 冻结中的历史概念仓，后续并入 SceneForge | [GitHub](https://github.com/ewanqian/LiveForge) |
-| RepoForge | 仓库自动化管理工具壳，对应私有 Forge | [GitHub](https://github.com/ewanqian/RepoForge) |
-| Senia-Digital-Resort | Minecraft空间感知实验 | - |
+| VIRTURA-SpacePort | 团队入口 / 档案数据库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
+| SceneForge | 网页场景查看器 / 舞台预演 | [GitHub](https://github.com/ewanqian/SceneForge) |
+| LiveForge | 冻结中 / 后续并入 SceneForge | [GitHub](https://github.com/ewanqian/LiveForge) |
+| RepoForge | 公开治理工具 / 对应私有 Forge | [GitHub](https://github.com/ewanqian/RepoForge) |
+| Senia-Digital-Resort | Minecraft 空间实验 | - |
 
 ---
 
