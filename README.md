@@ -1,6 +1,8 @@
 
 # portfolio
 
+中文 | [English](./README-en.md)
+
 钱誉文 Ewan Qian 的个人作品与项目入口。
 
 这里优先回答四件事:
