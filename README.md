@@ -16,21 +16,11 @@
 
 如果你第一次进入，建议按下面的路线阅读:
 
-- 想快速看代表项目: [精选项目 | Selected](#精选项目--selected)
-- 想理解我的方法: [核心能力 | Tooling & Method](#核心能力--tooling--method)
+- 想快速看代表项目: [精选项目](#精选项目--selected)
+- 想理解我的方法: [核心能力](#核心能力--tooling--method)
 - 想看研究与文章: [研究与文章](#研究与文章)
 - 想看分享、工作坊和公共活动: [行业分享与交流活动](#行业分享与交流活动)
-- 想了解团队与生态结构: 看下面这组入口
-
-## 团队与生态入口
-
-这个仓库是个人入口，不重复承担团队主仓、公共导览前台或工具主线的职责。
-
-- 团队主入口：[VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective)
-- 团队公共导览与档案前台：[VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
-- 团队方法与知识网络入口：[our-theory](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory)
-- 团队发布出口：[VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom)
-- 工具主线：[SceneForge](https://github.com/ewanqian/SceneForge)
+- 想了解项目如何延伸到团队、工具和研究: [自发研究项目](#自发研究项目)
 
 # 钱誉文 Ewan Qian | 现场演出与沉浸视觉制作人
 ## Live & Immersive Visual Producer
@@ -61,7 +51,7 @@
 - 在空间层，把重点放在纵深、层级、材质、光影和观看关系，而不是只把内容平铺到一个载体上
 - 在迁移层，持续探索作品如何进入网页端、数字舞台和空间计算媒介，延长它的公开生命周期
 
-这也是我为什么会同时维护个人作品、团队入口、公共导览前台和工具主线。这里是个人入口，`VIRTURA-Collective` 承担团队本体，`VIRTURA-SpacePort` 承担公共导览与知识网络主宿主，`SceneForge` 承担工具与数字舞台实验，`RepoForge` 与私有 `Forge` 负责治理和工作流。
+这也是我为什么会同时维护个人作品、团队入口、公共导览前台和工具主线。如果你关心这些入口之间的分工，可以在后面的“自发研究项目”一节继续看；首页正文先聚焦我自己的作品、方法与履历。
 
 ---
 
@@ -72,8 +62,8 @@
 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目视觉 / 跨年 Opening |
 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 地坪联动 |
 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕 / 裸眼3D |
-| [杭州双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
-| [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
+| [杭州双年展开幕式《滴流》](./projects/drop-flow-visual-2025.md) | 开幕式演出作品 / 展览延展 |
+| [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 作品参展 / 工作坊导师 |
 | [SceneForge](https://github.com/ewanqian/SceneForge) | 舞台查看器 / 网页预演 |
 
 ---
@@ -125,9 +115,9 @@
 
 #### 文章归档
 
-这一层更接近工作现场留下来的方法痕迹，而不是已经完全定稿的总论。
+这一层更接近工作现场留下来的方法笔记、项目复盘和工具实践，而不是已经完全定稿的总论。
 
-这批旧稿已经做过一轮内容审计。当前公开优先保留的，是和真实项目、真实方法、真实工作链最贴近的条目，而不是那些把规划写成既成事实的稿子。
+当前首页只保留和真实项目、真实方法、真实工作链最贴近的几篇。它们更适合回答“我实际怎么做”，而不是把规划性文字误读为已完成事实。
 
 如果你想快速判断我的研究脉络，建议按下面的顺序读:
 
@@ -135,14 +125,7 @@
 - 项目复盘: [DropFlow2](./articles-hidden/02-dropflow2-review.md), [Timer](./articles-hidden/03-timer-review.md)
 - 技术底层: [Blender 程序化](./articles-hidden/04-blender-procedural.md), [音画联动进阶](./articles-hidden/05-audio-visual-advanced.md)
 
-当前已经从首页降级的旧稿，主要问题包括:
-
-- 把未来规划写成已完成能力
-- 把工具和系统描述得比真实完成度更成熟
-- 把个人与小团队实践放大成行业级叙事
-- 文件重复或文本损坏
-
-审计记录见: [articles-hidden audit](./articles-hidden/README.md)
+较早期的实验稿和归档稿已经下沉，不在首页展开，避免把规划性文本误当成当前完成度。
 
 更完整的团队研究入口见:
 
@@ -190,17 +173,19 @@
 | 25/08 | [爱丁堡《山海浮生II：八荒祭》](./projects/shanhaifusheng2-visual-2025.md) | 视觉制作 / 工程交付 |
 | 23/10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 / 广播艺术中心 |
 
-#### 混合媒介
+#### 展览与现场
 
 | 时间 | 项目 | 角色 |
 |------|------|------|
-| 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 工作坊 / 方法分享 |
-| 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 开幕式视觉 / VR头显 |
-| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/dropflow-award-2025.md) | 竞赛获奖 / 滴流 |
-| 25/08 | [上海西岸漩心「Round a Clock」](./projects/westbund-ambient-visual-2025.md) | 视觉制作 / Round a Clock |
-| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
-| 25/07 | [UFO Terminal「滴流3.0」](./projects/dropflow3-live-2025.md) | 音画现场 / 滴流3.0 |
-| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-exhibit-2025.md) | 数据可视化 / 坪山 |
+| 26/01 | [Afterlook《观察与共生》作品展示与扫描工作坊](./projects/observe-symbiosis-workshop-2026.md) | 作品展示 / 扫描方法分享 |
+| 25/10 | [杭州双年展开幕式《滴流》](./projects/drop-flow-visual-2025.md) | 开幕式演出作品 / 后续展览延展 |
+| 25/09 | [杭州国际电子音乐节《时间操纵者 Timer》](./projects/dropflow-award-2025.md) | 音乐作品获奖 / 视觉合作 |
+| 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 作品参展 / 工作坊导师 |
+| 25/07 | [UFO Terminal × PRE「Rooooooom719」](./projects/dropflow3-live-2025.md) | 团队现场演出 / 视觉配合 |
+| 25/07 | [深圳坪山美术馆《观察与共生》](./projects/observe-symbiosis-exhibit-2025.md) | 作品参展 / 数据可视化视觉 |
+| 24/11 | [FutureLab 2024《Dérive 双城记》](./projects/derive-dual-city-2024.md) | 参展 / 数字空间扫描 |
+| 24/11 | [UFO Terminal「加载…权限2」《时间操纵者 Timer》](./projects/timer-series-visual-2024.md) | 团队参展 / 现场呈现 |
+| 24/08 | [UFO Terminal「加载…创作营」《Timer》](./projects/timer-series-visual-2024.md) | 团队入选 / 创作营 |
 
 更完整的项目清单和较早期条目继续保留在 [projects](./projects/)。
 
@@ -218,11 +203,11 @@
 - `项目参与`：我参与过哪些现实项目
 - `作品`：我持续发展的个人创作系列
 
-| 系列 | 版本数 | 说明 |
-|------|--------|------|
-| [Timer系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series) | 5 | 音画联动 / Chinagraph 2024 二等奖 |
-| [滴流系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series) | 7 | 空间叙事 / 杭州双年展开幕 |
-| [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 20+ | 日本音乐人合作 / 巡演视觉 |
+| 系列 | 版本 / 条目情况 | 说明 |
+|------|----------------|------|
+| [Timer系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series) | 5 个已整理版本 | 《时间操纵者 / 控时者》相关版本与现场条目 |
+| [滴流系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series) | 7 个已整理版本 | 《滴流 / Drop Flow》系列版本与展演条目 |
+| [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 2 场已整理演出条目 | 深圳、舟山等合作演出持续整理中 |
 | [日常练习](./visual-arts/daily-practice/) | 持续更新 | Blender / 扫描 / 点云 |
 
 如果你想快速抓重点，前三条更值得先看；`日常练习` 更接近长期方法积累。
@@ -285,7 +270,7 @@
 
 ---
 
-### 🔗 链接与开源仓库
+### 链接与开源仓库
 - 个人GitHub：[https://github.com/ewanqian](https://github.com/ewanqian)
 - 个人作品集官网：[https://ewanqian.github.io/portfolio](https://ewanqian.github.io/portfolio)
 - VIRTURA-Collective：[https://github.com/ewanqian/VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective)

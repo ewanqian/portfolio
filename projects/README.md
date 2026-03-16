@@ -21,21 +21,23 @@
 | 21/09 | 站酷2021 CUBE HP G8发布会 | 音画互动 | [查看](./zcool-hp-live-2021.md) |
 | 21/01 | 上海新天地 Rythem 跨年 | 实时视觉 | [查看](./rythem-newyear-live-2021.md) |
 
-## 混合媒介
+## 展览与现场
 
 | 时间 | 项目 | 角色 | 文档 |
 |------|------|------|------|
-| 26/01 | 《观察与共生》Workshop | 工作坊 / 方法分享 | [查看](./observe-symbiosis-workshop-2026.md) |
-| 25/10 | 杭州双年展开幕式「滴流」 | 开幕式视觉 / VR头显 | [查看](./drop-flow-visual-2025.md) |
-| 25/09 | 杭州国际电子音乐作曲比赛「滴流」 | 竞赛获奖 / 滴流 | [查看](./dropflow-award-2025.md) |
-| 25/08 | 上海西岸漩心「Round a Clock」 | 视觉制作 / Round a Clock | [查看](./westbund-ambient-visual-2025.md) |
-| 25/07-08 | 杭州中心美术馆「巴别瓶」 | 参展艺术家 / 工作坊导师 | [查看](./babel-bottle-art-2025.md) |
-| 25/07 | UFO Terminal「滴流3.0」 | 音画现场 / 滴流3.0 | [查看](./dropflow3-live-2025.md) |
+| 26/01 | Afterlook《观察与共生》作品展示与扫描工作坊 | 作品展示 / 扫描方法分享 | [查看](./observe-symbiosis-workshop-2026.md) |
+| 25/10 | 杭州双年展开幕式《滴流》 | 开幕式演出作品 / 后续展览延展 | [查看](./drop-flow-visual-2025.md) |
+| 25/09 | 杭州国际电子音乐节《时间操纵者 Timer》 | 音乐作品获奖 / 视觉合作 | [查看](./dropflow-award-2025.md) |
+| 25/08 | 上海西岸漩心「Round a Clock」 | Staff / 辅助视觉导出 | [查看](./westbund-ambient-visual-2025.md) |
+| 25/07-08 | 杭州中心美术馆「巴别瓶」 | 作品参展 / 工作坊导师 | [查看](./babel-bottle-art-2025.md) |
+| 25/07 | UFO Terminal × PRE「Rooooooom719」 | 团队现场演出 / 视觉配合 | [查看](./dropflow3-live-2025.md) |
 | 25/07 | 西安万象城「数字游园」 | Unity VFX / 商业空间 | [查看](./digital-garden-visual-2025.md) |
-| 25/07 | 深圳坪山「观察与共生」 | 数据可视化 / 坪山 | [查看](./observe-symbiosis-exhibit-2025.md) |
+| 25/07 | 深圳坪山美术馆《观察与共生》 | 作品参展 / 数据可视化视觉 | [查看](./observe-symbiosis-exhibit-2025.md) |
 | 25/06 | WWDC Flatland: Mixed Reality Dreams | Apple Vision Pro | [查看](./flatland-mr-content-2025.md) |
 | 25/05 | 中央音乐学院王楚婷毕业音乐会 | Audiovisual | [查看](./future-string-tianhua-2025.md) |
-| 24/11 | FutureLab 2024「Dérive双城记」 | 数字空间扫描 | [查看](./derive-dual-city-2024.md) |
+| 24/11 | FutureLab 2024《Dérive 双城记》 | 参展 / 数字空间扫描 | [查看](./derive-dual-city-2024.md) |
+| 24/11 | UFO Terminal「加载…权限2」《时间操纵者 Timer》 | 团队参展 / 现场呈现 | [查看](./timer-series-visual-2024.md) |
+| 24/08 | UFO Terminal「加载…创作营」《Timer》 | 团队入选 / 创作营 | [查看](./timer-series-visual-2024.md) |
 | 24/06 | THE BOXX「幻觉共振」 | 沉浸式投影 | [查看](./hallu-resonance-live-2024.md) |
 | 24/06 | THE BOXX「幻觉矩阵」 | 多媒体展出 | [查看](./hallu-matrix-exhibit-2024.md) |
 | 23/11 | 西岸艺术博览会「以太碎片」 | 影像展映 / 艺博会 | [查看](./ether-fragment-exhibit-2023.md) |
