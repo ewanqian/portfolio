@@ -174,9 +174,9 @@
 
 > 详细项目列表可查看 [projects](./projects/)
 
-这一部分是完整项目参与记录。
+这一部分更适合看作“近期与代表性履历”，不是首页上的完整年表。
 
-如果你是第一次进入，不建议从这里开始通读；更适合先看上面的“精选项目”，再回到这里查完整履历。
+如果你是第一次进入，不建议从这里开始通读；更适合先看上面的“精选项目”，再回到这里确认我长期工作的范围。
 
 #### 演艺舞台
 
@@ -185,12 +185,8 @@
 | 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目视觉 / 跨年 Opening |
 | 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening / 地坪联动 |
 | 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕 / 裸眼3D |
-| 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉 / 乐队专场 |
 | 25/08 | [爱丁堡《山海浮生II：八荒祭》](./projects/shanhaifusheng2-visual-2025.md) | 视觉制作 / 工程交付 |
 | 23/10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 / 广播艺术中心 |
-| 22/11 | [Germany Hamburg《Water Music》](./projects/watermusic-multi-visual-2022.md) | 多媒体视觉 / Hamburg |
-| 22/10 | [谢欣舞蹈剧场《四相》《汞》](./projects/xiexindance-sixiang-gong-visual-2022.md) | 影像视觉 / 舞蹈剧场 |
-| 22/09 | [上海时装周XTEP-XDNA](./projects/xtep-xdna22aw-visual-2022.md) | 视频制作 / 时装周 |
 
 #### 混合媒介
 
@@ -202,13 +198,9 @@
 | 25/08 | [上海西岸漩心「Round a Clock」](./projects/westbund-ambient-visual-2025.md) | 视觉制作 / Round a Clock |
 | 25/07-08 | [杭州中心美术馆「巴别瓶」](./projects/babel-bottle-art-2025.md) | 参展艺术家 / 工作坊导师 |
 | 25/07 | [UFO Terminal「滴流3.0」](./projects/dropflow3-live-2025.md) | 音画现场 / 滴流3.0 |
-| 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX / 商业空间 |
 | 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-exhibit-2025.md) | 数据可视化 / 坪山 |
-| 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 / 艺博会 |
-| 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 / K11 |
-| 23/01 | [安昌光影艺术季](./projects/glance-thousand-install-2023.md) | 古桥投影 / 光影艺术季 |
-| 22/12 | [深圳光影艺术季AR](./projects/ar-shenzhen-resort-2022.md) | AR作品 / 光影艺术季 |
-| 22/09 | [西岸凤巢AI PLAZA](./projects/meta-speaker-install-2022.md) | 数字艺术 / AI PLAZA |
+
+更完整的项目清单和较早期条目继续保留在 [projects](./projects/)。
 
 ---
 
@@ -231,20 +223,31 @@
 | [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 20+ | 日本音乐人合作 / 巡演视觉 |
 | [日常练习](./visual-arts/daily-practice/) | 持续更新 | Blender / 扫描 / 点云 |
 
+如果你想快速抓重点，前三条更值得先看；`日常练习` 更接近长期方法积累。
+
 ---
 
 ### 自发研究项目
 
 > 个人发起的长期研究项目与工具
 
-| 项目 | 说明 | 链接 |
-|------|------|------|
-| VIRTURA-Collective | 团队主入口 | [GitHub](https://github.com/ewanqian/VIRTURA-Collective) |
-| VIRTURA-SpacePort | 公共导览前台 / 公开资料库 | [GitHub](https://github.com/ewanqian/VIRTURA-SpacePort) |
-| SceneForge | 舞台查看器 / 网页预演 | [GitHub](https://github.com/ewanqian/SceneForge) |
-| LiveForge | 演出工作流 / 已冻结 | [GitHub](https://github.com/ewanqian/LiveForge) |
-| RepoForge | 仓库治理 / 自动化运维 | [GitHub](https://github.com/ewanqian/RepoForge) |
-| Senia-Digital-Resort | 空间实验 / Minecraft | - |
+这一部分不是“又一张仓库表”，而是个人工作如何延伸到团队、前台、工具和实验的结构图。
+
+当前最值得关注的几条线是：
+
+- [VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective)
+  团队主入口，负责团队本体、作品、活动、研究与合作入口。
+- [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
+  公共导览前台、知识网络主宿主与旧档案源宿主。
+- [SceneForge](https://github.com/ewanqian/SceneForge)
+  当前最明确的工具主线，集中处理舞台查看、预演和网页预览。
+
+此外还有两条次级实验线：
+
+- [RepoForge](https://github.com/ewanqian/RepoForge)
+  面向治理、自动化和工作流维护的公开外壳。
+- `Senia-Digital-Resort`
+  更偏空间实验和世界构建的独立分支。
 
 ---
 
