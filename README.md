@@ -49,17 +49,17 @@
 ---
 
 ### 关于我
-我主要从事现场演出视觉交付、沉浸内容制作和空间化影像表达，关注影像如何真正成为舞台、装置和观看关系的一部分，而不只是被动贴在屏幕上的视觉层。
+我主要从事现场演出视觉、沉浸内容制作和空间化影像系统设计。对我来说，影像不是附着在屏幕上的装饰层，而是舞台、空间、时间和观演关系的一部分。一个画面是否成立，不只取决于视觉本身，还取决于它如何进入真实场域，如何与音乐、结构、材质、观看距离和人的身体经验发生关系。
 
-我长期在做的一件事，是把一次性发生的演出与展览，尽可能延伸为可保存、可再体验、可迁移的数字资产。这样一个项目不只服务于当下，也能继续进入巡演复用、展陈复映、网页发布和空间计算迁移。
+我持续关注的核心问题，是如何把一次性发生的演出与展览，转化为可保存、可再体验、可迁移的数字资产。这个问题同时牵涉创作、工程和发布: 一方面要让作品在现场足够成立，另一方面也要让它在巡演复用、展陈复映、网页端迁移和空间计算媒介中继续保持生命力，而不是在一次交付后迅速失真。
 
-我目前的工作方式主要由三部分组成:
+因此，我目前的实践并不把“艺术表达”和“工程方法”拆开，而是把它们视为同一条工作链上的不同环节:
 
-- 以 Blender 程序化系统、音频分析和时间线控制为底座，搭建可复用的视觉结构
-- 在真实场域里处理空间感、层级、材质与观看关系，而不是只处理屏幕内容
-- 把作品逐步迁移到网页端、数字舞台和空间计算媒介，延长它的生命周期
+- 在生成层，用 Blender 程序化系统、音频分析与时间线控制搭建可复用的视觉结构
+- 在空间层，把重点放在纵深、层级、材质、光影和观看关系，而不是只把内容平铺到一个载体上
+- 在迁移层，持续探索作品如何进入网页端、数字舞台和空间计算媒介，延长它的公开生命周期
 
-当前仓库分工也已经固定下来: 这里放个人作品与项目，`VIRTURA-Collective` 放团队主入口，`VIRTURA-SpacePort` 放公共导览与档案前台，`SceneForge` 放工具主线，`RepoForge` 与私有 `Forge` 处理治理和流程。
+这也是我为什么会同时维护个人作品、团队入口、公共导览前台和工具主线。这里是个人入口，`VIRTURA-Collective` 承担团队本体，`VIRTURA-SpacePort` 承担公共导览与知识网络主宿主，`SceneForge` 承担工具与数字舞台实验，`RepoForge` 与私有 `Forge` 负责治理和工作流。
 
 ---
 
@@ -96,31 +96,49 @@
 
 ### 研究与文章
 
-这里保留两类索引：一类是团队仓中的理论长文，一类是个人仓中保留的项目复盘与文章归档。
+这里保留两层内容:
 
-#### 理论与方法
+- 第一层是较稳定的研究主张与方法框架，主要宿主在团队知识网络
+- 第二层是项目复盘、技术笔记和工具实践，保留在个人仓中
 
-| 标题 | 完整名称 | 描述 | 核心要点 | 链接 |
-|------|----------|------|----------|------|
-| 智力装备理论 | 智力装备理论：从静态知识到动态网络的知识学习范式变革研究 | 破解静态知识传播效率低下、高等教育与市场需求脱节、学习者入门期高放弃率等核心困境，构建"静态知识→动态知识网络→可部署智力装备"的三阶转化模型 | 知识形态困境、无公式的核心突破、7天入门的科学依据、可控与可观 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/intellectual-equipment) |
-| 数字情感容器理论 | 视觉创作者空间原生作品创作全体系总纲：基于空间计算的从认知到落地全链路方法论 | 构建一套适配视觉创作者思维模式、无前置技术门槛、可复用、可迭代、经得住时间检验的空间创作通识方法论，将空间计算的底层逻辑、原生开发的工程化方法转化为创作者可理解、可掌控、可落地的创作工具与表达路径 | 六大核心知识块、创作优先技术服务、最小可用先闭环再优化、工程化拆解消除未知焦虑 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework) |
-| 工程控制论 | 无公式、强思维、结合AI时代的工程控制论：驯服复杂世界的底层通用逻辑 | 彻底去掉所有公式、代码与数学计算，用生活化类比讲透工具背后的底层思维，70%内容守住工程控制论的完整体系，30%内容结合2026年AI、人形机器人、智能社会的拐点做延伸 | 闭环反馈、稳快准三大标准、频域法万能工具箱、从外部操控到内部掌控 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics) |
-| 空间创作框架 | 数字情感容器理论：低成本高质量复刻多媒体艺术，给人带来感动 | 低成本高质量复刻多媒体艺术，白天卖票+晚上包场双收入模式，社交媒体传播带来免费流量，感动点设计：沉浸式体验、互动参与、打卡拍照、情感共鸣 | 空间原生作品的本质认知、零基础创作的三大黄金法则、能力边界清晰划定、情感容器的设计原则 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container) |
+#### 核心研究主张
+
+如果只看几条主线，优先看下面四个方向:
+
+| 方向 | 处理的问题 | 当前入口 |
+|------|------------|----------|
+| 智力装备 | 如何把静态知识转化为可部署、可调用、可在真实工作中触发的动态知识结构 | [intellectual-equipment](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/intellectual-equipment) |
+| 空间创作框架 | 如何把空间计算、工程化方法和创作者思维连接成一条从认知到落地的创作路径 | [spatial-creative-framework](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework) |
+| 工程控制论 | 如何用无公式、强思维的方式理解复杂系统、反馈结构和 AI 时代的通用控制逻辑 | [engineering-cybernetics](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics) |
+| 数字情感容器 | 如何让空间化表达真正形成可感知、可共鸣、可持续传播的情感体验 | [digital-emotion-container](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container) |
+
+这些方向主要宿主在 `VIRTURA-SpacePort / knowledge-network / our-theory`，这里保留的是个人研究视角下的索引入口。
 
 #### 文章归档
 
-| 类型 | 标题 | 链接 |
-|------|------|------|
-| 核心主张 | 从手工作坊到工程化的沉浸式内容创作思维重构 | [查看](./articles-hidden/core-proposition.md) |
-| 项目复盘 | DropFlow2：裸眼 3D 空间叙事的工程化设计与实践 | [查看](./articles-hidden/02-dropflow2-review.md) |
-| 项目复盘 | Timer：音画联动的工程化技术底座开发 | [查看](./articles-hidden/03-timer-review.md) |
-| 技术底层 | Blender 程序化：工程复用与 Git 式迭代实践 | [查看](./articles-hidden/04-blender-procedural.md) |
-| 技术底层 | 音画联动进阶：从基础分析到 AI 协同 | [查看](./articles-hidden/05-audio-visual-advanced.md) |
-| 工具实践 | SceneForge：跨媒介发布框架 | [查看](./articles-hidden/06-sceneforge-tool.md) |
-| 工具实践 | Stage Viewer：场景模拟工程化工具 | [查看](./articles-hidden/07-stage-viewer-tool.md) |
-| 运营与延伸 | DropFlow × Timer IP 运营 | [查看](./articles-hidden/08-ip-operations.md) |
-| 运营与延伸 | 数字资产的工程化运营逻辑 | [查看](./articles-hidden/09-asset-operations.md) |
-| 运营与延伸 | 新媒体艺术工程化生态延伸 | [查看](./articles-hidden/10-ecosystem-extension.md) |
+这一层更接近工作现场留下来的方法痕迹，而不是已经完全定稿的总论。
+
+这批旧稿已经做过一轮内容审计。当前公开优先保留的，是和真实项目、真实方法、真实工作链最贴近的条目，而不是那些把规划写成既成事实的稿子。
+
+如果你想快速判断我的研究脉络，建议按下面的顺序读:
+
+- 核心主张: [从手工作坊到工程化的沉浸式内容创作思维重构](./articles-hidden/01-core-proposition.md)
+- 项目复盘: [DropFlow2](./articles-hidden/02-dropflow2-review.md), [Timer](./articles-hidden/03-timer-review.md)
+- 技术底层: [Blender 程序化](./articles-hidden/04-blender-procedural.md), [音画联动进阶](./articles-hidden/05-audio-visual-advanced.md)
+
+当前已经从首页降级的旧稿，主要问题包括:
+
+- 把未来规划写成已完成能力
+- 把工具和系统描述得比真实完成度更成熟
+- 把个人与小团队实践放大成行业级叙事
+- 文件重复或文本损坏
+
+审计记录见: [articles-hidden audit](./articles-hidden/README.md)
+
+更完整的团队研究入口见:
+
+- [VIRTURA-Collective / Research](https://github.com/ewanqian/VIRTURA-Collective/tree/main/research)
+- [VIRTURA-SpacePort / knowledge-network](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network)
 
 ---
 
