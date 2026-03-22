@@ -158,7 +158,8 @@
 |------|----------|------|----------|------|
 | 智力装备理论 | 智力装备理论：从静态知识到动态网络的知识学习范式变革研究 | 破解静态知识传播效率低下、高等教育与市场需求脱节、学习者入门期高放弃率等核心困境，构建"静态知识→动态知识网络→可部署智力装备"的三阶转化模型 | 知识形态困境、无公式的核心突破、7天入门的科学依据、可控与可观 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/intellectual-equipment) |
 | 数字情感容器理论 | 视觉创作者空间原生作品创作全体系总纲：基于空间计算的从认知到落地全链路方法论 | 构建一套适配视觉创作者思维模式、无前置技术门槛、可复用、可迭代、经得住时间检验的空间创作通识方法论，将空间计算的底层逻辑、原生开发的工程化方法转化为创作者可理解、可掌控、可落地的创作工具与表达路径 | 六大核心知识块、创作优先技术服务、最小可用先闭环再优化、工程化拆解消除未知焦虑 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/spatial-creative-framework) |
-| 工程控制论 | 无公式、强思维、结合AI时代的工程控制论：驯服复杂世界的底层通用逻辑 | 彻底去掉所有公式、代码与数学计算，用生活化类比讲透工具背后的底层思维，70%内容守住工程控制论的完整体系，30%内容结合2026年AI、人形机器人、智能社会的拐点做延伸 | 闭环反馈、稳快准三大标准、频域法万能工具箱、从外部操控到内部掌控 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics) |
+| 工程控制论 | 去掉晦涩公式，提炼工程控制思维，结合AI时代的底层通用逻辑 | 去掉公式化表述，提炼出工程控制的核心思维框架，结合AI、空间计算与智能系统的应用场景，讲透工具背后的底层思维 | 闭环反馈、稳快准三大标准、频域法思维、从外部操控到内部掌控 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/engineering-cybernetics) |
+| 感知迁移理论 | 从情感容器到感知迁移：空间计算中的感知接口设计研究 | 阐述研究方向从"情感容器"到"感知迁移"的演进，探索意识如何在不同空间结构之间迁移并被重新组织，建立空间计算时代的感知接口设计框架 | Spatial Consciousness Transfer、States of Entry、Perceptual Migration Systems、从情感容纳到感知迁移 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/perceptual-migration) |
 | 空间创作框架 | 数字情感容器理论：低成本高质量复刻多媒体艺术，给人带来感动 | 低成本高质量复刻多媒体艺术，白天卖票+晚上包场双收入模式，社交媒体传播带来免费流量，感动点设计：沉浸式体验、互动参与、打卡拍照、情感共鸣 | 空间原生作品的本质认知、零基础创作的三大黄金法则、能力边界清晰划定、情感容器的设计原则 | [链接](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/knowledge-network/our-theory/digital-emotion-container) |
 
 ---
@@ -188,8 +189,8 @@
 |------|------|------|
 | 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目+Opening视觉 |
 | 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening+舞台视觉 |
-| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 全息纱幕+裸眼3D |
-| 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉 |
+| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 现场视觉（全息纱幕+裸眼3D部分） |
+| 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉（参与部分） |
 | 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 |
 | 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 |
 | 23/11 | [@onefive Overground](./projects/onefive-overground-visual-2023.md) | 视觉制作 |
