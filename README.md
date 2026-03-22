@@ -123,11 +123,13 @@
 
 以下是我关于艺术实践与研究方向的核心文章，完整内容保存在 **[VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom)**：
 
-| 标题 | 描述 | 链接 |
-|------|------|------|
-| 从信号到迁移：我的作品线索 | 梳理从早期信息流实验到感知迁移实践的创作脉络 | [Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/ewan-qian/01-from-signal-to-migration.md) |
-| 从情感容器到感知迁移：关于感知接口的研究说明 | 阐述研究方向从"情感容器"到"感知迁移"的演进 | [Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/ewan-qian/02-perceptual-migration-and-interface.md) |
-| Artist Practice Map：我的创作轴线 | 五条创作轴线的清晰梳理（时间结构/空间生成/现场装置/扫描生态/迁移媒介） | [Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/01_Personal/ewan-qian/03-artist-practice-map.md) |
+| 标题 | 描述 |
+|------|------|
+| 从信号到迁移：我的作品线索 | 梳理从早期信息流实验到感知迁移实践的创作脉络 |
+| 从情感容器到感知迁移：关于感知接口的研究说明 | 阐述研究方向从"情感容器"到"感知迁移"的演进 |
+| Artist Practice Map：我的创作轴线 | 五条创作轴线的清晰梳理（时间结构/空间生成/现场装置/扫描生态/迁移媒介） |
+
+**[阅读全文 → VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom)**
 
 ---
 
