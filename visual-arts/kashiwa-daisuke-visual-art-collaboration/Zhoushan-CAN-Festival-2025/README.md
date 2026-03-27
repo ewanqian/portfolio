@@ -1,48 +1,62 @@
-# 舟山 CAN Festival 2025 pt.2
+# Zhoushan CAN Festival 2025 pt.2 — Live VJ / Concert Visuals
+
+**Project Title**  
+**CAN Festival 2025 pt.2 @ Zhoushan, Zhejiang, China**
+
+**Date**  
+October 17–19, 2025
+
+**Location**  
+Zhoushan, Zhejiang, China
+
+**Line-up**  
+- Drums: Kohei Koizumi  
+- Bass: Mitsuru Shishikura  
+- Piano: Yuki Murata  
+- Violin: Kumi Takahara  
+- E Guitar & Manipulator: KASHIWA Daisuke
+
+**Visual Team**  
+- VJ: Ewan Qian  
+- Lighting: Wei  
+- Video Shoot: CAN Festival Video Team
 
 ---
 
-## 项目信息
-
-| 字段 | 内容 |
-|------|------|
-| **项目名称** | CAN Festival 2025 pt.2 |
-| **日期** | 2025-10-17 至 2025-10-19 |
-| **地点** | 舟山，浙江，中国 |
+## Project Notes
+这场表演延伸了早期合作中开发的视听语言，同时回应了现场乐队设置、舞台灯光与音乐节规模的表演条件 (This performance extended the audiovisual language developed in earlier collaborations, while responding to a live band setting, stage lighting, and festival-scale performance conditions).  
+相比以往基于投影的环境，这次版本进一步推向现场扩展、节律控制与舞台响应的视觉结构 (Compared with the projection-based environment of previous works, this version pushed further toward live expansion, rhythmic control, and stage-responsive visual structure).
 
 ---
 
-## 演出阵容
+## Works Archive / 演出曲目与视觉档案
 
-- 鼓手：Kohei Koizumi
-- 贝斯：Mitsuru Shishikura
-- 钢琴：Yuki Murata
-- 小提琴：Kumi Takahara
-- 电吉他 & 操控：KASHIWA Daisuke
+### 01. Phantom
+- **Format:** Moving image / live VJ visual
+- **Notes:** To be updated
+- **Preview:** `./01-Phantom/`
 
----
+### 02. Ice
+- **Format:** Moving image / live VJ visual
+- **Notes:** To be updated
+- **Preview:** `./02-Ice/`
 
-## 视觉团队
+### 03. EBV
+- **Format:** Moving image / live VJ visual
+- **Versions:**
+  - EBV AA
+  - EBV RealPointsMove
+- **Notes:**  
+  Two related visual variations developed from the same musical piece / visual direction.
+  （基于同一音乐作品/视觉方向开发的两个相关视觉变体。）
+- **Preview:** `./03-EBV/`
 
-- VJ：Ewan Qian
-- 灯光：Wei
-- 视频拍摄：CAN Festival Video Team
+### 04. Blackbird
+- **Format:** Moving image / live VJ visual
+- **Notes:** To be updated
+- **Preview:** `./04-Blackbird/`
 
----
-
-## 项目说明
-
-这场表演延伸了早期合作中开发的视听语言，同时回应了现场乐队设置、舞台灯光与音乐节规模的表演条件。相比以往基于投影的环境，这次版本进一步推向现场扩展、节律控制与舞台响应的视觉结构。
-
----
-
-## 当前状态
-
-- [ ] 概念阶段
-- [x] 在建中
-- [ ] 已测试
-- [ ] 已归档
-
----
-
-**最后更新**：2026-03-27
+### 05. April #19
+- **Format:** Moving image / live VJ visual
+- **Notes:** To be updated
+- **Preview:** `./05-April-19/`
