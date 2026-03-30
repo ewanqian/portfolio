@@ -1,16 +1,10 @@
 # 钱誉文 Ewan Qian
 
-## Media Artist / Spatial Media Creator
+## Media Artist / Spatial Image Creator / Live Visual Producer
 
-> Spatial Consciousness Transfer
-> States of Entry
-> Perceptual Migration Systems
+> 感知迁移 / 时间结构 / 空间生成 / 现场图像系统
 
-我的实践围绕一个核心问题展开：意识如何在不同空间结构之间迁移，并在其中被重新组织。
-
-我将数字空间视为一种具有感知能力的结构系统，而非静态媒介。通过影像、实时系统与空间设计，我尝试构建一种"进入机制"，使观众不只是观看，而是在感知层面经历一次状态的转移。
-
-这些工作延伸至现场演出、展览影像、沉浸式空间与数字环境，也逐渐转化为工具、数据与研究方法，用于探索未来空间计算与人工智能环境中的感知接口。
+VIRTURA（纬图）去中心化艺术团队成员
 
 ---
 
@@ -28,17 +22,32 @@
 
 ## About
 
-我是钱誉文（Ewan Qian），一位媒体艺术家与空间影像创作者。我的工作横跨现场视觉、展览影像、沉浸式空间、扫描环境与数字媒介系统。
+钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。
 
-早期的创作更多从信息流、网络结构、线条运动与电子环境的视觉感知出发；近年的实践则逐渐转向一个更明确的问题：图像如何进入空间，空间如何组织感知，以及作品如何在不同媒介与设备之间持续迁移和存在。
+Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems. His practice focuses on how image, sound, time, and space can be composed into experiences that are not only seen, but entered, sensed, and reorganized, while continuously developing a working path between artistic creation, live production, and system-based methodology.
 
-对我来说，作品并不只是一次性的视觉结果。它也可以是一种可被再次进入、重新组织和重新体验的结构。因此，我持续处理三个彼此相关的方向：
+### 核心方向
 
-- **Spatial Consciousness Transfer**：意识如何在空间结构中发生状态转移
-- **States of Entry**：观众如何进入作品，而不是停留在观看之外
-- **Perceptual Migration Systems**：作品如何在不同媒介、空间与界面中迁移，并保持其感知逻辑
+- **Media Art / Perceptual Migration** 媒体艺术 / 感知迁移
+- **Live Visuals / Spatial Imaging** 现场视觉 / 空间影像
+- **Audio Analysis / Audiovisual Synchronization** 音频分析 / 音画联动
+- **Temporal Structure / Spatial Generation** 时间结构 / 空间生成
 
-这些方向既来自个人作品，也来自我在团队项目中的实践经验。我不将个人作品与团队项目机械分开：只要我在其中承担了明确的结构判断、视觉构成、系统实验或空间方法，这些经验都构成我实践的一部分。同时，所有团队项目都应尊重团队协作本身的完整性；这里所整理的是其中与我个人实践、方法和研究直接相关的部分。
+### 代表性公开合作与展演
+
+- 首届中国（杭州）艺术与科技国际双年展开幕式《滴流》
+- UFO Terminal「加载…权限 II」展览《TIMER 控时者》
+- UFO Terminal × PRE / Rooooooom719 音画现场
+- Kashiwa Daisuke × Yuki Murata × 钱誉文 深圳 BO LIVE 特别演出
+- 杭州中心美术馆《巴别瓶》"新媒体艺术家模拟器"
+
+Selected public presentations include "Drop Flow," Opening Performance of the Hangzhou International Biennale of Art and Technology, "TIMER" in UFO Terminal's "Loading… Permission II" exhibition, UFO Terminal × PRE / Roooooooom719 Audiovisual Live, Kashiwa Daisuke × Yuki Murata × Ewan Qian at BO LIVE Shenzhen, and "New Media Artist Simulator" at Hangzhou Center of Art.
+
+His work has been presented in Shanghai, Shenzhen, Chongqing, and Tokyo. Public presentations of team-based works were participated in as a team member.
+
+**团队身份**：VIRTURA（纬图）去中心化艺术团队成员
+
+> 更完整的项目列表与版本线索，请见后文的 [Projects / Credits](#projects--credits)
 
 ---
 
@@ -231,7 +240,7 @@
 |------|--------|------|
 | [Timer系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series) | 5 | 音画联动，Chinagraph 2024二等奖 |
 | [滴流系列](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series) | 7 | 空间叙事，杭州双年展开幕 |
-| [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke-series/) | 20+ | 日本音乐人合作 |
+| [Kashiwa Daisuke系列](./visual-arts/kashiwa-daisuke/) | 20+ | 日本音乐人合作 |
 | [日常练习](./visual-arts/daily-practice/) | 持续更新 | Blender/扫描/点云 |
 
 ---
