@@ -103,7 +103,7 @@ This selection spans exhibitions, live performances, workshops, festival appeara
 
 钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。
 
-其作品与合作项目已在北京、上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、展览空间、数字环境、扫描实践与跨媒介影像系统。
+其作品与合作项目已在北京、上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、展览空间、数字环境、扫描实践与跨媒介影像系统。同时，其个人实践也持续与 VIRTURA 的团队创作网络发生交叉与协作。
 
 Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems. His practice focuses on how image, sound, time, and space can be composed into experiences that are not only seen, but entered, sensed, and reorganized, while continuously developing a working path between artistic creation, live production, and system-based methodology.
 
@@ -115,8 +115,6 @@ His works and collaborations have been publicly presented in Beijing, Shanghai, 
 - **Live Visuals / Spatial Imaging** 现场视觉 / 空间影像
 - **Audio Analysis / Audiovisual Synchronization** 音频分析 / 音画联动
 - **Temporal Structure / Spatial Generation** 时间结构 / 空间生成
-
-其个人实践也持续与 VIRTURA 的团队创作网络发生交叉与协作。
 
 > 更完整的项目列表与版本线索，请见后文的 [Projects / Credits](#projects--credits)
 
