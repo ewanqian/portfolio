@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ewan Qian — Portfolio / Production Services</title>
+  <meta name="description" content="Media Artist / Spatial Image Creator / Live Visual Producer. Works, services, pricing, and inquiry." />
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #fbfaf7;
+      --text: #161616;
+      --muted: #626262;
+      --line: rgba(22, 22, 22, 0.12);
+      --accent: #111111;
+      --accent-2: #efede7;
+      --max: 1180px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin: 0 0 26px;
+      font-size: 16px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 244, 239, 0.82);
+      border-bottom: 1px solid rgba(22,22,22,0.07);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 64px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      border-bottom-color: var(--muted);
+    }
+
+    .hero {
+      padding: 48px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-panel,
+    .hero-image {
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(22,22,22,0.05);
+    }
+
+    .hero-panel {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 560px;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 0.96;
+      margin: 0 0 22px;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.18s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,0.22);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-pill {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.75);
+      transition: 0.18s ease;
+    }
+
+    .social-pill:hover {
+      background: white;
+      border-color: rgba(22,22,22,0.22);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-image {
+      min-height: 560px;
+      position: relative;
+      background: #ddd;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      background: rgba(255,255,255,0.84);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(22,22,22,0.08);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(22,22,22,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.04);
+    }
+
+    .work-card .thumb {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .work-card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-card .content {
+      padding: 20px;
+    }
+
+    .work-card h3 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .work-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .inline-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .inline-links a {
+      color: var(--text);
+      background: rgba(22,22,22,0.06);
+      padding: 4px 10px;
+      border-radius: 999px;
+      transition: 0.18s ease;
+    }
+
+    .inline-links a:hover {
+      background: rgba(22,22,22,0.12);
+      transform: translateY(-1px);
+    }
+
+    .columns-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .service-card {
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid rgba(22,22,22,0.06);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03);
+      transition: 0.18s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(22,22,22,0.14);
+    }
+
+    .service-card.active {
+      border-color: rgba(22,22,22,0.26);
+      background: white;
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .service-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .service-detail {
+      margin-top: 24px;
+      background: white;
+      border: 1px solid rgba(22,22,22,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .service-detail h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+    }
+
+    .service-detail p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .service-detail ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .price-tier {
+      background: var(--panel);
+      border: 1px solid rgba(22,22,22,0.06);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03);
+    }
+
+    .price-tier h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .price-tier p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .price-item {
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .price-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .price-item strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .price-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .why-card {
+      background: var(--panel);
+      border: 1px solid rgba(22,22,22,0.06);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .why-card h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .why-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid rgba(22,22,22,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.22s ease;
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 240px;
+      padding-bottom: 18px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+    }
+
+    .contact-panel,
+    .form-panel {
+      background: var(--panel);
+      border: 1px solid rgba(22,22,22,0.06);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03);
+    }
+
+    .contact-panel h3,
+    .form-panel h3 {
+      margin: 0 0 12px;
+      font-size: 26px;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-panel p,
+    .form-panel p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-list a,
+    .contact-list div {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: white;
+      font-size: 14px;
+      transition: 0.18s ease;
+    }
+
+    .contact-list a:hover {
+      border-color: rgba(22,22,22,0.22);
+      background: var(--panel);
+      transform: translateY(-1px);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(22,22,22,0.12);
+      background: white;
+      border-radius: 12px;
+      padding: 14px 14px;
+      font-size: 15px;
+      color: var(--text);
+      outline: none;
+      transition: 0.18s ease;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(22,22,22,0.32);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 13px;
+    }
+
+    .divider-space {
+      height: 8px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .contact-grid,
+      .pricing-grid,
+      .why-grid,
+      .grid-3,
+      .columns-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-image {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .hero-grid,
+      .contact-grid,
+      .pricing-grid,
+      .why-grid,
+      .grid-3,
+      .columns-2,
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel,
+      .hero-image {
+        min-height: auto;
+      }
+
+      .hero-panel {
+        padding: 24px;
+      }
+
+      .hero {
+        padding-bottom: 48px;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .nav {
+        gap: 10px 14px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Ewan Qian / Portfolio</div>
+      <nav class="nav">
+        <a href="#works">Works</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-panel">
+          <div>
+            <div class="hero-kicker">Media Artist / Spatial Image Creator / Live Visual Producer</div>
+            <h1 class="hero-title">钱誉文<br>Ewan Qian</h1>
+            <p class="hero-subtitle">感知迁移 / 时间结构 / 空间生成 / 现场图像系统</p>
+            <p class="hero-tagline">
+              我主要工作在现场演出视觉、空间影像、数字环境、AI 视觉开发与项目系统整理的交叉地带。
+              这里既是作品入口，也是一个可以被雇佣的个人 production / creative services 页面。
+            </p>
+
+            <div class="hero-cta">
+              <a class="button primary" href="#works">View Works / 看作品</a>
+              <a class="button" href="#services">View Services / 看服务</a>
+              <a class="button" href="#contact">Inquiry / 提交咨询</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="socials">
+              <a class="social-pill" href="https://www.instagram.com/ewanqian/" target="_blank" rel="noreferrer">Instagram</a>
+              <a class="social-pill" href="https://space.bilibili.com/2380485" target="_blank" rel="noreferrer">Bilibili</a>
+              <a class="social-pill" href="https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e" target="_blank" rel="noreferrer">Xiaohongshu</a>
+              <a class="social-pill" href="https://www.manamana.net/peopleCenter/432894/home#!zh" target="_blank" rel="noreferrer">ManaMana</a>
+              <a class="social-pill" href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="./assets/home/landing-portrait.jpg" alt="Landing portrait" />
+          <div class="hero-note">Beijing / Shanghai / Shenzhen / Hangzhou / Chongqing / Tokyo</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section">
+      <div class="container">
+        <div class="eyebrow">Featured Works</div>
+        <h2 class="section-title">代表作品</h2>
+        <p class="section-intro">
+          我当前最适合被优先阅读的三条作品入口。它们分别代表空间生成、时间结构与现场视听合作这三条实践方向。
+        </p>
+
+        <div class="grid-3">
+          <article class="card work-card">
+            <div class="thumb">
+              <img src="./assets/home/featured-dropflow-main.jpg" alt="Drop Flow main" />
+            </div>
+            <div class="content">
+              <h3>Drop Flow</h3>
+              <p>围绕空间生成、沉浸式图像、身体表演与版本迁移展开的系列实践。</p>
+              <div class="inline-links">
+                <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/drop-flow-series/README.md" target="_blank" rel="noreferrer">看系列</a>
+                <a href="https://github.com/ewanqian/portfolio/blob/main/projects/drop-flow-visual-2025.md" target="_blank" rel="noreferrer">看详情</a>
+                <a href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer">看录像</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="thumb">
+              <img src="./assets/home/featured-timer-main.jpg" alt="Timer main" />
+            </div>
+            <div class="content">
+              <h3>TIMER</h3>
+              <p>围绕时间结构、音画关系与感知节奏展开的系列作品与现场节点。</p>
+              <div class="inline-links">
+                <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/timer-series/README.md" target="_blank" rel="noreferrer">看系列</a>
+                <a href="https://www.bilibili.com/video/BV1sWNWeVEVB/" target="_blank" rel="noreferrer">看录像</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="thumb">
+              <img src="./assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa main" />
+            </div>
+            <div class="content">
+              <h3>Kashiwa Daisuke</h3>
+              <p>与 Kashiwa Daisuke / Yuki Murata 合作的现场视听项目，聚焦白空间、纵深、雾气与结构氛围。</p>
+              <div class="inline-links">
+                <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/kashiwa-daisuke/README.md" target="_blank" rel="noreferrer">看系列</a>
+                <a href="https://github.com/ewanqian/portfolio/blob/main/projects/kashiwa-titan-visual-2025.md" target="_blank" rel="noreferrer">看详情</a>
+                <a href="https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" target="_blank" rel="noreferrer">外部资料</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="eyebrow">Services</div>
+        <h2 class="section-title">制作与交付服务</h2>
+        <p class="section-intro">
+          这里不是把“我会什么”全部堆出来，而是帮助合作方快速判断：你的需求属于哪种服务、从什么预算开始、适不适合继续往下聊。
+        </p>
+
+        <div class="columns-2" id="serviceCards"></div>
+
+        <div class="service-detail" id="serviceDetail">
+          <h3>AI 视觉短视频与传播内容</h3>
+          <p>
+            适用于品牌传播、企业形象、活动预热与社交媒体内容开发。可负责脚本梳理、视觉风格测试、AI 生成与出片整理。
+          </p>
+          <ul>
+            <li>适合品牌、活动、企业传播与轻量营销内容</li>
+            <li>适合低门槛快速起步，也适合长期系列合作</li>
+            <li>可作为视觉提案、测试样片或正式传播内容</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="eyebrow">Pricing Snapshot</div>
+        <h2 class="section-title">参考报价概览</h2>
+        <p class="section-intro">
+          先给出一个可理解的价格分层。详细逻辑建议后续再放进 `pricing-policy` 页面中解释。
+        </p>
+
+        <div class="pricing-grid">
+          <div class="price-tier">
+            <h3>Entry / 低门槛入口</h3>
+            <p>适合先开始合作、先看方向、先做轻量服务。</p>
+            <div class="price-list">
+              <div class="price-item">
+                <strong>15 秒 AI 视觉短视频 — ¥1000 起</strong>
+                <span>适合抖音 / 小红书 / 活动预热 / 品牌测试</span>
+              </div>
+              <div class="price-item">
+                <strong>项目咨询 — ¥300–500 / 30 分钟</strong>
+                <span>适合快速判断方向与可行性</span>
+              </div>
+              <div class="price-item">
+                <strong>作品集 / 创作咨询 — ¥200 / 30 分钟</strong>
+                <span>适合学生、申请与创作结构梳理</span>
+              </div>
+              <div class="price-item">
+                <strong>工程诊断轻服务 — ¥800 起</strong>
+                <span>适合工程结构检查、问题定位与建议</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-tier">
+            <h3>Standard / 主力服务</h3>
+            <p>适合大多数真实合作与项目开发。</p>
+            <div class="price-list">
+              <div class="price-item">
+                <strong>15–30 秒 AI 视频 — ¥2500 起</strong>
+                <span>含基础镜头组织与节奏处理</span>
+              </div>
+              <div class="price-item">
+                <strong>单条视觉内容开发 — ¥3000 起</strong>
+                <span>适合舞台、空间、loop 与背景内容</span>
+              </div>
+              <div class="price-item">
+                <strong>概念视觉 / moodboard / 风格探索 — ¥1500–3000</strong>
+                <span>适合前期方向判断与提案支持</span>
+              </div>
+              <div class="price-item">
+                <strong>半天工作坊 — ¥4000–6000 起</strong>
+                <span>适合 AI 视觉、数字展览、XR 基础入门</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-tier">
+            <h3>Premium / 高价值项目</h3>
+            <p>复杂度高、容错低、版本重或交付压力大的项目。</p>
+            <div class="price-list">
+              <div class="price-item">
+                <strong>Opening Visual — ¥8000–30000+</strong>
+                <span>演唱会、发布会、live set 核心段落</span>
+              </div>
+              <div class="price-item">
+                <strong>双目 / XR 样片 — ¥5000 起</strong>
+                <span>适合 proof of concept 与方向验证</span>
+              </div>
+              <div class="price-item">
+                <strong>双目演出背景 / Apple Vision Pro 内容 — ¥8000–40000+</strong>
+                <span>取决于平台、格式、时长与展示条件</span>
+              </div>
+              <div class="price-item">
+                <strong>数字展览 / 展示系统 — ¥8000 起</strong>
+                <span>含展品分类、页面结构与公开入口组织</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-intro" style="margin-top: 22px;">
+          以上为参考起步区间。最终报价通常会根据内容复杂度、版本数量、修改轮次、平台要求、展示场景、是否需要现场配合与版权范围进行调整。
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">为什么找我合作</h2>
+        <p class="section-intro">
+          我不是只做图，也不是只讲概念。我更适合那些需要把视觉、空间、结构、版本和交付一起做起来的项目。
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <h4>作品与服务并行</h4>
+            <p>既有作品线，也能把能力整理成可购买、可交付的服务结构。</p>
+          </div>
+          <div class="why-card">
+            <h4>懂结构，不只做画面</h4>
+            <p>会处理视觉内容、项目版本、展示逻辑与交付流程，而不只是单张视觉效果。</p>
+          </div>
+          <div class="why-card">
+            <h4>适合复杂但需要清楚的人</h4>
+            <p>尤其适合舞台、空间、双目 / XR、数字展览和 workflow 不清的项目。</p>
+          </div>
+          <div class="why-card">
+            <h4>兼顾艺术感与落地性</h4>
+            <p>既能保持风格和表达，也会考虑预算、版本、平台、屏幕比例与真实交付。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-intro">
+          这部分先解决最容易反复来回沟通的问题。完整 FAQ 后续还可以单独拆页。
+        </p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">你主要接什么类型的项目？<span>+</span></button>
+            <div class="faq-answer">
+              目前主要接：AI 视觉短视频、舞台视觉、空间影像、双目 / Apple Vision Pro / XR 内容、数字展览与展示系统、工程调试与内容整理、课程和工作坊。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">如果我不知道自己要买什么服务，怎么办？<span>+</span></button>
+            <div class="faq-answer">
+              可以先发项目简介，我会先帮你判断更适合从咨询、测试样片、视觉开发、完整制作、工程诊断还是展示系统整理开始。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">双目 / XR 内容为什么一般建议先做测试版？<span>+</span></button>
+            <div class="faq-answer">
+              因为这类项目不仅是“做一个视频”，还涉及平台格式、分辨率、观看方式、空间环境与内容结构。先做 proof of concept 往往能更稳地确认方向和预算。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">你能帮忙看别人做了一半的工程吗？<span>+</span></button>
+            <div class="faq-answer">
+              可以。这类合作适合归到工程整理、workflow 咨询、内容结构诊断或视觉系统优化。你可以先发工程截图、当前问题和时间预算。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">你会先免费试做吗？<span>+</span></button>
+            <div class="faq-answer">
+              一般不会直接免费做完整内容。但对某些值得推进的项目，可以先从较小的测试样片、咨询或提案包开始，先确认合作方向。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="eyebrow">Contact / Inquiry</div>
+        <h2 class="section-title">提交合作咨询</h2>
+        <p class="section-intro">
+          这一版先做成轻量表单。后续你可以把它接到 Formspree、Netlify Forms、Tally 或私有 endpoint。
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>How to Reach Me</h3>
+            <p>
+              当前优先通过小红书私信与业务邮箱联系。  
+              暂不公开微信号和手机号，主要是为了减少无效打扰与隐私风险。
+            </p>
+
+            <div class="contact-list">
+              <a href="https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e" target="_blank" rel="noreferrer">
+                小红书私信 / Preferred Contact
+              </a>
+              <a href="mailto:qianewan@gmail.com">
+                qianewan@gmail.com
+              </a>
+              <div>
+                建议首次联系时说明：项目类型、用途、时长 / 规模、预算范围、时间节点、是否已有素材 / 工程。
+              </div>
+            </div>
+          </div>
+
+          <div class="form-panel">
+            <h3>Project Inquiry Form</h3>
+            <p>
+              当前为前端演示版本。你后续可以把表单提交动作接到 Formspree 或自定义服务。
+            </p>
+
+            <form id="inquiryForm">
+              <div class="field-grid">
+                <label>
+                  Name
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+              </div>
+
+              <div class="field-grid">
+                <label>
+                  Project Type
+                  <select name="projectType" required>
+                    <option value="">Select a category</option>
+                    <option>AI 视觉短视频 / Brand Content</option>
+                    <option>舞台视觉 / Opening Visual</option>
+                    <option>空间影像 / 沉浸式内容</option>
+                    <option>双目 / Apple Vision Pro / XR</option>
+                    <option>数字展览 / 展示系统</option>
+                    <option>工程调试 / Workflow 咨询</option>
+                    <option>课程 / 培训 / 工作坊</option>
+                    <option>Other / 其他</option>
+                  </select>
+                </label>
+
+                <label>
+                  Budget Range
+                  <select name="budgetRange">
+                    <option value="">Select a range</option>
+                    <option>¥1000–3000</option>
+                    <option>¥3000–8000</option>
+                    <option>¥8000–20000</option>
+                    <option>¥20000+</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="field-grid">
+                <label>
+                  Timeline
+                  <input type="text" name="timeline" placeholder="e.g. within 2 weeks / next month" />
+                </label>
+                <label>
+                  Existing Assets
+                  <select name="assets">
+                    <option value="">Select</option>
+                    <option>已有脚本 / Script ready</option>
+                    <option>已有素材 / Assets ready</option>
+                    <option>已有工程 / Project file ready</option>
+                    <option>还没有，需要从头梳理</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Message
+                <textarea name="message" placeholder="Tell me what you want to make, where it will be used, and what kind of result you hope to get." required></textarea>
+              </label>
+
+              <button class="button primary" type="submit">Submit Inquiry</button>
+              <div class="form-note">
+                当前版本为前端演示。提交后会先生成一条本地确认信息。后续请将 submit handler 接到 Formspree / Netlify Forms / Tally / 自定义 endpoint。
+              </div>
+              <div class="form-note" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Ewan Qian / VIRTURA. This website is a portfolio, service reader, and inquiry entry for ongoing works, commissions, and collaborations.
+    </div>
+  </footer>
+
+  <script>
+    const services = [
+      {
+        title: "AI 视觉短视频与传播内容",
+        meta: "¥1000 起 / 低门槛入口 / 适合品牌与企业",
+        desc: "适用于品牌传播、企业形象、活动预热与社交媒体内容开发。",
+        detail: "我可以负责脚本方向梳理、视觉风格测试、AI 图像与视频生成、基础镜头与节奏组织，以及短内容的出片测试。这类服务适合快速启动，也适合后续做成连续更新的内容合作。",
+        bullets: [
+          "15 秒短视频、活动预热、企业形象与社媒内容",
+          "适合从小预算测试版开始",
+          "适合长期内容服务与系列合作"
+        ]
+      },
+      {
+        title: "舞台视觉 / Opening Visual / 演出背景",
+        meta: "¥3000 起 / 主力服务 / 高价值项目可上浮",
+        desc: "适用于艺人演出、开场视觉、曲目视觉、live set 背景和发布会内容。",
+        detail: "这类项目更强调段落结构、节奏控制、屏幕比例与现场容错率。尤其开场视觉和关键段落内容，通常不会只按秒数计价，而会综合项目重要性、版本数和演出语境来评估。",
+        bullets: [
+          "开场视觉 / 曲目视觉 / live set 背景",
+          "适合演唱会、巡演、音乐节与活动现场",
+          "兼顾视觉完成度与交付稳定性"
+        ]
+      },
+      {
+        title: "空间影像 / 沉浸式内容 / 投影项目",
+        meta: "¥5000 起 / 空间与多版本适配",
+        desc: "适用于投影空间、多面屏、环幕、展厅内容与沉浸式展示。",
+        detail: "这类项目重点不是单一画面，而是内容如何进到空间里。包括多屏适配、投影逻辑、环境风格、内容版本和展示入口的组织。",
+        bullets: [
+          "投影、异形屏、环幕、多面空间",
+          "适合品牌空间、展厅、沉浸式展示",
+          "适合需要多版本适配的项目"
+        ]
+      },
+      {
+        title: "双目 / Apple Vision Pro / XR",
+        meta: "¥5000 起 / 样片优先 / 高潜力方向",
+        desc: "适用于双目影像、空间观看、Apple Vision Pro 内容与 XR 展示项目。",
+        detail: "我会把双目 / stereo 内容、数字环境和空间观看方式一起考虑。这类项目建议先从测试版或 proof of concept 开始，先确认平台、格式、环境风格与观看效果，再决定是否进入完整交付。",
+        bullets: [
+          "双目视频、空间观看与数字环境",
+          "适合演出背景、样片开发与展示内容",
+          "建议先从小样或测试版开始"
+        ]
+      },
+      {
+        title: "数字展览 / 展示系统 / 线上专展",
+        meta: "¥5000 起 / 策展 + 页面 + 展示入口",
+        desc: "适用于艺术家线上专展、数字展览、作品整理与展示系统搭建。",
+        detail: "这里不只是搭页面，更包括展品分类、文案整理、观看路径、展示入口、归档和后续可持续阅读结构。适合已经有作品，但还没有清晰展示系统的合作方。",
+        bullets: [
+          "线上专展、数字展览、作品展示页",
+          "展品分类、文案与结构组织",
+          "适合艺术家、机构、独立项目"
+        ]
+      },
+      {
+        title: "工程调试 / workflow 咨询 / 培训",
+        meta: "¥800 起 / 轻服务入口 / 可持续合作",
+        desc: "适用于工程整理、内容结构诊断、方法咨询、课程与工作坊。",
+        detail: "如果你已经有工程、内容或项目，但结构混乱、交付不稳或流程不清，这类服务会比重做整个项目更高效。对院校、机构和团队，也可以转化为课程、讲座与训练合作。",
+        bullets: [
+          "工程调试、workflow 优化、内容整理",
+          "课程、工作坊、咨询与训练合作",
+          "适合先从诊断或咨询开始"
+        ]
+      }
+    ];
+
+    const serviceCards = document.getElementById("serviceCards");
+    const serviceDetail = document.getElementById("serviceDetail");
+
+    services.forEach((service, index) => {
+      const card = document.createElement("article");
+      card.className = "service-card" + (index === 0 ? " active" : "");
+      card.innerHTML = `
+        <h3>${service.title}</h3>
+        <p>${service.desc}</p>
+        <div class="service-meta">${service.meta}</div>
+      `;
+      card.addEventListener("click", () => {
+        document.querySelectorAll(".service-card").forEach(el => el.classList.remove("active"));
+        card.classList.add("active");
+        serviceDetail.innerHTML = `
+          <h3>${service.title}</h3>
+          <p>${service.detail}</p>
+          <ul>${service.bullets.map(item => `<li>${item}</li>`).join("")}</ul>
+        `;
+      });
+      serviceCards.appendChild(card);
+    });
+
+    document.querySelectorAll(".faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        item.classList.toggle("open");
+      });
+    });
+
+    const inquiryForm = document.getElementById("inquiryForm");
+    const formStatus = document.getElementById("formStatus");
+
+    inquiryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = new FormData(inquiryForm);
+      const name = data.get("name");
+      const email = data.get("email");
+      const projectType = data.get("projectType");
+      const budgetRange = data.get("budgetRange");
+      const timeline = data.get("timeline");
+      const message = data.get("message");
+
+      formStatus.textContent =
+        `Thanks, ${name}. Your inquiry is ready. In the next step, connect this form to Formspree / Netlify Forms / your own endpoint. Current captured fields: ${projectType || "N/A"} / ${budgetRange || "N/A"} / ${timeline || "N/A"}.`;
+
+      console.log("Inquiry captured:", {
+        name,
+        email,
+        projectType,
+        budgetRange,
+        timeline,
+        message
+      });
+
+      inquiryForm.reset();
+    });
+  </script>
+</body>
+</html>
