@@ -17,6 +17,22 @@
 
 ---
 
+## Public Viewing Links / 公开观看入口
+
+### Timer
+- [Bilibili｜TIMER 控时者 Pt.1](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+
+### 滴流 Drop Flow
+- [项目页](../projects/drop-flow-visual-2025.md)
+- [Bilibili｜滴流 Drop Flow | 上海 UFO Terminal 未知终端](https://www.bilibili.com/video/BV1PREczgEzC/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+- [Bilibili｜DROPFLOW 2 AUDIOVISUAL in Rooooooom719 排练现场](https://www.bilibili.com/video/BV1HZgBzWEre/?spm_id_from=333.1387.homepage.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+
+### Kashiwa Daisuke
+- [系列页](./kashiwa-daisuke/)
+- [深圳 BO LIVE 档案](./kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md)
+
+---
+
 ## 团队仓库
 
 Timer和滴流系列的完整文档请参考 [团队仓库 Works](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works)

@@ -8,15 +8,39 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ---
 
-## Read This First
+## Social / Platforms
 
-如果你第一次进入这里，建议按下面的顺序阅读：
+- [Instagram](https://www.instagram.com/ewanqian/)
+- [Bilibili](https://space.bilibili.com/2380485)
+- [Xiaohongshu](https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e)
+- [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
+- [GitHub](https://github.com/ewanqian)
+- [Portfolio](https://ewanqian.github.io/portfolio)
 
-- 想先理解我的整体实践：看 **[Artist Practice Map](#artist-practice-map)**
-- 想快速看代表作品：看 **[Selected Works](#selected-works)**
-- 想理解我最近几年的研究升级：看 **[Current Directions](#current-directions)**
-- 想看写作与研究文本：看 **[Writing & Research](#writing--research)**
-- 想看更完整的项目与履历：看 **[Projects / Credits](#projects--credits)**
+---
+
+## Start Here
+
+- 想快速看代表作品：看 **[Featured Works](#featured-works)**
+- 想看完整项目履历：看 **[Projects / Credits](#projects--credits)**
+- 想理解我近年的创作方向：看 **[Current Directions](#current-directions)**
+- 想阅读研究与写作：看 **[Writing & Research](#writing--research)**
+
+---
+
+## Featured Works
+
+### Drop Flow
+围绕空间生成、沉浸式大屏、身体表演与图像离开屏幕展开的系列实践，是我近年关于空间叙事与感知迁移的重要作品线之一。  
+[项目页](./projects/drop-flow-visual-2025.md) · [Bilibili 演出现场](https://www.bilibili.com/video/BV1PREczgEzC/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032) · [Bilibili 排练现场](https://www.bilibili.com/video/BV1HZgBzWEre/?spm_id_from=333.1387.homepage.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+
+### TIMER
+围绕时间结构、音画关系与感知节奏展开的系列实践，持续处理声音如何进入图像内部并重新组织观看经验。  
+[系列入口](./visual-arts/README.md) · [Bilibili](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+
+### Kashiwa Daisuke 深圳专场《机械光合：TITAN的全息声林》
+与 Kashiwa Daisuke / Yuki Murata 合作的现场视听项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。  
+[完整档案](./visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md) · [项目页](./projects/kashiwa-titan-visual-2025.md) · [微信文章](https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g) · [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
 
 ---
 
@@ -75,6 +99,21 @@ His work has been presented in Shanghai, Shenzhen, Chongqing, and Tokyo. Public 
 ## Current Directions
 
 过去几年，我的工作逐渐从"影像制作"转向"感知结构设计"。如果用更清楚的方式概括，目前主要在推进以下几个方向：
+
+### 近期实践转向：Web-first / MR-optional
+
+我当前的实践重点已从"设备导向的空间计算展示"调整为：**先做 web-first 的交互出版物、训练模拟器与项目推演系统，MR / 头显仅作为成熟系统后的可选展示层**。
+
+这一调整基于以下判断：
+- 人们首先需要"把事情搞清楚"，然后才是"把事情沉浸化"
+- 网页端更低摩擦、更易传播、更易版本化、更易被 Agent 索引和引用
+- 感知迁移首先是一种内容组织方式，而不是设备选择
+
+当前优先推进：
+1. **P0：网页端交互出版物 / 节点化阅读器**
+2. **P1：训练模拟器 / 智力装备**
+3. **P2：项目推演器 / Digital Library 与 Digital Stage 的工具层**
+4. **P3：MR / 空间计算展示层（可选）**
 
 ### Spatial Consciousness Transfer
 我关心观众如何在空间中经历一种状态的转换。这种转换不是叙事意义上的"理解"，而是感知层面的重新定位、重新分布与重新组织。

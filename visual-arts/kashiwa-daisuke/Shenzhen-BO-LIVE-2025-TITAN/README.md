@@ -1,5 +1,22 @@
 # 深圳 BO LIVE 2025 — Visual Art / Audiovisual Performance
 
+---
+
+- [返回 Kashiwa 系列页](../README.md)
+- [返回项目页](../../../projects/kashiwa-titan-visual-2025.md)
+- [返回首页](../../../README.md)
+- [ManaMana 主页](https://www.manamana.net/peopleCenter/432894/home#!zh)
+
+---
+
+## External Links / 外部公开资料
+
+- [微信文章 1](https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g)
+- [微信文章 2](https://mp.weixin.qq.com/s/Y5K6bm4jVqjb5uQn0KDJ9A)
+- [ManaMana 主页](https://www.manamana.net/peopleCenter/432894/home#!zh)
+
+---
+
 **Project Title**  
 **Mechanical Photosynthesis: TITAN’s Holographic Sound Forest** (机械光合：TITAN的全息声林)  
 *KASHIWA Daisuke x Yuki Murata x Ewan Qian Audiovisual Performance Special*
@@ -28,7 +45,8 @@ BO LIVE, Shenzhen, China
 
 ### 01. Lead
 - **Format:** Moving image / live visual
-- **Notes:** To be updated
+- **Notes:** Audiovisual opening section for the BO LIVE performance, establishing the white-space depth and atmospheric entrance of the set.
+- **External Preview:** [ManaMana](https://www.manamana.net/video/detail?id=2831761#!zh)
 - **Preview:** `./01-Lead/`
 
 ### 02. Green
@@ -48,7 +66,8 @@ BO LIVE, Shenzhen, China
 
 ### 05. Whitenight
 - **Format:** Moving image / live visual
-- **Notes:** To be updated
+- **Notes:** A more suspended and luminous section, emphasizing spatial diffusion, slow transition, and immersive white atmosphere.
+- **External Preview:** [ManaMana](https://www.manamana.net/video/detail?id=2831703#!zh)
 - **Preview:** `./05-Whitenight/`
 
 ### 06. Amb
@@ -57,6 +76,7 @@ BO LIVE, Shenzhen, China
   A highly atmospheric and ambient visual direction.  
   This work moved away from more aggressive and direct audio-analysis logic, and instead pursued a floating, healing, and almost transcendent feeling.
   （高氛围 ambient 视觉方向。远离激进的音频分析逻辑，追求漂浮、治愈、几乎超然的感觉。）
+- **External Preview:** [ManaMana](https://www.manamana.net/video/detail?id=2831826#!zh)
 - **Preview:** `./06-Amb/`
 
 ### 07. Rose
@@ -66,7 +86,8 @@ BO LIVE, Shenzhen, China
 
 ### 08. Titan
 - **Format:** Moving image / live visual
-- **Notes:** To be updated
+- **Notes:** Core audiovisual section connected to the TITAN atmosphere, combining spatial pressure, depth illusion, and sonic architecture.
+- **External Preview:** [ManaMana](https://www.manamana.net/video/detail?id=2831892#!zh)
 - **Preview:** `./08-Titan/`
 
 ### 09. Phantom

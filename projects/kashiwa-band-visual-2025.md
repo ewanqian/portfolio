@@ -15,6 +15,18 @@
 
 ---
 
-## 我做了什么
+## 项目说明
 
-- 舞台视觉内容全案制作
+这是 Kashiwa Daisuke 乐队在 Can Festival 的现场视觉项目，延续了我在音画结构、氛围段落与空间生成方面的工作方式。相较于深圳 BO LIVE 专场，这一场更偏向乐队现场语境中的视觉推进与段落控制。
+
+## 外部公开资料
+
+- [ManaMana 主页](https://www.manamana.net/peopleCenter/432894/home#!zh)
+- [01 Phantom](https://www.manamana.net/video/detail?id=2831944#!zh)
+- [02 Ice](https://www.manamana.net/video/detail?id=2831960#!zh)
+
+## Related Links
+
+- [返回 Kashiwa 系列总页](../visual-arts/kashiwa-daisuke/README.md)
+- [返回项目总表](./README.md)
+- [返回首页](../README.md)
