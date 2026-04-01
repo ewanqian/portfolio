@@ -90,8 +90,8 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.9);
-      border-bottom: 1px solid rgba(22,22,22,0.07);
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
     }
 
     .topbar-inner {
@@ -100,6 +100,7 @@
       justify-content: space-between;
       gap: 20px;
       min-height: 64px;
+      position: relative;
     }
 
     .brand {
@@ -107,13 +108,6 @@
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
     }
 
     .nav a {
@@ -150,6 +144,82 @@
 
     html.dark .theme-toggle:hover {
       border-color: rgba(255,255,255,0.3);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+      transition: 0.18s ease;
+    }
+
+    .menu-toggle:hover {
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,0.22);
+    }
+
+    html.dark .menu-toggle:hover {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 14px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.22s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      transform: rotate(-45deg) translate(3px, -3px);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: flex;
+      }
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 160px;
+      }
+      .nav.open {
+        display: flex;
+      }
+      .nav a {
+        padding: 6px 8px;
+        width: 100%;
+      }
     }
 
     .theme-toggle .icon-moon {
@@ -281,15 +351,19 @@
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.75);
+      background: var(--panel);
       transition: 0.18s ease;
     }
 
     .social-pill:hover {
-      background: white;
+      background: var(--panel);
       border-color: rgba(22,22,22,0.22);
       color: var(--text);
       transform: translateY(-1px);
+    }
+
+    html.dark .social-pill:hover {
+      border-color: rgba(255,255,255,0.3);
     }
 
     .hero-image {
@@ -790,20 +864,26 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">Ewan Qian / Portfolio</div>
-      <nav class="nav">
-        <a href="#works">Works</a>
-        <a href="#services">Services</a>
-        <a href="./services/project-types.html">Categories</a>
-        <a href="./services/pricing-policy.html">Pricing</a>
-        <a href="./services/faq.html">FAQ</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="icon-moon"/>
-            <circle cx="12" cy="12" r="5" class="icon-sun"/>
-          </svg>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
         </button>
-      </nav>
+        <nav class="nav" id="navMenu">
+          <a href="#works">Works</a>
+          <a href="#services">Services</a>
+          <a href="./services/project-types.html">Categories</a>
+          <a href="./services/pricing-policy.html">Pricing</a>
+          <a href="./services/faq.html">FAQ</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="icon-moon"/>
+              <circle cx="12" cy="12" r="5" class="icon-sun"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -1469,6 +1549,22 @@
       const isDark = html.classList.contains('dark');
       setTheme(!isDark);
     });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('open');
+      });
+
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('open');
+        });
+      });
+    }
 
     (function initTheme() {
       const saved = localStorage.getItem('theme');
