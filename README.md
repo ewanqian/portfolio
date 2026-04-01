@@ -32,12 +32,6 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ---
 
-<p align="center">
-  <img src="./assets/home/hero-dropflow-ufo-2025.jpeg" alt="Drop Flow in UFO Terminal" style="max-width: 1100px; width: 100%; border-radius: 10px;" />
-</p>
-
----
-
 ## Featured Works
 
 ### Drop Flow
@@ -60,13 +54,6 @@ VIRTURA（纬图）去中心化艺术团队成员
 <img src="./assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa Daisuke audiovisual performance at BO LIVE Shenzhen" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [完整档案](./visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md) · [项目页](./projects/kashiwa-titan-visual-2025.md) · [微信文章](https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g) · [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
-
-### 观察与共生
-扫描空间、点云环境、数字采样、观察与共生，处理数字空间中的生命感、破碎感与未完成状态。  
-
-<img src="./assets/home/featured-perceptual-environments.jpg" alt="Observation and Symbiosis" style="max-width: 720px; width: 100%; border-radius: 8px;" />
-
-[代表作品](./visual-arts/perceptual-environments/README.md) · [以太碎片西岸艺博会](./projects/ether-fragment-exhibit-2023.md)
 
 ---
 
@@ -112,6 +99,8 @@ VIRTURA（纬图）去中心化艺术团队成员
 ---
 
 ## Short Bio
+
+<img src="./assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" width="260" style="border-radius: 10px; float: right; margin: 0 0 20px 20px;" />
 
 钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，长期围绕时间结构、空间生成、音画关系与感知迁移展开实践。其作品与合作项目已在上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、沉浸式空间、扫描环境与数字媒介系统。
 
