@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/home/landing-portrait.jpg" alt="Landing portrait" style="max-width: 1100px; width: 100%; border-radius: 10px;" />
+</p>
+
 # 钱誉文 Ewan Qian
 
 ## Media Artist / Spatial Image Creator / Live Visual Producer
@@ -39,14 +43,14 @@ VIRTURA（纬图）去中心化艺术团队成员
 ### Drop Flow
 围绕空间生成、沉浸式大屏、身体表演与图像离开屏幕展开的系列实践，是我近年关于空间叙事与感知迁移的重要作品线之一。  
 
-<img src="./assets/home/featured-dropflow-hangzhou-biennale-scene.jpg" alt="Drop Flow at Hangzhou Biennale" style="max-width: 720px; width: 100%; border-radius: 8px;" />
+<img src="./assets/home/featured-dropflow-main.jpg" alt="Drop Flow main" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [系列入口](./visual-arts/drop-flow-series/README.md) · [项目页](./projects/drop-flow-visual-2025.md) · [Bilibili 演出现场](https://www.bilibili.com/video/BV1PREczgEzC/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032) · [Bilibili 排练现场](https://www.bilibili.com/video/BV1HZgBzWEre/?spm_id_from=333.1387.homepage.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
 ### TIMER
 围绕时间结构、音画关系与感知节奏展开的系列实践，持续处理声音如何进入图像内部并重新组织观看经验。  
 
-<img src="./assets/home/featured-timer-visionpro.jpg" alt="Timer in Apple Vision Pro" style="max-width: 720px; width: 100%; border-radius: 8px;" />
+<img src="./assets/home/featured-timer-main.jpg" alt="Timer main" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [系列入口](./visual-arts/timer-series/README.md) · [Bilibili](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
@@ -56,6 +60,13 @@ VIRTURA（纬图）去中心化艺术团队成员
 <img src="./assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa Daisuke audiovisual performance at BO LIVE Shenzhen" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [完整档案](./visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md) · [项目页](./projects/kashiwa-titan-visual-2025.md) · [微信文章](https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g) · [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
+
+### 观察与共生
+扫描空间、点云环境、数字采样、观察与共生，处理数字空间中的生命感、破碎感与未完成状态。  
+
+<img src="./assets/home/featured-perceptual-environments.jpg" alt="Observation and Symbiosis" style="max-width: 720px; width: 100%; border-radius: 8px;" />
+
+[代表作品](./visual-arts/perceptual-environments/README.md) · [以太碎片西岸艺博会](./projects/ether-fragment-exhibit-2023.md)
 
 ---
 
@@ -96,9 +107,11 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ---
 
-## Short Bio
+<img src="./assets/home/about-ewan-intro.jpg" alt="Ewan intro" style="max-width: 520px; width: 100%; border-radius: 8px;" />
 
-<img src="./assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" width="260" style="border-radius: 10px; float: right; margin: 0 0 20px 20px;" />
+---
+
+## Short Bio
 
 钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，长期围绕时间结构、空间生成、音画关系与感知迁移展开实践。其作品与合作项目已在上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、沉浸式空间、扫描环境与数字媒介系统。
 
