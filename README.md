@@ -55,6 +55,32 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ---
 
+## Practice Lines / 作品主线
+
+我的实践可以理解为五条相互关联的主线，它们分别从不同角度处理空间、时间、感知与技术的关系：
+
+### 1. TIMER / 时间结构
+围绕时间结构、音画关系与感知节奏展开的系列实践，持续处理声音如何进入图像内部并成为组织材料。  
+[代表作品](./visual-arts/timer-series/README.md)
+
+### 2. Drop Flow / 空间生成
+围绕空间生成、沉浸式图像、身体表演与图像离开屏幕展开，不只是画面，而是图像如何与空间、身体和观看关系一起工作。  
+[代表作品](./visual-arts/drop-flow-series/README.md)
+
+### 3. Perceptual Environments / 扫描与数字环境
+扫描空间、点云环境、数字采样、观察与共生，处理数字空间中的生命感、破碎感与未完成状态。  
+[代表作品](./visual-arts/perceptual-environments/README.md)
+
+### 4. Audiovisual Collaborations / 现场合作与舞台结构
+与音乐人、现场演出、展览空间的合作，探索现场语境中视觉如何从背景走向结构。  
+[代表作品](./visual-arts/kashiwa-daisuke/README.md)
+
+### 5. Perceptual Migration / 感知迁移与接口研究
+不是单一作品，而是一系列关于作品如何跨设备、跨界面、跨空间迁移的研究与实践。  
+[相关写作与研究](#writing--research)
+
+---
+
 ## Short Bio
 
 钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，长期围绕时间结构、空间生成、音画关系与感知迁移展开实践。其作品与合作项目已在上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、沉浸式空间、扫描环境与数字媒介系统。
