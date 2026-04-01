@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Policy / 报价逻辑 — Ewan Qian Portfolio</title>
+  <meta name="description" content="说明报价的基本原则：为什么不同项目差异很大，哪些因素会影响报价，为什么开场视觉更贵，为什么双目内容建议先做测试。" />
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #fbfaf7;
+      --text: #161616;
+      --muted: #626262;
+      --line: rgba(22, 22, 22, 0.12);
+      --accent: #111111;
+      --accent-2: #efede7;
+      --max: 1180px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.06);
+    }
+
+    html.dark {
+      --bg: #121212;
+      --panel: #1a1a1a;
+      --text: #f0f0f0;
+      --muted: #a0a0a0;
+      --line: rgba(255, 255, 255, 0.15);
+      --accent: #f0f0f0;
+      --accent-2: #2a2a2a;
+      --shadow: 0 18px 50px rgba(0,0,0,0.4);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 244, 239, 0.82);
+      border-bottom: 1px solid rgba(22,22,22,0.07);
+    }
+
+    html.dark .header {
+      background: rgba(18, 18, 18, 0.82);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 64px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      border-bottom-color: var(--muted);
+    }
+
+    .theme-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.18s ease;
+      padding: 0;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,0.22);
+    }
+
+    html.dark .theme-toggle:hover {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    html.dark .theme-toggle .icon-moon {
+      display: block;
+    }
+
+    html.dark .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      transition: 0.18s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .page-title {
+      font-size: clamp(32px, 5vw, 42px);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .page-intro {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 800px;
+    }
+
+    .policy-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .policy-card h2 {
+      font-size: 24px;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .policy-card p {
+      color: var(--muted);
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+
+    .policy-card ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .policy-card li {
+      margin-bottom: 4px;
+    }
+
+    .question-card {
+      background: var(--accent-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .question-card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .links-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.18s ease;
+      cursor: pointer;
+    }
+
+    html.dark .button {
+      background: var(--panel);
+      color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,0.22);
+    }
+
+    html.dark .button:hover {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .pricing-category {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .category-tag {
+      background: rgba(22,22,22,0.06);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    html.dark .category-tag {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .category-tag strong {
+      color: var(--text);
+      display: block;
+    }
+
+    .category-tag span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      margin-top: 48px;
+    }
+
+    @media (max-width: 760px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-category {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 32px 0;
+      }
+
+      .policy-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">Services / Pricing</div>
+      <nav class="nav">
+        <a href="../index.html">← Back to Home</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="icon-moon"/>
+            <circle cx="12" cy="12" r="5" class="icon-sun"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <a href="../index.html#pricing" class="back-link">← 返回首页 / 参考报价概览</a>
+
+      <h1 class="page-title">Pricing Policy / 报价逻辑</h1>
+      <p class="page-intro">
+        这个页面不是为了把所有项目都写成一口价，而是帮助合作方理解：为什么不同项目的报价差异会很大，以及我通常如何判断一个项目该怎么报价。
+      </p>
+
+      <div class="policy-card">
+        <h2>基本原则</h2>
+        <p>我的报价通常不是只按"时长"来算，而是综合以下因素：</p>
+        <ul>
+          <li>内容复杂度</li>
+          <li>版本数量</li>
+          <li>修改轮次</li>
+          <li>交付压力</li>
+          <li>展示场景</li>
+          <li>是否需要现场配合</li>
+          <li>版权与使用范围</li>
+          <li>是否需要前期提案 / 测试样片 / 系统整理</li>
+        </ul>
+        <p style="margin-top: 16px;">所以同样都是"一个视频"，价格可能差很多。因为短视频、开场视觉、双目内容、空间投影、工程调试，本质上不是同一种工作。</p>
+      </div>
+
+      <div class="question-card" id="opening-visual">
+        <h3>为什么开场视觉通常更贵</h3>
+        <p>开场视觉 / Opening Visual 一般比普通短视频贵，原因包括：</p>
+        <ul>
+          <li>它通常承担项目第一印象</li>
+          <li>节奏和结构要求更高</li>
+          <li>对舞台 / 演出现场容错率要求更低</li>
+          <li>需要兼顾视觉完成度与演出系统</li>
+          <li>常常不是一个"片段"，而是一个关键段落</li>
+        </ul>
+        <p style="margin-top: 12px;">所以这类项目通常不会按"秒数"简单报价，而会按重要性、结构复杂度、版本需求、演出语境来综合判断。</p>
+      </div>
+
+      <div class="question-card" id="xr-test">
+        <h3>为什么双目 / XR 内容通常建议先做测试版</h3>
+        <p>双目、Apple Vision Pro、XR 内容价格通常更高，因为它不只是"再做一个视频"，而是额外包含：</p>
+        <ul>
+          <li>平台格式判断</li>
+          <li>双目 / stereo 内容结构</li>
+          <li>观看方式与环境适配</li>
+          <li>数字环境与空间感设计</li>
+          <li>更强的测试与版本确认成本</li>
+        </ul>
+        <p style="margin-top: 12px;">这类项目如果前期判断不清，很容易返工，所以通常建议先从测试样片、小规模 proof of concept、方向确认开始。</p>
+      </div>
+
+      <div class="question-card" id="engineering">
+        <h3>为什么工程调试按小时或按次更合适</h3>
+        <p>工程调试、workflow 咨询、内容结构整理这类服务，不太适合按成片时长报价。更合理的方式通常是：</p>
+        <ul>
+          <li>按小时</li>
+          <li>按次</li>
+          <li>按项目诊断范围</li>
+        </ul>
+        <p style="margin-top: 12px;">因为客户买的不是"片长"，而是你的判断、你的经验、你帮他减少返工和混乱的能力。</p>
+      </div>
+
+      <div class="policy-card">
+        <h2>我的动态报价逻辑</h2>
+
+        <h3 style="font-size: 18px; margin: 20px 0 10px;">适合固定起价的</h3>
+        <div class="pricing-category">
+          <div class="category-tag">
+            <strong>15 秒内 AI 短视频</strong>
+            <span>固定起步价</span>
+          </div>
+          <div class="category-tag">
+            <strong>咨询 / 课程讨论</strong>
+            <span>按时间收费</span>
+          </div>
+          <div class="category-tag">
+            <strong>单次讲座</strong>
+            <span>固定费用</span>
+          </div>
+          <div class="category-tag">
+            <strong>半天 / 一天工作坊</strong>
+            <span>固定区间</span>
+          </div>
+        </div>
+
+        <h3 style="font-size: 18px; margin: 20px 0 10px;">适合区间报价的</h3>
+        <div class="pricing-category">
+          <div class="category-tag">
+            <strong>30 秒以上内容</strong>
+            <span>看复杂度</span>
+          </div>
+          <div class="category-tag">
+            <strong>开场视觉</strong>
+            <span>看重要性</span>
+          </div>
+          <div class="category-tag">
+            <strong>单曲视觉</strong>
+            <span>看段落数</span>
+          </div>
+          <div class="category-tag">
+            <strong>双目 / XR 内容</strong>
+            <span>看范围</span>
+          </div>
+          <div class="category-tag">
+            <strong>数字展览页面系统</strong>
+            <span>看展品量</span>
+          </div>
+          <div class="category-tag">
+            <strong>多屏 / 多版本项目</strong>
+            <span>看适配量</span>
+          </div>
+        </div>
+
+        <h3 style="font-size: 18px; margin: 20px 0 10px;">适合按项目单独报价</h3>
+        <div class="pricing-category">
+          <div class="category-tag">
+            <strong>沉浸式空间项目</strong>
+            <span>整体方案</span>
+          </div>
+          <div class="category-tag">
+            <strong>多段演出视觉</strong>
+            <span>整包报价</span>
+          </div>
+          <div class="category-tag">
+            <strong>系统化展示项目</strong>
+            <span>方案报价</span>
+          </div>
+          <div class="category-tag">
+            <strong>ARG / 数字叙事</strong>
+            <span>服务设计报价</span>
+          </div>
+          <div class="category-tag">
+            <strong>长期顾问合作</strong>
+            <span>月度/项目</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-card">
+        <h2>什么时候会涨价</h2>
+        <p>以下情况通常会提高报价：</p>
+        <ul>
+          <li>修改轮次明显增加</li>
+          <li>内容版本明显增加</li>
+          <li>时间非常赶</li>
+          <li>屏幕 / 空间条件复杂</li>
+          <li>需要到现场配合</li>
+          <li>需要额外适配多个平台</li>
+          <li>需要额外版权说明或更大范围使用</li>
+          <li>客户前期资料极度不完整，需要我补大量前期整理</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h2>什么时候可以更灵活</h2>
+        <p>以下情况我会更愿意给出更灵活的报价：</p>
+        <ul>
+          <li>长期合作</li>
+          <li>系列内容合作</li>
+          <li>能接受先做小样 / 测试版</li>
+          <li>项目目标明确、沟通高效</li>
+          <li>素材和方向准备完整</li>
+          <li>教育、研究或长期值得继续发展的项目</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h2>我通常建议的合作起点</h2>
+        <p>如果项目还比较模糊，我一般建议从这几种方式先开始：</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px;">
+          <div class="category-tag">
+            <strong>1. 咨询</strong>
+            <span>成本最低</span>
+          </div>
+          <div class="category-tag">
+            <strong>2. 提案包 / 样片</strong>
+            <span>降低返工</span>
+          </div>
+          <div class="category-tag">
+            <strong>3. 小规模试做</strong>
+            <span>彼此磨合</span>
+          </div>
+          <div class="category-tag">
+            <strong>4. 完整项目</strong>
+            <span>目标明确</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-card">
+        <h2>最后一句</h2>
+        <p>报价不是为了把合作变得僵硬，而是为了让合作双方都更清楚：</p>
+        <ul>
+          <li>你到底在买什么</li>
+          <li>我到底在交付什么</li>
+          <li>哪一部分是内容</li>
+          <li>哪一部分是判断</li>
+          <li>哪一部分是系统整理</li>
+        </ul>
+      </div>
+
+      <div class="links-section">
+        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">更多服务相关阅读</h3>
+        <div class="links-grid">
+          <a href="./project-types.html" class="button primary">
+            服务分类说明
+          </a>
+          <a href="./faq.html" class="button">
+            常见问题 FAQ
+          </a>
+          <a href="./case-notes.html" class="button">
+            案例说明
+          </a>
+          <a href="../index.html#contact" class="button">
+            提交合作咨询
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Ewan Qian / VIRTURA. Pricing policy explained for potential collaborators.
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function setTheme(isDark) {
+      if (isDark) {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = html.classList.contains('dark');
+      setTheme(!isDark);
+    });
+
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        setTheme(true);
+      } else if (saved === 'light') {
+        setTheme(false);
+      } else {
+        setTheme(false);
+      }
+    })();
+  </script>
+</body>
+</html>

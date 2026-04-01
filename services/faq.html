@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ / 常见问题 — Ewan Qian Portfolio</title>
+  <meta name="description" content="合作前常见问题解答：项目类型、免费试做、修改轮次、商业项目、实验项目、双目 XR 合作等。" />
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #fbfaf7;
+      --text: #161616;
+      --muted: #626262;
+      --line: rgba(22, 22, 22, 0.12);
+      --accent: #111111;
+      --accent-2: #efede7;
+      --max: 1180px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.06);
+    }
+
+    html.dark {
+      --bg: #121212;
+      --panel: #1a1a1a;
+      --text: #f0f0f0;
+      --muted: #a0a0a0;
+      --line: rgba(255, 255, 255, 0.15);
+      --accent: #f0f0f0;
+      --accent-2: #2a2a2a;
+      --shadow: 0 18px 50px rgba(0,0,0,0.4);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 244, 239, 0.82);
+      border-bottom: 1px solid rgba(22,22,22,0.07);
+    }
+
+    html.dark .header {
+      background: rgba(18, 18, 18, 0.82);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 64px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      border-bottom-color: var(--muted);
+    }
+
+    .theme-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.18s ease;
+      padding: 0;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,0.22);
+    }
+
+    html.dark .theme-toggle:hover {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    html.dark .theme-toggle .icon-moon {
+      display: block;
+    }
+
+    html.dark .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      transition: 0.18s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .page-title {
+      font-size: clamp(32px, 5vw, 42px);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .page-intro {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 800px;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .faq-item ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .links-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.18s ease;
+      cursor: pointer;
+    }
+
+    html.dark .button {
+      background: var(--panel);
+      color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,0.22);
+    }
+
+    html.dark .button:hover {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      margin-top: 48px;
+    }
+
+    @media (max-width: 760px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 32px 0;
+      }
+
+      .faq-item {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">Services / FAQ</div>
+      <nav class="nav">
+        <a href="../index.html">← Back to Home</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="icon-moon"/>
+            <circle cx="12" cy="12" r="5" class="icon-sun"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <a href="../index.html" class="back-link">← 返回首页</a>
+
+      <h1 class="page-title">FAQ / 常见问题</h1>
+      <p class="page-intro">
+        合作前常见问题解答。如果这里没找到你的问题，可以直接通过首页表单或小红书私信提问。
+      </p>
+
+      <div class="faq-item">
+        <h3>1. 你主要接什么类型的项目？</h3>
+        <p>目前主要接：</p>
+        <ul>
+          <li>AI 视觉短视频与传播内容</li>
+          <li>舞台视觉、演出影像与空间影像</li>
+          <li>双目视频 / Apple Vision Pro / XR 内容</li>
+          <li>数字展览、线上专展与展示系统</li>
+          <li>工程调试、工作流咨询与内容整理</li>
+          <li>课程、讲座、工作坊与培训</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>2. 如果我不知道自己到底需要买什么，怎么办？</h3>
+        <p>可以直接先发项目简介，我会先帮你判断更适合从：</p>
+        <ul>
+          <li>咨询</li>
+          <li>测试样片</li>
+          <li>视觉开发</li>
+          <li>完整制作</li>
+          <li>工程诊断</li>
+          <li>展示系统整理</li>
+        </ul>
+        <p>中的哪一种开始。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>3. 你会先免费试做吗？</h3>
+        <p>一般不会直接免费做完整内容。但对于某些方向明确、值得推进的项目，可以从较小的测试样片或咨询开始，先确认方向和合作方式。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>4. 修改几轮怎么算？</h3>
+        <p>基础报价通常默认包含<strong>有限轮次的小范围调整</strong>。如果出现：</p>
+        <ul>
+          <li>大方向改动</li>
+          <li>结构重做</li>
+          <li>额外版本追加</li>
+          <li>客户中途新增需求</li>
+        </ul>
+        <p>则通常需要重新评估工作量。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>5. 你能接很商业的项目吗？</h3>
+        <p>可以。我并不只做艺术项目，也能做品牌传播、活动视觉、企业内容、课程培训和展示系统。只是我更适合那些希望内容不只是"能用"，而是希望它在结构、审美和表达上更完整的合作。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>6. 你会做非常实验性的项目吗？</h3>
+        <p>会，但更适合：</p>
+        <ul>
+          <li>有明确目标</li>
+          <li>愿意一起测试</li>
+          <li>接受从小样或原型开始</li>
+          <li>对风格和结构本身有追求</li>
+        </ul>
+        <p>这类项目通常不适合一开始就要求"极低预算 + 高复杂度 + 立刻交付"。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>7. 双目 / Apple Vision Pro / XR 项目可以直接做完整交付吗？</h3>
+        <p>可以谈，但一般更建议先从测试版、样片、proof of concept 开始。因为这类项目对平台、格式、分辨率、观看方式和环境要求都更高，先做小样通常更稳。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>8. 你能帮我整理别人已经做了一半的工程吗？</h3>
+        <p>可以。这类合作通常适合归到：</p>
+        <ul>
+          <li>工程整理</li>
+          <li>工作流咨询</li>
+          <li>内容结构诊断</li>
+          <li>视觉系统优化</li>
+        </ul>
+        <p>你可以先发工程结构截图、项目简介、当前问题、时间和预算。我会先判断适不适合接。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>9. 你接课程、培训和工作坊吗？</h3>
+        <p>接。适合院校、机构、企业培训和创意团队内部训练。内容方向包括：</p>
+        <ul>
+          <li>VR / XR 基础</li>
+          <li>AI 视觉工作流</li>
+          <li>数字展览与展示系统</li>
+          <li>项目组织与创作流程优化</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>10. 怎么联系你最方便？</h3>
+        <p>目前优先方式是：</p>
+        <ul>
+          <li>小红书私信</li>
+          <li>业务邮箱：qianewan@gmail.com</li>
+        </ul>
+        <p>目前不公开微信号和手机号，主要是为了减少无效打扰与隐私风险。</p>
+      </div>
+
+      <div class="links-section">
+        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">更多服务相关阅读</h3>
+        <div class="links-grid">
+          <a href="./project-types.html" class="button primary">
+            服务分类说明
+          </a>
+          <a href="./pricing-policy.html" class="button">
+            报价政策说明
+          </a>
+          <a href="./case-notes.html" class="button">
+            案例说明
+          </a>
+          <a href="../index.html#contact" class="button">
+            提交合作咨询
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Ewan Qian / VIRTURA. Frequently asked questions for potential collaborators.
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function setTheme(isDark) {
+      if (isDark) {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = html.classList.contains('dark');
+      setTheme(!isDark);
+    });
+
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        setTheme(true);
+      } else if (saved === 'light') {
+        setTheme(false);
+      } else {
+        setTheme(false);
+      }
+    })();
+  </script>
+</body>
+</html>
