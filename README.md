@@ -59,12 +59,15 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ## Selected Public Presentations
 
+这些公开项目涵盖展览、现场演出、工作坊、节展项目与合作呈现，构成了我在公共呈现、现场执行与协作语境中的主要轨迹。  
+This selection spans exhibitions, live performances, workshops, festival appearances, and collaborative presentations, outlining the public-facing trajectory of the practice across presentation, production, and collaboration.
+
 - [首届中国（杭州）艺术与科技国际双年展开幕式《滴流》](./projects/drop-flow-visual-2025.md)
 - [UFO Terminal《TIMER 控时者》](./visual-arts/timer-series/README.md)
 - [Kashiwa Daisuke × Yuki Murata × Ewan Qian 深圳 BO LIVE 专场](./projects/kashiwa-titan-visual-2025.md)
+- [《观察与共生》 / Observation and Symbiosis](./visual-arts/perceptual-environments/README.md)
 - [UFO Terminal × PRE / Rooooooom719 Audiovisual Live](./visual-arts/drop-flow-series/README.md)
 - [杭州中心美术馆《巴别瓶》](./projects/new-media-artist-simulator-2025.md)
-- [《观察与共生》相关实践](./visual-arts/perceptual-environments/README.md)
 
 ---
 
@@ -100,17 +103,13 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ## Short Bio
 
-<img src="./assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" width="260" style="border-radius: 10px; float: right; margin: 0 0 20px 20px;" />
-
-钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，长期围绕时间结构、空间生成、音画关系与感知迁移展开实践。其作品与合作项目已在上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、沉浸式空间、扫描环境与数字媒介系统。
-
----
-
-## About
-
 钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。
 
+其作品与合作项目已在北京、上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、展览空间、数字环境、扫描实践与跨媒介影像系统。
+
 Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems. His practice focuses on how image, sound, time, and space can be composed into experiences that are not only seen, but entered, sensed, and reorganized, while continuously developing a working path between artistic creation, live production, and system-based methodology.
+
+His works and collaborations have been publicly presented in Beijing, Shanghai, Shenzhen, Hangzhou, Chongqing, and Tokyo, spanning live visuals, exhibition environments, digital landscapes, scanning-based practice, and cross-media image systems.
 
 ### 核心方向
 

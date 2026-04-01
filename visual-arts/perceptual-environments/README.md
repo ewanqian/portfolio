@@ -26,6 +26,20 @@
 - [Projects / 项目总表](../../projects/README.md)
 - [Visual Arts / 视觉艺术系列总表](../README.md)
 
+---
+
+## Representative Project / 代表项目
+
+### Observation and Symbiosis / 观察与共生
+
+《观察与共生》围绕“数字自然”的概念展开，将自然现象与生态逻辑在虚拟环境中进行编码与重构。作品将地理数据转化为持续流动的粒子动画，融合点云技术与水墨意境，在数字景观中重新组织地貌、色彩与空间关系。
+
+这件作品关注数字环境中的“生命感”——自然不再作为静态对象被再现，而被转化为一个可编程、可迭代、可持续演化的系统。它既是一件展览作品，也是一条关于数据景观、数字生态与感知空间的长期研究线索。
+
+Observation and Symbiosis is developed around the concept of “digital nature,” where natural phenomena and ecological logic are encoded and reconstructed within a virtual environment. The work transforms geographic data into continuously flowing particle animation, blending point-cloud techniques with ink-inspired aesthetics to reorganize landform, color, and spatial relationships within a digital landscape.
+
+Rather than treating nature as a static image, the project shifts it into a programmable, iterative, and evolving system, focusing on the sense of “life” within digital environments.
+
 ## Notes
 
 这一组内容目前在 portfolio 中还没有像 TIMER 和 Drop Flow 那样形成完整的系列结构，但它们对我后续的空间叙事、扫描环境建构和感知迁移研究都非常重要。
