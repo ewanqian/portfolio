@@ -99,6 +99,8 @@ This selection spans exhibitions, live performances, workshops, festival appeara
 
 ## Short Bio
 
+<img src="./assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" width="260" style="border-radius: 10px; float: right; margin: 0 0 20px 20px;" />
+
 钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。
 
 其作品与合作项目已在北京、上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、展览空间、数字环境、扫描实践与跨媒介影像系统。
