@@ -116,19 +116,7 @@ His works and collaborations have been publicly presented in Beijing, Shanghai, 
 - **Audio Analysis / Audiovisual Synchronization** 音频分析 / 音画联动
 - **Temporal Structure / Spatial Generation** 时间结构 / 空间生成
 
-### 代表性公开合作与展演
-
-- 首届中国（杭州）艺术与科技国际双年展开幕式《滴流》
-- UFO Terminal「加载…权限 II」展览《TIMER 控时者》
-- UFO Terminal × PRE / Rooooooom719 音画现场
-- Kashiwa Daisuke × Yuki Murata × 钱誉文 深圳 BO LIVE 特别演出
-- 杭州中心美术馆《巴别瓶》"新媒体艺术家模拟器"
-
-Selected public presentations include "Drop Flow," Opening Performance of the Hangzhou International Biennale of Art and Technology, "TIMER" in UFO Terminal's "Loading… Permission II" exhibition, UFO Terminal × PRE / Roooooooom719 Audiovisual Live, Kashiwa Daisuke × Yuki Murata × Ewan Qian at BO LIVE Shenzhen, and "New Media Artist Simulator" at Hangzhou Center of Art.
-
-His work has been presented in Shanghai, Shenzhen, Chongqing, and Tokyo. Public presentations of team-based works were participated in as a team member.
-
-**团队身份**：VIRTURA（纬图）去中心化艺术团队成员
+其个人实践也持续与 VIRTURA 的团队创作网络发生交叉与协作。
 
 > 更完整的项目列表与版本线索，请见后文的 [Projects / Credits](#projects--credits)
 
@@ -143,27 +131,6 @@ His work has been presented in Shanghai, Shenzhen, Chongqing, and Tokyo. Public 
 - 空间创作框架
 
 > [查看完整团队理论体系 → VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
-
----
-
-## Artist Practice Map
-
-我目前的实践可以理解为五条相互关联的线索：
-
-### 1. 时间结构
-以《TIMER》为代表，处理声音、节拍、频段、能量与图像之间的内部时间关系。我关心的不是简单"卡点"，而是声音如何进入图像内部，成为组织空间与感知的材料。
-
-### 2. 空间生成
-以《Drop Flow》为代表，处理图像如何离开屏幕，并与真实空间、结构、光线和观看关系结合。这里的重点不是填满一个界面，而是让空间本身被重新感知。
-
-### 3. 现场与临时结构
-在演出、舞台与展览现场中，我更关注图像如何获得装置感，而不是沦为背景。屏幕、纱幕、灯光、声音和身体共同构成一个临时生成的空间结构。
-
-### 4. 扫描与数字环境
-通过扫描、点云、数字采样与环境建构，我持续处理数字空间中的生命感、破碎感与未完成状态。这些环境既像记忆，也像一种仍在形成中的结构。
-
-### 5. 迁移与延续
-我持续探索作品如何在单屏、环幕、网页端、档案版本与空间计算媒介之间迁移。这种迁移不是降级复制，而是一种翻译；作品在不同媒介中的存在，本身就是作品的一部分。
 
 ---
 
@@ -292,11 +259,11 @@ His work has been presented in Shanghai, Shenzhen, Chongqing, and Tokyo. Public 
 |------|------|------|----------|
 | 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 高斯扫描/方法分享 | Perceptual Environments |
 | 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 沉浸式大屏+VR头显 | Drop Flow |
-| 25/11 | [重庆「流光绘影」光影科技艺术节「滴流」](./projects/digital-garden-visual-2025.md) | 异形屏幕装置 | Drop Flow |
+| 25/11 | 重庆「流光绘影」光影科技艺术节「滴流」 | 异形屏幕装置 | Drop Flow |
 | 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 多媒体视觉合作 | Drop Flow |
-| 25/07 | [UFO Terminal「滴流3.0」](./projects/observe-symbiosis-exhibit-2025.md) | 音画互动现场 | Drop Flow |
+| 25/07 | UFO Terminal「滴流3.0」 | 音画互动现场 | Drop Flow |
 | 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph | Perceptual Environments |
-| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 数据可视化 | Perceptual Environments |
+| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-exhibit-2025.md) | 数据可视化 | Perceptual Environments |
 | 25/08 | [杭州中心「巴别瓶」](./projects/new-media-artist-simulator-2025.md) | 交互作品参展 | Perceptual Environments |
 | 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 | Perceptual Environments |
 | 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 | Perceptual Environments |
