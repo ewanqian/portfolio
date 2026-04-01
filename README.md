@@ -30,6 +30,7 @@ VIRTURA（纬图）去中心化艺术团队成员
 - 想理解我近年的创作方向：看 **[Current Directions](#current-directions)**
 - 想阅读研究与写作：看 **[Writing & Research](#writing--research)**
 - 想了解合作服务与参考报价：看 **[Production Services / 制作与交付服务](#production-services--制作与交付服务)**
+- 想看详细项目类型、FAQ 与参考案例：看 **[Services Details / 服务详情](./services/project-types.md)**
 
 ---
 
@@ -445,6 +446,8 @@ His works and collaborations have been publicly presented in Beijing, Shanghai, 
 - 长期合作、系列内容、课程合作和系统性项目，可单独沟通更合适的合作方式。
 - 若项目还在早期阶段，也可以先从咨询、提案包或测试样片开始。
 - 工程整理、流程咨询与调试类服务，建议先发送项目简介或结构截图，以便更准确判断工作量。
+
+> 查看更完整的服务分类、合作方式、FAQ 与案例说明 → [Services / 服务总览](./services/README.md)
 
 ---
 
