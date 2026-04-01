@@ -32,15 +32,32 @@ VIRTURA（纬图）去中心化艺术团队成员
 
 ### Drop Flow
 围绕空间生成、沉浸式大屏、身体表演与图像离开屏幕展开的系列实践，是我近年关于空间叙事与感知迁移的重要作品线之一。  
-[项目页](./projects/drop-flow-visual-2025.md) · [Bilibili 演出现场](https://www.bilibili.com/video/BV1PREczgEzC/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032) · [Bilibili 排练现场](https://www.bilibili.com/video/BV1HZgBzWEre/?spm_id_from=333.1387.homepage.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+[系列入口](./visual-arts/drop-flow-series/README.md) · [项目页](./projects/drop-flow-visual-2025.md) · [Bilibili 演出现场](https://www.bilibili.com/video/BV1PREczgEzC/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032) · [Bilibili 排练现场](https://www.bilibili.com/video/BV1HZgBzWEre/?spm_id_from=333.1387.homepage.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
 ### TIMER
 围绕时间结构、音画关系与感知节奏展开的系列实践，持续处理声音如何进入图像内部并重新组织观看经验。  
-[系列入口](./visual-arts/README.md) · [Bilibili](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
+[系列入口](./visual-arts/timer-series/README.md) · [Bilibili](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
 ### Kashiwa Daisuke 深圳专场《机械光合：TITAN的全息声林》
 与 Kashiwa Daisuke / Yuki Murata 合作的现场视听项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。  
 [完整档案](./visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md) · [项目页](./projects/kashiwa-titan-visual-2025.md) · [微信文章](https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g) · [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
+
+---
+
+## Selected Public Presentations
+
+- [首届中国（杭州）艺术与科技国际双年展开幕式《滴流》](./projects/drop-flow-visual-2025.md)
+- [UFO Terminal《TIMER 控时者》](./visual-arts/timer-series/README.md)
+- [Kashiwa Daisuke × Yuki Murata × Ewan Qian 深圳 BO LIVE 专场](./projects/kashiwa-titan-visual-2025.md)
+- [UFO Terminal × PRE / Rooooooom719 Audiovisual Live](./visual-arts/drop-flow-series/README.md)
+- [杭州中心美术馆《巴别瓶》](./projects/new-media-artist-simulator-2025.md)
+- [《观察与共生》相关实践](./visual-arts/perceptual-environments/README.md)
+
+---
+
+## Short Bio
+
+钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，长期围绕时间结构、空间生成、音画关系与感知迁移展开实践。其作品与合作项目已在上海、深圳、杭州、重庆、东京等地公开呈现，涵盖现场演出视觉、沉浸式空间、扫描环境与数字媒介系统。
 
 ---
 
