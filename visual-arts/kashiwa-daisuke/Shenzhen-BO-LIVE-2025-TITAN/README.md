@@ -22,15 +22,58 @@
 *KASHIWA Daisuke x Yuki Murata x Ewan Qian Audiovisual Performance Special*
 
 **Date**  
-October 21, 2025
+2025.10.21
 
-**Location**  
-BO LIVE, Shenzhen, China
+**Venue**  
+BO LIVE 前海店
 
-**Artists**  
-- KASHIWA Daisuke  
-- Yuki Murata  
-- Ewan Qian
+**Performance Lineup / 展演阵容**  
+- **展演音乐家 / Performance Musicians**  
+  - KASHIWA Daisuke 柏大辅  
+  - Yuki Murata 村田有希  
+
+- **视觉艺术家 / Visual Artist**  
+  - Ewan Qian 钱誉文  
+
+**Production Credits / 工作人员**  
+- **演出统筹 / Performance Coordination**  
+  - 欧阳毅  
+  - 雪山  
+
+- **展演策划 / Curatorial Planning**  
+  - 张秋童  
+
+- **技术总监 / Technical Director**  
+  - 宽敬  
+
+- **灯光师 / Lighting Designer**  
+  - 王以玮  
+
+- **调音师 / Sound Engineer**  
+  - 天赐  
+
+- **技术支持 / Technical Support**  
+  - 猪肉  
+
+- **舞台总监 / Stage Director**  
+  - 韩俊谦  
+
+- **艺人执行 / Artist Liaison**  
+  - 唐棣  
+
+- **媒体宣传 / Media & Publicity**  
+  - 绵绵  
+
+- **场地运营 / Venue Operations**  
+  - 浪险  
+  - 丫丫  
+  - 洋葱  
+
+---
+
+## Curatorial & Production Credits / 策展与制作信息
+
+本次展演于 2025 年 10 月 21 日在 BO LIVE 前海店呈现，由 KASHIWA Daisuke 柏大辅、Yuki Murata 村田有希与视觉艺术家 Ewan 钱誉文共同完成。除现场音乐与视觉创作外，项目亦由策划、统筹、技术、舞台、声音、灯光、宣传与场地运营团队共同协作完成，构成了此次展演现场的完整支持系统。
 
 ---
 
@@ -100,4 +143,4 @@ BO LIVE, Shenzhen, China
 - **Notes:** To be updated
 - **Preview:** `./10-Aurora/`
 
-> **Note:** `Part2 bg` is currently treated as supporting/background material and is not included in the main archive list. (当前作为辅助/背景素材处理，未列入主档案列表。)
+&gt; **Note:** `Part2 bg` is currently treated as supporting/background material and is not included in the main archive list. (当前作为辅助/背景素材处理，未列入主档案列表。)
