@@ -7,27 +7,15 @@
   <meta name="description" content="合作前常见问题解答：项目类型、免费试做、修改轮次、商业项目、实验项目、双目 XR 合作等。" />
   <style>
     :root {
-      --bg: #f6f4ef;
-      --panel: #fbfaf7;
-      --text: #161616;
-      --muted: #626262;
-      --line: rgba(22, 22, 22, 0.12);
+      --bg: #ffffff;
+      --panel: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: rgba(0, 0, 0, 0.12);
+      --line-strong: rgba(0, 0, 0, 0.28);
       --accent: #111111;
-      --accent-2: #efede7;
-      --max: 1180px;
-      --radius: 18px;
-      --shadow: 0 18px 50px rgba(0,0,0,0.06);
-    }
-
-    html.dark {
-      --bg: #121212;
-      --panel: #1a1a1a;
-      --text: #f0f0f0;
-      --muted: #a0a0a0;
-      --line: rgba(255, 255, 255, 0.15);
-      --accent: #f0f0f0;
-      --accent-2: #2a2a2a;
-      --shadow: 0 18px 50px rgba(0,0,0,0.4);
+      --inverse: #ffffff;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -36,8 +24,16 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
-      line-height: 1.65;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        "PingFang SC",
+        "Noto Sans SC",
+        sans-serif;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -53,7 +49,7 @@
     }
 
     .container {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -61,13 +57,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(246, 244, 239, 0.82);
-      border-bottom: 1px solid rgba(22,22,22,0.07);
-    }
-
-    html.dark .header {
-      background: rgba(18, 18, 18, 0.82);
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
     }
 
     .header-inner {
@@ -75,40 +67,31 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      min-height: 64px;
+      min-height: 60px;
     }
 
     .brand {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-    }
-
     .nav a {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
-      padding: 4px 0;
-      border-bottom: 1px solid transparent;
-      transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .nav a:hover {
       color: var(--text);
-      border-bottom-color: var(--muted);
     }
 
     .theme-toggle {
       width: 32px;
       height: 32px;
-      border-radius: 999px;
+      border-radius: 0;
       border: 1px solid var(--line);
       background: var(--panel);
       cursor: pointer;
@@ -121,11 +104,7 @@
 
     .theme-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(22,22,22,0.22);
-    }
-
-    html.dark .theme-toggle:hover {
-      border-color: rgba(255,255,255,0.3);
+      border-color: var(--text);
     }
 
     .theme-toggle .icon-moon {
@@ -141,16 +120,20 @@
     }
 
     .section {
-      padding: 48px 0;
+      padding: 88px 0;
+      border-top: 1px solid var(--line);
     }
 
     .back-link {
       display: inline-flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 12px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
     }
 
     .back-link:hover {
@@ -158,28 +141,27 @@
     }
 
     .page-title {
-      font-size: clamp(32px, 5vw, 42px);
-      line-height: 1.08;
-      margin: 0 0 16px;
-      letter-spacing: -0.04em;
-      font-weight: 800;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.02;
+      margin: 0 0 14px;
+      letter-spacing: -0.045em;
+      font-weight: 700;
     }
 
     .page-intro {
-      font-size: 18px;
+      font-size: 15px;
       line-height: 1.7;
       color: var(--muted);
       margin-bottom: 36px;
-      max-width: 800px;
+      max-width: 760px;
     }
 
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px 28px;
+      border-radius: 0;
+      padding: 24px 24px;
       margin-bottom: 16px;
-      box-shadow: var(--shadow);
     }
 
     .faq-item h3 {
@@ -204,10 +186,9 @@
     .links-section {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 0;
       padding: 24px;
       margin-top: 36px;
-      box-shadow: var(--shadow);
     }
 
     .links-grid {
@@ -220,35 +201,29 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
+      min-height: 42px;
       padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: white;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.18s ease;
+      border: 1px solid var(--text);
+      background: #fff;
+      color: var(--text);
+      border-radius: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: 0.15s ease;
       cursor: pointer;
     }
 
-    html.dark .button {
-      background: var(--panel);
-      color: var(--text);
+    .button.primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
     }
 
     .button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(22,22,22,0.22);
-    }
-
-    html.dark .button:hover {
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
+      background: var(--text);
+      color: #fff;
     }
 
     .footer {
@@ -265,11 +240,15 @@
       }
 
       .section {
-        padding: 32px 0;
+        padding: 60px 0;
       }
 
       .faq-item {
         padding: 20px;
+      }
+
+      .button {
+        width: 100%;
       }
     }
   </style>

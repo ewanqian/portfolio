@@ -7,27 +7,15 @@
   <meta name="description" content="与日本音乐人 Kashiwa Daisuke 合作的现场视觉系列，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。" />
   <style>
     :root {
-      --bg: #f6f4ef;
-      --panel: #fbfaf7;
-      --text: #161616;
-      --muted: #626262;
-      --line: rgba(22, 22, 22, 0.12);
+      --bg: #ffffff;
+      --panel: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: rgba(0, 0, 0, 0.12);
+      --line-strong: rgba(0, 0, 0, 0.28);
       --accent: #111111;
-      --accent-2: #efede7;
-      --max: 1180px;
-      --radius: 18px;
-      --shadow: 0 18px 50px rgba(0,0,0,0.06);
-    }
-
-    html.dark {
-      --bg: #121212;
-      --panel: #1a1a1a;
-      --text: #f0f0f0;
-      --muted: #a0a0a0;
-      --line: rgba(255, 255, 255, 0.15);
-      --accent: #f0f0f0;
-      --accent-2: #2a2a2a;
-      --shadow: 0 18px 50px rgba(0,0,0,0.4);
+      --inverse: #ffffff;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -36,8 +24,16 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
-      line-height: 1.65;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        "PingFang SC",
+        "Noto Sans SC",
+        sans-serif;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -53,7 +49,7 @@
     }
 
     .container {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -61,13 +57,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(246, 244, 239, 0.82);
-      border-bottom: 1px solid rgba(22,22,22,0.07);
-    }
-
-    html.dark .header {
-      background: rgba(18, 18, 18, 0.82);
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
     }
 
     .header-inner {
@@ -75,40 +67,31 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      min-height: 64px;
+      min-height: 60px;
     }
 
     .brand {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-    }
-
     .nav a {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
-      padding: 4px 0;
-      border-bottom: 1px solid transparent;
-      transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .nav a:hover {
       color: var(--text);
-      border-bottom-color: var(--muted);
     }
 
     .theme-toggle {
       width: 32px;
       height: 32px;
-      border-radius: 999px;
+      border-radius: 0;
       border: 1px solid var(--line);
       background: var(--panel);
       cursor: pointer;
@@ -121,11 +104,7 @@
 
     .theme-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(22,22,22,0.22);
-    }
-
-    html.dark .theme-toggle:hover {
-      border-color: rgba(255,255,255,0.3);
+      border-color: var(--text);
     }
 
     .theme-toggle .icon-moon {
@@ -141,16 +120,20 @@
     }
 
     .section {
-      padding: 48px 0;
+      padding: 88px 0;
+      border-top: 1px solid var(--line);
     }
 
     .back-link {
       display: inline-flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 12px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
     }
 
     .back-link:hover {
@@ -158,39 +141,33 @@
     }
 
     .project-hero {
-      margin-bottom: 36px;
+      margin-bottom: 24px;
     }
 
     .project-hero img {
       width: 100%;
-      border-radius: calc(var(--radius) + 4px);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(22,22,22,0.05);
-    }
-
-    html.dark .project-hero img {
-      border-color: rgba(255,255,255,0.08);
+      border-radius: 0;
+      border: 1px solid var(--line);
     }
 
     .project-title {
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.08;
-      margin: 28px 0 12px;
-      letter-spacing: -0.04em;
-      font-weight: 800;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.02;
+      margin: 28px 0 14px;
+      letter-spacing: -0.045em;
+      font-weight: 700;
     }
 
     .project-subtitle {
-      font-size: 18px;
+      font-size: 16px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .project-intro {
-      font-size: 18px;
+      font-size: 15px;
       line-height: 1.7;
-      max-width: 800px;
+      max-width: 760px;
       color: var(--muted);
       margin-bottom: 32px;
     }
@@ -206,8 +183,8 @@
     .focus-item {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px 16px;
+      border-radius: 0;
+      padding: 18px;
       font-size: 14px;
       color: var(--muted);
     }
@@ -215,17 +192,20 @@
     .focus-item strong {
       color: var(--text);
       display: block;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 18px;
       margin: 36px 0;
     }
 
     .gallery-item {
-      border-radius: 12px;
+      border-radius: 0;
       overflow: hidden;
       background: var(--panel);
       border: 1px solid var(--line);
@@ -240,10 +220,9 @@
     .links-section {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 0;
       padding: 24px;
       margin-top: 36px;
-      box-shadow: var(--shadow);
     }
 
     .links-grid {
@@ -256,35 +235,29 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
+      min-height: 42px;
       padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: white;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.18s ease;
+      border: 1px solid var(--text);
+      background: #fff;
+      color: var(--text);
+      border-radius: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: 0.15s ease;
       cursor: pointer;
     }
 
-    html.dark .button {
-      background: var(--panel);
-      color: var(--text);
+    .button.primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
     }
 
     .button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(22,22,22,0.22);
-    }
-
-    html.dark .button:hover {
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
+      background: var(--text);
+      color: #fff;
     }
 
     .project-info {
@@ -294,8 +267,8 @@
       margin-bottom: 24px;
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
+      border-radius: 0;
+      padding: 24px;
     }
 
     .info-item {
@@ -306,25 +279,16 @@
       color: var(--muted);
       display: block;
       margin-bottom: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
     }
 
     .info-item value {
       color: var(--text);
       font-weight: 600;
-    }
-
-    .collab-badge {
-      display: inline-block;
-      background: rgba(22,22,22,0.06);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--text);
-      margin-top: 8px;
-    }
-
-    html.dark .collab-badge {
-      background: rgba(255,255,255,0.1);
+      display: block;
     }
 
     .video-links {
@@ -332,6 +296,64 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
       margin-top: 16px;
+    }
+
+    .credits-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 24px;
+      margin-top: 36px;
+    }
+
+    .credits-section h3 {
+      margin: 0 0 18px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+
+    .credit-item {
+      font-size: 14px;
+    }
+
+    .credit-item strong {
+      color: var(--text);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .credit-item span {
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .video-embed {
+      margin: 32px 0;
+      border-radius: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .video-embed .iframe-container {
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .footer {
@@ -352,11 +374,15 @@
       }
 
       .section {
-        padding: 32px 0;
+        padding: 60px 0;
       }
 
       .video-links {
         grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
       }
     }
   </style>
@@ -385,32 +411,39 @@
         <img src="../assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa Daisuke Shenzhen BO LIVE" />
       </div>
 
-      <div style="margin: 32px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.1);">
-        <div style="aspect-ratio: 16/9; background: #000;">
-          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116017552496730&bvid=BV1StFazWEEN&cid=35839476265&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%; height: 100%;"></iframe>
+      <div class="video-embed">
+        <div class="iframe-container">
+          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116017552496730&bvid=BV1StFazWEEN&cid=35839476265&p=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
       </div>
 
-      <h1 class="project-title">Kashiwa Daisuke 合作系列</h1>
-      <p class="project-subtitle">现场视听 / 白空间纵深 / 雾气氛围 / 沉浸式错觉</p>
+      <h1 class="project-title">机械光合：TITAN的全息声林</h1>
+      <p class="project-subtitle">KASHIWA Daisuke x Yuki Murata x Ewan Qian Audiovisual Performance Special</p>
 
       <p class="project-intro">
-        与日本音乐人 Kashiwa Daisuke（柏大辅）合作的现场视觉系列。该系列目前包括深圳 BO LIVE 专场与 CAN Festival 现场项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开，聚焦氛围段落与空间感知设计。
+        本次展演于 2025 年 10 月 21 日在 BO LIVE 前海店呈现，由 KASHIWA Daisuke 柏大辅、Yuki Murata 村田有希与视觉艺术家 Ewan Qian 钱誉文共同完成。除现场音乐与视觉创作外，项目亦由策划、统筹、技术、舞台、声音、灯光、宣传与场地运营团队共同协作完成，构成了此次展演现场的完整支持系统。
       </p>
 
       <div class="project-info">
         <div class="info-item">
-          <label>合作艺人</label>
-          <value>Kashiwa Daisuke / Yuki Murata</value>
-          <span class="collab-badge">Audiovisual Collaboration</span>
+          <label>展演音乐家</label>
+          <value>KASHIWA Daisuke 柏大辅</value>
+        </div>
+        <div class="info-item">
+          <label>展演音乐家</label>
+          <value>Yuki Murata 村田有希</value>
+        </div>
+        <div class="info-item">
+          <label>视觉艺术家</label>
+          <value>Ewan Qian 钱誉文</value>
         </div>
         <div class="info-item">
           <label>时间</label>
-          <value>2025/10</value>
+          <value>2025.10.21</value>
         </div>
         <div class="info-item">
           <label>地点</label>
-          <value>深圳 BO LIVE</value>
+          <value>BO LIVE 前海店</value>
         </div>
         <div class="info-item">
           <label>角色</label>
@@ -418,25 +451,10 @@
         </div>
       </div>
 
-      <h2 style="font-size: 26px; margin: 32px 0 16px; letter-spacing: -0.03em;">核心方向</h2>
-      <div class="focus-list">
-        <div class="focus-item">
-          <strong>视听表演</strong>
-          Audiovisual Performance
-        </div>
-        <div class="focus-item">
-          <strong>现场视觉</strong>
-          Live Visuals
-        </div>
-        <div class="focus-item">
-          <strong>时间结构</strong>
-          Temporal Structure
-        </div>
-        <div class="focus-item">
-          <strong>空间生成</strong>
-          Spatial Generation
-        </div>
-      </div>
+      <h2 style="font-size: 26px; margin: 32px 0 16px; letter-spacing: -0.03em;">项目说明</h2>
+      <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
+        这场特别视听表演围绕《TITAN》的氛围与声音世界展开。视觉语言聚焦于雾气、光线、白空间深度、环境过渡、沉浸错觉与感知运动。部分段落由强烈的音频交互结构驱动，而另一些则追求更柔和、漂浮、治愈且沉思的状态。
+      </p>
 
       <h2 style="font-size: 26px; margin: 36px 0 16px; letter-spacing: -0.03em;">代表项目</h2>
       <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
@@ -452,15 +470,73 @@
         </div>
       </div>
 
-      <div style="margin: 32px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.1);">
-        <div style="aspect-ratio: 16/9; background: #000;">
-          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116017552496730&bvid=BV1StFazWEEN&cid=35839476265&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%; height: 100%;"></iframe>
+      <div class="video-embed">
+        <div class="iframe-container">
+          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116017552496730&bvid=BV1StFazWEEN&cid=35839476265&p=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
       </div>
 
-      <div style="margin: 0 0 32px; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.1);">
-        <div style="aspect-ratio: 16/9; background: #000;">
-          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115411341352670&bvid=BV1fHWRzFEv8&cid=33267778513&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%; height: 100%;"></iframe>
+      <div class="video-embed">
+        <div class="iframe-container">
+          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115411341352670&bvid=BV1fHWRzFEv8&cid=33267778513&p=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        </div>
+      </div>
+
+      <div class="credits-section">
+        <h3>主创与工作人员</h3>
+        <div class="credits-grid">
+          <div class="credit-item">
+            <strong>展演音乐家</strong>
+            <span>KASHIWA Daisuke 柏大辅</span>
+            <span>Yuki Murata 村田有希</span>
+          </div>
+          <div class="credit-item">
+            <strong>视觉艺术家</strong>
+            <span>Ewan 钱誉文</span>
+          </div>
+          <div class="credit-item">
+            <strong>演出统筹</strong>
+            <span>欧阳毅</span>
+            <span>雪山</span>
+          </div>
+          <div class="credit-item">
+            <strong>展演策划</strong>
+            <span>张秋童</span>
+          </div>
+          <div class="credit-item">
+            <strong>技术总监</strong>
+            <span>宽敬</span>
+          </div>
+          <div class="credit-item">
+            <strong>灯光师</strong>
+            <span>王以玮</span>
+          </div>
+          <div class="credit-item">
+            <strong>调音师</strong>
+            <span>天赐</span>
+          </div>
+          <div class="credit-item">
+            <strong>技术支持</strong>
+            <span>猪肉</span>
+          </div>
+          <div class="credit-item">
+            <strong>舞台总监</strong>
+            <span>韩俊谦</span>
+          </div>
+          <div class="credit-item">
+            <strong>艺人执行</strong>
+            <span>唐棣</span>
+          </div>
+          <div class="credit-item">
+            <strong>媒体宣传</strong>
+            <span>绵绵</span>
+          </div>
+          <div class="credit-item">
+            <strong>场地运营</strong>
+            <span>浪险</span>
+            <span>丫丫</span>
+            <span>洋葱</span>
+          </div>
         </div>
       </div>
 
