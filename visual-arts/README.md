@@ -11,7 +11,7 @@
 | [Timer系列](./timer-series/README.md) | 5 | 音画联动，围绕时间结构与感知节奏展开 | 本地 |
 | [滴流系列](./drop-flow-series/README.md) | 7 | 空间叙事，围绕沉浸式空间与图像离开屏幕展开 | 本地 |
 | [Perceptual Environments / 扫描与数字环境](./perceptual-environments/README.md) | 持续扩展 | 扫描空间、点云环境、观察与共生等实践 | 本地 |
-| [Kashiwa Daisuke系列](./kashiwa-daisuke/) | 20+ | 日本音乐人合作 | 本地 |
+| [Kashiwa Daisuke系列](./kashiwa-daisuke/) | 20+ | 与 KASHIWA Daisuke / Yuki Murata 的现场视听合作线，涵盖深圳 BO LIVE 专场与舟山 CAN Festival 项目，涉及舞台视觉、音画结构与现场协作系统 | 本地 |
 | [@onefive系列](./onefive-series/) | 3 | 日本艺人视觉合作 | 本地 |
 | [Virtual Airline 虚拟航线](./vaoe-series/) | 1 | 虚拟空间线下展览 | 本地 |
 | [日常练习](./daily-practice/) | 持续更新 | Blender/扫描/点云 | 本地 |

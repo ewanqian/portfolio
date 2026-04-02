@@ -51,7 +51,7 @@ VIRTURA（纬图）去中心化艺术团队成员
 [看系列](./visual-arts/timer-series/README.md) · [看录像](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
 ### Kashiwa Daisuke 深圳专场《机械光合：TITAN的全息声林》
-与 Kashiwa Daisuke / Yuki Murata 合作的现场视听项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。  
+与 KASHIWA Daisuke、Yuki Murata 合作的现场视听项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。我负责项目中的全息纱幕、裸眼 3D 与音画互动视觉部分，并与策划、技术、灯光、声音及场地方团队共同完成整场现场呈现。  
 
 <img src="./assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa Daisuke audiovisual performance at BO LIVE Shenzhen" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
