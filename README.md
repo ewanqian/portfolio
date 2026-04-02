@@ -279,7 +279,7 @@ His works and collaborations have been publicly presented in Beijing, Shanghai, 
 |------|------|------|----------|
 | 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目+Opening视觉 | Audiovisual Collaborations |
 | 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening+舞台视觉 | Audiovisual Collaborations |
-| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 现场视觉（全息纱幕+裸眼3D部分） | Audiovisual Collaborations |
+| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 视觉制作（全息纱幕 / 裸眼3D / 音画互动） | Audiovisual Collaborations |
 | 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉（参与部分） | Audiovisual Collaborations |
 | 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 | Audiovisual Collaborations |
 | 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 | Audiovisual Collaborations |

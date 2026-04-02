@@ -375,16 +375,22 @@
       margin-top: 48px;
     }
 
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
     .work-item {
       border: 1px solid var(--line);
       border-radius: 0;
-      margin-bottom: 12px;
       background: var(--panel);
       overflow: hidden;
     }
 
     .work-item-header {
-      padding: 16px 20px;
+      padding: 16px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -403,7 +409,7 @@
     .work-item-title {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .work-item-number {
@@ -412,11 +418,11 @@
       letter-spacing: 0.12em;
       color: var(--muted);
       font-weight: 600;
-      min-width: 40px;
+      min-width: 32px;
     }
 
     .work-item-name {
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: -0.02em;
       font-weight: 600;
     }
@@ -443,7 +449,7 @@
     }
 
     .work-item-inner {
-      padding: 20px;
+      padding: 14px;
     }
 
     .work-item-image {
@@ -456,16 +462,22 @@
       justify-content: center;
       color: var(--muted);
       font-size: 13px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .work-item-meta {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
+      line-height: 1.6;
     }
 
     .work-item-meta strong {
       color: var(--text);
+    }
+
+    .work-item-meta a {
+      color: var(--text);
+      text-decoration: underline;
     }
 
     @media (max-width: 760px) {
@@ -487,6 +499,10 @@
 
       .button {
         width: 100%;
+      }
+
+      .work-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -636,7 +652,8 @@
         <h2 style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">演出曲目与视觉档案</h2>
       </div>
 
-      <div class="work-item">
+      <div class="work-grid">
+        <div class="work-item">
         <div class="work-item-header">
           <div class="work-item-title">
             <span class="work-item-number">01</span>
