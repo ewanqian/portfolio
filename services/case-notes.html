@@ -4,30 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Case Notes / 案例说明 — Ewan Qian Portfolio</title>
-  <meta name="description" content="用几个典型案例说明不同服务方向的特点：为什么AI短视频适合长期，为什么开场视觉更贵，为什么双目建议先做样片。" />
+  <meta name="description" content="案例说明：为什么开场视觉更贵？为什么双目/XR建议先做测试？为什么工程调试按小时？" />
   <style>
     :root {
-      --bg: #f6f4ef;
-      --panel: #fbfaf7;
-      --text: #161616;
-      --muted: #626262;
-      --line: rgba(22, 22, 22, 0.12);
+      --bg: #ffffff;
+      --panel: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: rgba(0, 0, 0, 0.12);
+      --line-strong: rgba(0, 0, 0, 0.28);
       --accent: #111111;
-      --accent-2: #efede7;
-      --max: 1180px;
-      --radius: 18px;
-      --shadow: 0 18px 50px rgba(0,0,0,0.06);
-    }
-
-    html.dark {
-      --bg: #121212;
-      --panel: #1a1a1a;
-      --text: #f0f0f0;
-      --muted: #a0a0a0;
-      --line: rgba(255, 255, 255, 0.15);
-      --accent: #f0f0f0;
-      --accent-2: #2a2a2a;
-      --shadow: 0 18px 50px rgba(0,0,0,0.4);
+      --inverse: #ffffff;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -36,8 +24,16 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
-      line-height: 1.65;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        "PingFang SC",
+        "Noto Sans SC",
+        sans-serif;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -53,7 +49,7 @@
     }
 
     .container {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -61,13 +57,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(246, 244, 239, 0.82);
-      border-bottom: 1px solid rgba(22,22,22,0.07);
-    }
-
-    html.dark .header {
-      background: rgba(18, 18, 18, 0.82);
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
     }
 
     .header-inner {
@@ -75,40 +67,31 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      min-height: 64px;
+      min-height: 60px;
     }
 
     .brand {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-    }
-
     .nav a {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
-      padding: 4px 0;
-      border-bottom: 1px solid transparent;
-      transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .nav a:hover {
       color: var(--text);
-      border-bottom-color: var(--muted);
     }
 
     .theme-toggle {
       width: 32px;
       height: 32px;
-      border-radius: 999px;
+      border-radius: 0;
       border: 1px solid var(--line);
       background: var(--panel);
       cursor: pointer;
@@ -121,11 +104,7 @@
 
     .theme-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(22,22,22,0.22);
-    }
-
-    html.dark .theme-toggle:hover {
-      border-color: rgba(255,255,255,0.3);
+      border-color: var(--text);
     }
 
     .theme-toggle .icon-moon {
@@ -141,16 +120,20 @@
     }
 
     .section {
-      padding: 48px 0;
+      padding: 88px 0;
+      border-top: 1px solid var(--line);
     }
 
     .back-link {
       display: inline-flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 12px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
     }
 
     .back-link:hover {
@@ -158,72 +141,54 @@
     }
 
     .page-title {
-      font-size: clamp(32px, 5vw, 42px);
-      line-height: 1.08;
-      margin: 0 0 16px;
-      letter-spacing: -0.04em;
-      font-weight: 800;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.02;
+      margin: 0 0 14px;
+      letter-spacing: -0.045em;
+      font-weight: 700;
     }
 
     .page-intro {
-      font-size: 18px;
+      font-size: 15px;
       line-height: 1.7;
       color: var(--muted);
       margin-bottom: 36px;
-      max-width: 800px;
+      max-width: 760px;
     }
 
-    .case-card {
+    .content-block {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow);
+      border-radius: 0;
+      padding: 24px 24px;
+      margin-bottom: 16px;
     }
 
-    .case-card h2 {
-      font-size: 24px;
-      margin: 0 0 12px;
-      letter-spacing: -0.03em;
+    .content-block h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
     }
 
-    .case-card p {
+    .content-block p {
       color: var(--muted);
-      margin: 0 0 12px;
+      margin: 0;
       font-size: 15px;
     }
 
-    .case-card ul {
+    .content-block ul {
       margin: 8px 0 0;
       padding-left: 20px;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .case-card li {
-      margin-bottom: 4px;
-    }
-
-    .key-point {
-      background: var(--accent-2);
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 16px;
-      font-size: 15px;
-    }
-
-    .key-point strong {
-      color: var(--text);
-    }
-
     .links-section {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 0;
       padding: 24px;
       margin-top: 36px;
-      box-shadow: var(--shadow);
     }
 
     .links-grid {
@@ -236,35 +201,29 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
+      min-height: 42px;
       padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: white;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.18s ease;
+      border: 1px solid var(--text);
+      background: #fff;
+      color: var(--text);
+      border-radius: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: 0.15s ease;
       cursor: pointer;
     }
 
-    html.dark .button {
-      background: var(--panel);
-      color: var(--text);
+    .button.primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
     }
 
     .button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(22,22,22,0.22);
-    }
-
-    html.dark .button:hover {
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
+      background: var(--text);
+      color: #fff;
     }
 
     .footer {
@@ -281,11 +240,15 @@
       }
 
       .section {
-        padding: 32px 0;
+        padding: 60px 0;
       }
 
-      .case-card {
+      .content-block {
         padding: 20px;
+      }
+
+      .button {
+        width: 100%;
       }
     }
   </style>
@@ -293,7 +256,7 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <div class="brand">Services / Case Notes</div>
+      <div class="brand">Services / Cases</div>
       <nav class="nav">
         <a href="../index.html">← Back to Home</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -308,98 +271,76 @@
 
   <main class="container">
     <section class="section">
-      <a href="../index.html#services" class="back-link">← 返回首页 / 制作与交付服务</a>
+      <a href="../index.html" class="back-link">← 返回首页</a>
 
       <h1 class="page-title">Case Notes / 案例说明</h1>
       <p class="page-intro">
-        这一页不是完整作品清单，而是用几个典型服务方向，帮助合作方理解不同项目为什么会落在不同报价区间里。
+        用几个具体问题来解释：为什么有些项目报价逻辑不一样？为什么我们建议那样做？
       </p>
 
-      <div class="case-card">
-        <h2>1. AI 视觉短视频：为什么适合做成长期服务</h2>
-        <p>这类项目的特点是：</p>
+      <div class="content-block" id="opening-visual">
+        <h3>为什么开场视觉更贵？</h3>
+        <p>同样10秒，开场视觉的复杂度与风险远高于普通短视频，因为：</p>
         <ul>
-          <li>节奏快</li>
-          <li>更新频率高</li>
-          <li>内容量大</li>
-          <li>客户通常需要持续测试风格</li>
-          <li>很适合 AI 工具进入工作流</li>
+          <li><strong>容错率极低</strong>：开场是整场演出的定调时刻，出错影响范围大</li>
+          <li><strong>精度要求高</strong>：通常需要精确到帧、精确到音乐结构</li>
+          <li><strong>观看语境重要</strong>：大银幕、剧场环境、现场氛围都在放大每一个细节</li>
+          <li><strong>心理压力大</strong>：首演、巡演、发布会这种场合，不只是"做个视频"那么简单</li>
+          <li><strong>版本与备份复杂</strong>：往往需要多个版本、不同比例、安全备份与现场预案</li>
         </ul>
-        <div class="key-point">
-          <p>它的价值不一定在于单条片子多贵，而在于：</p>
-          <ul>
-            <li>能不能稳定更新</li>
-            <li>能不能低成本维持风格</li>
-            <li>能不能让品牌有持续的内容输出</li>
-          </ul>
-          <p style="margin-top: 12px;"><strong>所以这类项目很适合做成：单条起步 → 系列合作 → 月度内容服务</strong></p>
-        </div>
+        <p style="margin-top: 8px;">所以开场视觉的报价通常不只是按"秒"算，而会按"项目的重要性与风险"综合评估。</p>
       </div>
 
-      <div class="case-card" id="opening-visual">
-        <h2>2. 开场视觉 / 演出视觉：为什么价格更高</h2>
-        <p>开场视觉和普通短视频最大的不同是：</p>
+      <div class="content-block" id="xr-test">
+        <h3>为什么双目/XR建议先做测试？</h3>
+        <p>对于双目视频、VR/AR内容这类项目，我强烈建议先从测试版或小样开始，因为：</p>
         <ul>
-          <li>它是舞台关键段落</li>
-          <li>容错率更低</li>
-          <li>节奏与结构要求更高</li>
-          <li>屏幕 / 空间 /现场流程限制更多</li>
-          <li>往往需要更完整的版本确认</li>
+          <li><strong>平台差异大</strong>：Vision Pro / Quest / VR 播放器 / 直播流，每一种的要求都不一样</li>
+          <li><strong>观看方式特殊</strong>：空间感、视差、舒适区、疲劳度，都需要实际戴上设备才知道</li>
+          <li><strong>分辨率与格式复杂</strong>：双目8K、单目4K、不同投影比，渲染与导出成本差异很大</li>
+          <li><strong>容易踩坑</strong>：有些在平面里看着挺好的东西，进空间里完全不是那么回事</li>
         </ul>
-        <div class="key-point">
-          <p><strong>所以它通常不是按"时长"报价，而是按：项目重要性、内容复杂度、版本需求、演出语境来判断。</strong></p>
-        </div>
+        <p style="margin-top: 8px;">先做测试版（哪怕只有10-20秒），其实是在<strong>降低整体风险和总成本</strong>。</p>
       </div>
 
-      <div class="case-card" id="xr-test">
-        <h2>3. 双目 / XR 内容：为什么建议先从样片开始</h2>
-        <p>很多合作方第一次接触双目、Apple Vision Pro 或 XR 项目时，最容易低估的就是：</p>
+      <div class="content-block" id="engineering">
+        <h3>为什么工程调试按小时？</h3>
+        <p>工程整理、工作流咨询、内容结构诊断这类服务，通常更适合按时间收费，因为：</p>
         <ul>
-          <li>平台适配</li>
-          <li>观看方式</li>
-          <li>格式要求</li>
-          <li>空间观看与普通视频观看的差异</li>
-          <li>数字环境风格与沉浸感之间的关系</li>
+          <li><strong>问题不确定</strong>：不打开工程，很难准确预估到底需要多久</li>
+          <li><strong>范围容易变化</strong>："顺便帮我看一下这个"，很容易变成额外工作量</li>
+          <li><strong>价值在过程中</strong>：诊断、建议、梳理，这些价值很难只用"最终产出"衡量</li>
+          <li><strong>灵活度更高</strong>：可以随时停在"够了"的地方，也可以继续深入</li>
         </ul>
-        <div class="key-point">
-          <p><strong>所以这类项目，通常更适合先做：测试样片 → proof of concept → 小型演示版</strong></p>
-          <p style="margin-top: 12px;">这样能更快知道：这个方向是否成立，预算是否匹配，要不要继续做完整版本。</p>
-        </div>
+        <p style="margin-top: 8px;">当然，我们可以先约定一个时间上限，或者先从一个轻量诊断开始。</p>
       </div>
 
-      <div class="case-card" id="engineering">
-        <h2>4. 工程调试 / 结构整理：客户真正买的是什么</h2>
-        <p>这类项目里，客户买的往往不是"产出一个视频"，而是买：</p>
+      <div class="content-block">
+        <h3>为什么有时候我会建议"先从咨询开始"？</h3>
+        <p>如果我们沟通后发现：</p>
         <ul>
-          <li>你帮他减少返工</li>
-          <li>你帮他看清工程问题</li>
-          <li>你帮他整理 workflow</li>
-          <li>你帮他把混乱内容压成更稳定的结构</li>
+          <li>你对需求还不是特别清楚</li>
+          <li>有多个方向可以选择，但不确定哪条路最合适</li>
+          <li>项目比较复杂，需要先梳理结构</li>
+          <li>预算不多，但希望把钱花在刀刃上</li>
         </ul>
-        <div class="key-point">
-          <p><strong>所以这类服务通常更适合按小时、按次或按诊断范围来报价。</strong></p>
-        </div>
+        <p style="margin-top: 8px;">那么先做一次30-60分钟的咨询，通常比直接拍板"做一个XX"要更稳妥。</p>
       </div>
 
-      <div class="case-card">
-        <h2>5. 数字展览 / 展示系统：为什么不能只看页面数量</h2>
-        <p>很多人会以为做数字展览只是"搭几个页面"。但实际更重要的是：</p>
+      <div class="content-block">
+        <h3>为什么我不接"极度压缩预算但要求极高"的项目？</h3>
+        <p>有些项目的组合是："预算极低、时间极紧、要求极高、且不愿意先做测试版"，这时候我通常会婉拒，因为：</p>
         <ul>
-          <li>展品怎么分类</li>
-          <li>文案怎么组织</li>
-          <li>展示入口怎么建立</li>
-          <li>作品之间怎么被阅读</li>
-          <li>页面怎么形成完整体验</li>
-          <li>展后资料怎么继续保留</li>
+          <li><strong>对结果不负责</strong>：我不想为了接项目而妥协质量</li>
+          <li><strong>风险太高</strong>：极容易出现"达不到预期"的情况</li>
+          <li><strong>机会成本高</strong>：不如把时间留给那些能把事情做好的合作</li>
+          <li><strong>消耗信任</strong>：一开始就带着"将就"心态，合作体验很难好</li>
         </ul>
-        <div class="key-point">
-          <p><strong>所以这类项目不只是页面制作，而更像：策展 + 内容整理 + 页面系统 + 公开表达</strong></p>
-          <p style="margin-top: 12px;">这也是为什么它通常不会只按"做几个页面"来定价。</p>
-        </div>
+        <p style="margin-top: 8px;">但我会尽量给你指一个可行的方向——比如从测试版开始，或者简化需求，或者调整时间节点。</p>
       </div>
 
       <div class="links-section">
-        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">更多服务相关阅读</h3>
+        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">相关服务说明</h3>
         <div class="links-grid">
           <a href="./project-types.html" class="button primary">
             服务分类说明
@@ -408,7 +349,7 @@
             报价政策说明
           </a>
           <a href="./faq.html" class="button">
-            常见问题 FAQ
+            常见问题
           </a>
           <a href="../index.html#contact" class="button">
             提交合作咨询
@@ -420,7 +361,7 @@
 
   <footer class="footer">
     <div class="container">
-      © Ewan Qian / VIRTURA. Case notes explaining service pricing logic.
+      © Ewan Qian / VIRTURA. Case notes &amp; decision framework.
     </div>
   </footer>
 
