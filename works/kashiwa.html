@@ -375,6 +375,99 @@
       margin-top: 48px;
     }
 
+    .work-item {
+      border: 1px solid var(--line);
+      border-radius: 0;
+      margin-bottom: 12px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+
+    .work-item-header {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .work-item-header:hover {
+      background: rgba(0,0,0,0.02);
+    }
+
+    html.dark .work-item-header:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .work-item-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .work-item-number {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 40px;
+    }
+
+    .work-item-name {
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .work-item-toggle {
+      font-size: 20px;
+      color: var(--muted);
+      transition: transform 0.22s ease;
+    }
+
+    .work-item.open .work-item-toggle {
+      transform: rotate(45deg);
+    }
+
+    .work-item-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-top: 1px solid var(--line);
+    }
+
+    .work-item.open .work-item-content {
+      max-height: 1000px;
+    }
+
+    .work-item-inner {
+      padding: 20px;
+    }
+
+    .work-item-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--line);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .work-item-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .work-item-meta strong {
+      color: var(--text);
+    }
+
     @media (max-width: 760px) {
       .gallery {
         grid-template-columns: 1fr;
@@ -539,7 +632,209 @@
         </div>
       </div>
 
-      <div class="links-section">
+      <div style="margin: 36px 0;">
+        <h2 style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">演出曲目与视觉档案</h2>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">01</span>
+            <span class="work-item-name">Lead</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> Audiovisual opening section for the BO LIVE performance, establishing the white-space depth and atmospheric entrance of the set.<br />
+              <a href="https://www.manamana.net/video/detail?id=2831761#!zh" target="_blank" rel="noreferrer" style="color: var(--text); text-decoration: underline;">External Preview: ManaMana</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">02</span>
+            <span class="work-item-name">Green</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> To be updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">03</span>
+            <span class="work-item-name">Haze</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> To be updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">04</span>
+            <span class="work-item-name">Infrared</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> To be updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">05</span>
+            <span class="work-item-name">Whitenight</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> A more suspended and luminous section, emphasizing spatial diffusion, slow transition, and immersive white atmosphere.<br />
+              <a href="https://www.manamana.net/video/detail?id=2831703#!zh" target="_blank" rel="noreferrer" style="color: var(--text); text-decoration: underline;">External Preview: ManaMana</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">06</span>
+            <span class="work-item-name">Amb</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> A highly atmospheric and ambient visual direction. This work moved away from more aggressive and direct audio-analysis logic, and instead pursued a floating, healing, and almost transcendent feeling.（高氛围 ambient 视觉方向。远离激进的音频分析逻辑，追求漂浮、治愈、几乎超然的感觉。）<br />
+              <a href="https://www.manamana.net/video/detail?id=2831826#!zh" target="_blank" rel="noreferrer" style="color: var(--text); text-decoration: underline;">External Preview: ManaMana</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">07</span>
+            <span class="work-item-name">Rose</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> To be updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">08</span>
+            <span class="work-item-name">Titan</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> Core audiovisual section connected to the TITAN atmosphere, combining spatial pressure, depth illusion, and sonic architecture.<br />
+              <a href="https://www.manamana.net/video/detail?id=2831892#!zh" target="_blank" rel="noreferrer" style="color: var(--text); text-decoration: underline;">External Preview: ManaMana</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">09</span>
+            <span class="work-item-name">Phantom</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> To be updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-header">
+          <div class="work-item-title">
+            <span class="work-item-number">10</span>
+            <span class="work-item-name">Aurora</span>
+          </div>
+          <span class="work-item-toggle">+</span>
+        </div>
+        <div class="work-item-content">
+          <div class="work-item-inner">
+            <div class="work-item-image">图片占位</div>
+            <div class="work-item-meta">
+              <strong>Format:</strong> Moving image / live visual<br />
+              <strong>Notes:</strong> To be updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; font-size: 13px; color: var(--muted);">
+        Note: Part2 bg is currently treated as supporting/background material and is not included in the main archive list. (当前作为辅助/背景素材处理，未列入主档案列表。)
+      </div>
+
+      <div style="margin-top: 36px;" class="links-section">
         <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">精选曲目观看</h3>
         <div class="video-links">
           <a href="https://www.manamana.net/video/detail?id=2831761#!zh" target="_blank" rel="noreferrer" class="button">01 Lead</a>
@@ -607,6 +902,13 @@
         setTheme(false);
       }
     })();
+
+    document.querySelectorAll('.work-item-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('open');
+      });
+    });
   </script>
 </body>
 </html>
