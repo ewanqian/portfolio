@@ -391,7 +391,10 @@
     .why-card,
     .contact-panel,
     .form-panel,
-    .faq-item {
+    .faq-item,
+    .trajectory-card,
+    .repo-card,
+    .overview-card {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 0;
@@ -434,7 +437,10 @@
     .service-detail p,
     .contact-panel p,
     .form-panel p,
-    .why-card p {
+    .why-card p,
+    .trajectory-card p,
+    .repo-card p,
+    .overview-card p {
       color: var(--muted);
       font-size: 14px;
     }
@@ -488,7 +494,14 @@
 
     .service-card.active {
       border-color: var(--text);
-      background: var(--panel);
+      background: var(--text);
+      color: var(--inverse);
+    }
+
+    .service-card.active p,
+    .service-card.active .service-meta {
+      color: var(--inverse);
+      opacity: 0.85;
     }
 
     .service-card h3 {
@@ -654,7 +667,7 @@
       padding: 14px 16px;
       border-radius: 0;
       border: 1px solid var(--line);
-      background: white;
+      background: var(--panel);
       font-size: 14px;
       transition: 0.18s ease;
     }
@@ -735,6 +748,25 @@
       height: 8px;
     }
 
+    .overview-card,
+    .trajectory-card,
+    .repo-card {
+      padding: 24px;
+    }
+
+    .overview-card h4,
+    .trajectory-card h4,
+    .repo-card h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .trajectory-grid {
+      display: grid;
+      gap: 22px;
+    }
+
     @media (max-width: 1100px) {
       .hero-grid,
       .contact-grid,
@@ -804,6 +836,7 @@
           <span></span>
         </button>
         <nav class="nav" id="navMenu">
+          <a href="#artistic-overview">Artistic</a>
           <a href="#works">Works</a>
           <a href="#services">Services</a>
           <a href="./services/project-types.html">Categories</a>
@@ -811,7 +844,7 @@
           <a href="./services/faq.html">FAQ</a>
           <a href="#contact">Contact</a>
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="icon-moon"/>
               <circle cx="12" cy="12" r="5" class="icon-sun"/>
             </svg>
@@ -834,25 +867,48 @@
             <h1 class="hero-title">钱誉文<br>Ewan Qian</h1>
             <p class="hero-subtitle">感知迁移 / 时间结构 / 空间生成 / 现场图像系统</p>
             <p class="hero-tagline">
-              我主要工作在现场演出视觉、空间影像、数字环境、AI 视觉开发与项目系统整理的交叉地带。
-              这里既是作品入口，也是一个提供制作服务的 production / creative services 页面。
+              钱誉文的实践围绕时间、图像、空间与感知之间的连续关系展开。网页、舞台、环幕、数字展览、档案与接口研究，在这里构成的并非彼此独立的媒介分支，而是一条持续推进的创作网络。
             </p>
 
             <div class="hero-cta">
-              <a class="button primary" href="#works">View Works / 看作品</a>
-              <a class="button" href="#services">View Services / 看服务</a>
-              <a class="button" href="#contact">Inquiry / 提交咨询</a>
+              <a class="button primary" href="#artistic-overview">View Artistic Practice / 看创作实践</a>
+              <a class="button" href="#services">View Production Services / 看制作服务</a>
             </div>
           </div>
 
           <div>
             <div class="socials">
-              <a class="social-pill" href="https://www.instagram.com/ewanqian/" target="_blank" rel="noreferrer">Instagram</a>
-              <a class="social-pill" href="https://space.bilibili.com/2380485" target="_blank" rel="noreferrer">Bilibili</a>
-              <a class="social-pill" href="https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e" target="_blank" rel="noreferrer">Xiaohongshu</a>
-              <a class="social-pill" href="https://www.manamana.net/peopleCenter/432894/home#!zh" target="_blank" rel="noreferrer">ManaMana</a>
-              <a class="social-pill" href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="social-pill" href="https://www.instagram.com/ewanqian/" target="_blank" rel="noreferrer">Instagram ↗</a>
+              <a class="social-pill" href="https://space.bilibili.com/2380485" target="_blank" rel="noreferrer">Bilibili ↗</a>
+              <a class="social-pill" href="https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e" target="_blank" rel="noreferrer">Xiaohongshu ↗</a>
+              <a class="social-pill" href="https://www.manamana.net/peopleCenter/432894/home#!zh" target="_blank" rel="noreferrer">ManaMana ↗</a>
+              <a class="social-pill" href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="artistic-overview" class="section">
+      <div class="container">
+        <div class="eyebrow">Artistic Overview</div>
+        <h2 class="section-title">创作总览</h2>
+        <p class="section-intro">
+          钱誉文的实践围绕时间、图像、空间与感知之间的连续关系展开。早期工作首先集中在声音如何进入图像内部，并在节奏、频段与段落结构中形成视觉组织；随后，图像逐渐从单一屏幕关系中展开，进入身体、环境与空间尺度之中；近年的重点则进一步延伸到数字环境、扫描生态、双目观看与感知迁移系统。网页、舞台、环幕、数字展览、档案与接口研究，在这里构成的并非彼此独立的媒介分支，而是一条持续推进的创作网络。
+        </p>
+
+        <div class="grid-3" style="margin-top: 32px;">
+          <div class="overview-card">
+            <h4>Temporal Structure / 时间结构</h4>
+            <p>节拍、频段、能量与段落变化被逐步纳入视觉内部，成为作品的组织材料。</p>
+          </div>
+          <div class="overview-card">
+            <h4>Spatial Generation / 空间生成</h4>
+            <p>图像开始与身体、环境、尺度和屏幕结构共同生成一种空间性的经验。</p>
+          </div>
+          <div class="overview-card">
+            <h4>Perceptual Migration / 感知迁移</h4>
+            <p>作品在不同界面和空间条件中的出现方式，构成了实践本身的重要部分。</p>
           </div>
         </div>
       </div>
@@ -860,10 +916,10 @@
 
     <section id="works" class="section">
       <div class="container">
-        <div class="eyebrow">Featured Works</div>
-        <h2 class="section-title">代表作品</h2>
+        <div class="eyebrow">Selected Works</div>
+        <h2 class="section-title">作品选集</h2>
         <p class="section-intro">
-          我当前最适合被优先阅读的三条作品入口。它们分别代表空间生成、时间结构与现场视听合作这三条实践方向。
+          当前优先阅读的作品入口。后续将继续扩展为更完整的作品墙与时间线系统。
         </p>
 
         <div class="grid-3">
@@ -873,11 +929,9 @@
             </a>
             <div class="content">
               <h3><a href="./works/drop-flow.html">Drop Flow</a></h3>
-              <p>围绕实时音画互动、空间迁移与数字自然叙事展开的长期系列，持续在演出视觉、沉浸式空间与多版本展示之间发展。</p>
-              <p style="font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.55;">该系列曾于首届中国（杭州）艺术与科技国际双年展开幕式及常设展览公开呈现，获杭州国际电子音乐作曲比赛 C 组一等奖，并于 2025「流光绘影」光影科技艺术节获得优秀作品奖；同时参与 UFO Terminal × PRE / Rooooooom719 音画现场，并参与 2025 UFO Terminal「加载…创作营」，由 UFO Terminal「加载…计划」支持创作。</p>
+              <p>围绕实时音画互动、空间迁移与数字自然叙事展开的长期系列。</p>
               <div class="inline-links">
                 <a href="./works/drop-flow.html">详情页</a>
-                <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/drop-flow-series/README.md" target="_blank" rel="noreferrer">GitHub文档</a>
                 <a href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer">看录像</a>
               </div>
             </div>
@@ -889,11 +943,9 @@
             </a>
             <div class="content">
               <h3><a href="./works/timer.html">TIMER 控时者</a></h3>
-              <p>围绕时间、节拍、频段与图像内部结构展开的音画互动系列，也是 VIRTURA 团队在时间结构与空间影像方向上的核心作品线之一。</p>
-              <p style="font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.55;">该项目参与 2024 UFO Terminal「加载…创作营」，由 UFO Terminal「加载…计划」支持创作，并最终入选 UFO Terminal「加载…权限 2」展览，于 UFO Terminal 未知终端呈现。该作品同时获得 ChinaGraph 2024 电子剧场优秀音乐作品二等奖。</p>
+              <p>围绕时间、节拍、频段与图像内部结构展开的音画互动系列。</p>
               <div class="inline-links">
                 <a href="./works/timer.html">详情页</a>
-                <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/timer-series/README.md" target="_blank" rel="noreferrer">GitHub文档</a>
                 <a href="https://www.bilibili.com/video/BV1sWNWeVEVB/" target="_blank" rel="noreferrer">看录像</a>
               </div>
             </div>
@@ -905,11 +957,9 @@
             </a>
             <div class="content">
               <h3><a href="./works/kashiwa.html">《机械光合：TITAN 的全息声林》</a></h3>
-              <p>这是与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目，围绕雾气、白空间深度、感知运动与音画结构展开。</p>
-              <p style="font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.55;">该项目于 BO LIVE Shenzhen 以 Audiovisual 展演专场形式公开呈现，视觉系统由 Ewan Qian 完成，属于现场音画合作与空间影像组织方向的代表项目。</p>
+              <p>与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目。</p>
               <div class="inline-links">
                 <a href="./works/kashiwa.html">详情页</a>
-                <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/kashiwa-daisuke/README.md" target="_blank" rel="noreferrer">GitHub文档</a>
                 <a href="https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" target="_blank" rel="noreferrer">微信文章</a>
               </div>
             </div>
@@ -918,93 +968,106 @@
       </div>
     </section>
 
-    <section id="profile" class="section">
+    <section id="creative-trajectory" class="section">
       <div class="container">
-        <div style="margin-bottom: 32px; border-radius: 0; overflow: hidden; border: 1px solid var(--line);">
-          <div style="aspect-ratio: 16 / 9; background: #ddd;">
-            <img src="./assets/home/landing.jpg" alt="Landing image" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div class="eyebrow">Creative Timeline</div>
+        <h2 class="section-title">创作时间线</h2>
+
+        <div class="trajectory-grid" style="margin-top: 32px;">
+          <div class="trajectory-card">
+            <h4>时间作为材料 / Temporal Structure</h4>
+            <p>
+              这条线始于对声音与图像关系的长期处理。节拍、频段、能量与段落变化被逐步纳入视觉内部，成为作品的组织材料。TIMER 系列集中呈现了这一阶段的核心问题：时间如何被塑造成一种可见的结构，并在图像内部建立起持续的秩序。
+            </p>
+            <div class="inline-links" style="margin-top: 16px;">
+              <a href="./works/timer.html">Read More / 详细说明</a>
+              <a href="./works/timer.html">Related Works / 相关作品</a>
+            </div>
+          </div>
+
+          <div class="trajectory-card">
+            <h4>图像进入空间 / Spatial Generation</h4>
+            <p>
+              随着实践推进，工作的重心逐渐转向图像与空间之间的关系。Drop Flow 相关作品标志着这一阶段的展开：图像开始与身体、环境、尺度和屏幕结构共同生成一种空间性的经验。观看不再停留于画面表层，而进入一种由流动、密度与尺度共同构成的场域。
+            </p>
+            <div class="inline-links" style="margin-top: 16px;">
+              <a href="./works/drop-flow.html">Read More / 详细说明</a>
+              <a href="./works/drop-flow.html">Related Works / 相关作品</a>
+            </div>
+          </div>
+
+          <div class="trajectory-card">
+            <h4>环境成为作品 / Perceptual Environments</h4>
+            <p>
+              扫描、点云、数字采样与观察系统，使实践进一步进入数字环境本身。在这一阶段，关注点延伸到环境如何被组织、数字空间中的生命感如何成立，以及未完成状态、碎片化结构与共生关系如何在技术媒介中持续显现。
+            </p>
+            <div class="inline-links" style="margin-top: 16px;">
+              <a href="#">Read More / 详细说明</a>
+              <a href="#">Related Works / 相关作品</a>
+            </div>
+          </div>
+
+          <div class="trajectory-card">
+            <h4>迁移作为延续 / Perceptual Migration</h4>
+            <p>
+              近年的工作逐步收束到“感知迁移”这一核心框架。网页、舞台、环幕、双目、空间计算、档案与研究文本，被纳入同一条持续发展的结构线索之中。作品在不同界面和空间条件中的出现方式，构成了实践本身的重要部分；迁移由此成为作品得以延续、展开与被重新阅读的方法。
+            </p>
+            <div class="inline-links" style="margin-top: 16px;">
+              <a href="#">Read More / 详细说明</a>
+              <a href="#">Related Works / 相关作品</a>
+            </div>
           </div>
         </div>
-        <div class="eyebrow">Profile</div>
-        <h2 class="section-title">简介</h2>
-        <p class="section-intro" style="margin-bottom: 16px;">
-          钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。
-        </p>
-        <p class="section-intro" style="margin-bottom: 16px;">
-          他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。
-        </p>
-        <p class="section-intro" style="margin-bottom: 0; font-size: 14px;">
-          Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems. His practice focuses on how image, sound, time, and space can be composed into experiences that are not only seen, but entered, sensed, and reorganized.
-        </p>
       </div>
     </section>
 
-    <section id="directions" class="section">
+    <section id="repository-network" class="section">
       <div class="container">
-        <div class="eyebrow">Current Directions</div>
-        <h2 class="section-title">当前方向</h2>
-        <div class="grid-3" style="margin-top: 26px;">
-          <div class="card">
-            <div style="padding: 24px;">
-              <h3 style="font-size: 18px; margin: 0 0 10px; letter-spacing: -0.02em;">AI + 三维视觉开发</h3>
-              <p style="color: var(--muted); margin: 0; font-size: 14px; line-height: 1.6;">围绕 AI 影像生成、数字环境、风格测试与视觉提案，发展更稳定的内容开发工作流。</p>
-            </div>
-          </div>
-          <div class="card">
-            <div style="padding: 24px;">
-              <h3 style="font-size: 18px; margin: 0 0 10px; letter-spacing: -0.02em;">双目 / Apple Vision Pro / XR 内容</h3>
-              <p style="color: var(--muted); margin: 0; font-size: 14px; line-height: 1.6;">推进双目影像、空间观看与沉浸式数字环境方向的测试、样片与定制内容开发。</p>
-            </div>
-          </div>
-          <div class="card">
-            <div style="padding: 24px;">
-              <h3 style="font-size: 18px; margin: 0 0 10px; letter-spacing: -0.02em;">数字展览与展示系统</h3>
-              <p style="color: var(--muted); margin: 0; font-size: 14px; line-height: 1.6;">将作品整理、展品分类、页面结构、策展说明与展示入口组织成更完整的线上专展与数字展览系统。</p>
-            </div>
-          </div>
-        </div>
-        <div style="margin-top: 22px;">
-          <div class="card" style="max-width: 386px;">
-            <div style="padding: 24px;">
-              <h3 style="font-size: 18px; margin: 0 0 10px; letter-spacing: -0.02em;">实时系统、项目归档与工作流整理</h3>
-              <p style="color: var(--muted); margin: 0; font-size: 14px; line-height: 1.6;">围绕实时系统、项目归档、页面组织与服务流程，持续把长期工作方法整理成更稳定的结构。</p>
-            </div>
+        <div class="eyebrow">A Distributed Practice</div>
+        <h2 class="section-title">一种分布式创作实践</h2>
+        <p class="section-intro">
+          这些页面、仓库、档案与工具并不指向同一个中心，它们共同构成了一种分布式的创作实践：作品、研究、发布、协作与系统开发在不同层级上同时发生。
+        </p>
+
+        <div class="grid-3" style="margin-top: 32px;">
+          <a href="https://github.com/ewanqian/portfolio" target="_blank" rel="noreferrer" class="repo-card" style="display: block; text-decoration: none;">
+            <h4>portfolio</h4>
+            <p>个人入口，集中呈现作品、项目履历、实践主线与对外展示。</p>
+          </a>
+          <a href="https://github.com/ewanqian/VIRTURA-Collective" target="_blank" rel="noreferrer" class="repo-card" style="display: block; text-decoration: none;">
+            <h4>VIRTURA-Collective</h4>
+            <p>团队入口，用于说明个人实践与团队协作如何在同一网络中并行展开。</p>
+          </a>
+          <a href="https://github.com/ewanqian/VIRTURA-SpacePort" target="_blank" rel="noreferrer" class="repo-card" style="display: block; text-decoration: none;">
+            <h4>VIRTURA-SpacePort</h4>
+            <p>公共前厅，承载档案、知识网络、stations 与公共活动入口。</p>
+          </a>
+          <a href="https://github.com/ewanqian/VIRTURA-Newsroom" target="_blank" rel="noreferrer" class="repo-card" style="display: block; text-decoration: none;">
+            <h4>VIRTURA-Newsroom</h4>
+            <p>发布与评论层，负责文章、复盘、批评与方法整理。</p>
+          </a>
+          <a href="https://github.com/ewanqian/SceneForge" target="_blank" rel="noreferrer" class="repo-card" style="display: block; text-decoration: none;">
+            <h4>SceneForge / RepoForge</h4>
+            <p>工具与治理层，延伸到数字舞台、查看器、预演与 workflow 系统。</p>
+          </a>
+          <div class="repo-card">
+            <h4>Forge / workforge（私有）</h4>
+            <p>隐藏支撑层，用于维护 skills、自动化与内部判断逻辑，不直接面向公众，但支撑整套公开网络的持续运行。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="selected-works" class="section">
+    <section id="archive" class="section">
       <div class="container">
-        <div style="margin-bottom: 32px; border-radius: 0; overflow: hidden; border: 1px solid var(--line);">
-          <div style="aspect-ratio: 16 / 9; background: #ddd;">
-            <img src="./assets/home/posterwall.jpg" alt="Poster wall" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-        </div>
-        <div class="eyebrow">Selected Public Works &amp; Collaborations</div>
-        <h2 class="section-title">公开项目与合作呈现</h2>
-        <p class="section-intro" style="margin-bottom: 24px;">涵盖展览、现场演出、工作坊、节展项目与商业合作。</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-          <span class="social-pill" style="cursor: default;">余佳运「45㎡」演唱会 / Opening + 舞台视觉</span>
-          <span class="social-pill" style="cursor: default;">Rain 新加坡跨年专场 / 曲目 + Opening 视觉</span>
-          <span class="social-pill" style="cursor: default;">上海广播艺术中心「孤独？」/ 舞台视觉</span>
-          <span class="social-pill" style="cursor: default;">上海时装周 XTEP-XDNA / 舞台投影视觉制作</span>
-          <span class="social-pill" style="cursor: default;">爱丁堡《山海浮生 II》/ 舞台视觉</span>
-          <span class="social-pill" style="cursor: default;">西岸艺博会 DREAMVIDEO 单元 / 影像展映</span>
-          <span class="social-pill" style="cursor: default;">UFO Terminal「加载…创作营」/ 创作营入选</span>
-          <span class="social-pill" style="cursor: default;">UFO Terminal「加载…权限 2」展览 / 展览入选</span>
-          <span class="social-pill" style="cursor: default;">首届中国（杭州）艺术与科技国际双年展 / 开幕式与常设展览呈现</span>
-          <span class="social-pill" style="cursor: default;">BO LIVE Shenzhen Audiovisual 专场 / 现场视听合作</span>
-          <span class="social-pill" style="cursor: default;">UFO Terminal × PRE / Rooooooom719 / 音画现场</span>
-          <span class="social-pill" style="cursor: default;">ChinaGraph 2024 电子剧场二等奖 / 奖项节点</span>
-          <span class="social-pill" style="cursor: default;">杭州中心美术馆《巴别瓶》/ 参展艺术家</span>
-          <span class="social-pill" style="cursor: default;">深圳坪山展览馆「数字水族馆」群展《观察与共生》</span>
-          <span class="social-pill" style="cursor: default;">中央音乐学院《未来弦诗》/ Audiovisual 新媒体视觉艺术制作</span>
-          <span class="social-pill" style="cursor: default;">苹果官方社群支持展览 “Flatland: Mixed Reality Dreams” / Apple Vision Pro 360° 视听内容制作支持</span>
-          <span class="social-pill" style="cursor: default;">FutureLab 2024 / 数字空间与城市叙事实践参展</span>
-          <span class="social-pill" style="cursor: default;">上海南京东路 THE BOXX「幻觉矩阵」/ 沉浸式多媒体 XR 体验展参展</span>
-          <span class="social-pill" style="cursor: default;">上海南京东路 THE BOXX《幻觉共振》/ AudioVisual 沉浸式演出</span>
-          <span class="social-pill" style="cursor: default;">站酷 CUBE 设计大会 / 音画互动表演</span>
+        <div class="eyebrow">Archive</div>
+        <h2 class="section-title">项目档案</h2>
+        <p class="section-intro">
+          更完整的项目履历、版本线索与公开呈现记录，保留在项目档案页中。首页在这里提供的是一条经过收束的阅读路径；进一步的项目正文、阶段版本与公开资料，则继续保存在档案系统中。
+        </p>
+
+        <div style="margin-top: 24px;">
+          <a href="https://github.com/ewanqian/portfolio/tree/main/projects" target="_blank" rel="noreferrer" class="button">View Full Archive / 查看完整项目档案</a>
         </div>
       </div>
     </section>
@@ -1211,10 +1274,10 @@
 
     <section id="contact" class="section">
       <div class="container">
-        <div class="eyebrow">Contact / Inquiry</div>
-        <h2 class="section-title">提交合作咨询</h2>
+        <div class="eyebrow">Project Inquiry</div>
+        <h2 class="section-title">项目咨询</h2>
         <p class="section-intro">
-          这一版先做成轻量表单。后续你可以把它接到 Formspree、Netlify Forms、Tally 或私有 endpoint。
+          如需讨论项目、委托、课程、展览合作或其他形式的交流，可通过下方表单留下基本信息。我会根据项目类型、时间与预算情况尽快回复。
         </p>
 
         <div class="contact-grid">
@@ -1240,9 +1303,6 @@
 
           <div class="form-panel">
             <h3>Project Inquiry Form</h3>
-            <p>
-              当前为前端演示版本。你后续可以把表单提交动作接到 Formspree 或自定义服务。
-            </p>
 
             <form id="inquiryForm" action="https://formspree.io/f/your-form-id-here" method="POST">
               <div class="field-grid">
@@ -1307,9 +1367,9 @@
                 <textarea name="message" placeholder="Tell me what you want to make, where it will be used, and what kind of result you hope to get." required></textarea>
               </label>
 
-              <button class="button primary" type="submit">Submit Inquiry</button>
-              <div class="form-note">
-                表单提交由 <a href="https://formspree.io" target="_blank" rel="noreferrer">Formspree</a> 处理，邮件会直接发到你的邮箱。请记得在 action 里替换成你的 Formspree 表单 ID。
+              <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                <button class="button primary" type="submit">Submit Inquiry</button>
+                <button class="button" type="button" id="copyFormBtn">Copy to Clipboard</button>
               </div>
               <div class="form-note" id="formStatus"></div>
             </form>
