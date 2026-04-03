@@ -108,9 +108,10 @@
       border-color: var(--text);
     }
 
+    .theme-toggle .icon-sun { display: block; }
     .theme-toggle .icon-moon { display: none; }
-    html.dark .theme-toggle .icon-moon { display: block; }
-    html.dark .theme-toggle .icon-sun { display: none; }
+    html.light .theme-toggle .icon-moon { display: block; }
+    html.light .theme-toggle .icon-sun { display: none; }
 
     .section {
       padding: 88px 0;
@@ -347,11 +348,11 @@
     }
 
     .work-item-header:hover {
-      background: rgba(0,0,0,0.02);
+      background: rgba(255,255,255,0.04);
     }
 
-    html.dark .work-item-header:hover {
-      background: rgba(255,255,255,0.04);
+    html.light .work-item-header:hover {
+      background: rgba(0,0,0,0.02);
     }
 
     .work-item-title {
