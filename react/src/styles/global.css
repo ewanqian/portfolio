@@ -885,3 +885,136 @@ textarea {
   text-align: center;
   margin-top: 40px;
 }
+
+/* Practice Map */
+.practice-map {
+  padding: 88px 0;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.practice-map .section-header {
+  margin-bottom: 40px;
+}
+
+.practice-map-grid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.practice-map-node {
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.practice-map-node:hover {
+  border-color: var(--text);
+}
+
+.practice-map-node-header {
+  padding: 24px;
+  background: var(--panel);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: background 0.3s ease;
+}
+
+.practice-map-node-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.practice-map-node-header h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.practice-map-node-header .subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.expand-icon {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+.practice-map-node-header:hover .expand-icon {
+  color: var(--text);
+}
+
+.practice-map-node-content {
+  padding: 24px;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.practice-map-node-content p {
+  margin: 0 0 24px 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.related-section {
+  margin-bottom: 24px;
+}
+
+.related-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.related-section ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.related-section li {
+  margin-bottom: 8px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.image-item {
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.image-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover img {
+  transform: scale(1.05);
+}

@@ -6,6 +6,7 @@ import SelectedWorks from './components/sections/SelectedWorks.jsx'
 import ImageWall from './components/sections/ImageWall.jsx'
 import CreativeTimeline from './components/sections/CreativeTimeline.jsx'
 import CreativeNetwork from './components/sections/CreativeNetwork.jsx'
+import PracticeMap from './components/sections/PracticeMap.jsx'
 import ArchiveEntry from './components/sections/ArchiveEntry.jsx'
 import ProductionServices from './components/sections/ProductionServices.jsx'
 import FAQ from './components/sections/FAQ.jsx'
@@ -23,6 +24,7 @@ function App() {
         <ImageWall />
         <CreativeTimeline />
         <CreativeNetwork />
+        <PracticeMap />
         <ArchiveEntry />
         <section id="events" className="section">
           <div className="container">
