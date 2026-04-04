@@ -3,6 +3,7 @@ import Footer from './components/layout/Footer.jsx'
 import Hero from './components/sections/Hero.jsx'
 import ArtisticOverview from './components/sections/ArtisticOverview.jsx'
 import SelectedWorks from './components/sections/SelectedWorks.jsx'
+import ImageWall from './components/sections/ImageWall.jsx'
 import CreativeTimeline from './components/sections/CreativeTimeline.jsx'
 import CreativeNetwork from './components/sections/CreativeNetwork.jsx'
 import ArchiveEntry from './components/sections/ArchiveEntry.jsx'
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <ArtisticOverview />
         <SelectedWorks />
+        <ImageWall />
         <CreativeTimeline />
         <CreativeNetwork />
         <ArchiveEntry />
