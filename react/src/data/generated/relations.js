@@ -1,0 +1,25 @@
+export default [
+  {
+    "works": {
+      "drop-flow": {
+        "nodes": [
+          "ufo-terminal"
+        ],
+        "assets": [
+          "ufo-01"
+        ],
+        "writings": [
+          "drop-flow-note"
+        ]
+      }
+    },
+    "nodes": {
+      "ufo-terminal": {
+        "work": "drop-flow",
+        "assets": [
+          "ufo-01"
+        ]
+      }
+    }
+  }
+];

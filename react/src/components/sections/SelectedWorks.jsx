@@ -1,4 +1,4 @@
-import { works } from '../../data/works'
+import works from '../../data/generated/works'
 
 function SelectedWorks() {
   return (
@@ -12,18 +12,14 @@ function SelectedWorks() {
         <div className="grid-3">
           {works.map((work) => (
             <article key={work.id} className="card work-card">
-              <a href={work.links[0].url} className="thumb">
-                <img src={work.image} alt={work.title} />
+              <a href={work.repoLink} className="thumb">
+                <img src={`../assets/home/featured-${work.id}-main.jpg`} alt={work.title} />
               </a>
               <div className="content">
-                <h3><a href={work.links[0].url}>{work.title}</a></h3>
-                <p>{work.description}</p>
+                <h3><a href={work.repoLink}>{work.title}</a></h3>
+                <p>{work.summary}</p>
                 <div className="inline-links">
-                  {work.links.map((link, index) => (
-                    <a key={index} href={link.url} target={link.url.startsWith('http') ? '_blank' : undefined} rel={link.url.startsWith('http') ? 'noreferrer' : undefined}>
-                      {link.text}
-                    </a>
-                  ))}
+                  <a href={work.repoLink}>详情页</a>
                 </div>
               </div>
             </article>

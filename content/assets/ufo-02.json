@@ -1,11 +1,11 @@
 {
-  "id": "ufo-01",
-  "filename": "ufo-01.jpg",
+  "id": "ufo-02",
+  "filename": "ufo-02.jpg",
   "type": "image",
-  "caption": "UFO Terminal creation camp现场截图",
+  "caption": "UFO Terminal 工作坊场景",
   "relatedWork": "drop-flow",
   "relatedNode": "ufo-terminal",
   "year": 2025,
   "source": "local-library",
-  "featured": true
+  "featured": false
 }

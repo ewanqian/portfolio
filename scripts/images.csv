@@ -1,0 +1,4 @@
+id,filename,type,caption,relatedWork,relatedNode,year,source,featured
+ufo-01,ufo-01.jpg,image,UFO Terminal creation camp现场截图,drop-flow,ufo-terminal,2025,local-library,true
+ufo-02,ufo-02.jpg,image,UFO Terminal 工作坊场景,drop-flow,ufo-terminal,2025,local-library,false
+dropflow-01,dropflow-01.jpg,image,Drop Flow 杭州展览现场,drop-flow,hangzhou-opening,2025,local-library,true

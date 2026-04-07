@@ -1,4 +1,4 @@
-import { network } from '../../data/network'
+import network from '../../data/generated/network'
 
 function CreativeNetwork() {
   return (

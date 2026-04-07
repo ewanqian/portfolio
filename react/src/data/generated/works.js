@@ -1,0 +1,25 @@
+export default [
+  {
+    "id": "drop-flow",
+    "title": "Drop Flow",
+    "subtitle": "一种持续性的结构涌现",
+    "years": "2024–2025",
+    "type": "series",
+    "summary": "围绕空间生成、流动结构与沉浸式观看展开的系列实践。",
+    "practiceLine": "spatial-generation",
+    "tags": [
+      "immersive",
+      "space",
+      "flow"
+    ],
+    "coverImage": "drop-flow-cover.jpg",
+    "relatedNodes": [
+      "ufo-terminal",
+      "hangzhou-opening"
+    ],
+    "relatedWritings": [
+      "drop-flow-note"
+    ],
+    "repoLink": "/portfolio/works/drop-flow"
+  }
+];
