@@ -1,0 +1,15 @@
+{
+  "id": "drop-flow-hangzhou-biennale",
+  "title": "Drop Flow / 杭州双年展开幕节点",
+  "year": "2025",
+  "type": "public-node",
+  "category": "Public Presentation / Immersive",
+  "summary": "Drop Flow 系列在公共语境中的重要呈现。",
+  "image": "/portfolio/assets/public-nodes/dropflow-hangzhou.jpg",
+  "relatedWork": "drop-flow",
+  "timelineStage": "spatial-generation",
+  "images": ["dropflow-hangzhou.jpg"],
+  "externalLink": "https://github.com/ewanqian/portfolio",
+  "showOnHome": true,
+  "tags": ["public", "immersive", "dropflow"]
+}

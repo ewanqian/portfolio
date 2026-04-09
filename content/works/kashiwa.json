@@ -1,0 +1,20 @@
+{
+  "id": "kashiwa",
+  "title": "《机械光合：TITAN 的全息声林》",
+  "subtitle": "与 Kashiwa Daisuke 合作",
+  "years": "2025",
+  "type": "collaboration",
+  "summary": "与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["live", "collaboration", "audiovisual"],
+  "coverImage": "featured-kashiwa-bolive-shenzhen.jpeg",
+  "image": "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+  "relatedNodes": ["can-festival"],
+  "relatedWritings": [],
+  "repoLink": "/portfolio/works/kashiwa.html",
+  "links": [
+    { "text": "详情页", "url": "./works/kashiwa.html" },
+    { "text": "微信文章", "url": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" }
+  ],
+  "priority": 0
+}

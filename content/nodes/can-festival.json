@@ -1,0 +1,15 @@
+{
+  "id": "can-festival",
+  "title": "CAN Festival",
+  "year": "2025",
+  "type": "public-node",
+  "category": "Festival / Audiovisual",
+  "summary": "现场视听合作的公共表演语境。",
+  "image": "/portfolio/assets/public-nodes/can-festival.jpg",
+  "relatedWork": "kashiwa",
+  "timelineStage": "collaborative-performance",
+  "images": ["can-festival.jpg"],
+  "externalLink": "https://github.com/ewanqian/portfolio",
+  "showOnHome": true,
+  "tags": ["festival", "audiovisual", "live"]
+}

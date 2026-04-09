@@ -1,0 +1,20 @@
+{
+  "id": "timer",
+  "title": "TIMER 控时者",
+  "subtitle": "时间、节拍与图像内部结构",
+  "years": "2024–2025",
+  "type": "series",
+  "summary": "围绕时间、节拍、频段与图像内部结构展开的音画互动系列。",
+  "practiceLine": "temporal-structure",
+  "tags": ["timer", "beat", "visual"],
+  "coverImage": "featured-timer-main.jpg",
+  "image": "/portfolio/assets/home/featured-timer-main.jpg",
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "repoLink": "/portfolio/works/timer.html",
+  "links": [
+    { "text": "详情页", "url": "./works/timer.html" },
+    { "text": "看录像", "url": "https://www.bilibili.com/video/BV1sWNWeVEVB/" }
+  ],
+  "priority": 0
+}

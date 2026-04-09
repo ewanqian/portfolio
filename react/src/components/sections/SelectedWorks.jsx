@@ -13,13 +13,15 @@ function SelectedWorks() {
           {works.map((work) => (
             <article key={work.id} className="card work-card">
               <a href={work.repoLink} className="thumb">
-                <img src={`../assets/home/featured-${work.id}-main.jpg`} alt={work.title} />
+                <img src={work.image} alt={work.title} />
               </a>
               <div className="content">
                 <h3><a href={work.repoLink}>{work.title}</a></h3>
                 <p>{work.summary}</p>
                 <div className="inline-links">
-                  <a href={work.repoLink}>详情页</a>
+                  {work.links && work.links.map((link, i) => (
+                    <a key={i} href={link.url}>{link.text}</a>
+                  ))}
                 </div>
               </div>
             </article>

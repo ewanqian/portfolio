@@ -1,5 +1,5 @@
 import React from 'react'
-import publicNodes from '../../data/publicNodes.js'
+import nodes from '../../data/generated/nodes.js'
 
 const ImageWall = () => {
   return (
@@ -11,9 +11,9 @@ const ImageWall = () => {
         </div>
         
         <div className="image-wall-grid">
-          {publicNodes.map((node) => (
+          {nodes.map((node) => (
             <div key={node.id} className="image-wall-card">
-              <a href={node.href} className="image-wall-link">
+              <a href="#" className="image-wall-link">
                 <div className="image-wall-image">
                   <img src={node.image} alt={node.title} />
                 </div>
@@ -25,8 +25,8 @@ const ImageWall = () => {
                   </div>
                 </div>
               </a>
-              {node.externalHref && (
-                <a href={node.externalHref} className="image-wall-external" target="_blank" rel="noopener noreferrer">
+              {node.externalLink && (
+                <a href={node.externalLink} className="image-wall-external" target="_blank" rel="noopener noreferrer">
                   External ↗
                 </a>
               )}
