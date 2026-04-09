@@ -3,7 +3,7 @@ function Hero() {
     <section className="hero">
       <div className="container hero-grid">
         <div className="hero-image">
-          <img src="../assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" />
+          <img src="/portfolio/assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" />
         </div>
         <div className="hero-panel">
           <div>
