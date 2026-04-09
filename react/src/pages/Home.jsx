@@ -36,10 +36,10 @@ function Home() {
             <div className="eyebrow">Archive</div>
             <h2 className="section-title">更多作品与档案</h2>
             <p className="section-intro">
-              完整的作品档案与项目记录正在整理中。
+              完整的作品档案与项目记录。
             </p>
             <div style={{ marginTop: '32px' }}>
-              <a href="#" className="btn btn-outline">View Full Archive</a>
+              <Link to="/archive" className="btn btn-outline">View Full Archive</Link>
             </div>
           </div>
         </section>

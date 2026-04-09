@@ -26,6 +26,7 @@ function Header() {
             <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => { window.location.hash = '#works'; setMenuOpen(false); }}>Works</Link>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => { window.location.hash = '#image-wall'; setMenuOpen(false); }}>Public Nodes</Link>
             <Link to="/writing" className={location.pathname === '/writing' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Writing</Link>
+            <Link to="/archive" className={location.pathname === '/archive' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Archive</Link>
             <Link to="/production" className={location.pathname === '/production' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Production</Link>
           </nav>
         </div>
