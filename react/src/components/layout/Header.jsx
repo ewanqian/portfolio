@@ -1,12 +1,16 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
 
   return (
     <header className="topbar">
       <div className="container topbar-inner">
-        <div className="brand">Ewan Qian / Portfolio</div>
+        <Link to="/" className="brand" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Ewan Qian / Portfolio
+        </Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <button 
             className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
@@ -18,13 +22,11 @@ function Header() {
             <span></span>
           </button>
           <nav className={`nav ${menuOpen ? 'open' : ''}`} id="navMenu">
-            <a href="#artistic-overview">Artistic</a>
-            <a href="#works">Works</a>
-            <a href="#services">Services</a>
-            <a href="./services/project-types.html">Categories</a>
-            <a href="./services/pricing-policy.html">Pricing</a>
-            <a href="./services/faq.html">FAQ</a>
-            <a href="#contact">Contact</a>
+            <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Practice</Link>
+            <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => { window.location.hash = '#works'; setMenuOpen(false); }}>Works</Link>
+            <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => { window.location.hash = '#image-wall'; setMenuOpen(false); }}>Public Nodes</Link>
+            <Link to="/writing" className={location.pathname === '/writing' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Writing</Link>
+            <Link to="/production" className={location.pathname === '/production' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Production</Link>
           </nav>
         </div>
       </div>
