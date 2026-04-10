@@ -5,21 +5,21 @@ const practiceLines = [
     id: 'live-performance',
     title: 'Live Performance Visuals / 现场演出视觉',
     summary: '在舞台和现场环境中构建实时视听关系',
-    relatedProjects: ['Drop Flow', 'Kashiwa Daisuke'],
-    image: '/portfolio/assets/home/featured-dropflow-main.jpg'
+    relatedProjects: ['Kashiwa Daisuke', 'BO LIVE'],
+    image: '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg'
   },
   {
     id: 'spatial-image',
     title: 'Spatial Image & Immersive Environments / 空间影像与沉浸环境',
     summary: '探索空间感知与数字环境的共生',
-    relatedProjects: ['Observation and Symbiosis'],
-    image: '/portfolio/assets/public-nodes/observation-symbiosis.jpg'
+    relatedProjects: ['Drop Flow', 'UFO Terminal'],
+    image: '/portfolio/assets/home/featured-dropflow-main.jpg'
   },
   {
     id: 'real-time-systems',
     title: 'Real-time Systems & Previsualization / 实时系统与预演方法',
     summary: '开发工具链支撑创作与预演',
-    relatedProjects: ['TIMER', 'SceneForge'],
+    relatedProjects: ['TIMER'],
     image: '/portfolio/assets/home/featured-timer-main.jpg'
   },
   {
@@ -27,7 +27,7 @@ const practiceLines = [
     title: 'Research, Archive & Digital Tools / 研究、归档与数字工具',
     summary: '整理实践脉络并构建工具生态',
     relatedProjects: ['Portfolio', 'Newsroom'],
-    image: '/portfolio/assets/home/posterwall.jpg'
+    image: '/portfolio/assets/home/about-ewanqian.jpg'
   }
 ]
 
