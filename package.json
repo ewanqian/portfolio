@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build:content": "node scripts/build-content.js"
+    "build:content": "node scripts/build-content.js",
+    "build:projects-index": "node scripts/generate-projects-readme.js",
+    "build:database-manifest": "node scripts/generate-database-manifest.js"
   },
   "dependencies": {
     "react": "^18.3.1",

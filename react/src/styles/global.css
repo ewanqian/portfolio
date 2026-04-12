@@ -400,6 +400,27 @@ img {
   margin: 0 0 16px;
 }
 
+.work-card-meta {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.work-card-note {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.signal-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.signal-pill {
+  cursor: default;
+}
+
 .inline-links {
   display: flex;
   flex-wrap: wrap;
@@ -1725,4 +1746,3 @@ textarea {
   position: absolute;
   left: -16px;
 }
-

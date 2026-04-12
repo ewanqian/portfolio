@@ -4,12 +4,12 @@
   "year": "2025",
   "type": "public-node",
   "category": "Public Presentation / Immersive",
-  "summary": "Drop Flow 系列在公共语境中的重要呈现。",
+  "summary": "Drop Flow 系列在杭州双年展与公共展陈语境中的重要呈现节点。",
   "image": "/portfolio/assets/public-nodes/dropflow-hangzhou.jpg",
   "relatedWork": "drop-flow",
   "timelineStage": "spatial-generation",
   "images": ["dropflow-hangzhou.jpg"],
-  "externalLink": "https://github.com/ewanqian/portfolio",
+  "externalLink": "",
   "showOnHome": true,
   "tags": ["public", "immersive", "dropflow"]
 }

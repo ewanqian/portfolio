@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-04-12T11:57:00+08:00",
+  "version": "1.1.0",
+  "generatedAt": "2026-04-12T16:13:25.980Z",
   "tables": [
     {
       "name": "works",
@@ -9,13 +9,13 @@
     },
     {
       "name": "nodes",
-      "count": 0,
-      "description": "节点列表"
+      "count": 6,
+      "description": "公开节点、展览、演出、创作营与奖项语境"
     },
     {
       "name": "people",
-      "count": 0,
-      "description": "协作者列表"
+      "count": 6,
+      "description": "协作者与相关人物"
     },
     {
       "name": "collectives",
@@ -29,13 +29,13 @@
     },
     {
       "name": "venues",
-      "count": 0,
-      "description": "场地信息"
+      "count": 8,
+      "description": "场地、机构与节展"
     },
     {
       "name": "screens",
-      "count": 0,
-      "description": "屏幕信息"
+      "count": 4,
+      "description": "屏幕、显示条件与输出媒介"
     },
     {
       "name": "assets_index",
@@ -49,7 +49,7 @@
     },
     {
       "name": "notes_index",
-      "count": 0,
+      "count": 5,
       "description": "笔记索引"
     }
   ]

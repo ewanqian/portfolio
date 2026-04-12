@@ -4,9 +4,13 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Hero from '../components/sections/Hero'
 import ArtisticOverview from '../components/sections/ArtisticOverview'
+import ProfileDirections from '../components/sections/ProfileDirections'
 import SelectedWorks from '../components/sections/SelectedWorks'
 import ImageWall from '../components/sections/ImageWall'
+import CreativeTimeline from '../components/sections/CreativeTimeline'
+import CreativeNetwork from '../components/sections/CreativeNetwork'
 import PracticeLines from '../components/sections/PracticeLines'
+import ArchiveEntry from '../components/sections/ArchiveEntry'
 
 function Home() {
   return (
@@ -15,9 +19,13 @@ function Home() {
       <main>
         <Hero />
         <ArtisticOverview />
+        <ProfileDirections />
         <SelectedWorks />
         <ImageWall />
+        <CreativeTimeline />
+        <CreativeNetwork />
         <PracticeLines />
+        <ArchiveEntry />
         
         <section className="section">
           <div className="container">
@@ -27,19 +35,6 @@ function Home() {
                 <p>研究笔记、创作反思、方法整理</p>
                 <Link to="/writing" className="btn btn-primary">Enter Writing</Link>
               </div>
-            </div>
-          </div>
-        </section>
-        
-        <section className="section">
-          <div className="container">
-            <div className="eyebrow">Archive</div>
-            <h2 className="section-title">更多作品与档案</h2>
-            <p className="section-intro">
-              完整的作品档案与项目记录。
-            </p>
-            <div style={{ marginTop: '32px' }}>
-              <Link to="/archive" className="btn btn-outline">View Full Archive</Link>
             </div>
           </div>
         </section>

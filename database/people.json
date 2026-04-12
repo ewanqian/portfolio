@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "id": "ewan-qian",
+    "name": "Ewan Qian / 钱誉文",
+    "type": "artist",
+    "roles": [
+      "media artist",
+      "spatial image creator",
+      "live visual producer"
+    ],
+    "relatedWorks": [
+      "kashiwa-titan-visual-2025",
+      "drop-flow-visual-2025",
+      "dropflow3-live-2025",
+      "observe-symbiosis-exhibit-2025"
+    ],
+    "status": "active"
+  },
+  {
+    "id": "kashiwa-daisuke",
+    "name": "Kashiwa Daisuke / 柏大辅",
+    "type": "collaborator",
+    "roles": [
+      "musician",
+      "composer"
+    ],
+    "relatedWorks": [
+      "kashiwa-titan-visual-2025",
+      "kashiwa-band-visual-2025"
+    ],
+    "status": "active"
+  },
+  {
+    "id": "yuki-murata",
+    "name": "Yuki Murata / 村田有希",
+    "type": "collaborator",
+    "roles": [
+      "musician",
+      "performer"
+    ],
+    "relatedWorks": [
+      "kashiwa-titan-visual-2025"
+    ],
+    "status": "active"
+  },
+  {
+    "id": "rain",
+    "name": "Rain / 郑智薰",
+    "type": "artist-collaboration",
+    "roles": [
+      "performer"
+    ],
+    "relatedWorks": [
+      "rain-singapore-visual-2026"
+    ],
+    "status": "active"
+  },
+  {
+    "id": "yujiayun",
+    "name": "余佳运",
+    "type": "artist-collaboration",
+    "roles": [
+      "singer-songwriter"
+    ],
+    "relatedWorks": [
+      "yujiayun-45ping-visual-2025"
+    ],
+    "status": "active"
+  },
+  {
+    "id": "xie-xin",
+    "name": "谢欣",
+    "type": "artist-collaboration",
+    "roles": [
+      "choreographer"
+    ],
+    "relatedWorks": [
+      "xiexindance-sixiang-gong-visual-2022"
+    ],
+    "status": "active"
+  }
+]

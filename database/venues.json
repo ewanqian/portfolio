@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": "bo-live-shenzhen",
+    "name": "BO LIVE Shenzhen",
+    "city": "Shenzhen",
+    "country": "China",
+    "type": "livehouse",
+    "relatedWorks": ["kashiwa-titan-visual-2025"],
+    "relatedNodes": ["kashiwa-bo-live-shenzhen-2025"]
+  },
+  {
+    "id": "can-festival-zhoushan",
+    "name": "CAN Festival Zhoushan",
+    "city": "Zhoushan",
+    "country": "China",
+    "type": "festival",
+    "relatedWorks": ["kashiwa-band-visual-2025"],
+    "relatedNodes": ["kashiwa-can-festival-zhoushan-2025"]
+  },
+  {
+    "id": "ufo-terminal",
+    "name": "UFO Terminal",
+    "city": "Shanghai",
+    "country": "China",
+    "type": "artist-space",
+    "relatedWorks": ["dropflow3-live-2025", "timer-series-visual-2024"],
+    "relatedNodes": ["drop-flow-ufo-terminal-2025"]
+  },
+  {
+    "id": "hangzhou-biennale",
+    "name": "China Art and Technology Biennale Hangzhou",
+    "city": "Hangzhou",
+    "country": "China",
+    "type": "biennale",
+    "relatedWorks": ["drop-flow-visual-2025"],
+    "relatedNodes": ["drop-flow-hangzhou-biennale-2025"]
+  },
+  {
+    "id": "hangzhou-center-museum",
+    "name": "Hangzhou Center Museum",
+    "city": "Hangzhou",
+    "country": "China",
+    "type": "museum",
+    "relatedWorks": ["new-media-artist-simulator-2025"],
+    "relatedNodes": ["babel-bottle-hangzhou-center-2025"]
+  },
+  {
+    "id": "pingshan-shenzhen",
+    "name": "Shenzhen Pingshan",
+    "city": "Shenzhen",
+    "country": "China",
+    "type": "exhibition-site",
+    "relatedWorks": ["observe-symbiosis-exhibit-2025"],
+    "relatedNodes": ["observe-symbiosis-pingshan-2025"]
+  },
+  {
+    "id": "westbund-art-fair",
+    "name": "Westbund Art Fair",
+    "city": "Shanghai",
+    "country": "China",
+    "type": "art-fair",
+    "relatedWorks": ["ether-fragment-exhibit-2023"],
+    "relatedNodes": []
+  },
+  {
+    "id": "k11-shanghai",
+    "name": "K11 Shanghai",
+    "city": "Shanghai",
+    "country": "China",
+    "type": "commercial-art-space",
+    "relatedWorks": ["observe-symbiosis-k11-2023"],
+    "relatedNodes": []
+  }
+]

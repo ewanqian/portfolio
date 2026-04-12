@@ -5,7 +5,7 @@ export default [
     "subtitle": "一种持续性的结构涌现",
     "years": "2024–2025",
     "type": "series",
-    "summary": "围绕实时音画互动、空间迁移与数字自然叙事展开的长期系列。",
+    "summary": "围绕实时音画互动、空间迁移、数字自然叙事与公共呈现展开的长期系列。",
     "practiceLine": "spatial-generation",
     "tags": [
       "immersive",
@@ -40,7 +40,7 @@ export default [
     "subtitle": "与 Kashiwa Daisuke 合作",
     "years": "2025",
     "type": "collaboration",
-    "summary": "与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目。",
+    "summary": "与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目，涉及雾气、白空间纵深、全息纱幕、裸眼 3D 与音画互动结构。",
     "practiceLine": "collaborative-performance",
     "tags": [
       "live",
@@ -72,7 +72,7 @@ export default [
     "subtitle": "时间、节拍与图像内部结构",
     "years": "2024–2025",
     "type": "series",
-    "summary": "围绕时间、节拍、频段与图像内部结构展开的音画互动系列。",
+    "summary": "围绕时间、节拍、频段与图像内部结构展开的音画互动系列，也是时间结构方向的核心作品线。",
     "practiceLine": "temporal-structure",
     "tags": [
       "timer",

@@ -13,6 +13,11 @@
     "status": "done",
     "featured": true,
     "description": "Rain 新加坡跨年专场视觉制作",
+    "collaboratorIds": ["rain", "ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": ["projects/rain-singapore-visual-2026.md"],
     "filePath": "projects/rain-singapore-visual-2026.md"
   },
   {
@@ -29,6 +34,11 @@
     "status": "done",
     "featured": true,
     "description": "余佳运演唱会 Opening 和舞台视觉制作",
+    "collaboratorIds": ["yujiayun", "ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": ["projects/yujiayun-45ping-visual-2025.md"],
     "filePath": "projects/yujiayun-45ping-visual-2025.md"
   },
   {
@@ -45,6 +55,15 @@
     "status": "done",
     "featured": true,
     "description": "与 KASHIWA Daisuke、Yuki Murata 合作的现场视听项目，负责全息纱幕、裸眼 3D 与音画互动视觉部分",
+    "collaboratorIds": ["kashiwa-daisuke", "yuki-murata", "ewan-qian"],
+    "venueId": "bo-live-shenzhen",
+    "relatedNodeIds": ["kashiwa-bo-live-shenzhen-2025"],
+    "awards": [],
+    "sourceDocs": [
+      "projects/kashiwa-titan-visual-2025.md",
+      "works/kashiwa.html",
+      "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
+    ],
     "filePath": "projects/kashiwa-titan-visual-2025.md"
   },
   {
@@ -61,6 +80,14 @@
     "status": "done",
     "featured": true,
     "description": "Can Festival 舟山 Kashiwa Daisuke 演出舞台视觉",
+    "collaboratorIds": ["kashiwa-daisuke", "ewan-qian"],
+    "venueId": "can-festival-zhoushan",
+    "relatedNodeIds": ["kashiwa-can-festival-zhoushan-2025"],
+    "awards": [],
+    "sourceDocs": [
+      "projects/kashiwa-band-visual-2025.md",
+      "visual-arts/kashiwa-daisuke/Zhoushan-CAN-Festival-2025/README.md"
+    ],
     "filePath": "projects/kashiwa-band-visual-2025.md"
   },
   {
@@ -77,6 +104,11 @@
     "status": "done",
     "featured": true,
     "description": "爱丁堡《山海浮生II》舞台视觉制作",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": ["projects/shanhaifusheng2-visual-2025.md"],
     "filePath": "projects/shanhaifusheng2-visual-2025.md"
   },
   {
@@ -157,6 +189,11 @@
     "status": "done",
     "featured": true,
     "description": "上海时装周 XTEP-XDNA 视频内容制作",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": ["projects/xtep-xdna22aw-visual-2022.md"],
     "filePath": "projects/xtep-xdna22aw-visual-2022.md"
   },
   {
@@ -189,6 +226,14 @@
     "status": "done",
     "featured": true,
     "description": "《观察与共生》Workshop 高斯扫描方法分享",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": [
+      "projects/observe-symbiosis-workshop-2026.md",
+      "workshops/202601-愚见观池-情感容器工作坊.md"
+    ],
     "filePath": "projects/observe-symbiosis-workshop-2026.md"
   },
   {
@@ -205,6 +250,14 @@
     "status": "done",
     "featured": true,
     "description": "首届中国（杭州）艺术与科技国际双年展开幕式作品，沉浸式大屏视觉与 VR 头显内容制作",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": "hangzhou-biennale",
+    "relatedNodeIds": ["drop-flow-hangzhou-biennale-2025"],
+    "awards": [],
+    "sourceDocs": [
+      "projects/drop-flow-visual-2025.md",
+      "content/nodes/drop-flow-hangzhou-biennale.json"
+    ],
     "filePath": "projects/drop-flow-visual-2025.md"
   },
   {
@@ -221,6 +274,11 @@
     "status": "done",
     "featured": false,
     "description": "重庆「流光绘影」光影科技艺术节异形屏幕装置",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": ["2025 流光绘影 光影科技艺术节优秀作品"],
+    "sourceDocs": [],
     "filePath": null
   },
   {
@@ -237,6 +295,11 @@
     "status": "done",
     "featured": true,
     "description": "杭州国际电子音乐节「滴流」一等奖",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": ["杭州国际电子音乐作曲比赛 C 组一等奖"],
+    "sourceDocs": ["projects/derive-dual-city-2024.md"],
     "filePath": "projects/derive-dual-city-2024.md"
   },
   {
@@ -253,6 +316,14 @@
     "status": "done",
     "featured": true,
     "description": "UFO Terminal「滴流3.0」音画互动现场",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": "ufo-terminal",
+    "relatedNodeIds": ["drop-flow-ufo-terminal-2025"],
+    "awards": [],
+    "sourceDocs": [
+      "projects/dropflow3-live-2025.md",
+      "content/nodes/ufo-terminal.json"
+    ],
     "filePath": "projects/dropflow3-live-2025.md"
   },
   {
@@ -269,6 +340,11 @@
     "status": "done",
     "featured": true,
     "description": "西安万象城「数字游园」Unity VFX Graph 视觉开发",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": ["projects/digital-garden-visual-2025.md"],
     "filePath": "projects/digital-garden-visual-2025.md"
   },
   {
@@ -285,6 +361,11 @@
     "status": "done",
     "featured": true,
     "description": "深圳坪山「观察与共生」展览数据可视化",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": "pingshan-shenzhen",
+    "relatedNodeIds": ["observe-symbiosis-pingshan-2025"],
+    "awards": [],
+    "sourceDocs": ["projects/observe-symbiosis-exhibit-2025.md"],
     "filePath": "projects/observe-symbiosis-exhibit-2025.md"
   },
   {
@@ -301,6 +382,11 @@
     "status": "done",
     "featured": true,
     "description": "杭州中心美术馆「巴别瓶」新媒体艺术家模拟器交互作品参展",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": "hangzhou-center-museum",
+    "relatedNodeIds": ["babel-bottle-hangzhou-center-2025"],
+    "awards": [],
+    "sourceDocs": ["projects/new-media-artist-simulator-2025.md"],
     "filePath": "projects/new-media-artist-simulator-2025.md"
   },
   {
@@ -333,6 +419,11 @@
     "status": "done",
     "featured": true,
     "description": "西岸艺术博览会「以太碎片」影像展映",
+    "collaboratorIds": ["ewan-qian"],
+    "venueId": "westbund-art-fair",
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": ["projects/ether-fragment-exhibit-2023.md"],
     "filePath": "projects/ether-fragment-exhibit-2023.md"
   },
   {

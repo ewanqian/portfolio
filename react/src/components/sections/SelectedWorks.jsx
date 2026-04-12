@@ -1,5 +1,11 @@
 import works from '../../data/generated/works'
 
+const workHighlights = {
+  'drop-flow': '杭州双年展开幕与常设展呈现，获杭州国际电子音乐作曲比赛一等奖，并入选 2025「流光绘影」光影科技艺术节优秀作品。',
+  kashiwa: '与 Kashiwa Daisuke、Yuki Murata 在 BO LIVE Shenzhen 完成专场视听合作，包含全息纱幕、裸眼 3D 与音画互动段落。',
+  timer: 'UFO Terminal「加载…创作营」支持创作，入选「加载…权限 2」展览，并获 ChinaGraph 2024 电子剧场优秀音乐作品二等奖。'
+}
+
 function SelectedWorks() {
   return (
     <section id="works" className="section">
@@ -17,7 +23,9 @@ function SelectedWorks() {
               </a>
               <div className="content">
                 <h3><a href={work.repoLink}>{work.title}</a></h3>
+                <p className="work-card-meta">{work.years} · {work.subtitle}</p>
                 <p>{work.summary}</p>
+                <p className="work-card-note">{workHighlights[work.id]}</p>
                 <div className="inline-links">
                   {work.links && work.links.map((link, i) => (
                     <a key={i} href={link.url}>{link.text}</a>

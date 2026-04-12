@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "id": "kashiwa-bo-live-shenzhen-2025",
+    "title": "Kashiwa Daisuke BO LIVE Shenzhen",
+    "slug": "kashiwa-bo-live-shenzhen-2025",
+    "year": 2025,
+    "month": 10,
+    "type": "performance",
+    "category": "audiovisual-collaboration",
+    "relatedWorks": ["kashiwa-titan-visual-2025"],
+    "venueId": "bo-live-shenzhen",
+    "peopleIds": ["kashiwa-daisuke", "yuki-murata", "ewan-qian"],
+    "summary": "BO LIVE Shenzhen 专场视听合作节点，包含全息纱幕、裸眼 3D 与音画互动结构。",
+    "publicEvidence": [
+      "works/kashiwa.html",
+      "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
+    ],
+    "status": "published"
+  },
+  {
+    "id": "kashiwa-can-festival-zhoushan-2025",
+    "title": "Kashiwa Daisuke CAN Festival Zhoushan",
+    "slug": "kashiwa-can-festival-zhoushan-2025",
+    "year": 2025,
+    "month": 10,
+    "type": "festival-performance",
+    "category": "audiovisual-collaboration",
+    "relatedWorks": ["kashiwa-band-visual-2025"],
+    "venueId": "can-festival-zhoushan",
+    "peopleIds": ["kashiwa-daisuke", "ewan-qian"],
+    "summary": "Kashiwa Daisuke 舟山 CAN Festival 公共演出节点。",
+    "publicEvidence": [
+      "visual-arts/kashiwa-daisuke/Zhoushan-CAN-Festival-2025/README.md",
+      "projects/kashiwa-band-visual-2025.md"
+    ],
+    "status": "published"
+  },
+  {
+    "id": "drop-flow-hangzhou-biennale-2025",
+    "title": "Drop Flow Hangzhou Biennale Opening",
+    "slug": "drop-flow-hangzhou-biennale-2025",
+    "year": 2025,
+    "month": 10,
+    "type": "exhibition-opening",
+    "category": "public-presentation",
+    "relatedWorks": ["drop-flow-visual-2025"],
+    "venueId": "hangzhou-biennale",
+    "peopleIds": ["ewan-qian"],
+    "summary": "Drop Flow 在杭州双年展开幕式与展陈系统中的重要公共呈现节点。",
+    "publicEvidence": [
+      "projects/drop-flow-visual-2025.md",
+      "content/nodes/drop-flow-hangzhou-biennale.json"
+    ],
+    "status": "published"
+  },
+  {
+    "id": "drop-flow-ufo-terminal-2025",
+    "title": "Drop Flow UFO Terminal",
+    "slug": "drop-flow-ufo-terminal-2025",
+    "year": 2025,
+    "month": 7,
+    "type": "creation-camp-live",
+    "category": "experiment-process",
+    "relatedWorks": ["dropflow3-live-2025"],
+    "venueId": "ufo-terminal",
+    "peopleIds": ["ewan-qian"],
+    "summary": "与创作营、实时生成测试与现场环境密切相关的重要实验节点。",
+    "publicEvidence": [
+      "projects/dropflow3-live-2025.md",
+      "content/nodes/ufo-terminal.json"
+    ],
+    "status": "published"
+  },
+  {
+    "id": "observe-symbiosis-pingshan-2025",
+    "title": "Observation and Symbiosis Shenzhen Pingshan",
+    "slug": "observe-symbiosis-pingshan-2025",
+    "year": 2025,
+    "month": 7,
+    "type": "exhibition",
+    "category": "perceptual-environment",
+    "relatedWorks": ["observe-symbiosis-exhibit-2025"],
+    "venueId": "pingshan-shenzhen",
+    "peopleIds": ["ewan-qian"],
+    "summary": "《观察与共生》在深圳坪山的数据可视化与公共展览节点。",
+    "publicEvidence": [
+      "projects/observe-symbiosis-exhibit-2025.md"
+    ],
+    "status": "published"
+  },
+  {
+    "id": "babel-bottle-hangzhou-center-2025",
+    "title": "Babel Bottle Hangzhou Center",
+    "slug": "babel-bottle-hangzhou-center-2025",
+    "year": 2025,
+    "month": 8,
+    "type": "museum-exhibition",
+    "category": "interactive-installation",
+    "relatedWorks": ["new-media-artist-simulator-2025"],
+    "venueId": "hangzhou-center-museum",
+    "peopleIds": ["ewan-qian"],
+    "summary": "杭州中心美术馆《巴别瓶》参展节点。",
+    "publicEvidence": [
+      "projects/new-media-artist-simulator-2025.md"
+    ],
+    "status": "published"
+  }
+]

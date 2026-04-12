@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "kashiwa-production-notes-v01",
+    "title": "Kashiwa TITAN production notes v0.1",
+    "type": "production-note",
+    "relatedWorks": ["kashiwa-titan-visual-2025"],
+    "path": "works/kashiwa.html",
+    "status": "published"
+  },
+  {
+    "id": "kashiwa-visual-gene-library",
+    "title": "Kashiwa track visual gene library",
+    "type": "visual-gene-library",
+    "relatedWorks": ["kashiwa-titan-visual-2025"],
+    "path": "works/kashiwa.html",
+    "status": "published"
+  },
+  {
+    "id": "drop-flow-note",
+    "title": "从空间内部展开的图像经验",
+    "type": "essay",
+    "relatedWorks": ["drop-flow-visual-2025", "dropflow3-live-2025"],
+    "path": "content/writings/drop-flow-note.json",
+    "status": "published"
+  },
+  {
+    "id": "about-full-practice-lines",
+    "title": "about full practice lines",
+    "type": "practice-outline",
+    "relatedWorks": [],
+    "path": "about/about-full-practice-lines.md",
+    "status": "draft"
+  },
+  {
+    "id": "projects-credits-full",
+    "title": "projects credits full",
+    "type": "credits-index",
+    "relatedWorks": [],
+    "path": "projects/projects-credits-full.md",
+    "status": "draft"
+  }
+]

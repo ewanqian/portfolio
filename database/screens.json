@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "hologauze-scrim",
+    "name": "全息纱幕 / Hologauze Scrim",
+    "type": "transparent-screen",
+    "relatedWorks": ["kashiwa-titan-visual-2025"],
+    "notes": "用于 BO LIVE Shenzhen Kashiwa 项目的空间层次与漂浮视觉关系。"
+  },
+  {
+    "id": "naked-eye-3d-led",
+    "name": "裸眼 3D 屏幕",
+    "type": "led",
+    "relatedWorks": ["kashiwa-titan-visual-2025"],
+    "notes": "与空间错觉、白空间纵深和观演方向相关。"
+  },
+  {
+    "id": "immersive-large-screen",
+    "name": "沉浸式大屏",
+    "type": "projection-or-led",
+    "relatedWorks": ["drop-flow-visual-2025"],
+    "notes": "用于杭州双年展 Drop Flow 的公共呈现与环境观看。"
+  },
+  {
+    "id": "stereo-headset-avp",
+    "name": "双目 / Apple Vision Pro",
+    "type": "head-mounted-display",
+    "relatedWorks": ["drop-flow-visual-2025", "flatland-mr-content-2025"],
+    "notes": "用于空间观看、双目影像与 XR 内容验证。"
+  }
+]
