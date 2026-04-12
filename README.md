@@ -277,36 +277,36 @@ His works and collaborations have been publicly presented in Beijing, Shanghai, 
 
 | 时间 | 项目 | 角色 | 所属主线 |
 |------|------|------|----------|
-| 26/01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目+Opening视觉 | Audiovisual Collaborations |
-| 25/11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening+舞台视觉 | Audiovisual Collaborations |
-| 25/10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 视觉制作（全息纱幕 / 裸眼3D / 音画互动） | Audiovisual Collaborations |
-| 25/10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉（参与部分） | Audiovisual Collaborations |
-| 25/08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 | Audiovisual Collaborations |
-| 23/12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 | Audiovisual Collaborations |
-| 23/11 | [@onefive Overground](./projects/onefive-overground-visual-2023.md) | 视觉制作 | Audiovisual Collaborations |
-| 23/10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 | Audiovisual Collaborations |
-| 22/10 | [谢欣舞蹈剧场《四相》《汞》](./projects/xiexindance-sixiang-gong-visual-2022.md) | 影像视觉 | Audiovisual Collaborations |
-| 22/09 | [上海时装周XTEP-XDNA](./projects/xtep-xdna22aw-visual-2022.md) | 视频制作 | Audiovisual Collaborations |
-| 22/11 | [Germany Hamburg《Water Music》](./projects/watermusic-multi-visual-2022.md) | 多媒体视觉 | Audiovisual Collaborations |
+| 2026.01 | [Rain 新加坡跨年专场](./projects/rain-singapore-visual-2026.md) | 曲目+Opening视觉 | Audiovisual Collaborations |
+| 2025.11 | [余佳运「45㎡」演唱会](./projects/yujiayun-45ping-visual-2025.md) | Opening+舞台视觉 | Audiovisual Collaborations |
+| 2025.10 | [Kashiwa Daisuke 深圳专场](./projects/kashiwa-titan-visual-2025.md) | 视觉制作（全息纱幕 / 裸眼3D / 音画互动） | Audiovisual Collaborations |
+| 2025.10 | [Can Festival 舟山](./projects/kashiwa-band-visual-2025.md) | 舞台视觉（参与部分） | Audiovisual Collaborations |
+| 2025.08 | [爱丁堡《山海浮生II》](./projects/shanhaifusheng2-visual-2025.md) | 舞台视觉 | Audiovisual Collaborations |
+| 2023.12 | [@onefive Underground](./projects/onefive-underground-visual-2023.md) | 视觉制作 | Audiovisual Collaborations |
+| 2023.11 | [@onefive Overground](./projects/onefive-overground-visual-2023.md) | 视觉制作 | Audiovisual Collaborations |
+| 2023.10 | [上海广播艺术中心「孤独？」](./projects/lonely-av-live-2023.md) | 舞台视觉 | Audiovisual Collaborations |
+| 2022.10 | [谢欣舞蹈剧场《四相》《汞》](./projects/xiexindance-sixiang-gong-visual-2022.md) | 影像视觉 | Audiovisual Collaborations |
+| 2022.09 | [上海时装周XTEP-XDNA](./projects/xtep-xdna22aw-visual-2022.md) | 视频制作 | Audiovisual Collaborations |
+| 2022.11 | [Germany Hamburg《Water Music》](./projects/watermusic-multi-visual-2022.md) | 多媒体视觉 | Audiovisual Collaborations |
 
 ### 混合媒介
 
 | 时间 | 项目 | 角色 | 所属主线 |
 |------|------|------|----------|
-| 26/01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 高斯扫描/方法分享 | Perceptual Environments |
-| 25/10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 沉浸式大屏+VR头显 | Drop Flow |
-| 25/11 | 重庆「流光绘影」光影科技艺术节「滴流」 | 异形屏幕装置 | Drop Flow |
-| 25/09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 多媒体视觉合作 | Drop Flow |
-| 25/07 | UFO Terminal「滴流3.0」 | 音画互动现场 | Drop Flow |
-| 25/07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph | Perceptual Environments |
-| 25/07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-exhibit-2025.md) | 数据可视化 | Perceptual Environments |
-| 25/08 | [杭州中心「巴别瓶」](./projects/new-media-artist-simulator-2025.md) | 交互作品参展 | Perceptual Environments |
-| 25/08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 | Perceptual Environments |
-| 23/11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 | Perceptual Environments |
-| 23/08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 | Perceptual Environments |
-| 23/01 | [安昌光影艺术季](./projects/glance-thousand-install-2023.md) | 古桥投影 | Perceptual Environments |
-| 22/12 | [深圳光影艺术季AR](./projects/ar-shenzhen-resort-2022.md) | AR作品 | Perceptual Environments |
-| 22/09 | [西岸凤巢AI PLAZA](./projects/meta-speaker-install-2022.md) | 数字艺术 | Perceptual Environments |
+| 2026.01 | [《观察与共生》Workshop](./projects/observe-symbiosis-workshop-2026.md) | 高斯扫描/方法分享 | Perceptual Environments |
+| 2025.10 | [首届中国（杭州）艺术与科技国际双年展开幕式「滴流」](./projects/drop-flow-visual-2025.md) | 沉浸式大屏+VR头显 | Drop Flow |
+| 2025.11 | 重庆「流光绘影」光影科技艺术节「滴流」 | 异形屏幕装置 | Drop Flow |
+| 2025.09 | [杭州国际电子音乐节「滴流」一等奖](./projects/derive-dual-city-2024.md) | 多媒体视觉合作 | Drop Flow |
+| 2025.07 | UFO Terminal「滴流3.0」 | 音画互动现场 | Drop Flow |
+| 2025.07 | [西安万象城「数字游园」](./projects/digital-garden-visual-2025.md) | Unity VFX Graph | Perceptual Environments |
+| 2025.07 | [深圳坪山「观察与共生」](./projects/observe-symbiosis-exhibit-2025.md) | 数据可视化 | Perceptual Environments |
+| 2025.08 | [杭州中心「巴别瓶」](./projects/new-media-artist-simulator-2025.md) | 交互作品参展 | Perceptual Environments |
+| 2025.08 | [上海西岸漩心](./projects/westbund-ambient-visual-2025.md) | 环境视觉 | Perceptual Environments |
+| 2023.11 | [西岸艺术博览会「以太碎片」](./projects/ether-fragment-exhibit-2023.md) | 影像展映 | Perceptual Environments |
+| 2023.08 | [上海K11「观察与共生」](./projects/observe-symbiosis-k11-2023.md) | 视频装置 | Perceptual Environments |
+| 2023.01 | [安昌光影艺术季](./projects/glance-thousand-install-2023.md) | 古桥投影 | Perceptual Environments |
+| 2022.12 | [深圳光影艺术季AR](./projects/ar-shenzhen-resort-2022.md) | AR作品 | Perceptual Environments |
+| 2022.09 | [西岸凤巢AI PLAZA](./projects/meta-speaker-install-2022.md) | 数字艺术 | Perceptual Environments |
 
 ---
 

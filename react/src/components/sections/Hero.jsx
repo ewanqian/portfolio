@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Hero() {
   return (
     <section className="hero">
@@ -17,8 +19,12 @@ function Hero() {
               钱誉文的实践围绕时间、图像、空间与感知之间的连续关系展开。网页、舞台、环幕、数字展览、档案与接口研究，在这里构成的并非彼此独立的媒介分支，而是一条持续推进的创作网络。
             </p>
             <div className="hero-cta">
-              <a className="button primary" href="#artistic-overview">Artistic Practice / 创作实践</a>
-              <a className="button" href="#services">Production Services / 制作服务</a>
+              <Link className="button primary" to="/" state={{ scrollTo: 'artistic-overview' }}>
+                Artistic Practice / 创作实践
+              </Link>
+              <Link className="button" to="/production">
+                Production Services / 制作服务
+              </Link>
             </div>
           </div>
           <div>

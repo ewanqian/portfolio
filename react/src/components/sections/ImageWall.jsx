@@ -11,7 +11,7 @@ const nodeLinks = {
 
 const ImageWall = () => {
   return (
-    <section className="image-wall">
+    <section id="image-wall" className="image-wall">
       <div className="container">
         <div className="section-header">
           <h2>Selected Public Nodes / 公开呈现节点</h2>

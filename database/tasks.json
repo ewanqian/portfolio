@@ -1,1 +1,63 @@
-[]
+[
+  {
+    "id": "phase-1-header-system",
+    "title": "Fix header / topbar / theme / navigation system",
+    "category": "website-shell",
+    "priority": "critical",
+    "status": "in_progress",
+    "scope": [
+      "react/src/components/layout/Header.jsx",
+      "react/src/hooks/useTheme.jsx",
+      "react/src/styles/global.css",
+      "react/src/index.css"
+    ]
+  },
+  {
+    "id": "phase-2-content-promotion",
+    "title": "Promote more featured projects from database into content/works",
+    "category": "content-system",
+    "priority": "high",
+    "status": "pending",
+    "scope": [
+      "database/works.json",
+      "content/works",
+      "scripts/build-content.js"
+    ]
+  },
+  {
+    "id": "phase-3-commercial-writing",
+    "title": "Restructure cooperation / pricing / commercial writing",
+    "category": "writing-strategy",
+    "priority": "high",
+    "status": "pending",
+    "scope": [
+      "react/src/pages/Production.jsx",
+      "services/",
+      "react/src/pages/Writing.jsx"
+    ]
+  },
+  {
+    "id": "phase-4-artistic-timeline",
+    "title": "Build artistic timeline data layer",
+    "category": "artistic-system",
+    "priority": "high",
+    "status": "pending",
+    "scope": [
+      "database/",
+      "content/",
+      "react/src/data/timeline.js"
+    ]
+  },
+  {
+    "id": "phase-5-visual-gene-library",
+    "title": "Design visual gene library and work analysis schema",
+    "category": "artistic-system",
+    "priority": "high",
+    "status": "pending",
+    "scope": [
+      "database/notes_index.json",
+      "projects/",
+      "works/"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const practiceLines = [
   {
@@ -55,7 +55,9 @@ const PracticeLines = () => {
                     <span key={i} className="practice-line-tag">{project}</span>
                   ))}
                 </div>
-                <a href={`#${line.id}`} className="btn btn-outline">Open Line</a>
+                <Link to="/archive" className="btn btn-outline">
+                  Open Archive
+                </Link>
               </div>
             </article>
           ))}

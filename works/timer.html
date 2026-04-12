@@ -18,16 +18,6 @@
       --max: 1240px;
     }
 
-    html.light {
-      --bg: #ffffff;
-      --panel: #ffffff;
-      --text: #111111;
-      --muted: #666666;
-      --line: rgba(0, 0, 0, 0.12);
-      --line-strong: rgba(0, 0, 0, 0.28);
-      --accent: #111111;
-      --inverse: #ffffff;
-    }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -68,7 +58,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(10, 10, 10, 0.95);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(6px);
     }
@@ -99,40 +89,6 @@
       color: var(--text);
     }
 
-    .theme-toggle {
-      width: 32px;
-      height: 32px;
-      border-radius: 0;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.18s ease;
-      padding: 0;
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-1px);
-      border-color: var(--text);
-    }
-
-    .theme-toggle .icon-sun {
-      display: block;
-    }
-
-    .theme-toggle .icon-moon {
-      display: none;
-    }
-
-    html.light .theme-toggle .icon-moon {
-      display: block;
-    }
-
-    html.light .theme-toggle .icon-sun {
-      display: none;
-    }
 
     .section {
       padding: 88px 0;
@@ -360,10 +316,6 @@
       .nav a {
         font-size: 11px;
       }
-      .theme-toggle {
-        width: 28px;
-        height: 28px;
-      }
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -388,12 +340,6 @@
       <div class="brand">Ewan Qian / TIMER</div>
       <nav class="nav">
         <a href="../index.html">← Back to Home</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="icon-moon"/>
-            <circle cx="12" cy="12" r="5" class="icon-sun"/>
-          </svg>
-        </button>
       </nav>
     </div>
   </header>
@@ -499,32 +445,5 @@
     </div>
   </footer>
 
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-
-    function setTheme(isLight) {
-      if (isLight) {
-        html.classList.add('light');
-      } else {
-        html.classList.remove('light');
-      }
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const isLight = html.classList.contains('light');
-      setTheme(!isLight);
-    });
-
-    (function initTheme() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light') {
-        setTheme(true);
-      } else {
-        setTheme(false);
-      }
-    })();
-  </script>
 </body>
 </html>

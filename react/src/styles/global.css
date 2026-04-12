@@ -92,6 +92,13 @@ img {
   position: relative;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .brand {
   font-size: 12px;
   font-weight: 700;
@@ -106,15 +113,38 @@ img {
   align-items: center;
 }
 
-.nav a {
+.nav a,
+.nav button {
   font-size: 12px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  line-height: 1.2;
 }
 
-.nav a:hover {
+.nav button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nav a:hover,
+.nav button:hover,
+.nav a.active,
+.nav button.active,
+.nav a[aria-current='page'] {
   color: var(--text);
+}
+
+.nav a:focus-visible,
+.nav button:focus-visible,
+.menu-toggle:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--line-strong);
+  outline-offset: 3px;
 }
 
 .menu-toggle {
@@ -155,6 +185,48 @@ img {
   transform: rotate(-45deg) translate(3px, -3px);
 }
 
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.18s ease;
+  padding: 0;
+  color: var(--text);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--text);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.theme-toggle .icon-sun {
+  display: block;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+html.light .theme-toggle .icon-moon {
+  display: block;
+}
+
+html.light .theme-toggle .icon-sun {
+  display: none;
+}
+
 @media (max-width: 760px) {
   .menu-toggle {
     display: flex;
@@ -176,9 +248,11 @@ img {
   .nav.open {
     display: flex;
   }
-  .nav a {
+  .nav a,
+  .nav button {
     padding: 6px 8px;
     width: 100%;
+    text-align: left;
   }
 }
 
