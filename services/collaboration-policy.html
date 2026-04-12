@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ / 常见问题 — Ewan Qian Portfolio</title>
-  <meta name="description" content="合作前常见问题解答：项目类型、免费试做、修改轮次、商业项目、实验项目、双目 XR 合作等。" />
+  <title>Collaboration Policy / 合作规则说明 — Ewan Qian Portfolio</title>
+  <meta name="description" content="合作规则说明：报价有效期、启动条件、交付范围、修改规则、暂停取消、验收标准、权利说明。" />
   <style>
     :root {
       --bg: #0a0a0a;
@@ -118,21 +118,10 @@
       border-color: var(--text);
     }
 
-    .theme-toggle .icon-sun {
-      display: block;
-    }
-
-    .theme-toggle .icon-moon {
-      display: none;
-    }
-
-    html.light .theme-toggle .icon-moon {
-      display: block;
-    }
-
-    html.light .theme-toggle .icon-sun {
-      display: none;
-    }
+    .theme-toggle .icon-sun { display: block; }
+    .theme-toggle .icon-moon { display: none; }
+    html.light .theme-toggle .icon-moon { display: block; }
+    html.light .theme-toggle .icon-sun { display: none; }
 
     .section {
       padding: 88px 0;
@@ -171,7 +160,7 @@
       max-width: 760px;
     }
 
-    .faq-item {
+    .content-block {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 0;
@@ -179,20 +168,41 @@
       margin-bottom: 16px;
     }
 
-    .faq-item h3 {
+    .content-block h3 {
       font-size: 18px;
       margin: 0 0 10px;
       letter-spacing: -0.02em;
     }
 
-    .faq-item p {
+    .content-block p {
       color: var(--muted);
       margin: 0;
       font-size: 15px;
     }
 
-    .faq-item ul {
+    .content-block ul {
       margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .preparation-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 20px 24px;
+      margin-top: 36px;
+    }
+
+    .preparation-block h4 {
+      font-size: 16px;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .preparation-block ul {
+      margin: 0;
       padding-left: 20px;
       color: var(--muted);
       font-size: 15px;
@@ -258,7 +268,7 @@
         padding: 60px 0;
       }
 
-      .faq-item {
+      .content-block {
         padding: 20px;
       }
 
@@ -271,7 +281,7 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <div class="brand">Services / FAQ</div>
+      <div class="brand">Services / Policy</div>
       <nav class="nav">
         <a href="../index.html">← Back to Home</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -288,146 +298,85 @@
     <section class="section">
       <a href="../index.html" class="back-link">← 返回首页</a>
 
-      <h1 class="page-title">FAQ / 常见问题</h1>
+      <h1 class="page-title">Collaboration Policy / 合作规则说明</h1>
       <p class="page-intro">
-        合作前常见问题解答。如果这里没找到你的问题，可以直接通过首页表单或小红书私信提问。
+        这里明确合作过程中的基本规则、边界与处理方式，让双方对流程和预期有清晰共识。
       </p>
 
       <div class="content-block">
-        <h3 style="margin: 0 0 12px;">内容概览</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
-          <a href="#service" style="display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 0; background: var(--panel); font-size: 13px; color: var(--text); transition: 0.15s;" onmouseover="this.style.borderColor='var(--text)'" onmouseout="this.style.borderColor='var(--line)'">
-            📋 服务相关
-          </a>
-          <a href="#billing" style="display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 0; background: var(--panel); font-size: 13px; color: var(--text); transition: 0.15s;" onmouseover="this.style.borderColor='var(--text)'" onmouseout="this.style.borderColor='var(--line)'">
-            � 合作与结算
-          </a>
-        </div>
+        <h3>1. 报价有效期</h3>
+        <p>报价出具后，有效期一般为 15-30 天。如果超过有效期再启动项目，可能需要根据最新需求和排期重新评估报价。</p>
       </div>
 
-      <div id="service" style="scroll-margin-top: 80px;">
-      <div class="faq-item">
-        <h3>1. 你主要接什么类型的项目？</h3>
-        <p>目前主要接：</p>
+      <div class="content-block">
+        <h3>2. 项目启动条件</h3>
+        <p>项目满足以下条件后正式启动：</p>
         <ul>
-          <li>AI 视觉短视频与传播内容</li>
-          <li>舞台视觉、演出影像与空间影像</li>
-          <li>双目视频 / Apple Vision Pro / XR 内容</li>
-          <li>数字展览、线上专展与展示系统</li>
-          <li>工程调试、工作流咨询与内容整理</li>
-          <li>课程、讲座、工作坊与培训</li>
+          <li>双方确认需求范围、报价与时间节点</li>
+          <li>首期款项到账</li>
+          <li>客户提供必要的基础素材与参考信息</li>
         </ul>
       </div>
 
-      <div class="faq-item">
-        <h3>2. 如果我不知道自己到底需要买什么，怎么办？</h3>
-        <p>可以直接先发项目简介，我会先帮你判断更适合从：</p>
+      <div class="content-block">
+        <h3>3. 默认交付内容</h3>
+        <p>根据项目类型，默认交付包括：</p>
         <ul>
-          <li>咨询</li>
-          <li>测试样片</li>
-          <li>视觉开发</li>
-          <li>完整制作</li>
-          <li>工程诊断</li>
-          <li>展示系统整理</li>
-        </ul>
-        <p>中的哪一种开始。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>3. 你会先免费试做吗？</h3>
-        <p>一般不会直接免费做完整内容。但对于某些方向明确、值得推进的项目，可以从较小的测试样片或咨询开始，先确认方向和合作方式。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>4. 修改几轮怎么算？</h3>
-        <p>基础报价通常默认包含<strong>有限轮次的小范围调整</strong>。如果出现：</p>
-        <ul>
-          <li>大方向改动</li>
-          <li>结构重做</li>
-          <li>额外版本追加</li>
-          <li>客户中途新增需求</li>
-        </ul>
-        <p>则通常需要重新评估工作量。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>5. 你能接很商业的项目吗？</h3>
-        <p>可以。我并不只做艺术项目，也能做品牌传播、活动视觉、企业内容、课程培训和展示系统。只是我更适合那些希望内容不只是"能用"，而是希望它在结构、审美和表达上更完整的合作。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>6. 你会做非常实验性的项目吗？</h3>
-        <p>会，但更适合：</p>
-        <ul>
-          <li>有明确目标</li>
-          <li>愿意一起测试</li>
-          <li>接受从小样或原型开始</li>
-          <li>对风格和结构本身有追求</li>
-        </ul>
-        <p>这类项目通常不适合一开始就要求"极低预算 + 高复杂度 + 立刻交付"。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>7. 双目 / Apple Vision Pro / XR 项目可以直接做完整交付吗？</h3>
-        <p>可以谈，但一般更建议先从测试版、样片、proof of concept 开始。因为这类项目对平台、格式、分辨率、观看方式和环境要求都更高，先做小样通常更稳。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>8. 你能帮我整理别人已经做了一半的工程吗？</h3>
-        <p>可以。这类合作通常适合归到：</p>
-        <ul>
-          <li>工程整理</li>
-          <li>工作流咨询</li>
-          <li>内容结构诊断</li>
-          <li>视觉系统优化</li>
-        </ul>
-        <p>你可以先发工程结构截图、项目简介、当前问题、时间和预算。我会先判断适不适合接。</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>9. 你接课程、培训和工作坊吗？</h3>
-        <p>接。适合院校、机构、企业培训和创意团队内部训练。内容方向包括：</p>
-        <ul>
-          <li>VR / XR 基础</li>
-          <li>AI 视觉工作流</li>
-          <li>数字展览与展示系统</li>
-          <li>项目组织与创作流程优化</li>
+          <li>符合约定分辨率、格式与版本要求的最终输出文件</li>
+          <li>对应项目描述与使用说明（如需）</li>
+          <li>约定轮次内的调整修改</li>
         </ul>
       </div>
 
-      <div class="faq-item">
-        <h3>10. 怎么联系你最方便？</h3>
-        <p>目前优先方式是：</p>
+      <div class="content-block">
+        <h3>4. 默认不包含内容</h3>
+        <p>除非提前特别约定，以下内容一般不包含在基础报价中：</p>
         <ul>
-          <li>小红书私信</li>
-          <li>业务邮箱：qianewan@gmail.com</li>
+          <li>多次大范围方向调整与结构重做</li>
+          <li>额外版本输出（多比例、多格式、多分辨率）</li>
+          <li>现场安装、调试与执行（可另行协商）</li>
+          <li>第三方素材、设备或服务的采购费用</li>
+          <li>税费（可另行协商）</li>
         </ul>
-        <p>目前不公开微信号和手机号，主要是为了减少无效打扰与隐私风险。</p>
-      </div>
       </div>
 
-      <div id="billing" style="scroll-margin-top: 80px;">
-      <div class="faq-item">
-        <h3>11. 你们支持什么合作与结算方式？</h3>
-        <p>支持完整的项目合作与结算流程，包括合同、付款与开票安排。可根据项目情况提前确认主体、票据类型与付款节点，便于付款方按常规流程推进。</p>
+      <div class="content-block">
+        <h3>5. 修改范围与追加规则</h3>
+        <p>修改分为两种情况：</p>
+        <ul>
+          <li><strong>小范围调整</strong>：在原方向框架内微调，包含在基础报价中</li>
+          <li><strong>大范围变更</strong>：改变方向、结构或需求，需要重新评估工作量与周期，按追加项目处理</li>
+        </ul>
+        <p style="margin-top: 8px;">建议在项目启动前尽量确认核心方向，减少中途大范围变动。</p>
       </div>
 
-      <div class="faq-item">
-        <h3>12. 开票和付款流程复杂吗？</h3>
-        <p>流程简洁清晰。项目确认后，我会提前同步所需信息、结算方式、开票类型与付款安排，尽量减少后续财务与采购沟通成本。</p>
+      <div class="content-block">
+        <h3>6. 暂停、延期与取消处理</h3>
+        <ul>
+          <li><strong>暂停</strong>：项目启动后若需要暂停，已完成部分按进度结算</li>
+          <li><strong>延期</strong>：因客户原因导致项目延期超过 30 天，重启时可能需要重新评估排期与报价</li>
+          <li><strong>取消</strong>：启动后取消项目，已完成工作量按比例结算</li>
+        </ul>
       </div>
 
-      <div class="faq-item">
-        <h3>13. 付款方可以正常入账吗？</h3>
-        <p>可以。项目结算将配套提供相应票据与必要信息，付款方可按内部财务流程正常处理。</p>
-        <p style="margin-top: 8px;">如贵司对票据抬头、类目或合同条款有内部要求，可在项目启动前一并确认。</p>
+      <div class="content-block">
+        <h3>7. 交付与验收节点</h3>
+        <p>一般按阶段交付与确认：</p>
+        <ul>
+          <li>小样/测试版 → 方向确认</li>
+          <li>初稿/完整版本 → 整体确认</li>
+          <li>最终调整 → 交付结案</li>
+        </ul>
+        <p style="margin-top: 8px;">客户收到交付物后，请在约定时间内反馈确认。逾期未反馈视为确认通过。</p>
       </div>
 
-      <div class="faq-item">
-        <h3>14. 报价是否含税？</h3>
-        <p>报价可根据项目需要提供含税或未税口径，并在报价单中提前注明结算方式、票据类型与付款节点，避免后续反复沟通。</p>
-      </div>
-      </div>
+      <div class="content-block">
+        <h3>8. 使用权、署名与展示权</h3>
+        <ul>
+          <li><strong>使用权</strong>：项目款项结清后，客户获得约定用途的使用权</li>
+          <li><strong>署名</strong>：署名方式根据项目性质协商确定，一般会在片尾或介绍中保留视觉设计者署名</li>
+          <li><strong>展示权</strong>：我保留将作品放入个人portfolio、案例展示与宣传的权利，如果需要保密请提前说明</li>
+        </ul>
       </div>
 
       <div class="preparation-block">
@@ -442,16 +391,16 @@
       </div>
 
       <div class="links-section">
-        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">更多服务相关阅读</h3>
+        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">相关服务说明</h3>
         <div class="links-grid">
           <a href="./project-types.html" class="button primary">
             服务分类说明
           </a>
-          <a href="./collaboration-policy.html" class="button">
-            合作规则说明
-          </a>
           <a href="./pricing-policy.html" class="button">
             报价政策说明
+          </a>
+          <a href="./faq.html" class="button">
+            常见问题
           </a>
           <a href="../index.html#contact" class="button">
             提交合作咨询
@@ -463,7 +412,7 @@
 
   <footer class="footer">
     <div class="container">
-      © Ewan Qian / VIRTURA. Frequently asked questions for potential collaborators.
+      © Ewan Qian / VIRTURA. Collaboration policy &amp; workflow rules.
     </div>
   </footer>
 
