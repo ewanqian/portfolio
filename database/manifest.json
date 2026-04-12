@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-04-12T11:57:00+08:00",
+  "tables": [
+    {
+      "name": "works",
+      "count": 25,
+      "description": "完整的作品项目列表"
+    },
+    {
+      "name": "nodes",
+      "count": 0,
+      "description": "节点列表"
+    },
+    {
+      "name": "people",
+      "count": 0,
+      "description": "协作者列表"
+    },
+    {
+      "name": "collectives",
+      "count": 0,
+      "description": "团队合作列表"
+    },
+    {
+      "name": "tasks",
+      "count": 0,
+      "description": "任务追踪"
+    },
+    {
+      "name": "venues",
+      "count": 0,
+      "description": "场地信息"
+    },
+    {
+      "name": "screens",
+      "count": 0,
+      "description": "屏幕信息"
+    },
+    {
+      "name": "assets_index",
+      "count": 0,
+      "description": "资源索引"
+    },
+    {
+      "name": "mapping_files",
+      "count": 0,
+      "description": "mapping 文件"
+    },
+    {
+      "name": "notes_index",
+      "count": 0,
+      "description": "笔记索引"
+    }
+  ]
+}
