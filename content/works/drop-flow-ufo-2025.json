@@ -1,0 +1,30 @@
+{
+  "id": "drop-flow-ufo-2025",
+  "title": "Drop Flow 3.0 / UFO Terminal",
+  "subtitle": "创作营、实时生成与现场环境测试",
+  "years": "2025",
+  "type": "live-experiment",
+  "summary": "UFO Terminal 的音画互动现场版本，把创作营、实时生成测试与现场环境变成可读的作品章节。",
+  "practiceLine": "spatial-generation",
+  "tags": ["drop-flow", "ufo-terminal", "live", "process"],
+  "coverImage": "hero-dropflow-ufo-2025.jpeg",
+  "image": "/portfolio/assets/home/hero-dropflow-ufo-2025.jpeg",
+  "showOnHome": false,
+  "relatedNodes": ["ufo-terminal"],
+  "relatedWritings": ["drop-flow-note"],
+  "displayModes": ["live audiovisual", "LED installation", "realtime visual"],
+  "analysisIds": ["drop-flow-live-process"],
+  "sourceDocs": [
+    "projects/dropflow3-live-2025.md",
+    "visual-arts/drop-flow-series/README.md",
+    "content/nodes/ufo-terminal.json"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/dropflow3-live-2025.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/dropflow3-live-2025.md"
+    }
+  ],
+  "priority": 11
+}

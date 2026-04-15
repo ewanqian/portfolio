@@ -1,0 +1,15 @@
+{
+  "id": "babel-bottle",
+  "title": "Babel Bottle / 杭州中心美术馆",
+  "year": "2025",
+  "type": "public-node",
+  "category": "Museum / Hypertext Installation",
+  "summary": "《巴别瓶》把观念性超文本交互作品接入美术馆语境，是作品展示与叙事结构的重要转折节点。",
+  "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+  "relatedWork": "new-media-artist-simulator-2025",
+  "timelineStage": "environment-exploration",
+  "images": ["featured-perceptual-environments.jpg"],
+  "externalLink": "",
+  "showOnHome": false,
+  "tags": ["museum", "hypertext", "interactive", "babel-bottle"]
+}

@@ -9,8 +9,17 @@
   "tags": ["live", "collaboration", "audiovisual"],
   "coverImage": "featured-kashiwa-bolive-shenzhen.jpeg",
   "image": "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
-  "relatedNodes": ["can-festival"],
+  "showOnHome": true,
+  "relatedNodes": ["kashiwa-bo-live-shenzhen", "can-festival"],
   "relatedWritings": [],
+  "displayModes": ["holographic scrim", "naked-eye 3D", "live audiovisual", "stage screen"],
+  "analysisIds": ["kashiwa-live-collaboration"],
+  "sourceDocs": [
+    "works/kashiwa.html",
+    "projects/kashiwa-titan-visual-2025.md",
+    "visual-arts/kashiwa-daisuke/README.md",
+    "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
+  ],
   "repoLink": "/portfolio/works/kashiwa.html",
   "links": [
     { "text": "详情页", "url": "./works/kashiwa.html" },

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "drop-flow-gene",
+    "title": "Drop Flow Gene",
+    "relatedWorks": ["drop-flow", "drop-flow-visual-2025", "drop-flow-ufo-2025", "derive-dual-city-2024"],
+    "motifs": ["liquid motion", "immersive scale", "body-image coupling", "flowing structures"],
+    "technicalSignals": ["audio-reactive systems", "VR extension", "large screen composition"],
+    "viewingRelation": "观众被带入空间内部，而不是站在图像外部观看。",
+    "status": "seed"
+  },
+  {
+    "id": "timer-gene",
+    "title": "Timer Gene",
+    "relatedWorks": ["timer"],
+    "motifs": ["beat segmentation", "frequency response", "temporal layering"],
+    "technicalSignals": ["audio analysis", "time-based composition", "screen performance"],
+    "viewingRelation": "观看更像进入节拍控制与时间切分，而不是跟随叙事图像。",
+    "status": "seed"
+  },
+  {
+    "id": "kashiwa-gene",
+    "title": "Kashiwa Collaboration Gene",
+    "relatedWorks": ["kashiwa", "kashiwa-band-visual-2025"],
+    "motifs": ["white depth", "mist transition", "holographic surface", "stage illusion"],
+    "technicalSignals": ["holographic scrim", "naked-eye 3D", "stage cue design"],
+    "viewingRelation": "视觉不是背景，而是与声音、雾气、空间纵深共同组成现场结构。",
+    "status": "seed"
+  },
+  {
+    "id": "observation-gene",
+    "title": "Observation and Symbiosis Gene",
+    "relatedWorks": ["observe-symbiosis-exhibit-2025", "observe-symbiosis-workshop-2026"],
+    "motifs": ["point-cloud atmosphere", "digital nature", "ecological drift", "scanned memory"],
+    "technicalSignals": ["gaussian scan", "particle systems", "data visualization"],
+    "viewingRelation": "观看被组织成一种对数字环境生命感的观察，而不是单纯的风景浏览。",
+    "status": "seed"
+  },
+  {
+    "id": "babel-bottle-gene",
+    "title": "Babel Bottle Gene",
+    "relatedWorks": ["new-media-artist-simulator-2025"],
+    "motifs": ["hypertext branching", "conceptual interface", "interactive reading"],
+    "technicalSignals": ["page logic", "text interaction", "exhibition adaptation"],
+    "viewingRelation": "作品要求观众通过阅读、跳转与结构判断进入其叙事机制。",
+    "status": "seed"
+  }
+]

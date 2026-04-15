@@ -1,0 +1,29 @@
+{
+  "id": "derive-dual-city-2024",
+  "title": "Dérive 双城记 / Digital Dérive",
+  "subtitle": "带奖项背书的城市扫描与空间叙事实践",
+  "years": "2024",
+  "type": "competition-presentation",
+  "summary": "杭州国际电子音乐作曲比赛的多媒体视觉合作节点，带有明确奖项背书，并延伸出 Apple Vision Pro 的呈现路径。",
+  "practiceLine": "spatial-generation",
+  "tags": ["award", "drop-flow", "scan", "apple-vision-pro"],
+  "coverImage": "featured-dropflow-main.jpg",
+  "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["multimedia visual", "spatial narrative", "Apple Vision Pro"],
+  "analysisIds": ["drop-flow-award-node"],
+  "sourceDocs": [
+    "projects/derive-dual-city-2024.md",
+    "projects/README.md"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/derive-dual-city-2024.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/derive-dual-city-2024.md"
+    }
+  ],
+  "priority": 15
+}

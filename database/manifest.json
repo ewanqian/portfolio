@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "generatedAt": "2026-04-12T16:13:25.980Z",
+  "version": "1.2.0",
+  "generatedAt": "2026-04-15T18:32:02.148Z",
   "tables": [
     {
       "name": "works",
@@ -23,8 +23,23 @@
       "description": "团队合作列表"
     },
     {
+      "name": "project_analysis",
+      "count": 9,
+      "description": "作品评析与方法问题"
+    },
+    {
+      "name": "artistic_timeline",
+      "count": 5,
+      "description": "艺术实践时间线"
+    },
+    {
+      "name": "visual_genes",
+      "count": 5,
+      "description": "视觉母题与技术谱系"
+    },
+    {
       "name": "tasks",
-      "count": 0,
+      "count": 9,
       "description": "任务追踪"
     },
     {

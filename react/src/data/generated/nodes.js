@@ -1,5 +1,27 @@
 export default [
   {
+    "id": "babel-bottle",
+    "title": "Babel Bottle / 杭州中心美术馆",
+    "year": "2025",
+    "type": "public-node",
+    "category": "Museum / Hypertext Installation",
+    "summary": "《巴别瓶》把观念性超文本交互作品接入美术馆语境，是作品展示与叙事结构的重要转折节点。",
+    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "relatedWork": "new-media-artist-simulator-2025",
+    "timelineStage": "environment-exploration",
+    "images": [
+      "featured-perceptual-environments.jpg"
+    ],
+    "externalLink": "",
+    "showOnHome": false,
+    "tags": [
+      "museum",
+      "hypertext",
+      "interactive",
+      "babel-bottle"
+    ]
+  },
+  {
     "id": "can-festival",
     "title": "CAN Festival",
     "year": "2025",
@@ -42,6 +64,28 @@ export default [
     ]
   },
   {
+    "id": "kashiwa-bo-live-shenzhen",
+    "title": "BO LIVE Shenzhen / Kashiwa Daisuke",
+    "year": "2025",
+    "type": "public-node",
+    "category": "Live Performance / Audiovisual",
+    "summary": "Kashiwa Daisuke 深圳专场的关键公共节点，集中体现全息纱幕、裸眼 3D 与音画互动结构。",
+    "image": "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+    "relatedWork": "kashiwa",
+    "timelineStage": "collaborative-performance",
+    "images": [
+      "featured-kashiwa-bolive-shenzhen.jpeg"
+    ],
+    "externalLink": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g",
+    "showOnHome": true,
+    "tags": [
+      "live",
+      "holographic",
+      "audiovisual",
+      "shenzhen"
+    ]
+  },
+  {
     "id": "observation-and-symbiosis",
     "title": "Observation and Symbiosis / 观察与共生",
     "year": "2023–2025",
@@ -60,6 +104,28 @@ export default [
       "scan",
       "environment",
       "exhibition"
+    ]
+  },
+  {
+    "id": "observe-symbiosis-pingshan",
+    "title": "Observation and Symbiosis / 深圳坪山",
+    "year": "2025",
+    "type": "public-node",
+    "category": "Exhibition / Digital Environment",
+    "summary": "《观察与共生》进入公共展览语境的重要节点，把扫描环境、生态逻辑与数据可视化合并为可展出的环境结构。",
+    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "relatedWork": "observe-symbiosis-exhibit-2025",
+    "timelineStage": "environment-exploration",
+    "images": [
+      "featured-perceptual-environments.jpg"
+    ],
+    "externalLink": "",
+    "showOnHome": false,
+    "tags": [
+      "scan",
+      "environment",
+      "exhibition",
+      "pingshan"
     ]
   },
   {

@@ -9,8 +9,15 @@
   "tags": ["timer", "beat", "visual"],
   "coverImage": "featured-timer-main.jpg",
   "image": "/portfolio/assets/home/featured-timer-main.jpg",
+  "showOnHome": true,
   "relatedNodes": [],
   "relatedWritings": [],
+  "displayModes": ["audio-reactive visual", "live set", "screen-based performance"],
+  "analysisIds": ["timer-core-series"],
+  "sourceDocs": [
+    "visual-arts/timer-series/README.md",
+    "works/timer.html"
+  ],
   "repoLink": "/portfolio/works/timer.html",
   "links": [
     { "text": "详情页", "url": "./works/timer.html" },

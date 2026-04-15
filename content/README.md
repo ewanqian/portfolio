@@ -44,8 +44,12 @@ content/
   "practiceLine": "spatial-generation",
   "tags": ["immersive", "space", "flow"],
   "coverImage": "drop-flow-cover.jpg",
+  "showOnHome": true,
   "relatedNodes": ["ufo-terminal", "hangzhou-opening"],
   "relatedWritings": ["drop-flow-note"],
+  "displayModes": ["immersive screen", "VR headset"],
+  "analysisIds": ["drop-flow-core-series"],
+  "sourceDocs": ["visual-arts/drop-flow-series/README.md"],
   "repoLink": "/portfolio/works/drop-flow",
   "priority": 0
 }
@@ -118,3 +122,4 @@ node scripts/build-content.js
 - 不要让首页或组件成为唯一的信息保存位置
 - 对于奖项、公开节点、协作者、场地、显示条件这类高复用信息，优先考虑对象化
 - 如果一条信息暂时还不适合上前台，也应该先进入 `database/`，而不是只留在聊天记录、commit 历史或零散 markdown 里
+- `showOnHome` 应该只给明确要上首页的 work 打开，避免 `content/works` 扩充后把首页直接冲乱

@@ -9,8 +9,16 @@
   "tags": ["immersive", "space", "flow"],
   "coverImage": "featured-dropflow-main.jpg",
   "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
+  "showOnHome": true,
   "relatedNodes": ["ufo-terminal", "drop-flow-hangzhou-biennale"],
   "relatedWritings": ["drop-flow-note"],
+  "displayModes": ["immersive screen", "body performance", "VR headset", "live audiovisual"],
+  "analysisIds": ["drop-flow-core-series"],
+  "sourceDocs": [
+    "visual-arts/drop-flow-series/README.md",
+    "projects/drop-flow-visual-2025.md",
+    "projects/dropflow3-live-2025.md"
+  ],
   "repoLink": "/portfolio/works/drop-flow.html",
   "links": [
     { "text": "详情页", "url": "./works/drop-flow.html" },

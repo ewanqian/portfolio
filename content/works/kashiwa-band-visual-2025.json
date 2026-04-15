@@ -1,0 +1,31 @@
+{
+  "id": "kashiwa-band-visual-2025",
+  "title": "Kashiwa Daisuke / CAN Festival Zhoushan",
+  "subtitle": "合作线的第二个公共演出节点",
+  "years": "2025",
+  "type": "festival-performance",
+  "summary": "舟山 CAN Festival 的舞台视觉参与，补齐 Kashiwa 现场合作线的另一场公共演出。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["kashiwa", "festival", "live", "stage"],
+  "coverImage": "glimpse-canfest-zhoushan.jpeg",
+  "image": "/portfolio/assets/home/glimpse-canfest-zhoushan.jpeg",
+  "showOnHome": false,
+  "relatedNodes": ["can-festival"],
+  "relatedWritings": [],
+  "displayModes": ["stage screen", "festival visual", "live audiovisual"],
+  "analysisIds": ["kashiwa-live-collaboration"],
+  "sourceDocs": [
+    "projects/kashiwa-band-visual-2025.md",
+    "visual-arts/kashiwa-daisuke/README.md",
+    "visual-arts/kashiwa-daisuke/Zhoushan-CAN-Festival-2025/README.md",
+    "content/nodes/can-festival.json"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/kashiwa-band-visual-2025.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/kashiwa-band-visual-2025.md"
+    }
+  ],
+  "priority": 12
+}

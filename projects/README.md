@@ -40,7 +40,7 @@
 |------|------|------|------|-----------|------|------|----------|-----------|----------|----------|
 | 26/01 | `rain-singapore-visual-2026` | Rain 新加坡跨年专场 | 曲目+Opening视觉 | Singapore | Stage | done | - | - | [doc](./rain-singapore-visual-2026.md) | doc / featured / db-only |
 | 25/11 | `yujiayun-45ping-visual-2025` | 余佳运「45㎡」演唱会 | Opening+舞台视觉 | China | Stage | done | - | - | [doc](./yujiayun-45ping-visual-2025.md) | doc / featured / db-only |
-| 25/10 | `kashiwa-band-visual-2025` | Can Festival 舟山 | 舞台视觉（参与部分） | Zhoushan Can Festival | Stage | done | `kashiwa-can-festival-zhoushan-2025` | - | [doc](./kashiwa-band-visual-2025.md) | doc / featured / db-only |
+| 25/10 | `kashiwa-band-visual-2025` | Can Festival 舟山 | 舞台视觉（参与部分） | Zhoushan Can Festival | Stage | done | `kashiwa-can-festival-zhoushan-2025` | - | [doc](./kashiwa-band-visual-2025.md) | doc / featured / content-ready |
 | 25/10 | `kashiwa-titan-visual-2025` | Kashiwa Daisuke 深圳专场 | 视觉制作（全息纱幕 / 裸眼3D / 音画互动） | Shenzhen BO LIVE | Stage | done | `kashiwa-bo-live-shenzhen-2025` | - | [doc](./kashiwa-titan-visual-2025.md) | doc / featured / db-only |
 | 25/08 | `shanhaifusheng2-visual-2025` | 爱丁堡《山海浮生II》 | 舞台视觉 | Edinburgh | Stage | done | - | - | [doc](./shanhaifusheng2-visual-2025.md) | doc / featured / db-only |
 | 23/12 | `onefive-underground-visual-2023` | @onefive Underground | 视觉制作 | Japan | Stage | done | - | - | [doc](./onefive-underground-visual-2023.md) | doc / standard / db-only |
@@ -55,18 +55,18 @@
 | 时间 | slug | 项目 | 角色 | 地点/语境 | 类型 | 状态 | 关联节点 | 奖项/信号 | 项目文档 | 内容状态 |
 |------|------|------|------|-----------|------|------|----------|-----------|----------|----------|
 | 25/11 | `drop-flow-qingdao-2025` | 重庆「流光绘影」光影科技艺术节「滴流」 | 异形屏幕装置 | Chongqing | Exhibition | done | - | `2025 流光绘影 光影科技艺术节优秀作品` | pending | index-only / standard / db-only |
-| 25/10 | `drop-flow-visual-2025` | 首届中国（杭州）艺术与科技国际双年展开幕式「滴流」 | 沉浸式大屏+VR头显 | Hangzhou Biennale | Exhibition | done | `drop-flow-hangzhou-biennale-2025` | - | [doc](./drop-flow-visual-2025.md) | doc / featured / db-only |
-| 25/07 | `drop-flow-ufo-2025` | UFO Terminal「滴流3.0」 | 音画互动现场 | UFO Terminal Shanghai | Live | done | `drop-flow-ufo-terminal-2025` | - | [doc](./dropflow3-live-2025.md) | doc / featured / db-only |
-| 24/09 | `derive-dual-city-2024` | 杭州国际电子音乐节「滴流」一等奖 | 多媒体视觉合作 | Hangzhou International Electroacoustic Music Festival | Competition | done | - | `杭州国际电子音乐作曲比赛 C 组一等奖` | [doc](./derive-dual-city-2024.md) | doc / featured / db-only |
+| 25/10 | `drop-flow-visual-2025` | 首届中国（杭州）艺术与科技国际双年展开幕式「滴流」 | 沉浸式大屏+VR头显 | Hangzhou Biennale | Exhibition | done | `drop-flow-hangzhou-biennale-2025` | - | [doc](./drop-flow-visual-2025.md) | doc / featured / content-ready |
+| 25/07 | `drop-flow-ufo-2025` | UFO Terminal「滴流3.0」 | 音画互动现场 | UFO Terminal Shanghai | Live | done | `drop-flow-ufo-terminal-2025` | - | [doc](./dropflow3-live-2025.md) | doc / featured / content-ready |
+| 24/09 | `derive-dual-city-2024` | 杭州国际电子音乐节「滴流」一等奖 | 多媒体视觉合作 | Hangzhou International Electroacoustic Music Festival | Competition | done | - | `杭州国际电子音乐作曲比赛 C 组一等奖` | [doc](./derive-dual-city-2024.md) | doc / featured / content-ready |
 
 ## 环境、展览与感知系统 / Perceptual Environments
 
 | 时间 | slug | 项目 | 角色 | 地点/语境 | 类型 | 状态 | 关联节点 | 奖项/信号 | 项目文档 | 内容状态 |
 |------|------|------|------|-----------|------|------|----------|-----------|----------|----------|
-| 26/01 | `observe-symbiosis-workshop-2026` | 《观察与共生》Workshop | 高斯扫描/方法分享 | China | Workshop | done | - | - | [doc](./observe-symbiosis-workshop-2026.md) | doc / featured / db-only |
-| 25/08 | `new-media-artist-simulator-2025` | 杭州中心「巴别瓶」 | 交互作品参展 | Hangzhou Center | Exhibition | done | `babel-bottle-hangzhou-center-2025` | - | [doc](./new-media-artist-simulator-2025.md) | doc / featured / db-only |
+| 26/01 | `observe-symbiosis-workshop-2026` | 《观察与共生》Workshop | 高斯扫描/方法分享 | China | Workshop | done | - | - | [doc](./observe-symbiosis-workshop-2026.md) | doc / featured / content-ready |
+| 25/08 | `new-media-artist-simulator-2025` | 杭州中心「巴别瓶」 | 交互作品参展 | Hangzhou Center | Exhibition | done | `babel-bottle-hangzhou-center-2025` | - | [doc](./new-media-artist-simulator-2025.md) | doc / featured / content-ready |
 | 25/08 | `westbund-ambient-visual-2025` | 上海西岸漩心 | 环境视觉 | Westbund Shanghai | Exhibition | done | - | - | [doc](./westbund-ambient-visual-2025.md) | doc / standard / db-only |
-| 25/07 | `observe-symbiosis-exhibit-2025` | 深圳坪山「观察与共生」 | 数据可视化 | Shenzhen Pingshan | Exhibition | done | `observe-symbiosis-pingshan-2025` | - | [doc](./observe-symbiosis-exhibit-2025.md) | doc / featured / db-only |
+| 25/07 | `observe-symbiosis-exhibit-2025` | 深圳坪山「观察与共生」 | 数据可视化 | Shenzhen Pingshan | Exhibition | done | `observe-symbiosis-pingshan-2025` | - | [doc](./observe-symbiosis-exhibit-2025.md) | doc / featured / content-ready |
 | 25/07 | `digital-garden-visual-2025` | 西安万象城「数字游园」 | Unity VFX Graph | Xi'an MixC | Exhibition | done | - | - | [doc](./digital-garden-visual-2025.md) | doc / featured / db-only |
 | 23/11 | `ether-fragment-exhibit-2023` | 西岸艺术博览会「以太碎片」 | 影像展映 | Westbund Art Fair Shanghai | Exhibition | done | - | - | [doc](./ether-fragment-exhibit-2023.md) | doc / featured / db-only |
 | 23/08 | `observe-symbiosis-k11-2023` | 上海K11「观察与共生」 | 视频装置 | K11 Shanghai | Exhibition | done | - | - | [doc](./observe-symbiosis-k11-2023.md) | doc / standard / db-only |
@@ -80,8 +80,8 @@
 
 ## Content Coverage
 
-- 已进入 content/works 的对象数：3
-- 当前已进入内容系统的 work ids：`drop-flow`、`kashiwa`、`timer`
+- 已进入 content/works 的对象数：10
+- 当前已进入内容系统的 work ids：`derive-dual-city-2024`、`drop-flow-ufo-2025`、`drop-flow-visual-2025`、`drop-flow`、`kashiwa-band-visual-2025`、`kashiwa`、`new-media-artist-simulator-2025`、`observe-symbiosis-exhibit-2025`、`observe-symbiosis-workshop-2026`、`timer`
 - 未进入 content/works 的项目仍然已经被 `database/works.json` 保底索引，不会因为首页改版或内容筛选而消失。
 
 ## 下一步建议

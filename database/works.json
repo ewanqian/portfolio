@@ -58,6 +58,8 @@
     "collaboratorIds": ["kashiwa-daisuke", "yuki-murata", "ewan-qian"],
     "venueId": "bo-live-shenzhen",
     "relatedNodeIds": ["kashiwa-bo-live-shenzhen-2025"],
+    "displayModes": ["holographic scrim", "naked-eye 3D", "live audiovisual", "stage screen"],
+    "analysisIds": ["kashiwa-live-collaboration"],
     "awards": [],
     "sourceDocs": [
       "projects/kashiwa-titan-visual-2025.md",
@@ -83,6 +85,8 @@
     "collaboratorIds": ["kashiwa-daisuke", "ewan-qian"],
     "venueId": "can-festival-zhoushan",
     "relatedNodeIds": ["kashiwa-can-festival-zhoushan-2025"],
+    "displayModes": ["stage screen", "festival visual", "live audiovisual"],
+    "analysisIds": ["kashiwa-live-collaboration"],
     "awards": [],
     "sourceDocs": [
       "projects/kashiwa-band-visual-2025.md",
@@ -107,6 +111,8 @@
     "collaboratorIds": ["ewan-qian"],
     "venueId": null,
     "relatedNodeIds": [],
+    "displayModes": ["workshop", "talk", "method sharing"],
+    "analysisIds": ["observation-method-sharing"],
     "awards": [],
     "sourceDocs": ["projects/shanhaifusheng2-visual-2025.md"],
     "filePath": "projects/shanhaifusheng2-visual-2025.md"
@@ -253,6 +259,8 @@
     "collaboratorIds": ["ewan-qian"],
     "venueId": "hangzhou-biennale",
     "relatedNodeIds": ["drop-flow-hangzhou-biennale-2025"],
+    "displayModes": ["immersive screen", "VR headset", "body performance"],
+    "analysisIds": ["drop-flow-public-presentation"],
     "awards": [],
     "sourceDocs": [
       "projects/drop-flow-visual-2025.md",
@@ -298,6 +306,8 @@
     "collaboratorIds": ["ewan-qian"],
     "venueId": null,
     "relatedNodeIds": [],
+    "displayModes": ["multimedia visual", "spatial narrative", "Apple Vision Pro"],
+    "analysisIds": ["drop-flow-award-node"],
     "awards": ["杭州国际电子音乐作曲比赛 C 组一等奖"],
     "sourceDocs": ["projects/derive-dual-city-2024.md"],
     "filePath": "projects/derive-dual-city-2024.md"
@@ -319,6 +329,8 @@
     "collaboratorIds": ["ewan-qian"],
     "venueId": "ufo-terminal",
     "relatedNodeIds": ["drop-flow-ufo-terminal-2025"],
+    "displayModes": ["live audiovisual", "LED installation", "realtime visual"],
+    "analysisIds": ["drop-flow-live-process"],
     "awards": [],
     "sourceDocs": [
       "projects/dropflow3-live-2025.md",
@@ -364,6 +376,8 @@
     "collaboratorIds": ["ewan-qian"],
     "venueId": "pingshan-shenzhen",
     "relatedNodeIds": ["observe-symbiosis-pingshan-2025"],
+    "displayModes": ["exhibition screen", "data visualization", "digital environment"],
+    "analysisIds": ["observation-digital-ecology"],
     "awards": [],
     "sourceDocs": ["projects/observe-symbiosis-exhibit-2025.md"],
     "filePath": "projects/observe-symbiosis-exhibit-2025.md"
@@ -385,6 +399,8 @@
     "collaboratorIds": ["ewan-qian"],
     "venueId": "hangzhou-center-museum",
     "relatedNodeIds": ["babel-bottle-hangzhou-center-2025"],
+    "displayModes": ["interactive text", "exhibition installation", "conceptual interface"],
+    "analysisIds": ["babel-bottle-hypertext-exhibit"],
     "awards": [],
     "sourceDocs": ["projects/new-media-artist-simulator-2025.md"],
     "filePath": "projects/new-media-artist-simulator-2025.md"
