@@ -1,0 +1,47 @@
+[
+  {
+    "id": "phase-audiovisual-collaborations",
+    "title": "Collaborative Performance Foundations",
+    "years": "2022–2023",
+    "theme": "在商业演出、舞台视觉与现场工程中形成图像组织与交付能力。",
+    "relatedWorks": ["xtep-xdna22aw-visual-2022", "lonely-av-live-2023", "watermusic-multi-visual-2022"],
+    "keywords": ["stage visual", "engineering delivery", "screen adaptation"],
+    "status": "seed"
+  },
+  {
+    "id": "phase-perceptual-environments",
+    "title": "Perceptual Environments and Digital Ecology",
+    "years": "2023–2025",
+    "theme": "围绕扫描环境、点云、数字生态与生命感展开的长期研究背景。",
+    "relatedWorks": ["observe-symbiosis-exhibit-2025", "new-media-artist-simulator-2025", "ether-fragment-exhibit-2023"],
+    "keywords": ["scan", "point cloud", "digital ecology", "environment"],
+    "status": "seed"
+  },
+  {
+    "id": "phase-timer",
+    "title": "Temporal Structure",
+    "years": "2024–2025",
+    "theme": "把声音、频段、节拍与图像内部结构组织成可持续展开的系列。",
+    "relatedWorks": ["timer"],
+    "keywords": ["time", "beat", "audio analysis", "structure"],
+    "status": "seed"
+  },
+  {
+    "id": "phase-drop-flow",
+    "title": "Spatial Generation and Public Presentation",
+    "years": "2024–2025",
+    "theme": "Drop Flow 从实验、竞赛到双年展开幕，逐步形成空间生成与感知迁移的主线。",
+    "relatedWorks": ["drop-flow", "drop-flow-ufo-2025", "drop-flow-visual-2025", "derive-dual-city-2024"],
+    "keywords": ["space", "immersion", "public presentation", "migration"],
+    "status": "seed"
+  },
+  {
+    "id": "phase-web-first",
+    "title": "Web-first Method and Archive Systems",
+    "years": "2025–2026",
+    "theme": "实践开始把作品、研究、训练与阅读系统转向网页优先的对象化结构。",
+    "relatedWorks": ["observe-symbiosis-workshop-2026", "new-media-artist-simulator-2025"],
+    "keywords": ["web-first", "archive", "method", "content system"],
+    "status": "seed"
+  }
+]

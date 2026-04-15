@@ -17,11 +17,11 @@
 
 ### 1. Header / Topbar System
 
-- 修复顶栏在不同页面上的继承问题
-- 修复移动端自适应和菜单开合问题
-- 修复 theme toggle 缺失、跳位、状态不一致问题
-- 统一导航跳转逻辑，避免 `HashRouter` 和手动 `window.location.hash` 混用
-- 清理重复样式定义，避免 `index.css` / `global.css` 双份控制同一组件
+- 已完成：顶栏在不同页面上的继承问题已收口
+- 已完成：移动端自适应和菜单开合问题已收口
+- 已完成：theme toggle 缺失、跳位、状态不一致问题已收口
+- 已完成：导航跳转逻辑已统一，不再混用 `HashRouter` 和手动 `window.location.hash`
+- 已完成：header 相关重复样式已并回同一套控制层
 
 ### 2. Cross-page Consistency
 
@@ -29,6 +29,12 @@
 - 统一页面标题层级和 section anchors
 - 检查 Practice / Writing / Archive / Production 的交互继承
 - 建立公共 layout 规则，避免每页各写一套
+
+### 3. Repo Hygiene
+
+- 已完成：清理 iCloud / 同步冲突留下的 `(1)` 目录
+- 已完成：恢复 `react/src/data/generated/` 正常路径
+- 已完成：重新验证 `build:content` 与 React 生产构建
 
 ## Phase 2 - Content System Hardening
 
@@ -152,11 +158,13 @@
 
 ## Immediate Next Actions
 
-- [ ] 完成顶栏 / theme / navigation 系统修复
+- [x] 完成顶栏 / theme / navigation 系统修复
+- [x] 把根 `README.md` 收口为入口页，并把高价值信息迁移到明确落点
+- [x] 把 `services/README.md` 收口为目录页，并分流合作判断 / 报价 / 联系说明
 - [ ] 把 header 修复结果写入统一 layout 规则
-- [ ] 再补 5-8 个 featured 项目到 `content/works`
-- [ ] 给 `works.json` 增加 `displayModes` / `analysisIds`
-- [ ] 起草 artistic timeline 数据 schema
-- [ ] 起草 visual gene library 数据 schema
+- [x] 刷新 `database/README.md`，对齐当前对象表状态
+- [x] 再补 5-8 个 featured 项目到 `content/works`
+- [x] 给 `database/works.json` 回填 `displayModes` / `analysisIds`
+- [x] 起草 artistic timeline 数据 schema
+- [x] 起草 visual gene library 数据 schema
 - [ ] 整理 writing / commercial / archive 的长期写作清单
-

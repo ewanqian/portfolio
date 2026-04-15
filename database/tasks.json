@@ -4,7 +4,7 @@
     "title": "Fix header / topbar / theme / navigation system",
     "category": "website-shell",
     "priority": "critical",
-    "status": "in_progress",
+    "status": "completed",
     "scope": [
       "react/src/components/layout/Header.jsx",
       "react/src/hooks/useTheme.jsx",
@@ -13,11 +13,57 @@
     ]
   },
   {
+    "id": "phase-1-repo-hygiene",
+    "title": "Clean sync-conflict duplicates and restore canonical generated paths",
+    "category": "repo-hygiene",
+    "priority": "critical",
+    "status": "completed",
+    "scope": [
+      "react/src/data/generated/",
+      "visual-arts/kashiwa-daisuke/"
+    ]
+  },
+  {
+    "id": "phase-1-root-readme-cleanup",
+    "title": "Turn root README into an entry page without deleting high-value information",
+    "category": "docs-cleanup",
+    "priority": "critical",
+    "status": "completed",
+    "scope": [
+      "README.md",
+      "about/",
+      "content/writings/"
+    ]
+  },
+  {
+    "id": "phase-1-services-readme-cleanup",
+    "title": "Rescope services README into a directory page and relocate repeated commercial text",
+    "category": "docs-cleanup",
+    "priority": "high",
+    "status": "completed",
+    "scope": [
+      "services/README.md",
+      "services/",
+      "react/src/pages/Production.jsx"
+    ]
+  },
+  {
+    "id": "phase-1-database-readme-refresh",
+    "title": "Refresh database README to reflect current object tables and next schema expansions",
+    "category": "docs-cleanup",
+    "priority": "high",
+    "status": "completed",
+    "scope": [
+      "database/README.md",
+      "database/"
+    ]
+  },
+  {
     "id": "phase-2-content-promotion",
     "title": "Promote more featured projects from database into content/works",
     "category": "content-system",
     "priority": "high",
-    "status": "pending",
+    "status": "completed",
     "scope": [
       "database/works.json",
       "content/works",
@@ -41,7 +87,7 @@
     "title": "Build artistic timeline data layer",
     "category": "artistic-system",
     "priority": "high",
-    "status": "pending",
+    "status": "completed",
     "scope": [
       "database/",
       "content/",
@@ -53,7 +99,7 @@
     "title": "Design visual gene library and work analysis schema",
     "category": "artistic-system",
     "priority": "high",
-    "status": "pending",
+    "status": "completed",
     "scope": [
       "database/notes_index.json",
       "projects/",

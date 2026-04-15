@@ -10,6 +10,9 @@ const tableDescriptions = {
   nodes: '公开节点、展览、演出、创作营与奖项语境',
   people: '协作者与相关人物',
   collectives: '团队合作列表',
+  project_analysis: '作品评析与方法问题',
+  artistic_timeline: '艺术实践时间线',
+  visual_genes: '视觉母题与技术谱系',
   tasks: '任务追踪',
   venues: '场地、机构与节展',
   screens: '屏幕、显示条件与输出媒介',
@@ -34,7 +37,7 @@ const tables = tableNames.map((name) => {
 });
 
 const manifest = {
-  version: '1.1.0',
+  version: '1.2.0',
   generatedAt: new Date().toISOString(),
   tables
 };

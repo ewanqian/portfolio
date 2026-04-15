@@ -1,5 +1,12 @@
 export default [
   {
+    "id": "babel-bottle",
+    "title": "Babel Bottle / 杭州中心美术馆",
+    "year": "2025",
+    "category": "Museum / Hypertext Installation",
+    "summary": "《巴别瓶》把观念性超文本交互作品接入美术馆语境，是作品展示与叙事结构的重要转折节点。"
+  },
+  {
     "id": "can-festival",
     "title": "CAN Festival",
     "year": "2025",
@@ -12,6 +19,20 @@ export default [
     "year": "2025",
     "category": "Public Presentation / Immersive",
     "summary": "Drop Flow 系列在杭州双年展与公共展陈语境中的重要呈现节点。"
+  },
+  {
+    "id": "kashiwa-bo-live-shenzhen",
+    "title": "BO LIVE Shenzhen / Kashiwa Daisuke",
+    "year": "2025",
+    "category": "Live Performance / Audiovisual",
+    "summary": "Kashiwa Daisuke 深圳专场的关键公共节点，集中体现全息纱幕、裸眼 3D 与音画互动结构。"
+  },
+  {
+    "id": "observe-symbiosis-pingshan",
+    "title": "Observation and Symbiosis / 深圳坪山",
+    "year": "2025",
+    "category": "Exhibition / Digital Environment",
+    "summary": "《观察与共生》进入公共展览语境的重要节点，把扫描环境、生态逻辑与数据可视化合并为可展出的环境结构。"
   },
   {
     "id": "ufo-terminal",
