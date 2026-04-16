@@ -24,9 +24,9 @@ const Archive = () => {
           <div className="container">
             <div className="entry-banner archive-entry-banner">
               <div className="entry-banner-content">
-                <h2>Spatial Capture / 空间扫描保存</h2>
-                <p>DropFlow、TIMER、花园扫描与城市空间采样现在已经整理成独立的 Gaussian Scenes 栏目。</p>
-                <Link to="/gaussian-scenes" className="button primary">Open Gaussian Scenes</Link>
+                <h2>Gaussian Archive Library / 高斯档案库</h2>
+                <p>DropFlow、TIMER、花园扫描与城市空间采样现在已经整理成独立的高斯档案库，并开始承载研究线与任务推进。</p>
+                <Link to="/gaussian-scenes" className="button primary">Open Gaussian Archive</Link>
               </div>
             </div>
           </div>
