@@ -1,0 +1,13 @@
+{
+  "id": "viewer-venue-spec-objects",
+  "title": "为什么交付规格、场地与播放条件需要成为内容对象",
+  "type": "Research",
+  "category": "research",
+  "date": "2025",
+  "summary": "讨论为什么交付规格、场地适配和播放条件不该只存在于项目备注里，而要进入对象层。",
+  "relatedWork": null,
+  "relatedNode": null,
+  "status": "planned",
+  "featured": false,
+  "order": 5
+}

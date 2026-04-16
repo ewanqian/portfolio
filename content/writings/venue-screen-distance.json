@@ -1,0 +1,13 @@
+{
+  "id": "venue-screen-distance",
+  "title": "关于场地、屏幕和观看距离的记录",
+  "type": "Field Note",
+  "category": "field-note",
+  "date": "2025",
+  "summary": "围绕屏幕尺寸、观看距离和场地尺度，记录它们如何直接影响图像组织方式。",
+  "relatedWork": null,
+  "relatedNode": null,
+  "status": "planned",
+  "featured": false,
+  "order": 4
+}

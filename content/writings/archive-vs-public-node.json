@@ -1,0 +1,13 @@
+{
+  "id": "archive-vs-public-node",
+  "title": "档案索引与公开项目节点的区别",
+  "type": "Research",
+  "category": "research",
+  "date": "2025",
+  "summary": "说明 Archive 作为总索引时，为什么还需要单独保留公开项目节点这一层。",
+  "relatedWork": null,
+  "relatedNode": null,
+  "status": "planned",
+  "featured": false,
+  "order": 4
+}

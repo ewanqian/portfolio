@@ -96,12 +96,18 @@ content/
 {
   "id": "drop-flow-note",
   "title": "从空间内部展开的图像经验",
-  "type": "essay",
+  "type": "Essay",
+  "category": "essay",
+  "date": "2025",
   "summary": "关于 Drop Flow 系列的创作笔记",
   "relatedWork": "drop-flow",
+  "relatedNode": null,
   "relatedStage": "spatial-generation",
   "source": "newsroom",
-  "path": "/newsroom/drop-flow-note"
+  "path": "/newsroom/drop-flow-note",
+  "status": "published",
+  "featured": true,
+  "order": 1
 }
 ```
 
