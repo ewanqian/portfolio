@@ -7,31 +7,31 @@ const services = [
   {
     id: 'live-visuals',
     title: 'Live Visuals / 现场视觉',
-    description: '围绕音乐结构、演出节奏、空间氛围与现场观看关系组织视觉内容。',
+    description: '适合演出、专场和现场段落，需要视觉和音乐结构、节奏推进与现场气质一起成立的合作。',
     forUse: ['音乐演出', 'audiovisual 合作', 'opening visual', 'live performance support']
   },
   {
     id: 'spatial-image',
     title: 'Spatial Image & Immersive Content / 空间影像与沉浸内容',
-    description: '围绕空间内部、观看路径、屏幕关系与环境感组织影像。',
+    description: '适合展厅、多面屏、穹顶和装置内容，需要围绕空间路径、屏幕关系与环境感组织影像的项目。',
     forUse: ['展厅', '多面屏', '穹顶', '沉浸空间', '装置类内容']
   },
   {
     id: 'previsualization',
     title: 'Previsualization & System Design / 预演与系统设计',
-    description: '在项目真正制作前，先建立可视化预演和结构验证。',
+    description: '适合还在前期判断阶段的项目，先把结构、节奏、屏幕关系和关键风险做成可讨论的预演。',
     forUse: ['场景预演', '项目测试', 'mapping / viewer 相关流程', '技术验证']
   },
   {
     id: 'viewer-spec',
     title: 'Viewer / Spec Support / 查看器与技术规格支持',
-    description: '帮助作品和项目进入更清晰的技术交付与场地适配流程。',
+    description: '适合要进入真实交付的项目，把分辨率、播放、格式、版本和场地适配提前理顺。',
     forUse: ['resolution', 'fps', 'codec', 'container', 'Apple ProRes', 'playback', 'venue adaptation']
   },
   {
     id: 'research-consultation',
     title: 'Research / Consultation / Workshop / 研究、咨询与工作坊',
-    description: '适合需要从创作、空间、技术与人工智能工具之间建立方法的人或团队。',
+    description: '适合团队方法搭建、方向讨论和工作坊场景，不是纯交付，而是帮合作方建立判断和工作流。',
     forUse: ['方法讨论', '项目咨询', '课程 / workshop', '系统搭建与内容组织']
   }
 ]
@@ -103,8 +103,8 @@ const Production = () => {
             <div className="eyebrow">Production</div>
             <h1 className="section-title">制作与合作</h1>
             <p className="section-intro">
-              这里不是把作品变成商品目录，而是说明我如何把创作经验转化为可协作的制作流程。
-              它服务于现场视觉、空间影像、viewer/spec、项目预演与内容交付，也服务于与团队、机构、品牌和艺术家之间的实际合作。
+              这个页面是给客户和合作方快速判断用的。
+              你可以直接看我适合接什么项目、常见合作类型、为什么不同项目的制作逻辑不同，以及继续沟通前最值得先确认的几个问题。
             </p>
           </div>
         </section>
@@ -113,9 +113,23 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">Production Overview / 制作概览</h2>
             <p>
-              我所参与的制作，不只是“做一段视觉”，而是围绕作品、场地、观看关系、屏幕条件与交付要求，组织出更完整的内容结构。
-              这类工作既可能服务于演出与公共节点，也可能进入展览、空间环境、viewer / spec 支持与长期档案系统之中。
+              我更适合的不是单纯“做一条素材”，而是那些需要把内容、空间、节奏、版本和交付一起梳理清楚的项目。
+              如果你正在做演出视觉、空间影像、沉浸内容、预演测试，或需要 viewer / spec 支持，这里会比作品页更直接。
             </p>
+            <div className="grid-3" style={{ marginTop: '28px' }}>
+              <div className="overview-card">
+                <h4>适合什么合作</h4>
+                <p>演出视觉、空间影像、开场段落、展厅内容、多版本交付、预演测试与规格支持。</p>
+              </div>
+              <div className="overview-card">
+                <h4>客户先看什么</h4>
+                <p>先看服务类别和案例说明，再判断你的项目更像内容制作、系统支持，还是前期验证。</p>
+              </div>
+              <div className="overview-card">
+                <h4>怎么继续沟通</h4>
+                <p>带着时间、场地、屏幕条件、预算区间和预期输出形式来聊，效率会高很多。</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -124,7 +138,7 @@ const Production = () => {
             <div className="entry-banner production-gaussian-entry">
               <div className="entry-banner-content">
                 <h2>Gaussian Archive Library / 高斯档案库</h2>
-                <p>已经整理成正式前台模块，不只展示场景，也开始承载方法、研究方向与任务进度。</p>
+                <p>如果你想看扫描保存、网页嵌入和 Vision Pro / XR 方向，这里是更偏方法和样本的入口。</p>
                 <div className="hero-cta" style={{ justifyContent: 'center' }}>
                   <Link to="/gaussian-scenes" className="button primary">Open Gaussian Archive</Link>
                   <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" className="button">
@@ -139,6 +153,9 @@ const Production = () => {
         <section className="section">
           <div className="container">
             <h2 className="section-title">Service Categories / 服务类别</h2>
+            <p className="section-intro">
+              下面这几类不是“我会什么”的清单，而是让客户快速判断：你的项目更接近哪一种合作结构。
+            </p>
             <div className="services-grid">
               {services.map((service) => (
                 <article key={service.id} className="card service-card-full">
@@ -159,6 +176,9 @@ const Production = () => {
         <section className="section">
           <div className="container">
             <h2 className="section-title">Selected Case Notes / 制作案例说明</h2>
+            <p className="section-intro">
+              这部分专门解释客户最常误判的地方，帮助你理解为什么有些项目需要先测、先预演，或者不能只按时长判断。
+            </p>
             <div className="case-notes-grid">
               {caseNotes.map((note) => (
                 <article key={note.id} className="case-note-card">

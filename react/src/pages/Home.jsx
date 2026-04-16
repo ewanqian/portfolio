@@ -44,7 +44,7 @@ function Home() {
             <div className="entry-banner">
               <div className="entry-banner-content">
                 <h2>Production</h2>
-                <p>制作服务与协作流程</p>
+                <p>给客户和合作方快速判断合作类型、案例逻辑与沟通入口</p>
                 <Link to="/production" className="btn btn-outline">Enter Production</Link>
               </div>
             </div>

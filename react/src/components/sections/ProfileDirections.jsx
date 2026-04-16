@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const directions = [
   {
     title: 'AI + 三维视觉开发',
@@ -18,14 +20,14 @@ const directions = [
 ]
 
 const publicSignals = [
-  'UFO Terminal「加载…创作营」',
-  'UFO Terminal「加载…权限 2」展览',
-  'UFO Terminal × PRE / Rooooooom719 音画现场',
-  'BO LIVE Shenzhen Audiovisual 展演专场',
-  '杭州双年展开幕与常设展',
+  '杭州双年展开幕与常设展呈现',
+  'Kashiwa Daisuke 深圳 BO LIVE 专场合作',
+  'UFO Terminal 创作营与「加载…权限 2」展览',
+  '舟山 CAN Festival 现场合作节点',
   'ChinaGraph 2024 电子剧场优秀音乐作品二等奖',
   '杭州国际电子音乐作曲比赛一等奖',
-  '工作坊、研究与协作项目'
+  '《观察与共生》展览与 workshop 延展',
+  '面向演出、展览与空间内容的持续合作'
 ]
 
 function ProfileDirections() {
@@ -62,10 +64,23 @@ function ProfileDirections() {
 
         <div style={{ marginTop: '28px' }}>
           <div className="eyebrow">Selected Public Signals</div>
+          <p className="section-intro" style={{ marginBottom: '16px' }}>
+            这些条目作为公开经历与合作信号，帮助客户快速判断我的工作语境，而不是再重复一遍作品分类。
+          </p>
           <div className="signal-strip">
             {publicSignals.map((signal) => (
               <span key={signal} className="social-pill signal-pill">{signal}</span>
             ))}
+          </div>
+        </div>
+
+        <div className="grid-3" style={{ marginTop: '20px' }}>
+          <div className="overview-card">
+            <h4>Production / 制作服务</h4>
+            <p>如果你是从公开节点或作品入口进来，接下来最该看的不是再翻一遍主线，而是直接看合作类型、案例判断和沟通方式。</p>
+            <div style={{ marginTop: '16px' }}>
+              <Link to="/production" className="button primary">Open Production</Link>
+            </div>
           </div>
         </div>
       </div>
