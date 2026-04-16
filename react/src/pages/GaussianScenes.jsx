@@ -22,7 +22,7 @@ const relatedWorkOverrides = {
     url: '/portfolio/works/drop-flow.html',
     label: 'Open Drop Flow Detail / 查看作品详情'
   },
-  drop-flow: {
+  'drop-flow': {
     title: 'Drop Flow',
     url: '/portfolio/works/drop-flow.html',
     label: 'Open Drop Flow Detail / 查看作品详情'
@@ -32,7 +32,7 @@ const relatedWorkOverrides = {
     url: '/portfolio/works/timer.html',
     label: 'Open TIMER Detail / 查看作品详情'
   },
-  timer: {
+  'timer': {
     title: 'TIMER 控时者',
     url: '/portfolio/works/timer.html',
     label: 'Open TIMER Detail / 查看作品详情'
@@ -293,6 +293,15 @@ function GaussianScenes() {
             <p className="section-intro">
               这两条先直接挂作品相关的空间入口。它们不是替代视频，而是把成员影像、光场残影、空间颗粒与过程线索压缩成一个可以继续浏览的对象。
             </p>
+            <div className="gaussian-cta-panel" style={{ marginBottom: '24px' }}>
+              <h3>如果你是从公开节点或成员素材入口进来的</h3>
+              <p>
+                这里更适合看方法样本和空间保存方式；如果你想快速判断是否适合合作、预算如何理解、项目该怎么继续推进，直接去 Production 页面会更有效。
+              </p>
+              <div className="hero-cta">
+                <Link to="/production" className="button primary">Open Production / 查看合作简介</Link>
+              </div>
+            </div>
             <div className="gaussian-feature-grid">
               {featuredScenes.map((scene) => {
                 const relatedWork = getRelatedWork(scene)
