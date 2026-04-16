@@ -23,8 +23,7 @@ function Header() {
 
   const homeNavItems = [
     { id: 'practice', label: 'Practice' },
-    { id: 'works', label: 'Works', scrollTo: 'works' },
-    { id: 'public-nodes', label: 'Public Nodes', scrollTo: 'image-wall' }
+    { id: 'works', label: 'Works', scrollTo: 'works' }
   ]
 
   const routeNavItems = [

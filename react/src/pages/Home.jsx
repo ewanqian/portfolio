@@ -50,18 +50,6 @@ function Home() {
             </div>
           </div>
         </section>
-
-        <section className="section">
-          <div className="container">
-            <div className="entry-banner">
-              <div className="entry-banner-content">
-                <h2>Gaussian Archive Library</h2>
-                <p>空间扫描保存、研究进度、网页嵌入与 Vision Pro / XR 路径</p>
-                <Link to="/gaussian-scenes" className="btn btn-primary">Enter Gaussian Archive</Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

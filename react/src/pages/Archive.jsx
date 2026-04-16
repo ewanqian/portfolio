@@ -15,7 +15,7 @@ const Archive = () => {
             <div className="eyebrow">Archive</div>
             <h1 className="section-title">完整档案</h1>
             <p className="section-intro">
-              所有作品、项目与公开呈现的完整索引。
+              所有作品、公开节点与空间归档样本的完整索引。
             </p>
           </div>
         </section>
