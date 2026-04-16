@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '../../hooks/useTheme'
 
 function Header() {
@@ -20,6 +20,18 @@ function Header() {
     }
     setMenuOpen(false)
   }
+
+  const homeNavItems = [
+    { id: 'practice', label: 'Practice' },
+    { id: 'works', label: 'Works', scrollTo: 'works' },
+    { id: 'public-nodes', label: 'Public Nodes', scrollTo: 'image-wall' }
+  ]
+
+  const routeNavItems = [
+    { id: 'writing', label: 'Writing', to: '/writing' },
+    { id: 'archive', label: 'Archive', to: '/archive', activeOn: ['/archive', '/gaussian-scenes'] },
+    { id: 'production', label: 'Production', to: '/production' }
+  ]
 
   return (
     <header className="topbar">
@@ -52,27 +64,31 @@ function Header() {
           </button>
         </div>
         <nav className={`nav ${menuOpen ? 'open' : ''}`} id="site-nav" aria-label="Primary">
-          <button type="button" className="nav-button" onClick={() => goHome()}>
-            Practice
-          </button>
-          <button type="button" className="nav-button" onClick={() => goHome('works')}>
-            Works
-          </button>
-          <button type="button" className="nav-button" onClick={() => goHome('image-wall')}>
-            Public Nodes
-          </button>
-          <NavLink to="/writing" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
-            Writing
-          </NavLink>
-          <NavLink to="/archive" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
-            Archive
-          </NavLink>
-          <NavLink to="/gaussian-scenes" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
-            Gaussian Lab
-          </NavLink>
-          <NavLink to="/production" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
-            Production
-          </NavLink>
+          {homeNavItems.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className="nav-link nav-button"
+              onClick={() => goHome(item.scrollTo)}
+            >
+              {item.label}
+            </button>
+          ))}
+          {routeNavItems.map((item) => {
+            const isActive = item.activeOn ? item.activeOn.includes(location.pathname) : location.pathname === item.to
+
+            return (
+              <Link
+                key={item.id}
+                to={item.to}
+                className={`nav-link ${isActive ? 'active' : ''}`.trim()}
+                onClick={() => setMenuOpen(false)}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
       </div>
     </header>
