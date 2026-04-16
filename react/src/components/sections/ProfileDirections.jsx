@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 const directions = [
   {
     title: 'AI + 三维视觉开发',
@@ -63,7 +61,7 @@ function ProfileDirections() {
         </div>
 
         <div style={{ marginTop: '28px' }}>
-          <div className="eyebrow">Selected Public Signals</div>
+          <div className="eyebrow">Public Record / 公开履历与合作线索</div>
           <p className="section-intro" style={{ marginBottom: '16px' }}>
             这些条目作为公开经历与合作信号，帮助客户快速判断我的工作语境，而不是再重复一遍作品分类。
           </p>
@@ -71,16 +69,6 @@ function ProfileDirections() {
             {publicSignals.map((signal) => (
               <span key={signal} className="social-pill signal-pill">{signal}</span>
             ))}
-          </div>
-        </div>
-
-        <div className="grid-3" style={{ marginTop: '20px' }}>
-          <div className="overview-card">
-            <h4>Production / 制作服务</h4>
-            <p>如果你是从公开节点或作品入口进来，接下来最该看的不是再翻一遍主线，而是直接看合作类型、案例判断和沟通方式。</p>
-            <div style={{ marginTop: '16px' }}>
-              <Link to="/production" className="button primary">Open Production</Link>
-            </div>
           </div>
         </div>
       </div>

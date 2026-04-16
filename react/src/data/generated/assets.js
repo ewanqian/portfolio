@@ -5,7 +5,7 @@ export default [
     "type": "image",
     "caption": "Drop Flow 杭州展览现场",
     "relatedWork": "drop-flow",
-    "relatedNode": "hangzhou-opening",
+    "relatedNode": "drop-flow-hangzhou-biennale",
     "year": 2025,
     "source": "local-library",
     "featured": true

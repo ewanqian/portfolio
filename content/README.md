@@ -45,7 +45,7 @@ content/
   "tags": ["immersive", "space", "flow"],
   "coverImage": "drop-flow-cover.jpg",
   "showOnHome": true,
-  "relatedNodes": ["ufo-terminal", "hangzhou-opening"],
+  "relatedNodes": ["ufo-terminal", "drop-flow-hangzhou-biennale"],
   "relatedWritings": ["drop-flow-note"],
   "displayModes": ["immersive screen", "VR headset"],
   "analysisIds": ["drop-flow-core-series"],

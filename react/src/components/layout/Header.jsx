@@ -22,14 +22,15 @@ function Header() {
   }
 
   const homeNavItems = [
-    { id: 'practice', label: 'Practice' },
+    { id: 'overview', label: 'Overview', scrollTo: 'profile-directions' },
     { id: 'works', label: 'Works', scrollTo: 'works' }
   ]
 
   const routeNavItems = [
-    { id: 'writing', label: 'Writing', to: '/writing' },
-    { id: 'archive', label: 'Archive', to: '/archive', activeOn: ['/archive', '/gaussian-scenes'] },
-    { id: 'production', label: 'Production', to: '/production' }
+    { id: 'gaussian', label: 'Gaussian', to: '/gaussian-scenes' },
+    { id: 'production', label: 'Production', to: '/production' },
+    { id: 'archive', label: 'Archive', to: '/archive' },
+    { id: 'writing', label: 'Writing', to: '/writing' }
   ]
 
   return (

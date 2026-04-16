@@ -6,31 +6,31 @@ import Footer from '../components/layout/Footer'
 const services = [
   {
     id: 'live-visuals',
-    title: 'Live Visuals / 现场视觉',
+    title: '现场视觉 / Live Visuals',
     description: '适合演出、专场和现场段落，需要视觉和音乐结构、节奏推进与现场气质一起成立的合作。',
-    forUse: ['音乐演出', 'audiovisual 合作', 'opening visual', 'live performance support']
+    forUse: ['音乐演出', 'audiovisual 合作', '开场段落', '现场视觉支持']
   },
   {
     id: 'spatial-image',
-    title: 'Spatial Image & Immersive Content / 空间影像与沉浸内容',
+    title: '空间影像与沉浸内容 / Spatial Image & Immersive Content',
     description: '适合展厅、多面屏、穹顶和装置内容，需要围绕空间路径、屏幕关系与环境感组织影像的项目。',
     forUse: ['展厅', '多面屏', '穹顶', '沉浸空间', '装置类内容']
   },
   {
     id: 'previsualization',
-    title: 'Previsualization & System Design / 预演与系统设计',
+    title: '前期预演与方案确认 / Previsualization',
     description: '适合还在前期判断阶段的项目，先把结构、节奏、屏幕关系和关键风险做成可讨论的预演。',
-    forUse: ['场景预演', '项目测试', 'mapping / viewer 相关流程', '技术验证']
+    forUse: ['场景预演', '项目测试', '方案确认', '技术验证']
   },
   {
     id: 'viewer-spec',
-    title: 'Viewer / Spec Support / 查看器与技术规格支持',
+    title: '交付规格与播放支持 / Delivery Specs',
     description: '适合要进入真实交付的项目，把分辨率、播放、格式、版本和场地适配提前理顺。',
-    forUse: ['resolution', 'fps', 'codec', 'container', 'Apple ProRes', 'playback', 'venue adaptation']
+    forUse: ['分辨率', '帧率', '编码格式', '封装格式', 'Apple ProRes', '播放测试', '场地适配']
   },
   {
     id: 'research-consultation',
-    title: 'Research / Consultation / Workshop / 研究、咨询与工作坊',
+    title: '研究咨询与工作坊 / Consultation & Workshop',
     description: '适合团队方法搭建、方向讨论和工作坊场景，不是纯交付，而是帮合作方建立判断和工作流。',
     forUse: ['方法讨论', '项目咨询', '课程 / workshop', '系统搭建与内容组织']
   }
@@ -49,8 +49,8 @@ const caseNotes = [
   },
   {
     id: 'viewer-spec-early',
-    title: '为什么 viewer / spec 需要提前确认',
-    content: '分辨率、帧率、codec、播放条件和场地尺寸越晚确认，后期越容易出错，尤其在多屏、穹顶和特殊输出环境中更明显。'
+    title: '为什么交付规格需要提前确认',
+    content: '分辨率、帧率、编码格式、播放条件和场地尺寸越晚确认，后期越容易出错，尤其在多屏、穹顶和特殊输出环境中更明显。'
   },
   {
     id: 'immersive-not-by-length',
@@ -114,7 +114,7 @@ const Production = () => {
             <h2 className="section-title">Production Overview / 制作概览</h2>
             <p>
               我更适合的不是单纯“做一条素材”，而是那些需要把内容、空间、节奏、版本和交付一起梳理清楚的项目。
-              如果你正在做演出视觉、空间影像、沉浸内容、预演测试，或需要 viewer / spec 支持，这里会比作品页更直接。
+              如果你正在做演出视觉、空间影像、沉浸内容、预演测试，或需要交付规格支持，这里会比作品页更直接。
             </p>
             <div className="grid-3" style={{ marginTop: '28px' }}>
               <div className="overview-card">
@@ -130,6 +130,10 @@ const Production = () => {
                 <p>带着时间、场地、屏幕条件、预算区间和预期输出形式来聊，效率会高很多。</p>
               </div>
             </div>
+            <div className="hero-cta" style={{ marginTop: '24px' }}>
+              <a href="#contact" className="button primary">直接联系</a>
+              <Link to="/gaussian-scenes" className="button">查看空间样本</Link>
+            </div>
           </div>
         </section>
 
@@ -137,12 +141,12 @@ const Production = () => {
           <div className="container">
             <div className="entry-banner production-gaussian-entry">
               <div className="entry-banner-content">
-                <h2>Gaussian Archive Library / 高斯档案库</h2>
-                <p>如果你想看扫描保存、网页嵌入和 Vision Pro / XR 方向，这里是更偏方法和样本的入口。</p>
+                <h2>空间样本与方法说明 / Gaussian Archive</h2>
+                <p>如果你想继续看扫描保存、网页嵌入和 Vision Pro / XR 路径，这里是补充样本和方法说明的入口，不是主合作页。</p>
                 <div className="hero-cta" style={{ justifyContent: 'center' }}>
-                  <Link to="/gaussian-scenes" className="button primary">Open Gaussian Archive</Link>
+                  <Link to="/gaussian-scenes" className="button primary">查看空间样本</Link>
                   <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" className="button">
-                    Workflow Note
+                    查看方法说明
                   </a>
                 </div>
               </div>
@@ -152,7 +156,7 @@ const Production = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Service Categories / 服务类别</h2>
+            <h2 className="section-title">合作类型 / Service Categories</h2>
             <p className="section-intro">
               下面这几类不是“我会什么”的清单，而是让客户快速判断：你的项目更接近哪一种合作结构。
             </p>
@@ -175,7 +179,7 @@ const Production = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Selected Case Notes / 制作案例说明</h2>
+            <h2 className="section-title">合作判断 / Case Notes</h2>
             <p className="section-intro">
               这部分专门解释客户最常误判的地方，帮助你理解为什么有些项目需要先测、先预演，或者不能只按时长判断。
             </p>
@@ -194,10 +198,10 @@ const Production = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Viewer / Spec Capability / 查看器与技术规格能力</h2>
+            <h2 className="section-title">交付规格与播放支持 / Delivery Specs</h2>
             <div className="viewer-specs-grid-full">
               <div className="viewer-spec-card-full">
-                <h3>Delivery</h3>
+                <h3>交付格式</h3>
                 <ul>
                   {viewerSpecs.delivery.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -205,7 +209,7 @@ const Production = () => {
                 </ul>
               </div>
               <div className="viewer-spec-card-full">
-                <h3>Codec / Container</h3>
+                <h3>编码与封装</h3>
                 <ul>
                   {viewerSpecs.codec.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -213,7 +217,7 @@ const Production = () => {
                 </ul>
               </div>
               <div className="viewer-spec-card-full">
-                <h3>Venue Adaptation</h3>
+                <h3>场地适配</h3>
                 <ul>
                   {viewerSpecs.venue.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -221,7 +225,7 @@ const Production = () => {
                 </ul>
               </div>
               <div className="viewer-spec-card-full">
-                <h3>Workflow Notes</h3>
+                <h3>交付流程</h3>
                 <ul>
                   {viewerSpecs.workflow.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -276,7 +280,7 @@ const Production = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">FAQ / 常见问题</h2>
+            <h2 className="section-title">常见问题 / FAQ</h2>
             <div className="faq-list">
               {faqs.map((faq, i) => (
                 <article key={i} className="faq-item">
@@ -290,7 +294,7 @@ const Production = () => {
 
         <section id="contact" className="section">
           <div className="container">
-            <h2 className="section-title">Inquiry / 项目咨询</h2>
+            <h2 className="section-title">联系与项目咨询 / Inquiry</h2>
             <div className="contact-box">
               <p>如果你希望推进合作，请尽量提供：</p>
               <ul className="inquiry-list">

@@ -6,8 +6,8 @@ import scenes from '../data/generated/gaussianScenes'
 import works from '../data/generated/works'
 
 const categoryLabels = {
-  'work-derived': 'Work Sample / 作品样本',
-  'field-scan': 'Spatial Scan / 环境采样'
+  'work-derived': 'Team Project Translation / 团队项目转译',
+  'field-scan': 'Field Scan / 个人环境采样'
 }
 
 const statusLabels = {
@@ -20,22 +20,22 @@ const relatedWorkOverrides = {
   'drop-flow-ufo-2025': {
     title: 'Drop Flow',
     url: '/portfolio/works/drop-flow.html',
-    label: 'Open Drop Flow Detail / 查看作品详情'
+    label: '查看 Drop Flow 详情'
   },
   'drop-flow': {
     title: 'Drop Flow',
     url: '/portfolio/works/drop-flow.html',
-    label: 'Open Drop Flow Detail / 查看作品详情'
+    label: '查看 Drop Flow 详情'
   },
   'timer-series-visual-2024': {
     title: 'TIMER 控时者',
     url: '/portfolio/works/timer.html',
-    label: 'Open TIMER Detail / 查看作品详情'
+    label: '查看 TIMER 详情'
   },
   'timer': {
     title: 'TIMER 控时者',
     url: '/portfolio/works/timer.html',
-    label: 'Open TIMER Detail / 查看作品详情'
+    label: '查看 TIMER 详情'
   }
 }
 
@@ -43,12 +43,12 @@ const valueCards = [
   {
     id: 'lighter-than-engine',
     title: '先把空间感保留下来',
-    body: '相比只保留一段视频，这种形式更适合展示空间层次、观看路径和现场关系，也更适合作为项目样本或归档入口。'
+    body: '相比只保留一段视频，这种形式更适合把团队项目场景或现场资料先保存成可浏览对象，也更容易让外部读者理解空间层次和观看路径。'
   },
   {
     id: 'archive-before-app',
     title: '先形成可浏览样本，再决定要不要继续开发',
-    body: '作品影像、现场资料和环境扫描都可以先整理成一个可浏览对象，便于判断它更适合归档、展示，还是继续进入后续开发。'
+    body: '团队项目资料和个人环境采样都可以先整理成一个可浏览样本，再判断它更适合归档、网页展示，还是继续进入更完整的应用开发。'
   },
   {
     id: 'visionpro-bridge',
@@ -60,16 +60,16 @@ const valueCards = [
 const researchTracks = [
   {
     id: 'work-derived-splats',
-    title: 'Work Samples / 作品样本',
+    title: 'Team Project Samples / 团队项目转译',
     status: 'active',
-    body: '把既有作品影像整理成可浏览的空间样本，为作品页、提案页和归档页提供另一种观看入口。',
+    body: '把团队项目里的既有场景、现场资料和图像素材转成可浏览的空间样本，为作品页、提案页和归档页提供另一种观看入口。',
     note: '当前已收录 2 个作品样本。'
   },
   {
     id: 'field-scan-library',
-    title: 'Field Scan Library / 环境采样样本',
+    title: 'Field Scan Library / 个人环境采样档案',
     status: 'active',
-    body: '把花园、温室和公共空间扫描整理成独立条目，让环境采样不再只是零散试验。',
+    body: '把花园、温室和公共空间扫描整理成独立条目，让个人环境采样不再只是零散试验，而是持续积累的空间保存样本。',
     note: '当前已有 3 个环境采样条目。'
   },
   {
@@ -91,20 +91,20 @@ const researchTracks = [
 const progressColumns = [
   {
     id: 'work-samples',
-    title: 'Work Samples / 作品样本',
+    title: 'Team Samples / 团队项目样本',
     items: [
-      'TIMER 与 Drop Flow 已形成可浏览的空间样本。',
-      '作品页可以直接进入空间入口，而不只停留在视频层。',
-      '适合作为作品归档、项目提案和网页展示的中间层。'
+      'TIMER 与 Drop Flow 已形成可浏览的团队项目空间样本。',
+      '项目本身属于团队实践，高斯化整理、网页嵌入和归档编排由钱誉文单独完成。',
+      '它们适合作为作品归档、项目提案和网页展示的中间层。'
     ]
   },
   {
     id: 'field-scans',
-    title: 'Field Scans / 环境采样',
+    title: 'Field Scans / 个人环境采样',
     items: [
       '温室、花园和公共空间扫描已进入同一栏目。',
       '每个条目都保留缩略图、嵌入链接和基本说明。',
-      '后续可以继续扩到展厅、演出和建筑空间。'
+      '这些扫描由钱誉文独立完成，后续可以继续扩到展厅、演出和建筑空间。'
     ]
   },
   {
@@ -127,7 +127,7 @@ const workflowSteps = [
   {
     id: 'translate',
     title: '2. 空间转译',
-    body: '通过图像整理和本地工作流，把二维素材推进到更接近空间对象的中间状态。'
+    body: '通过本地 AppleSharp 模型、ComfyUI 和图像整理，把二维素材推进到更接近空间对象的中间状态。'
   },
   {
     id: 'splat',
@@ -185,7 +185,7 @@ function getRelatedWork(scene) {
   return {
     title: work.title,
     url: resolvedUrl,
-    label: `Open ${work.title} / 查看相关作品`
+    label: `查看 ${work.title} 详情`
   }
 }
 
@@ -207,8 +207,8 @@ function GaussianScenes() {
             <div className="eyebrow">Gaussian Archive Library</div>
             <h1 className="section-title">高斯档案库 / Gaussian Archive Library</h1>
             <p className="section-intro">
-              这个栏目把作品样本和环境采样放进同一个公开入口，方便直接理解这种形式如何用于归档、展示和后续开发。
-              它不是内部进度板，而是一组对外可读的空间样本：既能看作品如何被转成空间对象，也能看这种形式适合承载什么内容。
+              这个栏目把两类内容放进同一个公开入口：一类是 VIRTURA 团队项目相关场景被转译成的高斯空间样本，由钱誉文负责空间化整理、网页嵌入和归档编排；另一类是钱誉文独立进行的环境采样档案，用来测试空间保存、网页浏览与后续 Vision Pro / XR 的展示路径。
+              它不是内部进度板，而是一组对外可读的空间样本与研究模块。
             </p>
             <div className="gaussian-stat-row">
               <div className="gaussian-stat-card">
@@ -229,16 +229,15 @@ function GaussianScenes() {
               </div>
             </div>
             <div className="hero-cta">
-              <Link to="/production" className="button primary">Open Production / 查看合作方式</Link>
-              <Link to="/writing" className="button">Open Writing / 查看研究</Link>
-              <Link to="/archive" className="button">Open Archive / 返回档案</Link>
+              <Link to="/production" className="button primary">查看合作方式</Link>
+              <Link to="/archive" className="button">返回档案索引</Link>
               <a
                 href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md"
                 target="_blank"
                 rel="noreferrer"
                 className="button"
               >
-                Workflow Note / 方法笔记
+                查看方法说明
               </a>
             </div>
           </div>
@@ -246,9 +245,9 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Reading Angles / 阅读方式</h2>
+            <h2 className="section-title">这页怎么看 / How to Read This Page</h2>
             <p className="section-intro">
-              这一页可以从三个角度来读：作品样本、环境采样，以及这种形式如何继续进入更完整的展示和合作路径。
+              这一页可以从三个角度来读：团队项目的空间转译、个人环境采样档案，以及这种形式如何继续进入更完整的展示和合作路径。
             </p>
             <div className="gaussian-info-grid">
               {researchTracks.map((track) => (
@@ -267,9 +266,9 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Current Scope / 当前范围</h2>
+            <h2 className="section-title">这页能帮助判断什么</h2>
             <p className="section-intro">
-              下面这三列不是内部进度，而是帮助外部读者快速理解：当前已经能看到什么、这种形式能承载什么、以及它能往哪种合作方向继续走。
+              下面这三列不是内部进度，而是帮助外部读者快速理解：当前已经能看到哪些团队项目样本、哪些个人环境采样，以及这种形式能往哪种合作方向继续走。
             </p>
             <div className="gaussian-progress-grid">
               {progressColumns.map((column) => (
@@ -288,17 +287,17 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Spatial Archive Samples / 空间归档样本</h2>
+            <h2 className="section-title">团队项目空间转译样本 / Team Project Samples</h2>
             <p className="section-intro">
-              下面两个样本展示的是：既有作品影像或现场资料如何被整理成可浏览的空间对象。它们不是替代视频，而是提供另一种更接近空间观看的入口。
+              下面两个样本都来自团队项目语境。项目本身属于团队实践，而高斯化转译、网页嵌入和归档整理由钱誉文单独完成。它们不是替代视频，而是提供另一种更接近空间观看的入口。
             </p>
             <div className="gaussian-cta-panel" style={{ marginBottom: '24px' }}>
-              <h3>想判断这种形式适不适合你的项目？</h3>
+              <h3>想判断这种形式适不适合当前项目？</h3>
               <p>
-                如果你更关心合作方式、预算理解和交付路径，下一步最值得看的就是 Production 页面；这里更适合先看样本和呈现方式。
+                如果更关心合作方式、预算理解和交付路径，下一步最值得看的就是 Production 页面；这里更适合先看样本和呈现方式。
               </p>
               <div className="hero-cta">
-                <Link to="/production" className="button primary">Open Production / 查看合作方式</Link>
+                <Link to="/production" className="button primary">查看合作方式</Link>
               </div>
             </div>
             <div className="gaussian-feature-grid">
@@ -325,6 +324,7 @@ function GaussianScenes() {
                         {scene.location} · {scene.publishedAgo || 'unknown publish time'} · {scene.size || 'unknown size'}
                       </p>
                       <p>{scene.summary}</p>
+                      <p className="gaussian-card-note">{scene.captureMoment}</p>
                       <div className="gaussian-note-list">
                         {scene.notes.map((note) => (
                           <div key={note} className="gaussian-note">{note}</div>
@@ -337,7 +337,7 @@ function GaussianScenes() {
                       </div>
                       <div className="hero-cta">
                         <a href={scene.sceneUrl} target="_blank" rel="noreferrer" className="button primary">
-                          Open SuperSplat
+                          查看空间样本
                         </a>
                         {relatedWork ? (
                           <a href={relatedWork.url} target="_blank" rel="noreferrer" className="button">
@@ -355,9 +355,9 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Field Scans / 环境采样档案</h2>
+            <h2 className="section-title">个人环境采样档案 / Field Scans</h2>
             <p className="section-intro">
-              这些条目展示的是环境采样如何被整理成可浏览样本。它们同样可以继续扩展到展厅、建筑、演出空间和其他现场语境。
+              下面这些则是钱誉文独立进行的环境采样档案。它们保留花园、温室和城市公共空间在特定光线与体积关系里的状态，也可以继续扩展到展厅、建筑、演出空间和其他现场语境。
             </p>
             <div className="gaussian-scene-grid">
               {fieldScenes.map((scene) => (
@@ -375,6 +375,7 @@ function GaussianScenes() {
                       {scene.views || '0'} views · {scene.size || 'unknown size'} · {scene.publishedAgo || 'unknown publish time'}
                     </p>
                     <p>{scene.summary}</p>
+                    <p className="gaussian-card-note">{scene.captureMoment}</p>
                     <p className="gaussian-scene-note">{scene.notes[0]}</p>
                     <div className="gaussian-tags">
                       {scene.tags.map((tag) => (
@@ -383,10 +384,10 @@ function GaussianScenes() {
                     </div>
                     <div className="hero-cta">
                       <a href={scene.sceneUrl} target="_blank" rel="noreferrer" className="button primary">
-                        Open Scene
+                        查看场景
                       </a>
                       <a href={scene.embedUrl} target="_blank" rel="noreferrer" className="button">
-                        Embed URL
+                        查看嵌入链接
                       </a>
                     </div>
                   </div>
@@ -398,7 +399,7 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Why This Archive Library / 为什么做成档案库</h2>
+            <h2 className="section-title">为什么做成空间档案</h2>
             <div className="gaussian-info-grid">
               {valueCards.map((card) => (
                 <article key={card.id} className="gaussian-info-card">
@@ -412,7 +413,7 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Workflow & Service Path / 工作流与服务路径</h2>
+            <h2 className="section-title">从样本到合作 / From Sample to Collaboration</h2>
             <div className="gaussian-workflow-grid">
               {workflowSteps.map((step) => (
                 <article key={step.id} className="gaussian-info-card">
@@ -435,14 +436,14 @@ function GaussianScenes() {
                 这一页更适合作为样本入口；如果要继续讨论预算、交付范围、适合什么项目类型，下一步应该转到 Production 页面。
               </p>
               <div className="hero-cta">
-                <Link to="/production" className="button primary">Open Production / 查看合作方式</Link>
+                <Link to="/production" className="button primary">查看合作方式</Link>
                 <a
                   href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/README.md"
                   target="_blank"
                   rel="noreferrer"
                   className="button"
                 >
-                  Open Full Archive / 查看完整归档
+                  查看完整说明
                 </a>
               </div>
             </div>
