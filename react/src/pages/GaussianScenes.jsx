@@ -10,6 +10,12 @@ const categoryLabels = {
   'field-scan': 'Field Scan / 环境采样'
 }
 
+const statusLabels = {
+  active: 'Active / 持续推进',
+  building: 'Building / 正在搭建',
+  documented: 'Documented / 已成知识块'
+}
+
 const relatedWorkOverrides = {
   'drop-flow-ufo-2025': {
     title: 'Drop Flow',
@@ -48,6 +54,67 @@ const valueCards = [
     id: 'visionpro-bridge',
     title: '向 Vision Pro / XR / 建筑导览继续延伸',
     body: '高斯场景不只停留在归档层，也可以继续进入 Vision Pro 观看路径、空间视频原型、建筑导览或更完整的轻量应用开发。'
+  }
+]
+
+const researchTracks = [
+  {
+    id: 'work-derived-splats',
+    title: 'Work-derived Splats / 作品转译研究',
+    status: 'active',
+    body: '把 TIMER、DropFlow 这类既有作品影像、成员素材和残余光场转成可浏览的空间对象，让作品正文之外多一层高斯入口。',
+    note: '当前已经有 2 个作品相关高斯嵌入。'
+  },
+  {
+    id: 'field-scan-library',
+    title: 'Field Scan Library / 环境采样档案',
+    status: 'active',
+    body: '把花园、温室、东京塔周边、涩谷公共空间这类环境采样整理成可索引的场景库，而不是散落的实验片段。',
+    note: '当前已有 3 个 field scan 条目。'
+  },
+  {
+    id: 'visionpro-path',
+    title: 'Vision Pro Path / 空间观看路径',
+    status: 'building',
+    body: '把高斯场景当成较轻的前置资产，再往 Apple Vision Pro、XR 演示、空间视频原型和应用开发推进。',
+    note: '这一层适合继续接到服务表达和报价结构。'
+  },
+  {
+    id: 'workflow-method',
+    title: 'Workflow Method / 工作坊方法块',
+    status: 'documented',
+    body: '把本地相册、ComfyUI、AppleSharp 模型、Gaussian Splat、SuperSplat 编辑与网页嵌入这条链路沉淀成可引用的方法说明。',
+    note: '当前 workflow note 已经可被作品页和服务页复用。'
+  }
+]
+
+const progressColumns = [
+  {
+    id: 'done',
+    title: 'Done / 已完成',
+    items: [
+      '5 个场景已经归档，并保存本地缩略图。',
+      'DropFlow 与 TIMER 已接入作品页的高斯空间入口。',
+      'Gaussian Scenes 已经成为独立前台栏目。'
+    ]
+  },
+  {
+    id: 'active',
+    title: 'Active / 正在推进',
+    items: [
+      '把高斯内容从单纯展示页推进为“档案库 + 研究板块 + 任务模块”。',
+      '继续统一分类、标签、相关作品与场景说明。',
+      '把空间扫描保存和 Vision Pro / XR 路径挂到更清晰的服务表达里。'
+    ]
+  },
+  {
+    id: 'next',
+    title: 'Next / 下一步',
+    items: [
+      '补演出场景扫描、建筑和室内空间案例。',
+      '把 workflow note 提升成正式 Writing 条目。',
+      '补一套报价层级：采集、整理、嵌入、展示、后续应用开发。'
+    ]
   }
 ]
 
@@ -125,6 +192,7 @@ function getRelatedWork(scene) {
 function GaussianScenes() {
   const featuredScenes = scenes.filter((scene) => scene.featured)
   const fieldScenes = scenes.filter((scene) => scene.category === 'field-scan')
+  const workDerivedScenes = scenes.filter((scene) => scene.category === 'work-derived')
   const totalViews = scenes.reduce((sum, scene) => {
     const views = Number.parseInt(String(scene.views || '0').replace(/,/g, ''), 10)
     return Number.isNaN(views) ? sum : sum + views
@@ -136,11 +204,12 @@ function GaussianScenes() {
       <main className="page-gaussian-scenes">
         <section className="section">
           <div className="container gaussian-hero">
-            <div className="eyebrow">Gaussian Scenes</div>
-            <h1 className="section-title">空间扫描保存 / Gaussian Scenes</h1>
+            <div className="eyebrow">Gaussian Archive Library</div>
+            <h1 className="section-title">高斯档案库 / Gaussian Archive Library</h1>
             <p className="section-intro">
               这个栏目把 DropFlow、TIMER、花园扫描、城市空间采样和之后的演出场景归到同一个前台入口。
-              它既是档案，也是一条从采集、压缩、网页嵌入到 Vision Pro / XR 展示的制作路径。
+              它现在不只是一个场景页，而是一个更明确的档案库、研究板块和任务推进模块：
+              一边展示高斯空间对象，一边保留方法、研究方向和当前推进状态。
             </p>
             <div className="gaussian-stat-row">
               <div className="gaussian-stat-card">
@@ -148,8 +217,8 @@ function GaussianScenes() {
                 <span>Archived Scenes / 已归档场景</span>
               </div>
               <div className="gaussian-stat-card">
-                <strong>{featuredScenes.length}</strong>
-                <span>Work Embeds / 作品嵌入</span>
+                <strong>{workDerivedScenes.length}</strong>
+                <span>Work-derived Splats / 作品转译</span>
               </div>
               <div className="gaussian-stat-card">
                 <strong>{fieldScenes.length}</strong>
@@ -162,6 +231,7 @@ function GaussianScenes() {
             </div>
             <div className="hero-cta">
               <Link to="/production" className="button primary">Open Production / 查看服务</Link>
+              <Link to="/writing" className="button">Open Writing / 查看研究</Link>
               <Link to="/archive" className="button">Open Archive / 返回档案</Link>
               <a
                 href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md"
@@ -171,6 +241,48 @@ function GaussianScenes() {
               >
                 Workflow Note / 方法笔记
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2 className="section-title">Research Tracks / 研究方向</h2>
+            <p className="section-intro">
+              这个档案库的目标不是只陈列结果，而是把高斯相关的工作分成几条能持续增长的研究线，让方法、场景和后续开发方向都能被看见。
+            </p>
+            <div className="gaussian-info-grid">
+              {researchTracks.map((track) => (
+                <article key={track.id} className="gaussian-info-card">
+                  <div className="gaussian-badge-row">
+                    <span className="gaussian-badge">{statusLabels[track.status]}</span>
+                  </div>
+                  <h3>{track.title}</h3>
+                  <p>{track.body}</p>
+                  <p className="gaussian-card-note">{track.note}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2 className="section-title">Task Progress / 任务推进</h2>
+            <p className="section-intro">
+              这里可以继续承担“研究进度板”的作用。你后面补新的扫描、方法或提案模块时，也都可以顺着这套结构继续长。
+            </p>
+            <div className="gaussian-progress-grid">
+              {progressColumns.map((column) => (
+                <article key={column.id} className="gaussian-progress-card">
+                  <h3>{column.title}</h3>
+                  <div className="gaussian-progress-list">
+                    {column.items.map((item) => (
+                      <div key={item} className="gaussian-progress-item">{item}</div>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -278,7 +390,7 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Why This Format / 为什么用这条格式保存</h2>
+            <h2 className="section-title">Why This Archive Library / 为什么做成档案库</h2>
             <div className="gaussian-info-grid">
               {valueCards.map((card) => (
                 <article key={card.id} className="gaussian-info-card">

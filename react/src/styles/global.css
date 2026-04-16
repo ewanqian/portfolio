@@ -1912,6 +1912,10 @@ textarea {
   line-height: 1.75;
 }
 
+.gaussian-card-note {
+  margin-top: 14px !important;
+}
+
 .gaussian-badge-row {
   display: flex;
   flex-wrap: wrap;
@@ -1983,6 +1987,39 @@ textarea {
   margin-top: 32px;
 }
 
+.gaussian-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.gaussian-progress-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 24px;
+}
+
+.gaussian-progress-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.gaussian-progress-list {
+  display: grid;
+  gap: 12px;
+}
+
+.gaussian-progress-item {
+  border-left: 2px solid var(--text);
+  padding-left: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .gaussian-scene-image {
   height: 220px;
   overflow: hidden;
@@ -2017,7 +2054,8 @@ textarea {
   .gaussian-stat-row,
   .gaussian-scene-grid,
   .gaussian-info-grid,
-  .gaussian-service-grid {
+  .gaussian-service-grid,
+  .gaussian-progress-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2031,7 +2069,8 @@ textarea {
   .gaussian-scene-grid,
   .gaussian-info-grid,
   .gaussian-service-grid,
-  .gaussian-workflow-grid {
+  .gaussian-workflow-grid,
+  .gaussian-progress-grid {
     grid-template-columns: 1fr;
   }
 

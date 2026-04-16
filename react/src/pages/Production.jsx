@@ -123,10 +123,10 @@ const Production = () => {
           <div className="container">
             <div className="entry-banner production-gaussian-entry">
               <div className="entry-banner-content">
-                <h2>Gaussian Scenes / 空间扫描保存</h2>
-                <p>已经整理成正式前台入口，可直接查看 DropFlow、TIMER、花园扫描与城市空间采样的高斯档案。</p>
+                <h2>Gaussian Archive Library / 高斯档案库</h2>
+                <p>已经整理成正式前台模块，不只展示场景，也开始承载方法、研究方向与任务进度。</p>
                 <div className="hero-cta" style={{ justifyContent: 'center' }}>
-                  <Link to="/gaussian-scenes" className="button primary">Open Gaussian Scenes</Link>
+                  <Link to="/gaussian-scenes" className="button primary">Open Gaussian Archive</Link>
                   <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" className="button">
                     Workflow Note
                   </a>
