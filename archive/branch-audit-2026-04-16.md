@@ -11,7 +11,7 @@
 
 - 当前工作分支是 `main`
 - 已把远端 `origin/main` 合并回本地 `main`
-- 当前 `main` 相对 `origin/main` 为 `ahead 6`，不再 `behind`
+- 当前 `main` 相对 `origin/main` 为 `ahead 7`，不再 `behind`
 - 这次检查时没有额外的临时 worktree 留存；之前 `/private/tmp/...` 的构建/同步 worktree 已消失，不是长期内容分支
 
 ## 已被主线吸收的分支
@@ -53,7 +53,7 @@
 - `workshops/202507-杭州中心-AI-Agent工作坊.md`
 - `workshops/assets/202507-杭州中心-AI-Agent工作坊-海报信息.md`
 
-其中这 5 个“纯新增、不回滚主线”的文件，已在本轮直接救回当前工作树。
+其中这 5 个“纯新增、不回滚主线”的文件，已在本轮直接救回并提交到当前 `main`。
 
 它还尝试删除这些条目：
 
