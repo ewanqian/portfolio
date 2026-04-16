@@ -6,8 +6,8 @@ import scenes from '../data/generated/gaussianScenes'
 import works from '../data/generated/works'
 
 const categoryLabels = {
-  'work-derived': 'Work-derived / 作品转译',
-  'field-scan': 'Field Scan / 环境采样'
+  'work-derived': 'Work Sample / 作品样本',
+  'field-scan': 'Spatial Scan / 环境采样'
 }
 
 const statusLabels = {
@@ -42,78 +42,78 @@ const relatedWorkOverrides = {
 const valueCards = [
   {
     id: 'lighter-than-engine',
-    title: '不是完整实时引擎，仍能保留空间观看',
-    body: '很多空间内容的保存以前要依赖完整三维工程或实时引擎。现在可以先把空间、影像和现场状态压缩成一个可浏览、可嵌入的高斯场景入口。'
+    title: '先把空间感保留下来',
+    body: '相比只保留一段视频，这种形式更适合展示空间层次、观看路径和现场关系，也更适合作为项目样本或归档入口。'
   },
   {
     id: 'archive-before-app',
-    title: '先形成空间对象，再决定后续开发',
-    body: '这种方式很适合做中间层证据：成员素材、作品影像、花园和建筑扫描，都能先成为一个网页里可被索引、引用、展示的对象。'
+    title: '先形成可浏览样本，再决定要不要继续开发',
+    body: '作品影像、现场资料和环境扫描都可以先整理成一个可浏览对象，便于判断它更适合归档、展示，还是继续进入后续开发。'
   },
   {
     id: 'visionpro-bridge',
-    title: '向 Vision Pro / XR / 建筑导览继续延伸',
-    body: '高斯场景不只停留在归档层，也可以继续进入 Vision Pro 观看路径、空间视频原型、建筑导览或更完整的轻量应用开发。'
+    title: '需要时再接到 Vision Pro / XR',
+    body: '当样本已经成立后，再往 Vision Pro、XR、空间视频或更完整的体验开发延伸，会比一开始就重投入更稳。'
   }
 ]
 
 const researchTracks = [
   {
     id: 'work-derived-splats',
-    title: 'Work-derived Splats / 作品转译研究',
+    title: 'Work Samples / 作品样本',
     status: 'active',
-    body: '把 TIMER、DropFlow 这类既有作品影像、成员素材和残余光场转成可浏览的空间对象，让作品正文之外多一层高斯入口。',
-    note: '当前已经有 2 个作品相关高斯嵌入。'
+    body: '把既有作品影像整理成可浏览的空间样本，为作品页、提案页和归档页提供另一种观看入口。',
+    note: '当前已收录 2 个作品样本。'
   },
   {
     id: 'field-scan-library',
-    title: 'Field Scan Library / 环境采样档案',
+    title: 'Field Scan Library / 环境采样样本',
     status: 'active',
-    body: '把花园、温室、东京塔周边、涩谷公共空间这类环境采样整理成可索引的场景库，而不是散落的实验片段。',
-    note: '当前已有 3 个 field scan 条目。'
+    body: '把花园、温室和公共空间扫描整理成独立条目，让环境采样不再只是零散试验。',
+    note: '当前已有 3 个环境采样条目。'
   },
   {
     id: 'visionpro-path',
-    title: 'Vision Pro Path / 空间观看路径',
+    title: 'Vision Pro Path / 延伸展示路径',
     status: 'building',
-    body: '把高斯场景当成较轻的前置资产，再往 Apple Vision Pro、XR 演示、空间视频原型和应用开发推进。',
-    note: '这一层适合继续接到服务表达和报价结构。'
+    body: '把空间样本继续接到 Vision Pro、XR 展示、空间视频原型和轻量应用方向。',
+    note: '更适合在已有样本成立后再继续推进。'
   },
   {
     id: 'workflow-method',
-    title: 'Workflow Method / 工作坊方法块',
+    title: 'Workflow Method / 方法说明',
     status: 'documented',
-    body: '把本地相册、ComfyUI、AppleSharp 模型、Gaussian Splat、SuperSplat 编辑与网页嵌入这条链路沉淀成可引用的方法说明。',
-    note: '当前 workflow note 已经可被作品页和服务页复用。'
+    body: '把采集、整理、空间转译、网页嵌入和后续展示这条链路沉淀成可复用说明。',
+    note: '当前 workflow note 已可被作品页和服务页复用。'
   }
 ]
 
 const progressColumns = [
   {
-    id: 'done',
-    title: 'Done / 已完成',
+    id: 'work-samples',
+    title: 'Work Samples / 作品样本',
     items: [
-      '5 个场景已经归档，并保存本地缩略图。',
-      'DropFlow 与 TIMER 已接入作品页的高斯空间入口。',
-      'Gaussian Scenes 已经成为独立前台栏目。'
+      'TIMER 与 Drop Flow 已形成可浏览的空间样本。',
+      '作品页可以直接进入空间入口，而不只停留在视频层。',
+      '适合作为作品归档、项目提案和网页展示的中间层。'
     ]
   },
   {
-    id: 'active',
-    title: 'Active / 正在推进',
+    id: 'field-scans',
+    title: 'Field Scans / 环境采样',
     items: [
-      '把高斯内容从单纯展示页推进为“档案库 + 研究板块 + 任务模块”。',
-      '继续统一分类、标签、相关作品与场景说明。',
-      '把空间扫描保存和 Vision Pro / XR 路径挂到更清晰的服务表达里。'
+      '温室、花园和公共空间扫描已进入同一栏目。',
+      '每个条目都保留缩略图、嵌入链接和基本说明。',
+      '后续可以继续扩到展厅、演出和建筑空间。'
     ]
   },
   {
-    id: 'next',
-    title: 'Next / 下一步',
+    id: 'service-path',
+    title: 'Service Path / 合作方向',
     items: [
-      '补演出场景扫描、建筑和室内空间案例。',
-      '把 workflow note 提升成正式 Writing 条目。',
-      '补一套报价层级：采集、整理、嵌入、展示、后续应用开发。'
+      '可用于网页嵌入、项目提案和空间归档。',
+      '也可以继续延伸到 Vision Pro / XR 演示。',
+      '更具体的合作方式和预算理解，建议继续看 Production。'
     ]
   }
 ]
@@ -121,23 +121,23 @@ const progressColumns = [
 const workflowSteps = [
   {
     id: 'capture',
-    title: '1. 素材采集',
-    body: '从本地相册、现场照片、360 采样或演出记录里挑出适合被空间化的材料。'
+    title: '1. 素材选择',
+    body: '从作品影像、现场记录或环境采样里挑出适合转成空间样本的材料。'
   },
   {
     id: 'translate',
-    title: '2. 中间层转译',
-    body: '通过本地 ComfyUI 与按当前工作坊口头称呼的 AppleSharp 模型，把图像推向更接近三维浮雕或空间拼接的中间状态。'
+    title: '2. 空间转译',
+    body: '通过图像整理和本地工作流，把二维素材推进到更接近空间对象的中间状态。'
   },
   {
     id: 'splat',
-    title: '3. Gaussian Splat / SuperSplat',
-    body: '继续进入可编辑的高斯场景，在 SuperSplat 中做切片、裁切、预览和分享。'
+    title: '3. 场景整理',
+    body: '在 Gaussian Splat / SuperSplat 中完成裁切、预览和可分享版本。'
   },
   {
     id: 'deploy',
-    title: '4. 网页嵌入与后续开发',
-    body: '先作为网页中的空间入口，再视项目需要继续推进到 Vision Pro、XR、数字展览或更完整的应用原型。'
+    title: '4. 展示与延伸',
+    body: '先作为网页入口或归档样本使用，再视需求继续延伸到 Vision Pro、XR 或更完整的体验开发。'
   }
 ]
 
@@ -207,9 +207,8 @@ function GaussianScenes() {
             <div className="eyebrow">Gaussian Archive Library</div>
             <h1 className="section-title">高斯档案库 / Gaussian Archive Library</h1>
             <p className="section-intro">
-              这个栏目把 DropFlow、TIMER、花园扫描、城市空间采样和之后的演出场景归到同一个前台入口。
-              它现在不只是一个场景页，而是一个更明确的档案库、研究板块和任务推进模块：
-              一边展示高斯空间对象，一边保留方法、研究方向和当前推进状态。
+              这个栏目把作品样本和环境采样放进同一个公开入口，方便直接理解这种形式如何用于归档、展示和后续开发。
+              它不是内部进度板，而是一组对外可读的空间样本：既能看作品如何被转成空间对象，也能看这种形式适合承载什么内容。
             </p>
             <div className="gaussian-stat-row">
               <div className="gaussian-stat-card">
@@ -230,7 +229,7 @@ function GaussianScenes() {
               </div>
             </div>
             <div className="hero-cta">
-              <Link to="/production" className="button primary">Open Production / 查看服务</Link>
+              <Link to="/production" className="button primary">Open Production / 查看合作方式</Link>
               <Link to="/writing" className="button">Open Writing / 查看研究</Link>
               <Link to="/archive" className="button">Open Archive / 返回档案</Link>
               <a
@@ -247,9 +246,9 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Research Tracks / 研究方向</h2>
+            <h2 className="section-title">Reading Angles / 阅读方式</h2>
             <p className="section-intro">
-              这个档案库的目标不是只陈列结果，而是把高斯相关的工作分成几条能持续增长的研究线，让方法、场景和后续开发方向都能被看见。
+              这一页可以从三个角度来读：作品样本、环境采样，以及这种形式如何继续进入更完整的展示和合作路径。
             </p>
             <div className="gaussian-info-grid">
               {researchTracks.map((track) => (
@@ -268,9 +267,9 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Task Progress / 任务推进</h2>
+            <h2 className="section-title">Current Scope / 当前范围</h2>
             <p className="section-intro">
-              这里可以继续承担“研究进度板”的作用。你后面补新的扫描、方法或提案模块时，也都可以顺着这套结构继续长。
+              下面这三列不是内部进度，而是帮助外部读者快速理解：当前已经能看到什么、这种形式能承载什么、以及它能往哪种合作方向继续走。
             </p>
             <div className="gaussian-progress-grid">
               {progressColumns.map((column) => (
@@ -289,17 +288,17 @@ function GaussianScenes() {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Featured Embeds / 作品相关高斯入口</h2>
+            <h2 className="section-title">Spatial Archive Samples / 空间归档样本</h2>
             <p className="section-intro">
-              这两条先直接挂作品相关的空间入口。它们不是替代视频，而是把成员影像、光场残影、空间颗粒与过程线索压缩成一个可以继续浏览的对象。
+              下面两个样本展示的是：既有作品影像或现场资料如何被整理成可浏览的空间对象。它们不是替代视频，而是提供另一种更接近空间观看的入口。
             </p>
             <div className="gaussian-cta-panel" style={{ marginBottom: '24px' }}>
-              <h3>如果你是从公开节点或成员素材入口进来的</h3>
+              <h3>想判断这种形式适不适合你的项目？</h3>
               <p>
-                这里更适合看方法样本和空间保存方式；如果你想快速判断是否适合合作、预算如何理解、项目该怎么继续推进，直接去 Production 页面会更有效。
+                如果你更关心合作方式、预算理解和交付路径，下一步最值得看的就是 Production 页面；这里更适合先看样本和呈现方式。
               </p>
               <div className="hero-cta">
-                <Link to="/production" className="button primary">Open Production / 查看合作简介</Link>
+                <Link to="/production" className="button primary">Open Production / 查看合作方式</Link>
               </div>
             </div>
             <div className="gaussian-feature-grid">
@@ -358,7 +357,7 @@ function GaussianScenes() {
           <div className="container">
             <h2 className="section-title">Field Scans / 环境采样档案</h2>
             <p className="section-intro">
-              花园、温室、东京塔周边与涩谷公共空间这些扫描条目，现在统一放在这里，后面新的演出空间和建筑采样也可以继续接进来。
+              这些条目展示的是环境采样如何被整理成可浏览样本。它们同样可以继续扩展到展厅、建筑、演出空间和其他现场语境。
             </p>
             <div className="gaussian-scene-grid">
               {fieldScenes.map((scene) => (
@@ -431,12 +430,12 @@ function GaussianScenes() {
               ))}
             </div>
             <div className="gaussian-cta-panel">
-              <h3>下一层可以怎么接</h3>
+              <h3>如果要继续往合作层走</h3>
               <p>
-                当前这个栏目已经适合作为正式前台入口。后面如果继续扩展，可以往报价结构、建筑扫描、Vision Pro 演示路径、演出场景档案和空间视频原型继续推进。
+                这一页更适合作为样本入口；如果要继续讨论预算、交付范围、适合什么项目类型，下一步应该转到 Production 页面。
               </p>
               <div className="hero-cta">
-                <Link to="/production" className="button primary">Open Production / 查看合作路径</Link>
+                <Link to="/production" className="button primary">Open Production / 查看合作方式</Link>
                 <a
                   href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/README.md"
                   target="_blank"

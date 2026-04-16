@@ -1,0 +1,82 @@
+[
+  {
+    "id": "b9ec0173",
+    "slug": "timer-gaussian-0531",
+    "displayTitle": "TIMER / Spatial Archive Sample",
+    "category": "work-derived",
+    "featured": true,
+    "summary": "来自 TIMER 系列影像的空间转译样本，可作为作品归档、网页展示和后续空间观看的轻量入口。",
+    "notes": [
+      "这个样本保留了 TIMER 系列中偏红的主视觉、空间颗粒感和光场残影。",
+      "它适合说明既有影像如何被整理成可浏览、可分享、可嵌入的空间档案。"
+    ],
+    "location": "TIMER 系列",
+    "relatedWork": "timer-series-visual-2024",
+    "captureMoment": "作品影像转译为空间样本",
+    "tags": ["work-archive", "timer", "web-viewer", "spatial-sample", "xr-ready"]
+  },
+  {
+    "id": "36db89a4",
+    "slug": "dropflow-collection-rooms719",
+    "displayTitle": "Drop Flow / Spatial Archive Sample",
+    "category": "work-derived",
+    "featured": true,
+    "summary": "来自 Drop Flow 相关现场资料的空间归档样本，适合用于项目留存、网页嵌入和后续空间化展示。",
+    "notes": [
+      "这个样本保留了人物、现场和空间层次被重新组织后的观看关系。",
+      "它适合作为演出资料、项目页面和后续空间观看方案之间的中间层样本。"
+    ],
+    "location": "Drop Flow 相关现场资料",
+    "relatedWork": "drop-flow-ufo-2025",
+    "captureMoment": "现场资料转译为空间样本",
+    "tags": ["live-archive", "drop-flow", "web-viewer", "spatial-sample", "project-display"]
+  },
+  {
+    "id": "0f404310",
+    "slug": "shinjuku-gyoen-greenhouse",
+    "displayTitle": "Shinjuku Gyoen Greenhouse",
+    "category": "field-scan",
+    "featured": false,
+    "summary": "对新宿御苑温室进行空间采样，保留植物层次、光线变化和环境体积感。",
+    "notes": [
+      "黄昏光线让植物结构和空间空气感更清晰。",
+      "适合作为环境采样、数字自然或空间参考样本。"
+    ],
+    "location": "东京 / 新宿御苑温室",
+    "relatedWork": null,
+    "captureMoment": "傍晚黄金时刻的温室花园扫描",
+    "tags": ["gaussian-scan", "greenhouse", "digital-nature", "point-cloud-like", "tokyo"]
+  },
+  {
+    "id": "a90198a5",
+    "slug": "tokyo-tower-garden-2",
+    "displayTitle": "Garden 2 / Tokyo Tower Area",
+    "category": "field-scan",
+    "featured": false,
+    "summary": "对东京塔周边花园进行空间采样，保留园林路径、植物层次和开放式环境关系。",
+    "notes": [
+      "这个样本适合与温室类条目一起构成花园与环境采样系列。",
+      "比完整三维工程更轻，也更适合作为在线浏览和展示入口。"
+    ],
+    "location": "东京塔周边花园",
+    "relatedWork": null,
+    "captureMoment": "日间园林空间扫描",
+    "tags": ["gaussian-scan", "garden", "tokyo-tower", "web-embed", "spatial-archive"]
+  },
+  {
+    "id": "87d112d3",
+    "slug": "shibuya-sakura-stage",
+    "displayTitle": "Shibuya Sakura Stage",
+    "category": "field-scan",
+    "featured": false,
+    "summary": "对涩谷 Sakura Stage 的城市公共空间进行采样，形成一个可分享、可嵌入的轻量空间样本。",
+    "notes": [
+      "适合放进建筑、商场和公共空间相关的样本方向。",
+      "后续可以继续接到网页导览、空间展示或更完整的体验开发中。"
+    ],
+    "location": "东京 / Shibuya Sakura Stage",
+    "relatedWork": null,
+    "captureMoment": "城市公共空间扫描",
+    "tags": ["gaussian-scan", "urban-space", "architecture", "tokyo", "location-archive"]
+  }
+]
