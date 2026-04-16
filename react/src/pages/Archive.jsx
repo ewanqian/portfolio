@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import works from '../data/generated/works'
@@ -16,6 +17,18 @@ const Archive = () => {
             <p className="section-intro">
               所有作品、项目与公开呈现的完整索引。
             </p>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <div className="entry-banner archive-entry-banner">
+              <div className="entry-banner-content">
+                <h2>Spatial Capture / 空间扫描保存</h2>
+                <p>DropFlow、TIMER、花园扫描与城市空间采样现在已经整理成独立的 Gaussian Scenes 栏目。</p>
+                <Link to="/gaussian-scenes" className="button primary">Open Gaussian Scenes</Link>
+              </div>
+            </div>
           </div>
         </section>
 

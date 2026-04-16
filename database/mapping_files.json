@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "babel-bottle-art-2025-to-new-media-artist-simulator-2025",
+    "sourceDoc": "projects/babel-bottle-art-2025.md",
+    "targetType": "work",
+    "targetId": "new-media-artist-simulator-2025",
+    "reason": "legacy project doc title differs from canonical work object id"
+  },
+  {
+    "id": "dropflow-award-2025-to-derive-dual-city-2024",
+    "sourceDoc": "projects/dropflow-award-2025.md",
+    "targetType": "work",
+    "targetId": "derive-dual-city-2024",
+    "reason": "award-focused writeup maps to existing Drop Flow award node object"
+  },
+  {
+    "id": "dropflow-expo-2025-to-drop-flow-visual-2025",
+    "sourceDoc": "projects/dropflow-expo-2025.md",
+    "targetType": "work",
+    "targetId": "drop-flow-visual-2025",
+    "reason": "alternate public-facing document for the same Hangzhou Biennale presentation"
+  },
+  {
+    "id": "dropflow3-live-2025-to-drop-flow-ufo-2025",
+    "sourceDoc": "projects/dropflow3-live-2025.md",
+    "targetType": "work",
+    "targetId": "drop-flow-ufo-2025",
+    "reason": "legacy filename retained while canonical work id follows normalized naming"
+  }
+]

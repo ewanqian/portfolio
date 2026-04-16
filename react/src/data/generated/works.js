@@ -40,6 +40,43 @@ export default [
     "priority": 15
   },
   {
+    "id": "digital-garden-visual-2025",
+    "title": "Digital Garden / 西安万象城",
+    "subtitle": "点云森林转向流动数字花园的环境节点",
+    "years": "2025",
+    "type": "exhibition",
+    "summary": "《数字游园》把点云森林转译为流动数字花园，补上感知环境线里偏商业公共空间的一次成熟视觉实践。",
+    "practiceLine": "perceptual-environments",
+    "tags": [
+      "point cloud",
+      "vfx graph",
+      "digital garden",
+      "public space"
+    ],
+    "coverImage": "featured-perceptual-environments.jpg",
+    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "environment visual",
+      "Unity VFX Graph",
+      "public space screen"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/digital-garden-visual-2025.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/digital-garden-visual-2025.md",
+    "links": [
+      {
+        "text": "项目文档",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/digital-garden-visual-2025.md"
+      }
+    ],
+    "priority": 18
+  },
+  {
     "id": "drop-flow-ufo-2025",
     "title": "Drop Flow 3.0 / UFO Terminal",
     "subtitle": "创作营、实时生成与现场环境测试",
@@ -182,6 +219,43 @@ export default [
       }
     ],
     "priority": 0
+  },
+  {
+    "id": "ether-fragment-exhibit-2023",
+    "title": "Ether Fragment / 西岸艺博会",
+    "subtitle": "数字情感容器线的公开展映节点",
+    "years": "2023",
+    "type": "exhibition",
+    "summary": "《以太碎片》把扫描环境、点云采样与未完成结构感带入西岸艺博会，补上数字情感容器线的重要公开证据。",
+    "practiceLine": "perceptual-environments",
+    "tags": [
+      "point cloud",
+      "digital memory",
+      "art fair",
+      "emotional container"
+    ],
+    "coverImage": "featured-perceptual-environments.jpg",
+    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "single-channel screening",
+      "digital environment",
+      "art fair presentation"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/ether-fragment-exhibit-2023.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/ether-fragment-exhibit-2023.md",
+    "links": [
+      {
+        "text": "项目文档",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/ether-fragment-exhibit-2023.md"
+      }
+    ],
+    "priority": 19
   },
   {
     "id": "kashiwa-band-visual-2025",
@@ -408,6 +482,51 @@ export default [
       }
     ],
     "priority": 14
+  },
+  {
+    "id": "timer-series-visual-2024",
+    "title": "Timer 系列",
+    "subtitle": "时间结构方向的公开展映与现场章节",
+    "years": "2024",
+    "type": "series",
+    "summary": "Timer 系列把展映、现场视觉呈现与环形沉浸屏幕实验收束为一条更完整的时间结构作品线。",
+    "practiceLine": "temporal-structure",
+    "tags": [
+      "timer",
+      "temporal",
+      "immersive",
+      "audio-reactive"
+    ],
+    "coverImage": "featured-timer-main.jpg",
+    "image": "/portfolio/assets/home/featured-timer-main.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "immersive ring screen",
+      "screen-based performance",
+      "audio-reactive visual"
+    ],
+    "analysisIds": [
+      "timer-core-series"
+    ],
+    "sourceDocs": [
+      "projects/timer-series-visual-2024.md",
+      "visual-arts/timer-series/README.md",
+      "works/timer.html"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md",
+    "links": [
+      {
+        "text": "项目文档",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md"
+      },
+      {
+        "text": "看录像",
+        "url": "https://www.bilibili.com/video/BV1sWNWeVEVB/"
+      }
+    ],
+    "priority": 17
   },
   {
     "id": "timer",

@@ -45,7 +45,7 @@
 - `assets_index.json`
   图片、视频、文档、外链等资源索引，目前还没真正展开。
 - `mapping_files.json`
-  mapping 文件与输出配置索引，目前还是占位层。
+  别名文档、legacy 文件名与输出配置映射索引，用于处理“文档存在但对象 id 不同”的关系。
 
 ### Meta Tables / 元信息与执行追踪
 
@@ -56,7 +56,7 @@
 
 ## Source of Truth / 真正的来源关系
 
-- 项目存在性：以 `database/works.json` 为准。
+- 项目对象存在性：以 `database/works.json` 为准；如果 `projects/*.md` 文件名与对象 id 不一致，应在 `sourceDocs` 或 `mapping_files.json` 中建立映射，而不是直接视为缺对象。
 - 人工详细正文：以 `projects/*.md` 为准。
 - 前台精选内容：以 `content/` 为准。
 - 构建产物：以 `react/src/data/generated/` 为准，但不能当源头。

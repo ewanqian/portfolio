@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 
@@ -115,6 +116,23 @@ const Production = () => {
               我所参与的制作，不只是“做一段视觉”，而是围绕作品、场地、观看关系、屏幕条件与交付要求，组织出更完整的内容结构。
               这类工作既可能服务于演出与公共节点，也可能进入展览、空间环境、viewer / spec 支持与长期档案系统之中。
             </p>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <div className="entry-banner production-gaussian-entry">
+              <div className="entry-banner-content">
+                <h2>Gaussian Scenes / 空间扫描保存</h2>
+                <p>已经整理成正式前台入口，可直接查看 DropFlow、TIMER、花园扫描与城市空间采样的高斯档案。</p>
+                <div className="hero-cta" style={{ justifyContent: 'center' }}>
+                  <Link to="/gaussian-scenes" className="button primary">Open Gaussian Scenes</Link>
+                  <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" className="button">
+                    Workflow Note
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

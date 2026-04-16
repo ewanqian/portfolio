@@ -67,6 +67,9 @@ function Header() {
           <NavLink to="/archive" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
             Archive
           </NavLink>
+          <NavLink to="/gaussian-scenes" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
+            Gaussian
+          </NavLink>
           <NavLink to="/production" end className={({ isActive }) => (isActive ? 'active' : undefined)} onClick={() => setMenuOpen(false)}>
             Production
           </NavLink>

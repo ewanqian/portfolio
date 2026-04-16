@@ -6,6 +6,11 @@ export default {
       "type": "work"
     },
     {
+      "id": "digital-garden-visual-2025",
+      "label": "Digital Garden / 西安万象城",
+      "type": "work"
+    },
+    {
       "id": "drop-flow-ufo-2025",
       "label": "Drop Flow 3.0 / UFO Terminal",
       "type": "work"
@@ -18,6 +23,11 @@ export default {
     {
       "id": "drop-flow",
       "label": "Drop Flow",
+      "type": "work"
+    },
+    {
+      "id": "ether-fragment-exhibit-2023",
+      "label": "Ether Fragment / 西岸艺博会",
       "type": "work"
     },
     {
@@ -43,6 +53,11 @@ export default {
     {
       "id": "observe-symbiosis-workshop-2026",
       "label": "Observation and Symbiosis / Workshop",
+      "type": "work"
+    },
+    {
+      "id": "timer-series-visual-2024",
+      "label": "Timer 系列",
       "type": "work"
     },
     {

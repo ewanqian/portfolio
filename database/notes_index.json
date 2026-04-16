@@ -24,6 +24,14 @@
     "status": "published"
   },
   {
+    "id": "gaussian-spatial-workflow-note",
+    "title": "gaussian spatial workflow note",
+    "type": "workflow-note",
+    "relatedWorks": ["drop-flow-ufo-2025", "timer-series-visual-2024"],
+    "path": "archive/gaussian-scenes/gaussian-spatial-workflow-note.md",
+    "status": "published"
+  },
+  {
     "id": "about-full-practice-lines",
     "title": "about full practice lines",
     "type": "practice-outline",

@@ -1,3 +1,5 @@
+// Legacy static dataset. Keep only as historical reference.
+// Current homepage and archive should read from `react/src/data/generated/works.js`.
 export const works = [
   {
     id: "drop-flow",
