@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="../assets/home/archive-timer-clean.jpg" />
   <title>TIMER | 时间结构系列 — Ewan Qian Portfolio</title>
   <meta name="description" content="TIMER 系列围绕时间结构、音画关系与感知节奏展开，是钱誉文关于音画组织的核心作品线。" />
   <style>
@@ -71,11 +72,22 @@
       min-height: 60px;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .brand {
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
     }
 
     .nav a {
@@ -86,6 +98,40 @@
     }
 
     .nav a:hover {
+      color: var(--text);
+    }
+
+    .language-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 2px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .language-toggle-option {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      min-width: 34px;
+      min-height: 26px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .language-toggle-option.active {
+      background: var(--text);
+      color: var(--inverse);
+    }
+
+    .language-toggle-option:hover {
       color: var(--text);
     }
 
@@ -399,15 +445,21 @@
   <header class="header">
     <div class="container header-inner">
       <div class="brand">Ewan Qian / TIMER</div>
-      <nav class="nav">
-        <a href="../index.html">← Back to Home</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav">
+          <a href="../index.html">← Back to Home</a>
+        </nav>
+        <div class="language-toggle" role="group" aria-label="Language switcher">
+          <button type="button" class="language-toggle-option" data-set-language="zh">中</button>
+          <button type="button" class="language-toggle-option" data-set-language="en">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="section">
-      <a href="../index.html#works" class="back-link">← 返回首页 / 代表作品</a>
+      <a href="../index.html#works" class="back-link" id="back-link">← 返回首页 / 代表作品</a>
 
       <div class="project-hero">
         <img src="../assets/home/featured-timer-main.jpg" alt="TIMER 控时者" />
@@ -419,10 +471,10 @@
         </div>
       </div>
 
-      <h1 class="project-title">TIMER | 控时者</h1>
-      <p class="project-subtitle">时间结构 / 音画关系 / 感知节奏 / 现场状态切换</p>
+      <h1 class="project-title" id="project-title">TIMER | 控时者</h1>
+      <p class="project-subtitle" id="project-subtitle">时间结构 / 音画关系 / 感知节奏 / 现场状态切换</p>
 
-      <p class="project-intro">
+      <p class="project-intro" id="project-intro">
         <strong>控时者 TIMER</strong> 系列围绕时间结构、音画关系与感知节奏展开，持续处理声音如何进入图像内部，并成为组织空间、切换状态与重新分配注意力的材料。与其说它是在"卡点"，不如说它更关心声音如何在图像内部建立一种结构性的时间感。
       </p>
 
@@ -446,7 +498,7 @@
         </div>
       </div>
 
-      <h2 style="font-size: 26px; margin: 32px 0 16px; letter-spacing: -0.03em;">核心关注</h2>
+      <h2 id="focus-heading" style="font-size: 26px; margin: 32px 0 16px; letter-spacing: -0.03em;">核心关注</h2>
       <div class="focus-list">
         <div class="focus-item">
           <strong>时间结构</strong>
@@ -466,8 +518,8 @@
         </div>
       </div>
 
-      <h2 style="font-size: 26px; margin: 36px 0 16px; letter-spacing: -0.03em;">代表作品</h2>
-      <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
+      <h2 id="featured-heading" style="font-size: 26px; margin: 36px 0 16px; letter-spacing: -0.03em;">代表作品</h2>
+      <p id="featured-description" style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
         《TIMER 控时者》是这个系列的代表作，获 ChinaGraph 2024 电子剧场优秀音乐作品二等奖，最终入选 UFO Terminal「加载…权限 2」展览。这一系列测试声音如何成为图像内部的组织材料，而不只是单纯的音频可视化。
       </p>
 
@@ -481,25 +533,25 @@
       </div>
 
       <div class="spatial-archive">
-        <h2 style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">高斯空间归档 / Spatial Archive</h2>
+        <h2 id="spatial-archive-heading" style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">高斯空间归档 / Spatial Archive</h2>
         <div class="spatial-archive-grid">
           <div class="iframe-container">
             <iframe id="viewer" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=b9ec0173" title="Timer Gaussian 0531"></iframe>
           </div>
           <div class="spatial-archive-copy">
-            <p>
-              这是 <strong>TIMER</strong> 既有作品影像的高斯化版本。它把原本更适合视频传播的内容，转成一个可直接嵌入网页、可继续进入空间观看路径的轻量场景。
+            <p id="spatial-archive-paragraph-1">
+              这是 <strong>VIRTURA 团队 TIMER 场景章节</strong> 的高斯化版本。它把团队项目里原本更适合视频传播的场景资料，转成一个可直接嵌入网页、可继续进入空间观看路径的轻量场景。
             </p>
-            <p>
-              对 TIMER 来说，这个入口很适合补足“不是先放更多视频，而是先把观看状态空间化”的那一层表达，也能和后续 Vision Pro / XR 展示方向自然接上。
+            <p id="spatial-archive-paragraph-2">
+              对 TIMER 来说，这个入口更适合补足“不是先放更多视频，而是先把观看状态空间化”的那一层表达。项目本身属于团队实践，而空间转译、网页嵌入和归档整理由钱誉文单独完成，也能和后续 Vision Pro / XR 展示方向自然接上。
             </p>
             <div class="spatial-note-list">
               <div class="spatial-note">
-                <strong>为什么重要</strong>
+                <strong id="spatial-note-1-title">为什么重要</strong>
                 它提供了视频之外的另一种观看方式，让 TIMER 的时间结构开始以空间入口的形式被保存和进入。
               </div>
               <div class="spatial-note">
-                <strong>后续方向</strong>
+                <strong id="spatial-note-2-title">后续方向</strong>
                 这类高斯场景可以继续往网页展示、空间视频、Vision Pro 观看路径或更完整的 XR 原型发展。
               </div>
             </div>
@@ -508,24 +560,24 @@
       </div>
 
       <div class="links-section">
-        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">观看入口与更多信息</h3>
+        <h3 id="links-heading" style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">观看入口与更多信息</h3>
         <div class="links-grid">
-          <a href="https://www.bilibili.com/video/BV1sWNWeVEVB/" target="_blank" rel="noreferrer" class="button primary">
+          <a href="https://www.bilibili.com/video/BV1sWNWeVEVB/" target="_blank" rel="noreferrer" class="button primary" id="link-video">
             看完整录像 / Bilibili
           </a>
-          <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/timer-series/README.md" target="_blank" rel="noreferrer" class="button">
+          <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/timer-series/README.md" target="_blank" rel="noreferrer" class="button" id="link-series-doc">
             GitHub 系列文档
           </a>
-          <a href="https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md" target="_blank" rel="noreferrer" class="button">
+          <a href="https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md" target="_blank" rel="noreferrer" class="button" id="link-project-doc">
             项目详情页
           </a>
-          <a href="https://superspl.at/scene/b9ec0173" target="_blank" rel="noreferrer" class="button">
+          <a href="https://superspl.at/scene/b9ec0173" target="_blank" rel="noreferrer" class="button" id="link-gaussian">
             查看高斯场景
           </a>
-          <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" class="button">
+          <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" class="button" id="link-workflow">
             高斯工作流知识块
           </a>
-          <a href="../index.html#works" class="button">
+          <a href="../index.html#works" class="button" id="link-home">
             返回首页看更多作品
           </a>
         </div>
@@ -538,6 +590,70 @@
       © Ewan Qian / VIRTURA. TIMER is a registered series of works by Ewan Qian.
     </div>
   </footer>
+
+  <script>
+    window.PORTFOLIO_LEGACY_I18N = {
+      zh: {
+        title: 'TIMER | 时间结构系列 — Ewan Qian Portfolio',
+        description: 'TIMER 系列围绕时间结构、音画关系与感知节奏展开，是钱誉文关于音画组织的核心作品线。',
+        ops: [
+          { selector: '.nav a', text: '← 返回首页' },
+          { selector: '#back-link', text: '← 返回首页 / 代表作品' },
+          { selector: '#project-title', text: 'TIMER | 控时者' },
+          { selector: '#project-subtitle', text: '时间结构 / 音画关系 / 感知节奏 / 现场状态切换' },
+          { selector: '#project-intro', html: '<strong>控时者 TIMER</strong> 系列围绕时间结构、音画关系与感知节奏展开，持续处理声音如何进入图像内部，并成为组织空间、切换状态与重新分配注意力的材料。与其说它是在"卡点"，不如说它更关心声音如何在图像内部建立一种结构性的时间感。' },
+          { selector: '.project-info .info-item label', text: ['时间', '核心方向', '公开呈现', '奖项'] },
+          { selector: '.project-info .info-item value', text: ['2023 – 至今', '音画结构', '加载权限2展览', 'ChinaGraph 二等奖'] },
+          { selector: '.award-badge', text: '优秀音乐作品' },
+          { selector: '#focus-heading', text: '核心关注' },
+          { selector: '.focus-item strong', text: ['时间结构', '音画关系', '感知节奏', '状态切换'] },
+          { selector: '#featured-heading', text: '代表作品' },
+          { selector: '#featured-description', text: '《TIMER 控时者》是这个系列的代表作，获 ChinaGraph 2024 电子剧场优秀音乐作品二等奖，最终入选 UFO Terminal「加载…权限 2」展览。这一系列测试声音如何成为图像内部的组织材料，而不只是单纯的音频可视化。' },
+          { selector: '#spatial-archive-heading', text: '高斯空间归档 / Spatial Archive' },
+          { selector: '#spatial-archive-paragraph-1', html: '这是 <strong>VIRTURA 团队 TIMER 场景章节</strong> 的高斯化版本。它把团队项目里原本更适合视频传播的场景资料，转成一个可直接嵌入网页、可继续进入空间观看路径的轻量场景。' },
+          { selector: '#spatial-archive-paragraph-2', text: '对 TIMER 来说，这个入口更适合补足“不是先放更多视频，而是先把观看状态空间化”的那一层表达。项目本身属于团队实践，而空间转译、网页嵌入和归档整理由钱誉文单独完成，也能和后续 Vision Pro / XR 展示方向自然接上。' },
+          { selector: '.spatial-note', html: ['<strong id="spatial-note-1-title">为什么重要</strong>它提供了视频之外的另一种观看方式，让 TIMER 的时间结构开始以空间入口的形式被保存和进入。', '<strong id="spatial-note-2-title">后续方向</strong>这类高斯场景可以继续往网页展示、空间视频、Vision Pro 观看路径或更完整的 XR 原型发展。'] },
+          { selector: '#links-heading', text: '观看入口与更多信息' },
+          { selector: '#link-video', text: '看完整录像 / Bilibili' },
+          { selector: '#link-series-doc', text: 'GitHub 系列文档' },
+          { selector: '#link-project-doc', text: '项目详情页' },
+          { selector: '#link-gaussian', text: '查看高斯场景' },
+          { selector: '#link-workflow', text: '高斯工作流知识块' },
+          { selector: '#link-home', text: '返回首页看更多作品' }
+        ]
+      },
+      en: {
+        title: 'TIMER — Ewan Qian Portfolio',
+        description: 'TIMER is an audiovisual series around temporal structure, audiovisual relation, and perceptual rhythm.',
+        ops: [
+          { selector: '.nav a', text: '← Back to Home' },
+          { selector: '#back-link', text: '← Back to Home / Featured Works' },
+          { selector: '#project-title', text: 'TIMER' },
+          { selector: '#project-subtitle', text: 'Temporal Structure / Audiovisual Relation / Perceptual Rhythm / States of Entry' },
+          { selector: '#project-intro', html: '<strong>TIMER</strong> is an ongoing series built around temporal structure, audiovisual relation, and perceptual rhythm. It keeps asking how sound can enter the image itself and become material for organizing space, switching states, and redistributing attention. Rather than “cutting to the beat,” the work is concerned with how sound can construct a structural sense of time from inside the image.' },
+          { selector: '.project-info .info-item label', text: ['Time', 'Core Direction', 'Public Presentation', 'Award'] },
+          { selector: '.project-info .info-item value', text: ['2023 – present', 'Audiovisual Structure', 'Loading... Permission 2 Exhibition', 'ChinaGraph Second Prize'] },
+          { selector: '.award-badge', text: 'Outstanding Musical Work' },
+          { selector: '#focus-heading', text: 'Core Focus' },
+          { selector: '.focus-item strong', text: ['Temporal Structure', 'Audiovisual Relation', 'Perceptual Rhythm', 'States of Entry'] },
+          { selector: '#featured-heading', text: 'Featured Work' },
+          { selector: '#featured-description', text: 'TIMER is the representative work of this line. It received the second prize for outstanding musical work in the ChinaGraph 2024 electronic theater section and was later selected for the UFO Terminal “Loading... Permission 2” exhibition. The series tests how sound can become structural material inside the image rather than simple audio visualization.' },
+          { selector: '#spatial-archive-heading', text: 'Spatial Archive' },
+          { selector: '#spatial-archive-paragraph-1', html: 'This is a Gaussian translation of a <strong>scene chapter from the VIRTURA TIMER team project</strong>. Material that originally circulated more naturally as video has been converted into a lighter web-embeddable scene that can also continue into spatial-viewing paths.' },
+          { selector: '#spatial-archive-paragraph-2', text: 'For TIMER, this entry helps express a crucial layer: instead of simply adding more video, it turns the viewing state itself into something spatial. The project belongs to a team context, while the spatial translation, web embedding, and archive arrangement were completed independently by Ewan Qian. It also connects naturally to later Vision Pro / XR directions.' },
+          { selector: '.spatial-note', html: ['<strong id="spatial-note-1-title">Why it matters</strong>It offers another way of entering TIMER beyond video alone, letting its temporal structure begin to be preserved and accessed as a spatial entry point.', '<strong id="spatial-note-2-title">Where it can continue</strong>Scenes like this can continue toward web presentation, spatial video, Vision Pro viewing paths, or fuller XR prototypes.'] },
+          { selector: '#links-heading', text: 'Viewing Entry Points and References' },
+          { selector: '#link-video', text: 'Watch Full Video / Bilibili' },
+          { selector: '#link-series-doc', text: 'GitHub Series Note' },
+          { selector: '#link-project-doc', text: 'Project Sheet' },
+          { selector: '#link-gaussian', text: 'Open Gaussian Scene' },
+          { selector: '#link-workflow', text: 'Gaussian Workflow Note' },
+          { selector: '#link-home', text: 'Back to Home / More Works' }
+        ]
+      }
+    };
+  </script>
+  <script src="../assets/scripts/legacy-language.js"></script>
 
 </body>
 </html>

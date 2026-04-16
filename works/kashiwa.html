@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="../assets/home/archive-timer-clean.jpg" />
   <title>Ewan Qian / Kashiwa</title>
   <meta name="description" content="与日本音乐人 Kashiwa Daisuke 合作的现场视觉系列，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。" />
   <style>
@@ -63,11 +64,22 @@
       min-height: 60px;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .brand {
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
     }
 
     .nav a {
@@ -78,6 +90,40 @@
     }
 
     .nav a:hover { color: var(--text); }
+
+    .language-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 2px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .language-toggle-option {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      min-width: 34px;
+      min-height: 26px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .language-toggle-option.active {
+      background: var(--text);
+      color: var(--inverse);
+    }
+
+    .language-toggle-option:hover {
+      color: var(--text);
+    }
 
 
     .section {
@@ -435,24 +481,30 @@
   <header class="header">
     <div class="container header-inner">
       <div class="brand">Ewan Qian / Kashiwa</div>
-      <nav class="nav">
-        <a href="../index.html">← Back to Home</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav">
+          <a href="../index.html">← Back to Home</a>
+        </nav>
+        <div class="language-toggle" role="group" aria-label="Language switcher">
+          <button type="button" class="language-toggle-option" data-set-language="zh">中</button>
+          <button type="button" class="language-toggle-option" data-set-language="en">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="section">
-      <a href="../index.html#works" class="back-link">← 返回首页 / 代表作品</a>
+      <a href="../index.html#works" class="back-link" id="back-link">← 返回首页 / 代表作品</a>
 
       <div class="project-hero">
         <img src="../assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa Daisuke Shenzhen BO LIVE" />
       </div>
 
-      <h1 class="project-title">机械光合：TITAN 的全息声林</h1>
-      <p class="project-subtitle">KASHIWA Daisuke x Yuki Murata x Ewan Qian Audiovisual Performance Special</p>
+      <h1 class="project-title" id="project-title">机械光合：TITAN 的全息声林</h1>
+      <p class="project-subtitle" id="project-subtitle">KASHIWA Daisuke x Yuki Murata x Ewan Qian Audiovisual Performance Special</p>
 
-      <p class="project-intro">
+      <p class="project-intro" id="project-intro">
         本次展演于 2025 年 10 月 21 日在 BO LIVE 前海店呈现，由 KASHIWA Daisuke 柏大辅、Yuki Murata 村田有希与视觉艺术家 Ewan Qian 钱誉文共同完成。除现场音乐与视觉创作外，项目亦由策划、统筹、技术、舞台、声音、灯光、宣传与场地运营团队共同协作完成，构成了此次展演现场的完整支持系统。
       </p>
 
@@ -483,13 +535,13 @@
         </div>
       </div>
 
-      <h2 style="font-size: 26px; margin: 32px 0 16px; letter-spacing: -0.03em;">项目说明</h2>
-      <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
+      <h2 id="project-description-heading" style="font-size: 26px; margin: 32px 0 16px; letter-spacing: -0.03em;">项目说明</h2>
+      <p id="project-description-paragraph" style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
         这场特别视听表演围绕《TITAN》的氛围与声音世界展开。视觉语言聚焦于雾气、光线、白空间深度、环境过渡、沉浸错觉与感知运动。部分段落由强烈的音频交互结构驱动，而另一些则追求更柔和、漂浮、治愈且沉思的状态。
       </p>
 
-      <h2 style="font-size: 26px; margin: 36px 0 16px; letter-spacing: -0.03em;">代表项目</h2>
-      <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
+      <h2 id="featured-project-heading" style="font-size: 26px; margin: 36px 0 16px; letter-spacing: -0.03em;">代表项目</h2>
+      <p id="featured-project-paragraph" style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
         《机械光合：TITAN的全息声林》是与 Kashiwa Daisuke / Yuki Murata 合作的深圳 BO LIVE 专场，包含全息纱幕、裸眼3D与音画互动段落，围绕《TITAN》的声音氛围与空间感知展开。
       </p>
 
@@ -503,8 +555,8 @@
       </div>
 
       <div style="margin: 36px 0;">
-        <h2 style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">现场测试视频记录</h2>
-        <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px; font-size: 13px;">
+        <h2 id="test-video-heading" style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">现场测试视频记录</h2>
+        <p id="test-video-paragraph" style="color: var(--muted); margin-bottom: 24px; max-width: 700px; font-size: 13px;">
           演出前的现场测试视频，包含灯光效果与视觉配合的调试过程。正式演出视频已上传至 MANA，待审核通过后将作为官方资料展示。
         </p>
       </div>
@@ -557,7 +609,7 @@
       </div>
 
       <div style="margin: 36px 0;">
-        <h2 style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">制作笔记：创作与技术的现场实践</h2>
+        <h2 id="production-notes-heading" style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">制作笔记：创作与技术的现场实践</h2>
       </div>
 
       <div class="work-grid" style="grid-template-columns: 1fr;">
@@ -656,10 +708,10 @@
 
       <div style="margin-top: 48px;">
         <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px;">
-          <h3 style="font-size: 20px; margin: 0; letter-spacing: -0.02em;">
+          <h3 id="gene-bank-heading" style="font-size: 20px; margin: 0; letter-spacing: -0.02em;">
             制作方法与视觉基因库
           </h3>
-          <span style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">
+          <span id="gene-bank-version" style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">
             v0.1 · 持续更新中
           </span>
         </div>
@@ -713,8 +765,8 @@
 
       <div class="credits-section">
         <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px;">
-          <h3>主创与工作人员</h3>
-          <span style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">
+          <h3 id="credits-heading">主创与工作人员</h3>
+          <span id="credits-subtitle" style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">
             (协作记录)
           </span>
         </div>
@@ -775,8 +827,8 @@
       </div>
 
       <div style="margin: 36px 0; display: flex; align-items: baseline; gap: 12px;">
-        <h2 style="font-size: 26px; margin: 0; letter-spacing: -0.03em;">演出曲目与视觉档案</h2>
-        <span style="font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">
+        <h2 id="track-archive-heading" style="font-size: 26px; margin: 0; letter-spacing: -0.03em;">演出曲目与视觉档案</h2>
+        <span id="track-archive-subtitle" style="font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">
           (视觉制作记录)
         </span>
       </div>
@@ -1014,12 +1066,12 @@
         </div>
       </div>
 
-      <div style="margin-top: 20px; font-size: 13px; color: var(--muted);">
+      <div id="part2-note" style="margin-top: 20px; font-size: 13px; color: var(--muted);">
         Note: Part2 bg is currently treated as supporting/background material and is not included in the main archive list. (当前作为辅助/背景素材处理，未列入主档案列表。)
       </div>
 
       <div class="links-section">
-        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">精选曲目观看</h3>
+        <h3 id="selected-links-heading" style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">精选曲目观看</h3>
         <div class="video-links">
           <a href="https://www.manamana.net/video/detail?id=2831761#!zh" target="_blank" rel="noreferrer" class="button">01 Lead</a>
           <a href="https://www.manamana.net/video/detail?id=2831703#!zh" target="_blank" rel="noreferrer" class="button">05 Whitenight</a>
@@ -1029,24 +1081,24 @@
       </div>
 
       <div class="links-section">
-        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">更多信息与外部资料</h3>
+        <h3 id="more-links-heading" style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">更多信息与外部资料</h3>
         <div class="links-grid">
-          <a href="https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" target="_blank" rel="noreferrer" class="button primary">
+          <a href="https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" target="_blank" rel="noreferrer" class="button primary" id="link-wechat">
             演出回顾 / 微信文章
           </a>
-          <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/kashiwa-daisuke/README.md" target="_blank" rel="noreferrer" class="button">
+          <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/kashiwa-daisuke/README.md" target="_blank" rel="noreferrer" class="button" id="link-series-doc">
             GitHub 系列文档
           </a>
-          <a href="https://github.com/ewanqian/portfolio/blob/main/projects/kashiwa-titan-visual-2025.md" target="_blank" rel="noreferrer" class="button">
+          <a href="https://github.com/ewanqian/portfolio/blob/main/projects/kashiwa-titan-visual-2025.md" target="_blank" rel="noreferrer" class="button" id="link-project-doc">
             项目详情页
           </a>
-          <a href="../index.html#works" class="button">
+          <a href="../index.html#works" class="button" id="link-home">
             返回首页看更多作品
           </a>
         </div>
 
         <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line);">
-          <h4 style="margin: 0 0 12px; font-size: 14px; font-weight: 600; color: var(--text);">现场测试视频（Bilibili）</h4>
+          <h4 id="bilibili-tests-heading" style="margin: 0 0 12px; font-size: 14px; font-weight: 600; color: var(--text);">现场测试视频（Bilibili）</h4>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
             <a href="https://www.bilibili.com/video/BV152QMByEft" target="_blank" rel="noreferrer" class="button" style="font-size: 12px;">
               03 Haze 测试视频
@@ -1065,10 +1117,10 @@
       </div>
 
       <div style="margin-top: 36px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 0; background: var(--panel); font-size: 12px; color: var(--muted); line-height: 1.6;">
-        <div style="font-weight: 600; margin-bottom: 8px; color: var(--text);">
+        <div id="copyright-heading" style="font-weight: 600; margin-bottom: 8px; color: var(--text);">
           版权与引用声明
         </div>
-        <div>
+        <div id="copyright-body">
           本页面中：
           <ul style="margin: 8px 0 8px 18px; padding: 0;">
             <li>艺人音乐、演出照片、艺人肖像等内容的版权归各自所有者所有</li>
@@ -1078,7 +1130,7 @@
         </div>
       </div>
 
-      <div style="margin-top: 24px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 0; background: var(--panel); font-size: 13px; color: var(--muted);">
+      <div id="photo-note" style="margin-top: 24px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 0; background: var(--panel); font-size: 13px; color: var(--muted);">
         本页面中的图片包含粉丝站及社交媒体发布的照片。若对收录有任何疑问，请通过联系方式告知我们，我们将予以移除。
       </div>
     </section>
@@ -1089,6 +1141,88 @@
       © Ewan Qian / VIRTURA. This is a collaborative visual series with Kashiwa Daisuke.
     </div>
   </footer>
+
+  <script>
+    window.PORTFOLIO_LEGACY_I18N = {
+      zh: {
+        title: 'Ewan Qian / Kashiwa',
+        description: '与日本音乐人 Kashiwa Daisuke 合作的现场视觉系列，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。',
+        ops: [
+          { selector: '.nav a', text: '← 返回首页' },
+          { selector: '#back-link', text: '← 返回首页 / 代表作品' },
+          { selector: '#project-title', text: '机械光合：TITAN 的全息声林' },
+          { selector: '#project-intro', text: '本次展演于 2025 年 10 月 21 日在 BO LIVE 前海店呈现，由 KASHIWA Daisuke 柏大辅、Yuki Murata 村田有希与视觉艺术家 Ewan Qian 钱誉文共同完成。除现场音乐与视觉创作外，项目亦由策划、统筹、技术、舞台、声音、灯光、宣传与场地运营团队共同协作完成，构成了此次展演现场的完整支持系统。' },
+          { selector: '.project-info .info-item label', text: ['展演音乐家', '展演音乐家', '视觉艺术家', '时间', '地点', '角色'] },
+          { selector: '.project-info .info-item value', text: ['KASHIWA Daisuke 柏大辅', 'Yuki Murata 村田有希', 'Ewan Qian 钱誉文', '2025.10.21', 'BO LIVE 前海店', '现场视觉制作'] },
+          { selector: '#project-description-heading', text: '项目说明' },
+          { selector: '#project-description-paragraph', text: '这场特别视听表演围绕《TITAN》的氛围与声音世界展开。视觉语言聚焦于雾气、光线、白空间深度、环境过渡、沉浸错觉与感知运动。部分段落由强烈的音频交互结构驱动，而另一些则追求更柔和、漂浮、治愈且沉思的状态。' },
+          { selector: '#featured-project-heading', text: '代表项目' },
+          { selector: '#featured-project-paragraph', text: '《机械光合：TITAN的全息声林》是与 Kashiwa Daisuke / Yuki Murata 合作的深圳 BO LIVE 专场，包含全息纱幕、裸眼3D与音画互动段落，围绕《TITAN》的声音氛围与空间感知展开。' },
+          { selector: '#test-video-heading', text: '现场测试视频记录' },
+          { selector: '#test-video-paragraph', text: '演出前的现场测试视频，包含灯光效果与视觉配合的调试过程。正式演出视频已上传至 MANA，待审核通过后将作为官方资料展示。' },
+          { selector: '#production-notes-heading', text: '制作笔记：创作与技术的现场实践' },
+          { selector: '#gene-bank-heading', text: '制作方法与视觉基因库' },
+          { selector: '#gene-bank-version', text: 'v0.1 · 持续更新中' },
+          { selector: '#downloadFullProductionNotes', text: '下载完整制作方法笔记 JSON' },
+          { selector: '#downloadVisualPrompts', text: '下载视觉提示词包 TXT' },
+          { selector: '#credits-heading', text: '主创与工作人员' },
+          { selector: '#credits-subtitle', text: '(协作记录)' },
+          { selector: '#track-archive-heading', text: '演出曲目与视觉档案' },
+          { selector: '#track-archive-subtitle', text: '(视觉制作记录)' },
+          { selector: '#part2-note', text: 'Note: Part2 bg is currently treated as supporting/background material and is not included in the main archive list. (当前作为辅助/背景素材处理，未列入主档案列表。)' },
+          { selector: '#selected-links-heading', text: '精选曲目观看' },
+          { selector: '#more-links-heading', text: '更多信息与外部资料' },
+          { selector: '#link-wechat', text: '演出回顾 / 微信文章' },
+          { selector: '#link-series-doc', text: 'GitHub 系列文档' },
+          { selector: '#link-project-doc', text: '项目详情页' },
+          { selector: '#link-home', text: '返回首页看更多作品' },
+          { selector: '#bilibili-tests-heading', text: '现场测试视频（Bilibili）' },
+          { selector: '#copyright-heading', text: '版权与引用声明' },
+          { selector: '#copyright-body', html: '本页面中：<ul style="margin: 8px 0 8px 18px; padding: 0;"><li>艺人音乐、演出照片、艺人肖像等内容的版权归各自所有者所有</li><li>Ewan Qian 的制作方法、技术方案、视觉逻辑部分可被引用和参考</li><li>引用时请注明来源：Ewan Qian Portfolio</li></ul>' },
+          { selector: '#photo-note', text: '本页面中的图片包含粉丝站及社交媒体发布的照片。若对收录有任何疑问，请通过联系方式告知我们，我们将予以移除。' }
+        ]
+      },
+      en: {
+        title: 'Mechanical Photosynthesis: TITAN’s Holographic Sound Forest — Ewan Qian Portfolio',
+        description: 'A live audiovisual collaboration with Kashiwa Daisuke and Yuki Murata, centered on white-space depth, haze, environmental transition, and immersive illusion.',
+        ops: [
+          { selector: '.nav a', text: '← Back to Home' },
+          { selector: '#back-link', text: '← Back to Home / Featured Works' },
+          { selector: '#project-title', text: "Mechanical Photosynthesis: TITAN's Holographic Sound Forest" },
+          { selector: '#project-intro', text: 'This performance was presented on October 21, 2025 at BO LIVE Qianhai. It was developed jointly by KASHIWA Daisuke, Yuki Murata, and visual artist Ewan Qian. Beyond the music and visual authorship on stage, the project was supported by a full collaboration system spanning planning, coordination, technical execution, stage, sound, lighting, publicity, and venue operations.' },
+          { selector: '.project-info .info-item label', text: ['Performer', 'Performer', 'Visual Artist', 'Date', 'Venue', 'Role'] },
+          { selector: '.project-info .info-item value', text: ['KASHIWA Daisuke', 'Yuki Murata', 'Ewan Qian', '2025.10.21', 'BO LIVE Qianhai', 'Live Visual Production'] },
+          { selector: '#project-description-heading', text: 'Project Description' },
+          { selector: '#project-description-paragraph', text: 'This special audiovisual performance unfolded around the atmosphere and sonic world of TITAN. The visual language focused on haze, light, white-space depth, environmental transition, immersive illusion, and perceptual motion. Some sections were driven by strong audio-interactive structure, while others pursued a softer, floating, healing, and contemplative state.' },
+          { selector: '#featured-project-heading', text: 'Featured Project' },
+          { selector: '#featured-project-paragraph', text: 'Mechanical Photosynthesis: TITAN’s Holographic Sound Forest is the BO LIVE Shenzhen special created with Kashiwa Daisuke and Yuki Murata. It includes holographic scrims, naked-eye 3D passages, and audiovisual interaction, all organized around the sonic atmosphere and spatial perception of TITAN.' },
+          { selector: '#test-video-heading', text: 'On-site Test Video Records' },
+          { selector: '#test-video-paragraph', text: 'These are pre-show on-site test videos documenting the tuning process between lighting and visuals. The official performance video has already been uploaded to MANA and will be presented there once review is complete.' },
+          { selector: '#production-notes-heading', text: 'Production Notes: Creative and Technical Practice On Site' },
+          { selector: '#gene-bank-heading', text: 'Method Notes and Visual Gene Library' },
+          { selector: '#gene-bank-version', text: 'v0.1 · ongoing update' },
+          { selector: '#downloadFullProductionNotes', text: 'Download Full Production Notes JSON' },
+          { selector: '#downloadVisualPrompts', text: 'Download Visual Prompt Pack TXT' },
+          { selector: '#credits-heading', text: 'Core Team and Crew' },
+          { selector: '#credits-subtitle', text: '(collaboration record)' },
+          { selector: '#track-archive-heading', text: 'Performance Tracks and Visual Archive' },
+          { selector: '#track-archive-subtitle', text: '(visual production record)' },
+          { selector: '#part2-note', text: 'Note: Part2 bg is currently treated as supporting/background material and is not included in the main archive list.' },
+          { selector: '#selected-links-heading', text: 'Selected Track Viewing' },
+          { selector: '#more-links-heading', text: 'More Information and External References' },
+          { selector: '#link-wechat', text: 'Performance Recap / WeChat Article' },
+          { selector: '#link-series-doc', text: 'GitHub Series Note' },
+          { selector: '#link-project-doc', text: 'Project Sheet' },
+          { selector: '#link-home', text: 'Back to Home / More Works' },
+          { selector: '#bilibili-tests-heading', text: 'On-site Test Videos (Bilibili)' },
+          { selector: '#copyright-heading', text: 'Copyright and Citation Notice' },
+          { selector: '#copyright-body', html: 'On this page:<ul style="margin: 8px 0 8px 18px; padding: 0;"><li>Artist music, performance photos, and portrait images remain copyrighted by their respective owners</li><li>The production method, technical approach, and visual logic developed by Ewan Qian may be cited and referenced</li><li>Please credit the source as: Ewan Qian Portfolio</li></ul>' },
+          { selector: '#photo-note', text: 'Some images on this page originate from fan stations and social-media posts. If there are any concerns about inclusion, please reach out through the contact channels and the material will be removed.' }
+        ]
+      }
+    };
+  </script>
+  <script src="../assets/scripts/legacy-language.js"></script>
 
   <script>
     document.querySelectorAll('.work-item-header').forEach(header => {

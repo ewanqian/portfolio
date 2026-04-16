@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '../../hooks/useTheme'
+import { useLanguage } from '../../i18n/LanguageContext.jsx'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
   const { isLight, toggleTheme } = useTheme()
+  const { language, setLanguage } = useLanguage()
 
   useEffect(() => {
     setMenuOpen(false)
@@ -22,15 +24,15 @@ function Header() {
   }
 
   const homeNavItems = [
-    { id: 'overview', label: 'Overview', scrollTo: 'profile-directions' },
-    { id: 'works', label: 'Works', scrollTo: 'works' }
+    { id: 'overview', label: language === 'en' ? 'Overview' : '概览', scrollTo: 'profile-directions' },
+    { id: 'works', label: language === 'en' ? 'Works' : '作品', scrollTo: 'works' }
   ]
 
   const routeNavItems = [
-    { id: 'gaussian', label: 'Gaussian', to: '/gaussian-scenes' },
-    { id: 'production', label: 'Production', to: '/production' },
-    { id: 'archive', label: 'Archive', to: '/archive' },
-    { id: 'writing', label: 'Writing', to: '/writing' }
+    { id: 'gaussian', label: language === 'en' ? 'Gaussian' : '高斯档案', to: '/gaussian-scenes' },
+    { id: 'production', label: language === 'en' ? 'Production' : '合作', to: '/production' },
+    { id: 'archive', label: language === 'en' ? 'Archive' : '档案', to: '/archive' },
+    { id: 'writing', label: language === 'en' ? 'Writing' : '写作', to: '/writing' }
   ]
 
   return (
@@ -40,6 +42,22 @@ function Header() {
           Ewan Qian / Portfolio
         </NavLink>
         <div className="topbar-actions">
+          <div className="language-toggle" role="group" aria-label={language === 'en' ? 'Language switcher' : '语言切换'}>
+            <button
+              type="button"
+              className={`language-toggle-option ${language === 'zh' ? 'active' : ''}`.trim()}
+              onClick={() => setLanguage('zh')}
+            >
+              中
+            </button>
+            <button
+              type="button"
+              className={`language-toggle-option ${language === 'en' ? 'active' : ''}`.trim()}
+              onClick={() => setLanguage('en')}
+            >
+              EN
+            </button>
+          </div>
           <button
             type="button"
             className="theme-toggle"

@@ -1,3 +1,5 @@
+import { useLanguage } from '../../i18n/LanguageContext.jsx'
+
 const directions = [
   {
     title: 'AI + 三维视觉开发',
@@ -29,23 +31,64 @@ const publicSignals = [
 ]
 
 function ProfileDirections() {
+  const { language } = useLanguage()
+  const localizedDirections = language === 'en'
+    ? [
+        {
+          title: 'AI + 3D Visual Development',
+          description: 'Building steadier workflows around AI image generation, digital environments, style testing, and visual proposals.'
+        },
+        {
+          title: 'Stereo / Apple Vision Pro / XR Content',
+          description: 'Advancing stereo image work, spatial viewing, and immersive digital-environment tests, samples, and bespoke content development.'
+        },
+        {
+          title: 'Digital Exhibition and Display Systems',
+          description: 'Turning works, exhibit assets, page structures, curatorial notes, and display entry points into more complete online exhibitions.'
+        },
+        {
+          title: 'Realtime Systems, Archives, and Workflow Design',
+          description: 'Continuing to organize realtime systems, project archives, site structure, and service flows into a more stable long-term working system.'
+        }
+      ]
+    : directions
+
+  const localizedSignals = language === 'en'
+    ? [
+        'Hangzhou Biennale opening and permanent exhibition',
+        'BO LIVE Shenzhen collaboration with Kashiwa Daisuke',
+        'UFO Terminal creation camp and the “Loading… Permission 2” exhibition',
+        'CAN Festival live collaboration node in Zhoushan',
+        'Second Prize, ChinaGraph 2024 Electronic Theatre Music',
+        'First Prize, Hangzhou International Electronic Music Composition Competition',
+        'Observation and Symbiosis exhibition and workshop extensions',
+        'Ongoing collaboration across live, exhibition, and spatial-image contexts'
+      ]
+    : publicSignals
+
   return (
     <section id="profile-directions" className="section">
       <div className="container">
         <div className="eyebrow">Profile / Current Directions</div>
-        <h2 className="section-title">简介与当前方向</h2>
+        <h2 className="section-title">{language === 'en' ? 'Profile and Current Directions' : '简介与当前方向'}</h2>
         <p className="section-intro" style={{ marginBottom: '14px' }}>
-          钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。
+          {language === 'en'
+            ? 'Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems.'
+            : '钱誉文（Ewan Qian）是一位媒体艺术家、空间影像创作者与现场视觉制作人，工作横跨现场演出视觉、展览影像、沉浸式空间与数字媒介系统。'}
         </p>
         <p className="section-intro" style={{ marginBottom: '14px' }}>
-          他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。
+          {language === 'en'
+            ? 'His practice focuses on how image, sound, time, and space can be composed into an experience that can be entered, sensed, and reorganized, while steadily building a path between artistic creation, live production, and system method.'
+            : '他的实践关注图像、声音、时间与空间如何共同构成一种可进入、可感知、可被重新组织的现场经验，并持续在艺术创作、现场制作与系统方法之间建立自己的工作路径。'}
         </p>
         <p className="section-intro">
-          Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems.
+          {language === 'en'
+            ? 'This site organizes that practice as a public-facing network of works, methods, service paths, and archive structures rather than as a flat project shelf.'
+            : 'Ewan Qian is a media artist, spatial image creator, and live visual producer working across live performance visuals, exhibition image-making, immersive environments, and digital media systems.'}
         </p>
 
         <div className="grid-3" style={{ marginTop: '32px' }}>
-          {directions.slice(0, 3).map((direction) => (
+          {localizedDirections.slice(0, 3).map((direction) => (
             <div key={direction.title} className="overview-card">
               <h4>{direction.title}</h4>
               <p>{direction.description}</p>
@@ -55,18 +98,20 @@ function ProfileDirections() {
 
         <div className="grid-3" style={{ marginTop: '18px' }}>
           <div className="overview-card">
-            <h4>{directions[3].title}</h4>
-            <p>{directions[3].description}</p>
+            <h4>{localizedDirections[3].title}</h4>
+            <p>{localizedDirections[3].description}</p>
           </div>
         </div>
 
         <div style={{ marginTop: '28px' }}>
-          <div className="eyebrow">Public Record / 公开履历与合作线索</div>
+          <div className="eyebrow">{language === 'en' ? 'Public Record / Signals' : 'Public Record / 公开履历与合作线索'}</div>
           <p className="section-intro" style={{ marginBottom: '16px' }}>
-            这些条目作为公开经历与合作信号，帮助客户快速判断我的工作语境，而不是再重复一遍作品分类。
+            {language === 'en'
+              ? 'These entries act as public-facing signals and collaboration evidence, helping partners quickly understand the context of the practice instead of repeating the work categories.'
+              : '这些条目作为公开经历与合作信号，帮助客户快速判断我的工作语境，而不是再重复一遍作品分类。'}
           </p>
           <div className="signal-strip">
-            {publicSignals.map((signal) => (
+            {localizedSignals.map((signal) => (
               <span key={signal} className="social-pill signal-pill">{signal}</span>
             ))}
           </div>

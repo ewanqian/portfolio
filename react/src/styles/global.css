@@ -201,6 +201,46 @@ img {
   color: var(--text);
 }
 
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  min-height: 32px;
+}
+
+.language-toggle-option {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  min-width: 34px;
+  min-height: 26px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.language-toggle-option:hover {
+  color: var(--text);
+}
+
+.language-toggle-option.active {
+  background: var(--text);
+  color: var(--inverse);
+}
+
+.language-toggle-option:focus-visible {
+  outline: 2px solid var(--line-strong);
+  outline-offset: 2px;
+}
+
 .theme-toggle:hover {
   transform: translateY(-1px);
   border-color: var(--text);
@@ -231,6 +271,13 @@ html.light .theme-toggle .icon-sun {
 @media (max-width: 760px) {
   .menu-toggle {
     display: flex;
+  }
+  .topbar-actions {
+    gap: 8px;
+  }
+  .language-toggle-option {
+    min-width: 30px;
+    padding: 0 6px;
   }
   .nav {
     position: absolute;

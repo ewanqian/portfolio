@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import writings from '../data/generated/writings'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { localizeWriting } from '../i18n/content.js'
 
 const categoryMeta = [
   { id: 'essay', title: '作品评论 / Essays' },
@@ -69,13 +71,23 @@ function WritingList({ items, title }) {
   )
 }
 
-const featuredWritings = sortWritings(writings.filter((writing) => writing.featured))
-const allWritings = sortWritings(writings)
-const writingsByCategory = Object.fromEntries(
-  categoryMeta.map((section) => [section.id, sortWritings(writings.filter((writing) => writing.category === section.id))])
-)
-
 function Writing() {
+  const { language } = useLanguage()
+  const localizedWritings = writings.map((writing) => localizeWriting(writing, language))
+  const featuredWritings = sortWritings(localizedWritings.filter((writing) => writing.featured))
+  const allWritings = sortWritings(localizedWritings)
+  const localizedCategoryMeta = language === 'en'
+    ? [
+        { id: 'essay', title: 'Essays' },
+        { id: 'note', title: 'Method Notes' },
+        { id: 'field-note', title: 'Field Notes and Process Records' },
+        { id: 'research', title: 'Research Entries' }
+      ]
+    : categoryMeta
+  const writingsByCategory = Object.fromEntries(
+    localizedCategoryMeta.map((section) => [section.id, sortWritings(localizedWritings.filter((writing) => writing.category === section.id))])
+  )
+
   return (
     <>
       <Header />
@@ -83,17 +95,18 @@ function Writing() {
         <section className="section">
           <div className="container">
             <div className="eyebrow">Writing</div>
-            <h1 className="section-title">写作与笔记</h1>
+            <h1 className="section-title">{language === 'en' ? 'Writing and Notes' : '写作与笔记'}</h1>
             <p className="section-intro">
-              这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。
-              它不是附属说明，而是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。
+              {language === 'en'
+                ? 'This page collects ongoing writing around works, methods, field experience, delivery specs, and archive systems. It is not supplementary explanation but part of the practice itself: how a work holds together, how it is organized, how it enters space, how it is delivered, and how it continues to be read all get unfolded here.'
+                : '这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。它不是附属说明，而是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。'}
             </p>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">重点写作 / Featured Writings</h2>
+            <h2 className="section-title">{language === 'en' ? 'Featured Writings' : '重点写作 / Featured Writings'}</h2>
             <div className="grid-2">
               {featuredWritings.map((writing) => (
                 <article key={writing.id} className="card writing-card">
@@ -110,13 +123,13 @@ function Writing() {
           </div>
         </section>
 
-        {categoryMeta.map((section) => (
+        {localizedCategoryMeta.map((section) => (
           <WritingList key={section.id} items={writingsByCategory[section.id]} title={section.title} />
         ))}
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">全部写作 / All Writing</h2>
+            <h2 className="section-title">{language === 'en' ? 'All Writing' : '全部写作 / All Writing'}</h2>
             <div className="writing-list">
               {allWritings.map((writing) => (
                 <article key={writing.id} className="writing-list-item">
