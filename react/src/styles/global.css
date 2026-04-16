@@ -1820,3 +1820,226 @@ textarea {
   position: absolute;
   left: -16px;
 }
+
+/* Gaussian Scenes */
+.gaussian-hero {
+  display: grid;
+  gap: 28px;
+}
+
+.gaussian-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gaussian-stat-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.gaussian-stat-card strong {
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--text);
+}
+
+.gaussian-stat-card span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.gaussian-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.gaussian-feature-card,
+.gaussian-scene-card,
+.gaussian-info-card,
+.gaussian-service-card,
+.gaussian-cta-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.gaussian-viewer {
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid var(--line);
+  background: #080808;
+}
+
+.gaussian-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.gaussian-feature-copy,
+.gaussian-scene-content,
+.gaussian-info-card,
+.gaussian-service-card,
+.gaussian-cta-panel {
+  padding: 24px;
+}
+
+.gaussian-feature-copy h3,
+.gaussian-scene-content h3,
+.gaussian-info-card h3,
+.gaussian-service-card h3,
+.gaussian-cta-panel h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.gaussian-feature-copy p,
+.gaussian-scene-content p,
+.gaussian-info-card p,
+.gaussian-service-card p,
+.gaussian-cta-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.gaussian-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.gaussian-badge,
+.gaussian-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.gaussian-badge {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.gaussian-badge.subtle,
+.gaussian-tag {
+  color: var(--muted);
+}
+
+.gaussian-meta-line {
+  margin-bottom: 16px !important;
+  font-size: 13px !important;
+}
+
+.gaussian-note-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.gaussian-note {
+  border-left: 2px solid var(--text);
+  padding-left: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.gaussian-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0 0;
+}
+
+.gaussian-scene-grid,
+.gaussian-info-grid,
+.gaussian-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.gaussian-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.gaussian-scene-image {
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.gaussian-scene-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gaussian-scene-card:hover .gaussian-scene-image img {
+  transform: scale(1.04);
+}
+
+.gaussian-scene-note {
+  margin-top: 16px !important;
+}
+
+.gaussian-cta-panel {
+  margin-top: 24px;
+}
+
+.archive-entry-banner,
+.production-gaussian-entry {
+  text-align: left;
+}
+
+@media (max-width: 1100px) {
+  .gaussian-stat-row,
+  .gaussian-scene-grid,
+  .gaussian-info-grid,
+  .gaussian-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gaussian-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .gaussian-stat-row,
+  .gaussian-scene-grid,
+  .gaussian-info-grid,
+  .gaussian-service-grid,
+  .gaussian-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gaussian-feature-copy,
+  .gaussian-scene-content,
+  .gaussian-info-card,
+  .gaussian-service-card,
+  .gaussian-cta-panel {
+    padding: 20px;
+  }
+}

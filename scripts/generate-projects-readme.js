@@ -21,12 +21,14 @@ const contentWorkIds = new Set(
 const practiceOrder = [
   'Audiovisual Collaborations',
   'Drop Flow',
+  'Temporal Structures',
   'Perceptual Environments'
 ];
 
 const practiceLabels = {
   'Audiovisual Collaborations': '演艺舞台 / Audiovisual Collaborations',
   'Drop Flow': 'Drop Flow / 时间-空间作品线',
+  'Temporal Structures': '时间结构 / Temporal Structures',
   'Perceptual Environments': '环境、展览与感知系统 / Perceptual Environments'
 };
 
@@ -35,7 +37,12 @@ const typeLabels = {
   exhibition: 'Exhibition',
   live: 'Live',
   competition: 'Competition',
-  workshop: 'Workshop'
+  workshop: 'Workshop',
+  video: 'Video',
+  installation: 'Installation',
+  'mixed-reality': 'Mixed Reality',
+  'event-support': 'Event Support',
+  series: 'Series'
 };
 
 const statusLabels = {

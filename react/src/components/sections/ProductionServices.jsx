@@ -99,8 +99,12 @@ function ProductionServices() {
                   <span>适合 proof of concept 与方向验证</span>
                 </div>
                 <div className="price-item">
-                  <strong>双目演出背景 / Apple Vision Pro 内容 — ¥8000–40000+</strong>
-                  <span>取决于平台、格式、时长与展示条件</span>
+                  <strong>高斯扫描归档 / web embed 场景包 — ¥3000–12000+</strong>
+                  <span>适合单场景试扫、在线预览、归档整理与展示入口</span>
+                </div>
+                <div className="price-item">
+                  <strong>Apple Vision Pro / 空间内容开发 — ¥8000–40000+</strong>
+                  <span>取决于平台、格式、时长、交互深度与展示条件</span>
                 </div>
                 <div className="price-item">
                   <strong>数字展览 / 展示系统 — ¥8000 起</strong>

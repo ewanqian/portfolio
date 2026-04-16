@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import Writing from './pages/Writing.jsx'
 import Production from './pages/Production.jsx'
 import Archive from './pages/Archive.jsx'
+import GaussianScenes from './pages/GaussianScenes.jsx'
 import './styles/global.css'
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <Route path="/writing" element={<Writing />} />
       <Route path="/production" element={<Production />} />
       <Route path="/archive" element={<Archive />} />
+      <Route path="/gaussian-scenes" element={<GaussianScenes />} />
     </Routes>
   )
 }

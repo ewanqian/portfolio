@@ -1,1 +1,67 @@
-[]
+[
+  {
+    "id": "gaussian-scene-timer-0531",
+    "title": "Timer Gaussian 0531",
+    "type": "gaussian-scene-thumbnail",
+    "filename": "assets/gaussian-scenes/timer-gaussian-0531.webp",
+    "source": "superspl.at",
+    "sourceUrl": "https://superspl.at/scene/b9ec0173",
+    "embedUrl": "https://superspl.at/s?id=b9ec0173",
+    "relatedWork": "timer-series-visual-2024",
+    "year": "2024",
+    "tags": ["gaussian-scan", "timer", "web-embed", "vision-pro-path"],
+    "notes": "把 Timer 作品影像高斯化后的网页嵌入场景缩略图，本地保存。"
+  },
+  {
+    "id": "gaussian-scene-shinjuku-greenhouse",
+    "title": "Shinjuku Gyoen Greenhouse",
+    "type": "gaussian-scene-thumbnail",
+    "filename": "assets/gaussian-scenes/shinjuku-gyoen-greenhouse.webp",
+    "source": "superspl.at",
+    "sourceUrl": "https://superspl.at/scene/0f404310",
+    "embedUrl": "https://superspl.at/s?id=0f404310",
+    "relatedWork": null,
+    "year": "2025",
+    "tags": ["gaussian-scan", "greenhouse", "digital-nature", "tokyo"],
+    "notes": "新宿御苑温室花园傍晚扫描缩略图，本地保存。"
+  },
+  {
+    "id": "gaussian-scene-dropflow-collection-rooms719",
+    "title": "Dropflow Collection / Rooooooom719",
+    "type": "gaussian-scene-thumbnail",
+    "filename": "assets/gaussian-scenes/dropflow-collection-rooms719.webp",
+    "source": "superspl.at",
+    "sourceUrl": "https://superspl.at/scene/36db89a4",
+    "embedUrl": "https://superspl.at/s?id=36db89a4",
+    "relatedWork": "drop-flow-ufo-2025",
+    "year": "2025",
+    "tags": ["gaussian-scan", "drop-flow", "rooms719", "participant-imagery", "spatial-archive"],
+    "notes": "DropFlow rooms719 / DropFlow 2 时期成员影像拼接的高斯集合缩略图，本地保存。"
+  },
+  {
+    "id": "gaussian-scene-tokyo-tower-garden-2",
+    "title": "Garden 2 / Tokyo Tower Area",
+    "type": "gaussian-scene-thumbnail",
+    "filename": "assets/gaussian-scenes/tokyo-tower-garden-2.webp",
+    "source": "superspl.at",
+    "sourceUrl": "https://superspl.at/scene/a90198a5",
+    "embedUrl": "https://superspl.at/s?id=a90198a5",
+    "relatedWork": null,
+    "year": "2025",
+    "tags": ["gaussian-scan", "garden", "tokyo-tower", "spatial-archive"],
+    "notes": "东京塔下花园扫描缩略图，本地保存。"
+  },
+  {
+    "id": "gaussian-scene-shibuya-sakura-stage",
+    "title": "Shibuya Sakura Stage",
+    "type": "gaussian-scene-thumbnail",
+    "filename": "assets/gaussian-scenes/shibuya-sakura-stage.webp",
+    "source": "superspl.at",
+    "sourceUrl": "https://superspl.at/scene/87d112d3",
+    "embedUrl": "https://superspl.at/s?id=87d112d3",
+    "relatedWork": null,
+    "year": "2025",
+    "tags": ["gaussian-scan", "urban-space", "architecture", "tokyo"],
+    "notes": "Shibuya Sakura Stage 城市空间扫描缩略图，本地保存。"
+  }
+]
