@@ -153,7 +153,7 @@
     }
 
     .project-title {
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(24px, 3.2vw, 36px);
       line-height: 1.05;
       margin: 24px 0 12px;
       letter-spacing: -0.04em;
@@ -354,6 +354,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 24px;
+      align-items: start;
     }
 
     .work-item {
@@ -409,14 +410,12 @@
     }
 
     .work-item-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+      overflow: visible;
       border-top: 1px solid var(--line);
     }
 
     .work-item.open .work-item-content {
-      max-height: 1000px;
+      max-height: none;
     }
 
     .work-item-inner {
@@ -426,20 +425,59 @@
     .work-item-image {
       width: 100%;
       aspect-ratio: 16/9;
-      background: var(--line);
+      background: #050505;
       border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--muted);
       font-size: 13px;
-      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .work-item.has-video .work-item-image {
+      cursor: pointer;
+    }
+
+    .work-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-item-video {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      margin: 0 0 12px;
+    }
+
+    .work-item-video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .work-item.has-video.open .work-item-image {
+      display: none;
+    }
+
+    .work-item.has-video.open .work-item-video {
+      display: block;
     }
 
     .work-item-meta {
+      display: none;
       font-size: 12px;
       color: var(--muted);
       line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .work-item.open .work-item-meta {
+      display: block;
     }
 
     .work-item-meta strong {
@@ -580,7 +618,7 @@
           <div style="padding: 14px;">
             <div style="font-size: 13px; font-weight: 600; margin-bottom: 6px;">01 Lead & 02 Green 测试视频</div>
             <div style="font-size: 12px; color: var(--muted); line-height: 1.5;">
-              现场演出前和灯光师测试效果
+              灯光与空间关系测试片段
             </div>
           </div>
         </div>
@@ -623,9 +661,9 @@
           <div class="work-item-content">
             <div class="work-item-inner">
               <div class="work-item-meta">
-                为确保视觉与听觉在现场演出中的精准同步，本次项目从技术方案与舞台结构两个维度构建了完整的保障体系。<br /><br />
+                为确保视觉与听觉在现场演出中的精准同步，这条协作线从技术方案与舞台结构两个维度构建了完整的保障体系。<br /><br />
                 <strong>一、技术架构：混合渲染策略</strong><br />
-                本次采用"音频分析驱动 + 实时响应 + 预渲染框架"的混合技术方案。首先将音频波形直接映射为视觉动画参数，构建音画之间的点对点关联——低频能量驱动视觉元素的振幅与亮度，高频细节控制曲线的精细度与柔和度。为克服单一技术方案的局限性，我们将折角纱幕的基础视觉框架（如光迹轨迹、轮廓形态）进行预渲染以保证稳定性，同时通过实时音频信号触发细节变化（如钢琴即兴段落中的光效震颤与声波纹理拉伸），在精确性与现场呼吸感之间取得平衡。<br /><br />
+                这里采用"音频分析驱动 + 实时响应 + 预渲染框架"的混合技术方案。首先将音频波形直接映射为视觉动画参数，构建音画之间的点对点关联——低频能量驱动视觉元素的振幅与亮度，高频细节控制曲线的精细度与柔和度。为克服单一技术方案的局限性，我们将折角纱幕的基础视觉框架（如光迹轨迹、轮廓形态）进行预渲染以保证稳定性，同时通过实时音频信号触发细节变化（如钢琴即兴段落中的光效震颤与声波纹理拉伸），在精确性与现场呼吸感之间取得平衡。<br /><br />
                 <strong>二、空间结构：折角纱幕的沉浸装置</strong><br />
                 舞台设计放弃传统平面投影，采用向外凸的折角双纱幕结构。近侧纱幕呈现"贴耳式"元素（如钢琴键动态、微幅声波），远侧纱幕营造"延伸感"视觉（如大面积光影、长波纹理），在无复杂机械的情况下构建空间纵深感。配合纱幕后方的雾气装置，光线穿透时形成可见的光迹路径——当光束从远纱幕向近纱幕投射时，雾中浮现的光迹仿佛音乐在空间中流淌，彻底突破了"视觉依附于墙面"的局限。
               </div>
@@ -662,8 +700,8 @@
           <div class="work-item-content">
             <div class="work-item-inner">
               <div class="work-item-meta">
-                本次创作的所有内容均在既往研究基础上进行改良与调整，保持着清晰的承继关系。部分段落系对过往作品的重新演绎——通过快速整合音频分析文件，使视觉能够持续贴合音乐的情绪流动。关键在于直接使用原始音频文件进行创作，这是确保视听协调的核心方法。<br /><br />
-                必须承认，音乐会的时长早已超越"逐帧雕琢"的可行范围。一个创作者或许能够精心打磨20秒的动态图形，但若以同等精度去处理8分钟、半小时乃至两小时的内容，在时间与精力上均不现实。因此，工作流程调整为：先审视音频频谱，再重新聆听音乐，然后进行有选择的设计。在当前阶段，这一策略只能达到"点到为止"的完成度。
+                这条创作线中的内容建立在既往研究基础上的持续改良与调整之上，保持着清晰的承继关系。部分段落系对过往作品方法的重新演绎——通过快速整合音频分析文件，使视觉能够持续贴合音乐的情绪流动。关键在于直接使用原始音频文件进行创作，这是确保视听协调的核心方法。<br /><br />
+                音乐会的时长通常超越"逐帧雕琢"的可行范围。一个创作者或许能够精心打磨20秒的动态图形，但若以同等精度去处理8分钟、半小时乃至两小时的内容，在时间与精力上均不现实。因此，工作流程调整为：先审视音频频谱，再重新聆听音乐，然后进行有选择的设计。这种策略更接近一套长期可复用的现场视觉工作方法，而不是一次性的精修成片。
               </div>
             </div>
           </div>
@@ -681,7 +719,7 @@
               <div class="work-item-meta">
                 在创作初期，我刻意加入"聆听音乐情绪"的环节，这使得最终作品带有个人过往创作的风格倾向；在调整视觉效果时，也会有意识地向该方向优化。<br /><br />
                 这正是算法难以替代的维度：创作过程中对音乐的情感体会与思考，最终会传递给观众。因此，我会尝试从观众的视角进行判断——聆听这首乐曲时是何种情绪？与之搭配的视觉是否过于激烈或过于平缓？这些判断都依赖于直觉感受。<br /><br />
-                由于时间限制，本次未能进行第二层次的润色与再混音；所幸可以在排练中直接调试即兴演出的视觉内容。最终呈现难免存在疏漏，期待在未来项目中得以完善。<br /><br />
+                这套工作流保留了排练中直接调试即兴演出视觉内容的开放性，也保留了进一步润色、扩展与再组织的空间。它更像一个持续生长的现场视觉系统，而不是在单次交付后即告终结的封闭成品。<br /><br />
                 <strong>关于人工智能的展望：</strong><br />
                 我期待在未来的工作中，人工智能能够介入音乐分析并自动完成部分操作——当然，这需要充足的工作量与数据积累，AI需要先学习我判断内容的逻辑，方能以此为参照进行创作。
               </div>
@@ -834,7 +872,7 @@
       </div>
 
       <div class="work-grid">
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">01</span>
@@ -847,7 +885,7 @@
               <div class="work-item-image">
                 <img src="../assets/kashiwa-titan/01_Lead.jpeg" alt="01 Lead" />
               </div>
-              <div style="margin: 14px 0;">
+              <div class="work-item-video">
                 <iframe src="https://www.manamana.net/video/2831761" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
@@ -858,7 +896,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">02</span>
@@ -871,7 +909,7 @@
               <div class="work-item-image">
                 <img src="../assets/kashiwa-titan/02_Green.jpeg" alt="02 Green" />
               </div>
-              <div style="margin: 14px 0;">
+              <div class="work-item-video">
                 <iframe src="https://www.manamana.net/video/2903351" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
@@ -882,7 +920,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">03</span>
@@ -895,7 +933,7 @@
               <div class="work-item-image">
                 <img src="../assets/kashiwa-titan/03_Haze.jpeg" alt="03 Haze" />
               </div>
-              <div style="margin: 14px 0;">
+              <div class="work-item-video">
                 <iframe src="https://www.manamana.net/video/2903422" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
@@ -906,7 +944,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">04</span>
@@ -919,7 +957,7 @@
               <div class="work-item-image">
                 <img src="../assets/kashiwa-titan/04_Infrared.jpeg" alt="04 Infrared" />
               </div>
-              <div style="margin: 14px 0;">
+              <div class="work-item-video">
                 <iframe src="https://www.manamana.net/video/2903434" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
@@ -930,7 +968,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">05</span>
@@ -943,6 +981,9 @@
               <div class="work-item-image" style="background: none;">
                 <img src="../assets/kashiwa-titan/05_Whitenight.jpeg" alt="05 Whitenight" />
               </div>
+              <div class="work-item-video">
+                <iframe src="https://www.manamana.net/video/2831703" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+              </div>
               <div class="work-item-meta">
                 <strong>Format:</strong> Moving image / live visual<br />
                 <strong>Notes:</strong> A more suspended and luminous section, emphasizing spatial diffusion, slow transition, and immersive white atmosphere. Powerful and explosive particle flow.（更悬浮和发光的段落，强调空间扩散、缓慢过渡和沉浸式白色氛围。极具震撼力与爆发力的粒子流。）<br />
@@ -952,7 +993,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">06</span>
@@ -965,6 +1006,9 @@
               <div class="work-item-image" style="background: none;">
                 <img src="../assets/kashiwa-titan/06_Amb.jpeg" alt="06 Amb" />
               </div>
+              <div class="work-item-video">
+                <iframe src="https://www.manamana.net/video/2831826" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+              </div>
               <div class="work-item-meta">
                 <strong>Format:</strong> Moving image / live visual<br />
                 <strong>Notes:</strong> A highly atmospheric and ambient visual direction. This work moved away from more aggressive and direct audio-analysis logic, and instead pursued a floating, healing, and almost transcendent feeling.（高氛围 ambient 视觉方向。远离激进的音频分析逻辑，追求漂浮、治愈、几乎超然的感觉。）<br />
@@ -974,7 +1018,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">07</span>
@@ -987,7 +1031,7 @@
               <div class="work-item-image">
                 <img src="../assets/kashiwa-titan/07_Rose.jpeg" alt="07 Rose" />
               </div>
-              <div style="margin: 14px 0;">
+              <div class="work-item-video">
                 <iframe src="https://www.manamana.net/video/2903465" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
@@ -998,7 +1042,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">08</span>
@@ -1011,6 +1055,9 @@
               <div class="work-item-image" style="background: none;">
                 <img src="../assets/kashiwa-titan/08_Titan.jpeg" alt="08 Titan" />
               </div>
+              <div class="work-item-video">
+                <iframe src="https://www.manamana.net/video/2831892" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+              </div>
               <div class="work-item-meta">
                 <strong>Format:</strong> Moving image / live visual<br />
                 <strong>Notes:</strong> Core audiovisual section connected to the TITAN atmosphere, combining spatial pressure, depth illusion, and sonic architecture.<br />
@@ -1020,7 +1067,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item has-video">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">09</span>
@@ -1033,7 +1080,7 @@
               <div class="work-item-image">
                 <img src="../assets/kashiwa-titan/09_Phantom.jpeg" alt="09 Phantom" />
               </div>
-              <div style="margin: 14px 0;">
+              <div class="work-item-video">
                 <iframe src="https://www.manamana.net/video/2831944" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
@@ -1044,7 +1091,7 @@
           </div>
         </div>
 
-        <div class="work-item open">
+        <div class="work-item">
           <div class="work-item-header">
             <div class="work-item-title">
               <span class="work-item-number">10</span>
@@ -1225,9 +1272,9 @@
   <script src="../assets/scripts/legacy-language.js"></script>
 
   <script>
-    document.querySelectorAll('.work-item-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
+    document.querySelectorAll('.work-item-header, .work-item.has-video .work-item-image').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.work-item');
         item.classList.toggle('open');
       });
     });
