@@ -789,17 +789,18 @@ export default [
   },
   {
     "id": "timer-loading-access-2-2024",
-    "title": "TIMER / 加载权限2 展览节点",
-    "subtitle": "TIMER 系列的代表性公开节点",
-    "years": "2024",
+    "title": "TIMER 控时者 影像环形版",
+    "subtitle": "UFO Terminal「加载权限 2」展览单元",
+    "years": "2024.11–12",
     "type": "public-presentation",
-    "summary": "TIMER 系列进入 UFO Terminal「加载...权限2」展览的公开节点，集中呈现时间结构、音画关系与环形沉浸屏幕实验。",
+    "summary": "UFO Terminal「加载权限 2」展览单元中的环形屏幕音画互动影像作品，是《TIMER 控时者》进入公开展览语境的代表性版本。",
     "practiceLine": "temporal-structure",
     "tags": [
       "timer",
-      "loading-access",
+      "loading-access-2",
       "exhibition",
-      "temporal-structure"
+      "ring-screen",
+      "team-work"
     ],
     "coverImage": "timer-loading-access-2-poster.jpg",
     "image": "/portfolio/assets/home/timer-loading-access-2-poster.jpg",
@@ -812,117 +813,77 @@ export default [
       "timer-not-sync"
     ],
     "displayModes": [
-      "exhibition screen",
       "ring screen",
-      "audio-reactive visual"
+      "audiovisual interactive image",
+      "exhibition unit"
     ],
     "analysisIds": [
       "timer-core-series"
     ],
     "sourceDocs": [
-      "projects/timer-series-visual-2024.md",
-      "visual-arts/timer-series/README.md",
+      "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
       "works/timer.html"
     ],
     "repoLink": "/portfolio/works/timer.html",
     "links": [
       {
-        "text": "系列页面",
+        "text": "作品页面",
         "url": "./works/timer.html"
       },
       {
-        "text": "项目记录",
-        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md"
+        "text": "团队档案源",
+        "url": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md"
       }
     ],
     "priority": 4
   },
   {
-    "id": "timer-series-visual-2024",
-    "title": "Timer 系列",
-    "subtitle": "时间结构方向的公开展映与现场章节",
-    "years": "2024",
-    "type": "series",
-    "summary": "Timer 系列把展映、现场视觉呈现与环形沉浸屏幕实验收束为一条更完整的时间结构作品线。",
+    "id": "timer",
+    "title": "TIMER 控时者",
+    "subtitle": "时间操纵者 / 控时者长期项目",
+    "years": "2024–",
+    "type": "ongoing-work",
+    "summary": "围绕时间、声音、影像结构和空间呈现展开的长期项目线；公开版本以「加载权限 2」展览单元中的影像环形版为当前代表节点。",
     "practiceLine": "temporal-structure",
     "tags": [
       "timer",
       "temporal",
-      "immersive",
-      "audio-reactive"
+      "ring-screen",
+      "audiovisual",
+      "ongoing"
     ],
     "coverImage": "featured-timer-main.jpg",
     "image": "/portfolio/assets/home/featured-timer-main.jpg",
     "showOnHome": false,
     "lifecycle": "active",
-    "relatedNodes": [],
-    "relatedWritings": [],
+    "relatedNodes": [
+      "ufo-terminal"
+    ],
+    "relatedWritings": [
+      "timer-temporal",
+      "timer-not-sync"
+    ],
     "displayModes": [
-      "immersive ring screen",
-      "screen-based performance",
-      "audio-reactive visual"
+      "audiovisual image",
+      "ring screen",
+      "spatial version planning"
     ],
     "analysisIds": [
       "timer-core-series"
     ],
     "sourceDocs": [
-      "projects/timer-series-visual-2024.md",
-      "visual-arts/timer-series/README.md",
-      "works/timer.html"
-    ],
-    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md",
-    "links": [
-      {
-        "text": "项目文档",
-        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md"
-      },
-      {
-        "text": "看录像",
-        "url": "https://www.bilibili.com/video/BV1sWNWeVEVB/"
-      }
-    ],
-    "priority": 17
-  },
-  {
-    "id": "timer",
-    "title": "TIMER 控时者",
-    "subtitle": "时间、节拍与图像内部结构",
-    "years": "2024–2025",
-    "type": "series",
-    "summary": "围绕时间、节拍、频段与图像内部结构展开的音画互动系列，也是时间结构方向的核心作品线。",
-    "practiceLine": "temporal-structure",
-    "tags": [
-      "timer",
-      "beat",
-      "visual"
-    ],
-    "coverImage": "featured-timer-main.jpg",
-    "image": "/portfolio/assets/home/featured-timer-main.jpg",
-    "showOnHome": false,
-    "lifecycle": "active",
-    "relatedNodes": [],
-    "relatedWritings": [],
-    "displayModes": [
-      "audio-reactive visual",
-      "live set",
-      "screen-based performance"
-    ],
-    "analysisIds": [
-      "timer-core-series"
-    ],
-    "sourceDocs": [
-      "visual-arts/timer-series/README.md",
+      "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
       "works/timer.html"
     ],
     "repoLink": "/portfolio/works/timer.html",
     "links": [
       {
-        "text": "详情页",
+        "text": "作品页面",
         "url": "./works/timer.html"
       },
       {
-        "text": "看录像",
-        "url": "https://www.bilibili.com/video/BV1sWNWeVEVB/"
+        "text": "团队档案源",
+        "url": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md"
       }
     ],
     "priority": 7

@@ -92,12 +92,7 @@ export default {
     },
     {
       "id": "timer-loading-access-2-2024",
-      "label": "TIMER / 加载权限2 展览节点",
-      "type": "work"
-    },
-    {
-      "id": "timer-series-visual-2024",
-      "label": "Timer 系列",
+      "label": "TIMER 控时者 影像环形版",
       "type": "work"
     },
     {
@@ -219,6 +214,10 @@ export default {
     },
     {
       "source": "timer-loading-access-2-2024",
+      "target": "ufo-terminal"
+    },
+    {
+      "source": "timer",
       "target": "ufo-terminal"
     },
     {

@@ -72,8 +72,8 @@ const workTranslations = {
     },
     timer: {
       title: 'TIMER',
-      subtitle: 'Time, rhythm, and internal image structure',
-      summary: 'An audiovisual series built around time, beats, spectral bands, and the internal structure of images.'
+      subtitle: 'Ongoing project around temporal control and audiovisual structure',
+      summary: 'An ongoing project around time, sound, image structure, and spatial presentation. Its current representative public node is the ring-screen image version presented in Loading Permission 2.'
     },
     transit: {
       title: 'Greenhouse in Transit',
@@ -91,9 +91,9 @@ const workTranslations = {
       summary: 'Opening animation, track animation visuals, and stage-image delivery for Rain / Jung Ji-hoon at SINGLAND FESTIVAL 2026 in Singapore.'
     },
     'timer-loading-access-2-2024': {
-      title: 'TIMER / Loading... Permission 2',
-      subtitle: 'A representative public node from the TIMER series',
-      summary: 'The public exhibition node where TIMER entered UFO Terminal Loading... Permission 2, concentrating temporal structure, audiovisual relation, and immersive ring-screen experiments.'
+      title: 'TIMER / Ring-Screen Image Version',
+      subtitle: 'UFO Terminal Loading Permission 2 exhibition unit',
+      summary: 'A ring-screen audiovisual interactive image work presented in the UFO Terminal Loading Permission 2 exhibition unit, and the current representative public version of TIMER.'
     },
     'vrplay-hackathon-visual-2025': {
       title: 'VRplay WORLD REMIX XR Hackathon',
