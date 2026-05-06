@@ -64,6 +64,11 @@ const workTranslations = {
       title: 'TIMER',
       subtitle: 'Time, rhythm, and internal image structure',
       summary: 'An audiovisual series built around time, beats, spectral bands, and the internal structure of images.'
+    },
+    transit: {
+      title: 'Greenhouse in Transit',
+      subtitle: 'Portable greenhouse and spatial narrative entry',
+      summary: 'A suitcase-based spatial narrative project that connects a portable greenhouse, misdelivered luggage, project pages, and a browser-based archive into one public entry.'
     }
   }
 }

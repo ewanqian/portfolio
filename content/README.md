@@ -51,9 +51,28 @@ content/
   "analysisIds": ["drop-flow-core-series"],
   "sourceDocs": ["visual-arts/drop-flow-series/README.md"],
   "repoLink": "/portfolio/works/drop-flow",
+  "portfolioTier": "featured",
+  "lifecycle": "sustained",
+  "externalRepo": {
+    "label": "External repository",
+    "url": "",
+    "status": "pending-url"
+  },
+  "harborRole": "这件作品在 Works 港口中的组织角色。",
+  "publicValue": "它对外部读者说明的个人体系价值。",
+  "nextActions": ["后续补录任务"],
   "priority": 0
 }
 ```
+
+可选字段说明：
+
+- `portfolioTier`：前台展示层级，建议使用 `featured`、`external`、`archive`。
+- `lifecycle`：项目状态，建议使用 `active`、`sustained`、`archive`、`paused`。
+- `externalRepo`：外部仓库引用。仓库 URL 未确定时可以先留空，并把 `status` 写为 `pending-url`。
+- `harborRole`：说明这个项目为什么进入 Works 港口。
+- `publicValue`：说明它在个人体系中的公开价值，不等于普通项目描述。
+- `nextActions`：后续补图、补节点、补链接、补详情页的维护清单。
 
 ### 2. Node (公开节点/事件)
 

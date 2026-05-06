@@ -5,6 +5,7 @@ import Writing from './pages/Writing.jsx'
 import Production from './pages/Production.jsx'
 import Archive from './pages/Archive.jsx'
 import GaussianScenes from './pages/GaussianScenes.jsx'
+import Works from './pages/Works.jsx'
 import './styles/global.css'
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/works" element={<Works />} />
       <Route path="/writing" element={<Writing />} />
       <Route path="/production" element={<Production />} />
       <Route path="/archive" element={<Archive />} />

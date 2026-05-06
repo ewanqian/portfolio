@@ -66,6 +66,11 @@ export default {
       "type": "work"
     },
     {
+      "id": "transit",
+      "label": "箱中温室 / Greenhouse in Transit",
+      "type": "work"
+    },
+    {
       "id": "babel-bottle",
       "label": "Babel Bottle / 杭州中心美术馆",
       "type": "node"

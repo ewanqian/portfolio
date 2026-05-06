@@ -25,11 +25,11 @@ function Header() {
 
   const homeNavItems = [
     { id: 'overview', label: language === 'en' ? 'Overview' : '概览', scrollTo: 'profile-directions' },
-    { id: 'works', label: language === 'en' ? 'Works' : '作品', scrollTo: 'works' }
+    { id: 'selected', label: language === 'en' ? 'Selected' : '精选', scrollTo: 'works' }
   ]
 
   const routeNavItems = [
-    { id: 'gaussian', label: language === 'en' ? 'Gaussian' : '高斯档案', to: '/gaussian-scenes' },
+    { id: 'works', label: language === 'en' ? 'Works' : '作品', to: '/works' },
     { id: 'production', label: language === 'en' ? 'Production' : '合作', to: '/production' },
     { id: 'archive', label: language === 'en' ? 'Archive' : '档案', to: '/archive' },
     { id: 'writing', label: language === 'en' ? 'Writing' : '写作', to: '/writing' }
