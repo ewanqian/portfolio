@@ -41,8 +41,8 @@ const workTranslations = {
       summary: 'A live audiovisual collaboration with Kashiwa Daisuke and Yuki Murata, combining haze, white-space depth, holographic scrims, naked-eye 3D, and audiovisual interaction.'
     },
     'mke-terminal': {
-      title: 'MKE / Kashiwa Audio-Visual Study',
-      subtitle: 'Mikael Lind × KASHIWA Daisuke × Qian Yuwen',
+      title: 'Mikael Lind × KASHIWA Daisuke × Qian Yuwen',
+      subtitle: 'Unreleased track to Terminal spatial-visual study',
       summary: 'An audio-visual study based on an unreleased Mikael Lind and KASHIWA Daisuke track, organizing the source PDF, BlenderMCP, audio analysis, and a 60fps spatial-visual performance framework.'
     },
     'sre-realtime-liveset-2026': {
