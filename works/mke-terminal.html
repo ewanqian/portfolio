@@ -111,7 +111,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      grid-template-columns: 1fr;
       gap: 22px;
       align-items: stretch;
     }
@@ -134,16 +134,34 @@
     }
 
     .hero-media {
-      min-height: 620px;
+      min-height: 0;
       overflow: hidden;
       background: #030404;
     }
 
-    .hero-media img {
+    .hero-media > img {
+      display: block;
       width: 100%;
-      height: 100%;
+      aspect-ratio: 21 / 9;
+      height: auto;
       object-fit: cover;
       filter: grayscale(1) contrast(1.08);
+    }
+
+    .hero-mark {
+      display: flex;
+      align-items: center;
+      padding: 16px 18px;
+      border-top: 1px solid var(--line);
+      background: #050606;
+    }
+
+    .hero-mark img {
+      width: min(489px, 100%);
+      height: auto;
+      object-fit: contain;
+      filter: none;
+      opacity: 0.92;
     }
 
     .hero-copy {
@@ -609,6 +627,9 @@
         <div class="hero-grid">
           <div class="hero-media">
             <img src="../assets/mke-terminal/pdf-p02-01.jpg" alt="Abstract black and white ring visual from the MKE source PDF" />
+            <div class="hero-mark" aria-label="UFO Terminal mark">
+              <img src="../assets/mke-terminal/pdf-p07-02.png" alt="UFO Terminal loading creation mark" />
+            </div>
           </div>
           <div class="hero-copy">
             <div>
