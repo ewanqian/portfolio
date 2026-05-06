@@ -14,6 +14,7 @@ const imageIdOverrides = {
   'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.jpg',
   'kashiwa': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
   'kashiwa-bo-live-shenzhen': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
+  'mke-terminal': '/portfolio/assets/mke-terminal/pdf-p02-01.jpg',
   'observation-and-symbiosis': '/portfolio/assets/home/archive-observation-clean.jpg',
   'observe-symbiosis-pingshan': '/portfolio/assets/home/archive-observation-clean.jpg',
   'timer': '/portfolio/assets/home/archive-timer-clean.jpg',

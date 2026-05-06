@@ -1,6 +1,11 @@
 export default {
   "nodes": [
     {
+      "id": "ar-shenzhen-resort-2022",
+      "label": "AR 深圳计划",
+      "type": "work"
+    },
+    {
       "id": "derive-dual-city-2024",
       "label": "Dérive 双城记 / Digital Dérive",
       "type": "work"
@@ -31,6 +36,16 @@ export default {
       "type": "work"
     },
     {
+      "id": "glance-thousand-install-2023",
+      "label": "安昌光影艺术季「一眼万千」",
+      "type": "work"
+    },
+    {
+      "id": "hallu-resonance-live-2024",
+      "label": "THE BOXX「幻觉共振」",
+      "type": "work"
+    },
+    {
       "id": "kashiwa-band-visual-2025",
       "label": "Kashiwa Daisuke / CAN Festival Zhoushan",
       "type": "work"
@@ -38,6 +53,11 @@ export default {
     {
       "id": "kashiwa",
       "label": "《机械光合：TITAN 的全息声林》",
+      "type": "work"
+    },
+    {
+      "id": "mke-terminal",
+      "label": "MKE / Kashiwa Audio-Visual Study",
       "type": "work"
     },
     {
@@ -56,6 +76,26 @@ export default {
       "type": "work"
     },
     {
+      "id": "rain-singapore-visual-2026",
+      "label": "Rain 新加坡跨年专场",
+      "type": "work"
+    },
+    {
+      "id": "shanhaifusheng2-visual-2025",
+      "label": "爱丁堡《山海浮生II》",
+      "type": "work"
+    },
+    {
+      "id": "sre-realtime-liveset-2026",
+      "label": "SRE / UFO Terminal Realtime Liveset",
+      "type": "work"
+    },
+    {
+      "id": "timer-loading-access-2-2024",
+      "label": "TIMER / 加载权限2 展览节点",
+      "type": "work"
+    },
+    {
       "id": "timer-series-visual-2024",
       "label": "Timer 系列",
       "type": "work"
@@ -68,6 +108,16 @@ export default {
     {
       "id": "transit",
       "label": "箱中温室 / Greenhouse in Transit",
+      "type": "work"
+    },
+    {
+      "id": "vrplay-hackathon-visual-2025",
+      "label": "VRplay WORLD REMIX XR 黑客松",
+      "type": "work"
+    },
+    {
+      "id": "yujiayun-45ping-visual-2025",
+      "label": "余佳运「45㎡」个人演唱会",
       "type": "work"
     },
     {
@@ -136,6 +186,14 @@ export default {
       "target": "can-festival"
     },
     {
+      "source": "mke-terminal",
+      "target": "kashiwa-bo-live-shenzhen"
+    },
+    {
+      "source": "mke-terminal",
+      "target": "ufo-terminal"
+    },
+    {
       "source": "new-media-artist-simulator-2025",
       "target": "babel-bottle"
     },
@@ -154,6 +212,14 @@ export default {
     {
       "source": "observe-symbiosis-workshop-2026",
       "target": "observe-symbiosis-pingshan"
+    },
+    {
+      "source": "sre-realtime-liveset-2026",
+      "target": "ufo-terminal"
+    },
+    {
+      "source": "timer-loading-access-2-2024",
+      "target": "ufo-terminal"
     },
     {
       "source": "babel-bottle",

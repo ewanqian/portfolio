@@ -9,7 +9,8 @@
   "tags": ["immersive", "space", "flow"],
   "coverImage": "featured-dropflow-main.jpg",
   "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
-  "showOnHome": true,
+  "showOnHome": false,
+  "lifecycle": "active",
   "relatedNodes": ["ufo-terminal", "drop-flow-hangzhou-biennale"],
   "relatedWritings": ["drop-flow-note"],
   "displayModes": ["immersive screen", "body performance", "VR headset", "live audiovisual"],
@@ -24,5 +25,5 @@
     { "text": "详情页", "url": "./works/drop-flow.html" },
     { "text": "看录像", "url": "https://www.bilibili.com/video/BV1PREczgEzC/" }
   ],
-  "priority": 0
+  "priority": 5
 }

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="../assets/home/archive-timer-clean.jpg" />
+  <title>MKE / Kashiwa Audio-Visual Study - Ewan Qian Portfolio</title>
+  <meta name="description" content="Mikael Lind、KASHIWA Daisuke 与钱誉文的 MKE 音画合作研究页：从未发布单曲、项目 PDF、音频分析到 BlenderMCP 空间视觉演出框架。" />
+  <style>
+    :root {
+      --bg: #080909;
+      --panel: #111313;
+      --panel-soft: #151817;
+      --text: #f2f4f0;
+      --muted: #a2a9a4;
+      --dim: #747c76;
+      --line: rgba(242, 244, 240, 0.13);
+      --line-strong: rgba(242, 244, 240, 0.3);
+      --accent: #f2f4f0;
+      --accent-soft: rgba(242, 244, 240, 0.08);
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(255,255,255,0.08), transparent 34%),
+        radial-gradient(circle at 84% 12%, rgba(255,255,255,0.06), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+    h1, h2, h3, p, figure { margin: 0; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8, 9, 9, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand,
+    .nav a,
+    .back-link,
+    .button,
+    .kicker,
+    .meta-label,
+    .tag {
+      font-size: 12px;
+      font-weight: 720;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand { font-weight: 760; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav a,
+    .back-link {
+      color: var(--muted);
+    }
+
+    .nav a:hover,
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .section {
+      padding: 74px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero {
+      padding-top: 36px;
+      border-top: 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-grid > *,
+    .visualizer-layout > *,
+    .section-grid > * {
+      min-width: 0;
+    }
+
+    .hero-media,
+    .hero-copy,
+    .panel,
+    .artist-card,
+    .media-card,
+    .route-card,
+    .phrase-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(21, 24, 23, 0.96), rgba(12, 14, 14, 0.96));
+    }
+
+    .hero-media {
+      min-height: 620px;
+      overflow: hidden;
+      background: #030404;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.08);
+    }
+
+    .hero-copy {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      font-weight: 780;
+      max-width: 10ch;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    h3 {
+      font-size: clamp(20px, 2vw, 27px);
+      line-height: 1.18;
+      letter-spacing: 0;
+      font-weight: 750;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(16px, 1.5vw, 20px);
+      line-height: 1.72;
+      overflow-wrap: anywhere;
+    }
+
+    .body-copy {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+    }
+
+    .kicker {
+      color: var(--dim);
+      margin-bottom: 14px;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-label {
+      color: var(--dim);
+    }
+
+    .meta-row div:last-child {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line-strong);
+      color: var(--text);
+      background: transparent;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .button:hover,
+    .button.active {
+      background: var(--text);
+      color: #080909;
+      border-color: var(--text);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+      gap: 52px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 22px;
+    }
+
+    .focus-grid,
+    .system-grid,
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .focus-card,
+    .system-card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.025);
+      padding: 20px;
+      min-height: 178px;
+    }
+
+    .focus-card h3,
+    .system-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .focus-card p,
+    .system-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .visualizer-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .visualizer-shell {
+      border: 1px solid var(--line-strong);
+      background: #050606;
+      padding: 14px;
+      min-width: 0;
+    }
+
+    .visualizer-top {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 2px 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 720;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .visualizer-top span:last-child {
+      color: var(--text);
+    }
+
+    .canvas-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--line);
+      background: #020303;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #terminalCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .visualizer-caption {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding-top: 14px;
+      color: var(--dim);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .visualizer-caption strong {
+      color: var(--text);
+      display: block;
+      font-size: 13px;
+    }
+
+    .control-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .phrase-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .phrase-card {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 16px;
+      padding: 16px;
+      align-items: start;
+    }
+
+    .phrase-card strong {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .phrase-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .artist-grid {
+      margin-top: 28px;
+    }
+
+    .artist-card {
+      padding: 18px;
+      min-height: 306px;
+    }
+
+    .artist-card img {
+      width: 82px;
+      height: 82px;
+      object-fit: cover;
+      filter: grayscale(1);
+      border: 1px solid var(--line);
+      margin-bottom: 18px;
+    }
+
+    .artist-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .artist-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .route-card {
+      padding: 20px;
+      min-height: 220px;
+    }
+
+    .route-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .route-card p,
+    .boundary-list li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .media-grid .media-card:first-child {
+      grid-row: span 2;
+    }
+
+    .media-card {
+      overflow: hidden;
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      filter: grayscale(0.85) contrast(1.04);
+    }
+
+    .caption {
+      padding: 13px 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .boundary-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .boundary-list li {
+      border-left: 2px solid var(--line-strong);
+      background: var(--accent-soft);
+      padding: 12px 0 12px 16px;
+    }
+
+    .footer {
+      padding: 42px 0 58px;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-grid,
+      .visualizer-layout,
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        min-height: 420px;
+      }
+
+      .focus-grid,
+      .system-grid,
+      .artist-grid,
+      .route-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero-copy,
+      .panel {
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .hero-media {
+        min-height: 300px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 52px);
+      }
+
+      .meta-row,
+      .phrase-card,
+      .visualizer-caption {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row,
+      .control-row {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .lead,
+      .body-copy,
+      .meta-row div:last-child,
+      .artist-card p,
+      .route-card p,
+      .boundary-list li {
+        word-break: break-all;
+      }
+
+      .canvas-wrap {
+        aspect-ratio: 4 / 5;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Ewan Qian / Portfolio</a>
+      <nav class="nav" aria-label="Page navigation">
+        <a href="../works/kashiwa.html">Kashiwa</a>
+        <a href="#visualizer">Visualizer</a>
+        <a href="#authors">Authors</a>
+        <a href="#source">PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <a href="../index.html#works" class="back-link">← Back to Works</a>
+        <div class="hero-grid">
+          <div class="hero-media">
+            <img src="../assets/mke-terminal/pdf-p02-01.jpg" alt="Abstract black and white ring visual from the MKE source PDF" />
+          </div>
+          <div class="hero-copy">
+            <div>
+              <div class="kicker">Research Page / Audio-Visual Study</div>
+              <h1>MKE / Kashiwa Audio-Visual Study</h1>
+              <p class="lead" style="margin-top: 22px;">
+                米凯尔·林德 × 柏大辅 × 钱誉文。<br />
+                以一首尚未正式发布的合作单曲为声音基础，<br />
+                整理项目 PDF、音频分析、Blender MCP<br />
+                与空间视觉编排方法。
+              </p>
+            </div>
+
+            <div>
+              <div class="hero-meta">
+                <div class="meta-row">
+                  <div class="meta-label">Sound</div>
+                  <div>Mikael Lind 与 KASHIWA Daisuke 共同创作的未发布单曲。</div>
+                </div>
+                <div class="meta-row">
+                  <div class="meta-label">Visual</div>
+                  <div>钱誉文负责视觉系统、空间构成、Blender 演出文件与现场呈现方向。</div>
+                </div>
+                <div class="meta-row">
+                  <div class="meta-label">Status</div>
+                  <div>当前是可继续制作的 60fps 音频同步空间流链框架，不是最终成片。</div>
+                </div>
+              </div>
+              <div class="button-row">
+                <a class="button" href="#visualizer">查看 Visualizer</a>
+                <a class="button" href="../assets/mke-terminal/MKE.pdf" target="_blank" rel="noreferrer">打开 PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <div class="kicker">Project Logic</div>
+          <h2>不是说明音乐，而是组织空间</h2>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <h3>声音来源</h3>
+            <p>音乐来自 Mikael Lind 与 KASHIWA Daisuke 的合作单曲，具有钢琴、电子与氛围音乐层次。</p>
+          </article>
+          <article class="focus-card">
+            <h3>视觉方向</h3>
+            <p>画面不做音量条式反应，而围绕雾、白色空间、方向爆点、负空间和包裹感展开。</p>
+          </article>
+          <article class="focus-card">
+            <h3>制作状态</h3>
+            <p>当前建立了演出文件与研究框架：音频分析已进入制作逻辑，最终可见层仍需人工筛选。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="visualizer">
+      <div class="container visualizer-layout">
+        <div>
+          <div class="kicker">Abstract Visualizer</div>
+          <h2>空间、爆闪、引导与收缩</h2>
+          <p class="body-copy" style="margin-top: 18px;">
+            这个 demo 只做设计示意：先用一层白雾建立空间深度，再用左 / 中 / 右三个位置说明爆闪方向；细线负责快速引导视线，最后用一个向内收缩的白框表示音乐事件被迅速切掉。它不包含未发布音频，也不替代最终渲染。
+          </p>
+          <div class="phrase-grid" style="margin-top: 24px;">
+            <article class="phrase-card">
+              <strong>01</strong>
+              <p>空间感：先给出白色雾层和远近深度，不急着出现复杂图案。</p>
+            </article>
+            <article class="phrase-card">
+              <strong>02</strong>
+              <p>方向爆闪：左、中、右只用位置和亮度判断，不做装饰性图案。</p>
+            </article>
+            <article class="phrase-card">
+              <strong>03</strong>
+              <p>快速引领：一条细线把观众视线带向下一次爆点。</p>
+            </article>
+            <article class="phrase-card">
+              <strong>04</strong>
+              <p>快速收缩：爆点之后立刻向中心压回，留下负空间。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="visualizer-shell">
+          <div class="visualizer-top">
+            <span>MKE Spatial Sketch</span>
+            <span id="frameReadout">SPACE HAZE / 18.80s</span>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="terminalCanvas" aria-label="Abstract spatial music visualizer"></canvas>
+          </div>
+          <div class="visualizer-caption">
+            <div>
+              <strong>space -> flash -> guide -> collapse</strong>
+              schematic design cues for AI-directed visual making
+            </div>
+            <div>white haze / left-right cues</div>
+          </div>
+          <div class="control-row" aria-label="Visualizer controls">
+            <button class="button active" id="togglePlay" type="button">暂停</button>
+            <button class="button active" id="phraseMode" type="button">短句循环</button>
+            <button class="button" id="fullMode" type="button">慢速浏览</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="authors">
+      <div class="container">
+        <div class="section-grid">
+          <div>
+            <div class="kicker">Authors</div>
+            <h2>三位作者与合作关系</h2>
+          </div>
+          <p class="lead">
+            关系可以更准确地写成：Mikael Lind 与 KASHIWA Daisuke 共同完成声音基础；钱誉文以这首音乐为材料，负责视觉系统、空间构成与现场版本的制作方法。
+          </p>
+        </div>
+
+        <div class="artist-grid">
+          <article class="artist-card">
+            <img src="../assets/mke-terminal/pdf-p03-02.jpg" alt="Mikael Lind portrait" />
+            <h3>Mikael Lind</h3>
+            <p>常驻冰岛雷克雅未克的实验氛围音乐作曲家与声音艺术家，创作横跨 ambient、noise 与 electronica。本项目中与柏大辅共同提供声音基础。</p>
+          </article>
+          <article class="artist-card">
+            <img src="../assets/mke-terminal/pdf-p03-03.jpg" alt="KASHIWA Daisuke portrait" />
+            <h3>KASHIWA Daisuke / 柏大辅</h3>
+            <p>日本音乐人、作曲家与现场演出者，作品横跨电子音乐、钢琴、实验声音与跨媒介合作。本项目中的音乐合作方之一。</p>
+          </article>
+          <article class="artist-card">
+            <img src="../assets/mke-terminal/pdf-p03-04.jpg" alt="Qian Yuwen portrait" />
+            <h3>Qian Yuwen / 钱誉文</h3>
+            <p>媒体艺术家、空间影像创作者与现场视觉制作人。在本项目中负责视觉方向、Blender 文件方法、空间编排与现场呈现。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <div class="kicker">Position</div>
+          <h2>与 Kashiwa / TITAN 方法线索的关系</h2>
+        </div>
+        <div>
+          <p class="lead">
+            这个页面不是给深圳专场做“续集标题”，而是把同一条合作方法继续整理成可读的研究节点：现场视觉、空间深度、雾、白色结构和音频触发逻辑在这里被重新组织。
+          </p>
+          <div class="route-grid">
+            <article class="route-card">
+              <h3>Kashiwa / TITAN</h3>
+              <p>公开演出语境：全息纱幕、白色空间、雾、光与现场观看关系已经在 BO LIVE 项目中建立。</p>
+            </article>
+            <article class="route-card">
+              <h3>MKE Study</h3>
+              <p>研发整理语境：把新的音乐材料拆成 60fps 时间线、方向击点、sizzle 颗粒、Geometry Nodes 控制和审查规则。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <div class="kicker">Audio System</div>
+          <h2>从音频分析到空间流链</h2>
+        </div>
+        <div>
+          <div class="media-card">
+            <img src="../assets/mke-terminal/kashiwa_audio_analysis.png" alt="Kashiwa audio analysis chart" />
+            <div class="caption">音频分析图：raw pressure、频段、onset 与左右声像被统一到 60fps 研发框架中。</div>
+          </div>
+          <div class="system-grid" style="margin-top: 16px;">
+            <article class="system-card">
+              <h3>音频分析</h3>
+              <p>拆解 raw pressure、onset、stereo bias、high/air grain 与 exact frames。</p>
+            </article>
+            <article class="system-card">
+              <h3>空间映射</h3>
+              <p>把压力、方向、颗粒和击点转成边缘灯、材质压力、雾场和短促爆点。</p>
+            </article>
+            <article class="system-card">
+              <h3>审查系统</h3>
+              <p>通过 no-fall-ahead、negative space 和 deletion-first 规则删掉过度生成。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="source">
+      <div class="container">
+        <div class="section-grid">
+          <div>
+            <div class="kicker">Source PDF</div>
+            <h2>PDF 资料与视觉来源</h2>
+          </div>
+          <div>
+            <p class="lead">
+              PDF 负责说明合作是什么：未发布音乐、三位作者、视觉方向，以及它与 Kashiwa / TITAN 和 Drop Flow 方法之间的关系。网页在此基础上补充当前音频分析与 BlenderMCP 制作状态。
+            </p>
+            <div class="button-row">
+              <a class="button" href="../assets/mke-terminal/MKE.pdf" target="_blank" rel="noreferrer">查看原始 PDF</a>
+              <a class="button" href="../works/kashiwa.html">查看 Kashiwa 页面</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="../assets/mke-terminal/pdf-p04-01.jpg" alt="Kashiwa BO LIVE stage image" />
+            <figcaption class="caption">Kashiwa / TITAN 现场线索：空间深度、白色结构与演出环境。</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="../assets/mke-terminal/pdf-p07-01.jpg" alt="UFO Terminal creation camp image" />
+            <figcaption class="caption">Terminal 大屏语境：适合做现场录制和 visualizer 测试。</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="../assets/mke-terminal/pdf-p06-01.jpg" alt="MKE source PDF visual reference" />
+            <figcaption class="caption">视觉参考：雾、光、白色空间和包裹感。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <div class="kicker">Boundary</div>
+          <h2>当前边界</h2>
+        </div>
+        <div>
+          <p class="lead">
+            这不是“AI 已经自动生成最终视频”的页面。更准确的状态是：演出文件和控制框架已经建立，最终视觉层仍需要隐藏预览、人工 scrub 和导演判断。
+          </p>
+          <ul class="boundary-list">
+            <li>已经进入 Blender：60fps timing、raw ring-wave edge lights、directional strobes、sizzle bus、保守 Geometry Nodes art-bus wiring。</li>
+            <li>仍在研究层：DropFlow residue lifecycle、Lead scar GN micro-packet、strict audition score sheet 与 reusable flowchain interface。</li>
+            <li>下一步应先做小范围 exact phrase preview，再决定哪些效果进入 production root。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Ewan Qian. MKE / Kashiwa Audio-Visual Study.</span>
+      <span>Source pack organized on 2026-05-07 CST.</span>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('terminalCanvas');
+    const ctx = canvas.getContext('2d');
+    const readout = document.getElementById('frameReadout');
+    const playButton = document.getElementById('togglePlay');
+    const phraseButton = document.getElementById('phraseMode');
+    const fullButton = document.getElementById('fullMode');
+    playButton.textContent = '暂停';
+
+    const cueCycle = [
+      { name: 'space', label: 'SPACE HAZE', duration: 1.35, side: 'center' },
+      { name: 'flash', label: 'FLASH LEFT', duration: 0.42, side: 'left' },
+      { name: 'guide', label: 'GUIDE L -> R', duration: 0.7, side: 'right' },
+      { name: 'collapse', label: 'FAST COLLAPSE', duration: 0.58, side: 'center' },
+      { name: 'flash', label: 'FLASH RIGHT', duration: 0.42, side: 'right' },
+      { name: 'guide', label: 'GUIDE R -> C', duration: 0.7, side: 'center' },
+      { name: 'collapse', label: 'FAST COLLAPSE', duration: 0.58, side: 'center' }
+    ];
+
+    let isPlaying = true;
+    let phraseLocked = true;
+    let currentTime = 18.8;
+    let lastTime = performance.now();
+    const duration = 285.88;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(rect.width * dpr);
+      canvas.height = Math.floor(rect.height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function getCue(t) {
+      const total = cueCycle.reduce((sum, cue) => sum + cue.duration, 0);
+      let local = ((t - 18.8) % total + total) % total;
+      for (const cue of cueCycle) {
+        if (local <= cue.duration) {
+          return { ...cue, progress: local / cue.duration };
+        }
+        local -= cue.duration;
+      }
+      return { ...cueCycle[0], progress: 0 };
+    }
+
+    function easeOut(x) {
+      return 1 - Math.pow(1 - x, 3);
+    }
+
+    function cueX(width, side) {
+      if (side === 'left') return width * 0.22;
+      if (side === 'right') return width * 0.78;
+      return width * 0.5;
+    }
+
+    function drawHaze(width, height, time, intensity = 1) {
+      ctx.save();
+      const baseY = height * 0.52;
+      const drift = Math.sin(time * 0.18) * width * 0.018;
+      const haze = ctx.createRadialGradient(width * 0.5 + drift, baseY, 0, width * 0.5 + drift, baseY, width * 0.58);
+      haze.addColorStop(0, `rgba(255,255,255,${0.14 * intensity})`);
+      haze.addColorStop(0.42, `rgba(255,255,255,${0.055 * intensity})`);
+      haze.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = haze;
+      ctx.beginPath();
+      ctx.ellipse(width * 0.5 + drift, baseY, width * 0.44, height * 0.24, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 0.22 * intensity;
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(width * 0.16, height * 0.42, width * 0.68, 1);
+      ctx.globalAlpha = 0.12 * intensity;
+      ctx.fillRect(width * 0.22, height * 0.58, width * 0.56, 1);
+      ctx.restore();
+    }
+
+    function drawSpatialMarkers(width, height) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,0.16)';
+      ctx.fillStyle = 'rgba(255,255,255,0.42)';
+      ctx.lineWidth = 1;
+      ctx.font = '10px IBM Plex Mono, monospace';
+      ctx.textAlign = 'center';
+      ['left', 'center', 'right'].forEach((side) => {
+        const x = cueX(width, side);
+        ctx.beginPath();
+        ctx.moveTo(x, height * 0.2);
+        ctx.lineTo(x, height * 0.8);
+        ctx.stroke();
+        ctx.fillText(side === 'left' ? 'L' : side === 'right' ? 'R' : 'C', x, height * 0.86);
+      });
+      ctx.restore();
+    }
+
+    function drawFlash(width, height, side, progress) {
+      const x = cueX(width, side);
+      const strength = 1 - progress;
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, strength * 0.95);
+      ctx.shadowColor = 'rgba(255,255,255,0.7)';
+      ctx.shadowBlur = 28 * strength;
+      ctx.fillStyle = 'rgba(255,255,255,0.92)';
+      ctx.fillRect(x - 3 - strength * 5, height * 0.17, 6 + strength * 10, height * 0.66);
+      ctx.globalAlpha = Math.max(0, strength * 0.2);
+      ctx.fillRect(Math.max(0, x - width * 0.16), height * 0.12, width * 0.32, height * 0.76);
+      ctx.restore();
+    }
+
+    function drawGuide(width, height, side, progress) {
+      const fromX = cueX(width, side === 'right' ? 'left' : 'right');
+      const toX = cueX(width, side);
+      const y = height * 0.5;
+      const x = fromX + (toX - fromX) * easeOut(progress);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,0.62)';
+      ctx.fillStyle = 'rgba(255,255,255,0.8)';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(fromX, y);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawCollapse(width, height, progress) {
+      const p = easeOut(progress);
+      const w = width * (0.68 - p * 0.56);
+      const h = height * (0.5 - p * 0.42);
+      ctx.save();
+      ctx.strokeStyle = `rgba(255,255,255,${0.64 * (1 - progress) + 0.1})`;
+      ctx.fillStyle = `rgba(255,255,255,${0.08 * (1 - progress)})`;
+      ctx.lineWidth = 1.4;
+      ctx.fillRect(width * 0.5 - w * 0.5, height * 0.5 - h * 0.5, w, h);
+      ctx.strokeRect(width * 0.5 - w * 0.5, height * 0.5 - h * 0.5, w, h);
+      ctx.beginPath();
+      ctx.arc(width * 0.5, height * 0.5, 3 + (1 - progress) * 3, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.72)';
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function draw(timestamp) {
+      const dt = Math.min(0.04, (timestamp - lastTime) / 1000);
+      lastTime = timestamp;
+      if (isPlaying) {
+        currentTime += dt * (phraseLocked ? 0.36 : 2.2);
+        if (phraseLocked && currentTime > 23.55) currentTime = 18.8;
+        if (!phraseLocked && currentTime > duration) currentTime = 0;
+      }
+
+      const rect = canvas.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+      const cue = getCue(currentTime);
+      readout.textContent = `${cue.label} / ${currentTime.toFixed(2)}s`;
+
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = '#020303';
+      ctx.fillRect(0, 0, width, height);
+
+      drawHaze(width, height, currentTime, cue.name === 'space' ? 1.25 : 0.82);
+      drawSpatialMarkers(width, height);
+
+      if (cue.name === 'flash') {
+        drawFlash(width, height, cue.side, cue.progress);
+      }
+
+      if (cue.name === 'guide') {
+        drawGuide(width, height, cue.side, cue.progress);
+      }
+
+      if (cue.name === 'collapse') {
+        drawCollapse(width, height, cue.progress);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    playButton.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      playButton.textContent = isPlaying ? '暂停' : '播放';
+      playButton.classList.toggle('active', isPlaying);
+      playButton.textContent = isPlaying ? '暂停' : '播放';
+    });
+
+    phraseButton.addEventListener('click', () => {
+      phraseLocked = true;
+      currentTime = 18.8;
+      phraseButton.classList.add('active');
+      fullButton.classList.remove('active');
+    });
+
+    fullButton.addEventListener('click', () => {
+      phraseLocked = false;
+      currentTime = 0;
+      fullButton.classList.add('active');
+      phraseButton.classList.remove('active');
+    });
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    requestAnimationFrame(draw);
+  </script>
+</body>
+</html>

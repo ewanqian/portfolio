@@ -10,6 +10,7 @@
   "coverImage": "featured-timer-main.jpg",
   "image": "/portfolio/assets/home/featured-timer-main.jpg",
   "showOnHome": false,
+  "lifecycle": "active",
   "relatedNodes": [],
   "relatedWritings": [],
   "displayModes": ["immersive ring screen", "screen-based performance", "audio-reactive visual"],

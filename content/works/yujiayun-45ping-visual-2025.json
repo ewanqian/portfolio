@@ -1,0 +1,30 @@
+{
+  "id": "yujiayun-45ping-visual-2025",
+  "title": "余佳运「45㎡」个人演唱会",
+  "subtitle": "Opening 与舞台视觉制作",
+  "years": "2025",
+  "type": "stage-visual",
+  "summary": "为余佳运「45㎡」宁波站个人演唱会参与 Opening 与舞台视觉内容制作，包含地图 LED 与多面 PGM 联动的舞台视觉交付。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["stage-visual", "concert", "opening-visual"],
+  "coverImage": "posterwall.jpg",
+  "image": "/portfolio/assets/home/posterwall.jpg",
+  "showOnHome": true,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["opening visual", "stage screen", "multi-surface PGM"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/yujiayun-45ping-visual-2025.md"],
+  "repoLink": "https://m.yanchupiaowu.com/event?id=109005",
+  "links": [
+    {
+      "text": "公开演出信息",
+      "url": "https://m.yanchupiaowu.com/event?id=109005"
+    },
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/yujiayun-45ping-visual-2025.md"
+    }
+  ],
+  "priority": 2
+}

@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="../assets/home/archive-timer-clean.jpg" />
-  <title>Drop Flow | 滴流系列 - Ewan Qian Portfolio</title>
-  <meta name="description" content="Drop Flow 滴流系列围绕空间生成、实时音画、沉浸式图像、身体表演与感知迁移展开。" />
+  <link rel="icon" type="image/webp" href="../assets/drop-flow/optimized/hero-hangzhou-performance.webp" />
+  <title>Drop Flow | 滴流 - Ewan Qian Portfolio</title>
+  <meta name="description" content="Drop Flow 滴流：围绕空间生成、实时音画、沉浸式图像、身体表演与感知迁移展开的系列作品。" />
   <style>
     :root {
       --bg: #0a0a0a;
       --panel: #111111;
       --text: #f0f0f0;
       --muted: #a0a0a0;
-      --line: rgba(255,255,255,0.12);
-      --line-strong: rgba(255,255,255,0.28);
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.28);
+      --accent: #f0f0f0;
       --inverse: #0a0a0a;
       --max: 1240px;
     }
@@ -46,27 +47,21 @@
       margin: 0 auto;
     }
 
-    .header {
+    .topbar {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(10, 10, 10, 0.95);
+      background: var(--bg);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(6px);
     }
 
-    .header-inner {
+    .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
       min-height: 60px;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      position: relative;
     }
 
     .brand {
@@ -76,17 +71,38 @@
       text-transform: uppercase;
     }
 
-    .nav a,
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav-link,
     .back-link {
       font-size: 12px;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      font-weight: 600;
+      line-height: 1.2;
+      font-family: inherit;
+      font-weight: 400;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
     }
 
-    .nav a:hover,
-    .back-link:hover { color: var(--text); }
+    .nav-link:hover,
+    .back-link:hover {
+      color: var(--text);
+    }
 
     .language-toggle {
       display: inline-flex;
@@ -95,6 +111,7 @@
       padding: 2px;
       border: 1px solid var(--line);
       background: var(--panel);
+      min-height: 32px;
     }
 
     .language-toggle-option {
@@ -113,124 +130,158 @@
       transition: 0.18s ease;
     }
 
+    .language-toggle-option:hover {
+      color: var(--text);
+    }
+
     .language-toggle-option.active {
       background: var(--text);
       color: var(--inverse);
     }
 
     .section {
-      padding: 80px 0;
+      padding: 88px 0;
       border-top: 1px solid var(--line);
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 760px;
     }
 
     .hero {
-      padding-top: 38px;
+      padding: 24px 0 88px;
       border-top: 0;
+      content-visibility: visible;
     }
 
     .back-link {
-      display: inline-flex;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-      gap: 26px;
-      align-items: stretch;
+      display: block;
     }
 
     .hero-image,
-    .video-frame,
-    .sample-viewer {
+    .hero-panel,
+    .card,
+    .overview-card,
+    .trajectory-card,
+    .repo-card,
+    .media-card,
+    .note-card,
+    .viewer-card {
+      background: var(--panel);
       border: 1px solid var(--line);
-      background: #050505;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .hero-image {
+      min-height: clamp(420px, 68vh, 720px);
       overflow: hidden;
+      position: relative;
     }
 
     .hero-image img {
       width: 100%;
       height: 100%;
-      min-height: 520px;
       object-fit: cover;
+      object-position: center;
     }
 
-    .hero-copy {
-      border: 1px solid var(--line);
+    .hero-note {
+      position: absolute;
+      right: 0;
+      bottom: 0;
       background: var(--panel);
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .project-title {
-      font-size: clamp(38px, 6vw, 72px);
-      line-height: 0.94;
-      margin: 0 0 18px;
-      letter-spacing: -0.06em;
-      font-weight: 700;
-    }
-
-    .project-subtitle,
-    .section-intro,
-    .card p,
-    .sample-copy p,
-    .timeline-item p {
+      border-left: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      padding: 10px 12px;
+      font-size: 11px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.75;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: min(720px, calc(100% - 32px));
+      background: rgba(17, 17, 17, 0.88);
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      padding: 28px;
+    }
+
+    .hero-kicker,
+    .eyebrow,
+    .meta-label,
+    .tag {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero-kicker {
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
       margin: 0;
     }
 
+    .hero-title {
+      font-size: clamp(44px, 8vw, 88px);
+      line-height: 0.92;
+      margin: 0 0 18px;
+      letter-spacing: -0.065em;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .hero-tagline,
+    .section-intro,
+    .body-copy,
+    .card p,
+    .media-card p,
+    .note-card p,
+    .viewer-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
     .section-title {
-      font-size: clamp(26px, 3.4vw, 38px);
-      line-height: 1.06;
-      margin: 0 0 16px;
-      letter-spacing: -0.04em;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.02;
+      margin: 0 0 18px;
+      font-weight: 700;
+      letter-spacing: -0.045em;
     }
 
     .section-intro {
       max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .meta-item {
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-      font-size: 14px;
-    }
-
-    .meta-item label,
-    .card-label,
-    .timeline-date {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .meta-item strong {
-      display: block;
-      color: var(--text);
-      line-height: 1.35;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
+      margin: 0 0 28px;
     }
 
     .button {
@@ -242,63 +293,251 @@
       border: 1px solid var(--text);
       background: var(--panel);
       color: var(--text);
+      border-radius: 0;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       transition: 0.15s ease;
+      cursor: pointer;
     }
 
-    .button.primary,
+    .button.primary {
+      background: var(--text);
+      color: var(--inverse);
+      border-color: var(--text);
+    }
+
     .button:hover {
       background: var(--text);
       color: var(--inverse);
     }
 
-    .rail-wrap {
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scrollbar-width: thin;
-      padding-bottom: 10px;
+    .hero-cta,
+    .button-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .rail {
+    .hero-cta {
+      margin: 22px 0 0;
+    }
+
+    .meta-grid {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(270px, 360px);
-      gap: 18px;
-      width: max-content;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
     }
 
-    .card {
+    .meta-item {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-item strong,
+    .meta-item span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .columns-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .overview-card,
+    .trajectory-card,
+    .repo-card,
+    .note-card,
+    .viewer-card {
+      padding: 24px;
+    }
+
+    .overview-card h3,
+    .trajectory-card h3,
+    .repo-card h3,
+    .note-card h3,
+    .viewer-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .overview-card p,
+    .trajectory-card p,
+    .repo-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .stage-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .stage-card {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .stage-image {
+      min-height: 100%;
+      background: var(--line);
+      border-right: 1px solid var(--line);
+    }
+
+    .stage-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+    }
+
+    .thumb-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border-top: 1px solid var(--line);
+    }
+
+    .thumb-row img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--line);
+    }
+
+    .stage-copy {
+      padding: 24px;
+    }
+
+    .stage-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .stage-copy h3 {
+      margin: 0 0 12px;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+    }
+
+    .stage-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .detail-block {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+
+    .detail-block ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
       border: 1px solid var(--line);
       background: var(--panel);
-      overflow: hidden;
-      min-height: 100%;
     }
 
-    .card img {
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .media-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      transition: border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    a.media-card:hover {
+      border-color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .media-card img {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       border-bottom: 1px solid var(--line);
+      background: var(--line);
     }
 
-    .card-copy {
-      padding: 18px;
+    .media-copy {
+      padding: 20px;
       display: grid;
       gap: 10px;
+      align-content: start;
     }
 
-    .card h3 {
-      margin: 0;
-      font-size: 19px;
+    .media-copy h3 {
+      font-size: 18px;
       line-height: 1.16;
       letter-spacing: -0.03em;
     }
 
-    .video-frame {
-      aspect-ratio: 16 / 9;
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .viewer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .viewer-frame {
+      aspect-ratio: 16 / 10;
+      min-height: 440px;
+      border: 1px solid var(--line);
+      background: #080808;
     }
 
     iframe {
@@ -308,43 +547,23 @@
       display: block;
     }
 
-    .sample-grid {
+    .source-list {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .sample-viewer {
-      aspect-ratio: 16 / 10;
+    .source-list a {
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    .sample-copy {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 24px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-      max-width: 860px;
-    }
-
-    .timeline-item {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 20px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .timeline-item h3 {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -0.02em;
+    .source-list a:hover {
+      color: var(--text);
     }
 
     .footer {
@@ -352,61 +571,93 @@
       color: var(--muted);
       font-size: 13px;
       border-top: 1px solid var(--line);
-      margin-top: 36px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .sample-grid {
+    @media (max-width: 1100px) {
+      .columns-2,
+      .stage-card,
+      .viewer-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-image img {
-        min-height: auto;
-        aspect-ratio: 16 / 10;
+      .hero-image {
+        min-height: 400px;
+      }
+
+      .stage-image {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .media-grid,
+      .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 760px) {
-      .header-inner {
-        flex-wrap: wrap;
+      .topbar-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .nav {
         gap: 12px;
       }
 
-      .brand {
-        font-size: 11px;
-        flex: 1;
-      }
-
-      .section {
-        padding: 58px 0;
-      }
-
-      .hero-copy {
-        padding: 24px;
-      }
-
-      .meta-grid {
+      .columns-2,
+      .detail-grid,
+      .meta-grid,
+      .media-grid,
+      .notes-grid,
+      .source-list {
         grid-template-columns: 1fr;
       }
 
-      .rail {
-        grid-auto-columns: minmax(260px, 82vw);
+      .hero-overlay,
+      .stage-copy,
+      .overview-card,
+      .trajectory-card,
+      .repo-card,
+      .note-card,
+      .viewer-card,
+      .media-copy {
+        padding: 20px;
+      }
+
+      .hero {
+        padding-bottom: 52px;
+      }
+
+      .section {
+        padding: 60px 0;
       }
 
       .button {
         width: 100%;
       }
+
+      .hero-cta,
+      .button-row {
+        flex-direction: column;
+      }
+
+      .viewer-frame {
+        min-height: 340px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container header-inner">
+  <header class="topbar">
+    <div class="container topbar-inner">
       <div class="brand">Ewan Qian / Drop Flow</div>
-      <div class="header-actions">
-        <nav class="nav">
-          <a href="../index.html#/works" id="nav-home">Back to Works</a>
+      <div class="topbar-actions">
+        <nav class="nav" aria-label="Page navigation">
+          <a class="nav-link" href="#stages" data-lang-zh="脉络" data-lang-en="Line">脉络</a>
+          <a class="nav-link" href="#media" data-lang-zh="媒体" data-lang-en="Media">媒体</a>
+          <a class="nav-link" href="../index.html#/works" data-lang-zh="返回作品选集" data-lang-en="Back to Works">返回作品选集</a>
         </nav>
         <div class="language-toggle" role="group" aria-label="Language switcher">
           <button type="button" class="language-toggle-option" data-set-language="zh">中</button>
@@ -417,150 +668,328 @@
   </header>
 
   <main>
-    <section class="section hero">
+    <section class="hero">
       <div class="container">
-        <a href="../index.html#/works" class="back-link" id="back-link">返回作品选集</a>
+        <a href="../index.html#/works" class="back-link" data-lang-zh="返回作品选集" data-lang-en="Back to Works">返回作品选集</a>
         <div class="hero-grid">
           <div class="hero-image">
-            <img src="../assets/home/featured-dropflow-main.jpg" alt="Drop Flow 滴流系列" />
+            <img src="../assets/drop-flow/optimized/hero-hangzhou-performance.webp" alt="Drop Flow Hangzhou Biennale opening performance" fetchpriority="high" decoding="async" />
+            <div class="hero-note" data-lang-zh="中国（杭州）艺术与科技国际双年展 / 开幕式展演" data-lang-en="China Hangzhou Art and Technology Biennale / Opening performance">中国（杭州）艺术与科技国际双年展 / 开幕式展演</div>
+            <div class="hero-overlay">
+              <div class="hero-kicker">Spatial generation / Realtime audiovisual</div>
+              <h1 class="hero-title">Drop Flow</h1>
+              <p class="hero-subtitle" data-lang-zh="滴流" data-lang-en="Drip, flow, and spatial emergence">滴流</p>
+              <p class="hero-tagline" data-lang-zh="围绕空间生成、实时音画、沉浸式图像、身体表演与感知迁移展开的系列作品。" data-lang-en="A series of works around spatial generation, realtime audiovisual systems, immersive imaging, bodily performance and perceptual migration.">围绕空间生成、实时音画、沉浸式图像、身体表演与感知迁移展开的系列作品。</p>
+              <div class="meta-grid">
+                <div class="meta-item">
+                  <span class="meta-label" data-lang-zh="时间" data-lang-en="Period">时间</span>
+                  <strong>2025 - 2026</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label" data-lang-zh="形式" data-lang-en="Forms">形式</span>
+                  <strong data-lang-zh="音画现场 / 沉浸式大屏 / VR / 空间样本" data-lang-en="Live audiovisual / immersive screen / VR / spatial sample">音画现场 / 沉浸式大屏 / VR / 空间样本</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label" data-lang-zh="公开节点" data-lang-en="Public Nodes">公开节点</span>
+                  <strong>UFO Terminal / Rooooooom719 / Hangzhou Biennale</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label" data-lang-zh="核心方法" data-lang-en="Method">核心方法</span>
+                  <strong data-lang-zh="实时生成、屏幕空间化、扫描素材转译" data-lang-en="Realtime generation, spatialized screens, scan-based translation">实时生成、屏幕空间化、扫描素材转译</strong>
+                </div>
+              </div>
+              <div class="hero-cta">
+                <a class="button primary" href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer" data-lang-zh="观看现场实录" data-lang-en="Watch Live Record">观看现场实录</a>
+                <a class="button" href="#media" data-lang-zh="媒体记录" data-lang-en="Media Records">媒体记录</a>
+              </div>
+            </div>
           </div>
-          <div class="hero-copy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Statement</div>
+        <h2 class="section-title" data-lang-zh="图像从屏幕中离开" data-lang-en="Images Leaving the Screen">图像从屏幕中离开</h2>
+        <div class="columns-2">
+          <article class="overview-card">
+            <h3 data-lang-zh="作品概述" data-lang-en="Work Overview">作品概述</h3>
+            <p data-lang-zh="《滴流 Drop Flow》从一滴水的声音开始，处理 drop 之后并不爆发、而是继续流动的状态。作品不把影像理解为屏幕上的平面内容，而是把声音、身体、观看位置、空间尺度和显示介质组织成一个可以进入的场域。" data-lang-en="Drop Flow begins from the sound of a single drop, treating what happens after the drop not as an explosion but as a continued flow. The work does not treat image as flat screen content; it organizes sound, bodies, viewing position, scale and display media into an enterable field.">《滴流 Drop Flow》从一滴水的声音开始，处理 drop 之后并不爆发、而是继续流动的状态。作品不把影像理解为屏幕上的平面内容，而是把声音、身体、观看位置、空间尺度和显示介质组织成一个可以进入的场域。</p>
+          </article>
+          <article class="overview-card">
+            <h3 data-lang-zh="现场逻辑" data-lang-en="Spatial Logic">现场逻辑</h3>
+            <p data-lang-zh="在 UFO Terminal、Rooooooom719 和杭州双年展的不同现场中，作品持续测试同一个问题：屏幕不是发光的平面，而可以成为光学引擎。图像、雾化介质、侧屏光影、身体表演和声音反馈共同塑造观众的空间感。" data-lang-en="Across UFO Terminal, Rooooooom719 and the Hangzhou Biennale, the work keeps testing the same question: the screen is not only a glowing plane, but can become an optical engine. Image, haze, side-screen light, bodily performance and audio feedback shape the viewer's spatial perception together.">在 UFO Terminal、Rooooooom719 和杭州双年展的不同现场中，作品持续测试同一个问题：屏幕不是发光的平面，而可以成为光学引擎。图像、雾化介质、侧屏光影、身体表演和声音反馈共同塑造观众的空间感。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stages">
+      <div class="container">
+        <div class="eyebrow">Project Line</div>
+        <h2 class="section-title" data-lang-zh="作品脉络" data-lang-en="Project Line">作品脉络</h2>
+        <p class="section-intro" data-lang-zh="这些阶段不是单纯的资料编号，而是作品从技术原型、内部现场、公开展演到空间计算方向逐步展开的创作脉络。" data-lang-en="These stages are not file labels. They trace the work from technical prototype, internal site, public performance and exhibition context toward spatial-computing directions.">这些阶段不是单纯的资料编号，而是作品从技术原型、内部现场、公开展演到空间计算方向逐步展开的创作脉络。</p>
+
+        <div class="stage-grid">
+          <article class="stage-card">
+            <div class="stage-image">
+              <img src="../assets/drop-flow/optimized/prototype-cover.webp" alt="Drop Flow 1.0 prototype" loading="lazy" decoding="async" />
+            </div>
+            <div class="stage-copy">
+              <div class="stage-meta"><span>2025.01-04</span><span>Prototype</span><span>Realtime audiovisual</span></div>
+              <h3 data-lang-zh="原型技术验证" data-lang-en="Prototype Technical Test">原型技术验证</h3>
+              <p data-lang-zh="早期实验以 OSC、Blender Python 和几何节点为底层，验证声音脉冲驱动画面从点、线到面的实时流动。画面保持纯黑白灰度，不引入具象自然意象，重点呈现“从一个点触发的流动秩序”。" data-lang-en="The early prototype is based on OSC, Blender Python and Geometry Nodes, testing how sound pulses drive realtime visual movement from points to lines and surfaces. The image stays in black and white, focusing on a flow order triggered by one point.">早期实验以 OSC、Blender Python 和几何节点为底层，验证声音脉冲驱动画面从点、线到面的实时流动。画面保持纯黑白灰度，不引入具象自然意象，重点呈现“从一个点触发的流动秩序”。</p>
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <span class="meta-label">System</span>
+                  <ul>
+                    <li>OSC + Blender Geometry Nodes</li>
+                    <li>Audio analysis / Akai APC mini</li>
+                  </ul>
+                </div>
+                <div class="detail-block">
+                  <span class="meta-label">Public Record</span>
+                  <div class="button-row"><a class="button" href="https://www.bilibili.com/video/BV12tRrYTEYB/" target="_blank" rel="noreferrer">BV12tRrYTEYB</a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="stage-card">
             <div>
-              <h1 class="project-title" id="project-title">Drop Flow | 滴流系列</h1>
-              <p class="project-subtitle" id="project-subtitle">空间生成 / 实时音画 / 沉浸式图像 / 感知迁移</p>
-            </div>
-            <p id="project-intro">
-              Drop Flow 是围绕空间生成、实时音画互动、身体表演与图像外溢展开的长期系列。它不把影像只看作屏幕内容，而是把声音、身体、观看位置、空间尺度和显示介质一起组织成可进入的状态。
-            </p>
-            <div class="meta-grid">
-              <div class="meta-item">
-                <label id="meta-time-label">时间</label>
-                <strong id="meta-time">2024 - 至今</strong>
+              <div class="stage-image">
+                <img src="../assets/drop-flow/optimized/ufo-cover.webp" alt="Drop Flow UFO Terminal" loading="lazy" decoding="async" />
               </div>
-              <div class="meta-item">
-                <label id="meta-line-label">主线</label>
-                <strong id="meta-line">空间生成</strong>
-              </div>
-              <div class="meta-item">
-                <label id="meta-forms-label">形式</label>
-                <strong id="meta-forms">现场演出 / 沉浸式大屏 / VR / 空间样本</strong>
-              </div>
-              <div class="meta-item">
-                <label id="meta-node-label">公开节点</label>
-                <strong id="meta-node">UFO Terminal / 杭州双年展</strong>
+              <div class="thumb-row">
+                <img src="../assets/drop-flow/optimized/ufo-stage-01.webp" alt="UFO Terminal stage 1" loading="lazy" decoding="async" />
+                <img src="../assets/drop-flow/optimized/ufo-stage-02.webp" alt="UFO Terminal stage 2" loading="lazy" decoding="async" />
+                <img src="../assets/drop-flow/optimized/ufo-stage-03.webp" alt="UFO Terminal stage 3" loading="lazy" decoding="async" />
               </div>
             </div>
+            <div class="stage-copy">
+              <div class="stage-meta"><span>2025.04-05</span><span>UFO Terminal</span><span>Internal site</span></div>
+              <h3 data-lang-zh="UFO Terminal 现场实验" data-lang-en="UFO Terminal Site Experiment">UFO Terminal 现场实验</h3>
+              <p data-lang-zh="这一阶段在上海 UFO Terminal 的真实空间里建立三幕结构：初始脉冲、边界消融、高斯点云数字花园。作品以环形屏、空间声场、体积雾和实时生成系统构成现场关系，每一次演出都会生成不同的视觉状态。" data-lang-en="This phase builds a three-act structure inside UFO Terminal in Shanghai: initial pulse, boundary dissolution and Gaussian-splat digital garden. Circular screens, spatial audio, haze and realtime generation form the site relation, with each performance producing a different visual state.">这一阶段在上海 UFO Terminal 的真实空间里建立三幕结构：初始脉冲、边界消融、高斯点云数字花园。作品以环形屏、空间声场、体积雾和实时生成系统构成现场关系，每一次演出都会生成不同的视觉状态。</p>
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <span class="meta-label">Crew</span>
+                  <ul>
+                    <li data-lang-zh="视觉 / 场景：钱誉文；电子音乐：徐昊" data-lang-en="Visual / scene: Yuwen Qian; music: Hao Xu">视觉 / 场景：钱誉文；电子音乐：徐昊</li>
+                    <li data-lang-zh="视觉内容：黄敏萱；交互装置：许思慧" data-lang-en="Visual content: Minxuan Huang; installation: Sihui Xu">视觉内容：黄敏萱；交互装置：许思慧</li>
+                  </ul>
+                </div>
+                <div class="detail-block">
+                  <span class="meta-label">Records</span>
+                  <div class="button-row">
+                    <a class="button primary" href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer">BV1PREczgEzC</a>
+                    <a class="button" href="https://www.bilibili.com/video/BV1e5L4zQEz6/" target="_blank" rel="noreferrer">BV1e5L4zQEz6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="stage-card">
+            <div class="stage-image">
+              <img src="../assets/drop-flow/optimized/rooms719-collection.webp" alt="Rooooooom719 Dropflow Collection spatial sample" loading="lazy" decoding="async" />
+            </div>
+            <div class="stage-copy">
+              <div class="stage-meta"><span>2025.07</span><span>Rooooooom719</span><span>Performance</span></div>
+              <h3 data-lang-zh="Rooooooom719 音画现场" data-lang-en="Rooooooom719 Audiovisual Live">Rooooooom719 音画现场</h3>
+              <p data-lang-zh="Rooooooom719 让前一阶段的实时系统进入公开演出结构。视觉继续处理 360 度包裹感、现场光影和被注视的身体经验，同时把团队成员的图像、空间资料与拼贴结构整理为可浏览的空间样本。" data-lang-en="Rooooooom719 places the previous realtime system into a public performance structure. The visual system continues to work with 360-degree spatial wrapping, live light and the bodily experience of being watched, while team images and site materials are also organized into a browseable spatial sample.">Rooooooom719 让前一阶段的实时系统进入公开演出结构。视觉继续处理 360 度包裹感、现场光影和被注视的身体经验，同时把团队成员的图像、空间资料与拼贴结构整理为可浏览的空间样本。</p>
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <span class="meta-label">Crew</span>
+                  <ul>
+                    <li data-lang-zh="视觉 / 场景：钱誉文；视觉内容：马逍遥" data-lang-en="Visual / scene: Yuwen Qian; visual content: Xiaoyao Ma">视觉 / 场景：钱誉文；视觉内容：马逍遥</li>
+                    <li data-lang-zh="电子音乐：徐昊；声光装置：许思慧" data-lang-en="Music: Hao Xu; sound-light installation: Sihui Xu">电子音乐：徐昊；声光装置：许思慧</li>
+                  </ul>
+                </div>
+                <div class="detail-block">
+                  <span class="meta-label">Records</span>
+                  <div class="button-row">
+                    <a class="button primary" href="https://www.bilibili.com/video/BV1HZgBzWEre/" target="_blank" rel="noreferrer">BV1HZgBzWEre</a>
+                    <a class="button" href="https://www.bilibili.com/video/BV15MD1BGEN5/" target="_blank" rel="noreferrer">BV15MD1BGEN5</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="stage-card">
+            <div>
+              <div class="stage-image">
+                <img src="../assets/drop-flow/optimized/hero-hangzhou-performance.webp" alt="Drop Flow Hangzhou Biennale opening performance" loading="lazy" decoding="async" />
+              </div>
+              <div class="thumb-row">
+                <img src="../assets/drop-flow/optimized/hangzhou-video-cover.webp" alt="Hangzhou Biennale video cover" loading="lazy" decoding="async" />
+                <img src="../assets/drop-flow/optimized/hangzhou-group-photo.webp" alt="Hangzhou Biennale group photo" loading="lazy" decoding="async" />
+                <img src="../assets/drop-flow/optimized/luminous-festival-poster.webp" alt="Luminous Flow poster" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="stage-copy">
+              <div class="stage-meta"><span>2025.09-11</span><span>Public presentation</span><span>Hangzhou / Chongqing</span></div>
+              <h3 data-lang-zh="竞赛、杭州双年展与流光绘影" data-lang-en="Competition, Hangzhou Biennale and Luminous Flow">竞赛、杭州双年展与流光绘影</h3>
+              <p data-lang-zh="作品进入更完整的公共艺术语境：杭州国际电子音乐作曲比赛 C 组一等奖、首届中国（杭州）艺术与科技国际双年展开幕式展演、2025“流光绘影”光影科技艺术节优秀作品奖。杭州现场整合 17000mm × 5000mm 沉浸式大屏、身体表演、VR 头显与球形全景视频。" data-lang-en="The work enters a broader public art context: First Prize in Group C at the Hangzhou International Electronic Music Composition Competition, the opening performance of the China Hangzhou Art and Technology Biennale, and an Excellent Work Award at the 2025 Luminous Flow Light and Technology Art Festival. The Hangzhou presentation combines a 17000mm × 5000mm immersive screen, bodily performance, VR headset and spherical panoramic video.">作品进入更完整的公共艺术语境：杭州国际电子音乐作曲比赛 C 组一等奖、首届中国（杭州）艺术与科技国际双年展开幕式展演、2025“流光绘影”光影科技艺术节优秀作品奖。杭州现场整合 17000mm × 5000mm 沉浸式大屏、身体表演、VR 头显与球形全景视频。</p>
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <span class="meta-label">Public Context</span>
+                  <ul>
+                    <li data-lang-zh="杭州余杭美术馆开幕式展演" data-lang-en="Opening performance at Yuhang Art Museum, Hangzhou">杭州余杭美术馆开幕式展演</li>
+                    <li data-lang-zh="重庆开埠遗址公园光影科技艺术节" data-lang-en="Light and technology art festival at Chongqing Opening Port Heritage Park">重庆开埠遗址公园光影科技艺术节</li>
+                  </ul>
+                </div>
+                <div class="detail-block">
+                  <span class="meta-label">Record</span>
+                  <div class="button-row"><a class="button primary" href="https://www.bilibili.com/video/BV1w1LMzUEUZ/" target="_blank" rel="noreferrer">BV1w1LMzUEUZ</a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="stage-card">
+            <div class="stage-image">
+              <img src="../assets/drop-flow/optimized/hangzhou-video-cover.webp" alt="Drop Flow spatial continuation" loading="lazy" decoding="async" />
+            </div>
+            <div class="stage-copy">
+              <div class="stage-meta"><span>2026</span><span>Spatial prototype</span><span>OpenXR / realtime engine</span></div>
+              <h3 data-lang-zh="实时引擎与空间交互方向" data-lang-en="Realtime Engine and Spatial Interaction">实时引擎与空间交互方向</h3>
+              <p data-lang-zh="后续方向把作品从单向播放的视听内容，推向可进入、可游走、可多人共在的数字空间。实时引擎、OpenXR 和头显设备不只是新的播放介质，而是重新测试身体移动、观看方向与图像生成之间的关系。" data-lang-en="The ongoing direction moves the work from one-way audiovisual playback toward an enterable, walkable, multi-user digital space. Realtime engines, OpenXR and head-mounted displays are not simply new playback media; they test the relation between body movement, viewing direction and image generation again.">后续方向把作品从单向播放的视听内容，推向可进入、可游走、可多人共在的数字空间。实时引擎、OpenXR 和头显设备不只是新的播放介质，而是重新测试身体移动、观看方向与图像生成之间的关系。</p>
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <span class="meta-label">Direction</span>
+                  <ul>
+                    <li data-lang-zh="实时渲染、空间漫游、头显观看" data-lang-en="Realtime rendering, spatial roaming, headset viewing">实时渲染、空间漫游、头显观看</li>
+                    <li data-lang-zh="观众移动与视觉结构实时响应" data-lang-en="Realtime response between viewer movement and visual structure">观众移动与视觉结构实时响应</li>
+                  </ul>
+                </div>
+                <div class="detail-block">
+                  <span class="meta-label">Records</span>
+                  <div class="button-row">
+                    <a class="button primary" href="https://www.bilibili.com/video/BV1vJe5zvEL3/" target="_blank" rel="noreferrer">BV1vJe5zvEL3</a>
+                    <a class="button" href="https://www.bilibili.com/video/BV1McerzYEiC/" target="_blank" rel="noreferrer">BV1McerzYEiC</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="media">
+      <div class="container">
+        <div class="eyebrow">Media Records</div>
+        <h2 class="section-title" data-lang-zh="媒体记录" data-lang-en="Media Records">媒体记录</h2>
+        <p class="section-intro" data-lang-zh="这些公开视频和图像是进入作品的主要入口。页面保留每条材料的现场身份，让不同阶段的图片和文件不再混在一起。" data-lang-en="These public videos and images are the main entries into the work. Each item keeps its site identity so images and files from different stages remain legible.">这些公开视频和图像是进入作品的主要入口。页面保留每条材料的现场身份，让不同阶段的图片和文件不再混在一起。</p>
+
+        <div class="media-grid">
+          <a class="media-card" href="https://www.bilibili.com/video/BV12tRrYTEYB/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/prototype-cover.webp" alt="Drop Flow prototype media" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV12tRrYTEYB</span>
+              <h3 data-lang-zh="原型技术验证" data-lang-en="Prototype Test">原型技术验证</h3>
+              <p data-lang-zh="实时音画系统的早期公开记录。" data-lang-en="An early public record of the realtime audiovisual system.">实时音画系统的早期公开记录。</p>
+            </div>
+          </a>
+          <a class="media-card" href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/ufo-cover.webp" alt="Drop Flow UFO media" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV1PREczgEzC</span>
+              <h3>UFO Terminal</h3>
+              <p data-lang-zh="上海 UFO Terminal 现场实录。" data-lang-en="Live record from UFO Terminal in Shanghai.">上海 UFO Terminal 现场实录。</p>
+            </div>
+          </a>
+          <a class="media-card" href="https://www.bilibili.com/video/BV1HZgBzWEre/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/rooms719-collection.webp" alt="Rooooooom719 media" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV1HZgBzWEre</span>
+              <h3>Rooooooom719</h3>
+              <p data-lang-zh="公开音画现场与排练状态。" data-lang-en="Public audiovisual live and rehearsal state.">公开音画现场与排练状态。</p>
+            </div>
+          </a>
+          <a class="media-card" href="https://www.bilibili.com/video/BV15MD1BGEN5/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/ufo-stage-02.webp" alt="360 immersive environment" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV15MD1BGEN5</span>
+              <h3 data-lang-zh="360° 沉浸环境" data-lang-en="360° Immersive Environment">360° 沉浸环境</h3>
+              <p data-lang-zh="从屏幕内容转向包裹式空间观看。" data-lang-en="From screen content to wrapped spatial viewing.">从屏幕内容转向包裹式空间观看。</p>
+            </div>
+          </a>
+          <a class="media-card" href="https://www.bilibili.com/video/BV1w1LMzUEUZ/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/hangzhou-video-cover.webp" alt="Hangzhou Biennale media" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV1w1LMzUEUZ</span>
+              <h3 data-lang-zh="杭州双年展" data-lang-en="Hangzhou Biennale">杭州双年展</h3>
+              <p data-lang-zh="公共展陈语境与身体表演段落。" data-lang-en="Public exhibition context and bodily performance.">公共展陈语境与身体表演段落。</p>
+            </div>
+          </a>
+          <article class="media-card">
+            <img src="../assets/drop-flow/optimized/luminous-award-certificate.webp" alt="Luminous Flow award certificate" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">2025 Luminous Flow</span>
+              <h3 data-lang-zh="流光绘影优秀作品奖" data-lang-en="Luminous Flow Award">流光绘影优秀作品奖</h3>
+              <p data-lang-zh="重庆光影科技艺术节的公开成果证明。" data-lang-en="Public outcome proof from the Chongqing light and technology art festival.">重庆光影科技艺术节的公开成果证明。</p>
+            </div>
+          </article>
+          <a class="media-card" href="https://www.bilibili.com/video/BV1vJe5zvEL3/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/hero-hangzhou-performance.webp" alt="Drop Flow spatial direction media" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV1vJe5zvEL3</span>
+              <h3>dropflow3.3</h3>
+              <p data-lang-zh="空间方向的阶段性记录。" data-lang-en="A stage record for the spatial direction.">空间方向的阶段性记录。</p>
+            </div>
+          </a>
+          <a class="media-card" href="https://www.bilibili.com/video/BV1McerzYEiC/" target="_blank" rel="noreferrer">
+            <img src="../assets/drop-flow/optimized/hangzhou-group-photo.webp" alt="OpenXR realtime rendering media" loading="lazy" decoding="async" />
+            <div class="media-copy">
+              <span class="meta-label">BV1McerzYEiC</span>
+              <h3>OpenXR realtime</h3>
+              <p data-lang-zh="Blender OpenXR 与实时渲染测试。" data-lang-en="Blender OpenXR and realtime rendering test.">Blender OpenXR 与实时渲染测试。</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Notes</div>
+        <h2 class="section-title" data-lang-zh="现场笔记" data-lang-en="Notes from the Work">现场笔记</h2>
+        <p class="section-intro" data-lang-zh="这些文字来自作品归档中的创作说明，整理到页面中作为正式阅读内容。" data-lang-en="These notes are drawn from the work archive and edited into the page as formal reading material.">这些文字来自作品归档中的创作说明，整理到页面中作为正式阅读内容。</p>
+        <div class="notes-grid">
+          <article class="note-card">
+            <h3 data-lang-zh="Drop 之后" data-lang-en="After the Drop">Drop 之后</h3>
+            <p data-lang-zh="作品的核心原点不是电子乐常见的峰值爆发，而是 drop 之后的空缺与平静。声音从一滴水开始，画面从一个点开始，二者共同进入持续的流动。" data-lang-en="The core is not the common peak explosion of electronic music, but the vacancy and calm after the drop. Sound begins from one drop, image begins from one point, and both enter a continued flow.">作品的核心原点不是电子乐常见的峰值爆发，而是 drop 之后的空缺与平静。声音从一滴水开始，画面从一个点开始，二者共同进入持续的流动。</p>
+          </article>
+          <article class="note-card">
+            <h3 data-lang-zh="屏幕作为光学引擎" data-lang-en="Screen as Optical Engine">屏幕作为光学引擎</h3>
+            <p data-lang-zh="UFO 阶段的关键不是增加屏幕数量，而是让侧屏的影子、高光和环境倒影与主画面形成透视关系。屏幕边界被模糊后，图像开始像物体一样进入现实空间。" data-lang-en="The key in the UFO phase is not adding more screens, but aligning side-screen shadows, highlights and reflections with the main image. Once the screen boundary is softened, the image begins to enter real space like an object.">UFO 阶段的关键不是增加屏幕数量，而是让侧屏的影子、高光和环境倒影与主画面形成透视关系。屏幕边界被模糊后，图像开始像物体一样进入现实空间。</p>
+          </article>
+          <article class="note-card">
+            <h3 data-lang-zh="扫描素材与数字自然" data-lang-en="Scans and Digital Nature">扫描素材与数字自然</h3>
+            <p data-lang-zh="高斯点云数字花园来自对真实自然片段的扫描与转译。它不是替代真实自然，而是把旅行、采样和记忆变成现场音画系统可继续调度的材料。" data-lang-en="The Gaussian-splat digital garden comes from scanning and translating fragments of real nature. It does not replace nature; it turns travel, sampling and memory into material that can be driven inside a live audiovisual system.">高斯点云数字花园来自对真实自然片段的扫描与转译。它不是替代真实自然，而是把旅行、采样和记忆变成现场音画系统可继续调度的材料。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Spatial Sample</div>
+        <h2 class="section-title">Dropflow Collection / Rooooooom719</h2>
+        <p class="section-intro" data-lang-zh="一部分团队阶段素材被整理为空间样本，让 Drop Flow 不只停留在视频记录中，也可以作为网页中的空间对象被浏览。" data-lang-en="Part of the team-stage material has been organized as a spatial sample, so Drop Flow does not only remain as video documentation but can be browsed as a web-based spatial object.">一部分团队阶段素材被整理为空间样本，让 Drop Flow 不只停留在视频记录中，也可以作为网页中的空间对象被浏览。</p>
+        <div class="viewer-grid">
+          <div class="viewer-frame">
+            <iframe allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=36db89a4" title="Dropflow Collection / Rooooooom719" loading="lazy"></iframe>
+          </div>
+          <article class="viewer-card">
+            <h3 data-lang-zh="空间样本" data-lang-en="Spatial Sample">空间样本</h3>
+            <p data-lang-zh="这个样本把成员影像、现场资料和拼贴结构转成可网页嵌入的空间入口。它与公开视频共同构成 Drop Flow 在网页中的观看方式。" data-lang-en="This sample turns member images, site material and collage structure into a web-embeddable spatial entry. Together with the public videos, it forms the web viewing mode for Drop Flow.">这个样本把成员影像、现场资料和拼贴结构转成可网页嵌入的空间入口。它与公开视频共同构成 Drop Flow 在网页中的观看方式。</p>
             <div class="button-row">
-              <a href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer" class="button primary" id="hero-video">观看录像</a>
-              <a href="#versions" class="button" id="hero-versions">浏览系列</a>
+              <a class="button primary" href="https://superspl.at/scene/36db89a4" target="_blank" rel="noreferrer" data-lang-zh="打开空间样本" data-lang-en="Open Spatial Sample">打开空间样本</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="versions">
-      <div class="container">
-        <h2 class="section-title" id="versions-title">系列版本</h2>
-        <p class="section-intro" id="versions-intro">Drop Flow 更接近一个持续演化的作品线：从实时音画原型，到创作营现场、空间样本、公共展陈与后续空间计算路径。</p>
-        <div class="rail-wrap">
-          <div class="rail">
-            <article class="card">
-              <img src="../assets/home/featured-dropflow-main.jpg" alt="Drop Flow series" />
-              <div class="card-copy">
-                <span class="card-label">Series</span>
-                <h3>Drop Flow</h3>
-                <p>作为系列核心，它把实时音画、空间迁移和数字自然叙事放进同一条作品线。</p>
-              </div>
-            </article>
-            <article class="card">
-              <img src="../assets/home/hero-dropflow-ufo-2025.jpeg" alt="Drop Flow UFO Terminal" />
-              <div class="card-copy">
-                <span class="card-label">Live Experiment</span>
-                <h3>UFO Terminal</h3>
-                <p>创作营与现场实验版本，强调实时生成、声音反馈和现场环境之间的关系。</p>
-              </div>
-            </article>
-            <article class="card">
-              <img src="../assets/public-nodes/dropflow-hangzhou.jpg" alt="Drop Flow Hangzhou Biennale" />
-              <div class="card-copy">
-                <span class="card-label">Public Presentation</span>
-                <h3>杭州双年展开幕节点</h3>
-                <p>沉浸式大屏、身体表演与 VR 头显内容共同构成的公共呈现版本。</p>
-              </div>
-            </article>
-            <article class="card">
-              <img src="../assets/gaussian-scenes/dropflow-collection-rooms719.webp" alt="Dropflow Collection Rooooooom719" />
-              <div class="card-copy">
-                <span class="card-label">Spatial Sample</span>
-                <h3>Rooooooom719</h3>
-                <p>把团队阶段素材组织成可浏览的空间样本，作为视频之外的进入方式。</p>
-              </div>
-            </article>
-            <article class="card">
-              <img src="../assets/home/featured-dropflow-hangzhou-biennale-scene.jpg" alt="Digital Derive" />
-              <div class="card-copy">
-                <span class="card-label">Award Node</span>
-                <h3>Dérive / 双城记</h3>
-                <p>带有奖项背书的城市扫描与空间叙事实践，并延伸到 Apple Vision Pro 的呈现路径。</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title" id="video-title">观看</h2>
-        <p class="section-intro" id="video-intro">先从现场录像进入，再回到系列版本和空间样本。</p>
-        <div class="video-frame">
-          <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114501647078029&bvid=BV1PREczgEzC&cid=29946743716&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="Drop Flow Bilibili video"></iframe>
-        </div>
-        <div class="button-row">
-          <a href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer" class="button primary" id="video-main-link">完整录像</a>
-          <a href="https://www.bilibili.com/video/BV1HZgBzWEre/" target="_blank" rel="noreferrer" class="button" id="video-room-link">Rooooooom719 排练现场</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title" id="samples-title">空间样本</h2>
-        <p class="section-intro" id="samples-intro">Drop Flow 的一部分材料被整理为可浏览的空间对象，用来承接网页展示、空间观看和后续 XR 路径。</p>
-        <div class="sample-grid">
-          <div class="sample-viewer">
-            <iframe allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=36db89a4" title="Dropflow Collection / Rooooooom719"></iframe>
-          </div>
-          <div class="sample-copy">
-            <h3 id="sample-heading">Dropflow Collection / Rooooooom719</h3>
-            <p id="sample-body">这个空间样本来自 Drop Flow 团队项目阶段素材。它把成员影像、现场资料和拼贴结构转成可网页嵌入的空间入口，让系列不只停留在视频记录里。</p>
-            <div class="button-row">
-              <a href="https://superspl.at/scene/36db89a4" target="_blank" rel="noreferrer" class="button primary" id="sample-link">打开空间样本</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title" id="timeline-title">公开轨迹</h2>
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="timeline-date">2024</span>
-            <h3>Dérive / 双城记</h3>
-            <p>从城市扫描与空间叙事出发，形成 Drop Flow 方向中的奖项节点和 Vision Pro 呈现线索。</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">2025</span>
-            <h3>UFO Terminal</h3>
-            <p>以现场实验和创作营机制推进实时生成、音画反馈和环境测试。</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">2025</span>
-            <h3>杭州双年展开幕节点</h3>
-            <p>把沉浸式大屏、身体表演和 VR 头显内容整合为公共展陈版本。</p>
           </article>
         </div>
       </div>
@@ -568,12 +997,18 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title" id="links-title">入口</h2>
-        <div class="button-row">
-          <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/drop-flow-series/README.md" target="_blank" rel="noreferrer" class="button" id="series-doc-link">系列文档</a>
-          <a href="https://github.com/ewanqian/portfolio/blob/main/projects/drop-flow-visual-2025.md" target="_blank" rel="noreferrer" class="button" id="project-doc-link">项目文档</a>
-          <a href="../index.html#/works" class="button" id="works-link">返回作品选集</a>
-        </div>
+        <div class="eyebrow">Sources</div>
+        <h2 class="section-title" data-lang-zh="资料入口" data-lang-en="Sources">资料入口</h2>
+        <p class="section-intro" data-lang-zh="页面中的媒体来自本地归档、公开影像和空间样本。更完整的项目说明仍保留在作品文档中。" data-lang-en="The media on this page comes from local archive material, public video records and the spatial sample. Deeper project notes remain in the work documents.">页面中的媒体来自本地归档、公开影像和空间样本。更完整的项目说明仍保留在作品文档中。</p>
+        <article class="repo-card">
+          <h3 data-lang-zh="继续阅读" data-lang-en="Read Further">继续阅读</h3>
+          <div class="source-list">
+            <a href="https://github.com/ewanqian/portfolio/blob/main/visual-arts/drop-flow-series/README.md" target="_blank" rel="noreferrer">Portfolio / Drop Flow Series</a>
+            <a href="https://www.bilibili.com/video/BV1PREczgEzC/" target="_blank" rel="noreferrer">Bilibili / UFO Terminal Record</a>
+            <a href="https://superspl.at/scene/36db89a4" target="_blank" rel="noreferrer">Supersplat / Dropflow Collection</a>
+            <a href="../index.html#/works" data-lang-zh="返回作品选集" data-lang-en="Back to Works">返回作品选集</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -585,78 +1020,12 @@
   <script>
     window.PORTFOLIO_LEGACY_I18N = {
       zh: {
-        title: 'Drop Flow | 滴流系列 - Ewan Qian Portfolio',
-        description: 'Drop Flow 滴流系列围绕空间生成、实时音画、沉浸式图像、身体表演与感知迁移展开。',
-        ops: [
-          { selector: '#nav-home', text: '返回作品选集' },
-          { selector: '#back-link', text: '返回作品选集' },
-          { selector: '#project-title', text: 'Drop Flow | 滴流系列' },
-          { selector: '#project-subtitle', text: '空间生成 / 实时音画 / 沉浸式图像 / 感知迁移' },
-          { selector: '#project-intro', text: 'Drop Flow 是围绕空间生成、实时音画互动、身体表演与图像外溢展开的长期系列。它不把影像只看作屏幕内容，而是把声音、身体、观看位置、空间尺度和显示介质一起组织成可进入的状态。' },
-          { selector: '#meta-time-label', text: '时间' },
-          { selector: '#meta-time', text: '2024 - 至今' },
-          { selector: '#meta-line-label', text: '主线' },
-          { selector: '#meta-line', text: '空间生成' },
-          { selector: '#meta-forms-label', text: '形式' },
-          { selector: '#meta-forms', text: '现场演出 / 沉浸式大屏 / VR / 空间样本' },
-          { selector: '#meta-node-label', text: '公开节点' },
-          { selector: '#meta-node', text: 'UFO Terminal / 杭州双年展' },
-          { selector: '#hero-video', text: '观看录像' },
-          { selector: '#hero-versions', text: '浏览系列' },
-          { selector: '#versions-title', text: '系列版本' },
-          { selector: '#versions-intro', text: 'Drop Flow 更接近一个持续演化的作品线：从实时音画原型，到创作营现场、空间样本、公共展陈与后续空间计算路径。' },
-          { selector: '#video-title', text: '观看' },
-          { selector: '#video-intro', text: '先从现场录像进入，再回到系列版本和空间样本。' },
-          { selector: '#video-main-link', text: '完整录像' },
-          { selector: '#video-room-link', text: 'Rooooooom719 排练现场' },
-          { selector: '#samples-title', text: '空间样本' },
-          { selector: '#samples-intro', text: 'Drop Flow 的一部分材料被整理为可浏览的空间对象，用来承接网页展示、空间观看和后续 XR 路径。' },
-          { selector: '#sample-heading', text: 'Dropflow Collection / Rooooooom719' },
-          { selector: '#sample-body', text: '这个空间样本来自 Drop Flow 团队项目阶段素材。它把成员影像、现场资料和拼贴结构转成可网页嵌入的空间入口，让系列不只停留在视频记录里。' },
-          { selector: '#sample-link', text: '打开空间样本' },
-          { selector: '#timeline-title', text: '公开轨迹' },
-          { selector: '#links-title', text: '入口' },
-          { selector: '#series-doc-link', text: '系列文档' },
-          { selector: '#project-doc-link', text: '项目文档' },
-          { selector: '#works-link', text: '返回作品选集' }
-        ]
+        title: 'Drop Flow | 滴流 - Ewan Qian Portfolio',
+        description: 'Drop Flow 滴流：围绕空间生成、实时音画、沉浸式图像、身体表演与感知迁移展开的系列作品。'
       },
       en: {
         title: 'Drop Flow - Ewan Qian Portfolio',
-        description: 'Drop Flow is an ongoing series around spatial generation, realtime audiovisual systems, immersive imaging, bodily performance, and perceptual migration.',
-        ops: [
-          { selector: '#nav-home', text: 'Back to Works' },
-          { selector: '#back-link', text: 'Back to Works' },
-          { selector: '#project-title', text: 'Drop Flow' },
-          { selector: '#project-subtitle', text: 'Spatial Generation / Realtime Audiovisual / Immersive Imaging / Perceptual Migration' },
-          { selector: '#project-intro', text: 'Drop Flow is an ongoing series around spatial generation, realtime audiovisual interaction, bodily performance, and the moment when images begin to leave the screen. It treats sound, bodies, viewing position, scale, and display media as parts of one enterable state.' },
-          { selector: '#meta-time-label', text: 'Time' },
-          { selector: '#meta-time', text: '2024 - present' },
-          { selector: '#meta-line-label', text: 'Line' },
-          { selector: '#meta-line', text: 'Spatial Generation' },
-          { selector: '#meta-forms-label', text: 'Forms' },
-          { selector: '#meta-forms', text: 'Live audiovisual / immersive screen / VR / spatial sample' },
-          { selector: '#meta-node-label', text: 'Public Nodes' },
-          { selector: '#meta-node', text: 'UFO Terminal / Hangzhou Biennale' },
-          { selector: '#hero-video', text: 'Watch Video' },
-          { selector: '#hero-versions', text: 'Browse Series' },
-          { selector: '#versions-title', text: 'Series Versions' },
-          { selector: '#versions-intro', text: 'Drop Flow behaves as an evolving project line: from realtime audiovisual prototypes to live experiments, spatial samples, public presentation, and later spatial-computing paths.' },
-          { selector: '#video-title', text: 'Watch' },
-          { selector: '#video-intro', text: 'Start from the live record, then return to the series versions and spatial sample.' },
-          { selector: '#video-main-link', text: 'Full Video' },
-          { selector: '#video-room-link', text: 'Rooooooom719 Rehearsal' },
-          { selector: '#samples-title', text: 'Spatial Sample' },
-          { selector: '#samples-intro', text: 'Part of Drop Flow has been organized as a browseable spatial object for web presentation, spatial viewing, and later XR paths.' },
-          { selector: '#sample-heading', text: 'Dropflow Collection / Rooooooom719' },
-          { selector: '#sample-body', text: 'This spatial sample comes from material produced during a Drop Flow team-project phase. It turns member images, site material, and collage structure into a web-embeddable spatial entry, so the series does not only exist as video documentation.' },
-          { selector: '#sample-link', text: 'Open Spatial Sample' },
-          { selector: '#timeline-title', text: 'Public Trajectory' },
-          { selector: '#links-title', text: 'Entry Points' },
-          { selector: '#series-doc-link', text: 'Series Note' },
-          { selector: '#project-doc-link', text: 'Project Sheet' },
-          { selector: '#works-link', text: 'Back to Works' }
-        ]
+        description: 'Drop Flow: a series of works around spatial generation, realtime audiovisual systems, immersive imaging, bodily performance and perceptual migration.'
       }
     };
   </script>

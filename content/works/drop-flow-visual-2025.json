@@ -9,7 +9,7 @@
   "tags": ["drop-flow", "biennale", "immersive", "vr"],
   "coverImage": "featured-dropflow-hangzhou-biennale-scene.jpg",
   "image": "/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg",
-  "showOnHome": false,
+  "showOnHome": true,
   "relatedNodes": ["drop-flow-hangzhou-biennale"],
   "relatedWritings": ["drop-flow-note"],
   "displayModes": ["immersive screen", "VR headset", "body performance"],
@@ -30,5 +30,5 @@
       "url": "https://www.bilibili.com/video/BV1PREczgEzC/"
     }
   ],
-  "priority": 10
+  "priority": 1
 }

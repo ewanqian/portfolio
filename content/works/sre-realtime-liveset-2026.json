@@ -1,0 +1,29 @@
+{
+  "id": "sre-realtime-liveset-2026",
+  "title": "SRE / UFO Terminal Realtime Liveset",
+  "subtitle": "Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 的 2026 UFO Terminal 创作营现场单元",
+  "years": "2026",
+  "type": "live-experiment",
+  "summary": "SRE 是 Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 为 2026 UFO Terminal 创作营准备的实时现场演出单元。当前版本是一个长期实际演出系统的 demo：以较低实时分辨率维持高帧率运行，再通过像素化、非原生分辨率的投射或映射进入更高分辨率现场画布，并围绕 scar / glitch / pressure / blackout 状态与现场可控信号语法展开。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["ufo-terminal", "live", "realtime-visual", "collaboration", "ongoing"],
+  "coverImage": "sre-benchmark-all-visible.png",
+  "image": "/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.png",
+  "showOnHome": false,
+  "lifecycle": "active",
+  "relatedNodes": ["ufo-terminal"],
+  "relatedWritings": ["rehearsal-to-public-node", "viewer-specs-part-of-system"],
+  "displayModes": ["pixelated realtime canvas", "high-fps live visual", "live audiovisual", "Arena / Blender workflow"],
+  "analysisIds": ["sre-flat-liveset-framework"],
+  "sourceDocs": [
+    "works/sre-realtime-liveset.html",
+    "E:/Ewan/wip/2605 sre realtime liveset/analysis/sre_current_status.md",
+    "E:/Ewan/wip/2605 sre realtime liveset/analysis/sre_flat_liveset_frontdoor.md",
+    "E:/Ewan/Design/Shukai x Robakidze x Ewan/2026 UFO Terminal 创作营合作档案 Shukai x Robakidze x Ewan.html"
+  ],
+  "repoLink": "/portfolio/works/sre-realtime-liveset.html",
+  "links": [
+    { "text": "详情页", "url": "./works/sre-realtime-liveset.html" }
+  ],
+  "priority": 8
+}

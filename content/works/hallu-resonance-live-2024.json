@@ -1,0 +1,26 @@
+{
+  "id": "hallu-resonance-live-2024",
+  "title": "THE BOXX「幻觉共振」",
+  "subtitle": "沉浸式视听演出视觉执行",
+  "years": "2024",
+  "type": "immersive-live",
+  "summary": "在上海 THE BOXX 长方形沉浸式立方投影空间中参与现场视觉演出执行，与水门汀氛围音乐组合合作完成视听现场。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["the-boxx", "immersive-live", "projection", "audiovisual"],
+  "coverImage": "posterwall.jpg",
+  "image": "/portfolio/assets/home/posterwall.jpg",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["immersive projection", "live audiovisual", "spatial performance"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/hallu-resonance-live-2024.md"],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/hallu-resonance-live-2024.md",
+  "links": [
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/hallu-resonance-live-2024.md"
+    }
+  ],
+  "priority": 16
+}

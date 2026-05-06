@@ -1,5 +1,46 @@
 export default [
   {
+    "id": "ar-shenzhen-resort-2022",
+    "title": "AR 深圳计划",
+    "subtitle": "深圳光影艺术季 AR 作品",
+    "years": "2022",
+    "type": "ar-exhibition",
+    "summary": "参与深圳光影艺术季的 AR 艺术作品，以数字网络度假村的方式把虚拟空间、城市光影和公共艺术入口连接起来。",
+    "practiceLine": "perceptual-environments",
+    "tags": [
+      "ar",
+      "shenzhen",
+      "light-art",
+      "public-art"
+    ],
+    "coverImage": "archive-observation-clean.jpg",
+    "image": "/portfolio/assets/home/archive-observation-clean.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "AR public art",
+      "urban light festival",
+      "digital resort"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/ar-shenzhen-resort-2022.md"
+    ],
+    "repoLink": "https://glowshenzhen.com/index.php?c=show&id=52",
+    "links": [
+      {
+        "text": "公开活动信息",
+        "url": "https://glowshenzhen.com/index.php?c=show&id=52"
+      },
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/ar-shenzhen-resort-2022.md"
+      }
+    ],
+    "priority": 19
+  },
+  {
     "id": "derive-dual-city-2024",
     "title": "Dérive 双城记 / Digital Dérive",
     "subtitle": "带奖项背书的城市扫描与空间叙事实践",
@@ -137,7 +178,7 @@ export default [
     ],
     "coverImage": "featured-dropflow-hangzhou-biennale-scene.jpg",
     "image": "/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg",
-    "showOnHome": false,
+    "showOnHome": true,
     "relatedNodes": [
       "drop-flow-hangzhou-biennale"
     ],
@@ -168,7 +209,7 @@ export default [
         "url": "https://www.bilibili.com/video/BV1PREczgEzC/"
       }
     ],
-    "priority": 10
+    "priority": 1
   },
   {
     "id": "drop-flow",
@@ -185,7 +226,8 @@ export default [
     ],
     "coverImage": "featured-dropflow-main.jpg",
     "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
-    "showOnHome": true,
+    "showOnHome": false,
+    "lifecycle": "active",
     "relatedNodes": [
       "ufo-terminal",
       "drop-flow-hangzhou-biennale"
@@ -218,7 +260,7 @@ export default [
         "url": "https://www.bilibili.com/video/BV1PREczgEzC/"
       }
     ],
-    "priority": 0
+    "priority": 5
   },
   {
     "id": "ether-fragment-exhibit-2023",
@@ -256,6 +298,80 @@ export default [
       }
     ],
     "priority": 19
+  },
+  {
+    "id": "glance-thousand-install-2023",
+    "title": "安昌光影艺术季「一眼万千」",
+    "subtitle": "古桥地面投影视觉作品",
+    "years": "2023",
+    "type": "light-art-exhibition",
+    "summary": "参与安昌光影艺术季，在古桥地面投影语境中呈现视觉作品，作为早期公共光影项目节点进入作品库。",
+    "practiceLine": "perceptual-environments",
+    "tags": [
+      "anchang",
+      "light-art",
+      "projection",
+      "public-art"
+    ],
+    "coverImage": "archive-observation-clean.jpg",
+    "image": "/portfolio/assets/home/archive-observation-clean.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "ground projection",
+      "light-art festival",
+      "public environment"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/glance-thousand-install-2023.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/glance-thousand-install-2023.md",
+    "links": [
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/glance-thousand-install-2023.md"
+      }
+    ],
+    "priority": 22
+  },
+  {
+    "id": "hallu-resonance-live-2024",
+    "title": "THE BOXX「幻觉共振」",
+    "subtitle": "沉浸式视听演出视觉执行",
+    "years": "2024",
+    "type": "immersive-live",
+    "summary": "在上海 THE BOXX 长方形沉浸式立方投影空间中参与现场视觉演出执行，与水门汀氛围音乐组合合作完成视听现场。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "the-boxx",
+      "immersive-live",
+      "projection",
+      "audiovisual"
+    ],
+    "coverImage": "posterwall.jpg",
+    "image": "/portfolio/assets/home/posterwall.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "immersive projection",
+      "live audiovisual",
+      "spatial performance"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/hallu-resonance-live-2024.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/hallu-resonance-live-2024.md",
+    "links": [
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/hallu-resonance-live-2024.md"
+      }
+    ],
+    "priority": 16
   },
   {
     "id": "kashiwa-band-visual-2025",
@@ -349,6 +465,60 @@ export default [
       }
     ],
     "priority": 0
+  },
+  {
+    "id": "mke-terminal",
+    "title": "MKE / Kashiwa Audio-Visual Study",
+    "subtitle": "Kashiwa 现场之后的音频到空间流链研究",
+    "years": "2026",
+    "type": "research-extension",
+    "summary": "以 Mikael Lind 与 KASHIWA Daisuke 共同创作的未发布单曲为声音基础，整理项目 PDF、BlenderMCP、音频分析和 60fps 空间视觉演出框架。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "kashiwa",
+      "mke",
+      "blendermcp",
+      "audio-analysis",
+      "terminal",
+      "ongoing"
+    ],
+    "coverImage": "pdf-p02-01.jpg",
+    "image": "/portfolio/assets/mke-terminal/pdf-p02-01.jpg",
+    "showOnHome": false,
+    "lifecycle": "active",
+    "relatedNodes": [
+      "kashiwa-bo-live-shenzhen",
+      "ufo-terminal"
+    ],
+    "relatedWritings": [
+      "kashiwa-collab"
+    ],
+    "displayModes": [
+      "audio-to-spatial flowchain",
+      "BlenderMCP",
+      "terminal screen",
+      "60fps visualizer"
+    ],
+    "analysisIds": [
+      "kashiwa-mke-flowchain"
+    ],
+    "sourceDocs": [
+      "works/mke-terminal.html",
+      "assets/mke-terminal/MKE.pdf",
+      "E:/Ewan/wip/2605 kashiwa in terminal/analysis/site_package/kashiwa_mke_special_page_info_pack_20260507/README.md"
+    ],
+    "repoLink": "/portfolio/works/mke-terminal.html",
+    "links": [
+      {
+        "text": "详情页",
+        "url": "./works/mke-terminal.html"
+      },
+      {
+        "text": "原始 PDF",
+        "url": "./assets/mke-terminal/MKE.pdf"
+      }
+    ],
+    "priority": 11
   },
   {
     "id": "new-media-artist-simulator-2025",
@@ -484,6 +654,190 @@ export default [
     "priority": 14
   },
   {
+    "id": "rain-singapore-visual-2026",
+    "title": "Rain 新加坡跨年专场",
+    "subtitle": "SINGLAND FESTIVAL 2026 Opening 与演出动画视觉",
+    "years": "2026",
+    "type": "stage-visual",
+    "summary": "为 Rain / 郑智薰新加坡跨年专场及 SINGLAND FESTIVAL 2026 参与 Opening 动画、曲目动画视觉与舞台影像工程交付。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "stage-visual",
+      "concert",
+      "singland-festival",
+      "rain",
+      "opening-animation"
+    ],
+    "coverImage": "posterwall.jpg",
+    "image": "/portfolio/assets/home/posterwall.jpg",
+    "showOnHome": true,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "opening animation",
+      "concert screen",
+      "show visual",
+      "stage animation"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/rain-singapore-visual-2026.md"
+    ],
+    "repoLink": "https://hk.marinabaysands.com/entertainment/shows/singland-festival-rain.html",
+    "links": [
+      {
+        "text": "公开演出信息",
+        "url": "https://hk.marinabaysands.com/entertainment/shows/singland-festival-rain.html"
+      },
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/rain-singapore-visual-2026.md"
+      }
+    ],
+    "priority": 3
+  },
+  {
+    "id": "shanhaifusheng2-visual-2025",
+    "title": "爱丁堡《山海浮生II》",
+    "subtitle": "Focus China 舞台视觉制作",
+    "years": "2025",
+    "type": "stage-visual",
+    "summary": "为爱丁堡艺术节 Focus China《山海浮生II：八荒祈》参与舞台视觉制作与工程交付，连接海外演出语境与舞台影像执行。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "edinburgh",
+      "focus-china",
+      "stage-visual",
+      "shanhaifusheng"
+    ],
+    "coverImage": "posterwall.jpg",
+    "image": "/portfolio/assets/home/posterwall.jpg",
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "stage screen",
+      "touring performance",
+      "visual delivery"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/shanhaifusheng2-visual-2025.md"
+    ],
+    "repoLink": "https://www.prnewswire.co.uk/news-releases/2025-china-focus-returns-to-edinburgh-festivals-showcasing-cutting-edge-chinese-performing-arts-302526851.html",
+    "links": [
+      {
+        "text": "公开活动信息",
+        "url": "https://www.prnewswire.co.uk/news-releases/2025-china-focus-returns-to-edinburgh-festivals-showcasing-cutting-edge-chinese-performing-arts-302526851.html"
+      },
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/shanhaifusheng2-visual-2025.md"
+      }
+    ],
+    "priority": 15
+  },
+  {
+    "id": "sre-realtime-liveset-2026",
+    "title": "SRE / UFO Terminal Realtime Liveset",
+    "subtitle": "Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 的 2026 UFO Terminal 创作营现场单元",
+    "years": "2026",
+    "type": "live-experiment",
+    "summary": "SRE 是 Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 为 2026 UFO Terminal 创作营准备的实时现场演出单元。当前版本是一个长期实际演出系统的 demo：以较低实时分辨率维持高帧率运行，再通过像素化、非原生分辨率的投射或映射进入更高分辨率现场画布，并围绕 scar / glitch / pressure / blackout 状态与现场可控信号语法展开。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "ufo-terminal",
+      "live",
+      "realtime-visual",
+      "collaboration",
+      "ongoing"
+    ],
+    "coverImage": "sre-benchmark-all-visible.png",
+    "image": "/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.png",
+    "showOnHome": false,
+    "lifecycle": "active",
+    "relatedNodes": [
+      "ufo-terminal"
+    ],
+    "relatedWritings": [
+      "rehearsal-to-public-node",
+      "viewer-specs-part-of-system"
+    ],
+    "displayModes": [
+      "pixelated realtime canvas",
+      "high-fps live visual",
+      "live audiovisual",
+      "Arena / Blender workflow"
+    ],
+    "analysisIds": [
+      "sre-flat-liveset-framework"
+    ],
+    "sourceDocs": [
+      "works/sre-realtime-liveset.html",
+      "E:/Ewan/wip/2605 sre realtime liveset/analysis/sre_current_status.md",
+      "E:/Ewan/wip/2605 sre realtime liveset/analysis/sre_flat_liveset_frontdoor.md",
+      "E:/Ewan/Design/Shukai x Robakidze x Ewan/2026 UFO Terminal 创作营合作档案 Shukai x Robakidze x Ewan.html"
+    ],
+    "repoLink": "/portfolio/works/sre-realtime-liveset.html",
+    "links": [
+      {
+        "text": "详情页",
+        "url": "./works/sre-realtime-liveset.html"
+      }
+    ],
+    "priority": 8
+  },
+  {
+    "id": "timer-loading-access-2-2024",
+    "title": "TIMER / 加载权限2 展览节点",
+    "subtitle": "TIMER 系列的代表性公开节点",
+    "years": "2024",
+    "type": "public-presentation",
+    "summary": "TIMER 系列进入 UFO Terminal「加载...权限2」展览的公开节点，集中呈现时间结构、音画关系与环形沉浸屏幕实验。",
+    "practiceLine": "temporal-structure",
+    "tags": [
+      "timer",
+      "loading-access",
+      "exhibition",
+      "temporal-structure"
+    ],
+    "coverImage": "timer-loading-access-2-poster.jpg",
+    "image": "/portfolio/assets/home/timer-loading-access-2-poster.jpg",
+    "showOnHome": true,
+    "relatedNodes": [
+      "ufo-terminal"
+    ],
+    "relatedWritings": [
+      "timer-temporal",
+      "timer-not-sync"
+    ],
+    "displayModes": [
+      "exhibition screen",
+      "ring screen",
+      "audio-reactive visual"
+    ],
+    "analysisIds": [
+      "timer-core-series"
+    ],
+    "sourceDocs": [
+      "projects/timer-series-visual-2024.md",
+      "visual-arts/timer-series/README.md",
+      "works/timer.html"
+    ],
+    "repoLink": "/portfolio/works/timer.html",
+    "links": [
+      {
+        "text": "系列页面",
+        "url": "./works/timer.html"
+      },
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-series-visual-2024.md"
+      }
+    ],
+    "priority": 4
+  },
+  {
     "id": "timer-series-visual-2024",
     "title": "Timer 系列",
     "subtitle": "时间结构方向的公开展映与现场章节",
@@ -500,6 +854,7 @@ export default [
     "coverImage": "featured-timer-main.jpg",
     "image": "/portfolio/assets/home/featured-timer-main.jpg",
     "showOnHome": false,
+    "lifecycle": "active",
     "relatedNodes": [],
     "relatedWritings": [],
     "displayModes": [
@@ -543,7 +898,8 @@ export default [
     ],
     "coverImage": "featured-timer-main.jpg",
     "image": "/portfolio/assets/home/featured-timer-main.jpg",
-    "showOnHome": true,
+    "showOnHome": false,
+    "lifecycle": "active",
     "relatedNodes": [],
     "relatedWritings": [],
     "displayModes": [
@@ -569,7 +925,7 @@ export default [
         "url": "https://www.bilibili.com/video/BV1sWNWeVEVB/"
       }
     ],
-    "priority": 0
+    "priority": 7
   },
   {
     "id": "transit",
@@ -583,7 +939,8 @@ export default [
       "external-repo",
       "content-system",
       "portable-greenhouse",
-      "spatial-narrative"
+      "spatial-narrative",
+      "spatial-experience"
     ],
     "coverImage": "greenhouse-in-transit-mg17.png",
     "image": "/portfolio/assets/home/greenhouse-in-transit-mg17.png",
@@ -596,10 +953,13 @@ export default [
     "displayModes": [
       "portable greenhouse",
       "spatial narrative",
-      "repository bridge"
+      "repository bridge",
+      "spatial experience design"
     ],
     "analysisIds": [],
-    "sourceDocs": [],
+    "sourceDocs": [
+      "projects/flatland-mr-content-2025.md"
+    ],
     "repoLink": "https://ewanqian.github.io/Greenhouse-in-Transit/Archive/project-home-v2.html",
     "externalRepo": {
       "label": "Greenhouse in Transit",
@@ -609,7 +969,7 @@ export default [
     "portfolioTier": "external",
     "lifecycle": "active",
     "harborRole": "连接现实物件、空间叙事、网页入口与长期项目沉淀。",
-    "publicValue": "它把一个外部 GitHub 项目接入个人作品体系，让仓库、网页和现场物件保持同一个入口。",
+    "publicValue": "它把外部 GitHub 项目、网页入口、现场物件和前置空间体验研究接入同一个作品体系。",
     "links": [
       {
         "label": "Project Page",
@@ -621,5 +981,86 @@ export default [
       }
     ],
     "priority": 9
+  },
+  {
+    "id": "vrplay-hackathon-visual-2025",
+    "title": "VRplay WORLD REMIX XR 黑客松",
+    "subtitle": "XR 黑客松主视觉与活动视觉系统",
+    "years": "2025",
+    "type": "event-visual-system",
+    "summary": "为 WORLD REMIX XR 黑客松制作主视觉、动态与静态物料及周边视觉系统，把 XR 创作活动转化为一套更完整的视觉识别入口。",
+    "practiceLine": "perceptual-environments",
+    "tags": [
+      "xr",
+      "hackathon",
+      "visual-system",
+      "vrplay"
+    ],
+    "coverImage": "vrplay-world-remix-2025.jpg",
+    "image": "/portfolio/assets/home/vrplay-world-remix-2025.jpg",
+    "showOnHome": true,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "event identity",
+      "visual system",
+      "XR community"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/vrplay-hackathon-visual-2025.md"
+    ],
+    "repoLink": "https://www.vr-play.cn/rules.html",
+    "links": [
+      {
+        "text": "公开活动信息",
+        "url": "https://www.vr-play.cn/rules.html"
+      },
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-hackathon-visual-2025.md"
+      }
+    ],
+    "priority": 6
+  },
+  {
+    "id": "yujiayun-45ping-visual-2025",
+    "title": "余佳运「45㎡」个人演唱会",
+    "subtitle": "Opening 与舞台视觉制作",
+    "years": "2025",
+    "type": "stage-visual",
+    "summary": "为余佳运「45㎡」宁波站个人演唱会参与 Opening 与舞台视觉内容制作，包含地图 LED 与多面 PGM 联动的舞台视觉交付。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "stage-visual",
+      "concert",
+      "opening-visual"
+    ],
+    "coverImage": "posterwall.jpg",
+    "image": "/portfolio/assets/home/posterwall.jpg",
+    "showOnHome": true,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "opening visual",
+      "stage screen",
+      "multi-surface PGM"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/yujiayun-45ping-visual-2025.md"
+    ],
+    "repoLink": "https://m.yanchupiaowu.com/event?id=109005",
+    "links": [
+      {
+        "text": "公开演出信息",
+        "url": "https://m.yanchupiaowu.com/event?id=109005"
+      },
+      {
+        "text": "项目记录",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/yujiayun-45ping-visual-2025.md"
+      }
+    ],
+    "priority": 2
   }
 ];

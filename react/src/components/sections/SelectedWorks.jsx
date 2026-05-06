@@ -7,11 +7,13 @@ const workHighlights = {
   zh: {
     'drop-flow': '杭州双年展开幕与常设展呈现，获杭州国际电子音乐作曲比赛一等奖，并入选 2025「流光绘影」光影科技艺术节优秀作品。',
     kashiwa: '与 Kashiwa Daisuke、Yuki Murata 在 BO LIVE Shenzhen 完成专场视听合作，包含全息纱幕、裸眼 3D 与音画互动段落。',
+    'mke-terminal': '以 Mikael Lind 与 KASHIWA Daisuke 的未发布合作单曲为声音基础，整理 PDF、BlenderMCP 与 60fps 空间视觉演出框架。',
     timer: 'UFO Terminal「加载…创作营」支持创作，入选「加载…权限 2」展览，并获 ChinaGraph 2024 电子剧场优秀音乐作品二等奖。'
   },
   en: {
     'drop-flow': 'Publicly presented at the Hangzhou Biennale opening and permanent exhibition, awarded First Prize at the Hangzhou International Electronic Music Composition Competition, and selected for the 2025 “Luminous Currents” art-and-technology festival.',
     kashiwa: 'A special audiovisual collaboration with Kashiwa Daisuke and Yuki Murata at BO LIVE Shenzhen, combining holographic scrims, naked-eye 3D, and audiovisual interaction.',
+    'mke-terminal': 'An audio-visual study based on an unreleased Mikael Lind and KASHIWA Daisuke track, organizing the source PDF, BlenderMCP, and a 60fps spatial-visual framework.',
     timer: 'Developed through the UFO Terminal Loading Camp, selected for the “Loading… Permission 2” exhibition, and awarded Second Prize at ChinaGraph 2024 in the electronic theatre music category.'
   }
 }
@@ -29,8 +31,8 @@ function SelectedWorks() {
         <h2 className="section-title">{language === 'en' ? 'Selected Works' : '作品选集'}</h2>
         <p className="section-intro">
           {language === 'en'
-            ? 'The homepage keeps three works as primary entry points. Public nodes, research lines, and spatial samples continue further below.'
-            : '首页先保留三项最值得优先进入的代表作。更完整的公开节点、研究线和空间样本，会在下方继续展开。'}
+            ? 'The homepage keeps the primary work entries here. Public nodes, research lines, and spatial samples continue further below.'
+            : '首页先保留最值得优先进入的代表作入口。更完整的公开节点、研究线和空间样本，会在下方继续展开。'}
         </p>
         <div className="grid-3">
           {homepageWorks.map((work) => {

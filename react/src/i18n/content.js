@@ -40,6 +40,16 @@ const workTranslations = {
       subtitle: 'A live audiovisual collaboration with Kashiwa Daisuke',
       summary: 'A live audiovisual collaboration with Kashiwa Daisuke and Yuki Murata, combining haze, white-space depth, holographic scrims, naked-eye 3D, and audiovisual interaction.'
     },
+    'mke-terminal': {
+      title: 'MKE / Kashiwa Audio-Visual Study',
+      subtitle: 'Mikael Lind × KASHIWA Daisuke × Qian Yuwen',
+      summary: 'An audio-visual study based on an unreleased Mikael Lind and KASHIWA Daisuke track, organizing the source PDF, BlenderMCP, audio analysis, and a 60fps spatial-visual performance framework.'
+    },
+    'sre-realtime-liveset-2026': {
+      title: 'SRE / UFO Terminal Realtime Liveset',
+      subtitle: 'A 2026 UFO Terminal live unit by Shukai / Mark, Georgy Robakidze (RÖ), and Ewan Qian',
+      summary: 'An ongoing demo for a long-term live performance system: a low-resolution realtime buffer keeps the frame rate high, then enters a higher-resolution stage canvas through pixelated, non-native-resolution projection or mapping, with scar / glitch / pressure / blackout states and a compact live control grammar.'
+    },
     'new-media-artist-simulator-2025': {
       title: 'New Media Artist Simulator / Babel Bottle',
       subtitle: 'An exhibition node for a conceptual hypertext interaction work',
@@ -69,6 +79,46 @@ const workTranslations = {
       title: 'Greenhouse in Transit',
       subtitle: 'Portable greenhouse and spatial narrative entry',
       summary: 'A suitcase-based spatial narrative project that connects a portable greenhouse, misdelivered luggage, project pages, and a browser-based archive into one public entry.'
+    },
+    'yujiayun-45ping-visual-2025': {
+      title: 'Yu Jiayun 45㎡ Concert',
+      subtitle: 'Opening and stage visual production',
+      summary: 'Opening and stage visual production for Yu Jiayun 45㎡ Ningbo concert, including LED mapping and multi-surface PGM delivery.'
+    },
+    'rain-singapore-visual-2026': {
+      title: 'Rain Singapore New Year Show',
+      subtitle: 'SINGLAND FESTIVAL 2026 opening and show animation visuals',
+      summary: 'Opening animation, track animation visuals, and stage-image delivery for Rain / Jung Ji-hoon at SINGLAND FESTIVAL 2026 in Singapore.'
+    },
+    'timer-loading-access-2-2024': {
+      title: 'TIMER / Loading... Permission 2',
+      subtitle: 'A representative public node from the TIMER series',
+      summary: 'The public exhibition node where TIMER entered UFO Terminal Loading... Permission 2, concentrating temporal structure, audiovisual relation, and immersive ring-screen experiments.'
+    },
+    'vrplay-hackathon-visual-2025': {
+      title: 'VRplay WORLD REMIX XR Hackathon',
+      subtitle: 'XR hackathon visual identity system',
+      summary: 'A visual identity and event system for WORLD REMIX XR Hackathon, covering main visuals, dynamic/static materials, and peripheral visual delivery.'
+    },
+    'ar-shenzhen-resort-2022': {
+      title: 'AR Shenzhen Plan',
+      subtitle: 'AR work for Shenzhen Light Art Festival',
+      summary: 'An AR public-art project connecting virtual space, urban light, and a digital resort structure.'
+    },
+    'hallu-resonance-live-2024': {
+      title: 'THE BOXX / Hallucination Resonance',
+      subtitle: 'Immersive audiovisual performance execution',
+      summary: 'Live visual performance execution inside the THE BOXX immersive projection space in Shanghai.'
+    },
+    'shanhaifusheng2-visual-2025': {
+      title: 'Edinburgh / Shanhai Fusheng II',
+      subtitle: 'Focus China stage visual production',
+      summary: 'Stage visual production and delivery for Shanhai Fusheng II: Bahuang Prayer in the Focus China context at the Edinburgh Festival.'
+    },
+    'glance-thousand-install-2023': {
+      title: 'Anchang Light Art Festival / A Glance of Thousands',
+      subtitle: 'Ground-projection public visual work',
+      summary: 'An early public light-art project presented through ground projection on an old bridge in Anchang.'
     }
   }
 }
