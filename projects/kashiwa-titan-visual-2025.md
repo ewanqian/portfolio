@@ -6,7 +6,8 @@
 
 ## Public Graph / 对象关系
 
-- `canonical_id`: `kashiwa-titan`
+- `object_id`: `kashiwa-titan`
+- `view_type`: `personal_view`
 - `authorship_type`: `collaboration`
 - `personal_view`: 当前页面，说明钱誉文在该项目中的视觉系统、空间影像与音画互动工作
 - `deck_view`: `VIRTURA_Collective_Overview_2026 baked2.pdf` 第 10 页

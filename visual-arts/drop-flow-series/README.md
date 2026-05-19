@@ -10,7 +10,8 @@ Drop Flow 系列围绕空间生成、沉浸式图像、身体表演与图像离�
 
 ## Public Graph / 对象关系
 
-- `canonical_id`: `drop-flow`
+- `object_id`: `drop-flow`
+- `view_type`: `personal_view`
 - `authorship_type`: `team_work`
 - `personal_view`: 当前页面，说明钱誉文在空间生成、现场图像与感知迁移中的个人实践线
 - `team_view`: [VIRTURA-Collective / Drop Flow](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/drop-flow)

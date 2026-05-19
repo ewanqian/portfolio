@@ -10,7 +10,8 @@
 
 ## Public Graph / 对象关系
 
-- `canonical_id`: `observation-and-symbiosis`
+- `object_id`: `observation-and-symbiosis`
+- `view_type`: `personal_view`
 - `authorship_type`: `collaboration`
 - `personal_view`: 当前页面，说明它在钱誉文个人数字环境与感知空间研究中的位置
 - `team_view`: [VIRTURA-Collective / Observation and Symbiosis](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/observation-and-symbiosis)

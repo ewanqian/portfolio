@@ -10,7 +10,8 @@ TIMER 系列围绕时间结构、音画关系与感知节奏展开，持续处�
 
 ## Public Graph / 对象关系
 
-- `canonical_id`: `timer`
+- `object_id`: `timer`
+- `view_type`: `personal_view`
 - `authorship_type`: `team_work`
 - `personal_view`: 当前页面，说明钱誉文如何处理时间结构、音画关系与现场状态切换
 - `team_view`: [VIRTURA-Collective / TIMER](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/timer)
