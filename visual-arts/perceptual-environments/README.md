@@ -8,6 +8,16 @@
 
 这一组作品与实践主要围绕扫描空间、点云环境、数字采样、观察与共生、以及数字环境中的生命感展开。它们通常不像舞台项目那样有清晰的“演出时刻”，但构成了我长期处理数字空间、记忆残留、环境生成与非人视角的重要基础。
 
+## Public Graph / 对象关系
+
+- `canonical_id`: `observation-and-symbiosis`
+- `authorship_type`: `collaboration`
+- `personal_view`: 当前页面，说明它在钱誉文个人数字环境与感知空间研究中的位置
+- `team_view`: [VIRTURA-Collective / Observation and Symbiosis](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/observation-and-symbiosis)
+- `archive_view`: [VIRTURA-SpacePort / Observation and Symbiosis](https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/%E8%A7%82%E5%AF%9F%E4%B8%8E%E5%85%B1%E7%94%9F%20Observation%20and%20Symbiosis.md)
+
+这里保留个人研究入口；团队协作与公开语境看 `VIRTURA-Collective`，展览记录、版本资料和深层档案看 `VIRTURA-SpacePort`。
+
 ## Why This Series Matters
 
 如果说 TIMER 更偏向时间结构，Drop Flow 更偏向空间生成，那么这一组实践更接近我关于“数字环境如何被感知”的长期研究背景。它们既像作品，也像方法实验和感知样本库。

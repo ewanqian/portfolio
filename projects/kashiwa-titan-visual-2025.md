@@ -4,6 +4,18 @@
 
 ---
 
+## Public Graph / 对象关系
+
+- `canonical_id`: `kashiwa-titan`
+- `authorship_type`: `collaboration`
+- `personal_view`: 当前页面，说明钱誉文在该项目中的视觉系统、空间影像与音画互动工作
+- `deck_view`: `VIRTURA_Collective_Overview_2026 baked2.pdf` 第 10 页
+- `external_context`: [KASHIWA Daisuke official post](https://kashiwadaisuke.com/2025/10/28/can-festival-shenzhen-bo-live/)
+
+这不是 VIRTURA 单独拥有的团队作品，而是与 KASHIWA Daisuke、Yuki Murata、策展与现场团队共同完成的视听合作。当前页面保留个人职责和制作方法，不替代外部官方资料。
+
+---
+
 ## 项目信息
 
 | 项目 | 内容 |
