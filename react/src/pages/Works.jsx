@@ -13,7 +13,14 @@ const pageCopy = {
     open: '查看',
     featured: '代表作',
     ongoing: '持续项目',
-    more: '更多作品'
+    more: '更多作品',
+    labels: {
+      personal_work: '个人作品',
+      team_work: '团队作品',
+      external_collaboration: '外部合作',
+      collaboration: '合作作品',
+      service_work: '项目制作'
+    }
   },
   en: {
     title: 'Selected Works',
@@ -21,8 +28,42 @@ const pageCopy = {
     open: 'Open',
     featured: 'Representative Works',
     ongoing: 'Ongoing Projects',
-    more: 'More Works'
+    more: 'More Works',
+    labels: {
+      personal_work: 'Personal Work',
+      team_work: 'Team Work',
+      external_collaboration: 'External Collaboration',
+      collaboration: 'Collaboration',
+      service_work: 'Production Work'
+    }
   }
+}
+
+const authorshipById = {
+  'drop-flow': 'team_work',
+  'drop-flow-visual-2025': 'team_work',
+  'drop-flow-ufo-2025': 'team_work',
+  'timer-series-visual-2024': 'team_work',
+  'kashiwa-titan-visual-2025': 'external_collaboration',
+  'kashiwa-band-visual-2025': 'external_collaboration',
+  'observe-symbiosis-exhibit-2025': 'collaboration',
+  'observe-symbiosis-workshop-2026': 'collaboration'
+}
+
+function resolveAuthorshipType(work) {
+  if (authorshipById[work.id]) {
+    return authorshipById[work.id]
+  }
+
+  if (work.type === 'stage-visual') {
+    return 'service_work'
+  }
+
+  if (work.practiceLine === 'collaborative-performance') {
+    return 'collaboration'
+  }
+
+  return 'personal_work'
 }
 
 function resolveTarget(work) {
@@ -38,6 +79,7 @@ function resolveTarget(work) {
 function WorkCard({ work, language, ctaLabel }) {
   const localizedWork = localizeWork(work, language)
   const target = resolveTarget(work)
+  const label = pageCopy[language].labels[resolveAuthorshipType(work)]
   const Wrapper = target ? 'a' : 'article'
   const wrapperProps = target ? { href: target } : {}
 
@@ -47,6 +89,7 @@ function WorkCard({ work, language, ctaLabel }) {
         <img src={getDisplayImage(work)} alt={localizedWork.title} loading="lazy" />
       </span>
       <span className="works-rail-copy">
+        <span className="works-rail-label">{label}</span>
         <span className="works-rail-meta">{localizedWork.years} · {localizedWork.subtitle}</span>
         <strong>{localizedWork.title}</strong>
         <span>{localizedWork.summary}</span>

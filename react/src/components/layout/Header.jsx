@@ -35,6 +35,12 @@ function Header() {
     { id: 'writing', label: language === 'en' ? 'Writing' : '写作', to: '/writing' }
   ]
 
+  const externalNavItems = [
+    { id: 'collective', label: language === 'en' ? 'Collective' : '团队', href: 'https://virtura.space/' },
+    { id: 'spaceport', label: 'SpacePort', href: 'https://spaceport.virtura.space/' },
+    { id: 'newsroom', label: 'Newsroom', href: 'https://newsroom.virtura.space/' }
+  ]
+
   return (
     <header className="topbar">
       <div className="container topbar-inner">
@@ -107,6 +113,18 @@ function Header() {
               </Link>
             )
           })}
+          {externalNavItems.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              className="nav-link"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
