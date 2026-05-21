@@ -1,25 +1,25 @@
 const imagePathOverrides = {
-  '/portfolio/assets/home/featured-dropflow-main.jpg': '/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
-  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
-  '/portfolio/assets/home/featured-perceptual-environments.jpg': '/portfolio/assets/home/archive-observation-clean.jpg',
-  '/portfolio/assets/public-nodes/observation-symbiosis.jpg': '/portfolio/assets/home/archive-observation-clean.jpg',
-  '/portfolio/assets/home/featured-timer-main.jpg': '/portfolio/assets/home/archive-timer-clean.jpg',
-  '/portfolio/assets/home/featured-timer-visionpro.jpg': '/portfolio/assets/home/archive-timer-clean.jpg'
+  '/assets/home/featured-dropflow-main.jpg': '/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
+  '/assets/home/featured-kashiwa-bolive-shenzhen.jpeg': '/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
+  '/assets/home/featured-perceptual-environments.jpg': '/assets/home/archive-observation-clean.jpg',
+  '/assets/public-nodes/observation-symbiosis.jpg': '/assets/home/archive-observation-clean.jpg',
+  '/assets/home/featured-timer-main.jpg': '/assets/home/archive-timer-clean.jpg',
+  '/assets/home/featured-timer-visionpro.jpg': '/assets/home/archive-timer-clean.jpg'
 }
 
 const imageIdOverrides = {
-  'babel-bottle': '/portfolio/assets/home/archive-observation-clean.jpg',
-  'can-festival': '/portfolio/assets/public-nodes/can-festival.jpg',
-  'drop-flow': '/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
-  'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.jpg',
-  'kashiwa': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
-  'kashiwa-bo-live-shenzhen': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
-  'mke-terminal': '/portfolio/assets/mke-terminal/pdf-p02-01.jpg',
-  'observation-and-symbiosis': '/portfolio/assets/home/archive-observation-clean.jpg',
-  'observe-symbiosis-pingshan': '/portfolio/assets/home/archive-observation-clean.jpg',
-  'timer': '/portfolio/assets/home/archive-timer-clean.jpg',
-  'timer-series-visual-2024': '/portfolio/assets/home/archive-timer-clean.jpg',
-  'ufo-terminal': '/portfolio/assets/public-nodes/ufo-terminal.jpg'
+  'babel-bottle': '/assets/home/archive-observation-clean.jpg',
+  'can-festival': '/assets/public-nodes/can-festival.jpg',
+  'drop-flow': '/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
+  'drop-flow-hangzhou-biennale': '/assets/public-nodes/dropflow-hangzhou.jpg',
+  'kashiwa': '/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
+  'kashiwa-bo-live-shenzhen': '/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
+  'mke-terminal': '/assets/mke-terminal/pdf-p02-01.jpg',
+  'observation-and-symbiosis': '/assets/home/archive-observation-clean.jpg',
+  'observe-symbiosis-pingshan': '/assets/home/archive-observation-clean.jpg',
+  'timer': '/assets/home/archive-timer-clean.jpg',
+  'timer-series-visual-2024': '/assets/home/archive-timer-clean.jpg',
+  'ufo-terminal': '/assets/public-nodes/ufo-terminal.jpg'
 }
 
 const practiceLineOrder = [
@@ -48,10 +48,10 @@ export const nodeLinks = {
 
 export function getDisplayImage(item) {
   if (!item) {
-    return '/portfolio/assets/public-nodes/ufo-terminal.jpg'
+    return '/assets/public-nodes/ufo-terminal.jpg'
   }
 
-  return imageIdOverrides[item.id] || imagePathOverrides[item.image] || item.image || '/portfolio/assets/public-nodes/ufo-terminal.jpg'
+  return imageIdOverrides[item.id] || imagePathOverrides[item.image] || item.image || '/assets/public-nodes/ufo-terminal.jpg'
 }
 
 export function getWorkTargetUrl(work) {
@@ -62,7 +62,7 @@ export function getWorkTargetUrl(work) {
     return '/archive'
   }
 
-  return rawUrl.startsWith('./') ? `/portfolio/${rawUrl.replace(/^\.\//, '')}` : rawUrl
+  return rawUrl.startsWith('./') ? `/${rawUrl.replace(/^\.\//, '')}` : rawUrl
 }
 
 export function getNodeTargetUrl(node) {

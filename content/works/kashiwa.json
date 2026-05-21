@@ -8,7 +8,7 @@
   "practiceLine": "collaborative-performance",
   "tags": ["live", "collaboration", "audiovisual"],
   "coverImage": "featured-kashiwa-bolive-shenzhen.jpeg",
-  "image": "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+  "image": "/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
   "showOnHome": true,
   "relatedNodes": ["kashiwa-bo-live-shenzhen", "can-festival"],
   "relatedWritings": [],
@@ -20,7 +20,7 @@
     "visual-arts/kashiwa-daisuke/README.md",
     "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
   ],
-  "repoLink": "/portfolio/works/kashiwa.html",
+  "repoLink": "/works/kashiwa.html",
   "links": [
     { "text": "详情页", "url": "./works/kashiwa.html" },
     { "text": "微信文章", "url": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" }

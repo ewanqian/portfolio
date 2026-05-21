@@ -325,10 +325,10 @@ const pageCopy = {
 }
 
 const relatedWorkPages = {
-  'drop-flow-ufo-2025': '/portfolio/works/drop-flow.html',
-  'drop-flow': '/portfolio/works/drop-flow.html',
-  'timer-series-visual-2024': '/portfolio/works/timer.html',
-  timer: '/portfolio/works/timer.html'
+  'drop-flow-ufo-2025': '/works/drop-flow.html',
+  'drop-flow': '/works/drop-flow.html',
+  'timer-series-visual-2024': '/works/timer.html',
+  timer: '/works/timer.html'
 }
 
 function formatPublishedAgo(value, language) {
@@ -373,7 +373,7 @@ function getRelatedWork(scene, language) {
   const localizedWork = work ? localizeWork(work, language) : null
   const detailLink = work?.links?.find((link) => link.url?.includes('/works/') || link.url?.startsWith('./works/'))
   const rawUrl = pageUrl || detailLink?.url || work?.repoLink
-  const resolvedUrl = rawUrl?.startsWith('./') ? `/portfolio/${rawUrl.replace(/^\.\//, '')}` : rawUrl
+  const resolvedUrl = rawUrl?.startsWith('./') ? `/${rawUrl.replace(/^\.\//, '')}` : rawUrl
 
   if (!resolvedUrl) {
     return null

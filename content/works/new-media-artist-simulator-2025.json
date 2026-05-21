@@ -8,7 +8,7 @@
   "practiceLine": "perceptual-environments",
   "tags": ["hypertext", "interactive", "museum", "conceptual"],
   "coverImage": "featured-perceptual-environments.jpg",
-  "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+  "image": "/assets/home/featured-perceptual-environments.jpg",
   "showOnHome": false,
   "relatedNodes": ["babel-bottle"],
   "relatedWritings": [],

@@ -8,7 +8,7 @@
   "practiceLine": "spatial-generation",
   "tags": ["drop-flow", "ufo-terminal", "live", "process"],
   "coverImage": "hero-dropflow-ufo-2025.jpeg",
-  "image": "/portfolio/assets/home/hero-dropflow-ufo-2025.jpeg",
+  "image": "/assets/home/hero-dropflow-ufo-2025.jpeg",
   "showOnHome": false,
   "relatedNodes": ["ufo-terminal"],
   "relatedWritings": ["drop-flow-note"],

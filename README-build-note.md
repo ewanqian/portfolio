@@ -33,18 +33,19 @@ git push
    - 样式: `react/src/styles/`
 
 3. **Vite 配置**
-   - `base: '/portfolio/'` 已配置，适配 GitHub Pages
+   - `base: './'` 已配置，适配 `ewanqian.site` 根域名与本地静态预览
 
 4. **本地开发**
    ```bash
    cd react
    npm run dev
-   # 访问 http://localhost:5173/portfolio/
+   # 访问 http://localhost:5173/
    ```
 
 ## 线上地址
 
-- **GitHub Pages**: https://ewanqian.github.io/portfolio/
+- **Custom Domain**: https://ewanqian.site/
+- **GitHub Pages source URL**: https://ewanqian.github.io/portfolio/
 
 ## 备份
 

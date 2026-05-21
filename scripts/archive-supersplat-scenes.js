@@ -137,7 +137,7 @@ function buildReadme(scenes) {
 function buildReactModule(scenes) {
   const reactScenes = scenes.map((scene) => ({
     ...scene,
-    thumbnail: `/portfolio/${scene.localThumbnail}`
+    thumbnail: `/${scene.localThumbnail}`
   }));
 
   return `export default ${JSON.stringify(reactScenes, null, 2)};\n`;

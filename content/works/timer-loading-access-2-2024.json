@@ -8,7 +8,7 @@
   "practiceLine": "temporal-structure",
   "tags": ["timer", "loading-access-2", "exhibition", "ring-screen", "team-work"],
   "coverImage": "timer-loading-access-2-poster.jpg",
-  "image": "/portfolio/assets/home/timer-loading-access-2-poster.jpg",
+  "image": "/assets/home/timer-loading-access-2-poster.jpg",
   "showOnHome": true,
   "relatedNodes": ["ufo-terminal"],
   "relatedWritings": ["timer-temporal", "timer-not-sync"],
@@ -18,7 +18,7 @@
     "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
     "works/timer.html"
   ],
-  "repoLink": "/portfolio/works/timer.html",
+  "repoLink": "/works/timer.html",
   "links": [
     {
       "text": "作品页面",

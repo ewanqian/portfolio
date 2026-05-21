@@ -8,7 +8,7 @@
   "practiceLine": "spatial-generation",
   "tags": ["immersive", "space", "flow"],
   "coverImage": "featured-dropflow-main.jpg",
-  "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
+  "image": "/assets/home/featured-dropflow-main.jpg",
   "showOnHome": false,
   "lifecycle": "active",
   "relatedNodes": ["ufo-terminal", "drop-flow-hangzhou-biennale"],
@@ -20,7 +20,7 @@
     "projects/drop-flow-visual-2025.md",
     "projects/dropflow3-live-2025.md"
   ],
-  "repoLink": "/portfolio/works/drop-flow.html",
+  "repoLink": "/works/drop-flow.html",
   "links": [
     { "text": "详情页", "url": "./works/drop-flow.html" },
     { "text": "看录像", "url": "https://www.bilibili.com/video/BV1PREczgEzC/" }

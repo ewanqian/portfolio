@@ -8,7 +8,7 @@
   "practiceLine": "temporal-structure",
   "tags": ["timer", "temporal", "ring-screen", "audiovisual", "ongoing"],
   "coverImage": "featured-timer-main.jpg",
-  "image": "/portfolio/assets/home/featured-timer-main.jpg",
+  "image": "/assets/home/featured-timer-main.jpg",
   "showOnHome": false,
   "lifecycle": "active",
   "relatedNodes": ["ufo-terminal"],
@@ -19,7 +19,7 @@
     "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
     "works/timer.html"
   ],
-  "repoLink": "/portfolio/works/timer.html",
+  "repoLink": "/works/timer.html",
   "links": [
     {
       "text": "作品页面",

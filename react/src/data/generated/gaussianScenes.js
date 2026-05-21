@@ -33,7 +33,7 @@ export default [
     "views": "126",
     "size": "19.06 MB",
     "publishedAgo": "10 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/timer-gaussian-0531.webp"
+    "thumbnail": "/assets/gaussian-scenes/timer-gaussian-0531.webp"
   },
   {
     "id": "36db89a4",
@@ -69,7 +69,7 @@ export default [
     "views": "162",
     "size": "210.36 MB",
     "publishedAgo": "3 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/dropflow-collection-rooms719.webp"
+    "thumbnail": "/assets/gaussian-scenes/dropflow-collection-rooms719.webp"
   },
   {
     "id": "0f404310",
@@ -104,7 +104,7 @@ export default [
     "views": "40",
     "size": "68.56 MB",
     "publishedAgo": "8 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/shinjuku-gyoen-greenhouse.webp"
+    "thumbnail": "/assets/gaussian-scenes/shinjuku-gyoen-greenhouse.webp"
   },
   {
     "id": "a90198a5",
@@ -139,7 +139,7 @@ export default [
     "views": "50",
     "size": "94.4 MB",
     "publishedAgo": "8 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/tokyo-tower-garden-2.webp"
+    "thumbnail": "/assets/gaussian-scenes/tokyo-tower-garden-2.webp"
   },
   {
     "id": "87d112d3",
@@ -174,6 +174,6 @@ export default [
     "views": "74",
     "size": "99.24 MB",
     "publishedAgo": "8 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/shibuya-sakura-stage.webp"
+    "thumbnail": "/assets/gaussian-scenes/shibuya-sakura-stage.webp"
   }
 ];

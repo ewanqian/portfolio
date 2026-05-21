@@ -23,7 +23,7 @@ VIRTURA（纬图）去中心化艺术团队成员
 - [Xiaohongshu](https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e)
 - [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
 - [GitHub](https://github.com/ewanqian)
-- [Portfolio](https://ewanqian.github.io/portfolio)
+- [Portfolio](https://ewanqian.site)
 
 ---
 
@@ -143,7 +143,7 @@ Node Weaver 是我当前用于整理作品线、公开节点、资产与关系�
 ## Repositories / 仓库入口
 
 - [GitHub](https://github.com/ewanqian)
-- [Portfolio](https://ewanqian.github.io/portfolio)
+- [Portfolio](https://ewanqian.site)
 - [VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom)
 - [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort)
 - [SceneForge](https://github.com/ewanqian/SceneForge)
