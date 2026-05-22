@@ -13,9 +13,9 @@ const categoryMeta = [
 ]
 
 const statusLabels = {
-  draft: 'draft',
-  planned: 'planned',
-  published: 'published'
+  draft: 'Coming Soon',
+  planned: 'Coming Soon',
+  published: 'Published'
 }
 
 const statusRank = {
@@ -61,7 +61,7 @@ function WritingList({ items, title }) {
               </div>
               <div className="writing-list-date">
                 {writing.date}
-                {writing.status !== 'published' ? <span className="writing-status">{statusLabels[writing.status]}</span> : null}
+                {writing.status !== 'published' ? <span className={`writing-status ${writing.status}`}>{statusLabels[writing.status]}</span> : null}
               </div>
             </article>
           ))}
@@ -99,7 +99,7 @@ function Writing() {
             <p className="section-intro">
               {language === 'en'
                 ? 'This page collects ongoing writing around works, methods, field experience, delivery specs, and archive systems. It is not supplementary explanation but part of the practice itself: how a work holds together, how it is organized, how it enters space, how it is delivered, and how it continues to be read all get unfolded here.'
-                : '这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。它不是附属说明，而是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。'}
+                : '这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。写作本身也是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。'}
             </p>
           </div>
         </section>
@@ -115,7 +115,7 @@ function Writing() {
                   {writing.summary ? <p>{writing.summary}</p> : null}
                   <div className="writing-meta">
                     {writing.date}
-                    {writing.status !== 'published' ? <span className="writing-status">{statusLabels[writing.status]}</span> : null}
+                    {writing.status !== 'published' ? <span className={`writing-status ${writing.status}`}>{statusLabels[writing.status]}</span> : null}
                   </div>
                 </article>
               ))}
@@ -140,7 +140,7 @@ function Writing() {
                   </div>
                   <div className="writing-list-date">
                     {writing.date}
-                    {writing.status !== 'published' ? <span className="writing-status">{statusLabels[writing.status]}</span> : null}
+                    {writing.status !== 'published' ? <span className={`writing-status ${writing.status}`}>{statusLabels[writing.status]}</span> : null}
                   </div>
                 </article>
               ))}

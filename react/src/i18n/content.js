@@ -298,10 +298,10 @@ const sceneTranslations = {
       captureMoment: 'A team project scene translated into a Gaussian spatial sample'
     },
     '36db89a4': {
-      displayTitle: 'Dropflow Collection / Rooooooom719',
+      displayTitle: 'Drop Flow Collection / Rooooooom719',
       summary: 'A collage-like spatial sample built from phase material in the Drop Flow team project. Ewan Qian translated the participant-image archive through a local AppleSharp-model workflow and Gaussian editing pipeline so it could become a preserved, embeddable project layer.',
       notes: [
-        'This sample corresponds to the rooms719 / DropFlow 2 stage member-image collage rather than a single live recording.',
+        'This sample corresponds to the rooms719 / Drop Flow 2 stage member-image collage rather than a single live recording.',
         'It reorganizes project-stage material into a browseable spatial object that can sit between process evidence, project presentation, and later spatial-display development.'
       ],
       location: 'Drop Flow / Rooooooom719 collage set',

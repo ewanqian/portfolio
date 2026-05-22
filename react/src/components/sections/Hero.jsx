@@ -24,8 +24,8 @@ function Hero() {
             </p>
             <p className="hero-tagline">
               {language === 'en'
-                ? 'Ewan Qian’s practice unfolds through the continuous relation between time, image, space, and perception. Websites, stages, panoramic screens, digital exhibitions, archives, and interface research are not separate media branches here, but one ongoing network of artistic practice.'
-                : '钱誉文的实践围绕时间、图像、空间与感知之间的连续关系展开。网页、舞台、环幕、数字展览、档案与接口研究，在这里构成的并非彼此独立的媒介分支，而是一条持续推进的创作网络。'}
+                ? 'Ewan Qian’s practice unfolds through the continuous relation between time, image, space, and perception. Websites, stages, panoramic screens, digital exhibitions, archives, and interface research form one ongoing network of artistic practice.'
+                : '钱誉文的实践围绕时间、图像、空间与感知之间的连续关系展开。网页、舞台、环幕、数字展览、档案与接口研究，共同构成一条持续推进的创作网络。'}
             </p>
             <div className="hero-cta">
               <Link className="button primary" to="/" state={{ scrollTo: 'artistic-overview' }}>

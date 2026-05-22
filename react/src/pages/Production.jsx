@@ -33,7 +33,7 @@ const servicesByLanguage = {
     {
       id: 'research-consultation',
       title: '研究咨询与工作坊 / Consultation & Workshop',
-      description: '适合团队方法搭建、方向讨论和工作坊场景，不是纯交付，而是帮合作方建立判断和工作流。',
+      description: '适合团队方法搭建、方向讨论和工作坊场景，用来帮合作方建立判断和工作流。',
       forUse: ['方法讨论', '项目咨询', '课程 / workshop', '系统搭建与内容组织']
     }
   ],
@@ -91,7 +91,7 @@ const caseNotesByLanguage = {
     {
       id: 'immersive-not-by-length',
       title: '为什么沉浸式内容不能只按“片长”报价',
-      content: '空间项目的难度往往来自屏幕结构、版本数量、内容组织方式与场地适配，而不是单纯时长。'
+      content: '空间项目的难度往往来自屏幕结构、版本数量、内容组织方式与场地适配，不能只按时长判断。'
     }
   ],
   en: [
@@ -236,8 +236,8 @@ const Production = () => {
             <h2 className="section-title">{language === 'en' ? 'Production Overview' : 'Production Overview / 制作概览'}</h2>
             <p>
               {language === 'en'
-                ? 'The strongest fit is not simply “making a visual asset,” but projects where content, space, pacing, versions, and delivery all need to be organized together. If the project involves live visuals, spatial image work, immersive content, previs, or delivery-spec support, this page will usually be more direct than the work pages.'
-                : '我更适合的不是单纯“做一条素材”，而是那些需要把内容、空间、节奏、版本和交付一起梳理清楚的项目。如果你正在做演出视觉、空间影像、沉浸内容、预演测试，或需要交付规格支持，这里会比作品页更直接。'}
+                ? 'The strongest fit is projects where content, space, pacing, versions, and delivery all need to be organized together. Live visuals, spatial image work, immersive content, previs, and delivery-spec support can be judged here faster than on the work pages.'
+                : '最适合的是需要把内容、空间、节奏、版本和交付一起梳理清楚的项目。演出视觉、空间影像、沉浸内容、预演测试和交付规格支持，可以在这里比作品页更快完成判断。'}
             </p>
             <div className="grid-3" style={{ marginTop: '28px' }}>
               <div className="overview-card">
@@ -265,7 +265,7 @@ const Production = () => {
             <div className="entry-banner production-gaussian-entry">
               <div className="entry-banner-content">
                 <h2>{language === 'en' ? 'Spatial Samples and Method Notes / Gaussian Archive' : '空间样本与方法说明 / Gaussian Archive'}</h2>
-                <p>{language === 'en' ? 'If you want to continue into spatial preservation, web embedding, and Vision Pro / XR paths, the Gaussian Archive is the supporting sample-and-method branch rather than the main collaboration page.' : '如果你想继续看扫描保存、网页嵌入和 Vision Pro / XR 路径，这里是补充样本和方法说明的入口，不是主合作页。'}</p>
+                <p>{language === 'en' ? 'The Gaussian Archive supports spatial preservation, web embedding, and Vision Pro / XR paths through public samples and method notes.' : 'Gaussian Archive 通过公开样本和方法说明，支撑扫描保存、网页嵌入和 Vision Pro / XR 路径。'}</p>
                 <div className="hero-cta" style={{ justifyContent: 'center' }}>
                   <Link to="/gaussian-scenes" className="button primary">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
                   <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" className="button">
@@ -281,7 +281,7 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">{language === 'en' ? 'Service Categories' : '合作类型 / Service Categories'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'These categories are not a list of generic skills. They are here so a reader can quickly judge what kind of collaboration structure a project is actually asking for.' : '下面这几类不是“我会什么”的清单，而是让客户快速判断：你的项目更接近哪一种合作结构。'}
+              {language === 'en' ? 'These categories help a reader quickly judge what kind of collaboration structure a project is actually asking for.' : '下面这几类帮助客户快速判断：你的项目更接近哪一种合作结构。'}
             </p>
             <div className="services-grid">
               {services.map((service) => (
@@ -376,7 +376,7 @@ const Production = () => {
               ))}
             </div>
             <p style={{ marginTop: '24px', color: 'var(--muted)', fontSize: '14px' }}>
-              {language === 'en' ? 'Actual pricing shifts with version count, venue conditions, delivery specs, collaboration structure, and schedule pressure. The page gives a reading range, not a final contract quote.' : '具体价格会因版本数量、场地条件、交付规格、协作方式与时限而变化。页面提供的是理解范围，不是最终合同价格。'}
+              {language === 'en' ? 'Actual pricing shifts with version count, venue conditions, delivery specs, collaboration structure, and schedule pressure. The page gives an indicative range for early planning.' : '具体价格会因版本数量、场地条件、交付规格、协作方式与时限而变化。页面提供前期规划用的参考区间。'}
             </p>
           </div>
         </section>
@@ -399,7 +399,7 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">{language === 'en' ? 'Inquiry' : '联系与项目咨询 / Inquiry'}</h2>
             <div className="contact-box">
-              <p>{language === 'en' ? 'If you want to move a collaboration forward, it helps to bring:' : '如果你希望推进合作，请尽量提供：'}</p>
+              <p>{language === 'en' ? 'For a faster collaboration start, bring:' : '为了更快推进合作，请尽量提供：'}</p>
               <ul className="inquiry-list">
                 {contactChecklist.map((item) => (
                   <li key={item}>{item}</li>

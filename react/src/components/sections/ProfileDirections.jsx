@@ -107,8 +107,8 @@ function ProfileDirections() {
           <div className="eyebrow">{language === 'en' ? 'Public Record / Signals' : 'Public Record / 公开履历与合作线索'}</div>
           <p className="section-intro" style={{ marginBottom: '16px' }}>
             {language === 'en'
-              ? 'These entries act as public-facing signals and collaboration evidence, helping partners quickly understand the context of the practice instead of repeating the work categories.'
-              : '这些条目作为公开经历与合作信号，帮助客户快速判断我的工作语境，而不是再重复一遍作品分类。'}
+              ? 'These entries act as public-facing signals and collaboration context, helping partners quickly understand the practice around the work categories.'
+              : '这些条目作为公开经历与合作信号，帮助客户快速判断作品分类背后的工作语境。'}
           </p>
           <div className="signal-strip">
             {localizedSignals.map((signal) => (

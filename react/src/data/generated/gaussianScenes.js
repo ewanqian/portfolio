@@ -38,12 +38,12 @@ export default [
   {
     "id": "36db89a4",
     "slug": "dropflow-collection-rooms719",
-    "displayTitle": "Dropflow Collection / Rooooooom719",
+    "displayTitle": "Drop Flow Collection / Rooooooom719",
     "category": "work-derived",
     "featured": true,
     "summary": "基于 Drop Flow 团队项目阶段素材整理出的拼贴型空间样本，由钱誉文在本地 AppleSharp 模型与高斯工作流中完成转译，适合用于团队项目留存、网页嵌入和后续空间化展示。",
     "notes": [
-      "它对应的是 rooms719 / DropFlow 2 阶段成员影像与资料集合，而不是单一演出录像。",
+      "它对应的是 rooms719 / Drop Flow 2 阶段成员影像与资料集合，而不是单一演出录像。",
       "它把团队阶段素材重新组织成一个可浏览的拼贴式空间对象，适合作为项目页面与后续空间观看方案之间的中间层。"
     ],
     "location": "Drop Flow / Rooooooom719 拼贴集合",
@@ -61,9 +61,9 @@ export default [
     "embedUrl": "https://superspl.at/s?id=36db89a4",
     "ogImage": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/36db89a4/v1/xl.webp",
     "localThumbnail": "assets/gaussian-scenes/dropflow-collection-rooms719.webp",
-    "pageTitle": "Dropflow 集合 - SuperSplat",
+    "pageTitle": "Drop Flow 集合 - SuperSplat",
     "pageDescription": null,
-    "titleFromPage": "Dropflow 集合",
+    "titleFromPage": "Drop Flow 集合",
     "descriptionFromPage": null,
     "uploader": "ewanqian10000",
     "views": "162",

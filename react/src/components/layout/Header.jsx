@@ -36,9 +36,9 @@ function Header() {
   ]
 
   const externalNavItems = [
-    { id: 'collective', label: language === 'en' ? 'Collective' : '团队', href: 'https://virtura.space/' },
-    { id: 'spaceport', label: 'SpacePort', href: 'https://spaceport.virtura.space/' },
-    { id: 'newsroom', label: 'Newsroom', href: 'https://newsroom.virtura.space/' }
+    { id: 'collective', label: language === 'en' ? 'Collective' : '团队', href: '//virtura.space/' },
+    { id: 'spaceport', label: 'SpacePort', href: '//spaceport.virtura.space/' },
+    { id: 'newsroom', label: 'Newsroom', href: '//newsroom.virtura.space/' }
   ]
 
   return (
