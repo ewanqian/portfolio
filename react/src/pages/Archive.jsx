@@ -5,14 +5,14 @@ import Footer from '../components/layout/Footer'
 import works from '../data/generated/works'
 import nodes from '../data/generated/nodes'
 import { getDisplayImage, getNodeTargetUrl, getWorkTargetUrl, homeNodeIds, sortNodesForArchive, sortWorksForArchive } from '../data/siteDisplay'
+import { productionWorkIds } from '../data/siteTaxonomy'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeNode, localizeWork } from '../i18n/content.js'
 
 const Archive = () => {
   const { language } = useLanguage()
-  const orderedWorks = sortWorksForArchive(works)
-  const featuredWorks = orderedWorks.filter((work) => work.showOnHome)
-  const extendedWorks = orderedWorks.filter((work) => !work.showOnHome)
+  const productionIdSet = new Set(productionWorkIds)
+  const orderedWorks = sortWorksForArchive(works).filter((work) => productionIdSet.has(work.id))
   const orderedNodes = sortNodesForArchive(nodes)
   const featuredNodes = orderedNodes.filter((node) => homeNodeIds.includes(node.id))
   const extendedNodes = orderedNodes.filter((node) => !homeNodeIds.includes(node.id))
@@ -23,16 +23,16 @@ const Archive = () => {
       <main className="page-archive">
         <section className="section">
           <div className="container">
-            <div className="eyebrow">Archive</div>
-            <h1 className="section-title">{language === 'en' ? 'Archive Index' : '档案索引 / Archive'}</h1>
+            <div className="eyebrow">Production Works</div>
+            <h1 className="section-title">{language === 'en' ? 'Production Works' : 'Production Works / 制作项目'}</h1>
             <p className="section-intro">
               {language === 'en'
-                ? 'This page no longer repeats the homepage selection. Instead, it breaks the public-facing site into readable layers of works, nodes, and spatial samples. Deeper objectization and backfill materials remain in the database and projects layers.'
-                : '这一页不再和首页重复做筛选，而是把当前对外可读的作品、公开节点和空间样本拆成几层来读。更深层的对象沉淀与补录材料仍保留在 `database/` 与 `projects/` 层。'}
+                ? 'Production Works gathers commercial, stage, event, spatial, and delivery-based project records. Gallery remains the selected artwork layer; this page focuses on production context and project delivery.'
+                : 'Production Works 整理商业、演出、活动、空间与交付型项目记录。Gallery 保留为作品画廊；这一页更关注制作语境与项目交付。'}
             </p>
             <div className="hero-cta">
               <Link to="/gaussian-scenes" className="button primary">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
-              <Link to="/production" className="button">{language === 'en' ? 'Open Production' : '查看合作方式'}</Link>
+              <Link to="/production" className="button">{language === 'en' ? 'Open Production' : '查看制作'}</Link>
               <Link to="/writing" className="button">{language === 'en' ? 'Open Writing' : '查看写作与研究'}</Link>
             </div>
           </div>
@@ -42,8 +42,8 @@ const Archive = () => {
           <div className="container">
             <div className="entry-banner archive-entry-banner">
               <div className="entry-banner-content">
-                <h2>{language === 'en' ? 'Gaussian Archive' : '空间样本子库 / Gaussian Archive'}</h2>
-                <p>{language === 'en' ? 'Team-project spatial translations, independently scanned field archives, and the method notes around spatial preservation and web embedding are gathered in this sub-section.' : '团队项目的空间转译样本、个人环境采样档案，以及空间保存与网页嵌入的方法说明，都集中在这个子栏目里。'}</p>
+                <h2>{language === 'en' ? 'Spatial Samples' : '空间样本 / Spatial'}</h2>
+                <p>{language === 'en' ? 'Team-project spatial translations, independently scanned field samples, and method notes around spatial preservation and web embedding are gathered in this section.' : '团队项目的空间转译样本、个人环境采样，以及空间保存与网页嵌入的方法说明，都集中在这个空间样本栏目里。'}</p>
                 <Link to="/gaussian-scenes" className="button primary">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
               </div>
             </div>
@@ -52,12 +52,12 @@ const Archive = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Primary Works' : '优先作品入口 / Primary Works'}</h2>
+            <h2 className="section-title">{language === 'en' ? 'Commercial and Delivery Records' : '商业与交付项目'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'This layer keeps the three most important entry works. Together they map the public-facing lines of temporal structure, spatial generation, and live collaboration.' : '这里先保留最值得优先进入的三项核心作品，它们对应时间结构、空间生成与合作现场三条最重要的公开主线。'}
+              {language === 'en' ? 'These entries are organized as production references: concerts, event visual systems, public-space content, stage visuals, and projects with clear delivery conditions.' : '这些条目作为制作参考整理，包含演唱会、活动视觉系统、公共空间内容、舞台视觉，以及具有明确交付条件的项目。'}
             </p>
             <div className="archive-grid">
-              {featuredWorks.map((work) => {
+              {orderedWorks.map((work) => {
                 const localizedWork = localizeWork(work, language)
 
                 return (
@@ -68,37 +68,6 @@ const Archive = () => {
                     <div className="archive-item-content">
                       <h3>{localizedWork.title}</h3>
                       <p className="archive-item-years">{localizedWork.years}</p>
-                      <p>{localizedWork.summary}</p>
-                      <div className="archive-item-actions">
-                        <a href={getWorkTargetUrl(work)} className="button">{language === 'en' ? 'Open Detail' : '查看详情'}</a>
-                      </div>
-                    </div>
-                  </article>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Extended Work Records' : '扩展作品档案 / Extended Works'}</h2>
-            <p className="section-intro">
-              {language === 'en' ? 'This layer fills in branches, exhibition nodes, experimental phases, and newer entries once the main judgment is already in place.' : '这一层补足系列分支、展览节点、实验阶段和较新的扩展条目，适合在已经建立基本判断之后继续往下读。'}
-            </p>
-            <div className="archive-grid">
-              {extendedWorks.map((work) => {
-                const localizedWork = localizeWork(work, language)
-
-                return (
-                  <article key={work.id} className="archive-item">
-                    <div className="archive-item-image">
-                      <img src={getDisplayImage(work)} alt={localizedWork.title} />
-                    </div>
-                    <div className="archive-item-content">
-                      <h3>{localizedWork.title}</h3>
-                      <p className="archive-item-years">{localizedWork.years}</p>
-                      <p className="archive-item-category">{localizedWork.subtitle}</p>
                       <p>{localizedWork.summary}</p>
                       <div className="archive-item-actions">
                         <a href={getWorkTargetUrl(work)} className="button">{language === 'en' ? 'Open Detail' : '查看详情'}</a>

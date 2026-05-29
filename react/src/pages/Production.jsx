@@ -2,7 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
+import works from '../data/generated/works'
+import { getDisplayImage, getWorkTargetUrl } from '../data/siteDisplay'
+import { pickWorksByIds, productionWorkIds } from '../data/siteTaxonomy'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { localizeWork } from '../i18n/content.js'
 
 const servicesByLanguage = {
   zh: [
@@ -33,7 +37,7 @@ const servicesByLanguage = {
     {
       id: 'research-consultation',
       title: '研究咨询与工作坊 / Consultation & Workshop',
-      description: '适合团队方法搭建、方向讨论和工作坊场景，不是纯交付，而是帮合作方建立判断和工作流。',
+      description: '适合团队方法搭建、方向讨论和工作坊场景，帮助合作方梳理判断依据与工作流程。',
       forUse: ['方法讨论', '项目咨询', '课程 / workshop', '系统搭建与内容组织']
     }
   ],
@@ -91,7 +95,7 @@ const caseNotesByLanguage = {
     {
       id: 'immersive-not-by-length',
       title: '为什么沉浸式内容不能只按“片长”报价',
-      content: '空间项目的难度往往来自屏幕结构、版本数量、内容组织方式与场地适配，而不是单纯时长。'
+      content: '空间项目的难度往往来自屏幕结构、版本数量、内容组织方式与场地适配，时长只是其中一个参考因素。'
     }
   ],
   en: [
@@ -206,6 +210,28 @@ const contactChecklistByLanguage = {
   en: ['project type', 'timeline', 'venue or platform', 'resolution / screen conditions', 'budget range', 'expected deliverable']
 }
 
+function ProductionWorkCard({ work, language }) {
+  const localizedWork = localizeWork(work, language)
+
+  return (
+    <article className="archive-item">
+      <div className="archive-item-image">
+        <img src={getDisplayImage(work)} alt={localizedWork.title} loading="lazy" />
+      </div>
+      <div className="archive-item-content">
+        <h3>{localizedWork.title}</h3>
+        <p className="archive-item-years">{localizedWork.years} / {localizedWork.subtitle}</p>
+        <p>{localizedWork.summary}</p>
+        <div className="archive-item-actions">
+          <a href={getWorkTargetUrl(work)} className="button">
+            {language === 'en' ? 'Open Production Record' : '查看制作记录'}
+          </a>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 const Production = () => {
   const { language } = useLanguage()
   const services = servicesByLanguage[language]
@@ -214,6 +240,7 @@ const Production = () => {
   const faqs = faqsByLanguage[language]
   const pricingCards = pricingCardsByLanguage[language]
   const contactChecklist = contactChecklistByLanguage[language]
+  const productionWorks = pickWorksByIds(works, productionWorkIds)
 
   return (
     <>
@@ -225,8 +252,8 @@ const Production = () => {
             <h1 className="section-title">{language === 'en' ? 'Production and Collaboration' : '制作与合作'}</h1>
             <p className="section-intro">
               {language === 'en'
-                ? 'This page is for clients and collaborators who need to make a quick judgment. It explains what kinds of projects fit this practice, how the work is usually structured, and which questions are most worth clarifying before the conversation goes further.'
-                : '这个页面是给客户和合作方快速判断用的。你可以直接看我适合接什么项目、常见合作类型、为什么不同项目的制作逻辑不同，以及继续沟通前最值得先确认的几个问题。'}
+                ? 'Production gathers production works, collaboration formats, public presentation nodes, and delivery references for live visuals, spatial image work, immersive content, and audiovisual systems.'
+                : 'Production 整理制作项目、合作案例、公开呈现节点与交付参考，覆盖现场视觉、空间影像、沉浸内容和音画系统等方向。'}
             </p>
           </div>
         </section>
@@ -236,26 +263,49 @@ const Production = () => {
             <h2 className="section-title">{language === 'en' ? 'Production Overview' : 'Production Overview / 制作概览'}</h2>
             <p>
               {language === 'en'
-                ? 'The strongest fit is not simply “making a visual asset,” but projects where content, space, pacing, versions, and delivery all need to be organized together. If the project involves live visuals, spatial image work, immersive content, previs, or delivery-spec support, this page will usually be more direct than the work pages.'
-                : '我更适合的不是单纯“做一条素材”，而是那些需要把内容、空间、节奏、版本和交付一起梳理清楚的项目。如果你正在做演出视觉、空间影像、沉浸内容、预演测试，或需要交付规格支持，这里会比作品页更直接。'}
+                ? 'This section connects two layers: production works that show how projects enter public contexts, and collaboration formats that clarify scope, workflow, technical conditions, and deliverables.'
+                : '这一部分连接两层内容：一层是已经进入公开语境的制作项目记录，另一层是用于说明项目范围、制作流程、技术条件和交付内容的合作结构。'}
             </p>
             <div className="grid-3" style={{ marginTop: '28px' }}>
               <div className="overview-card">
-                <h4>{language === 'en' ? 'Best-fit project types' : '适合什么合作'}</h4>
+                <h4>{language === 'en' ? 'Production Areas' : '制作方向'}</h4>
                 <p>{language === 'en' ? 'Live visuals, spatial image work, opening sequences, exhibition content, multi-version delivery, previs, and specification support.' : '演出视觉、空间影像、开场段落、展厅内容、多版本交付、预演测试与规格支持。'}</p>
               </div>
               <div className="overview-card">
-                <h4>{language === 'en' ? 'What clients should read first' : '客户先看什么'}</h4>
-                <p>{language === 'en' ? 'Start with service categories and case notes, then judge whether your project is closer to content production, system support, or an earlier validation phase.' : '先看服务类别和案例说明，再判断你的项目更像内容制作、系统支持，还是前期验证。'}</p>
+                <h4>{language === 'en' ? 'Production Works' : 'Production Works'}</h4>
+                <p>{language === 'en' ? 'Commercial cases, public presentations, collaboration notes, technical conditions, and version trails sit here as production references.' : '商业案例、公开呈现、合作节点、技术条件与版本线索在这里作为制作参考被整理。'}</p>
               </div>
               <div className="overview-card">
-                <h4>{language === 'en' ? 'How to continue the conversation' : '怎么继续沟通'}</h4>
-                <p>{language === 'en' ? 'Bringing schedule, venue, screen conditions, budget range, and expected output format into the conversation will make the process much more efficient.' : '带着时间、场地、屏幕条件、预算区间和预期输出形式来聊，效率会高很多。'}</p>
+                <h4>{language === 'en' ? 'Collaboration Scope' : '合作范围'}</h4>
+                <p>{language === 'en' ? 'Scope is shaped by schedule, venue, screen conditions, output format, version count, and the level of on-site or technical support required.' : '合作范围通常由时间、场地、屏幕条件、输出格式、版本数量，以及是否需要现场或技术支持共同决定。'}</p>
               </div>
             </div>
             <div className="hero-cta" style={{ marginTop: '24px' }}>
-              <a href="#contact" className="button primary">{language === 'en' ? 'Contact Directly' : '直接联系'}</a>
+              <a href="#contact" className="button primary">{language === 'en' ? 'Start an Inquiry' : '发起项目咨询'}</a>
+              <Link to="/archive" className="button">{language === 'en' ? 'Open Production Works' : '查看 Production Works'}</Link>
               <Link to="/gaussian-scenes" className="button">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <div className="eyebrow">Production Works</div>
+            <h2 className="section-title">{language === 'en' ? 'Production Works' : 'Production Works / 商业与交付项目'}</h2>
+            <p className="section-intro">
+              {language === 'en'
+                ? 'Production Works collects commercial, stage, event, and delivery-based projects where the record is defined by scope, public context, technical conditions, and output requirements.'
+                : 'Production Works 收录商业、演出、活动与交付型项目。这里的重点不是作品画廊，而是项目范围、公开语境、技术条件与输出要求。'}
+            </p>
+            <div className="archive-grid">
+              {productionWorks.slice(0, 6).map((work) => (
+                <ProductionWorkCard key={work.id} work={work} language={language} />
+              ))}
+            </div>
+            <div className="hero-cta" style={{ marginTop: '24px' }}>
+              <Link to="/archive" className="button primary">
+                {language === 'en' ? 'Open All Production Works' : '查看全部 Production Works'}
+              </Link>
             </div>
           </div>
         </section>
@@ -265,7 +315,7 @@ const Production = () => {
             <div className="entry-banner production-gaussian-entry">
               <div className="entry-banner-content">
                 <h2>{language === 'en' ? 'Spatial Samples and Method Notes / Gaussian Archive' : '空间样本与方法说明 / Gaussian Archive'}</h2>
-                <p>{language === 'en' ? 'If you want to continue into spatial preservation, web embedding, and Vision Pro / XR paths, the Gaussian Archive is the supporting sample-and-method branch rather than the main collaboration page.' : '如果你想继续看扫描保存、网页嵌入和 Vision Pro / XR 路径，这里是补充样本和方法说明的入口，不是主合作页。'}</p>
+                <p>{language === 'en' ? 'For spatial preservation, web embedding, and Vision Pro / XR paths, the Gaussian Archive provides the supporting samples and method notes connected to this production practice.' : '若希望查看空间保存、网页嵌入和 Vision Pro / XR 路径，Gaussian Archive 提供与制作实践相关的样本和方法说明。'}</p>
                 <div className="hero-cta" style={{ justifyContent: 'center' }}>
                   <Link to="/gaussian-scenes" className="button primary">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
                   <a href="https://github.com/ewanqian/portfolio/blob/main/archive/gaussian-scenes/gaussian-spatial-workflow-note.md" target="_blank" rel="noreferrer" className="button">
@@ -281,7 +331,7 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">{language === 'en' ? 'Service Categories' : '合作类型 / Service Categories'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'These categories are not a list of generic skills. They are here so a reader can quickly judge what kind of collaboration structure a project is actually asking for.' : '下面这几类不是“我会什么”的清单，而是让客户快速判断：你的项目更接近哪一种合作结构。'}
+              {language === 'en' ? 'These categories are organized around collaboration structure, so a reader can quickly understand which type of production relationship a project may require.' : '下面几类按合作结构整理，帮助读者判断项目更接近哪一种制作需求。'}
             </p>
             <div className="services-grid">
               {services.map((service) => (
@@ -304,7 +354,7 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">{language === 'en' ? 'Case Notes' : '合作判断 / Case Notes'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'This section addresses the points clients most often misjudge, so it becomes easier to understand why some projects need tests, previs, or pricing logic that cannot be reduced to duration alone.' : '这部分专门解释客户最常误判的地方，帮助你理解为什么有些项目需要先测、先预演，或者不能只按时长判断。'}
+              {language === 'en' ? 'This section explains common project judgment points, including why some projects benefit from tests, previs, or pricing logic that cannot be reduced to duration alone.' : '这一部分整理常见项目判断点，说明为什么有些项目适合先做测试、预演，或采用不能只按时长计算的报价逻辑。'}
             </p>
             <div className="case-notes-grid">
               {caseNotes.map((note) => (
@@ -376,7 +426,7 @@ const Production = () => {
               ))}
             </div>
             <p style={{ marginTop: '24px', color: 'var(--muted)', fontSize: '14px' }}>
-              {language === 'en' ? 'Actual pricing shifts with version count, venue conditions, delivery specs, collaboration structure, and schedule pressure. The page gives a reading range, not a final contract quote.' : '具体价格会因版本数量、场地条件、交付规格、协作方式与时限而变化。页面提供的是理解范围，不是最终合同价格。'}
+              {language === 'en' ? 'Actual pricing shifts with version count, venue conditions, delivery specs, collaboration structure, and schedule pressure. The page gives a reference range before a final contract quote is confirmed.' : '具体价格会因版本数量、场地条件、交付规格、协作方式与时限而变化。页面提供理解范围，最终价格以正式合同确认为准。'}
             </p>
           </div>
         </section>

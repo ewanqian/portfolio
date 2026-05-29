@@ -24,7 +24,7 @@
 - `yujiayun-45ping-visual-2025`：余佳运「45㎡」演唱会｜Opening+舞台视觉｜余佳运演唱会 Opening 和舞台视觉制作
 - `drop-flow-visual-2025`：首届中国（杭州）艺术与科技国际双年展开幕式「滴流」｜沉浸式大屏+VR头显｜首届中国（杭州）艺术与科技国际双年展开幕式作品，沉浸式大屏视觉与 VR 头显内容制作
 - `kashiwa-band-visual-2025`：Can Festival 舟山｜舞台视觉（参与部分）｜Can Festival 舟山 Kashiwa Daisuke 演出舞台视觉
-- `kashiwa-titan-visual-2025`：Kashiwa Daisuke 深圳专场｜视觉制作（全息纱幕 / 裸眼3D / 音画互动）｜与 KASHIWA Daisuke、Yuki Murata 合作的现场视听项目，负责全息纱幕、裸眼 3D 与音画互动视觉部分
+- `kashiwa-titan-visual-2025`：柏大辅 / KASHIWA Daisuke《TITAN》深圳专场｜视觉制作（全息纱幕 / 裸眼 3D / 音画互动）｜围绕《TITAN》展开的现场音画视觉项目，负责全息纱幕、裸眼 3D 与音画互动视觉部分
 - `shanhaifusheng2-visual-2025`：爱丁堡《山海浮生II》｜舞台视觉｜爱丁堡《山海浮生II》舞台视觉制作
 - `new-media-artist-simulator-2025`：杭州中心「巴别瓶」｜交互作品参展｜杭州中心美术馆「巴别瓶」新媒体艺术家模拟器交互作品参展
 - `observe-symbiosis-exhibit-2025`：深圳坪山「观察与共生」｜数据可视化｜深圳坪山「观察与共生」展览数据可视化

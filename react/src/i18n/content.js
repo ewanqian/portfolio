@@ -37,8 +37,8 @@ const workTranslations = {
     },
     kashiwa: {
       title: "Mechanical Photosynthesis: TITAN's Holographic Sound Forest",
-      subtitle: 'A live audiovisual collaboration with Kashiwa Daisuke',
-      summary: 'A live audiovisual collaboration with Kashiwa Daisuke and Yuki Murata, combining haze, white-space depth, holographic scrims, naked-eye 3D, and audiovisual interaction.'
+      subtitle: 'A live audiovisual collaboration with KASHIWA Daisuke / 柏大辅',
+      summary: 'A live audiovisual project centered on TITAN by Japanese musician and composer KASHIWA Daisuke / 柏大辅, combining haze, white-space depth, holographic scrims, naked-eye 3D, and audiovisual interaction.'
     },
     'mke-terminal': {
       title: 'Mikael Lind × KASHIWA Daisuke × Qian Yuwen',
@@ -170,8 +170,8 @@ const writingTranslations = {
       summary: 'A research note on archive structure, viewers, content protocols, and how works should be organized over time.'
     },
     'archive-vs-public-node': {
-      title: 'Why Archive Indexes and Public Nodes Need to Stay Separate',
-      summary: 'Explains why a full archive still needs a distinct layer of public-facing project nodes.'
+      title: 'Project Indexes and Public Nodes',
+      summary: 'Explains how project records, public-facing nodes, and production references can remain readable as separate layers.'
     },
     'bo-live-debrief': {
       title: 'Visual Segment Debrief: BO LIVE',

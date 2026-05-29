@@ -57,7 +57,7 @@ export default {
     },
     {
       "id": "mke-terminal",
-      "label": "MKE / Kashiwa Audio-Visual Study",
+      "label": "Mikael Lind × KASHIWA Daisuke × Qian Yuwen",
       "type": "work"
     },
     {
@@ -112,7 +112,7 @@ export default {
     },
     {
       "id": "yujiayun-45ping-visual-2025",
-      "label": "余佳运「45㎡」个人演唱会",
+      "label": "余佳运「45㎡」演唱会 宁波站",
       "type": "work"
     },
     {

@@ -24,22 +24,22 @@ function Header() {
   }
 
   const homeNavItems = [
-    { id: 'overview', label: language === 'en' ? 'Overview' : '概览', scrollTo: 'profile-directions' },
-    { id: 'selected', label: language === 'en' ? 'Selected' : '精选', scrollTo: 'works' }
+    { id: 'overview', label: language === 'en' ? 'Overview' : '概览', scrollTo: 'profile-directions' }
   ]
 
   const routeNavItems = [
-    { id: 'works', label: language === 'en' ? 'Works' : '作品', to: '/works' },
-    { id: 'production', label: language === 'en' ? 'Production' : '合作', to: '/production' },
-    { id: 'archive', label: language === 'en' ? 'Archive' : '档案', to: '/archive' },
-    { id: 'writing', label: language === 'en' ? 'Writing' : '写作', to: '/writing' }
+    { id: 'works', label: language === 'en' ? 'Gallery' : '作品', to: '/works' },
+    { id: 'profile', label: language === 'en' ? 'Profile' : '个人', to: '/profile' },
+    { id: 'production', label: language === 'en' ? 'Production' : '制作', to: '/production', activeOn: ['/production', '/archive'] },
+    { id: 'spatial', label: language === 'en' ? 'Spatial' : '空间归档', to: '/gaussian-scenes' },
+    { id: 'writing', label: language === 'en' ? 'Writing' : '文章', to: '/writing' }
   ]
 
   return (
     <header className="topbar">
       <div className="container topbar-inner">
         <NavLink to="/" end className="brand" onClick={() => setMenuOpen(false)}>
-          Ewan Qian / Portfolio
+          {language === 'en' ? 'Ewan Qian / Portfolio' : '钱誉文 / 作品集'}
         </NavLink>
         <div className="topbar-actions">
           <div className="language-toggle" role="group" aria-label={language === 'en' ? 'Language switcher' : '语言切换'}>

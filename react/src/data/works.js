@@ -15,7 +15,7 @@ export const works = [
   {
     id: "timer",
     title: "TIMER 控时者",
-    description: "围绕时间、节拍、频段与图像内部结构展开的音画互动系列。",
+    description: "围绕时间、节拍、频段与图像结构展开的音画互动系列。",
     image: "/portfolio/assets/home/featured-timer-main.jpg",
     links: [
       { text: "详情页", url: "./works/timer.html" },
@@ -26,7 +26,7 @@ export const works = [
   {
     id: "kashiwa",
     title: "《机械光合：TITAN 的全息声林》",
-    description: "与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目。",
+    description: "围绕日本音乐人柏大辅《TITAN》展开的现场音画视觉项目。",
     image: "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
     links: [
       { text: "详情页", url: "./works/kashiwa.html" },

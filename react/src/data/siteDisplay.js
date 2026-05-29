@@ -10,15 +10,18 @@ const imagePathOverrides = {
 const imageIdOverrides = {
   'babel-bottle': '/portfolio/assets/home/archive-observation-clean.jpg',
   'can-festival': '/portfolio/assets/public-nodes/can-festival.jpg',
-  'drop-flow': '/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
+  'drop-flow': '/portfolio/assets/raw-picks/dropflow-concept-250426.jpg',
   'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.jpg',
-  'kashiwa': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
-  'kashiwa-bo-live-shenzhen': '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
+  'kashiwa': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.jpg',
+  'kashiwa-bo-live-shenzhen': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.jpg',
   'mke-terminal': '/portfolio/assets/mke-terminal/pdf-p02-01.jpg',
   'observation-and-symbiosis': '/portfolio/assets/home/archive-observation-clean.jpg',
   'observe-symbiosis-pingshan': '/portfolio/assets/home/archive-observation-clean.jpg',
-  'timer': '/portfolio/assets/home/archive-timer-clean.jpg',
+  'rain-singapore-visual-2026': '/portfolio/assets/rain-singapore/rain-singapore-cover.jpg',
+  'sre-realtime-liveset-2026': '/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.png',
+  'timer': '/portfolio/assets/raw-picks/timer-main.jpg',
   'timer-series-visual-2024': '/portfolio/assets/home/archive-timer-clean.jpg',
+  'vrplay-hackathon-visual-2025': '/portfolio/assets/raw-picks/vrplay-keynote-16x9.jpg',
   'ufo-terminal': '/portfolio/assets/public-nodes/ufo-terminal.jpg'
 }
 
@@ -55,6 +58,18 @@ export function getDisplayImage(item) {
 }
 
 export function getWorkTargetUrl(work) {
+  if (work?.id === 'kashiwa' || work?.id === 'kashiwa-bo-live-shenzhen') {
+    return '/portfolio/projects/kashiwa-titan'
+  }
+
+  if (work?.id === 'yujiayun-45ping-visual-2025') {
+    return '/portfolio/projects/yujiayun-45m2'
+  }
+
+  if (work?.id === 'rain-singapore-visual-2026') {
+    return '/portfolio/projects/rain-singapore'
+  }
+
   const detailLink = work.links?.find((link) => link.url?.includes('/works/') || link.url?.startsWith('./works/'))
   const rawUrl = detailLink?.url || work.repoLink
 

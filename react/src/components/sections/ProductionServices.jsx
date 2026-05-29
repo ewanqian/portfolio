@@ -10,7 +10,7 @@ function ProductionServices() {
         <div className="eyebrow">Services</div>
         <h2 className="section-title">制作与交付服务</h2>
         <p className="section-intro">
-          这里不是把"我会什么"全部堆出来，而是帮助合作方快速判断：你的需求属于哪种服务、从什么预算开始、适不适合继续往下聊。
+          这里按合作需求整理制作与交付服务，帮助合作方了解项目类型、预算起点和继续沟通前适合确认的信息。
         </p>
         <div className="columns-2" id="serviceCards">
           {services.map((service, index) => (
@@ -59,7 +59,7 @@ function ProductionServices() {
                   <span>适合学生、申请与创作结构梳理</span>
                 </div>
                 <div className="price-item">
-                  <strong>工程诊断轻服务 — ¥800 起</strong>
+                  <strong>工程结构检查轻服务 — ¥800 起</strong>
                   <span>适合工程结构检查、问题定位与建议</span>
                 </div>
               </div>
@@ -136,7 +136,7 @@ function ProductionServices() {
           <div className="eyebrow">About</div>
           <h2 className="section-title">为什么找我合作</h2>
           <p className="section-intro">
-            我不是只做图，也不是只讲概念。我更适合那些需要把视觉、空间、结构、版本和交付一起做起来的项目。
+            我的工作更适合需要同时处理视觉、空间、结构、版本和交付的项目。
           </p>
           <div className="why-grid">
             <div className="why-card">

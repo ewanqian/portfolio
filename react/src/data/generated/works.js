@@ -423,7 +423,7 @@ export default [
     "subtitle": "与 Kashiwa Daisuke 合作",
     "years": "2025",
     "type": "collaboration",
-    "summary": "与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目，涉及雾气、白空间纵深、全息纱幕、裸眼 3D 与音画互动结构。",
+    "summary": "围绕日本音乐人、作曲家柏大辅 / KASHIWA Daisuke《TITAN》展开的现场音画视觉项目，涉及雾气、白空间纵深、全息纱幕、裸眼 3D 与音画互动结构。",
     "practiceLine": "collaborative-performance",
     "tags": [
       "live",
@@ -986,42 +986,47 @@ export default [
   },
   {
     "id": "yujiayun-45ping-visual-2025",
-    "title": "余佳运「45㎡」个人演唱会",
-    "subtitle": "Opening 与舞台视觉制作",
+    "title": "余佳运「45㎡」演唱会 宁波站",
+    "subtitle": "舞台视觉与工程交付",
     "years": "2025",
-    "type": "stage-visual",
-    "summary": "为余佳运「45㎡」宁波站个人演唱会参与 Opening 与舞台视觉内容制作，包含地图 LED 与多面 PGM 联动的舞台视觉交付。",
+    "type": "concert-performance",
+    "summary": "宁波奥体中心余佳运「45㎡」个人演唱会的舞台视觉制作。完成 Opening 与部分舞台视觉内容，包含《尘埃》开场、《防沉迷系统》、《千禧》、《夏夜入梦前》等歌曲，以及地坪 LED 与多面 PGM 联动的视觉工程交付。",
     "practiceLine": "collaborative-performance",
     "tags": [
-      "stage-visual",
+      "yujiayun",
       "concert",
-      "opening-visual"
+      "live",
+      "stage",
+      "opening",
+      "floor-led"
     ],
-    "coverImage": "posterwall.jpg",
-    "image": "/portfolio/assets/home/posterwall.jpg",
+    "coverImage": "yujiayun-45ping-cover.jpg",
+    "image": "/portfolio/assets/yujiayun-45ping/yujiayun-45ping-cover.jpg",
     "showOnHome": true,
     "relatedNodes": [],
     "relatedWritings": [],
     "displayModes": [
       "opening visual",
       "stage screen",
+      "floor LED",
       "multi-surface PGM"
     ],
     "analysisIds": [],
     "sourceDocs": [
-      "projects/yujiayun-45ping-visual-2025.md"
+      "projects/yujiayun-45ping-visual-2025.md",
+      "visual-arts/45m2-ningbo/README.md"
     ],
-    "repoLink": "https://m.yanchupiaowu.com/event?id=109005",
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/yujiayun-45ping-visual-2025.md",
     "links": [
       {
         "text": "公开演出信息",
         "url": "https://m.yanchupiaowu.com/event?id=109005"
       },
       {
-        "text": "项目记录",
+        "text": "项目文档",
         "url": "https://github.com/ewanqian/portfolio/blob/main/projects/yujiayun-45ping-visual-2025.md"
       }
     ],
-    "priority": 2
+    "priority": 3
   }
 ];

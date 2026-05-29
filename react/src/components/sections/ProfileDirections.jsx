@@ -108,7 +108,7 @@ function ProfileDirections() {
           <p className="section-intro" style={{ marginBottom: '16px' }}>
             {language === 'en'
               ? 'These entries act as public-facing signals and collaboration evidence, helping partners quickly understand the context of the practice instead of repeating the work categories.'
-              : '这些条目作为公开经历与合作信号，帮助客户快速判断我的工作语境，而不是再重复一遍作品分类。'}
+        : '这些条目作为公开经历与合作信号，帮助客户快速理解我的工作语境，并与作品分类形成互补。'}
           </p>
           <div className="signal-strip">
             {localizedSignals.map((signal) => (

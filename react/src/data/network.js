@@ -37,7 +37,7 @@ export const network = [
   {
     id: "workforge",
     title: "Forge / workforge（私有）",
-    description: "隐藏支撑层，用于维护 skills、自动化与内部判断逻辑，不直接面向公众，但支撑整套公开网络的持续运行。",
+    description: "隐藏支撑层，用于维护 skills、自动化与工作判断逻辑，支撑整套公开网络的持续运行。",
     url: "#",
     type: "private"
   }

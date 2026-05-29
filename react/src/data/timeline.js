@@ -3,7 +3,7 @@ export const timeline = [
     id: "temporal-structure",
     title: "时间作为材料",
     subtitle: "Temporal Structure",
-    description: "这条线始于对声音与图像关系的长期处理。节拍、频段、能量与段落变化被逐步纳入视觉内部，成为作品的组织材料。TIMER 系列集中呈现了这一阶段的核心问题：时间如何被塑造成一种可见的结构，并在图像内部建立起持续的秩序。",
+    description: "这条线始于对声音与图像关系的长期处理。节拍、频段、能量与段落变化被逐步纳入视觉之中，成为作品的组织材料。TIMER 系列集中呈现了这一阶段的核心问题：时间如何被塑造成一种可见的结构，并在图像之中建立起持续的秩序。",
     links: [
       { text: "Read More / 详细说明", url: "./works/timer.html" },
       { text: "Related Works / 相关作品", url: "./works/timer.html" }

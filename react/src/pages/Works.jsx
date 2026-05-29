@@ -3,25 +3,22 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import works from '../data/generated/works'
 import { getDisplayImage, getWorkTargetUrl, sortWorksForArchive } from '../data/siteDisplay'
+import { galleryWorkIds } from '../data/siteTaxonomy'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeWork } from '../i18n/content.js'
 
 const pageCopy = {
   zh: {
-    title: '作品选集',
-    intro: '代表作、长期系列和项目入口。',
+    title: '作品画廊',
+    intro: '作品画廊只保留代表性的艺术项目与公开呈现，用于建立对实践方向、现场质量和视觉语言的第一层判断。',
     open: '查看',
-    featured: '代表作',
-    ongoing: '持续项目',
-    more: '更多作品'
+    featured: '代表作品'
   },
   en: {
-    title: 'Selected Works',
-    intro: 'Representative works, long-running series, and project entries.',
+    title: 'Gallery',
+    intro: 'Gallery keeps selected artworks and public presentations as the first layer of the practice, focused on artistic direction, public quality, and visual language.',
     open: 'Open',
-    featured: 'Representative Works',
-    ongoing: 'Ongoing Projects',
-    more: 'More Works'
+    featured: 'Selected Artworks'
   }
 }
 
@@ -81,14 +78,8 @@ function Works() {
   const { language } = useLanguage()
   const copy = pageCopy[language]
   const orderedWorks = sortWorksForArchive(works)
-  const featuredWorks = orderedWorks.filter((work) => work.showOnHome)
-  const ongoingWorks = orderedWorks.filter((work) => (
-    work.lifecycle === 'active' ||
-    work.practiceLine === 'content-infrastructure' ||
-    work.type === 'tooling-research'
-  ))
-  const usedIds = new Set([...featuredWorks, ...ongoingWorks].map((work) => work.id))
-  const moreWorks = orderedWorks.filter((work) => !usedIds.has(work.id))
+  const galleryIdSet = new Set(galleryWorkIds)
+  const featuredWorks = orderedWorks.filter((work) => galleryIdSet.has(work.id))
 
   return (
     <>
@@ -102,8 +93,6 @@ function Works() {
         </section>
 
         <WorksSection title={copy.featured} items={featuredWorks} language={language} ctaLabel={copy.open} />
-        <WorksSection title={copy.ongoing} items={ongoingWorks} language={language} ctaLabel={copy.open} />
-        <WorksSection title={copy.more} items={moreWorks} language={language} ctaLabel={copy.open} />
       </main>
       <Footer />
     </>

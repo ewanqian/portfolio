@@ -1,61 +1,113 @@
 import works from '../../data/generated/works'
 import { getDisplayImage, getWorkTargetUrl } from '../../data/siteDisplay'
+import { homeGalleryWorkIds, pickWorksByIds } from '../../data/siteTaxonomy'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
 import { localizeWork } from '../../i18n/content.js'
 
-const workHighlights = {
-  zh: {
-    'drop-flow': '杭州双年展开幕与常设展呈现，获杭州国际电子音乐作曲比赛一等奖，并入选 2025「流光绘影」光影科技艺术节优秀作品。',
-    kashiwa: '与 Kashiwa Daisuke、Yuki Murata 在 BO LIVE Shenzhen 完成专场视听合作，包含全息纱幕、裸眼 3D 与音画互动段落。',
-    'mke-terminal': '以 Mikael Lind 与 KASHIWA Daisuke 的未发布合作单曲为声音基础，整理 PDF、BlenderMCP 与 60fps 空间视觉演出框架。',
-    timer: 'UFO Terminal「加载…创作营」支持创作，入选「加载…权限 2」展览，并获 ChinaGraph 2024 电子剧场优秀音乐作品二等奖。'
+const projectNotes = {
+  'drop-flow': {
+    label: 'Artwork / Immersive audiovisual',
+    labelZh: '艺术作品 / 沉浸式音画',
+    role: 'Media artist / visual system',
+    roleZh: '媒体艺术 / 视觉系统',
+    note: 'Long-form work around time, image, sound, and spatial presentation.',
+    noteZh: '围绕时间、图像、声音和空间呈现展开的长期作品线。'
   },
-  en: {
-    'drop-flow': 'Publicly presented at the Hangzhou Biennale opening and permanent exhibition, awarded First Prize at the Hangzhou International Electronic Music Composition Competition, and selected for the 2025 “Luminous Currents” art-and-technology festival.',
-    kashiwa: 'A special audiovisual collaboration with Kashiwa Daisuke and Yuki Murata at BO LIVE Shenzhen, combining holographic scrims, naked-eye 3D, and audiovisual interaction.',
-    'mke-terminal': 'An audio-visual study based on an unreleased Mikael Lind and KASHIWA Daisuke track, organizing the source PDF, BlenderMCP, and a 60fps spatial-visual framework.',
-    timer: 'Developed through the UFO Terminal Loading Camp, selected for the “Loading… Permission 2” exhibition, and awarded Second Prize at ChinaGraph 2024 in the electronic theatre music category.'
+  kashiwa: {
+    label: 'Live audiovisual collaboration',
+    labelZh: '现场音画合作',
+    role: 'Visual production / spatial illusion content',
+    roleZh: '视觉制作 / 空间幻象内容',
+    titleZh: '《机械光合：TITAN 的全息声林》',
+    note: 'Live audiovisual collaboration built around TITAN by Japanese musician and composer KASHIWA Daisuke / 柏大辅, with holographic scrim, spatial depth, and screen illusion.',
+    noteZh: '围绕日本音乐人、作曲家柏大辅《TITAN》展开的现场音画合作，结合全息纱幕、空间纵深与屏幕幻象。'
+  },
+  'yujiayun-45ping-visual-2025': {
+    label: 'Concert production',
+    labelZh: '演唱会制作',
+    role: 'Visual production / delivery engineering',
+    roleZh: '视觉制作 / 工程交付',
+    titleZh: '余佳运「45㎡」演唱会宁波站',
+    note: 'Opening visual system, floor LED content, and selected song deliverables under director and visual director guidance.',
+    noteZh: '在导演与视觉导演指导下完成 Opening 视觉系统、地屏内容与部分曲目交付。'
+  },
+  'rain-singapore-visual-2026': {
+    label: 'Stage visual delivery',
+    labelZh: '舞台视觉交付',
+    role: 'Production support',
+    roleZh: '视觉制作支持',
+    titleZh: 'Rain 郑智薰新加坡跨年专场',
+    note: 'SINGLAND Festival stage visual production record across opening materials, It’s Raining, Rainism, and La Song wide-screen states.',
+    noteZh: 'Rain 郑智薰新加坡 SINGLAND Festival 舞台视觉制作记录，包含开场素材与多首曲目的大屏幕视觉状态。'
+  },
+  timer: {
+    label: 'Media artwork / temporal system',
+    labelZh: '媒体艺术 / 时间系统',
+    role: 'Media artist',
+    roleZh: '媒体艺术',
+    note: 'Time-structure visual work across performance, exhibition, and audiovisual presentation.',
+    noteZh: '面向演出、展览和音画呈现的时间结构视觉作品。'
+  },
+  'vrplay-hackathon-visual-2025': {
+    label: 'XR visual identity',
+    labelZh: 'XR 活动视觉系统',
+    role: 'Visual identity / spatial concept',
+    roleZh: '主视觉 / 空间概念',
+    titleZh: 'VRplay WORLD REMIX XR 黑客松',
+    note: 'A complete visual identity and spatial-stage concept for an XR hackathon, stronger as a public-facing cover than internal tool screenshots.',
+    noteZh: '面向 XR 黑客松的主视觉与空间舞台概念，比内部工具截图更适合放在首页。'
+  },
+  'sre-realtime-liveset-2026': {
+    label: 'Realtime visual system',
+    labelZh: '实时视觉系统',
+    role: 'Tool / audiovisual pipeline',
+    roleZh: '工具 / 音画流程',
+    note: 'A system-facing entry for realtime image work, benchmarked output, and live-set preparation.',
+    noteZh: '面向实时图像、输出测试和 live set 准备的系统入口。'
   }
 }
 
 function SelectedWorks() {
   const { language } = useLanguage()
-  const homepageWorks = works
-    .filter((work) => work.showOnHome === true)
-    .sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999))
+  const isZh = language === 'zh'
+  const homepageWorks = pickWorksByIds(works, homeGalleryWorkIds)
 
   return (
-    <section id="works" className="section">
+    <section id="works" className="section selected-projects-section">
       <div className="container">
-        <div className="eyebrow">Selected Works</div>
-        <h2 className="section-title">{language === 'en' ? 'Selected Works' : '作品选集'}</h2>
-        <p className="section-intro">
-          {language === 'en'
-            ? 'The homepage keeps the primary work entries here. Public nodes, research lines, and spatial samples continue further below.'
-            : '首页先保留最值得优先进入的代表作入口。更完整的公开节点、研究线和空间样本，会在下方继续展开。'}
-        </p>
-        <div className="grid-3">
-          {homepageWorks.map((work) => {
+        <div className="section-heading-row">
+          <div>
+            <div className="eyebrow">{isZh ? '项目索引' : 'Project Index'}</div>
+            <h2 className="section-title">{isZh ? '项目' : 'Projects'}</h2>
+          </div>
+          <p className="section-intro">
+            {language === 'en'
+              ? 'A direct entry into artworks, concert production records, international stage delivery, and system-based experiments.'
+              : '直接进入艺术作品、演唱会制作记录、国际舞台交付与系统实验。'}
+          </p>
+        </div>
+
+        <div className="selected-project-grid">
+          {homepageWorks.map((work, index) => {
             const targetUrl = getWorkTargetUrl(work)
             const localizedWork = localizeWork(work, language)
+            const note = projectNotes[work.id]
+            const title = isZh && note?.titleZh ? note.titleZh : localizedWork.title
+            const label = isZh ? note?.labelZh || localizedWork.type : note?.label || localizedWork.type
+            const role = isZh ? note?.roleZh || localizedWork.subtitle : note?.role || localizedWork.subtitle
+            const summary = isZh ? note?.noteZh || localizedWork.summary : note?.note || localizedWork.summary
 
             return (
-              <article key={work.id} className="card work-card">
-                <a href={targetUrl} className="thumb">
-                  <img src={getDisplayImage(work)} alt={localizedWork.title} />
+              <article key={work.id} className={`selected-project-card selected-project-card-${index + 1}`}>
+                <a href={targetUrl} className="selected-project-thumb">
+                  <img src={getDisplayImage(work)} alt={title} />
+                  <span className="selected-project-index">{String(index + 1).padStart(2, '0')}</span>
                 </a>
-                <div className="content">
-                  <h3><a href={targetUrl}>{localizedWork.title}</a></h3>
-                  <p className="work-card-meta">{localizedWork.years} · {localizedWork.subtitle}</p>
-                  <p>{localizedWork.summary}</p>
-                  {workHighlights[language][work.id] ? (
-                    <p className="work-card-note">{workHighlights[language][work.id]}</p>
-                  ) : null}
-                  <div className="inline-links">
-                    {work.links && work.links.map((link, i) => (
-                      <a key={i} href={link.url}>{link.text}</a>
-                    ))}
-                  </div>
+                <div className="selected-project-content">
+                  <div className="selected-project-label">{label}</div>
+                  <h3><a href={targetUrl}>{title}</a></h3>
+                  <p className="selected-project-role">{role}</p>
+                  <p>{summary}</p>
                 </div>
               </article>
             )
