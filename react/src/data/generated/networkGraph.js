@@ -7,7 +7,7 @@ export default {
     },
     {
       "id": "derive-dual-city-2024",
-      "label": "Dérive 双城记 / Digital Dérive",
+      "label": "FutureLab 2024「Dérive 双城记」",
       "type": "work"
     },
     {

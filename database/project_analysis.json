@@ -36,16 +36,16 @@
     "nextDirections": ["link team collaborators", "split process docs from project lore"]
   },
   {
-    "id": "drop-flow-award-node",
-    "title": "Drop Flow / 奖项与竞赛节点",
+    "id": "derive-dual-city-spatial-archive",
+    "title": "Dérive 双城记 / 城市扫描与空间叙事节点",
     "relatedWorks": ["derive-dual-city-2024"],
-    "visualGeneIds": ["drop-flow-gene"],
-    "coreQuestion": "如何用带奖项背书的节点证明 Drop Flow 线索的公共可信度。",
+    "visualGeneIds": ["spatial-archive-gene"],
+    "coreQuestion": "如何把双城经验、城市采样与空间扫描组织成可进入的数字叙事。",
     "formalLanguage": ["urban scan", "digital drift", "competition-format presentation"],
     "technicalRoute": ["spatial scanning", "multimedia visual collaboration", "Apple Vision Pro path"],
-    "publicContext": "竞赛与奖项提供了比自述更强的对外信号。",
-    "analysisSummary": "这个节点的重要性不在内容规模，而在于它补上了公开评价与认可维度。",
-    "nextDirections": ["create award node schema", "backfill more competition evidence"]
+    "publicContext": "FutureLab 2024 提供了城市空间、数字采样与 Apple Vision Pro 呈现的公开语境。",
+    "analysisSummary": "这个节点更适合放入城市扫描与空间归档线，而不是 Drop Flow 系列。",
+    "nextDirections": ["separate from Drop Flow series", "backfill spatial archive evidence"]
   },
   {
     "id": "kashiwa-live-collaboration",

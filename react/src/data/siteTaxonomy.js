@@ -16,6 +16,8 @@ export const galleryWorkIds = [
 ]
 
 export const productionWorkIds = [
+  'kashiwa',
+  'kashiwa-band-visual-2025',
   'yujiayun-45ping-visual-2025',
   'rain-singapore-visual-2026',
   'vrplay-hackathon-visual-2025',
@@ -23,7 +25,8 @@ export const productionWorkIds = [
   'digital-garden-visual-2025',
   'ar-shenzhen-resort-2022',
   'hallu-resonance-live-2024',
-  'glance-thousand-install-2023'
+  'glance-thousand-install-2023',
+  'sre-realtime-liveset-2026'
 ]
 
 export function pickWorksByIds(works, ids) {

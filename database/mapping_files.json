@@ -7,11 +7,11 @@
     "reason": "legacy project doc title differs from canonical work object id"
   },
   {
-    "id": "dropflow-award-2025-to-derive-dual-city-2024",
+    "id": "derive-dual-city-archive-to-derive-dual-city-2024",
     "sourceDoc": "projects/dropflow-award-2025.md",
     "targetType": "work",
     "targetId": "derive-dual-city-2024",
-    "reason": "award-focused writeup maps to existing Drop Flow award node object"
+    "reason": "legacy writeup maps to the Dérive / Digital Dérive spatial archive object"
   },
   {
     "id": "dropflow-expo-2025-to-drop-flow-visual-2025",

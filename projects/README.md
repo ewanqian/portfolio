@@ -30,7 +30,7 @@
 - `observe-symbiosis-exhibit-2025`：深圳坪山「观察与共生」｜数据可视化｜深圳坪山「观察与共生」展览数据可视化
 - `digital-garden-visual-2025`：西安万象城「数字游园」｜Unity VFX Graph｜西安万象城「数字游园」Unity VFX Graph 视觉开发
 - `drop-flow-ufo-2025`：UFO Terminal「滴流3.0」｜音画互动现场｜UFO Terminal「滴流3.0」音画互动现场
-- `derive-dual-city-2024`：杭州国际电子音乐节「滴流」一等奖｜多媒体视觉合作｜杭州国际电子音乐节「滴流」一等奖
+- `derive-dual-city-2024`：FutureLab 2024「Dérive 双城记」｜城市扫描 / Apple Vision Pro 呈现｜FutureLab 城市空间叙事实践
 - `timer-series-visual-2024`：Timer 系列｜视觉设计、现场呈现｜Timer 系列作品的展映、现场视觉呈现与环形沉浸屏幕实验，获 ChinaGraph 2024 二等奖。
 - `ether-fragment-exhibit-2023`：西岸艺术博览会「以太碎片」｜影像展映｜西岸艺术博览会「以太碎片」影像展映
 - `xtep-xdna22aw-visual-2022`：上海时装周XTEP-XDNA｜视频制作｜上海时装周 XTEP-XDNA 视频内容制作
@@ -50,8 +50,8 @@
 | 23/12 | `onefive-underground-visual-2023` | @onefive Underground | 视觉制作 | Japan | Stage | done | - | - | [doc](./onefive-underground-visual-2023.md) | doc / standard / db-only |
 | 23/11 | `onefive-overground-visual-2023` | @onefive Overground | 视觉制作 | Japan | Stage | done | - | - | [doc](./onefive-overground-visual-2023.md) | doc / standard / db-only |
 | 23/10 | `lonely-av-live-2023` | 上海广播艺术中心「孤独？」 | 舞台视觉 | Shanghai | Stage | done | - | - | [doc](./lonely-av-live-2023.md) | doc / standard / db-only |
-| 22/11 | `watermusic-multi-visual-2022` | Germany Hamburg《Water Music》 | 多媒体视觉 | Hamburg, Germany | Stage | done | - | - | [doc](./watermusic-multi-visual-2022.md) | doc / standard / db-only |
-| 22/10 | `xiexindance-sixiang-gong-visual-2022` | 谢欣舞蹈剧场《四相》《汞》 | 影像视觉 | China | Stage | done | - | - | [doc](./xiexindance-sixiang-gong-visual-2022.md) | doc / standard / db-only |
+| 22/11 | `watermusic-multi-visual-2022` | CHINATIME Hamburg《Water Music》 | 多媒体视觉 | Hamburg, Germany | Stage | done | - | - | [doc](./watermusic-multi-visual-2022.md) | doc / standard / db-only |
+| 22/10 | `xiexindance-sixiang-gong-visual-2022` | 谢欣舞蹈剧场《四相》《汞》 | 影像视觉制作 | 上海国际舞蹈中心 | Stage | done | - | - | [doc](./xiexindance-sixiang-gong-visual-2022.md) | doc / standard / db-only |
 | 22/09 | `xtep-xdna22aw-visual-2022` | 上海时装周XTEP-XDNA | 视频制作 | Shanghai Fashion Week | Stage | done | - | - | [doc](./xtep-xdna22aw-visual-2022.md) | doc / featured / db-only |
 | 22/01 | `migu-olympic-vfx-2022` | 中国移动咪咕冬奥宣传片 | 视觉制作 | China | Video | done | - | - | [doc](./migu-olympic-vfx-2022.md) | doc / standard / db-only |
 | 21/09 | `zcool-hp-live-2021` | 站酷 2021 CUBE 设计大会 HP G8 工作站发布会 | 视觉制作 | Beijing | Stage | done | - | - | [doc](./zcool-hp-live-2021.md) | doc / standard / db-only |
@@ -64,13 +64,18 @@
 | 25/11 | `drop-flow-qingdao-2025` | 重庆「流光绘影」光影科技艺术节「滴流」 | 异形屏幕装置 | Chongqing | Exhibition | done | - | `2025 流光绘影 光影科技艺术节优秀作品` | pending | index-only / standard / db-only |
 | 25/10 | `drop-flow-visual-2025` | 首届中国（杭州）艺术与科技国际双年展开幕式「滴流」 | 沉浸式大屏+VR头显 | Hangzhou Biennale | Exhibition | done | `drop-flow-hangzhou-biennale-2025` | - | [doc](./drop-flow-visual-2025.md) | doc / featured / content-ready |
 | 25/07 | `drop-flow-ufo-2025` | UFO Terminal「滴流3.0」 | 音画互动现场 | UFO Terminal Shanghai | Live | done | `drop-flow-ufo-terminal-2025` | - | [doc](./dropflow3-live-2025.md) | doc / featured / content-ready |
-| 24/09 | `derive-dual-city-2024` | 杭州国际电子音乐节「滴流」一等奖 | 多媒体视觉合作 | Hangzhou International Electroacoustic Music Festival | Competition | done | - | `杭州国际电子音乐作曲比赛 C 组一等奖` | [doc](./derive-dual-city-2024.md) | doc / featured / content-ready |
 
 ## 时间结构 / Temporal Structures
 
 | 时间 | slug | 项目 | 角色 | 地点/语境 | 类型 | 状态 | 关联节点 | 奖项/信号 | 项目文档 | 内容状态 |
 |------|------|------|------|-----------|------|------|----------|-----------|----------|----------|
 | 24/08 | `timer-series-visual-2024` | Timer 系列 | 视觉设计、现场呈现 | Shanghai / Hangzhou | Series | done | - | `ChinaGraph 2024 电子剧场优秀音乐作品二等奖` | [doc](./timer-series-visual-2024.md) | doc / featured / content-ready |
+
+## 城市扫描 / Spatial Archive
+
+| 时间 | slug | 项目 | 角色 | 地点/语境 | 类型 | 状态 | 关联节点 | 奖项/信号 | 项目文档 | 内容状态 |
+|------|------|------|------|-----------|------|------|----------|-----------|----------|----------|
+| 24/11 | `derive-dual-city-2024` | FutureLab 2024「Dérive 双城记」 | 城市扫描 / Apple Vision Pro 呈现 | 上海西岸艺术中心 N 馆 | Exhibition | done | - | FutureLab 2024 | [doc](./derive-dual-city-2024.md) | doc / featured / content-ready |
 
 ## 环境、展览与感知系统 / Perceptual Environments
 
@@ -92,7 +97,7 @@
 | 23/03 | `nature-numeral-install-2023` | 龙湖上海奉贤天街「数字空间与自然共生」 | 视频艺术装置制作 | Shanghai | Installation | done | - | - | [doc](./nature-numeral-install-2023.md) | doc / standard / db-only |
 | 23/01 | `glance-thousand-install-2023` | 安昌光影艺术季 | 古桥投影 | Anchang | Exhibition | done | - | - | [doc](./glance-thousand-install-2023.md) | doc / standard / db-only |
 | 22/12 | `ar-shenzhen-resort-2022` | 深圳光影艺术季AR | AR作品 | Shenzhen Light Art Festival | Exhibition | done | - | - | [doc](./ar-shenzhen-resort-2022.md) | doc / standard / db-only |
-| 22/09 | `meta-speaker-install-2022` | 西岸凤巢AI PLAZA | 数字艺术 | Westbund AI PLAZA Shanghai | Exhibition | done | - | - | [doc](./meta-speaker-install-2022.md) | doc / standard / db-only |
+| 22/09 | `meta-speaker-install-2022` | 西岸凤巢 AI PLAZA《元语者・棱镜现实》 | 地面数字艺术装置 | Westbund AI PLAZA Shanghai | Exhibition | done | - | - | [doc](./meta-speaker-install-2022.md) | doc / standard / db-only |
 | 22/03 | `matrix-navi-2022` | 上海青年艺术博览会「矩阵导航」 | 参展 | Shanghai | Installation | done | - | - | [doc](./matrix-navi-2022.md) | doc / standard / db-only |
 
 ## Coverage Gaps

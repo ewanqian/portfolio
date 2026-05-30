@@ -13,13 +13,13 @@ const proofNodeIds = [
 
 const sectionCopy = {
   zh: {
-    title: '公开证据',
-    intro: '这里只保留几项最能快速建立判断的公开节点。完整项目记录、版本线索和扩展条目放到 Production Records。',
+    title: '公开呈现',
+    intro: '这里只保留几项最容易进入作品语境的公开节点。完整项目记录、版本线索和扩展条目放到 Production Records。',
     cta: '查看项目记录'
   },
   en: {
-    title: 'Public Proofs',
-    intro: 'Only a few public-facing proof points stay here. Full project records, version trails, and expanded entries live in Production Records.',
+    title: 'Public Presentations',
+    intro: 'A concise set of public presentation nodes. Full project records, version trails, and expanded entries live in Production Records.',
     cta: 'Open Production Records'
   }
 }

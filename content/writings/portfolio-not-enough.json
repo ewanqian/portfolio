@@ -1,10 +1,10 @@
 {
   "id": "portfolio-not-enough",
-  "title": "个人作品网站为什么不能只是 portfolio",
+  "title": "个人作品网站的多层入口",
   "type": "Research",
   "category": "research",
   "date": "2025",
-  "summary": "讨论为什么个人网站需要同时承担作品入口、方法层、档案层和合作判断，而不是只做项目陈列。",
+  "summary": "讨论个人网站如何同时承担作品入口、方法层、档案层和合作判断。",
   "relatedWork": null,
   "relatedNode": null,
   "status": "planned",

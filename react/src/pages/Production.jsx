@@ -94,7 +94,7 @@ const caseNotesByLanguage = {
     },
     {
       id: 'immersive-not-by-length',
-      title: '为什么沉浸式内容不能只按“片长”报价',
+      title: '沉浸式内容的报价维度',
       content: '空间项目的难度往往来自屏幕结构、版本数量、内容组织方式与场地适配，时长只是其中一个参考因素。'
     }
   ],
@@ -295,7 +295,7 @@ const Production = () => {
             <p className="section-intro">
               {language === 'en'
                 ? 'Production Works collects commercial, stage, event, and delivery-based projects where the record is defined by scope, public context, technical conditions, and output requirements.'
-                : 'Production Works 收录商业、演出、活动与交付型项目。这里的重点不是作品画廊，而是项目范围、公开语境、技术条件与输出要求。'}
+                : 'Production Works 收录商业、演出、活动与交付型项目，集中呈现项目范围、公开语境、技术条件与输出要求。'}
             </p>
             <div className="archive-grid">
               {productionWorks.slice(0, 6).map((work) => (
@@ -354,7 +354,7 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">{language === 'en' ? 'Case Notes' : '合作判断 / Case Notes'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'This section explains common project judgment points, including why some projects benefit from tests, previs, or pricing logic that cannot be reduced to duration alone.' : '这一部分整理常见项目判断点，说明为什么有些项目适合先做测试、预演，或采用不能只按时长计算的报价逻辑。'}
+              {language === 'en' ? 'This section explains common project judgment points, including tests, previs, and pricing logic for spatial or multi-screen delivery.' : '这一部分整理常见项目判断点，包括测试样片、预演流程，以及空间或多屏交付中的报价逻辑。'}
             </p>
             <div className="case-notes-grid">
               {caseNotes.map((note) => (

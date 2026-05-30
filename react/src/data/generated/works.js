@@ -42,20 +42,20 @@ export default [
   },
   {
     "id": "derive-dual-city-2024",
-    "title": "Dérive 双城记 / Digital Dérive",
-    "subtitle": "带奖项背书的城市扫描与空间叙事实践",
+    "title": "FutureLab 2024「Dérive 双城记」",
+    "subtitle": "FutureLab 城市扫描与空间叙事实践",
     "years": "2024",
     "type": "competition-presentation",
-    "summary": "杭州国际电子音乐作曲比赛的多媒体视觉合作节点，带有明确奖项背书，并延伸出 Apple Vision Pro 的呈现路径。",
-    "practiceLine": "spatial-generation",
+    "summary": "FutureLab 2024 的城市扫描与空间叙事实践，围绕双城经验、数字化采样和 Apple Vision Pro 呈现路径展开。",
+    "practiceLine": "perceptual-environments",
     "tags": [
       "award",
-      "drop-flow",
+      "urban-archive",
       "scan",
       "apple-vision-pro"
     ],
-    "coverImage": "featured-dropflow-main.jpg",
-    "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
+    "coverImage": "derive-dual-city-poster.png",
+    "image": "/portfolio/assets/raw-library/derive-dual-city-poster.png",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -65,7 +65,7 @@ export default [
       "Apple Vision Pro"
     ],
     "analysisIds": [
-      "drop-flow-award-node"
+      "derive-dual-city-spatial-archive"
     ],
     "sourceDocs": [
       "projects/derive-dual-city-2024.md",
@@ -268,7 +268,7 @@ export default [
     "subtitle": "数字情感容器线的公开展映节点",
     "years": "2023",
     "type": "exhibition",
-    "summary": "《以太碎片》把扫描环境、点云采样与未完成结构感带入西岸艺博会，补上数字情感容器线的重要公开证据。",
+    "summary": "《以太碎片》把扫描环境、点云采样与开放结构感带入西岸艺博会，成为数字情感容器线的重要公开呈现。",
     "practiceLine": "perceptual-environments",
     "tags": [
       "point cloud",
@@ -1000,8 +1000,8 @@ export default [
       "opening",
       "floor-led"
     ],
-    "coverImage": "yujiayun-45ping-cover.jpg",
-    "image": "/portfolio/assets/yujiayun-45ping/yujiayun-45ping-cover.jpg",
+    "coverImage": "intro-46s-orange-arc.jpg",
+    "image": "/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.jpg",
     "showOnHome": true,
     "relatedNodes": [],
     "relatedWritings": [],

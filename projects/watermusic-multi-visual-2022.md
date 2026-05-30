@@ -1,4 +1,4 @@
-# Germany Hamburg China Time《Water Music》2022
+# CHINATIME Hamburg《Water Music》2022
 
 > 演艺舞台视觉项目
 
@@ -10,7 +10,7 @@
 |------|------|
 | **时间** | 2022/11/23 |
 | **地点** | 德国汉堡Laeiszhalle |
-| **项目** | China Time 2022《Water Music》 |
+| **项目** | CHINATIME 2022《Water Music》 |
 | **角色** | 视觉制作与工程交付 |
 
 ---

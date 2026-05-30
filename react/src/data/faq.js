@@ -17,7 +17,7 @@ export const faq = [
   {
     id: "engineering",
     question: "你能帮忙看别人做了一半的工程吗？",
-    answer: "可以。这类合作适合归到工程整理、workflow 咨询、内容结构梳理或视觉系统优化。你可以先发工程截图、当前问题和时间预算。"
+    answer: "可以。这类合作适合归到工程整理、workflow 咨询、内容结构梳理或视觉系统优化。你可以先发工程截图、项目状态和时间预算。"
   },
   {
     id: "free-test",

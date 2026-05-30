@@ -264,7 +264,7 @@ function YuJiayun45m2() {
               </p>
             </div>
             <div className="project-hero-media">
-              <img src="/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-52s-architecture.jpg" alt="Yu Jiayun 45m2 opening visual frame" />
+              <img src="/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.jpg" alt="Yu Jiayun 45m2 opening visual frame" />
             </div>
           </div>
         </section>

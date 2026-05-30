@@ -273,12 +273,12 @@
     "month": 10,
     "type": "stage",
     "category": "audiovisual-collaborations",
-    "role": "影像视觉",
+    "role": "影像视觉制作",
     "practiceLine": "Audiovisual Collaborations",
-    "location": "China",
+    "location": "上海国际舞蹈中心",
     "status": "done",
     "featured": false,
-    "description": "谢欣舞蹈剧场《四相》《汞》影像视觉制作",
+    "description": "谢欣舞蹈剧场新锐编舞专场《四相》《汞》影像视觉制作与舞台内容交付。",
     "filePath": "projects/xiexindance-sixiang-gong-visual-2022.md"
   },
   {
@@ -304,7 +304,7 @@
   },
   {
     "id": "watermusic-multi-visual-2022",
-    "name": "Germany Hamburg《Water Music》",
+    "name": "CHINATIME Hamburg《Water Music》",
     "slug": "watermusic-multi-visual-2022",
     "year": 2022,
     "month": 11,
@@ -315,7 +315,7 @@
     "location": "Hamburg, Germany",
     "status": "done",
     "featured": false,
-    "description": "Germany Hamburg《Water Music》多媒体视觉制作",
+    "description": "CHINATIME Hamburg《Water Music》多媒体视觉制作",
     "filePath": "projects/watermusic-multi-visual-2022.md"
   },
   {
@@ -392,27 +392,26 @@
   },
   {
     "id": "derive-dual-city-2024",
-    "name": "杭州国际电子音乐节「滴流」一等奖",
+    "name": "FutureLab 2024「Dérive 双城记」",
     "slug": "derive-dual-city-2024",
     "year": 2024,
-    "month": 9,
-    "type": "competition",
-    "category": "drop-flow",
-    "role": "多媒体视觉合作",
-    "practiceLine": "Drop Flow",
-    "location": "Hangzhou International Electroacoustic Music Festival",
+    "month": 11,
+    "type": "exhibition",
+    "category": "perceptual-environments",
+    "role": "城市扫描 / Apple Vision Pro 呈现",
+    "practiceLine": "Perceptual Environments",
+    "location": "上海西岸艺术中心 N 馆",
     "status": "done",
     "featured": true,
-    "description": "杭州国际电子音乐节「滴流」一等奖",
+    "description": "FutureLab 2024 城市扫描与空间叙事实践，延伸出 Apple Vision Pro 呈现路径。",
     "collaboratorIds": ["ewan-qian"],
     "venueId": null,
     "relatedNodeIds": [],
     "displayModes": ["multimedia visual", "spatial narrative", "Apple Vision Pro"],
-    "analysisIds": ["drop-flow-award-node"],
-    "awards": ["杭州国际电子音乐作曲比赛 C 组一等奖"],
+    "analysisIds": ["derive-dual-city-spatial-archive"],
+    "awards": [],
     "sourceDocs": [
-      "projects/derive-dual-city-2024.md",
-      "projects/dropflow-award-2025.md"
+      "projects/derive-dual-city-2024.md"
     ],
     "filePath": "projects/derive-dual-city-2024.md"
   },
@@ -753,18 +752,18 @@
   },
   {
     "id": "meta-speaker-install-2022",
-    "name": "西岸凤巢AI PLAZA",
+    "name": "西岸凤巢 AI PLAZA《元语者・棱镜现实》",
     "slug": "meta-speaker-install-2022",
     "year": 2022,
     "month": 9,
     "type": "exhibition",
     "category": "perceptual-environments",
-    "role": "数字艺术",
+    "role": "地面数字艺术装置",
     "practiceLine": "Perceptual Environments",
     "location": "Westbund AI PLAZA Shanghai",
     "status": "done",
     "featured": false,
-    "description": "西岸凤巢 AI PLAZA 数字艺术装置",
+    "description": "《元语者・棱镜现实》在上海西岸凤巢 AI PLAZA 的地面数字艺术装置呈现。",
     "filePath": "projects/meta-speaker-install-2022.md"
   }
 ]
