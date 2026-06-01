@@ -4,6 +4,19 @@
 
 ---
 
+## Public Graph / 对象关系
+
+- `object_id`: `kashiwa-titan`
+- `view_type`: `personal_view`
+- `authorship_type`: `external_collaboration`
+- `personal_view`: 当前页面，说明钱誉文在该项目中的视觉系统、空间影像与音画互动工作
+- `deck_view`: `VIRTURA_Collective_Overview_2026 baked2.pdf` 第 10 页
+- `external_context`: [KASHIWA Daisuke official post](https://kashiwadaisuke.com/2025/10/28/can-festival-shenzhen-bo-live/)
+
+这不是 VIRTURA 单独拥有的团队作品，而是与 KASHIWA Daisuke、Yuki Murata、策展与现场团队共同完成的视听合作。当前页面保留个人职责和制作方法，不替代外部官方资料。
+
+---
+
 ## 项目信息
 
 | 项目 | 内容 |
@@ -101,7 +114,7 @@
 | 曲目 | 视觉基因 | 空间效果 |
 |------|----------|----------|
 | 01 Lead | 不断生成的金属块体，通过光的节奏运动，螺旋旋转 | 视觉欺骗建构空间感 |
-| 02 Green | 计算机生成的持续流动，金字塔结构的绵延感 | TBD |
+| 02 Green | 计算机生成的持续流动，金字塔结构的绵延感 | 远侧空间延展与连续流动感 |
 | 03 Haze | 强烈的节奏打击感，动与静的鲜明对比，点与线连接 | 配合雾气形成裸眼 3D 效果 |
 | 04 Infrared | 强调三维构成的空间建构，点阵视觉，圆体切片伸、缩、拆分 | 无限循环的线连接 |
 | 05 Whitenight | 更悬浮和发光的段落，空间扩散，缓慢过渡 | 沉浸式白色氛围，极具震撼力与爆发力的粒子流 |

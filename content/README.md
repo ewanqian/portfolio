@@ -50,7 +50,7 @@ content/
   "displayModes": ["immersive screen", "VR headset"],
   "analysisIds": ["drop-flow-core-series"],
   "sourceDocs": ["visual-arts/drop-flow-series/README.md"],
-  "repoLink": "/portfolio/works/drop-flow",
+  "repoLink": "/works/drop-flow",
   "portfolioTier": "featured",
   "lifecycle": "sustained",
   "externalRepo": {

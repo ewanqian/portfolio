@@ -8,7 +8,7 @@
   "practiceLine": "content-infrastructure",
   "tags": ["external-repo", "content-system", "portable-greenhouse", "spatial-narrative", "spatial-experience"],
   "coverImage": "greenhouse-in-transit-mg17.png",
-  "image": "/portfolio/assets/home/greenhouse-in-transit-mg17.png",
+  "image": "/assets/home/greenhouse-in-transit-mg17.png",
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": ["nodal-organization", "graph-native-structure"],

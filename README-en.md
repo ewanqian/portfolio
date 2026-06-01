@@ -4,6 +4,8 @@
 
 This repository is Ewan Qian's personal entry point.
 
+Its role in the VIRTURA public graph is specific: this repo holds personal identity, selected works, practice lines, services, and personal archive entry points. For the team, public frontstage, or publication layer, go to `VIRTURA-Collective`, `VIRTURA-SpacePort`, and `VIRTURA-Newsroom`.
+
 It is meant to answer four questions quickly:
 
 - who I am and what kind of work I do

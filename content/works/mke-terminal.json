@@ -8,7 +8,7 @@
   "practiceLine": "collaborative-performance",
   "tags": ["kashiwa", "mke", "blendermcp", "audio-analysis", "terminal", "ongoing"],
   "coverImage": "pdf-p02-01.jpg",
-  "image": "/portfolio/assets/mke-terminal/pdf-p02-01.jpg",
+  "image": "/assets/mke-terminal/pdf-p02-01.jpg",
   "showOnHome": false,
   "lifecycle": "active",
   "relatedNodes": ["kashiwa-bo-live-shenzhen", "ufo-terminal"],
@@ -20,7 +20,7 @@
     "assets/mke-terminal/MKE.pdf",
     "E:/Ewan/wip/2605 kashiwa in terminal/analysis/site_package/kashiwa_mke_special_page_info_pack_20260507/README.md"
   ],
-  "repoLink": "/portfolio/works/mke-terminal.html",
+  "repoLink": "/works/mke-terminal.html",
   "links": [
     {
       "text": "详情页",

@@ -3637,6 +3637,17 @@ a.works-rail-card:hover .works-rail-thumb img {
   letter-spacing: 0.05em;
 }
 
+.works-rail-label {
+  width: fit-content;
+  padding: 5px 8px;
+  border: 1px solid var(--line-strong);
+  color: var(--text) !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 .works-rail-copy em {
   margin-top: 6px;
   color: var(--text);

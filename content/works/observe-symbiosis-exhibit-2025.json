@@ -8,7 +8,7 @@
   "practiceLine": "perceptual-environments",
   "tags": ["scan", "digital ecology", "exhibition", "data visualization"],
   "coverImage": "featured-perceptual-environments.jpg",
-  "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+  "image": "/assets/home/featured-perceptual-environments.jpg",
   "showOnHome": false,
   "relatedNodes": ["observation-and-symbiosis", "observe-symbiosis-pingshan"],
   "relatedWritings": [],

@@ -8,7 +8,7 @@
   "practiceLine": "spatial-generation",
   "tags": ["drop-flow", "biennale", "immersive", "vr"],
   "coverImage": "featured-dropflow-hangzhou-biennale-scene.jpg",
-  "image": "/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg",
+  "image": "/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg",
   "showOnHome": true,
   "relatedNodes": ["drop-flow-hangzhou-biennale"],
   "relatedWritings": ["drop-flow-note"],

@@ -7,7 +7,7 @@ export default [
     "featured": true,
     "summary": "基于 VIRTURA 团队 TIMER 场景资料整理出的高斯空间样本，由钱誉文完成空间转译、网页嵌入与归档编排，适合作为团队项目的轻量空间入口。",
     "notes": [
-      "对应 VIRTURA 团队 TIMER 系列里偏红的场景章节，作为团队项目语境下的空间转译样本。",
+      "对应的是 VIRTURA 团队 TIMER 系列里偏红的场景章节，而不是脱离团队项目语境的新作品。",
       "它说明团队项目里的既有影像资料可以先被转成可浏览、可分享、可嵌入的空间档案。"
     ],
     "location": "VIRTURA / TIMER 场景章节",
@@ -33,17 +33,17 @@ export default [
     "views": "126",
     "size": "19.06 MB",
     "publishedAgo": "10 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/timer-gaussian-0531.webp"
+    "thumbnail": "/assets/gaussian-scenes/timer-gaussian-0531.webp"
   },
   {
     "id": "36db89a4",
     "slug": "dropflow-collection-rooms719",
-    "displayTitle": "Dropflow Collection / Rooooooom719",
+    "displayTitle": "Drop Flow Collection / Rooooooom719",
     "category": "work-derived",
     "featured": true,
     "summary": "基于 Drop Flow 团队项目阶段素材整理出的拼贴型空间样本，由钱誉文在本地 AppleSharp 模型与高斯工作流中完成转译，适合用于团队项目留存、网页嵌入和后续空间化展示。",
     "notes": [
-      "它对应 rooms719 / DropFlow 2 阶段成员影像与资料集合，整理为可浏览的空间样本。",
+      "它对应的是 rooms719 / Drop Flow 2 阶段成员影像与资料集合，而不是单一演出录像。",
       "它把团队阶段素材重新组织成一个可浏览的拼贴式空间对象，适合作为项目页面与后续空间观看方案之间的中间层。"
     ],
     "location": "Drop Flow / Rooooooom719 拼贴集合",
@@ -61,15 +61,15 @@ export default [
     "embedUrl": "https://superspl.at/s?id=36db89a4",
     "ogImage": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/36db89a4/v1/xl.webp",
     "localThumbnail": "assets/gaussian-scenes/dropflow-collection-rooms719.webp",
-    "pageTitle": "Dropflow 集合 - SuperSplat",
+    "pageTitle": "Drop Flow 集合 - SuperSplat",
     "pageDescription": null,
-    "titleFromPage": "Dropflow 集合",
+    "titleFromPage": "Drop Flow 集合",
     "descriptionFromPage": null,
     "uploader": "ewanqian10000",
     "views": "162",
     "size": "210.36 MB",
     "publishedAgo": "3 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/dropflow-collection-rooms719.webp"
+    "thumbnail": "/assets/gaussian-scenes/dropflow-collection-rooms719.webp"
   },
   {
     "id": "0f404310",
@@ -104,7 +104,7 @@ export default [
     "views": "40",
     "size": "68.56 MB",
     "publishedAgo": "8 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/shinjuku-gyoen-greenhouse.webp"
+    "thumbnail": "/assets/gaussian-scenes/shinjuku-gyoen-greenhouse.webp"
   },
   {
     "id": "a90198a5",
@@ -139,7 +139,7 @@ export default [
     "views": "50",
     "size": "94.4 MB",
     "publishedAgo": "8 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/tokyo-tower-garden-2.webp"
+    "thumbnail": "/assets/gaussian-scenes/tokyo-tower-garden-2.webp"
   },
   {
     "id": "87d112d3",
@@ -174,6 +174,6 @@ export default [
     "views": "74",
     "size": "99.24 MB",
     "publishedAgo": "8 months ago",
-    "thumbnail": "/portfolio/assets/gaussian-scenes/shibuya-sakura-stage.webp"
+    "thumbnail": "/assets/gaussian-scenes/shibuya-sakura-stage.webp"
   }
 ];

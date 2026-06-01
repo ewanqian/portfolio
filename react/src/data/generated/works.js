@@ -14,7 +14,7 @@ export default [
       "public-art"
     ],
     "coverImage": "archive-observation-clean.jpg",
-    "image": "/portfolio/assets/home/archive-observation-clean.jpg",
+    "image": "/assets/home/archive-observation-clean.jpg",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -95,7 +95,7 @@ export default [
       "public space"
     ],
     "coverImage": "featured-perceptual-environments.jpg",
-    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.jpg",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -132,7 +132,7 @@ export default [
       "process"
     ],
     "coverImage": "hero-dropflow-ufo-2025.jpeg",
-    "image": "/portfolio/assets/home/hero-dropflow-ufo-2025.jpeg",
+    "image": "/assets/home/hero-dropflow-ufo-2025.jpeg",
     "showOnHome": false,
     "relatedNodes": [
       "ufo-terminal"
@@ -177,7 +177,7 @@ export default [
       "vr"
     ],
     "coverImage": "featured-dropflow-hangzhou-biennale-scene.jpg",
-    "image": "/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg",
+    "image": "/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg",
     "showOnHome": true,
     "relatedNodes": [
       "drop-flow-hangzhou-biennale"
@@ -225,7 +225,7 @@ export default [
       "flow"
     ],
     "coverImage": "featured-dropflow-main.jpg",
-    "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
+    "image": "/assets/home/featured-dropflow-main.jpg",
     "showOnHome": false,
     "lifecycle": "active",
     "relatedNodes": [
@@ -249,7 +249,7 @@ export default [
       "projects/drop-flow-visual-2025.md",
       "projects/dropflow3-live-2025.md"
     ],
-    "repoLink": "/portfolio/works/drop-flow.html",
+    "repoLink": "/works/drop-flow.html",
     "links": [
       {
         "text": "详情页",
@@ -277,7 +277,7 @@ export default [
       "emotional container"
     ],
     "coverImage": "featured-perceptual-environments.jpg",
-    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.jpg",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -314,7 +314,7 @@ export default [
       "public-art"
     ],
     "coverImage": "archive-observation-clean.jpg",
-    "image": "/portfolio/assets/home/archive-observation-clean.jpg",
+    "image": "/assets/home/archive-observation-clean.jpg",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -351,7 +351,7 @@ export default [
       "audiovisual"
     ],
     "coverImage": "posterwall.jpg",
-    "image": "/portfolio/assets/home/posterwall.jpg",
+    "image": "/assets/home/posterwall.jpg",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -388,7 +388,7 @@ export default [
       "stage"
     ],
     "coverImage": "glimpse-canfest-zhoushan.jpeg",
-    "image": "/portfolio/assets/home/glimpse-canfest-zhoushan.jpeg",
+    "image": "/assets/home/glimpse-canfest-zhoushan.jpeg",
     "showOnHome": false,
     "relatedNodes": [
       "can-festival"
@@ -431,7 +431,7 @@ export default [
       "audiovisual"
     ],
     "coverImage": "featured-kashiwa-bolive-shenzhen.jpeg",
-    "image": "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+    "image": "/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
     "showOnHome": true,
     "relatedNodes": [
       "kashiwa-bo-live-shenzhen",
@@ -453,7 +453,7 @@ export default [
       "visual-arts/kashiwa-daisuke/README.md",
       "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
     ],
-    "repoLink": "/portfolio/works/kashiwa.html",
+    "repoLink": "/works/kashiwa.html",
     "links": [
       {
         "text": "详情页",
@@ -483,7 +483,7 @@ export default [
       "ongoing"
     ],
     "coverImage": "pdf-p02-01.jpg",
-    "image": "/portfolio/assets/mke-terminal/pdf-p02-01.jpg",
+    "image": "/assets/mke-terminal/pdf-p02-01.jpg",
     "showOnHome": false,
     "lifecycle": "active",
     "relatedNodes": [
@@ -507,7 +507,7 @@ export default [
       "assets/mke-terminal/MKE.pdf",
       "E:/Ewan/wip/2605 kashiwa in terminal/analysis/site_package/kashiwa_mke_special_page_info_pack_20260507/README.md"
     ],
-    "repoLink": "/portfolio/works/mke-terminal.html",
+    "repoLink": "/works/mke-terminal.html",
     "links": [
       {
         "text": "详情页",
@@ -535,7 +535,7 @@ export default [
       "conceptual"
     ],
     "coverImage": "featured-perceptual-environments.jpg",
-    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.jpg",
     "showOnHome": false,
     "relatedNodes": [
       "babel-bottle"
@@ -578,7 +578,7 @@ export default [
       "data visualization"
     ],
     "coverImage": "featured-perceptual-environments.jpg",
-    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.jpg",
     "showOnHome": false,
     "relatedNodes": [
       "observation-and-symbiosis",
@@ -623,7 +623,7 @@ export default [
       "digital memory"
     ],
     "coverImage": "featured-perceptual-environments.jpg",
-    "image": "/portfolio/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.jpg",
     "showOnHome": false,
     "relatedNodes": [
       "observation-and-symbiosis",
@@ -669,7 +669,7 @@ export default [
       "opening-animation"
     ],
     "coverImage": "posterwall.jpg",
-    "image": "/portfolio/assets/home/posterwall.jpg",
+    "image": "/assets/home/posterwall.jpg",
     "showOnHome": true,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -711,7 +711,7 @@ export default [
       "shanhaifusheng"
     ],
     "coverImage": "posterwall.jpg",
-    "image": "/portfolio/assets/home/posterwall.jpg",
+    "image": "/assets/home/posterwall.jpg",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -753,7 +753,7 @@ export default [
       "ongoing"
     ],
     "coverImage": "sre-benchmark-all-visible.png",
-    "image": "/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.png",
+    "image": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.png",
     "showOnHome": false,
     "lifecycle": "active",
     "relatedNodes": [
@@ -778,7 +778,7 @@ export default [
       "E:/Ewan/wip/2605 sre realtime liveset/analysis/sre_flat_liveset_frontdoor.md",
       "E:/Ewan/Design/Shukai x Robakidze x Ewan/2026 UFO Terminal 创作营合作档案 Shukai x Robakidze x Ewan.html"
     ],
-    "repoLink": "/portfolio/works/sre-realtime-liveset.html",
+    "repoLink": "/works/sre-realtime-liveset.html",
     "links": [
       {
         "text": "详情页",
@@ -803,7 +803,7 @@ export default [
       "team-work"
     ],
     "coverImage": "timer-loading-access-2-poster.jpg",
-    "image": "/portfolio/assets/home/timer-loading-access-2-poster.jpg",
+    "image": "/assets/home/timer-loading-access-2-poster.jpg",
     "showOnHome": true,
     "relatedNodes": [
       "ufo-terminal"
@@ -824,7 +824,7 @@ export default [
       "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
       "works/timer.html"
     ],
-    "repoLink": "/portfolio/works/timer.html",
+    "repoLink": "/works/timer.html",
     "links": [
       {
         "text": "作品页面",
@@ -853,7 +853,7 @@ export default [
       "ongoing"
     ],
     "coverImage": "featured-timer-main.jpg",
-    "image": "/portfolio/assets/home/featured-timer-main.jpg",
+    "image": "/assets/home/featured-timer-main.jpg",
     "showOnHome": false,
     "lifecycle": "active",
     "relatedNodes": [
@@ -875,7 +875,7 @@ export default [
       "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
       "works/timer.html"
     ],
-    "repoLink": "/portfolio/works/timer.html",
+    "repoLink": "/works/timer.html",
     "links": [
       {
         "text": "作品页面",
@@ -904,7 +904,7 @@ export default [
       "spatial-experience"
     ],
     "coverImage": "greenhouse-in-transit-mg17.png",
-    "image": "/portfolio/assets/home/greenhouse-in-transit-mg17.png",
+    "image": "/assets/home/greenhouse-in-transit-mg17.png",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [
@@ -958,7 +958,7 @@ export default [
       "vrplay"
     ],
     "coverImage": "vrplay-world-remix-2025.jpg",
-    "image": "/portfolio/assets/home/vrplay-world-remix-2025.jpg",
+    "image": "/assets/home/vrplay-world-remix-2025.jpg",
     "showOnHome": true,
     "relatedNodes": [],
     "relatedWritings": [],

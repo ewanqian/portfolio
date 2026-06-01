@@ -73,7 +73,7 @@ Blender、扫描、点云、页面化实验与持续练习，用来保持技术�
 ## Public Platforms & Repositories / 公开平台与仓库
 
 - [GitHub](https://github.com/ewanqian)
-- [Portfolio](https://ewanqian.github.io/portfolio)
+- [Portfolio](https://ewanqian.site)
 - [ManaMana](https://www.manamana.net/peopleCenter/432894/home#!zh)
 - [Bilibili](https://space.bilibili.com/2380485)
 

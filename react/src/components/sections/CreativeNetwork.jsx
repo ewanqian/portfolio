@@ -12,8 +12,8 @@ function CreativeNetwork() {
         <h2 className="section-title">{language === 'en' ? 'A Distributed Practice' : '一种分布式创作实践'}</h2>
         <p className="section-intro">
           {language === 'en'
-            ? 'These pages, repositories, archives, and tools do not point to a single center. Together they form a distributed practice in which works, research, publishing, collaboration, and system development happen across different layers at the same time.'
-            : '这些页面、仓库、档案与工具并不指向同一个中心，它们共同构成了一种分布式的创作实践：作品、研究、发布、协作与系统开发在不同层级上同时发生。'}
+            ? 'These pages, repositories, archives, and tools form a distributed practice in which works, research, publishing, collaboration, and system development happen across different layers at the same time.'
+            : '这些页面、仓库、档案与工具共同构成一种分布式的创作实践：作品、研究、发布、协作与系统开发在不同层级上同时发生。'}
         </p>
         <div className="grid-3" style={{ marginTop: '32px' }}>
           {network.map((item) => {

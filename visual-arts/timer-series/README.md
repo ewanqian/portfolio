@@ -8,6 +8,18 @@
 
 TIMER 系列围绕时间结构、音画关系与感知节奏展开，持续处理声音如何进入图像内部，并成为组织空间、切换状态与重新分配注意力的材料。与其说它是在“卡点”，不如说它更关心声音如何在图像内部建立一种结构性的时间感。
 
+## Public Graph / 对象关系
+
+- `object_id`: `timer`
+- `view_type`: `personal_view`
+- `authorship_type`: `team_work`
+- `personal_view`: 当前页面，说明钱誉文如何处理时间结构、音画关系与现场状态切换
+- `team_view`: [VIRTURA-Collective / TIMER](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/timer)
+- `archive_view`: [VIRTURA-SpacePort / TIMER Archive](https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer.md)
+- `publication_view`: [SYSTEM 评钱誉文的实践线收束](https://github.com/ewanqian/VIRTURA-Newsroom/blob/main/art-review/articles/system_ewanqian_perceptual_migration_review.md)
+
+同一件作品在不同仓库里只承担不同视图：这里是个人方法入口，团队语境看 `VIRTURA-Collective`，版本档案看 `VIRTURA-SpacePort`，评论和概念收束看 `VIRTURA-Newsroom`。
+
 ## Why This Series Matters
 
 这是我作品线中最能体现“时间结构”思考的一条主线。它不是单纯的音频可视化，而是在现场语境中持续测试：声音、节奏、频段、段落与空间感之间，如何形成更有判断力的图像组织方式。

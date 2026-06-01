@@ -1,80 +1,50 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
 
-const heroImages = [
-  {
-    src: '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.jpg',
-    title: 'KASHIWA Daisuke / TITAN',
-    titleZh: '柏大辅《TITAN》',
-    meta: 'Live audiovisual system',
-    metaZh: '现场音画视觉系统'
-  },
-  {
-    src: '/portfolio/assets/raw-picks/dropflow-concept-250426.jpg',
-    title: 'DROP FLOW',
-    titleZh: 'DROP FLOW',
-    meta: 'Immersive audiovisual work',
-    metaZh: '沉浸式音画作品'
-  },
-  {
-    src: '/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-52s-architecture.jpg',
-    title: 'Yu Jiayun 45m2',
-    titleZh: '余佳运「45m2」',
-    meta: 'Concert visual delivery',
-    metaZh: '演唱会视觉交付'
-  },
-  {
-    src: '/portfolio/assets/raw-picks/timer-main.jpg',
-    title: 'TIMER',
-    titleZh: 'TIMER',
-    meta: 'Temporal visual system',
-    metaZh: '时间结构视觉系统'
-  }
-]
-
 function Hero() {
   const { language } = useLanguage()
 
   return (
-    <section className="hero hero-editorial">
-      <div className="container hero-editorial-grid">
-        <div className="hero-copy">
-          <div className="hero-kicker">{language === 'en' ? 'Ewan Qian / 钱誉文' : '钱誉文 / Ewan Qian'}</div>
-          <h1 className="hero-title">
-            {language === 'en'
-              ? 'Live visuals, immersive spatial media, AI visual systems.'
-              : '现场视觉、沉浸空间影像与 AI 视觉系统。'}
-          </h1>
-          <p className="hero-subtitle">
-            {language === 'en'
-              ? 'Visual systems for performances, exhibitions, spatial image work, and virtual environments.'
-              : '面向现场演出、展演空间、空间影像与虚拟环境的视觉系统。'}
-          </p>
-          <p className="hero-tagline">
-            {language === 'en'
-              ? 'Works are arranged by project, context, role, and output, with production records kept close to the visual evidence.'
-              : '项目按场景、角色与交付内容呈现，制作记录与视觉证据放在相邻入口。'}
-          </p>
-          <div className="hero-cta">
-            <Link className="button primary" to="/" state={{ scrollTo: 'works' }}>
-              {language === 'en' ? 'Projects' : '项目'}
-            </Link>
-            <Link className="button" to="/production">
-              {language === 'en' ? 'Production Records' : '制作记录'}
-            </Link>
-          </div>
+    <section className="hero">
+      <div className="container hero-grid">
+        <div className="hero-image">
+          <img src="/assets/home/about-ewanqian.jpg" alt="Ewan Qian portrait" />
         </div>
-
-        <div className="hero-media-grid" aria-label="Selected visual works">
-          {heroImages.map((image, index) => (
-            <figure key={image.title} className={`hero-media-card hero-media-card-${index + 1}`}>
-              <img src={image.src} alt={image.title} />
-              <figcaption>
-                <span>{language === 'en' ? image.title : image.titleZh || image.title}</span>
-                <small>{language === 'en' ? image.meta : image.metaZh || image.meta}</small>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="hero-panel">
+          <div>
+            <div className="hero-kicker">Media Artist / Spatial Image Creator / Live Visual Producer</div>
+            <h1 className="hero-title">钱誉文
+              <br />
+              Ewan Qian
+            </h1>
+            <p className="hero-subtitle">
+              {language === 'en'
+                ? 'Perceptual Migration / Temporal Structure / Spatial Generation / Live Image Systems'
+                : '感知迁移 / 时间结构 / 空间生成 / 现场图像系统'}
+            </p>
+            <p className="hero-tagline">
+              {language === 'en'
+                ? 'Ewan Qian’s practice unfolds through the continuous relation between time, image, space, and perception. Websites, stages, panoramic screens, digital exhibitions, archives, and interface research form one ongoing network of artistic practice.'
+                : '钱誉文的实践围绕时间、图像、空间与感知之间的连续关系展开。网页、舞台、环幕、数字展览、档案与接口研究，共同构成一条持续推进的创作网络。'}
+            </p>
+            <div className="hero-cta">
+              <Link className="button primary" to="/" state={{ scrollTo: 'artistic-overview' }}>
+                {language === 'en' ? 'Artistic Practice' : '创作实践'}
+              </Link>
+              <Link className="button" to="/production">
+                {language === 'en' ? 'Production Services' : '制作服务'}
+              </Link>
+            </div>
+          </div>
+          <div>
+            <div className="socials">
+              <a className="social-pill" href="https://www.instagram.com/ewanqian/" target="_blank" rel="noreferrer">Instagram ↗</a>
+              <a className="social-pill" href="https://space.bilibili.com/2380485" target="_blank" rel="noreferrer">Bilibili ↗</a>
+              <a className="social-pill" href="https://www.xiaohongshu.com/user/profile/60d73226000000000101f30e" target="_blank" rel="noreferrer">Xiaohongshu ↗</a>
+              <a className="social-pill" href="https://www.manamana.net/peopleCenter/432894/home#!zh" target="_blank" rel="noreferrer">ManaMana ↗</a>
+              <a className="social-pill" href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
