@@ -7,6 +7,7 @@ const reactRoot = path.resolve(dirname, '..')
 const repoRoot = path.resolve(reactRoot, '..')
 const sourceAssetsDir = path.join(repoRoot, 'assets')
 const targetAssetsDir = path.join(reactRoot, 'dist', 'assets')
+const portfolioAssetsDir = path.join(reactRoot, 'dist', 'portfolio', 'assets')
 const maxCloudflarePagesFileBytes = 25 * 1024 * 1024
 const skippedLargeFiles = []
 
@@ -15,19 +16,28 @@ if (!fs.existsSync(sourceAssetsDir)) {
   process.exit(0)
 }
 
-fs.cpSync(sourceAssetsDir, targetAssetsDir, {
-  recursive: true,
-  force: true,
-  filter(sourcePath) {
-    const stats = fs.statSync(sourcePath)
+function copyWithCloudflareLimit(fromDir, toDir) {
+  fs.cpSync(fromDir, toDir, {
+    recursive: true,
+    force: true,
+    filter(sourcePath) {
+      const stats = fs.statSync(sourcePath)
 
-    if (stats.isFile() && stats.size > maxCloudflarePagesFileBytes) {
-      skippedLargeFiles.push(path.relative(sourceAssetsDir, sourcePath))
-      return false
+      if (stats.isFile() && stats.size > maxCloudflarePagesFileBytes) {
+        skippedLargeFiles.push(path.relative(fromDir, sourcePath))
+        return false
+      }
+
+      return true
     }
+  })
+}
 
-    return true
-  }
+copyWithCloudflareLimit(sourceAssetsDir, targetAssetsDir)
+
+fs.cpSync(targetAssetsDir, portfolioAssetsDir, {
+  recursive: true,
+  force: true
 })
 
 if (skippedLargeFiles.length > 0) {
@@ -36,4 +46,4 @@ if (skippedLargeFiles.length > 0) {
   )
 }
 
-console.log(`Copied workspace assets to ${targetAssetsDir}`)
+console.log(`Copied workspace assets to ${targetAssetsDir} and ${portfolioAssetsDir}`)
