@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/copy-workspace-assets.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -5,10 +5,10 @@
   "type": "public-node",
   "category": "Digital Environment / Exhibition",
   "summary": "扫描、数字环境、观察系统与共生关系的持续实践。",
-  "image": "/assets/public-nodes/observation-symbiosis.jpg",
+  "image": "/assets/public-nodes/observation-symbiosis.webp",
   "relatedWork": null,
   "timelineStage": "environment-exploration",
-  "images": ["observation-symbiosis.jpg"],
+  "images": ["observation-symbiosis.webp"],
   "externalLink": "",
   "showOnHome": true,
   "tags": ["scan", "environment", "exhibition"]

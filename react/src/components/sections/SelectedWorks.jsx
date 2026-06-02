@@ -55,7 +55,7 @@ const projectNotes = {
     roleZh: '主视觉 / 空间概念',
     titleZh: 'VRplay WORLD REMIX XR 黑客松',
     note: 'A complete visual identity and spatial-stage concept for an XR hackathon, stronger as a public-facing cover than internal tool screenshots.',
-    noteZh: '面向 XR 黑客松的主视觉与空间舞台概念，比内部工具截图更适合放在首页。'
+    noteZh: '面向 XR 黑客松的主视觉与空间舞台概念，保留项目的空间尺度与视觉方向。'
   },
   'sre-realtime-liveset-2026': {
     label: 'Realtime visual system',
@@ -77,8 +77,8 @@ function SelectedWorks() {
       <div className="container">
         <div className="section-heading-row">
           <div>
-            <div className="eyebrow">{isZh ? '项目索引' : 'Project Index'}</div>
-            <h2 className="section-title">{isZh ? '项目' : 'Projects'}</h2>
+            <div className="eyebrow">{isZh ? '精选项目' : 'Selected Projects'}</div>
+            <h2 className="section-title">{isZh ? '作品与制作入口' : 'Works and Production Entries'}</h2>
           </div>
           <p className="section-intro">
             {language === 'en'

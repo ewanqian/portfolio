@@ -5,10 +5,10 @@
   "type": "public-node",
   "category": "Exhibition / Digital Environment",
   "summary": "《观察与共生》进入公共展览语境的重要节点，把扫描环境、生态逻辑与数据可视化合并为可展出的环境结构。",
-  "image": "/assets/home/featured-perceptual-environments.jpg",
+  "image": "/assets/home/featured-perceptual-environments.webp",
   "relatedWork": "observe-symbiosis-exhibit-2025",
   "timelineStage": "environment-exploration",
-  "images": ["featured-perceptual-environments.jpg"],
+  "images": ["featured-perceptual-environments.webp"],
   "externalLink": "",
   "showOnHome": false,
   "tags": ["scan", "environment", "exhibition", "pingshan"]

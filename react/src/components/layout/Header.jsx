@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTheme } from '../../hooks/useTheme'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  const navigate = useNavigate()
   const { isLight, toggleTheme } = useTheme()
   const { language, setLanguage } = useLanguage()
 
@@ -14,25 +13,14 @@ function Header() {
     setMenuOpen(false)
   }, [location.pathname, location.key])
 
-  const goHome = (scrollTo) => {
-    if (scrollTo) {
-      navigate('/', { state: { scrollTo } })
-    } else {
-      navigate('/')
-    }
-    setMenuOpen(false)
-  }
-
-  const homeNavItems = [
-    { id: 'overview', label: language === 'en' ? 'Overview' : '概览', scrollTo: 'profile-directions' }
-  ]
-
   const routeNavItems = [
-    { id: 'works', label: language === 'en' ? 'Gallery' : '作品', to: '/works' },
-    { id: 'profile', label: language === 'en' ? 'Profile' : '个人', to: '/profile' },
-    { id: 'production', label: language === 'en' ? 'Production' : '制作', to: '/production', activeOn: ['/production', '/archive'] },
-    { id: 'spatial', label: language === 'en' ? 'Spatial' : '空间归档', to: '/gaussian-scenes' },
-    { id: 'writing', label: language === 'en' ? 'Writing' : '文章', to: '/writing' }
+    { id: 'home', label: language === 'en' ? 'Home' : '首页', to: '/' },
+    { id: 'works', label: language === 'en' ? 'Gallery' : '画廊', to: '/works' },
+    { id: 'production', label: language === 'en' ? 'Production' : '制作', to: '/production' },
+    { id: 'archive', label: language === 'en' ? 'Archive' : '归档', to: '/archive' },
+    { id: 'spatial', label: language === 'en' ? 'Spatial' : '空间', to: '/gaussian-scenes' },
+    { id: 'writing', label: language === 'en' ? 'Writing' : '写作', to: '/writing' },
+    { id: 'profile', label: language === 'en' ? 'Profile' : '个人', to: '/profile' }
   ]
 
   const externalNavItems = [
@@ -88,16 +76,6 @@ function Header() {
           </button>
         </div>
         <nav className={`nav ${menuOpen ? 'open' : ''}`} id="site-nav" aria-label="Primary">
-          {homeNavItems.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className="nav-link nav-button"
-              onClick={() => goHome(item.scrollTo)}
-            >
-              {item.label}
-            </button>
-          ))}
           {routeNavItems.map((item) => {
             const isActive = item.activeOn ? item.activeOn.includes(location.pathname) : location.pathname === item.to
 

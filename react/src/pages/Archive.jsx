@@ -16,16 +16,16 @@ const backlogRows = [
   ['2025', 'flatland-mr-content-2025', 'WWDC Flatland: Mixed Reality Dreams', '内容制作', 'Santa Clara / Mixed Reality'],
   ['2025', 'drop-flow-qingdao-2025', '重庆「流光绘影」光影科技艺术节「滴流」', '异形屏幕装置', '重庆 / 光影科技艺术节'],
   ['2024', 'hallu-matrix-exhibit-2024', 'THE BOXX「幻觉矩阵」沉浸式多媒体展', '参展艺术家', '上海 THE BOXX / 展览'],
-  ['2024', 'onefive-chocolove-video-2024', '@onefive「ChocoLove」/ Release Visual Record', '歌词视频制作记录', 'Official Release', '/portfolio/assets/raw-library/onefive-classy-crush-signed.png'],
-  ['2023', 'onefive-underground-visual-2023', '@onefive「Underground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage', '/portfolio/assets/raw-library/onefive-classy-crush-signed.png'],
-  ['2023', 'onefive-overground-visual-2023', '@onefive「Overground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage', '/portfolio/assets/raw-library/onefive-classy-crush-signed.png'],
-  ['2023', 'lonely-av-live-2023', '上海广播艺术中心「孤独？」', '舞台视觉', '上海 / Stage', '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.jpg'],
-  ['2023', 'observe-symbiosis-k11-2023', '上海 K11「观察与共生」', '视频装置', '上海 K11 / 展览', '/portfolio/assets/raw-library/observation-symbiosis-large.png'],
+  ['2024', 'onefive-chocolove-video-2024', '@onefive「ChocoLove」/ Release Visual Record', '歌词视频制作记录', 'Official Release', '/portfolio/assets/raw-library/onefive-classy-crush-signed.webp'],
+  ['2023', 'onefive-underground-visual-2023', '@onefive「Underground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage', '/portfolio/assets/raw-library/onefive-classy-crush-signed.webp'],
+  ['2023', 'onefive-overground-visual-2023', '@onefive「Overground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage', '/portfolio/assets/raw-library/onefive-classy-crush-signed.webp'],
+  ['2023', 'lonely-av-live-2023', '上海广播艺术中心「孤独？」', '舞台视觉', '上海 / Stage', '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp'],
+  ['2023', 'observe-symbiosis-k11-2023', '上海 K11「观察与共生」', '视频装置', '上海 K11 / 展览', '/portfolio/assets/raw-library/observation-symbiosis-large.webp'],
   ['2023', 'vaoe-exhibition-2023', '虚拟航线 VAOE', '策划与呈现', '上海 / 展览'],
   ['2023', 'life-praise-install-2023', '上海世纪汇广场《生命的礼赞》', '气膜装置视觉制作', '上海 / Installation'],
   ['2023', 'nature-numeral-install-2023', '龙湖上海奉贤天街「数字空间与自然共生」', '视频艺术装置制作', '上海 / Installation'],
-  ['2022', 'xiexindance-sixiang-gong-visual-2022', '谢欣舞蹈剧场《四相》《汞》', '影像视觉制作', '上海国际舞蹈中心 / 谢欣舞蹈剧场新锐编舞专场影像视觉制作。', '/portfolio/assets/raw-library/xiexin-sixiang-poster.png'],
-  ['2022', 'watermusic-multi-visual-2022', 'CHINATIME Hamburg《Water Music》', '多媒体视觉', 'Hamburg / CHINATIME', '/portfolio/assets/raw-library/chinatime-water-music-visual.png'],
+  ['2022', 'xiexindance-sixiang-gong-visual-2022', '谢欣舞蹈剧场《四相》《汞》', '影像视觉制作', '上海国际舞蹈中心 / 谢欣舞蹈剧场新锐编舞专场影像视觉制作。', '/portfolio/assets/raw-library/xiexin-sixiang-poster.webp'],
+  ['2022', 'watermusic-multi-visual-2022', 'CHINATIME Hamburg《Water Music》', '多媒体视觉', 'Hamburg / CHINATIME', '/portfolio/assets/raw-library/chinatime-water-music-visual.webp'],
   ['2022', 'xtep-xdna22aw-visual-2022', '上海时装周 XTEP-XDNA', '视频制作', '上海时装周'],
   ['2022', 'migu-olympic-vfx-2022', '中国移动咪咕冬奥宣传片', '视觉制作', '中国 / Video'],
   ['2022', 'meta-speaker-install-2022', '西岸凤巢 AI PLAZA《元语者・棱镜现实》', '地面数字艺术装置', '上海西岸凤巢 AI PLAZA 数字艺术装置呈现，和个人介绍中的数字自然、空间感知线索相连。'],
@@ -91,11 +91,11 @@ const Archive = () => {
         <section className="section">
           <div className="container">
             <div className="eyebrow">Archive</div>
-            <h1 className="section-title">{language === 'en' ? 'Project Archive' : '项目归档 / Project Archive'}</h1>
+            <h1 className="section-title">{language === 'en' ? 'Project Archive' : '项目归档'}</h1>
             <p className="section-intro">
               {language === 'en'
-                ? 'This archive gathers artworks, production records, public presentation nodes, spatial samples, and method-related entries. It keeps the front page concise while preserving a fuller project map.'
-                : '这里整理艺术作品、制作项目、公开呈现节点、空间样本与方法相关条目。首页保持简洁，完整项目地图放在归档页继续展开。'}
+                ? 'A full project map for artworks, production records, presentation contexts, spatial samples, and method-related entries.'
+                : '完整项目地图，整理艺术作品、制作项目、呈现语境、空间样本与方法相关条目。'}
             </p>
             <div className="hero-cta">
               <Link to="/gaussian-scenes" className="button primary">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
@@ -107,7 +107,7 @@ const Archive = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'All Project Records' : '项目总档 / All Project Records'}</h2>
+            <h2 className="section-title">{language === 'en' ? 'All Project Records' : '项目总档'}</h2>
             <p className="section-intro">
               {language === 'en' ? 'A fuller index of the current work system, including artworks, live collaborations, research extensions, public-space projects, and production records.' : '当前作品系统的完整索引，包含艺术作品、现场合作、研究延展、公共空间项目与制作记录。'}
             </p>
@@ -180,9 +180,9 @@ const Archive = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Public Records' : '公开记录 / Public Records'}</h2>
+            <h2 className="section-title">{language === 'en' ? 'Presentation Records' : '呈现记录'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'Public-facing records from exhibitions, festivals, performances, and project contexts. These are listed together rather than split into priority tiers.' : '展览、音乐节、演出和项目语境中的公开记录统一列在这里，不再拆成核心和扩展。'}
+              {language === 'en' ? 'Exhibitions, festivals, performances, and project contexts collected as one readable presentation layer.' : '展览、音乐节、演出和项目语境统一整理为一层可读的呈现记录。'}
             </p>
             <div className="archive-timeline-list">
               {publicRecords.map((node) => {
@@ -210,9 +210,9 @@ const Archive = () => {
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Front-stage Project Index' : '项目上台清单 / Front-stage Project Index'}</h2>
+            <h2 className="section-title">{language === 'en' ? 'Long Project Index' : '项目长表'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'A long-form index that keeps existing works, public records, UFO Terminal nodes, production records, and repository project documents on the same stage.' : '把已有作品、公开节点、UFO Terminal 记录、制作项目和 GitHub 项目文档放在同一个长条清单里。已有专题页的项目也继续列出。'}
+              {language === 'en' ? 'A compact long-form index for existing works, UFO Terminal records, production projects, and repository project documents.' : '把已有作品、UFO Terminal 记录、制作项目和 GitHub 项目文档放进同一个长条索引。已有专题页的项目也继续列出。'}
             </p>
             <div className="archive-timeline-list archive-backlog-list">
               {stageRows.map((item) => (

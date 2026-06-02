@@ -59,7 +59,7 @@ function ProductionServices() {
                   <span>适合学生、申请与创作结构梳理</span>
                 </div>
                 <div className="price-item">
-                  <strong>工程诊断轻服务 — ¥800 起</strong>
+                  <strong>工程梳理轻服务 — ¥800 起</strong>
                   <span>适合工程结构检查、问题定位与建议</span>
                 </div>
               </div>

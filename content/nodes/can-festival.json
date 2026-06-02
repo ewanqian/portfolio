@@ -5,10 +5,10 @@
   "type": "public-node",
   "category": "Festival / Audiovisual",
   "summary": "Kashiwa Daisuke 现场视听合作进入公共表演语境的重要节点。",
-  "image": "/assets/public-nodes/can-festival.jpg",
+  "image": "/assets/public-nodes/can-festival.webp",
   "relatedWork": "kashiwa",
   "timelineStage": "collaborative-performance",
-  "images": ["can-festival.jpg"],
+  "images": ["can-festival.webp"],
   "externalLink": "",
   "showOnHome": true,
   "tags": ["festival", "audiovisual", "live"]

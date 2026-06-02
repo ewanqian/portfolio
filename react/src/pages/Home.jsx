@@ -25,7 +25,7 @@ function ProfileBlock() {
     <section id="profile-directions" className="section profile-block-section">
       <div className="container profile-block-grid">
         <div>
-          <div className="eyebrow">{isZh ? '介绍文本' : 'Profile Text'}</div>
+          <div className="eyebrow">{isZh ? '个人简介' : 'Profile'}</div>
           <h2 className="section-title">{isZh ? '钱誉文 / Ewan Qian' : 'Ewan Qian / 钱誉文'}</h2>
         </div>
         <div className="profile-block-copy">

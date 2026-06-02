@@ -37,9 +37,9 @@ const credits = {
 }
 
 const gallery = [
-  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg',
-  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg',
-  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-3.jpeg'
+  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.webp',
+  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.webp',
+  '/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-3.webp'
 ]
 
 function FactTable({ rows }) {
@@ -75,7 +75,7 @@ function KashiwaTitan() {
               </p>
             </div>
             <figure className="project-hero-image">
-              <img src="/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.jpeg" alt="" />
+              <img src="/portfolio/assets/home/featured-kashiwa-bolive-shenzhen-2.webp" alt="" />
             </figure>
           </div>
         </section>

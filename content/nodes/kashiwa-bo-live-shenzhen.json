@@ -5,10 +5,10 @@
   "type": "public-node",
   "category": "Live Performance / Audiovisual",
   "summary": "Kashiwa Daisuke 深圳专场的关键公共节点，集中体现全息纱幕、裸眼 3D 与音画互动结构。",
-  "image": "/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+  "image": "/assets/home/featured-kashiwa-bolive-shenzhen.webp",
   "relatedWork": "kashiwa",
   "timelineStage": "collaborative-performance",
-  "images": ["featured-kashiwa-bolive-shenzhen.jpeg"],
+  "images": ["featured-kashiwa-bolive-shenzhen.webp"],
   "externalLink": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g",
   "showOnHome": true,
   "tags": ["live", "holographic", "audiovisual", "shenzhen"]

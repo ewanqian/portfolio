@@ -12,7 +12,11 @@
     "deploy": "gh-pages -d dist",
     "build:content": "node scripts/build-content.js",
     "build:projects-index": "node scripts/generate-projects-readme.js",
-    "build:database-manifest": "node scripts/generate-database-manifest.js"
+    "build:database-manifest": "node scripts/generate-database-manifest.js",
+    "audit:public": "node scripts/audit-public-boundary.js",
+    "audit:portfolio-os": "node scripts/audit-portfolio-os.js",
+    "media:report": "node scripts/media-size-report.mjs",
+    "media:optimize": "node scripts/optimize-media-assets.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

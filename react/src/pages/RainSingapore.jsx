@@ -9,8 +9,8 @@ const visualSequences = [
     description: 'A wide-screen rain stream built from flowing cubic trajectories, radial audio-reactive motion, vertical movement, strobe accents, and drumbeat flashes.',
     descriptionZh: "为 Rain 郑智薰《It's Raining》（Remix Ver. / Not Like Us - Kendrick Lamar）制作的大屏幕音画舞台视觉。画面以立方体雨流、音频触发的放射轨迹、垂直运动、爆闪和鼓点光源为核心。",
     images: [
-      '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.jpg',
-      '/portfolio/assets/rain-singapore/gallery/its-raining-wide-06.jpg'
+      '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
+      '/portfolio/assets/rain-singapore/gallery/its-raining-wide-06.webp'
     ]
   },
   {
@@ -19,8 +19,8 @@ const visualSequences = [
     description: 'Backlit movement, high-speed falling effects, clean line frames, and light-source outlines translate the Rainism stage identity into a graphic screen system.',
     descriptionZh: '以背光运动、高速下坠、利落线条框架和光源轮廓组织画面，把 Rainism 的舞台气质转译成图形化大屏系统。',
     images: [
-      '/portfolio/assets/rain-singapore/gallery/rainism-wide-02.jpg',
-      '/portfolio/assets/rain-singapore/gallery/rainism-wide-06.jpg'
+      '/portfolio/assets/rain-singapore/gallery/rainism-wide-02.webp',
+      '/portfolio/assets/rain-singapore/gallery/rainism-wide-06.webp'
     ]
   },
   {
@@ -29,8 +29,8 @@ const visualSequences = [
     description: 'Symmetrical repeated geometry, flowing neon, metallic-glass reflections, and disco-like rhythm support the retro-rock and playful show mood.',
     descriptionZh: '用对称重复几何、流动霓虹、金属玻璃反光和 disco 节奏，支撑复古摇滚与轻快表演气质。',
     images: [
-      '/portfolio/assets/rain-singapore/gallery/lasong-wide-54s.jpg',
-      '/portfolio/assets/rain-singapore/gallery/lasong-wide-136s.jpg'
+      '/portfolio/assets/rain-singapore/gallery/lasong-wide-54s.webp',
+      '/portfolio/assets/rain-singapore/gallery/lasong-wide-136s.webp'
     ]
   },
   {
@@ -39,8 +39,8 @@ const visualSequences = [
     description: 'Opening frames and transition materials prepared for the festival-stage context, kept separate from song-specific visual systems.',
     descriptionZh: '为跨年晚会舞台语境准备的开场与转场素材，和曲目视觉系统分开整理。',
     images: [
-      '/portfolio/assets/rain-singapore/gallery/rain-opening-wide-04.jpg',
-      '/portfolio/assets/rain-singapore/gallery/rain-opening-wide-07.jpg'
+      '/portfolio/assets/rain-singapore/gallery/rain-opening-wide-04.webp',
+      '/portfolio/assets/rain-singapore/gallery/rain-opening-wide-07.webp'
     ]
   }
 ]
@@ -146,7 +146,7 @@ function RainSingapore() {
               </p>
             </div>
             <div className="project-hero-media">
-              <img src="/portfolio/assets/rain-singapore/rain-singapore-cover-wide.jpg" alt="Rain SINGLAND wide stage visual frame" />
+              <img src="/portfolio/assets/rain-singapore/rain-singapore-cover-wide.webp" alt="Rain SINGLAND wide stage visual frame" />
             </div>
           </div>
         </section>
@@ -180,8 +180,8 @@ function RainSingapore() {
               </div>
               <p className="section-intro">
                 {isZh
-                  ? '页面使用本地渲染输出的全比例宽屏帧。每首歌按独立视觉状态整理，而不是合并成一组泛化的晚会屏幕。'
-                  : 'The page uses full-ratio wide frames from local render outputs. Each song is treated as a separate visual state rather than a single generic festival screen.'}
+                  ? '页面使用本地渲染输出的全比例宽屏帧。每首歌按独立视觉状态整理，保留不同曲目的屏幕语言。'
+                  : 'The page uses full-ratio wide frames from local render outputs. Each song is treated as a separate visual state with its own screen language.'}
               </p>
             </div>
             <div className="project-sequence-list">

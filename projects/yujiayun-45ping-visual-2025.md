@@ -1,48 +1,75 @@
-# 余佳运「45㎡」个人演唱会 2025
+# 余佳运「45㎡」演唱会视觉制作
 
-> 演艺舞台视觉项目
+## One-line Summary
 
----
+余佳运「45㎡」演唱会视觉制作与工程交付支持，覆盖艺人开场包装、主 Opening、部分曲目视觉、地屏内容与多屏 PGM 交付。
 
-## 项目信息
+## Project Facts
 
-| 项目 | 内容 |
-|------|------|
-| **时间** | 2025/11/01 |
-| **地点** | 宁波奥体中心 |
-| **艺人** | 余佳运 |
-| **项目** | 余佳运「45㎡」个人演唱会 |
-| **我的角色** | 视觉制作 / 工程交付 |
+| Field | Detail |
+| --- | --- |
+| Project | 余佳运「45㎡」演唱会 |
+| Primary record | 宁波站，2025/11/01，宁波奥体中心体育馆 |
+| Later reference | 上海收官场，2026/04/04，Opening 现场参考 |
+| Artist | 余佳运 |
+| Type | Concert visual production / stage visual delivery |
+| Role | Visual production / delivery engineering support |
+| Scope | Per-artist opening package, main opening sequence, selected song visuals, floor LED content, multi-surface PGM delivery |
 
----
+## Context
 
-## 我做了什么
+「45㎡」是一组面向演唱会现场的舞台视觉制作记录。页面整理宁波站为主要制作节点，并以可公开观看的上海场视频作为 Opening 现场状态参考。公开页面优先展示最终输出帧、现场段落和屏幕层级，不发布原始工程文件。
 
-- **Opening 视觉**：《尘埃》开场视觉完整制作
-- **歌曲视觉**：《防沉迷系统》、《千禧》、《夏夜入梦前》舞台视觉
-- **地坪 LED**：全场地坪 LED 视觉内容设计制作
-- **多屏联动**：四面 PGM 联动系统的视觉工程交付
+## My Role
 
----
+钱誉文参与视觉制作与工程交付支持。工作集中在艺人开场包装、主 Opening、部分曲目视觉、地屏内容、多屏 PGM 输出与交付整理。
+
+## Opening System
+
+Opening 是本项目最适合独立展示的段落。它在约一分钟内完成技术前奏、琥珀色压力推进、橙色快闪和标题收束，并在短时间内建立整场演出的视觉密度。
+
+Opening 页面按四组整理：
+
+- 技术前奏：星点、测量线、图标化人物、白色扫描结构。
+- 琥珀色阈值：白色扫描过渡到暖色有机痕迹。
+- 橙色快闪：建筑碎片、竖向扫动、红色密度、强光切换。
+- 下落与标题收束：黑场、线性运动、粒子标题和空间回收。
+
+## Song Surface Map
+
+曲目视觉按屏幕层级整理，避免把原始素材直接暴露为项目内容。
+
+| Song | Public surface notes |
+| --- | --- |
+| 防沉迷系统 | PGM 主屏与地屏配合，展示主屏状态和承接舞台几何的地屏层。 |
+| 触碰不到的你 | PGM 单层状态，黑场、单人运动和水平线空间。 |
+| 尘埃 | PGM 与地面 / 顶面方向粒子素材配合，形成细密尘埃运动。 |
+| 卸妆 | 地屏单层状态，高饱和像素格与重复几何节奏。 |
+| 千禧 | PGM 旋转圆盘与地屏棋盘格配合。 |
+| 夏夜入梦前 | PGM 植物画面与地屏绿色空间配合。 |
+
+## Delivery / Outputs
+
+- Per-artist opening package
+- Main opening sequence
+- Selected song visuals
+- Floor LED content
+- PGM long-screen outputs
+- Multi-surface delivery support
+- Public project page and selected-frame archive
 
 ## Credits
 
-- **总导演**：KANES（与余佳运为紧密合作伙伴）
-- **视觉总监**：陈哲
-- **视觉制作 / 工程交付**：Ewan Qian / 钱誉文
+| Credit | Name |
+| --- | --- |
+| Director | KANES |
+| Visual Director | 陈哲 |
+| Visual Production / Delivery Engineering Support | Ewan Qian / 钱誉文 |
 
----
+## Links
 
-## 致谢
-
-感谢总导演 KANES 给我这个宝贵的合作机会，也感谢视觉总监陈哲在整个过程中的监督、支持与鼓励。没有你们，我做不出这么好的视觉作品！
-
-感谢能够有机会坐在现场观看精彩的演出，这让我学习到很多专业的舞台视觉制作经验。
-
----
-
-## Related Links
-
-- [返回视觉艺术页](../visual-arts/45m2-ningbo/README.md)
-- [返回项目总表](./README.md)
-- [返回首页](../README.md)
+- Project page: `/portfolio/#/projects/yujiayun-45m2`
+- Ningbo performance information: https://m.yanchupiaowu.com/event?id=109005
+- Shanghai opening reference: https://www.bilibili.com/video/BV1pZyRBMEML/
+- Shanghai segmented record: https://www.bilibili.com/video/BV1JoDGB8EZQ/
+- Ningbo full fan recording: https://www.bilibili.com/video/BV1AVLc6EEtK/

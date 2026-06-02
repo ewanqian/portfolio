@@ -13,7 +13,7 @@ const practiceMap = {
       relatedWritings: [],
       relatedRepositories: [],
       relatedImages: [
-        '/assets/public-nodes/timer.jpg'
+        '/portfolio/assets/raw-library/timer-red-spatial-preview.webp'
       ]
     },
     {
@@ -27,7 +27,7 @@ const practiceMap = {
       relatedWritings: [],
       relatedRepositories: [],
       relatedImages: [
-        '/assets/public-nodes/dropflow-hangzhou.jpg'
+        '/assets/public-nodes/dropflow-hangzhou.webp'
       ]
     },
     {
@@ -41,7 +41,7 @@ const practiceMap = {
       relatedWritings: [],
       relatedRepositories: [],
       relatedImages: [
-        '/assets/public-nodes/observation-symbiosis.jpg'
+        '/assets/public-nodes/observation-symbiosis.webp'
       ]
     },
     {
@@ -55,7 +55,7 @@ const practiceMap = {
       relatedWritings: [],
       relatedRepositories: [],
       relatedImages: [
-        '/assets/public-nodes/can-festival.jpg'
+        '/assets/public-nodes/can-festival.webp'
       ]
     }
   ]

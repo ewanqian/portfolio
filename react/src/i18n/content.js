@@ -194,8 +194,8 @@ const writingTranslations = {
       summary: 'A note on visual roles, spatial sections, and the way visuals truly enter the performance structure.'
     },
     'live-collab-not-bg': {
-      title: 'Live Collaboration Is Not Background Visuals',
-      summary: 'Starting from Kashiwa / TITAN, this note argues that live visuals become part of the spatial experience rather than a supporting screen layer.'
+      title: 'Live Collaboration as Spatial Image',
+      summary: 'Starting from Kashiwa / TITAN, this note describes how live visuals become part of the spatial experience and performance structure.'
     },
     'nodal-organization': {
       title: 'Why Works, Nodes, Images, and Texts Should Be Organized as Nodes',
@@ -206,12 +206,12 @@ const writingTranslations = {
       summary: 'A note on scanning, digital nature, and how environments shift from background to work-form.'
     },
     'portfolio-not-enough': {
-      title: 'Why a Personal Website Cannot Stop at Being a Portfolio',
+      title: 'The Personal Website as Work System',
       summary: 'Discusses why the site must also carry methods, archives, and collaboration logic instead of being only a project shelf.'
     },
     'practice-lines-not-list': {
       title: 'Why the Site Uses Practice Lines Instead of a Flat Project List',
-      summary: 'A note on why the work is organized by practice lines rather than only by years or isolated projects.'
+      summary: 'A note on organizing the work through practice lines, years, and project relations.'
     },
     'practice-then-production': {
       title: 'Why the Homepage Should Build Work Judgment Before Collaboration Judgment',
@@ -291,7 +291,7 @@ const sceneTranslations = {
       displayTitle: 'TIMER / Gaussian Spatial Translation',
       summary: 'A Gaussian spatial sample translated from scene material within the VIRTURA TIMER project. The spatial translation, web embedding, and archive framing were completed by Ewan Qian as a lightweight way to reopen a team project scene for browsing.',
       notes: [
-        'This sample corresponds to the red-leaning TIMER scene chapter inside the VIRTURA project line rather than a new standalone work.',
+        'This sample corresponds to the red-leaning TIMER scene chapter inside the VIRTURA project line.',
         'It shows how existing moving-image material from a team project can be turned into a browseable, shareable, embeddable spatial archive before heavier XR development begins.'
       ],
       location: 'VIRTURA / TIMER scene chapter',
@@ -301,7 +301,7 @@ const sceneTranslations = {
       displayTitle: 'Drop Flow Collection / Rooooooom719',
       summary: 'A collage-like spatial sample built from phase material in the Drop Flow team project. Ewan Qian translated the participant-image archive through a local AppleSharp-model workflow and Gaussian editing pipeline so it could become a preserved, embeddable project layer.',
       notes: [
-        'This sample corresponds to the rooms719 / Drop Flow 2 stage member-image collage rather than a single live recording.',
+        'This sample corresponds to the rooms719 / Drop Flow 2 stage member-image collage.',
         'It reorganizes project-stage material into a browseable spatial object that can sit between process evidence, project presentation, and later spatial-display development.'
       ],
       location: 'Drop Flow / Rooooooom719 collage set',

@@ -7,8 +7,8 @@
   "summary": "以 Mikael Lind 与 KASHIWA Daisuke 共同创作的未发布单曲为声音基础，整理项目 PDF、BlenderMCP、音频分析和 60fps 空间视觉演出框架。",
   "practiceLine": "collaborative-performance",
   "tags": ["kashiwa", "mke", "blendermcp", "audio-analysis", "terminal", "ongoing"],
-  "coverImage": "pdf-p02-01.jpg",
-  "image": "/assets/mke-terminal/pdf-p02-01.jpg",
+  "coverImage": "pdf-p02-01.webp",
+  "image": "/assets/mke-terminal/pdf-p02-01.webp",
   "showOnHome": false,
   "lifecycle": "active",
   "relatedNodes": ["kashiwa-bo-live-shenzhen", "ufo-terminal"],
@@ -17,8 +17,7 @@
   "analysisIds": ["kashiwa-mke-flowchain"],
   "sourceDocs": [
     "works/mke-terminal.html",
-    "assets/mke-terminal/MKE.pdf",
-    "E:/Ewan/wip/2605 kashiwa in terminal/analysis/site_package/kashiwa_mke_special_page_info_pack_20260507/README.md"
+    "assets/mke-terminal/MKE.pdf"
   ],
   "repoLink": "/works/mke-terminal.html",
   "links": [

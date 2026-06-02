@@ -23,6 +23,25 @@ function initializeTheme() {
 initializeTheme()
 initializeDocumentLanguage()
 
+function normalizeLegacyPortfolioUrl() {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  const { pathname, hash } = window.location
+  const hasHashRoute = hash.startsWith('#/')
+  const isLegacyPath = pathname.includes('/works/') || pathname.includes('/projects/') || pathname.endsWith('.html')
+
+  if (!hasHashRoute || !isLegacyPath) {
+    return
+  }
+
+  const basePath = pathname.startsWith('/portfolio/') ? '/portfolio/' : '/'
+  window.history.replaceState(null, '', `${basePath}${hash}`)
+}
+
+normalizeLegacyPortfolioUrl()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LanguageProvider>

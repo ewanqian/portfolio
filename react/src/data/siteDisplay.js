@@ -1,40 +1,40 @@
 const imagePathOverrides = {
-  '/portfolio/assets/home/featured-dropflow-main.jpg': '/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
-  '/portfolio/assets/home/featured-perceptual-environments.jpg': '/portfolio/assets/raw-library/observation-symbiosis-large.png',
-  '/portfolio/assets/home/featured-timer-main.jpg': '/portfolio/assets/raw-library/timer-red-spatial-preview.png',
-  '/portfolio/assets/home/featured-timer-visionpro.jpg': '/portfolio/assets/home/archive-timer-clean.jpg'
+  '/portfolio/assets/home/featured-dropflow-main.webp': '/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.webp',
+  '/portfolio/assets/home/featured-perceptual-environments.webp': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
+  '/portfolio/assets/home/featured-timer-main.webp': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  '/portfolio/assets/home/featured-timer-visionpro.webp': '/portfolio/assets/home/archive-timer-clean.webp'
 }
 
 const imageIdOverrides = {
-  'ar-shenzhen-resort-2022': '/portfolio/assets/web-candidates/ar-shenzhen-info-resort-sohu.png',
-  'babel-bottle': '/portfolio/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.jpg',
-  'can-festival': '/portfolio/assets/public-nodes/can-festival.jpg',
-  'drop-flow': '/portfolio/assets/raw-picks/dropflow-concept-250426.jpg',
-  'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.jpg',
-  'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.jpg',
-  'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.png',
-  'glance-thousand-install-2023': '/portfolio/assets/raw-library/glance-thousand-anchang-bridge-projection.jpg',
-  'hallu-resonance-live-2024': '/portfolio/assets/raw-library/ewan-event-phantom-resonance.jpg',
-  'kashiwa': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.jpg',
-  'kashiwa-band-visual-2025': '/portfolio/assets/raw-library/event-2025-can-festival-zhoushan-01.jpeg',
-  'kashiwa-bo-live-shenzhen': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.jpg',
-  'lonely-av-live-2023': '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.jpg',
-  'mke-terminal': '/portfolio/assets/mke-terminal/pdf-p02-01.jpg',
-  'new-media-artist-simulator-2025': '/portfolio/assets/raw-library/project-new-media-artist-simulator-main.jpg',
-  'ether-fragment-exhibit-2023': '/portfolio/assets/web-candidates/ether-fragment-sohu.png',
-  'observation-and-symbiosis': '/portfolio/assets/raw-library/observation-symbiosis-large.png',
-  'observe-symbiosis-pingshan': '/portfolio/assets/raw-library/observation-symbiosis-large.png',
-  'observe-symbiosis-exhibit-2025': '/portfolio/assets/raw-library/observation-symbiosis-large.png',
-  'observe-symbiosis-workshop-2026': '/portfolio/assets/raw-library/observation-symbiosis-large.png',
-  'rain-singapore-visual-2026': '/portfolio/assets/rain-singapore/rain-singapore-cover.jpg',
-  'sre-realtime-liveset-2026': '/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.png',
-  'shanhaifusheng2-visual-2025': '/portfolio/assets/raw-library/floating-life-ii-performance.jpg',
-  'timer': '/portfolio/assets/raw-library/timer-red-spatial-preview.png',
-  'timer-loading-access-2-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.png',
-  'timer-series-visual-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.png',
-  'vrplay-hackathon-visual-2025': '/portfolio/assets/raw-picks/vrplay-keynote-16x9.jpg',
-  'yujiayun-45ping-visual-2025': '/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.jpg',
-  'ufo-terminal': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.jpg'
+  'ar-shenzhen-resort-2022': '/portfolio/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp',
+  'babel-bottle': '/portfolio/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp',
+  'can-festival': '/portfolio/assets/public-nodes/can-festival.webp',
+  'drop-flow': '/portfolio/assets/raw-picks/dropflow-concept-250426.webp',
+  'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.webp',
+  'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp',
+  'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.webp',
+  'glance-thousand-install-2023': '/portfolio/assets/raw-library/glance-thousand-anchang-bridge-projection.webp',
+  'hallu-resonance-live-2024': '/portfolio/assets/raw-library/ewan-event-phantom-resonance.webp',
+  'kashiwa': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
+  'kashiwa-band-visual-2025': '/portfolio/assets/raw-library/event-2025-can-festival-zhoushan-01.webp',
+  'kashiwa-bo-live-shenzhen': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
+  'lonely-av-live-2023': '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp',
+  'mke-terminal': '/portfolio/assets/mke-terminal/pdf-p02-01.webp',
+  'new-media-artist-simulator-2025': '/portfolio/assets/raw-library/project-new-media-artist-simulator-main.webp',
+  'ether-fragment-exhibit-2023': '/portfolio/assets/web-candidates/ether-fragment-sohu.webp',
+  'observation-and-symbiosis': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
+  'observe-symbiosis-pingshan': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
+  'observe-symbiosis-exhibit-2025': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
+  'observe-symbiosis-workshop-2026': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
+  'rain-singapore-visual-2026': '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
+  'sre-realtime-liveset-2026': '/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp',
+  'shanhaifusheng2-visual-2025': '/portfolio/assets/raw-library/floating-life-ii-performance.webp',
+  'timer': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  'timer-loading-access-2-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  'timer-series-visual-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  'vrplay-hackathon-visual-2025': '/portfolio/assets/raw-picks/vrplay-keynote-16x9.webp',
+  'yujiayun-45ping-visual-2025': '/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp',
+  'ufo-terminal': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp'
 }
 
 const practiceLineOrder = [
@@ -63,10 +63,10 @@ export const nodeLinks = {
 
 export function getDisplayImage(item) {
   if (!item) {
-    return '/portfolio/assets/public-nodes/ufo-terminal.jpg'
+    return '/portfolio/assets/public-nodes/ufo-terminal.webp'
   }
 
-  return imageIdOverrides[item.id] || imagePathOverrides[item.image] || item.image || '/portfolio/assets/public-nodes/ufo-terminal.jpg'
+  return imageIdOverrides[item.id] || imagePathOverrides[item.image] || item.image || '/portfolio/assets/public-nodes/ufo-terminal.webp'
 }
 
 export function getWorkTargetUrl(work) {

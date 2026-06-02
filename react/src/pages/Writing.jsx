@@ -98,7 +98,7 @@ function Writing() {
             <h1 className="section-title">{language === 'en' ? 'Writing and Notes' : '写作与笔记'}</h1>
             <p className="section-intro">
               {language === 'en'
-                ? 'This page collects ongoing writing around works, methods, field experience, delivery specs, and archive systems. It is not supplementary explanation but part of the practice itself: how a work holds together, how it is organized, how it enters space, how it is delivered, and how it continues to be read all get unfolded here.'
+                ? 'This page collects ongoing writing around works, methods, field experience, delivery specs, and archive systems. The texts unfold how a work holds together, how it is organized, how it enters space, how it is delivered, and how it continues to be read.'
                 : '这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。写作本身也是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。'}
             </p>
           </div>

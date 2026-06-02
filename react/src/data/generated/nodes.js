@@ -6,11 +6,11 @@ export default [
     "type": "public-node",
     "category": "Museum / Hypertext Installation",
     "summary": "《巴别瓶》把观念性超文本交互作品接入美术馆语境，是作品展示与叙事结构的重要转折节点。",
-    "image": "/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.webp",
     "relatedWork": "new-media-artist-simulator-2025",
     "timelineStage": "environment-exploration",
     "images": [
-      "featured-perceptual-environments.jpg"
+      "featured-perceptual-environments.webp"
     ],
     "externalLink": "",
     "showOnHome": false,
@@ -28,11 +28,11 @@ export default [
     "type": "public-node",
     "category": "Festival / Audiovisual",
     "summary": "Kashiwa Daisuke 现场视听合作进入公共表演语境的重要节点。",
-    "image": "/assets/public-nodes/can-festival.jpg",
+    "image": "/assets/public-nodes/can-festival.webp",
     "relatedWork": "kashiwa",
     "timelineStage": "collaborative-performance",
     "images": [
-      "can-festival.jpg"
+      "can-festival.webp"
     ],
     "externalLink": "",
     "showOnHome": true,
@@ -49,11 +49,11 @@ export default [
     "type": "public-node",
     "category": "Public Presentation / Immersive",
     "summary": "Drop Flow 系列在杭州双年展与公共展陈语境中的重要呈现节点。",
-    "image": "/assets/public-nodes/dropflow-hangzhou.jpg",
+    "image": "/assets/public-nodes/dropflow-hangzhou.webp",
     "relatedWork": "drop-flow",
     "timelineStage": "spatial-generation",
     "images": [
-      "dropflow-hangzhou.jpg"
+      "dropflow-hangzhou.webp"
     ],
     "externalLink": "",
     "showOnHome": true,
@@ -70,11 +70,11 @@ export default [
     "type": "public-node",
     "category": "Live Performance / Audiovisual",
     "summary": "Kashiwa Daisuke 深圳专场的关键公共节点，集中体现全息纱幕、裸眼 3D 与音画互动结构。",
-    "image": "/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+    "image": "/assets/home/featured-kashiwa-bolive-shenzhen.webp",
     "relatedWork": "kashiwa",
     "timelineStage": "collaborative-performance",
     "images": [
-      "featured-kashiwa-bolive-shenzhen.jpeg"
+      "featured-kashiwa-bolive-shenzhen.webp"
     ],
     "externalLink": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g",
     "showOnHome": true,
@@ -92,11 +92,11 @@ export default [
     "type": "public-node",
     "category": "Digital Environment / Exhibition",
     "summary": "扫描、数字环境、观察系统与共生关系的持续实践。",
-    "image": "/assets/public-nodes/observation-symbiosis.jpg",
+    "image": "/assets/public-nodes/observation-symbiosis.webp",
     "relatedWork": null,
     "timelineStage": "environment-exploration",
     "images": [
-      "observation-symbiosis.jpg"
+      "observation-symbiosis.webp"
     ],
     "externalLink": "",
     "showOnHome": true,
@@ -113,11 +113,11 @@ export default [
     "type": "public-node",
     "category": "Exhibition / Digital Environment",
     "summary": "《观察与共生》进入公共展览语境的重要节点，把扫描环境、生态逻辑与数据可视化合并为可展出的环境结构。",
-    "image": "/assets/home/featured-perceptual-environments.jpg",
+    "image": "/assets/home/featured-perceptual-environments.webp",
     "relatedWork": "observe-symbiosis-exhibit-2025",
     "timelineStage": "environment-exploration",
     "images": [
-      "featured-perceptual-environments.jpg"
+      "featured-perceptual-environments.webp"
     ],
     "externalLink": "",
     "showOnHome": false,

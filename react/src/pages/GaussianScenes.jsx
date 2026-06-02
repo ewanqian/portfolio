@@ -10,8 +10,8 @@ import { localizeScene, localizeWork } from '../i18n/content.js'
 const pageCopy = {
   zh: {
     eyebrow: 'Gaussian Archive Library',
-    title: '高斯档案库 / Gaussian Archive Library',
-    intro: '这个栏目把两类内容放进同一个公开入口：一类是 VIRTURA 团队项目相关场景被转译成的高斯空间样本，由钱誉文负责空间化整理、网页嵌入和归档编排；另一类是钱誉文独立进行的环境采样档案，用来测试空间保存、网页浏览与后续 Vision Pro / XR 的展示路径。这组空间样本和研究模块面向外部阅读与合作判断。',
+    title: '高斯档案库',
+    intro: '空间样本库收录团队项目转译、个人环境采样和网页嵌入样本，连接高斯重建、空间保存、XR 展示与长期项目档案。',
     statArchived: '已归档场景',
     statWorkDerived: '团队项目转译',
     statField: '环境采样',
@@ -19,15 +19,15 @@ const pageCopy = {
     ctaProduction: '查看合作方式',
     ctaArchive: '返回档案索引',
     ctaWorkflow: '查看方法说明',
-    readTitle: '这页怎么看 / How to Read This Page',
-    readIntro: '这一页可以从三个角度来读：团队项目的空间转译、个人环境采样档案，以及这种形式如何继续进入更完整的展示和合作路径。',
-    progressTitle: '这页能帮助判断什么',
-    progressIntro: '下面三列帮助外部读者快速理解：当前已经能看到哪些团队项目样本、哪些个人环境采样，以及这种形式能往哪种合作方向继续走。',
-    featuredTitle: '团队项目空间转译样本 / Team Project Samples',
-    featuredIntro: '下面两个样本都来自团队项目语境。项目本身属于团队实践，高斯化转译、网页嵌入和归档整理由钱誉文单独完成。它们提供一种更接近空间观看的入口。',
+    readTitle: '空间样本结构',
+    readIntro: '空间样本分为团队项目转译、个人环境采样、XR 延展和方法说明四个方向。',
+    progressTitle: '档案层级',
+    progressIntro: '当前样本覆盖项目转译、环境扫描和合作延展三类用途。',
+    featuredTitle: '团队项目转译样本',
+    featuredIntro: '这些样本来自团队项目语境。项目本身属于协作实践，空间化整理、网页嵌入和归档编排由钱誉文完成。',
     featuredPanelTitle: '想判断这种形式适不适合当前项目？',
     featuredPanelBody: '如果更关心合作方式、预算理解和交付路径，下一步最值得看的就是 Production 页面；这里更适合先看样本和呈现方式。',
-    fieldTitle: '个人环境采样档案 / Field Scans',
+    fieldTitle: '个人环境采样档案',
     fieldIntro: '下面这些则是钱誉文独立进行的环境采样档案。它们保留花园、温室和城市公共空间在特定光线与体积关系里的状态，也可以继续扩展到展厅、建筑、演出空间和其他现场语境。',
     valueTitle: '为什么做成空间档案',
     flowTitle: '从样本到合作 / From Sample to Collaboration',
@@ -61,7 +61,7 @@ const pageCopy = {
         id: 'field-scan-library',
         title: '个人环境采样档案',
         status: 'active',
-        body: '把花园、温室和公共空间扫描整理成独立条目，让个人环境采样不再只是零散试验，而是持续积累的空间保存样本。',
+        body: '把花园、温室和公共空间扫描整理成独立条目，让个人环境采样形成持续积累的空间保存样本。',
         note: '当前已有 3 个环境采样条目。'
       },
       {
@@ -111,13 +111,13 @@ const pageCopy = {
     valueCards: [
       {
         id: 'lighter-than-engine',
-        title: '先把空间感保留下来',
+        title: '保存空间感',
         body: '相比只保留一段视频，这种形式更适合把团队项目场景或现场资料先保存成可浏览对象，也更容易让外部读者理解空间层次和观看路径。'
       },
       {
         id: 'archive-before-app',
-        title: '先形成可浏览样本，再决定要不要继续开发',
-        body: '团队项目资料和个人环境采样都可以先整理成一个可浏览样本，再判断它更适合归档、网页展示，还是继续进入更完整的应用开发。'
+        title: '形成可浏览样本',
+        body: '团队项目资料和个人环境采样可以先整理成可浏览样本，再进入归档、网页展示或更完整的应用开发。'
       },
       {
         id: 'visionpro-bridge',
@@ -168,7 +168,7 @@ const pageCopy = {
   en: {
     eyebrow: 'Gaussian Archive Library',
     title: 'Gaussian Archive Library',
-    intro: 'This section gathers two lines into one public-facing entry. One line consists of Gaussian spatial samples translated from VIRTURA team-project scenes, with spatial framing, web embedding, and archive structuring completed by Ewan Qian. The other line consists of independently captured field scans used to test spatial preservation, web viewing, and later Vision Pro / XR presentation paths. Together they form a readable public module for spatial samples and ongoing research.',
+    intro: 'A spatial sample library for team-project translations, independent field scans, web embeds, XR presentation paths, and long-term archive work.',
     statArchived: 'Archived Scenes',
     statWorkDerived: 'Team Samples',
     statField: 'Field Scans',
@@ -176,10 +176,10 @@ const pageCopy = {
     ctaProduction: 'Open Production',
     ctaArchive: 'Back to Archive',
     ctaWorkflow: 'Open Method Note',
-    readTitle: 'How to Read This Page',
-    readIntro: 'This page can be read from three angles: spatial translations derived from team projects, independently captured field scans, and the way these samples can continue into fuller display and collaboration paths.',
-    progressTitle: 'What This Page Helps Clarify',
-    progressIntro: 'These columns help an external reader quickly understand which team-project samples already exist, which independent environmental scans are already archived, and where this format can continue as a collaboration path.',
+    readTitle: 'Spatial Sample Structure',
+    readIntro: 'The archive is organized through team-project translations, independent field scans, XR extension paths, and reusable method notes.',
+    progressTitle: 'Archive Layers',
+    progressIntro: 'The current samples cover project translation, environmental scanning, and collaboration extensions.',
     featuredTitle: 'Team Project Spatial Samples',
     featuredIntro: 'The two samples below both come from team-project contexts. The projects themselves belong to collective practice, while the Gaussian translation, web embedding, and archive arrangement were completed independently by Ewan Qian. They open a different, more spatial way of entering the work.',
     featuredPanelTitle: 'Judge whether this format fits your project',
@@ -218,7 +218,7 @@ const pageCopy = {
         id: 'field-scan-library',
         title: 'Field Scan Library',
         status: 'active',
-        body: 'Gardens, greenhouse interiors, and public-space scans are organized as independent entries so environmental capture can become a sustained archive rather than a loose set of tests.',
+        body: 'Gardens, greenhouse interiors, and public-space scans are organized as independent entries so environmental capture becomes a sustained archive.',
         note: 'Currently includes 3 field-scan entries.'
       },
       {

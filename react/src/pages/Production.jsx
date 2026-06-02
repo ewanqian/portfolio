@@ -2,37 +2,41 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
+import works from '../data/generated/works'
+import { getDisplayImage, getWorkTargetUrl } from '../data/siteDisplay'
+import { productionWorkIds, pickWorksByIds } from '../data/siteTaxonomy'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { localizeWork } from '../i18n/content.js'
 
 const servicesByLanguage = {
   zh: [
     {
       id: 'live-visuals',
-      title: '现场视觉 / Live Visuals',
+      title: '现场视觉',
       description: '适合演出、专场和现场段落，需要视觉和音乐结构、节奏推进与现场气质一起成立的合作。',
       forUse: ['音乐演出', 'audiovisual 合作', '开场段落', '现场视觉支持']
     },
     {
       id: 'spatial-image',
-      title: '空间影像与沉浸内容 / Spatial Image & Immersive Content',
+      title: '空间影像与沉浸内容',
       description: '适合展厅、多面屏、穹顶和装置内容，需要围绕空间路径、屏幕关系与环境感组织影像的项目。',
       forUse: ['展厅', '多面屏', '穹顶', '沉浸空间', '装置类内容']
     },
     {
       id: 'previsualization',
-      title: '前期预演与方案确认 / Previsualization',
+      title: '前期预演与方案确认',
       description: '适合还在前期判断阶段的项目，先把结构、节奏、屏幕关系和关键风险做成可讨论的预演。',
       forUse: ['场景预演', '项目测试', '方案确认', '技术验证']
     },
     {
       id: 'viewer-spec',
-      title: '交付规格与播放支持 / Delivery Specs',
+      title: '交付规格与播放支持',
       description: '适合要进入真实交付的项目，把分辨率、播放、格式、版本和场地适配提前理顺。',
       forUse: ['分辨率', '帧率', '编码格式', '封装格式', 'Apple ProRes', '播放测试', '场地适配']
     },
     {
       id: 'research-consultation',
-      title: '研究咨询与工作坊 / Consultation & Workshop',
+      title: '研究咨询与工作坊',
       description: '适合团队方法搭建、方向讨论和工作坊场景，用来帮合作方建立判断和工作流。',
       forUse: ['方法讨论', '项目咨询', '课程 / workshop', '系统搭建与内容组织']
     }
@@ -65,7 +69,7 @@ const servicesByLanguage = {
     {
       id: 'research-consultation',
       title: 'Consultation & Workshop',
-      description: 'Best suited to teams building methods, discussing directions, or designing workshop formats. The value here is not only deliverables but the shared judgment and workflow that gets built.',
+      description: 'Best suited to teams building methods, discussing directions, or designing workshop formats. The value includes deliverables, shared judgment, and workflow design.',
       forUse: ['method sessions', 'project consultation', 'courses / workshops', 'workflow and system design']
     }
   ]
@@ -75,8 +79,8 @@ const caseNotesByLanguage = {
   zh: [
     {
       id: 'opening-visual-pricing',
-      title: '为什么 opening visual 通常比普通循环内容更贵',
-      content: '因为它通常承担项目整体气质建立、叙事起点与观看预期设定，不只是“多一条视频”。'
+      title: 'Opening visual',
+      content: '开场段落承担项目气质、叙事起点与观看预期，通常需要更完整的节奏设计和版本控制。'
     },
     {
       id: 'stereo-test-first',
@@ -90,15 +94,15 @@ const caseNotesByLanguage = {
     },
     {
       id: 'immersive-not-by-length',
-      title: '为什么沉浸式内容不能只按“片长”报价',
-      content: '空间项目的难度往往来自屏幕结构、版本数量、内容组织方式与场地适配，不能只按时长判断。'
+      title: '沉浸式内容的工作量',
+      content: '空间项目的难度来自屏幕结构、版本数量、内容组织方式与场地适配，片长只是其中一个参数。'
     }
   ],
   en: [
     {
       id: 'opening-visual-pricing',
       title: 'Why opening visuals usually cost more than looping content',
-      content: 'Because they often establish the project’s atmosphere, narrative entry point, and viewing expectation. They are not just “one more video.”'
+      content: 'Opening visuals establish atmosphere, narrative entry, and viewing expectation, usually requiring fuller pacing, versioning, and delivery control.'
     },
     {
       id: 'stereo-test-first',
@@ -112,8 +116,8 @@ const caseNotesByLanguage = {
     },
     {
       id: 'immersive-not-by-length',
-      title: 'Why immersive content cannot be priced by duration alone',
-      content: 'The real difficulty usually comes from screen structure, version count, content organization, and venue adaptation rather than clip length.'
+      title: 'How immersive content is scoped',
+      content: 'Screen structure, version count, content organization, and venue adaptation shape the workload alongside clip length.'
     }
   ]
 }
@@ -179,11 +183,11 @@ const faqsByLanguage = {
     },
     {
       q: 'What is the difference between live visuals and spatial image work?',
-      a: 'Live visuals emphasize realtime response, music relation, and on-site adaptability, while spatial image work emphasizes viewing paths, screen relations, and environmental feeling. The workflows are related but not identical.'
+      a: 'Live visuals emphasize realtime response, music relation, and on-site adaptability. Spatial image work emphasizes viewing paths, screen relations, and environmental feeling. The workflows overlap while keeping different priorities.'
     },
     {
       q: 'What usually affects pricing?',
-      a: 'Version count, venue conditions, delivery specs, collaboration structure, and time pressure all affect pricing, not just duration.'
+      a: 'Version count, venue conditions, delivery specs, collaboration structure, time pressure, and duration all affect pricing.'
     }
   ]
 }
@@ -206,6 +210,28 @@ const contactChecklistByLanguage = {
   en: ['project type', 'timeline', 'venue or platform', 'resolution / screen conditions', 'budget range', 'expected deliverable']
 }
 
+function ProductionRecordCard({ work, language }) {
+  const localizedWork = localizeWork(work, language)
+  const target = getWorkTargetUrl(work)
+
+  return (
+    <article className="production-record-card">
+      <a href={target} className="production-record-image" aria-label={localizedWork.title}>
+        <img src={getDisplayImage(work)} alt="" loading="lazy" />
+      </a>
+      <div className="production-record-copy">
+        <div className="works-meta-row">
+          <span>{localizedWork.years}</span>
+          <span>{localizedWork.type}</span>
+        </div>
+        <h3>{localizedWork.title}</h3>
+        <p>{localizedWork.summary}</p>
+        <a href={target} className="text-link">{language === 'en' ? 'Open record' : '查看记录'}</a>
+      </div>
+    </article>
+  )
+}
+
 const Production = () => {
   const { language } = useLanguage()
   const services = servicesByLanguage[language]
@@ -214,6 +240,7 @@ const Production = () => {
   const faqs = faqsByLanguage[language]
   const pricingCards = pricingCardsByLanguage[language]
   const contactChecklist = contactChecklistByLanguage[language]
+  const productionWorks = pickWorksByIds(works, productionWorkIds)
 
   return (
     <>
@@ -225,15 +252,31 @@ const Production = () => {
             <h1 className="section-title">{language === 'en' ? 'Production and Collaboration' : '制作与合作'}</h1>
             <p className="section-intro">
               {language === 'en'
-                ? 'This page is for clients and collaborators who need to make a quick judgment. It explains what kinds of projects fit this practice, how the work is usually structured, and which questions are most worth clarifying before the conversation goes further.'
-                : '这个页面是给客户和合作方快速判断用的。你可以直接看我适合接什么项目、常见合作类型、为什么不同项目的制作逻辑不同，以及继续沟通前最值得先确认的几个问题。'}
+                ? 'Production gathers collaboration records, stage visual projects, delivery references, and service formats across live visuals, spatial image work, immersive content, and audiovisual systems.'
+                : 'Production 整理合作记录、舞台视觉项目、交付参考与制作方式，覆盖现场视觉、空间影像、沉浸内容和音画系统。'}
             </p>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Production Overview' : 'Production Overview / 制作概览'}</h2>
+            <h2 className="section-title">{language === 'en' ? 'Production Records' : '制作项目'}</h2>
+            <p className="section-intro">
+              {language === 'en'
+                ? 'Concert visuals, public-space content, festival delivery, and system-facing records are presented here as production references.'
+                : '演唱会视觉、公共空间内容、音乐节交付和系统型项目在这里作为制作参考集中呈现。'}
+            </p>
+            <div className="production-record-grid">
+              {productionWorks.map((work) => (
+                <ProductionRecordCard key={work.id} work={work} language={language} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2 className="section-title">{language === 'en' ? 'Production Overview' : '制作概览'}</h2>
             <p>
               {language === 'en'
                 ? 'The strongest fit is projects where content, space, pacing, versions, and delivery all need to be organized together. Live visuals, spatial image work, immersive content, previs, and delivery-spec support can be judged here faster than on the work pages.'
@@ -245,12 +288,12 @@ const Production = () => {
                 <p>{language === 'en' ? 'Live visuals, spatial image work, opening sequences, exhibition content, multi-version delivery, previs, and specification support.' : '演出视觉、空间影像、开场段落、展厅内容、多版本交付、预演测试与规格支持。'}</p>
               </div>
               <div className="overview-card">
-                <h4>{language === 'en' ? 'What clients should read first' : '客户先看什么'}</h4>
-                <p>{language === 'en' ? 'Start with service categories and case notes, then judge whether your project is closer to content production, system support, or an earlier validation phase.' : '先看服务类别和案例说明，再判断你的项目更像内容制作、系统支持，还是前期验证。'}</p>
+                <h4>{language === 'en' ? 'Project Fit' : '项目匹配'}</h4>
+                <p>{language === 'en' ? 'The categories distinguish content production, system support, early validation, and delivery-spec work.' : '服务类别区分内容制作、系统支持、前期验证和交付规格支持。'}</p>
               </div>
               <div className="overview-card">
-                <h4>{language === 'en' ? 'How to continue the conversation' : '怎么继续沟通'}</h4>
-                <p>{language === 'en' ? 'Bringing schedule, venue, screen conditions, budget range, and expected output format into the conversation will make the process much more efficient.' : '带着时间、场地、屏幕条件、预算区间和预期输出形式来聊，效率会高很多。'}</p>
+                <h4>{language === 'en' ? 'Project Materials' : '项目资料'}</h4>
+                <p>{language === 'en' ? 'Schedule, venue, screen conditions, budget range, and expected output format make scoping more precise.' : '时间、场地、屏幕条件、预算区间和预期输出形式，会让制作范围更清楚。'}</p>
               </div>
             </div>
             <div className="hero-cta" style={{ marginTop: '24px' }}>
@@ -304,7 +347,7 @@ const Production = () => {
           <div className="container">
             <h2 className="section-title">{language === 'en' ? 'Case Notes' : '合作判断 / Case Notes'}</h2>
             <p className="section-intro">
-              {language === 'en' ? 'This section addresses the points clients most often misjudge, so it becomes easier to understand why some projects need tests, previs, or pricing logic that cannot be reduced to duration alone.' : '这部分专门解释客户最常误判的地方，帮助你理解为什么有些项目需要先测、先预演，或者不能只按时长判断。'}
+              {language === 'en' ? 'This section clarifies the production conditions behind tests, previs, and pricing logic for spatial and live visual work.' : '这部分整理测试样片、预演和报价逻辑背后的制作条件。'}
             </p>
             <div className="case-notes-grid">
               {caseNotes.map((note) => (

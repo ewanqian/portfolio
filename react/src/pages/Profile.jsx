@@ -162,8 +162,8 @@ const copy = {
         anchor: 'practice',
         title: 'Live audiovisual work, spatial images, and an evolving personal system',
         body: [
-          'Qian treats visuals as part of the performance structure, not as background, packaging, or decorative accompaniment. The image carries sections, breath, pressure, pause, and spatial scale. It also shapes how an audience sees, approaches, records, turns, and remembers a piece of sound.',
-          'In this sense, the image is not a surface effect that merely follows music. It behaves more like a live system affected by sound, light, material, and site. A section works through rhythm, but also through brightness, density, movement, screen ratio, floor LED relationships, and the viewer’s physical position.'
+          'Qian treats visuals as part of the performance structure. The image carries sections, breath, pressure, pause, and spatial scale. It also shapes how an audience sees, approaches, records, turns, and remembers a piece of sound.',
+          'The image behaves like a live system affected by sound, light, material, and site. A section works through rhythm, brightness, density, movement, screen ratio, floor LED relationships, and the viewer’s physical position.'
         ]
       },
       {
@@ -171,14 +171,14 @@ const copy = {
         anchor: 'virtura',
         title: 'Virtura as a container for collaboration, tools, and archives',
         body: [
-          'Virtura holds live visual practice, spatial image work, music collaboration, digital-scene experiments, and long-term research archives. It is not a single project title or a purely technical brand, but a working structure for organizing teams, works, live contexts, web archives, tool experiments, and future performance systems.',
+          'Virtura holds live visual practice, spatial image work, music collaboration, digital-scene experiments, and long-term research archives. It works as a structure for organizing teams, works, live contexts, web archives, tool experiments, and future performance systems.',
           'In collective works, Qian usually frames the result as collaboration. His role often centers on initiating concepts, designing visual systems, producing spatial images, building Blender workflows, organizing live visuals, writing project narratives, and documenting methods.'
         ]
       },
       {
         id: 'Memory',
         anchor: 'memory',
-        title: 'Nature as memory material rather than scenery',
+        title: 'Nature as memory material',
         body: [
           'Nature rarely appears in his work as a complete landscape. It arrives through water, plants, mist, particles, light, terrain, scan traces, point clouds, and Gaussian-derived material. These elements carry fragments of urban experience and the possibility of being preserved, displaced, and re-entered in performance.',
           'Digital space therefore becomes more than virtual modeling or screen content. It can function as a memory container: reorganizing sonic time, natural texture, bodily experience, and production data into a space that can be watched, played, and archived.'
@@ -187,29 +187,29 @@ const copy = {
     ],
     longTitle: 'An Ongoing Working Line',
     longIntro:
-      'This page keeps a fuller personal narrative. It can be read as an editorial column: the first part positions the practice, while the following sections move into work lines, methods, and collaboration.',
+      'This page keeps a fuller personal narrative in an editorial structure: practice position first, then work lines, methods, and collaboration.',
     longReads: [
       {
         title: 'Entering the image through sound',
         body: [
-          'Qian’s live visual work does not begin with the question of what an image should look like. It begins with how sound occupies a space. Low frequencies change bodily weight; high frequencies sharpen the edge of an image; pauses make darkness, slow movement, and near-stillness important. Visuals are not an explanation of music, but material for building live time with sound.',
-          'This keeps the work away from simple spectrum visualization. Sound may drive the image, but it does not need to command it at every moment. Some sections require synchronization, some require delay, and some require the image to keep its own speed. The author decides when music enters the parameters, when manual keyframes take over, and when the image creates expectation for the ear.',
-          'The result is a playable visual system: not a single render, but a structure that can be directed, previewed, revised, delivered, and adapted across sites.'
+          'Qian’s live visual work begins with how sound occupies a space. Low frequencies change bodily weight; high frequencies sharpen the edge of an image; pauses make darkness, slow movement, and near-stillness important. Visuals become material for building live time with sound.',
+          'Sound may drive the image while still leaving room for delay, resistance, and image-led pacing. Some sections require synchronization, some require delay, and some require the image to keep its own speed. The author decides when music enters the parameters, when manual keyframes take over, and when the image creates expectation for the ear.',
+          'The result is a playable visual system: a structure that can be directed, previewed, revised, delivered, and adapted across sites.'
         ]
       },
       {
         title: 'From natural memory to digital scenes',
         body: [
-          'In TIMER, Drop Flow, and related spatial-image works, nature is not a decorative theme. Drops, grains, plants, greenhouses, scan residues, point clouds, and transparent structures form a kind of natural memory compressed by urban life. The works do not ask the viewer to believe in a literal garden; they allow nature to return as material, movement, and light.',
+          'In TIMER, Drop Flow, and related spatial-image works, drops, grains, plants, greenhouses, scan residues, point clouds, and transparent structures form a kind of natural memory compressed by urban life. Nature returns as material, movement, and light.',
           'Drop Flow begins with the image of a garden emerging from a single drop of water, organizing sound, scanned data, Gaussian-derived point clouds, digital vegetation, geometry, and screen light into an unfolding space. TIMER earlier connected time, rhythm, and point-cloud particles, letting time move around the audience like grains of sand.',
-          'These works are not simply parallel projects. Together they develop a method: sound becomes scene control, scan data becomes editable image material, and the screen expands from a rectangle into a space that can be approached and rewatched.'
+          'Together these works develop a method: sound becomes scene control, scan data becomes editable image material, and the screen expands from a rectangle into a space that can be approached and rewatched.'
         ]
       },
       {
         title: 'From tools to live judgment',
         body: [
           'Blender is used less as animation software than as an integrated audiovisual authoring environment. Timeline editing, manual keyframes, audio F-curves, Geometry Nodes, Simulation Zone, point-cloud import, material control, lighting, cameras, and screen output are organized in the same creative process.',
-          'AI enters this structure as well, but not as an automatic replacement for judgment. It supports research organization, structural reasoning, tool design, parameter testing, text archiving, and live-workflow optimization. Its value is not only image generation, but the construction of a personal working system.',
+          'AI enters this structure as support for research organization, structural reasoning, tool design, parameter testing, text archiving, and live-workflow optimization. Its value includes image generation and the construction of a personal working system.',
           'This places Qian’s practice between animation, live visuals, spatial performance, digital archives, and procedural scenes. It requires artistic judgment and production delivery at the same time.'
         ]
       }
@@ -256,14 +256,14 @@ const copy = {
     methodTitle: 'Method and Tools',
     methods: [
       'Use Blender as an audiovisual system: timeline, audio curves, nodes, lighting, materials, cameras, and output work together.',
-      'Treat sound as control material, not a simple trigger: it can shape point-cloud motion, material brightness, flow intensity, particle density, pulses, and transitions.',
+      'Treat sound as control material: it can shape point-cloud motion, material brightness, flow intensity, particle density, pulses, and transitions.',
       'Treat delivery as part of the work: screen ratios, PGM, floor LED, cueing, preview files, and media permissions affect how a project should be presented.',
       'Place AI inside the workflow: research, analysis, tool design, parameter testing, and writing support without replacing artistic judgment.'
     ],
     collaborationTitle: 'Collaboration and Sound Network',
     collaboration: [
       'Recent collaboration and research contexts include Hao Xu, KASHIWA Daisuke, RÖ, Shukai / Mark, and production teams across concerts, festivals, and live events. Different sound practices test the rhythm, density, materiality, and spatial organization of his visual systems.',
-      'These collaborations are not only resume entries. Electronic music, experimental sound, piano and electronics, pop concerts, commercial festivals, and institutional presentations each ask the visual system to adjust its aesthetic, technical, and delivery boundaries.'
+      'These collaborations test the system beyond a resume list. Electronic music, experimental sound, piano and electronics, pop concerts, commercial festivals, and institutional presentations each ask the visual system to adjust its aesthetic, technical, and delivery boundaries.'
     ],
     imageTitle: 'Portraits and Live Images',
     imageIntro: 'Portraits, live-working moments, public sharing contexts, and spatial personal images.',
@@ -273,12 +273,12 @@ const copy = {
 }
 
 const portraits = [
-  ['/portfolio/assets/profile/ewan-portrait-formal.jpg', 'Portrait', '个人肖像'],
-  ['/portfolio/assets/profile/ewan-portrait-outdoor-woods.jpg', 'Field Portrait', '场域肖像'],
-  ['/portfolio/assets/profile/ewan-strawberry-live.jpg', 'Live Visual Work', '现场视觉工作'],
-  ['/portfolio/assets/profile/ewan-ufo-sharing.jpg', 'Public Sharing', '公开分享'],
-  ['/portfolio/assets/profile/ewan-portrait-main.jpg', 'Process', '工作状态'],
-  ['/portfolio/assets/profile/ewan-profile-board.jpg', 'Profile Record', '资料记录']
+  ['/portfolio/assets/profile/ewan-portrait-formal.webp', 'Portrait', '个人肖像'],
+  ['/portfolio/assets/profile/ewan-portrait-outdoor-woods.webp', 'Field Portrait', '场域肖像'],
+  ['/portfolio/assets/profile/ewan-strawberry-live.webp', 'Live Visual Work', '现场视觉工作'],
+  ['/portfolio/assets/profile/ewan-ufo-sharing.webp', 'Public Sharing', '公开分享'],
+  ['/portfolio/assets/profile/ewan-portrait-main.webp', 'Process', '工作状态'],
+  ['/portfolio/assets/profile/ewan-profile-board.webp', 'Profile Record', '资料记录']
 ]
 
 function Paragraphs({ items }) {
@@ -312,7 +312,7 @@ function Profile() {
               </div>
             </div>
             <figure className="profile-editorial-image">
-              <img src="/portfolio/assets/profile/ewan-portrait-formal.jpg" alt={c.name} />
+              <img src="/portfolio/assets/profile/ewan-portrait-formal.webp" alt={c.name} />
             </figure>
           </div>
         </section>

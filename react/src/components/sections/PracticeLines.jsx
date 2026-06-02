@@ -10,7 +10,7 @@ const PracticeLines = () => {
       summary: language === 'en' ? 'Representative works establish the site’s first judgment: intensity, public-facing quality, and the difference between the core practice lines.' : '代表作品先建立第一层判断：表达强度、公开呈现质量和三条主线之间的差异。',
       detail: language === 'en' ? 'The homepage keeps Drop Flow, Kashiwa, and TIMER as the first three entries, giving the reader a clean first layer before the archive opens wider.' : '首页保留 Drop Flow、Kashiwa、TIMER 三项核心入口，让读者先获得清晰的第一层判断，再进入更完整的档案。',
       relatedProjects: ['Drop Flow', 'TIMER', 'Kashiwa Daisuke'],
-      image: '/assets/home/featured-dropflow-hangzhou-biennale-scene.jpg',
+      image: '/assets/home/featured-dropflow-hangzhou-biennale-scene.webp',
       ctaLabel: language === 'en' ? 'Open Works' : '查看作品',
       ctaTo: '/',
       ctaState: { scrollTo: 'works' }
@@ -31,7 +31,7 @@ const PracticeLines = () => {
       summary: language === 'en' ? 'Clients, institutions, and partners can use Production to judge service type, budget logic, delivery structure, and fit much faster.' : '客户、机构和合作团队可以直接进入 Production，快速判断合作类型、预算逻辑、交付结构和适配度。',
       detail: language === 'en' ? 'That page answers much faster whether the collaboration fits, how a project starts, and what information should be confirmed first.' : '这一页会比作品页更快回答“适不适合合作、项目会怎么开始、哪些内容要先确认”。',
       relatedProjects: language === 'en' ? ['Live Visuals', 'Spatial Image', 'Delivery Specs'] : ['现场视觉', '空间影像', '交付规格'],
-      image: '/assets/public-nodes/can-festival.jpg',
+      image: '/assets/public-nodes/can-festival.webp',
       ctaLabel: language === 'en' ? 'Open Production' : '查看合作方式',
       ctaTo: '/production'
     },
@@ -41,7 +41,7 @@ const PracticeLines = () => {
       summary: language === 'en' ? 'Writing opens the methods, workflow, and judgment behind the work, getting closer to how and why each structure is built.' : 'Writing 展开作品背后的方法、工作流和判断逻辑，更接近“怎么做”和“为什么这样做”。',
       detail: language === 'en' ? 'It includes research notes, reflections, structural thinking, and knowledge blocks that can be reused by the service pages and work pages.' : '包括研究笔记、创作反思、系统整理，以及可以继续被服务页和作品页引用的知识块。',
       relatedProjects: ['Methods', 'Notes', 'Workflow'],
-      image: '/assets/home/archive-observation-clean.jpg',
+      image: '/assets/home/archive-observation-clean.webp',
       ctaLabel: language === 'en' ? 'Open Writing' : '查看写作与研究',
       ctaTo: '/writing'
     },
@@ -51,7 +51,7 @@ const PracticeLines = () => {
       summary: language === 'en' ? 'Once a basic judgment is in place, Archive becomes the place to read project history, expanded entries, public nodes, and version trails with more clarity.' : '当你已经建立了基本判断，再进入 Archive 看完整项目履历、扩展条目、公开节点和版本线索，会更容易读清楚这套系统。',
       detail: language === 'en' ? 'Archive holds the full index; Gaussian Archive holds the newer spatial sample branch and method line. Their roles stay clear.' : 'Archive 负责“全”，Gaussian Archive 负责“新”和“方法线”，两者角色清楚。',
       relatedProjects: ['Projects', 'Public Nodes', 'Versions'],
-      image: '/assets/public-nodes/ufo-terminal.jpg',
+      image: '/assets/public-nodes/ufo-terminal.webp',
       ctaLabel: language === 'en' ? 'Open Archive Index' : '查看档案索引',
       ctaTo: '/archive'
     }
