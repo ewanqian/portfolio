@@ -7,6 +7,13 @@ __pycache__/
 secrets.yaml
 # Node
 node_modules/
+*.log
+
+# Local agent / Codex workspace
+.agents/
+.codex-local/
+AGENTS.local-before-main-merge.md
+
 # Blender
 *.blend1
 *.blend2
