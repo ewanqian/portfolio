@@ -1,0 +1,180 @@
+{
+  "version": "2026-06-02",
+  "purpose": "VIRTURA Creation Network public-safe asset source manifest for SpacePort / Collective / future virtura.base web frontstage.",
+  "source_of_truth": {
+    "current_host_repo": "ewanqian/VIRTURA-SpacePort",
+    "future_web_repo_candidate": "ewanqian/virtura-base-web",
+    "target_domain_candidates": [
+      "virtura.space",
+      "virtura.spaceport",
+      "virtual.spaceport"
+    ],
+    "notes": "The current connector cannot create a new repository. This manifest should be copied or synced into the future web repo after it is created locally or via GitHub CLI."
+  },
+  "public_boundary_rules": [
+    "Only include VIRTURA-related team / collective / creation-network materials.",
+    "Do not include Xuan Spatial Perception / 玄空间感知 materials in this package.",
+    "TIMER / 控时者 and Drop Flow / 滴流 are VIRTURA-related collaborative works; do not imply sole authorship.",
+    "Missing Signals is Murphy's project; do not include as Ewan/VIRTURA representative material unless a separate collaboration boundary is explicitly approved.",
+    "Use KASHIWA Daisuke / 柏大辅. Do not use 博达福.",
+    "Use 徐昊, RÖ, Shukai / Mark where relevant.",
+    "Do not expose private process memory, unverified venue claims, private client files, or raw internal chat."
+  ],
+  "target_asset_structure": {
+    "root": "public/assets/virtura/",
+    "folders": [
+      "01-creation-network/",
+      "02-stage-visuals/",
+      "03-spatial-screens/",
+      "04-audiovisual-systems/",
+      "05-digital-exhibition/",
+      "06-ai-production-tools/",
+      "07-spaceport-app-frontstage/",
+      "08-guangzhou-viewer-materials/",
+      "archive/"
+    ],
+    "naming_pattern": "virtura__{package}__{project-or-station}__{asset-role}__{variant}__{YYYYMMDD}.{ext}",
+    "examples": [
+      "virtura__stage-visuals__timer__poster__wide__20260602.avif",
+      "virtura__spatial-screens__drop-flow__hero-strip__ultrawide__20260602.avif",
+      "virtura__stage-visuals__kashiwa-daisuke__loop__3s__20260602.avif",
+      "virtura__spaceport-frontstage__mova__app-icon__v1__20260602.avif"
+    ]
+  },
+  "packages": [
+    {
+      "id": "creation-network",
+      "title": "Creation Network",
+      "public_role": "Team identity and collaboration network package.",
+      "audience": ["artists", "musicians", "curators", "venues", "cultural organizations", "collaborators"],
+      "copy": {
+        "one_line_en": "VIRTURA is a creation network for stage visuals, spatial screens, audiovisual systems, digital exhibitions, and AI-assisted production tools.",
+        "one_line_zh": "VIRTURA 是一个面向舞台视觉、空间屏幕、音画系统、数字展映与 AI 辅助制作工具的创作网络。",
+        "short_zh": "它不是单一工作室官网，而是一个用于组织作品、音乐人合作、空间影像、数字展映、媒体包与工具实验的创作网络前台。"
+      },
+      "required_assets": ["network-logo", "network-hero", "member-map", "creation-network-card"],
+      "source_candidates": ["VIRTURA-Collective", "VIRTURA-SpacePort", "VIRTURA-Newsroom"]
+    },
+    {
+      "id": "stage-visuals",
+      "title": "Stage Visuals",
+      "public_role": "Live-ready visuals for concerts, performances, festivals, and experimental music contexts.",
+      "proof_projects": ["TIMER / 控时者", "Drop Flow / 滴流", "KASHIWA Daisuke / 柏大辅 related visual work", "CAN Festival", "WPÜ Japan / 新宿 WPÜ"],
+      "copy": {
+        "one_line_zh": "面向音乐现场、演出空间、舞台屏幕和实验现场的视觉制作包。",
+        "short_zh": "强调视觉不是背景视频，而是演出结构、屏幕尺度、声音节奏和现场气氛的一部分。"
+      },
+      "required_assets": ["30s-reel", "case-card", "poster-avif", "loop-avif", "metadata-card"],
+      "asset_roles": ["poster", "wide-still", "3s-loop", "stage-documentation", "cue-sheet-preview"]
+    },
+    {
+      "id": "spatial-screens",
+      "title": "Spatial Screens",
+      "public_role": "Ultra-wide screens, LED ring screens, spatial display composition, and large-format visual delivery.",
+      "proof_projects": ["Drop Flow / 滴流", "TIMER / 控时者", "UFO Terminal", "MOVA Viewing Room"],
+      "copy": {
+        "one_line_zh": "面向超宽屏幕、环幕、LED 空间和大型显示系统的空间影像包。",
+        "short_zh": "用于说明 VIRTURA 如何把普通影像转化为适应屏幕尺度、空间观看和场地条件的视觉系统。"
+      },
+      "required_assets": ["ultrawide-hero-strip", "screen-format-diagram", "venue-card", "documentation-still"]
+    },
+    {
+      "id": "audiovisual-systems",
+      "title": "Audiovisual Systems",
+      "public_role": "Audio curves, realtime visual systems, cue structure, Blender procedural workflow, and live audiovisual methods.",
+      "proof_projects": ["TIMER / 控时者", "Drop Flow / 滴流", "VRT2 / 徐昊 collaboration line"],
+      "copy": {
+        "one_line_zh": "面向声音、图像、材质、节奏和空间气氛协同组织的音画系统包。",
+        "short_zh": "AI 和音频处理不是为了自动生成画面，而是为了建立中间态分析、控制插件、演出工具和可复用的现场系统。"
+      },
+      "required_assets": ["system-diagram", "control-ui-preview", "audio-to-scene-map", "timeline-cue-preview"]
+    },
+    {
+      "id": "digital-exhibition",
+      "title": "Digital Exhibition",
+      "public_role": "MOVA, viewing rooms, online exhibition pages, public archive, and digital museum frontstage.",
+      "proof_projects": ["MOVA", "Drop Flow Viewing Room", "Observation and Symbiosis", "Digital Library / Digital Stage"],
+      "copy": {
+        "one_line_zh": "面向线上展映、数字美术馆、作品观看室和公共档案的展映包。",
+        "short_zh": "它负责把 GitHub 中的作品、图像、文字和记录转化为普通观众可以进入的公共观看路径。"
+      },
+      "required_assets": ["viewing-room-hero", "exhibition-card", "archive-card", "public-route-preview"]
+    },
+    {
+      "id": "ai-production-tools",
+      "title": "AI Production Tools",
+      "public_role": "AI-assisted tooling, intermediate analysis, audio processing, control plugins, and WorkspaceManager workflows.",
+      "proof_projects": ["WorkspaceManager", "Skill Forge", "AI Live Performance research", "Portfolio OS"],
+      "copy": {
+        "one_line_zh": "用于搭建分析、转码、音频处理、控制插件和团队工作流的 AI 辅助制作工具包。",
+        "short_zh": "AI 在这里不是廉价图像生成器，而是参与工具生产、项目整理、转码、分析、发布和现场系统维护的操作层。"
+      },
+      "required_assets": ["tool-ui-card", "workflow-diagram", "script-preview", "workspace-dashboard-preview"]
+    },
+    {
+      "id": "spaceport-app-frontstage",
+      "title": "SpacePort App Frontstage",
+      "public_role": "iCloud-like app launcher and 2D frontstage for VIRTURA's creation network.",
+      "proof_projects": ["MOVA", "Balloon Live Space", "Space Salon", "Research Laboratory", "Skill Forge", "Lu.ma Calendar"],
+      "copy": {
+        "one_line_zh": "把 SpacePort 从网页目录升级为应用化公众前台。",
+        "short_zh": "它应该像一个 app launcher：打开后看到可进入的 station apps，而不是阅读普通网页 section。"
+      },
+      "required_assets": ["app-icon-set", "launcher-hero", "station-window-preview", "activity-calendar-card", "visionpro-spatial-logic-diagram"]
+    },
+    {
+      "id": "guangzhou-viewer-materials",
+      "title": "Guangzhou Expo Viewer Materials",
+      "public_role": "Public-safe materials from the Guangzhou exhibition viewer / Vision Pro / onsite demo pipeline.",
+      "status": "pending-local-ingestion",
+      "copy": {
+        "one_line_zh": "广州展会现场查看器与 Vision Pro 展示逻辑的素材包，待从本地导入。",
+        "short_zh": "这些素材可以帮助团队说明：VIRTURA 不只做影像，也能把空间内容、网页查看器和设备观看逻辑打包成可演示的前台。"
+      },
+      "required_assets": ["viewer-screenshot", "visionpro-demo-still", "onsite-photo", "spatial-ui-note"],
+      "local_ingestion_needed": true
+    }
+  ],
+  "initial_project_records": [
+    {
+      "id": "drop-flow",
+      "title": "Drop Flow / 滴流",
+      "package_ids": ["spatial-screens", "audiovisual-systems", "digital-exhibition"],
+      "public_copy": "一件由声音、点云、扫描数据与程序化视觉系统构成的空间影像作品，从一滴水生成一座数字花园的意象出发。",
+      "ownership_note": "VIRTURA-related collaborative work. Do not imply sole authorship.",
+      "source_refs": ["portfolio/content/works/drop-flow.json", "Drop Flow / TIMER total archive"]
+    },
+    {
+      "id": "timer",
+      "title": "TIMER / 控时者",
+      "package_ids": ["stage-visuals", "audiovisual-systems", "spatial-screens"],
+      "public_copy": "围绕时间、节拍、点云粒子与环绕屏幕展开的音画互动作品线。",
+      "ownership_note": "VIRTURA-related collaborative work. Do not imply sole authorship.",
+      "source_refs": ["portfolio/content/works/timer.json", "Drop Flow / TIMER total archive"]
+    },
+    {
+      "id": "kashiwa-daisuke-titan",
+      "title": "KASHIWA Daisuke / 柏大辅 — TITAN related visual work",
+      "package_ids": ["stage-visuals", "audiovisual-systems"],
+      "public_copy": "围绕 KASHIWA Daisuke / 柏大辅《TITAN》展开的现场音画视觉项目，涉及雾气、白空间纵深、全息纱幕、裸眼 3D 与音画互动结构。",
+      "ownership_note": "Use KASHIWA Daisuke / 柏大辅. Do not use 博达福. Do not frame Yuki Murata as Ewan's direct personal collaborator unless external project credit requires context.",
+      "source_refs": ["portfolio/content/works/kashiwa.json"]
+    },
+    {
+      "id": "can-festival",
+      "title": "CAN Festival",
+      "package_ids": ["stage-visuals"],
+      "public_copy": "KASHIWA Daisuke 现场视听合作进入公共表演语境的重要节点。",
+      "ownership_note": "Festival / audiovisual public node.",
+      "source_refs": ["portfolio/content/nodes/can-festival.json"]
+    },
+    {
+      "id": "spaceport-app-frontstage",
+      "title": "SpacePort App Frontstage",
+      "package_ids": ["spaceport-app-frontstage", "creation-network"],
+      "public_copy": "VIRTURA 创作网络的 2D 应用化公众前台，未来可接入 Vision Pro / spatial interface 逻辑。",
+      "ownership_note": "Public frontstage / product direction. Keep app launcher logic separate from archive mother files.",
+      "source_refs": ["VIRTURA-SpacePort/docs/design/spaceport-app-frontstage-design-brief-2026-06-02.md"]
+    }
+  ]
+}
