@@ -67,23 +67,27 @@ const projectNotes = {
   }
 }
 
+const projectImageOverrides = {
+  timer: '/portfolio/assets/raw-library/timer-red-spatial-preview.webp'
+}
+
 function SelectedWorks() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
-  const homepageWorks = pickWorksByIds(works, homeGalleryWorkIds)
+  const homepageWorks = pickWorksByIds(works, homeGalleryWorkIds).filter((work) => work.id !== 'drop-flow')
 
   return (
     <section id="works" className="section selected-projects-section">
       <div className="container">
         <div className="section-heading-row">
           <div>
-            <div className="eyebrow">{isZh ? '精选项目' : 'Selected Projects'}</div>
-            <h2 className="section-title">{isZh ? '作品与制作入口' : 'Works and Production Entries'}</h2>
+            <div className="eyebrow">{isZh ? '精选项目' : 'Selected Works'}</div>
+            <h2 className="section-title">{isZh ? '作品墙' : 'Work Wall'}</h2>
           </div>
           <p className="section-intro">
             {language === 'en'
-              ? 'A direct entry into artworks, concert production records, international stage delivery, and system-based experiments.'
-              : '直接进入艺术作品、演唱会制作记录、国际舞台交付与系统实验。'}
+              ? 'A compact wall of works and production records. The long explanations move into project pages.'
+              : '用更短的方式排列作品与制作记录。详细说明放进项目页。'}
           </p>
         </div>
 
@@ -95,18 +99,19 @@ function SelectedWorks() {
             const title = isZh && note?.titleZh ? note.titleZh : localizedWork.title
             const label = isZh ? note?.labelZh || localizedWork.type : note?.label || localizedWork.type
             const role = isZh ? note?.roleZh || localizedWork.subtitle : note?.role || localizedWork.subtitle
-            const summary = isZh ? note?.noteZh || localizedWork.summary : note?.note || localizedWork.summary
+            const summary = isZh
+              ? `${localizedWork.years} / ${role}`
+              : `${localizedWork.years} / ${role}`
 
             return (
               <article key={work.id} className={`selected-project-card selected-project-card-${index + 1}`}>
                 <a href={targetUrl} className="selected-project-thumb">
-                  <img src={getDisplayImage(work)} alt={title} />
-                  <span className="selected-project-index">{String(index + 1).padStart(2, '0')}</span>
+                  <img src={projectImageOverrides[work.id] || getDisplayImage(work)} alt={title} />
                 </a>
                 <div className="selected-project-content">
+                  <span className="selected-project-index">{String(index + 1).padStart(2, '0')}</span>
                   <div className="selected-project-label">{label}</div>
                   <h3><a href={targetUrl}>{title}</a></h3>
-                  <p className="selected-project-role">{role}</p>
                   <p>{summary}</p>
                 </div>
               </article>
