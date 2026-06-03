@@ -1,86 +1,116 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
 
-const heroWindows = [
+const heroWorks = [
   {
-    to: '/projects/yujiayun-45m2',
-    src: '/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp',
-    title: { zh: '余佳运「45㎡」Opening', en: 'Yu Jiayun “45㎡” Opening' },
-    meta: { zh: '演唱会视觉 / 宁波', en: 'Concert visual / Ningbo' }
+    to: '/works',
+    image: '/portfolio/assets/home/hero-dropflow-ufo-2025.webp',
+    title: { zh: 'Drop Flow / 滴流', en: 'Drop Flow' },
+    type: { zh: '空间音画 / 数字自然', en: 'Spatial audiovisual / digital nature' },
+    role: { zh: '主线作品', en: 'Main work line' }
+  },
+  {
+    to: '/works',
+    image: '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+    title: { zh: 'TIMER / 控时者', en: 'TIMER' },
+    type: { zh: '时间结构 / 空间影像', en: 'Temporal structure / spatial image' },
+    role: { zh: '长期作品线', en: 'Long-form work line' }
   },
   {
     to: '/projects/kashiwa-titan',
-    src: '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
-    title: { zh: '柏大辅「TITAN」现场音画', en: 'KASHIWA Daisuke “TITAN”' },
-    meta: { zh: '全息纱幕 / BO LIVE', en: 'Holographic scrim / BO LIVE' }
+    image: '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
+    title: { zh: '柏大辅《TITAN》', en: 'KASHIWA Daisuke “TITAN”' },
+    type: { zh: '现场音画 / BO LIVE', en: 'Live audiovisual / BO LIVE' },
+    role: { zh: '视觉制作', en: 'Visual production' }
   },
   {
     to: '/projects/rain-singapore',
-    src: '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
-    title: { zh: 'Rain 郑智薰 SINGLAND', en: 'Rain at SINGLAND' },
-    meta: { zh: '新加坡跨年大屏幕视觉', en: 'Singapore stage screen visual' }
+    image: '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
+    title: { zh: 'Rain 郑智薰 / SINGLAND', en: 'Rain / SINGLAND' },
+    type: { zh: '新加坡舞台大屏幕视觉', en: 'Singapore stage screen visual' },
+    role: { zh: '制作记录', en: 'Production record' }
   }
+]
+
+const navItems = [
+  { to: '/works', zh: '画廊', en: 'Works' },
+  { to: '/production', zh: '制作', en: 'Production' },
+  { to: '/gaussian-scenes', zh: '空间', en: 'Spatial' },
+  { to: '/archive', zh: '归档', en: 'Archive' },
+  { to: '/writing', zh: '写作', en: 'Writing' },
+  { to: '/profile', zh: '个人', en: 'Profile' }
 ]
 
 function Hero() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
+  const mainWork = heroWorks[0]
 
   return (
-    <section className="hero-spatial" data-page-motion>
-      <img
-        className="hero-spatial-backdrop"
-        src="/portfolio/assets/home/hero-dropflow-ufo-2025.webp"
-        alt=""
-        aria-hidden="true"
-      />
-      <div className="hero-spatial-vignette" aria-hidden="true" />
-      <div className="container hero-spatial-stage">
-        <div className="hero-spatial-id" data-reveal>
-          <span>{isZh ? '钱誉文 / Ewan Qian' : 'Ewan Qian / 钱誉文'}</span>
-          <strong>{isZh ? '现场视觉与空间影像作品集' : 'Live Visuals and Spatial Image Portfolio'}</strong>
+    <section className="hero-spatial hero-home-v3" data-page-motion>
+      <div className="hero-home-v3-bg" aria-hidden="true">
+        <img src={mainWork.image} alt="" />
+      </div>
+      <div className="container hero-home-v3-stage">
+        <div className="hero-home-v3-copy" data-reveal>
+          <div className="hero-home-v3-kicker">
+            <span>{isZh ? '钱誉文 / Ewan Qian' : 'Ewan Qian / 钱誉文'}</span>
+            <span>2026</span>
+          </div>
+          <h1>
+            {isZh ? (
+              <>
+                <span>现场视觉</span>
+                <span>与空间影像</span>
+                <span>作品集</span>
+              </>
+            ) : (
+              <>
+                <span>Live Visuals</span>
+                <span>Spatial Images</span>
+                <span>Portfolio</span>
+              </>
+            )}
+          </h1>
+          <p>
+            {isZh
+              ? '为演出、展览与数字场景制作视觉系统。'
+              : 'Visual systems for performance, exhibition, and digital scenes.'}
+          </p>
+          <div className="hero-home-v3-tags" aria-label={isZh ? '实践方向' : 'Practice fields'}>
+            <span>{isZh ? '媒体艺术' : 'Media art'}</span>
+            <span>{isZh ? '舞台视觉' : 'Stage visuals'}</span>
+            <span>{isZh ? '空间屏幕' : 'Spatial screens'}</span>
+            <span>{isZh ? '长期项目档案' : 'Long-form archive'}</span>
+          </div>
         </div>
 
-        <Link to="/works" className="hero-spatial-main-window" data-reveal>
-          <img src="/portfolio/assets/home/hero-dropflow-ufo-2025.webp" alt={isZh ? 'Drop Flow 空间影像现场' : 'Drop Flow spatial image performance'} />
-          <span>
-            <small>{isZh ? '主线作品' : 'Main Work Line'}</small>
-            <strong>{isZh ? 'Drop Flow / 滴流' : 'Drop Flow'}</strong>
-            <em>{isZh ? '声音、点云、数字自然与空间屏幕。' : 'Sound, point clouds, digital nature, and spatial screens.'}</em>
+        <Link to={mainWork.to} className="hero-home-v3-feature" data-reveal>
+          <img src={mainWork.image} alt={mainWork.title[language]} />
+          <span className="hero-home-v3-feature-caption">
+            <small>{mainWork.role[language]}</small>
+            <strong>{mainWork.title[language]}</strong>
+            <em>{mainWork.type[language]}</em>
           </span>
         </Link>
 
-        <div className="hero-spatial-copy" data-reveal>
-          <p>
-            {isZh
-              ? '为现场演出、空间屏幕与数字场景制作视觉系统。'
-              : 'Visual systems for live performance, spatial screens, and digital scenes.'}
-          </p>
-          <small>
-            {isZh
-              ? '媒体艺术 / 舞台视觉 / 演出制作 / 长期项目档案'
-              : 'Media art / stage visuals / audiovisual production / long-form archives'}
-          </small>
-        </div>
-
-        <div className="hero-spatial-window-stack" data-reveal>
-          {heroWindows.map((item, index) => (
-            <Link key={item.src} to={item.to} className={`hero-spatial-card hero-spatial-card-${index + 1}`}>
-              <img src={item.src} alt={item.title[language]} />
+        <div className="hero-home-v3-rail" data-reveal>
+          {heroWorks.slice(1).map((work, index) => (
+            <Link to={work.to} className="hero-home-v3-rail-item" key={work.to + work.title.en}>
+              <img src={work.image} alt={work.title[language]} />
               <span>
-                <small>{String(index + 1).padStart(2, '0')}</small>
-                <strong>{item.title[language]}</strong>
-                <em>{item.meta[language]}</em>
+                <small>{String(index + 2).padStart(2, '0')}</small>
+                <strong>{work.title[language]}</strong>
+                <em>{work.type[language]}</em>
               </span>
             </Link>
           ))}
         </div>
 
-        <nav className="hero-spatial-launcher" aria-label={isZh ? '作品集入口' : 'Portfolio entries'} data-reveal>
-          <Link to="/works">{isZh ? '画廊' : 'Gallery'}</Link>
-          <Link to="/production">{isZh ? '制作' : 'Production'}</Link>
-          <Link to="/archive">{isZh ? '归档' : 'Archive'}</Link>
-          <Link to="/profile">{isZh ? '个人' : 'Profile'}</Link>
+        <nav className="hero-home-v3-dock" aria-label={isZh ? '作品集导航' : 'Portfolio navigation'} data-reveal>
+          {navItems.map((item) => (
+            <Link to={item.to} key={item.to}>{isZh ? item.zh : item.en}</Link>
+          ))}
         </nav>
       </div>
     </section>

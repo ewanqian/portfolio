@@ -1,24 +1,25 @@
 {
   "id": "digital-garden-visual-2025",
-  "title": "Digital Garden / 西安万象城",
-  "subtitle": "点云森林转向流动数字花园的环境节点",
+  "title": "Digital Garden / 西安万象城「数字游园」",
+  "subtitle": "Unity VFX Graph / 公共空间数字花园视觉",
   "years": "2025",
-  "type": "exhibition",
-  "summary": "《数字游园》把点云森林转译为流动数字花园，补上感知环境线里偏商业公共空间的一次成熟视觉实践。",
+  "type": "public-space-visual",
+  "summary": "西安万象城「数字游园」把点云森林转译为流动数字花园，是感知环境线里面向商业公共空间的一次成熟视觉实践。",
   "practiceLine": "perceptual-environments",
-  "tags": ["point cloud", "vfx graph", "digital garden", "public space"],
-  "coverImage": "featured-perceptual-environments.webp",
-  "image": "/assets/home/featured-perceptual-environments.webp",
+  "tags": ["point cloud", "vfx graph", "digital garden", "public space", "mixc"],
+  "coverImage": "digital-garden-xian-mixc-01.webp",
+  "image": "/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp",
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": [],
-  "displayModes": ["environment visual", "Unity VFX Graph", "public space screen"],
+  "displayModes": ["Unity VFX Graph", "public space screen", "digital garden", "environment visual"],
   "analysisIds": [],
-  "sourceDocs": [
-    "projects/digital-garden-visual-2025.md"
-  ],
   "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/digital-garden-visual-2025.md",
   "links": [
+    {
+      "text": "项目页面",
+      "url": "/portfolio/projects/digital-garden"
+    },
     {
       "text": "项目文档",
       "url": "https://github.com/ewanqian/portfolio/blob/main/projects/digital-garden-visual-2025.md"

@@ -13,6 +13,11 @@ node_modules/
 .agents/
 .codex-local/
 AGENTS.local-before-main-merge.md
+待处理素材/
+_OUTPUT_作品集素材包/
+素材扫描数据.json
+素材扫描清单.md
+react/public/assets/digital-garden/
 
 # Blender
 *.blend1

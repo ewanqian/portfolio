@@ -12,7 +12,7 @@ export default {
     },
     {
       "id": "digital-garden-visual-2025",
-      "label": "Digital Garden / 西安万象城",
+      "label": "Digital Garden / 西安万象城「数字游园」",
       "type": "work"
     },
     {

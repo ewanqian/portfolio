@@ -33,8 +33,8 @@ function DropFlowMainline() {
           </p>
           <p>
             {isZh
-              ? '它不是一个单张视觉或一次演出包装，而是从“一滴水生成一座花园”的意象出发，把数字自然、流场、几何结构和现场屏幕组织成可持续演化的空间影像。'
-              : 'Rather than a single visual package, it begins with the image of a garden emerging from one drop of water, then turns digital nature, flow fields, geometric structures, and screen space into an evolving spatial image system.'}
+              ? '作品从“一滴水生成一座花园”的意象出发，把数字自然、流场、几何结构和现场屏幕组织成持续演化的空间影像。'
+              : 'The work begins with the image of a garden emerging from one drop of water, turning digital nature, flow fields, geometric structures, and screen space into an evolving spatial image system.'}
           </p>
           <Link className="text-link" to="/works">
             {isZh ? '查看作品线' : 'Open work line'}

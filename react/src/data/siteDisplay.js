@@ -13,6 +13,7 @@ const imageIdOverrides = {
   'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.webp',
   'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp',
   'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.webp',
+  'digital-garden-visual-2025': '/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp',
   'glance-thousand-install-2023': '/portfolio/assets/raw-library/glance-thousand-anchang-bridge-projection.webp',
   'hallu-resonance-live-2024': '/portfolio/assets/raw-library/ewan-event-phantom-resonance.webp',
   'kashiwa': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
@@ -80,6 +81,10 @@ export function getWorkTargetUrl(work) {
 
   if (work?.id === 'rain-singapore-visual-2026') {
     return '/portfolio/projects/rain-singapore'
+  }
+
+  if (work?.id === 'digital-garden-visual-2025') {
+    return '/portfolio/projects/digital-garden'
   }
 
   const detailLink = work.links?.find((link) => link.url?.includes('/works/') || link.url?.startsWith('./works/'))
