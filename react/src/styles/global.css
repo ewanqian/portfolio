@@ -143,6 +143,7 @@ main {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid rgba(243, 241, 235, 0.16);
+  border-radius: 999px;
   background: rgba(10, 10, 10, 0.54);
   backdrop-filter: blur(18px) saturate(1.2);
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
@@ -206,6 +207,7 @@ main {
 .nav-link.active,
 .nav-link[aria-current='page'] {
   color: var(--text);
+  border-radius: 999px;
   background: rgba(243, 241, 235, 0.08);
 }
 
@@ -358,7 +360,7 @@ html.light .theme-toggle .icon-sun {
     backdrop-filter: blur(18px) saturate(1.2);
     -webkit-backdrop-filter: blur(18px) saturate(1.2);
     border: 1px solid var(--line);
-    border-radius: 0;
+    border-radius: 18px;
     padding: 12px;
     box-shadow: none;
     display: none;
@@ -5336,6 +5338,98 @@ a.works-rail-card:hover .works-rail-thumb img {
   line-height: 1;
 }
 
+.hero-home-v3-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-home-v3-actions a,
+.hero-home-v3-actions button {
+  appearance: none;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(243, 241, 235, 0.16);
+  border-radius: 999px;
+  padding: 0 14px;
+  color: var(--text);
+  background: rgba(243, 241, 235, 0.08);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hero-home-v3-actions button:disabled {
+  cursor: default;
+  color: var(--muted);
+  background: rgba(243, 241, 235, 0.035);
+}
+
+.hero-guide-player {
+  grid-column: 5 / 11;
+  justify-self: center;
+  align-self: start;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 34px) auto minmax(120px, 180px);
+  gap: 6px;
+  align-items: center;
+  max-width: 100%;
+  padding: 6px;
+  border: 1px solid rgba(243, 241, 235, 0.16);
+  border-radius: 999px;
+  background: rgba(16, 16, 16, 0.58);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+}
+
+.hero-guide-player button {
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(243, 241, 235, 0.09);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hero-guide-player button:hover,
+.hero-guide-player button:focus-visible {
+  background: rgba(243, 241, 235, 0.16);
+}
+
+.hero-guide-player span {
+  padding: 0 8px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.hero-guide-player i {
+  width: 100%;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(243, 241, 235, 0.12);
+}
+
+.hero-guide-player b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--text);
+  transition: width 420ms ease;
+}
+
 .hero-home-v3-feature {
   grid-column: 5 / 11;
   align-self: center;
@@ -5433,34 +5527,6 @@ a.works-rail-card:hover .works-rail-thumb img {
   line-height: 1.08;
 }
 
-.hero-home-v3-dock {
-  grid-column: 1 / 13;
-  justify-self: center;
-  display: inline-flex;
-  gap: 4px;
-  max-width: 100%;
-  padding: 5px;
-  border: 1px solid rgba(243, 241, 235, 0.16);
-  border-radius: 999px;
-  background: rgba(16, 16, 16, 0.58);
-  backdrop-filter: blur(18px) saturate(1.08);
-  -webkit-backdrop-filter: blur(18px) saturate(1.08);
-}
-
-.hero-home-v3-dock a {
-  border-radius: 999px;
-  padding: 9px 16px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1;
-}
-
-.hero-home-v3-dock a:hover,
-.hero-home-v3-dock a:focus-visible {
-  color: var(--text);
-  background: rgba(243, 241, 235, 0.1);
-}
-
 @media (max-width: 1120px) {
   .hero-home-v3-stage {
     min-height: auto;
@@ -5485,9 +5551,10 @@ a.works-rail-card:hover .works-rail-thumb img {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .hero-home-v3-dock {
-    grid-column: 1 / 9;
+  .hero-guide-player {
+    grid-column: 4 / 9;
   }
+
 }
 
 @media (max-width: 760px) {
@@ -5503,7 +5570,7 @@ a.works-rail-card:hover .works-rail-thumb img {
   .hero-home-v3-copy,
   .hero-home-v3-feature,
   .hero-home-v3-rail,
-  .hero-home-v3-dock {
+  .hero-guide-player {
     grid-column: 1;
   }
 
@@ -5552,13 +5619,32 @@ a.works-rail-card:hover .works-rail-thumb img {
     aspect-ratio: 1.35 / 1;
   }
 
-  .hero-home-v3-dock {
-    justify-self: stretch;
-    overflow-x: auto;
-    border-radius: 20px;
+  .hero-home-v3-actions {
+    gap: 7px;
   }
 
-  .hero-home-v3-dock a {
-    flex: 0 0 auto;
+  .hero-home-v3-actions a,
+  .hero-home-v3-actions button {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .hero-guide-player {
+    justify-self: stretch;
+    grid-template-columns: repeat(3, 32px) auto minmax(56px, 1fr);
+    gap: 5px;
+    padding: 6px;
+    border-radius: 22px;
+  }
+
+  .hero-guide-player button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-guide-player span {
+    padding: 0 2px;
+    font-size: 10px;
   }
 }

@@ -85,7 +85,7 @@
       "proof_projects": ["TIMER / 控时者", "Drop Flow / 滴流", "VRT2 / 徐昊 collaboration line"],
       "copy": {
         "one_line_zh": "面向声音、图像、材质、节奏和空间气氛协同组织的音画系统包。",
-        "short_zh": "AI 和音频处理不是为了自动生成画面，而是为了建立中间态分析、控制插件、演出工具和可复用的现场系统。"
+        "short_zh": "AI 和音频处理不是为了自动生成画面，而是为了建立过程分析、控制插件、演出工具和可复用的现场系统。"
       },
       "required_assets": ["system-diagram", "control-ui-preview", "audio-to-scene-map", "timeline-cue-preview"]
     },

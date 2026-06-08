@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
 
@@ -32,19 +33,29 @@ const heroWorks = [
   }
 ]
 
-const navItems = [
-  { to: '/works', zh: '画廊', en: 'Works' },
-  { to: '/production', zh: '制作', en: 'Production' },
-  { to: '/gaussian-scenes', zh: '空间', en: 'Spatial' },
-  { to: '/archive', zh: '归档', en: 'Archive' },
-  { to: '/writing', zh: '写作', en: 'Writing' },
-  { to: '/profile', zh: '个人', en: 'Profile' }
-]
-
 function Hero() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
-  const mainWork = heroWorks[0]
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [guiding, setGuiding] = useState(true)
+  const mainWork = heroWorks[activeIndex]
+  const progress = useMemo(() => `${((activeIndex + 1) / heroWorks.length) * 100}%`, [activeIndex])
+  const visibleRail = heroWorks.filter((_, index) => index !== activeIndex).slice(0, 3)
+
+  const stepBy = useCallback((delta) => {
+    setActiveIndex((current) => (current + delta + heroWorks.length) % heroWorks.length)
+    setGuiding(false)
+  }, [])
+
+  useEffect(() => {
+    if (!guiding || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % heroWorks.length)
+    }, 7800)
+
+    return () => window.clearInterval(timer)
+  }, [guiding])
 
   return (
     <section className="hero-spatial hero-home-v3" data-page-motion>
@@ -83,6 +94,10 @@ function Hero() {
             <span>{isZh ? '空间屏幕' : 'Spatial screens'}</span>
             <span>{isZh ? '长期项目档案' : 'Long-form archive'}</span>
           </div>
+          <div className="hero-home-v3-actions">
+            <Link to={mainWork.to}>{isZh ? '观看当前项目' : 'Open current work'}</Link>
+            <Link to="/archive">{isZh ? '完整归档' : 'Full archive'}</Link>
+          </div>
         </div>
 
         <Link to={mainWork.to} className="hero-home-v3-feature" data-reveal>
@@ -95,11 +110,11 @@ function Hero() {
         </Link>
 
         <div className="hero-home-v3-rail" data-reveal>
-          {heroWorks.slice(1).map((work, index) => (
+          {visibleRail.map((work) => (
             <Link to={work.to} className="hero-home-v3-rail-item" key={work.to + work.title.en}>
               <img src={work.image} alt={work.title[language]} />
               <span>
-                <small>{String(index + 2).padStart(2, '0')}</small>
+                <small>{work.role[language]}</small>
                 <strong>{work.title[language]}</strong>
                 <em>{work.type[language]}</em>
               </span>
@@ -107,11 +122,16 @@ function Hero() {
           ))}
         </div>
 
-        <nav className="hero-home-v3-dock" aria-label={isZh ? '作品集导航' : 'Portfolio navigation'} data-reveal>
-          {navItems.map((item) => (
-            <Link to={item.to} key={item.to}>{isZh ? item.zh : item.en}</Link>
-          ))}
-        </nav>
+        <div className="hero-guide-player" data-reveal aria-label={isZh ? '自动导览播放器' : 'Auto guide player'}>
+          <button type="button" onClick={() => stepBy(-1)} aria-label={isZh ? '上一项' : 'Previous'}>‹</button>
+          <button type="button" onClick={() => setGuiding((value) => !value)} aria-pressed={guiding}>
+            {guiding ? 'Ⅱ' : '▶'}
+          </button>
+          <button type="button" onClick={() => stepBy(1)} aria-label={isZh ? '下一项' : 'Next'}>›</button>
+          <span>{String(activeIndex + 1).padStart(2, '0')} / {String(heroWorks.length).padStart(2, '0')}</span>
+          <i aria-hidden="true"><b style={{ width: progress }} /></i>
+        </div>
+
       </div>
     </section>
   )
