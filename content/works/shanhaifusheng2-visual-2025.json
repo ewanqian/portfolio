@@ -1,0 +1,30 @@
+{
+  "id": "shanhaifusheng2-visual-2025",
+  "title": "爱丁堡《山海浮生II》",
+  "subtitle": "Focus China 舞台视觉制作",
+  "years": "2025",
+  "type": "stage-visual",
+  "summary": "为爱丁堡艺术节 Focus China《山海浮生II：八荒祈》参与舞台视觉制作与工程交付，连接海外演出语境与舞台影像执行。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["edinburgh", "focus-china", "stage-visual", "shanhaifusheng"],
+  "coverImage": "posterwall.jpg",
+  "image": "/assets/home/posterwall.jpg",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["stage screen", "touring performance", "visual delivery"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/shanhaifusheng2-visual-2025.md"],
+  "repoLink": "https://www.prnewswire.co.uk/news-releases/2025-china-focus-returns-to-edinburgh-festivals-showcasing-cutting-edge-chinese-performing-arts-302526851.html",
+  "links": [
+    {
+      "text": "公开活动信息",
+      "url": "https://www.prnewswire.co.uk/news-releases/2025-china-focus-returns-to-edinburgh-festivals-showcasing-cutting-edge-chinese-performing-arts-302526851.html"
+    },
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/shanhaifusheng2-visual-2025.md"
+    }
+  ],
+  "priority": 15
+}

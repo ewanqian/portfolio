@@ -1,0 +1,31 @@
+{
+  "id": "observe-symbiosis-exhibit-2025",
+  "title": "Observation and Symbiosis / 深圳坪山",
+  "subtitle": "扫描环境、数字生态与数据可视化展览节点",
+  "years": "2025",
+  "type": "exhibition",
+  "summary": "《观察与共生》坪山展把扫描、数字环境与数据可视化合并为一条持续研究线。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["scan", "digital ecology", "exhibition", "data visualization"],
+  "coverImage": "perceptual-environments-1600.webp",
+  "image": "/assets/public-optimized/perceptual-environments-1600.webp",
+  "showOnHome": false,
+  "relatedNodes": ["observation-and-symbiosis", "observe-symbiosis-pingshan"],
+  "relatedWritings": [],
+  "displayModes": ["exhibition screen", "data visualization", "digital environment"],
+  "analysisIds": ["observation-digital-ecology"],
+  "sourceDocs": [
+    "projects/observe-symbiosis-exhibit-2025.md",
+    "visual-arts/perceptual-environments/README.md",
+    "content/nodes/observation-and-symbiosis.json",
+    "content/nodes/observe-symbiosis-pingshan.json"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-exhibit-2025.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-exhibit-2025.md"
+    }
+  ],
+  "priority": 13
+}

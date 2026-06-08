@@ -7,13 +7,13 @@
   "summary": "围绕时间、节拍、频段与图像内部结构展开的音画互动系列。",
   "practiceLine": "temporal-structure",
   "tags": ["timer", "beat", "visual"],
-  "coverImage": "featured-timer-main.jpg",
-  "image": "/portfolio/assets/home/featured-timer-main.jpg",
+  "coverImage": "timer-red-spatial-1400.webp",
+  "image": "/portfolio/assets/case-optimized/timer-red-spatial-1400.webp",
   "relatedNodes": [],
   "relatedWritings": [],
-  "repoLink": "/portfolio/works/timer.html",
+  "repoLink": "/portfolio/#/projects/timer",
   "links": [
-    { "text": "详情页", "url": "./works/timer.html" },
+    { "text": "详情页", "url": "/portfolio/#/projects/timer" },
     { "text": "看录像", "url": "https://www.bilibili.com/video/BV1sWNWeVEVB/" }
   ],
   "priority": 0

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="../assets/home/archive-timer-clean.jpg" />
+  <title>SRE / UFO Terminal Realtime Liveset - Ewan Qian Portfolio</title>
+  <meta name="description" content="SRE 是 Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 为 2026 UFO Terminal 创作营准备的实时现场演出单元。" />
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #101112;
+      --panel-soft: #151719;
+      --text: #f0f0f0;
+      --muted: #a4a7aa;
+      --line: rgba(255,255,255,0.13);
+      --cyan: #74c7d8;
+      --red: #7d2532;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(5, 5, 5, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
+    }
+
+    .header-inner {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand,
+    .nav a,
+    .back-link,
+    .meta-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav a,
+    .back-link,
+    .meta-label { color: var(--muted); }
+    .nav a:hover,
+    .back-link:hover { color: var(--text); }
+
+    .section {
+      padding: 82px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero {
+      padding-top: 38px;
+      border-top: 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-image,
+    .media-frame,
+    .card,
+    .credits-section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .hero-image {
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(116,199,216,0.11), transparent 34%),
+        linear-gradient(315deg, rgba(125,37,50,0.18), transparent 38%),
+        var(--panel);
+    }
+
+    .project-title {
+      margin: 0 0 18px;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 0.93;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .project-subtitle {
+      margin: 0;
+      max-width: 640px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .status-pill {
+      border: 1px solid var(--line);
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .status-pill strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .info-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      min-height: 108px;
+    }
+
+    .info-item value {
+      display: block;
+      margin-top: 6px;
+      color: var(--text);
+      font-weight: 650;
+      line-height: 1.45;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-intro {
+      margin: 0 0 28px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .copy-block p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .copy-block strong { color: var(--text); }
+
+    .collab-grid,
+    .cue-grid,
+    .gallery {
+      display: grid;
+      gap: 16px;
+    }
+
+    .collab-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .card-image {
+      aspect-ratio: 4 / 3;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body { padding: 18px; }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cue-grid {
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 24px;
+    }
+
+    .cue-card {
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+      padding: 16px;
+      min-height: 150px;
+    }
+
+    .cue-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .cue-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .media-frame {
+      overflow: hidden;
+      background: #000;
+    }
+
+    .media-frame.wide img {
+      width: 100%;
+      aspect-ratio: 92 / 13;
+      object-fit: cover;
+    }
+
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 24px;
+    }
+
+    .caption {
+      padding: 12px 14px 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      border-top: 1px solid var(--line);
+    }
+
+    .credits-section {
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .credit-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .credit-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .note-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .note {
+      border: 1px solid var(--line);
+      padding: 18px;
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      margin-top: 48px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .collab-grid,
+      .gallery,
+      .note-list {
+        grid-template-columns: 1fr;
+      }
+
+      .cue-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-image { min-height: 360px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .section { padding: 58px 0; }
+      .hero-copy { padding: 24px; }
+      .status-row,
+      .cue-grid { grid-template-columns: 1fr; }
+      .header-inner { flex-wrap: wrap; gap: 10px; }
+      .brand { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">Ewan Qian / SRE Liveset</div>
+      <nav class="nav">
+        <a href="../index.html#works">Back to Works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section hero">
+      <a href="../index.html#works" class="back-link">Back to selected works</a>
+
+      <div class="hero-grid">
+        <div class="hero-image">
+          <img src="../assets/sre-realtime-liveset/sre-benchmark-all-visible.png" alt="SRE realtime liveset flat LED canvas benchmark" />
+        </div>
+        <div class="hero-copy">
+          <div>
+            <h1 class="project-title">SRE / UFO Terminal Realtime Liveset</h1>
+            <p class="project-subtitle">
+              Shukai / Mark, Georgy Robakidze (RÖ) and Ewan Qian are preparing a live audiovisual unit for the 2026 UFO Terminal creation camp. The current work is an ongoing flat LED canvas system for rehearsal, live triggering, and spatial visual performance.
+            </p>
+          </div>
+          <div class="status-row">
+            <div class="status-pill">
+              <strong>15456 x 2184</strong>
+              <span>native full LED canvas, 92:13</span>
+            </div>
+            <div class="status-pill">
+              <strong>3864 x 546</strong>
+              <span>realtime proxy canvas at 60fps</span>
+            </div>
+            <div class="status-pill">
+              <strong>1920 x 540</strong>
+              <span>realtime pixel buffer / low-resolution working canvas</span>
+            </div>
+            <div class="status-pill">
+              <strong>V09</strong>
+              <span>one-action blackout / emergency state</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <div class="info-item">
+          <span class="meta-label">Project</span>
+          <value>SRE / Shukai x Robakidze x Ewan</value>
+        </div>
+        <div class="info-item">
+          <span class="meta-label">Context</span>
+          <value>2026 UFO Terminal 创作营现场演出计划与单元</value>
+        </div>
+        <div class="info-item">
+          <span class="meta-label">Status</span>
+          <value>Ongoing rehearsal framework / not a final rendered film</value>
+        </div>
+        <div class="info-item">
+          <span class="meta-label">Ewan's Role</span>
+          <value>空间影像语言、实时视觉系统、Blender / Arena 平面画布、现场手动控制与应急策略</value>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">合作结构</h2>
+      <p class="section-intro">
+        这组三人组合把地下电子音乐现场、声音艺术方法与空间影像系统放进同一个可排练的现场结构里。
+      </p>
+
+      <div class="collab-grid">
+        <article class="card">
+          <div class="card-image">
+            <img src="../assets/sre-realtime-liveset/shukai-mark.jpg" alt="Shukai / Mark" />
+          </div>
+          <div class="card-body">
+            <h3>Shukai / Mark</h3>
+            <p>DJ、黑胶收藏者、声音设计师与音乐制作人。为合作提供地下电子音乐现场经验、DJ 文化判断、音乐组织能力，以及当前 liveset 中的 loop / pressure 输入方向。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img src="../assets/sre-realtime-liveset/georgy-robakidze-ro.jpg" alt="Georgy Robakidze (RÖ)" />
+          </div>
+          <div class="card-body">
+            <h3>Georgy Robakidze (RÖ)</h3>
+            <p>声音艺术家、现场表演者与 DJ，工作横跨 ambient、drone、experimental、IDM、hypnotic techno 与声音艺术驻留/机构呈现路径。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img src="../assets/sre-realtime-liveset/ewan-qian.jpg" alt="Ewan Qian" />
+          </div>
+          <div class="card-body">
+            <h3>Ewan Qian</h3>
+            <p>负责把声音、时间、图像和屏幕比例组织成可执行的现场视觉系统：平面 LED 画布、cue 语法、实时覆盖层、排练测试与现场优先级。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div class="copy-block">
+          <h2 class="section-title">项目说明</h2>
+          <p>
+          SRE 当前的制作方向是 <strong>flat LED canvas workflow</strong>，面向真实演出风险建立平面超宽画布系统。
+          </p>
+          <p>
+            这个判断来自排练需求：Arena 需要稳定播放超宽平面媒体，Blender 只负责已经测试过的平面 overlay 或替代输出，MIDI / 手动控制被压缩到少量清晰信号，V09 黑场始终保持一键可达。
+          </p>
+          <p>
+          因此，这个网页展示正在形成中的现场演出系统。当前成果是一个 60fps 的排练框架：它可以用较低的实时分辨率维持高帧率运行，再以像素化、非原生分辨率的方式投射或映射到更高分辨率现场画布上，作为长期实际演出系统的一次 demo。
+          </p>
+        </div>
+
+        <div class="media-frame">
+          <img src="../assets/sre-realtime-liveset/collaboration-concept.jpg" alt="SRE collaboration concept image" />
+          <div class="caption">合作档案中的抽象概念图：三条路径在 UFO Terminal 创作营现场单元中汇合。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">最小可演出链路</h2>
+      <p class="section-intro">
+          当前排练优先级放在现场可靠性上。每个触发都必须只有一个明确任务，先证明基础链路稳定，再继续扩展声音分析和视觉层。
+      </p>
+
+      <div class="cue-grid">
+        <div class="cue-card">
+          <strong>V02 / Realtime Buffer</strong>
+          <span>低分辨率、高帧率的实时画面缓冲，用于验证像素化投射到高分辨率现场画布的可行性。</span>
+        </div>
+        <div class="cue-card">
+          <strong>V03 / Scar Lines</strong>
+          <span>用于硬切、击点、切口和短促视觉重音。</span>
+        </div>
+        <div class="cue-card">
+          <strong>V05 / Glitch Bars</strong>
+          <span>短时间混乱层，不能承担复杂叙事，只作为瞬态破坏。</span>
+        </div>
+        <div class="cue-card">
+          <strong>V06 / Pressure Band</strong>
+          <span>由 Mark loop 或手动 pressure 驱动的慢速紧张度层。</span>
+        </div>
+        <div class="cue-card">
+          <strong>V09 / Blackout</strong>
+          <span>现场应急与负空间状态，优先级最高。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">控制语法与边界</h2>
+      <p class="section-intro">
+        这套 liveset 的方法重点在于排练阶段保留可调试、可抢救、可由人判断的现场结构。
+      </p>
+
+      <div class="note-list">
+        <div class="note">
+          <strong>输入保持很小</strong>
+          Ewan 手动控制 visual / scar / reset；Shukai / Mark 先给 pressure；Georgy Robakidze (RÖ) 的现场输入先进入 visual、scar、side 或 reset 这类明确事件。
+        </div>
+        <div class="note">
+          <strong>不让 pressure 生成几何</strong>
+          pressure 只控制 opacity、color、band height、brightness 或 shader strength，避免排练中出现不可控几何负担。
+        </div>
+        <div class="note">
+          <strong>手动控制优先</strong>
+          如果两个输入冲突，Ewan 的手动演出控制优先；如果现场混乱，退回 Arena 平面素材 + Blender 测试过的 overlay。
+        </div>
+        <div class="note">
+          <strong>诚实展示当前状态</strong>
+          当前版本是 ongoing framework：已经有实时分辨率、状态槽位、UDP receiver 和测试图，但仍需要后续排练与现场验证。
+        </div>
+      </div>
+
+      <div class="credits-section">
+        <div class="credits-grid">
+          <div class="credit-item">
+            <strong>Collaboration Unit</strong>
+            <span>Shukai / Mark x Georgy Robakidze (RÖ) x Ewan Qian</span>
+          </div>
+          <div class="credit-item">
+            <strong>Music / Sound</strong>
+            <span>Shukai / Mark; Georgy Robakidze (RÖ)</span>
+          </div>
+          <div class="credit-item">
+            <strong>Visual System</strong>
+            <span>Ewan Qian: spatial image language, realtime visual framework, Blender / Arena canvas design, cue control, rehearsal documentation.</span>
+          </div>
+          <div class="credit-item">
+            <strong>Public Context</strong>
+            <span>2026 UFO Terminal 创作营，现场演出计划与单元。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Ewan Qian Portfolio / SRE Realtime Liveset / Ongoing Project</div>
+  </footer>
+</body>
+</html>

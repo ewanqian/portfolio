@@ -1,0 +1,110 @@
+[
+  {
+    "id": "drop-flow-core-series",
+    "title": "Drop Flow / 核心系列",
+    "relatedWorks": ["drop-flow", "drop-flow-visual-2025", "drop-flow-ufo-2025", "derive-dual-city-2024"],
+    "visualGeneIds": ["drop-flow-gene"],
+    "coreQuestion": "图像如何从屏幕内部离开，进入身体、空间与观看结构本身。",
+    "formalLanguage": ["flow structures", "immersive scale", "body-image relation"],
+    "technicalRoute": ["audio-reactive systems", "immersive screen composition", "VR and spatial staging"],
+    "publicContext": "从创作营、竞赛节点到双年展开幕公共呈现，逐步形成可验证的空间叙事线。",
+    "analysisSummary": "Drop Flow 不是单个作品，而是一条持续推进空间生成与感知迁移的主线。",
+    "nextDirections": ["expand archive chapters", "backfill awards and node evidence", "connect with artistic timeline"]
+  },
+  {
+    "id": "drop-flow-public-presentation",
+    "title": "Drop Flow / 公共展陈节点",
+    "relatedWorks": ["drop-flow-visual-2025"],
+    "visualGeneIds": ["drop-flow-gene"],
+    "coreQuestion": "当 Drop Flow 进入双年展开幕场景时，如何把沉浸式大屏、VR 与身体表演组织成一个整体。",
+    "formalLanguage": ["large-scale image", "public immersive staging", "VR extension"],
+    "technicalRoute": ["immersive screen design", "VR headset content", "performance-linked image"],
+    "publicContext": "杭州双年展与官方委任让该系列进入更明确的公共机构语境。",
+    "analysisSummary": "这是 Drop Flow 从实验过程转为公共呈现的重要作品章节。",
+    "nextDirections": ["add venue evidence", "connect to exhibition archive"]
+  },
+  {
+    "id": "drop-flow-live-process",
+    "title": "Drop Flow / 现场过程章节",
+    "relatedWorks": ["drop-flow-ufo-2025"],
+    "visualGeneIds": ["drop-flow-gene"],
+    "coreQuestion": "如何把实时生成测试、创作营机制与现场表演过程沉淀成作品对象。",
+    "formalLanguage": ["process visibility", "live environment", "signal-driven image"],
+    "technicalRoute": ["realtime visual system", "LED integration", "event-based staging"],
+    "publicContext": "UFO Terminal 节点补足了 Drop Flow 的实验与现场过程证据。",
+    "analysisSummary": "它让 Drop Flow 不再只被理解为结果作品，而是有清晰过程层的系列。",
+    "nextDirections": ["link team collaborators", "split process docs from project lore"]
+  },
+  {
+    "id": "derive-dual-city-spatial-archive",
+    "title": "Dérive 双城记 / 城市扫描与空间叙事节点",
+    "relatedWorks": ["derive-dual-city-2024"],
+    "visualGeneIds": ["spatial-archive-gene"],
+    "coreQuestion": "如何把双城经验、城市采样与空间扫描组织成可进入的数字叙事。",
+    "formalLanguage": ["urban scan", "digital drift", "competition-format presentation"],
+    "technicalRoute": ["spatial scanning", "multimedia visual collaboration", "Apple Vision Pro path"],
+    "publicContext": "FutureLab 2024 提供了城市空间、数字采样与 Apple Vision Pro 呈现的公开语境。",
+    "analysisSummary": "这个节点更适合放入城市扫描与空间归档线，而不是 Drop Flow 系列。",
+    "nextDirections": ["separate from Drop Flow series", "backfill spatial archive evidence"]
+  },
+  {
+    "id": "kashiwa-live-collaboration",
+    "title": "Kashiwa / 现场合作线",
+    "relatedWorks": ["kashiwa", "kashiwa-band-visual-2025"],
+    "visualGeneIds": ["kashiwa-gene"],
+    "coreQuestion": "如何在音乐人合作中，把视觉从背景画面推进为现场结构的一部分。",
+    "formalLanguage": ["white-space depth", "mist transition", "holographic layer", "naked-eye 3D"],
+    "technicalRoute": ["holographic scrim", "stage screen adaptation", "audiovisual cue design"],
+    "publicContext": "深圳 BO LIVE 与舟山 CAN Festival 构成了合作线的双节点证据。",
+    "analysisSummary": "这条线证明了你在跨艺术家合作中的系统组织能力，而不只是单条视频制作。",
+    "nextDirections": ["separate BO LIVE and CAN Festival notes", "index staff and production roles"]
+  },
+  {
+    "id": "timer-core-series",
+    "title": "TIMER / 核心系列",
+    "relatedWorks": ["timer"],
+    "visualGeneIds": ["timer-gene"],
+    "coreQuestion": "声音、节拍与频段如何重新组织图像内部结构。",
+    "formalLanguage": ["temporal segmentation", "beat mapping", "internal rhythm"],
+    "technicalRoute": ["audio analysis", "visual timing system", "screen performance"],
+    "publicContext": "创作营、展览与奖项使 TIMER 成为时间结构方向最清晰的公共主线。",
+    "analysisSummary": "TIMER 把时间作为主要材料，而不是把图像仅仅当成音乐的附属视觉。",
+    "nextDirections": ["add award node", "backfill Vision Pro branch if needed"]
+  },
+  {
+    "id": "observation-digital-ecology",
+    "title": "Observation and Symbiosis / 数字生态线",
+    "relatedWorks": ["observe-symbiosis-exhibit-2025"],
+    "visualGeneIds": ["observation-gene"],
+    "coreQuestion": "数字环境中的生命感如何被编码、重组并以展览形式被观看。",
+    "formalLanguage": ["point-cloud atmosphere", "data landscape", "digital ecology"],
+    "technicalRoute": ["scanning workflow", "particle systems", "data visualization"],
+    "publicContext": "坪山展将扫描研究线接入明确的公共展览场景。",
+    "analysisSummary": "它证明这条线不是私人测试，而是已经进入可展出的作品状态。",
+    "nextDirections": ["connect with notes index", "split exhibition and research objects"]
+  },
+  {
+    "id": "observation-method-sharing",
+    "title": "Observation and Symbiosis / 方法公开",
+    "relatedWorks": ["observe-symbiosis-workshop-2026"],
+    "visualGeneIds": ["observation-gene"],
+    "coreQuestion": "当作品进入方法分享阶段时，哪些创作判断值得被单独归档。",
+    "formalLanguage": ["method translation", "public workshop", "digital memory space"],
+    "technicalRoute": ["gaussian scan workflow", "demonstration setup", "archive-to-workshop translation"],
+    "publicContext": "Workshop 让作品线从展示对象延伸为可传播的方法对象。",
+    "analysisSummary": "这条记录很适合你后面做研究型内容系统，因为它把作品与教学接口接上了。",
+    "nextDirections": ["link workshop archive", "extract skills and pedagogy fields"]
+  },
+  {
+    "id": "babel-bottle-hypertext-exhibit",
+    "title": "Babel Bottle / 超文本交互展览",
+    "relatedWorks": ["new-media-artist-simulator-2025"],
+    "visualGeneIds": ["babel-bottle-gene"],
+    "coreQuestion": "观念性超文本交互作品如何在美术馆中形成可被进入的展示状态。",
+    "formalLanguage": ["hypertext structure", "conceptual interface", "interactive reading"],
+    "technicalRoute": ["text interaction", "page-based navigation", "exhibition adaptation"],
+    "publicContext": "杭州中心美术馆节点给这类作品提供了更明确的机构语境。",
+    "analysisSummary": "它补足了你在图像之外的结构性作品类型，不再只有舞台与环境线。",
+    "nextDirections": ["expand project notes", "connect to web-first direction"]
+  }
+]

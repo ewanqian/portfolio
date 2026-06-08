@@ -1,0 +1,30 @@
+{
+  "id": "ar-shenzhen-resort-2022",
+  "title": "AR 深圳计划",
+  "subtitle": "深圳光影艺术季 AR 作品",
+  "years": "2022",
+  "type": "ar-exhibition",
+  "summary": "参与深圳光影艺术季的 AR 艺术作品，以数字网络度假村的方式把虚拟空间、城市光影和公共艺术入口连接起来。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["ar", "shenzhen", "light-art", "public-art"],
+  "coverImage": "archive-observation-clean.jpg",
+  "image": "/assets/home/archive-observation-clean.jpg",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["AR public art", "urban light festival", "digital resort"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/ar-shenzhen-resort-2022.md"],
+  "repoLink": "https://glowshenzhen.com/index.php?c=show&id=52",
+  "links": [
+    {
+      "text": "公开活动信息",
+      "url": "https://glowshenzhen.com/index.php?c=show&id=52"
+    },
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/ar-shenzhen-resort-2022.md"
+    }
+  ],
+  "priority": 19
+}

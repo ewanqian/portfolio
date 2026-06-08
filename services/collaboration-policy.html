@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaboration Policy / 合作规则说明 — Ewan Qian Portfolio</title>
+  <meta name="description" content="合作规则说明：报价有效期、启动条件、交付范围、修改规则、暂停取消、验收标准、权利说明。" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #111111;
+      --text: #f0f0f0;
+      --muted: #a0a0a0;
+      --line: rgba(255,255,255,0.12);
+      --line-strong: rgba(255,255,255,0.28);
+      --accent: #f0f0f0;
+      --inverse: #0a0a0a;
+      --max: 1240px;
+    }
+
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        "PingFang SC",
+        "Noto Sans SC",
+        sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 60px;
+    }
+
+    .brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+
+    .section {
+      padding: 88px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      transition: 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .page-title {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.02;
+      margin: 0 0 14px;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+    }
+
+    .page-intro {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 760px;
+    }
+
+    .content-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 24px 24px;
+      margin-bottom: 16px;
+    }
+
+    .content-block h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .content-block p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .content-block ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .preparation-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 20px 24px;
+      margin-top: 36px;
+    }
+
+    .preparation-block h4 {
+      font-size: 16px;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .preparation-block ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .links-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 24px;
+      margin-top: 36px;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 1px solid var(--text);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: 0.15s ease;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: var(--inverse);
+      border-color: var(--text);
+    }
+
+    .button:hover {
+      background: var(--text);
+      color: var(--inverse);
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      margin-top: 48px;
+    }
+
+    @media (max-width: 760px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .content-block {
+        padding: 20px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">Services / Policy</div>
+      <nav class="nav">
+        <a href="../index.html">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <a href="../index.html" class="back-link">← 返回首页</a>
+
+      <h1 class="page-title">Collaboration Policy / 合作规则说明</h1>
+      <p class="page-intro">
+        这里明确合作过程中的基本规则、边界与处理方式，让双方对流程和预期有清晰共识。
+      </p>
+
+      <div class="content-block">
+        <h3>1. 报价有效期</h3>
+        <p>报价出具后，有效期一般为 15-30 天。如果超过有效期再启动项目，可能需要根据最新需求和排期重新评估报价。</p>
+      </div>
+
+      <div class="content-block">
+        <h3>2. 项目启动条件</h3>
+        <p>项目满足以下条件后正式启动：</p>
+        <ul>
+          <li>双方确认需求范围、报价与时间节点</li>
+          <li>首期款项到账</li>
+          <li>客户提供必要的基础素材与参考信息</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>3. 默认交付内容</h3>
+        <p>根据项目类型，默认交付包括：</p>
+        <ul>
+          <li>符合约定分辨率、格式与版本要求的最终输出文件</li>
+          <li>对应项目描述与使用说明（如需）</li>
+          <li>约定轮次内的调整修改</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>4. 默认不包含内容</h3>
+        <p>除非提前特别约定，以下内容一般不包含在基础报价中：</p>
+        <ul>
+          <li>多次大范围方向调整与结构重做</li>
+          <li>额外版本输出（多比例、多格式、多分辨率）</li>
+          <li>现场安装、调试与执行（可另行协商）</li>
+          <li>第三方素材、设备或服务的采购费用</li>
+          <li>税费（可另行协商）</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>5. 修改范围与追加规则</h3>
+        <p>修改分为两种情况：</p>
+        <ul>
+          <li><strong>小范围调整</strong>：在原方向框架内微调，包含在基础报价中</li>
+          <li><strong>大范围变更</strong>：改变方向、结构或需求，需要重新评估工作量与周期，按追加项目处理</li>
+        </ul>
+        <p style="margin-top: 8px;">建议在项目启动前尽量确认核心方向，减少中途大范围变动。</p>
+      </div>
+
+      <div class="content-block">
+        <h3>6. 暂停、延期与取消处理</h3>
+        <ul>
+          <li><strong>暂停</strong>：项目启动后若需要暂停，已完成部分按进度结算</li>
+          <li><strong>延期</strong>：因客户原因导致项目延期超过 30 天，重启时可能需要重新评估排期与报价</li>
+          <li><strong>取消</strong>：启动后取消项目，已完成工作量按比例结算</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>7. 交付与验收节点</h3>
+        <p>一般按阶段交付与确认：</p>
+        <ul>
+          <li>小样/测试版 → 方向确认</li>
+          <li>初稿/完整版本 → 整体确认</li>
+          <li>最终调整 → 交付结案</li>
+        </ul>
+        <p style="margin-top: 8px;">客户收到交付物后，请在约定时间内反馈确认。逾期未反馈视为确认通过。</p>
+      </div>
+
+      <div class="content-block">
+        <h3>8. 使用权、署名与展示权</h3>
+        <ul>
+          <li><strong>使用权</strong>：项目款项结清后，客户获得约定用途的使用权</li>
+          <li><strong>署名</strong>：署名方式根据项目性质协商确定，一般会在片尾或介绍中保留视觉设计者署名</li>
+          <li><strong>展示权</strong>：我保留将作品放入个人portfolio、案例展示与宣传的权利，如果需要保密请提前说明</li>
+        </ul>
+      </div>
+
+      <div class="preparation-block">
+        <h4>发起合作前，请准备</h4>
+        <ul>
+          <li>项目用途与使用场景</li>
+          <li>明确的时间节点</li>
+          <li>预算范围</li>
+          <li>参考案例或方向描述</li>
+          <li>已有素材/工程状态说明</li>
+        </ul>
+      </div>
+
+      <div class="links-section">
+        <h3 style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">相关服务说明</h3>
+        <div class="links-grid">
+          <a href="./project-types.html" class="button primary">
+            服务分类说明
+          </a>
+          <a href="./pricing-policy.html" class="button">
+            报价政策说明
+          </a>
+          <a href="./faq.html" class="button">
+            常见问题
+          </a>
+          <a href="../index.html#contact" class="button">
+            提交合作咨询
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Ewan Qian / VIRTURA. Collaboration policy &amp; workflow rules.
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "id": "observe-symbiosis-workshop-2026",
+  "title": "Observation and Symbiosis / Workshop",
+  "subtitle": "从作品公开到方法公开的延伸节点",
+  "years": "2026",
+  "type": "workshop",
+  "summary": "《观察与共生》Workshop 把高斯扫描与数字记忆空间的方法公开化，补上作品之外的创作方法层。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["workshop", "scan", "method", "digital memory"],
+  "coverImage": "perceptual-environments-1600.webp",
+  "image": "/assets/public-optimized/perceptual-environments-1600.webp",
+  "showOnHome": false,
+  "relatedNodes": ["observation-and-symbiosis", "observe-symbiosis-pingshan"],
+  "relatedWritings": [],
+  "displayModes": ["workshop", "talk", "method sharing"],
+  "analysisIds": ["observation-method-sharing"],
+  "sourceDocs": [
+    "projects/observe-symbiosis-workshop-2026.md",
+    "projects/observe-symbiosis-exhibit-2025.md",
+    "workshops/202601-愚见观池-情感容器工作坊.md",
+    "visual-arts/perceptual-environments/README.md"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-workshop-2026.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-workshop-2026.md"
+    }
+  ],
+  "priority": 14
+}

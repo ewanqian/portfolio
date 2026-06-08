@@ -7,13 +7,13 @@
   "summary": "与 Kashiwa Daisuke、Yuki Murata 合作完成的现场视听项目。",
   "practiceLine": "collaborative-performance",
   "tags": ["live", "collaboration", "audiovisual"],
-  "coverImage": "featured-kashiwa-bolive-shenzhen.jpeg",
-  "image": "/portfolio/assets/home/featured-kashiwa-bolive-shenzhen.jpeg",
+  "coverImage": "kashiwa-bolive-1800.webp",
+  "image": "/portfolio/assets/case-optimized/kashiwa-bolive-1800.webp",
   "relatedNodes": ["can-festival"],
   "relatedWritings": [],
-  "repoLink": "/portfolio/works/kashiwa.html",
+  "repoLink": "/portfolio/#/projects/kashiwa-titan",
   "links": [
-    { "text": "详情页", "url": "./works/kashiwa.html" },
+    { "text": "详情页", "url": "/portfolio/#/projects/kashiwa-titan" },
     { "text": "微信文章", "url": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" }
   ],
   "priority": 0

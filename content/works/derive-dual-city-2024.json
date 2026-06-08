@@ -1,0 +1,29 @@
+{
+  "id": "derive-dual-city-2024",
+  "title": "FutureLab 2024「Dérive 双城记」",
+  "subtitle": "FutureLab 城市扫描与空间叙事实践",
+  "years": "2024",
+  "type": "competition-presentation",
+  "summary": "FutureLab 2024 的城市扫描与空间叙事实践，围绕双城经验、数字化采样和 Apple Vision Pro 呈现路径展开。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["award", "urban-archive", "scan", "apple-vision-pro"],
+  "coverImage": "derive-dual-city-poster.png",
+  "image": "/portfolio/assets/raw-library/derive-dual-city-poster.png",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["multimedia visual", "spatial narrative", "Apple Vision Pro"],
+  "analysisIds": ["derive-dual-city-spatial-archive"],
+  "sourceDocs": [
+    "projects/derive-dual-city-2024.md",
+    "projects/README.md"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/derive-dual-city-2024.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/derive-dual-city-2024.md"
+    }
+  ],
+  "priority": 15
+}

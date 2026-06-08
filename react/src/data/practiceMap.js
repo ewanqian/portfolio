@@ -41,7 +41,7 @@ const practiceMap = {
       relatedWritings: [],
       relatedRepositories: [],
       relatedImages: [
-        '/portfolio/assets/public-nodes/observation-symbiosis.jpg'
+        '/portfolio/assets/public-optimized/observation-symbiosis-node-1600.webp'
       ]
     },
     {

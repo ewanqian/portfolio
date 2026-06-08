@@ -14,6 +14,39 @@ node_modules/
 .codex-local/
 AGENTS.local-before-main-merge.md
 
+# Harness / local-only working state
+.harness/
+.harness-local/
+HARNESS_LOCAL/
+SESSION_HANDOFF.local.md
+EXECUTION_NOTES.local.md
+*.local.md
+
+# Local material scans / review packages
+待处理素材/
+素材扫描数据.json
+素材扫描清单.md
+PORTFOLIO_OUTPUT/
+_OUTPUT_作品集素材包
+assets/raw-library/
+assets/raw-picks/
+assets/web-candidates/
+
+# Secrets / deployment credentials
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.secrets/
+secrets/
+credentials/
+*.secret.*
+*.token.*
+cloudflare-token*.txt
+tencent-cloud*.txt
+
 # Blender
 *.blend1
 *.blend2

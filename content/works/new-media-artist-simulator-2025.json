@@ -1,0 +1,30 @@
+{
+  "id": "new-media-artist-simulator-2025",
+  "title": "New Media Artist Simulator / 巴别瓶",
+  "subtitle": "观念性超文本交互作品的展览节点",
+  "years": "2025",
+  "type": "museum-exhibition",
+  "summary": "杭州中心美术馆《巴别瓶》参展作品，把观念性超文本交互作品放进展览语境。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["hypertext", "interactive", "museum", "conceptual"],
+  "coverImage": "perceptual-environments-1600.webp",
+  "image": "/assets/public-optimized/perceptual-environments-1600.webp",
+  "showOnHome": false,
+  "relatedNodes": ["babel-bottle"],
+  "relatedWritings": [],
+  "displayModes": ["interactive text", "exhibition installation", "conceptual interface"],
+  "analysisIds": ["babel-bottle-hypertext-exhibit"],
+  "sourceDocs": [
+    "projects/new-media-artist-simulator-2025.md",
+    "content/nodes/babel-bottle.json",
+    "visual-arts/perceptual-environments/README.md"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/new-media-artist-simulator-2025.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/new-media-artist-simulator-2025.md"
+    }
+  ],
+  "priority": 16
+}

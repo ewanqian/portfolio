@@ -1,0 +1,26 @@
+{
+  "id": "glance-thousand-install-2023",
+  "title": "安昌光影艺术季「一眼万千」",
+  "subtitle": "古桥地面投影视觉作品",
+  "years": "2023",
+  "type": "light-art-exhibition",
+  "summary": "参与安昌光影艺术季，在古桥地面投影语境中呈现视觉作品，作为早期公共光影项目节点进入作品库。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["anchang", "light-art", "projection", "public-art"],
+  "coverImage": "archive-observation-clean.jpg",
+  "image": "/assets/home/archive-observation-clean.jpg",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["ground projection", "light-art festival", "public environment"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/glance-thousand-install-2023.md"],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/glance-thousand-install-2023.md",
+  "links": [
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/glance-thousand-install-2023.md"
+    }
+  ],
+  "priority": 22
+}

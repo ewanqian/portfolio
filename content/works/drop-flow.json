@@ -7,13 +7,13 @@
   "summary": "围绕实时音画互动、空间迁移与数字自然叙事展开的长期系列。",
   "practiceLine": "spatial-generation",
   "tags": ["immersive", "space", "flow"],
-  "coverImage": "featured-dropflow-main.jpg",
-  "image": "/portfolio/assets/home/featured-dropflow-main.jpg",
+  "coverImage": "dropflow-main-1600.webp",
+  "image": "/portfolio/assets/public-optimized/dropflow-main-1600.webp",
   "relatedNodes": ["ufo-terminal", "drop-flow-hangzhou-biennale"],
   "relatedWritings": ["drop-flow-note"],
-  "repoLink": "/portfolio/works/drop-flow.html",
+  "repoLink": "/portfolio/#/projects/drop-flow",
   "links": [
-    { "text": "详情页", "url": "./works/drop-flow.html" },
+    { "text": "详情页", "url": "/portfolio/#/projects/drop-flow" },
     { "text": "看录像", "url": "https://www.bilibili.com/video/BV1PREczgEzC/" }
   ],
   "priority": 0

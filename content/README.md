@@ -91,7 +91,6 @@ content/
 运行内容生成脚本：
 
 ```bash
-cd /Users/ewanqian/Library/Mobile\ Documents/com~apple~CloudDocs/VIRTURA-Workspace/portfolio
 node scripts/build-content.js
 ```
 

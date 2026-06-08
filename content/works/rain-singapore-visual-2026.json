@@ -1,0 +1,30 @@
+{
+  "id": "rain-singapore-visual-2026",
+  "title": "Rain 新加坡跨年专场",
+  "subtitle": "SINGLAND FESTIVAL 2026 Opening 与演出动画视觉",
+  "years": "2026",
+  "type": "stage-visual",
+  "summary": "为 Rain / 郑智薰新加坡跨年专场及 SINGLAND FESTIVAL 2026 参与 Opening 动画、曲目动画视觉与舞台影像工程交付。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["stage-visual", "concert", "singland-festival", "rain", "opening-animation"],
+  "coverImage": "posterwall.jpg",
+  "image": "/assets/home/posterwall.jpg",
+  "showOnHome": true,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["opening animation", "concert screen", "show visual", "stage animation"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/rain-singapore-visual-2026.md"],
+  "repoLink": "https://hk.marinabaysands.com/entertainment/shows/singland-festival-rain.html",
+  "links": [
+    {
+      "text": "公开演出信息",
+      "url": "https://hk.marinabaysands.com/entertainment/shows/singland-festival-rain.html"
+    },
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/rain-singapore-visual-2026.md"
+    }
+  ],
+  "priority": 3
+}

@@ -8,6 +8,9 @@
   --accent: #f0f0f0;
   --inverse: #0a0a0a;
   --max: 1240px;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-pill: 999px;
 }
 
 * { box-sizing: border-box; }
@@ -65,7 +68,7 @@ img {
   line-height: 1.02;
   margin: 0 0 18px;
   font-weight: 700;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .section-intro {
@@ -248,7 +251,7 @@ img {
   font-size: clamp(44px, 8vw, 88px);
   line-height: 0.92;
   margin: 0 0 18px;
-  letter-spacing: -0.065em;
+  letter-spacing: 0;
   font-weight: 700;
 }
 
@@ -375,7 +378,7 @@ img {
 .service-detail h3,
 .contact-panel h3,
 .form-panel h3 {
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .work-card p,
@@ -493,7 +496,7 @@ img {
 .price-tier h3 {
   margin: 0 0 8px;
   font-size: 20px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .price-tier p {
@@ -542,7 +545,7 @@ img {
 .why-card h4 {
   margin: 0 0 8px;
   font-size: 16px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .why-card p {
@@ -705,7 +708,7 @@ textarea {
 .repo-card h4 {
   margin: 0 0 10px;
   font-size: 18px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .trajectory-grid {
@@ -851,7 +854,7 @@ textarea {
   margin: 0 0 8px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .image-wall-meta {
@@ -931,7 +934,7 @@ textarea {
   margin: 0 0 8px 0;
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .practice-map-node-header .subtitle {
@@ -1069,7 +1072,7 @@ textarea {
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .practice-line-content p {
@@ -1105,7 +1108,7 @@ textarea {
   margin: 0 0 12px 0;
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .entry-banner-content p {
@@ -1139,7 +1142,7 @@ textarea {
   margin: 0 0 10px 0;
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .writing-card p {
@@ -1209,7 +1212,7 @@ textarea {
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .service-card p {
@@ -1358,7 +1361,7 @@ textarea {
   margin: 0 0 8px 0;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .archive-item-years,
@@ -1403,7 +1406,7 @@ textarea {
   margin: 0 0 16px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .case-note-content p {
@@ -1437,7 +1440,7 @@ textarea {
   margin: 0 0 16px 0;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .viewer-spec-card ul {
@@ -1486,14 +1489,14 @@ textarea {
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .pricing-price {
   margin: 0 0 20px 0;
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .pricing-tier ul {
@@ -1565,7 +1568,7 @@ textarea {
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .service-card-full p {
@@ -1627,7 +1630,7 @@ textarea {
   margin: 0 0 16px 0;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .viewer-spec-card-full ul {
@@ -1674,7 +1677,7 @@ textarea {
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .pricing-use {

@@ -1,0 +1,33 @@
+{
+  "id": "yujiayun-45ping-visual-2025",
+  "title": "余佳运「45㎡」演唱会 宁波站",
+  "subtitle": "舞台视觉与工程交付",
+  "years": "2025",
+  "type": "concert-performance",
+  "summary": "宁波奥体中心余佳运「45㎡」个人演唱会的舞台视觉制作。完成 Opening 与部分舞台视觉内容，包含《尘埃》开场、《防沉迷系统》、《千禧》、《夏夜入梦前》等歌曲，以及地坪 LED 与多面 PGM 联动的视觉工程交付。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["yujiayun", "concert", "live", "stage", "opening", "floor-led"],
+  "coverImage": "intro-46s-orange-arc.jpg",
+  "image": "/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.jpg",
+  "showOnHome": true,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["opening visual", "stage screen", "floor LED", "multi-surface PGM"],
+  "analysisIds": [],
+  "sourceDocs": [
+    "projects/yujiayun-45ping-visual-2025.md",
+    "visual-arts/45m2-ningbo/README.md"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/yujiayun-45ping-visual-2025.md",
+  "links": [
+    {
+      "text": "公开演出信息",
+      "url": "https://m.yanchupiaowu.com/event?id=109005"
+    },
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/yujiayun-45ping-visual-2025.md"
+    }
+  ],
+  "priority": 3
+}

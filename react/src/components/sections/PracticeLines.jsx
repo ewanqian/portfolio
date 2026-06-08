@@ -6,21 +6,21 @@ const practiceLines = [
     title: 'Live Performance Visuals / 现场演出视觉',
     summary: '在舞台和现场环境中构建实时视听关系',
     relatedProjects: ['Drop Flow', 'Kashiwa Daisuke'],
-    image: '/portfolio/assets/home/featured-dropflow-main.jpg'
+    image: '/portfolio/assets/public-optimized/dropflow-main-1600.webp'
   },
   {
     id: 'spatial-image',
     title: 'Spatial Image & Immersive Environments / 空间影像与沉浸环境',
     summary: '探索空间感知与数字环境的共生',
     relatedProjects: ['Observation and Symbiosis'],
-    image: '/portfolio/assets/public-nodes/observation-symbiosis.jpg'
+    image: '/portfolio/assets/public-optimized/observation-symbiosis-node-1600.webp'
   },
   {
     id: 'real-time-systems',
     title: 'Real-time Systems & Previsualization / 实时系统与预演方法',
     summary: '开发工具链支撑创作与预演',
     relatedProjects: ['TIMER', 'SceneForge'],
-    image: '/portfolio/assets/home/featured-timer-main.jpg'
+    image: '/portfolio/assets/case-optimized/timer-red-spatial-1400.webp'
   },
   {
     id: 'research-archive',

@@ -1,0 +1,13 @@
+{
+  "id": "public-nodes-not-news",
+  "title": "为什么公开节点不等于“新闻”",
+  "type": "Note",
+  "category": "note",
+  "date": "2025",
+  "summary": "说明公开节点为什么更接近作品证据和外部落点，而不只是新闻式更新。",
+  "relatedWork": null,
+  "relatedNode": null,
+  "status": "draft",
+  "featured": false,
+  "order": 2
+}

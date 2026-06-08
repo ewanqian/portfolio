@@ -5,8 +5,8 @@ export const timeline = [
     subtitle: "Temporal Structure",
     description: "这条线始于对声音与图像关系的长期处理。节拍、频段、能量与段落变化被逐步纳入视觉内部，成为作品的组织材料。TIMER 系列集中呈现了这一阶段的核心问题：时间如何被塑造成一种可见的结构，并在图像内部建立起持续的秩序。",
     links: [
-      { text: "Read More / 详细说明", url: "./works/timer.html" },
-      { text: "Related Works / 相关作品", url: "./works/timer.html" }
+      { text: "Read More / 详细说明", url: "/portfolio/#/projects/timer" },
+      { text: "Related Works / 相关作品", url: "/portfolio/#/projects/timer" }
     ],
     projects: ["timer"]
   },
@@ -16,8 +16,8 @@ export const timeline = [
     subtitle: "Spatial Generation",
     description: "随着实践推进，工作的重心逐渐转向图像与空间之间的关系。Drop Flow 相关作品标志着这一阶段的展开：图像开始与身体、环境、尺度和屏幕结构共同生成一种空间性的经验。观看不再停留于画面表层，而进入一种由流动、密度与尺度共同构成的场域。",
     links: [
-      { text: "Read More / 详细说明", url: "./works/drop-flow.html" },
-      { text: "Related Works / 相关作品", url: "./works/drop-flow.html" }
+      { text: "Read More / 详细说明", url: "/portfolio/#/projects/drop-flow" },
+      { text: "Related Works / 相关作品", url: "/portfolio/#/projects/drop-flow" }
     ],
     projects: ["drop-flow"]
   },

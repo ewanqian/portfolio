@@ -1,0 +1,13 @@
+{
+  "id": "ufo-terminal-testing",
+  "title": "UFO Terminal 的现场测试与结构调整",
+  "type": "Field Note",
+  "category": "field-note",
+  "date": "2025",
+  "summary": "记录 UFO Terminal 现场测试中，空间条件、屏幕关系和实时反馈如何反过来改变作品结构。",
+  "relatedWork": "drop-flow",
+  "relatedNode": "ufo-terminal",
+  "status": "planned",
+  "featured": false,
+  "order": 2
+}

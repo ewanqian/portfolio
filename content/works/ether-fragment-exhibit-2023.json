@@ -1,0 +1,28 @@
+{
+  "id": "ether-fragment-exhibit-2023",
+  "title": "Ether Fragment / 西岸艺博会",
+  "subtitle": "数字情感容器线的公开展映节点",
+  "years": "2023",
+  "type": "exhibition",
+  "summary": "《以太碎片》把扫描环境、点云采样与开放结构感带入西岸艺博会，成为数字情感容器线的重要公开呈现。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["point cloud", "digital memory", "art fair", "emotional container"],
+  "coverImage": "perceptual-environments-1600.webp",
+  "image": "/assets/public-optimized/perceptual-environments-1600.webp",
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["single-channel screening", "digital environment", "art fair presentation"],
+  "analysisIds": [],
+  "sourceDocs": [
+    "projects/ether-fragment-exhibit-2023.md"
+  ],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/ether-fragment-exhibit-2023.md",
+  "links": [
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/ether-fragment-exhibit-2023.md"
+    }
+  ],
+  "priority": 19
+}

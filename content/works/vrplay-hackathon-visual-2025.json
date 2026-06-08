@@ -1,0 +1,30 @@
+{
+  "id": "vrplay-hackathon-visual-2025",
+  "title": "VRplay WORLD REMIX XR 黑客松",
+  "subtitle": "XR 黑客松主视觉与活动视觉系统",
+  "years": "2025",
+  "type": "event-visual-system",
+  "summary": "为 WORLD REMIX XR 黑客松制作主视觉、动态与静态物料及周边视觉系统，把 XR 创作活动转化为一套更完整的视觉识别入口。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["xr", "hackathon", "visual-system", "vrplay"],
+  "coverImage": "vrplay-world-remix-2025.jpg",
+  "image": "/assets/home/vrplay-world-remix-2025.jpg",
+  "showOnHome": true,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["event identity", "visual system", "XR community"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/vrplay-hackathon-visual-2025.md"],
+  "repoLink": "https://www.vr-play.cn/rules.html",
+  "links": [
+    {
+      "text": "公开活动信息",
+      "url": "https://www.vr-play.cn/rules.html"
+    },
+    {
+      "text": "项目记录",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-hackathon-visual-2025.md"
+    }
+  ],
+  "priority": 6
+}

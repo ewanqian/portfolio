@@ -96,7 +96,7 @@ function ProductionServices() {
                 </div>
                 <div className="price-item">
                   <strong>双目 / XR 样片 — ¥5000 起</strong>
-                  <span>适合 proof of concept 与方向验证</span>
+                  <span>适合方向样片与技术验证</span>
                 </div>
                 <div className="price-item">
                   <strong>双目演出背景 / Apple Vision Pro 内容 — ¥8000–40000+</strong>

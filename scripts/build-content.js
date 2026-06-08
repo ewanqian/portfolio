@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const contentDir = path.join(process.cwd(), 'content');
-const outputDir = path.join(process.cwd(), 'react/src/data/generated');
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const contentDir = path.join(repoRoot, 'content');
+const outputDir = path.join(repoRoot, 'react/src/data/generated');
 
 // 确保输出目录存在
 if (!fs.existsSync(outputDir)) {

@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        © Ewan Qian / VIRTURA. This website is a portfolio, service reader, and inquiry entry for ongoing works, commissions, and collaborations.
+        Ewan Qian 钱誉文 / Live visuals, spatial image, production archive.
       </div>
     </footer>
   )

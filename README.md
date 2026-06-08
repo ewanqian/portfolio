@@ -53,21 +53,21 @@ Node Weaver 是我当前用于整理作品线、公开节点、资产与关系�
 ### Drop Flow
 围绕空间生成、沉浸式大屏、身体表演与图像离开屏幕展开的系列实践，是我近年关于空间叙事与感知迁移的重要作品线之一。  
 
-<img src="./assets/home/featured-dropflow-main.jpg" alt="Drop Flow main" style="max-width: 720px; width: 100%; border-radius: 8px;" />
+<img src="./assets/public-optimized/dropflow-main-1600.webp" alt="Drop Flow main" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [看系列](./visual-arts/drop-flow-series/README.md) · [看详情](./projects/drop-flow-visual-2025.md) · [看录像](https://www.bilibili.com/video/BV1PREczgEzC/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
 ### TIMER
 围绕时间结构、音画关系与感知节奏展开的系列实践，持续处理声音如何进入图像内部并重新组织观看经验。  
 
-<img src="./assets/home/featured-timer-main.jpg" alt="Timer main" style="max-width: 720px; width: 100%; border-radius: 8px;" />
+<img src="./assets/case-optimized/timer-red-spatial-1400.webp" alt="Timer main" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [看系列](./visual-arts/timer-series/README.md) · [看录像](https://www.bilibili.com/video/BV1sWNWeVEVB/?spm_id_from=333.1387.upload.video_card.click&vd_source=cb242067ab3ab2bc069ca22e37a86032)
 
 ### Kashiwa Daisuke 深圳专场《机械光合：TITAN的全息声林》
 与 KASHIWA Daisuke、Yuki Murata 合作的现场视听项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。我负责项目中的全息纱幕、裸眼 3D 与音画互动视觉部分，并与策划、技术、灯光、声音及场地方团队共同完成整场现场呈现。  
 
-<img src="./assets/home/featured-kashiwa-bolive-shenzhen.jpeg" alt="Kashiwa Daisuke audiovisual performance at BO LIVE Shenzhen" style="max-width: 720px; width: 100%; border-radius: 8px;" />
+<img src="./assets/case-optimized/kashiwa-bolive-1800.webp" alt="Kashiwa Daisuke audiovisual performance at BO LIVE Shenzhen" style="max-width: 720px; width: 100%; border-radius: 8px;" />
 
 [看系列](./visual-arts/kashiwa-daisuke/README.md) · [看详情](./projects/kashiwa-titan-visual-2025.md) · [看外部资料](https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g)
 

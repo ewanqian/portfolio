@@ -1,0 +1,13 @@
+{
+  "id": "viewer-test-changes-work",
+  "title": "一次 playback 测试为什么会改变作品结构",
+  "type": "Field Note",
+  "category": "field-note",
+  "date": "2025",
+  "summary": "记录一次播放测试如何暴露结构问题，并最终改变作品段落与交付逻辑。",
+  "relatedWork": null,
+  "relatedNode": null,
+  "status": "planned",
+  "featured": false,
+  "order": 5
+}

@@ -18,7 +18,7 @@ function Home() {
         <SelectedWorks />
         <ImageWall />
         <PracticeLines />
-        
+
         <section className="section">
           <div className="container">
             <div className="entry-banner">
@@ -30,7 +30,7 @@ function Home() {
             </div>
           </div>
         </section>
-        
+
         <section className="section">
           <div className="container">
             <div className="eyebrow">Archive</div>
@@ -43,7 +43,7 @@ function Home() {
             </div>
           </div>
         </section>
-        
+
         <section className="section">
           <div className="container">
             <div className="entry-banner">
