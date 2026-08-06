@@ -3300,6 +3300,10 @@ textarea {
   gap: 18px;
 }
 
+.profile-practice-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .profile-work-list article {
   padding: 18px;
   border: 1px solid var(--line);
@@ -3389,6 +3393,56 @@ textarea {
   font-size: 11px;
   line-height: 1.8;
   letter-spacing: 0.08em;
+}
+
+.profile-cv-groups {
+  grid-column: 2;
+  display: grid;
+  gap: 42px;
+}
+
+.profile-cv-group h3 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.profile-cv-list {
+  border-top: 1px solid var(--line);
+}
+
+.profile-cv-list article {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-cv-list time {
+  padding-top: 3px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+.profile-cv-list strong {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.profile-cv-list p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 /* Project Pages */
@@ -3832,12 +3886,19 @@ textarea {
   .profile-paragraphs,
   .profile-work-list,
   .profile-column-list,
-  .profile-methods {
+  .profile-methods,
+  .profile-cv-groups {
     grid-column: 1;
   }
 
-  .profile-work-list {
+  .profile-work-list,
+  .profile-practice-list {
     grid-template-columns: 1fr;
+  }
+
+  .profile-cv-list article {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .profile-editorial-copy > p:not(.eyebrow) {
