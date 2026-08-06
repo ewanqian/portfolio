@@ -8,6 +8,7 @@
     "build": "vite build",
     "postbuild": "node scripts/copy-workspace-assets.mjs",
     "lint": "eslint .",
+    "audit:routes": "node scripts/audit-route-contract.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
