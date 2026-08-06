@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
+import { profileCopy } from '../../data/profile.js'
 
 const heroWorks = [
   {
@@ -36,6 +37,7 @@ const heroWorks = [
 function Hero() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
+  const profile = profileCopy[language]
   const [activeIndex, setActiveIndex] = useState(0)
   const [guiding, setGuiding] = useState(true)
   const mainWork = heroWorks[activeIndex]
@@ -69,34 +71,15 @@ function Hero() {
             <span>2026</span>
           </div>
           <h1>
-            {isZh ? (
-              <>
-                <span>现场视觉</span>
-                <span>与空间影像</span>
-                <span>作品集</span>
-              </>
-            ) : (
-              <>
-                <span>Live Visuals</span>
-                <span>Spatial Images</span>
-                <span>Portfolio</span>
-              </>
-            )}
+            {profile.heroTitle.map((line) => <span key={line}>{line}</span>)}
           </h1>
-          <p>
-            {isZh
-              ? '为演出、展览与数字场景制作视觉系统。'
-              : 'Visual systems for performance, exhibition, and digital scenes.'}
-          </p>
+          <p>{profile.heroIntro}</p>
           <div className="hero-home-v3-tags" aria-label={isZh ? '实践方向' : 'Practice fields'}>
-            <span>{isZh ? '媒体艺术' : 'Media art'}</span>
-            <span>{isZh ? '舞台视觉' : 'Stage visuals'}</span>
-            <span>{isZh ? '空间屏幕' : 'Spatial screens'}</span>
-            <span>{isZh ? '长期项目档案' : 'Long-form archive'}</span>
+            {profile.heroTags.map((tag) => <span key={tag}>{tag}</span>)}
           </div>
           <div className="hero-home-v3-actions">
-            <Link to={mainWork.to}>{isZh ? '观看当前项目' : 'Open current work'}</Link>
-            <Link to="/archive">{isZh ? '完整归档' : 'Full archive'}</Link>
+            <Link to="/works">{isZh ? '精选作品' : 'Selected works'}</Link>
+            <Link to="/profile">{isZh ? '个人介绍' : 'Profile'}</Link>
           </div>
         </div>
 
