@@ -170,8 +170,8 @@ function Works() {
             <p className="section-intro">{copy.intro}</p>
               <div className="hero-cta">
                 <a className="button primary" href="#contact-sheet">{copy.open}</a>
-                <a className="button" href="/portfolio/#/production">{copy.productionLink}</a>
-                <a className="button" href="/portfolio/#/archive">{copy.archiveLink}</a>
+                <a className="button" href="#/production">{copy.productionLink}</a>
+                <a className="button" href="#/archive">{copy.archiveLink}</a>
               </div>
             </div>
             <div className="works-stat-grid">
