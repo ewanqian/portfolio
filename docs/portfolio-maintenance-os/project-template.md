@@ -1,64 +1,153 @@
-# Project Case Template
+# Project Page Authoring Template
 
-Use this for Gallery, Production, Spatial, and Writing-linked project pages.
+Use this source template for every Gallery, Collaboration, Production, Research, and Workshop entry. The public page may omit optional sections, but it must keep the same field meanings and credit rules.
+
+The machine-readable contract lives in `project-page.schema.json`. The editorial and layout rules live in `project-page-standard.md`.
+
+## Record Header
+
+```yaml
+id:
+slug:
+status: published
+section: gallery
+projectType: artwork
+authorship: personal
+year:
+dateStart:
+dateEnd:
+city:
+venue:
+title:
+  zh:
+  en:
+subtitle:
+  zh:
+  en:
+role:
+  zh:
+  en:
+```
+
+Allowed `section` values:
+
+- `gallery`
+- `production`
+- `research`
+- `archive`
+
+Allowed `projectType` values:
+
+- `artwork`
+- `live-audiovisual`
+- `installation`
+- `collaboration`
+- `production-case`
+- `research`
+- `workshop`
+
+Allowed `authorship` values:
+
+- `personal`
+- `collaborative`
+- `commissioned`
+- `production-support`
 
 ## One-line Summary
 
-One sentence explaining what the project is and what role Ewan Qian played.
+One sentence that tells the visitor what the work is, where or how it was experienced, and Ewan Qian's role when authorship is shared.
+
+Chinese target: 35–65 characters. English target: 18–35 words.
 
 ## Project Facts
 
 | Field | Detail |
 | --- | --- |
 | Project |  |
-| Year |  |
+| Year / date |  |
 | City / venue / platform |  |
-| Artist / client / event |  |
-| Type |  |
+| Format |  |
+| Authorship |  |
 | Role |  |
-| Scope |  |
+| Duration / dimensions |  |
 
-## Context
+## Work Description
 
-Write 80 to 150 words. Explain the public context, venue, format, and why the project matters.
+Write 80–140 words per language. Cover:
 
-## My Role
+1. the artistic or experiential question;
+2. what the audience encounters;
+3. how sound, image, time, or space behaves;
+4. the public context of the presentation.
 
-Use precise role language:
+Do not begin with software, workflow, deliverables, or a list of capabilities.
 
-- visual art
-- visual system
-- stage visual production
-- production support
-- delivery engineering
-- archive and documentation
-- web-based project presentation
+## Spatial / Audiovisual Logic
 
-## Visual / Spatial System
+Write 50–100 words per language. Describe only what materially changes the experience: screen arrangement, duration, movement, audience position, live responsiveness, image material, sound relationship, or site conditions.
 
-Describe the image system, screen conditions, rhythm, spatial logic, or material language.
+## Role and Collaboration
 
-## Delivery / Outputs
+Use first person only when it clarifies responsibility. For shared work, name the collaborators before describing the division of work.
 
-List final outputs:
+Preferred role language:
 
-- opening visual
-- song visuals
-- PGM content
-- floor LED content
-- web archive
-- stage preview
-- installation media
-- documentation page
+- Artist
+- Co-creator
+- Live Visuals
+- Visual System
+- Spatial Image
+- Stage Visual Production
+- Visual Production Support
+- Delivery Engineering
+- Workshop Lead
 
 ## Selected Media
 
-List hero image, gallery images, video embeds, and source status.
+| Order | Use | File / URL | Caption | Credit | Rights status |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Hero |  |  |  |  |
+| 2 | Context |  |  |  |  |
+| 3 | Detail |  |  |  |  |
+| 4 | Live / installation view |  |  |  |  |
+| 5 | Video |  |  |  |  |
+
+Minimum public set: one strong hero, two supporting images, and one view that establishes scale or audience context.
 
 ## Credits
 
-Use a calm table. Do not mix uncertainty into public credits.
+| Credit | Name |
+| --- | --- |
+| Artist / artists |  |
+| Music / performance |  |
+| Curator / commissioner |  |
+| Visual direction |  |
+| Visual art / production |  |
+| Technical / venue partners |  |
+| Photography / video |  |
+
+Only keep rows that apply. Never replace specific names with a broad claim of sole authorship.
+
+## Presentation History
+
+| Date | Venue / event | City | Version / note |
+| --- | --- | --- | --- |
+|  |  |  |  |
 
 ## Links
 
-Use official pages, public video references, repo links, or archive links.
+- Official event or institution:
+- Public video:
+- Press or interview:
+- Related work:
+- Technical archive, when publicly useful:
+
+## Internal Publication Check
+
+- The section matches the actual authorship and purpose.
+- The hero image shows the work rather than a software interface.
+- The first paragraph reads as art writing, not a service description.
+- Roles and credits are specific.
+- Every public link opens a finished page.
+- Chinese and English say the same thing.
+- No local paths, process notes, unfinished-state language, or speculative future features appear in public copy.
