@@ -62,6 +62,14 @@ export const nodeLinks = {
   'ufo-terminal': '/works/drop-flow.html'
 }
 
+const projectRouteByWorkId = {
+  kashiwa: '#/projects/kashiwa-titan',
+  'kashiwa-bo-live-shenzhen': '#/projects/kashiwa-titan',
+  'yujiayun-45ping-visual-2025': '#/projects/yujiayun-45m2',
+  'rain-singapore-visual-2026': '#/projects/rain-singapore',
+  'digital-garden-visual-2025': '#/projects/digital-garden'
+}
+
 export function getDisplayImage(item) {
   if (!item) {
     return '/portfolio/assets/public-nodes/ufo-terminal.webp'
@@ -71,20 +79,8 @@ export function getDisplayImage(item) {
 }
 
 export function getWorkTargetUrl(work) {
-  if (work?.id === 'kashiwa' || work?.id === 'kashiwa-bo-live-shenzhen') {
-    return '/portfolio/projects/kashiwa-titan'
-  }
-
-  if (work?.id === 'yujiayun-45ping-visual-2025') {
-    return '/portfolio/projects/yujiayun-45m2'
-  }
-
-  if (work?.id === 'rain-singapore-visual-2026') {
-    return '/portfolio/projects/rain-singapore'
-  }
-
-  if (work?.id === 'digital-garden-visual-2025') {
-    return '/portfolio/projects/digital-garden'
+  if (projectRouteByWorkId[work?.id]) {
+    return projectRouteByWorkId[work.id]
   }
 
   const detailLink = work.links?.find((link) => link.url?.includes('/works/') || link.url?.startsWith('./works/'))
