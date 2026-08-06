@@ -111,7 +111,7 @@ export default [
     "links": [
       {
         "text": "项目页面",
-        "url": "/portfolio/projects/digital-garden"
+        "url": "#/projects/digital-garden"
       },
       {
         "text": "项目文档",
