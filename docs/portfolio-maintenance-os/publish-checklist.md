@@ -34,11 +34,14 @@ Run this before committing or pushing portfolio changes.
 ## Build
 
 - Content build passes.
+- Project records pass schema validation when the shared record system is in use.
+- `npm run audit:routes` passes from `react/`.
 - Public boundary audit passes.
 - Portfolio OS audit passes.
 - React build passes.
 - Dist assets are copied.
 - Browser check covers desktop and mobile where possible.
+- Branch preview click test covers Gallery → key project pages.
 
 Windows note: build from the stable mapped workspace drive when working on the network workspace. Building through a temporary `pushd` drive can make Vite see mixed drive letters.
 
