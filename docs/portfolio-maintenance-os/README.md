@@ -28,7 +28,9 @@ Every project should move through the same path:
 
 | File | Use |
 | --- | --- |
-| `project-template.md` | Standard project case structure. |
+| `project-page-standard.md` | Editorial, visual, routing, and classification standard. |
+| `project-template.md` | Human authoring template for one project record. |
+| `project-page.schema.json` | Machine-readable contract for project data. |
 | `media-template.md` | Image and video selection rules. |
 | `credit-template.md` | Credit and role-writing rules. |
 | `publish-checklist.md` | Final check before committing or pushing. |
@@ -36,6 +38,7 @@ Every project should move through the same path:
 | `yujiayun-45m2-case-manifest.md` | First complete production-case manifest. |
 | `external-source-approval.md` | Review flow for web-found sources before public use. |
 | `roadmap.md` | Next targets and maintenance rhythm. |
+| `../exec-plans/project-page-system-rollout.md` | Milestones and validation for the shared project-page system. |
 
 ## Public / Local Boundary
 
