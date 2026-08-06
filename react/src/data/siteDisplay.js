@@ -55,10 +55,10 @@ export const homeNodeIds = [
 ]
 
 export const nodeLinks = {
-  'babel-bottle': '/archive',
+  'babel-bottle': '#/archive',
   'can-festival': '/works/kashiwa.html',
   'drop-flow-hangzhou-biennale': '/works/drop-flow.html',
-  'observation-and-symbiosis': '/archive',
+  'observation-and-symbiosis': '#/archive',
   'ufo-terminal': '/works/drop-flow.html'
 }
 
@@ -94,7 +94,7 @@ export function getWorkTargetUrl(work) {
 }
 
 export function getNodeTargetUrl(node) {
-  return node.externalLink || nodeLinks[node.id] || '/archive'
+  return node.externalLink || nodeLinks[node.id] || '#/archive'
 }
 
 export function sortWorksForArchive(items) {
