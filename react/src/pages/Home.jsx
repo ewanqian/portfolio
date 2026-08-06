@@ -7,19 +7,12 @@ import SelectedWorks from '../components/sections/SelectedWorks'
 import StageStrip from '../components/sections/StageStrip'
 import DropFlowMainline from '../components/sections/DropFlowMainline'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { profileCopy } from '../data/profile.js'
 
 function ProfileBlock() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
-  const officialBio = isZh
-    ? [
-        '钱誉文 / Ewan Qian 是媒体艺术家、现场视觉创作者与独立制作人，工作围绕现场音画、空间影像、程序化图像系统与数字场景展开。',
-        '他通过 Virtura 组织长期作品线和现场系统，也与音乐人、声音艺术家和制作团队合作，把视觉推进到演出结构内部。'
-      ]
-    : [
-        'Ewan Qian is a media artist, live visual creator, and independent producer working across live audiovisual performance, spatial images, procedural image systems, and digital scenes.',
-        'Through Virtura and independent collaborations, he develops long-form work lines and live visual systems that move image-making into the structure of performance.'
-      ]
+  const officialBio = profileCopy[language].shortBio
 
   return (
     <section id="profile-directions" className="section profile-block-section">
