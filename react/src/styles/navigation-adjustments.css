@@ -1,0 +1,6 @@
+@media (max-width: 760px) {
+  .topbar .nav {
+    top: calc(100% + 8px);
+    bottom: auto;
+  }
+}
