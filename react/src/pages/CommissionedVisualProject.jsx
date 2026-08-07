@@ -35,7 +35,9 @@ const projects = {
     },
     hero: '/portfolio/assets/xtep-xdna/xtep-selected-01.webp',
     gallery: [1, 2, 3, 4, 5].map((index) => ({
-      src: `/portfolio/assets/xtep-xdna/xtep-selected-0${index}.webp`,
+      src: index === 4
+        ? '/portfolio/assets/xtep-xdna/xtep-selected-04-v2.webp'
+        : `/portfolio/assets/xtep-xdna/xtep-selected-0${index}.webp`,
       alt: {
         zh: `XTEP XDNA 上海时装周现场画面 ${index}`,
         en: `XTEP XDNA Shanghai Fashion Week site view ${index}`
