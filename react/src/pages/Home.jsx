@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Hero from '../components/sections/Hero'
+import PracticeLines from '../components/sections/PracticeLines'
 import SelectedWorks from '../components/sections/SelectedWorks'
-import StageStrip from '../components/sections/StageStrip'
-import DropFlowMainline from '../components/sections/DropFlowMainline'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 function ProfileBlock() {
@@ -13,20 +12,20 @@ function ProfileBlock() {
   const isZh = language === 'zh'
   const officialBio = isZh
     ? [
-        '钱誉文 / Ewan Qian 是媒体艺术家、现场视觉创作者与独立制作人，工作围绕现场音画、空间影像、程序化图像系统与数字场景展开。',
-        '他通过 Virtura 组织长期作品线和现场系统，也与音乐人、声音艺术家和制作团队合作，把视觉推进到演出结构内部。'
+        '钱誉文 / Ewan Qian 是媒体艺术家、空间影像创作者与现场视觉表演者，实践围绕现场音画、空间扫描、实时图像系统与数字场景展开。',
+        '他把扫描、生成、实时控制与 AI 工具视为可持续演化的创作方法：它们既形成作品和演出系统，也逐渐转化为可以被分享、教学和继续迭代的个人工具与工作坊。'
       ]
     : [
-        'Ewan Qian is a media artist, live visual creator, and independent producer working across live audiovisual performance, spatial images, procedural image systems, and digital scenes.',
-        'Through Virtura and independent collaborations, he develops long-form work lines and live visual systems that move image-making into the structure of performance.'
+        'Ewan Qian is a media artist, spatial image creator, and live visual performer working across audiovisual performance, spatial scanning, realtime image systems, and digital environments.',
+        'He approaches scanning, generative processes, realtime control, and AI tools as evolving creative methods: they become artworks and performance systems, but also reusable tools and workshop formats that can be shared and iterated.'
       ]
 
   return (
     <section id="profile-directions" className="section profile-block-section">
       <div className="container profile-block-grid">
         <div>
-          <div className="eyebrow">{isZh ? '个人简介' : 'Profile'}</div>
-          <h2 className="section-title">{isZh ? '钱誉文 / Ewan Qian' : 'Ewan Qian / 钱誉文'}</h2>
+          <div className="eyebrow">{isZh ? '个人实践' : 'Practice'}</div>
+          <h2 className="section-title">{isZh ? '作品、系统与共享方法' : 'Works, systems, and shared methods'}</h2>
         </div>
         <div className="profile-block-copy">
           {officialBio.map((paragraph) => (
@@ -47,8 +46,7 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <DropFlowMainline />
-        <StageStrip />
+        <PracticeLines />
         <SelectedWorks />
         <ProfileBlock />
       </main>

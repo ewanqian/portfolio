@@ -1,137 +1,52 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
-
-const heroWorks = [
-  {
-    to: '/works',
-    image: '/portfolio/assets/home/hero-dropflow-ufo-2025.webp',
-    title: { zh: 'Drop Flow / 滴流', en: 'Drop Flow' },
-    type: { zh: '空间音画 / 数字自然', en: 'Spatial audiovisual / digital nature' },
-    role: { zh: '主线作品', en: 'Main work line' }
-  },
-  {
-    to: '/works',
-    image: '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
-    title: { zh: 'TIMER / 控时者', en: 'TIMER' },
-    type: { zh: '时间结构 / 空间影像', en: 'Temporal structure / spatial image' },
-    role: { zh: '长期作品线', en: 'Long-form work line' }
-  },
-  {
-    to: '/projects/kashiwa-titan',
-    image: '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
-    title: { zh: '柏大辅《TITAN》', en: 'KASHIWA Daisuke “TITAN”' },
-    type: { zh: '现场音画 / BO LIVE', en: 'Live audiovisual / BO LIVE' },
-    role: { zh: '视觉制作', en: 'Visual production' }
-  },
-  {
-    to: '/projects/rain-singapore',
-    image: '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
-    title: { zh: 'Rain 郑智薰 / SINGLAND', en: 'Rain / SINGLAND' },
-    type: { zh: '新加坡舞台大屏幕视觉', en: 'Singapore stage screen visual' },
-    role: { zh: '制作记录', en: 'Production record' }
-  }
-]
 
 function Hero() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [guiding, setGuiding] = useState(true)
-  const mainWork = heroWorks[activeIndex]
-  const progress = useMemo(() => `${((activeIndex + 1) / heroWorks.length) * 100}%`, [activeIndex])
-  const visibleRail = heroWorks.filter((_, index) => index !== activeIndex).slice(0, 3)
-
-  const stepBy = useCallback((delta) => {
-    setActiveIndex((current) => (current + delta + heroWorks.length) % heroWorks.length)
-    setGuiding(false)
-  }, [])
-
-  useEffect(() => {
-    if (!guiding || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % heroWorks.length)
-    }, 7800)
-
-    return () => window.clearInterval(timer)
-  }, [guiding])
 
   return (
-    <section className="hero-spatial hero-home-v3" data-page-motion>
-      <div className="hero-home-v3-bg" aria-hidden="true">
-        <img src={mainWork.image} alt="" />
+    <section className="home-system-hero" data-page-motion>
+      <div className="home-system-hero-media" aria-hidden="true">
+        <img src="/portfolio/assets/home/hero-dropflow-ufo-2025.webp" alt="" />
       </div>
-      <div className="container hero-home-v3-stage">
-        <div className="hero-home-v3-copy" data-reveal>
-          <div className="hero-home-v3-kicker">
+      <div className="container home-system-hero-inner">
+        <div className="home-system-hero-copy" data-reveal>
+          <div className="home-system-hero-kicker">
             <span>{isZh ? '钱誉文 / Ewan Qian' : 'Ewan Qian / 钱誉文'}</span>
             <span>2026</span>
           </div>
           <h1>
             {isZh ? (
               <>
-                <span>现场视觉</span>
-                <span>与空间影像</span>
-                <span>作品集</span>
+                <span>媒体艺术</span>
+                <span>空间影像</span>
+                <span>实时系统</span>
               </>
             ) : (
               <>
-                <span>Live Visuals</span>
-                <span>Spatial Images</span>
-                <span>Portfolio</span>
+                <span>Media Art</span>
+                <span>Spatial Image</span>
+                <span>Realtime Systems</span>
               </>
             )}
           </h1>
           <p>
             {isZh
-              ? '为演出、展览与数字场景制作视觉系统。'
-              : 'Visual systems for performance, exhibition, and digital scenes.'}
+              ? '从现场音画、空间扫描到个人创作工具与工作坊，把数字技术组织成可以持续演化的作品、系统和方法。'
+              : 'From live audiovisual work and spatial scanning to personal creative tools and workshops, digital technologies become evolving artworks, systems, and methods.'}
           </p>
-          <div className="hero-home-v3-tags" aria-label={isZh ? '实践方向' : 'Practice fields'}>
-            <span>{isZh ? '媒体艺术' : 'Media art'}</span>
-            <span>{isZh ? '舞台视觉' : 'Stage visuals'}</span>
-            <span>{isZh ? '空间屏幕' : 'Spatial screens'}</span>
-            <span>{isZh ? '长期项目档案' : 'Long-form archive'}</span>
+          <div className="home-system-hero-actions">
+            <Link className="button primary" to="/works">{isZh ? '查看作品' : 'View works'}</Link>
+            <Link className="button" to="/workshops">{isZh ? '工作坊计划' : 'Workshops'}</Link>
           </div>
-          <div className="hero-home-v3-actions">
-            <Link to={mainWork.to}>{isZh ? '观看当前项目' : 'Open current work'}</Link>
-            <Link to="/archive">{isZh ? '完整归档' : 'Full archive'}</Link>
+          <div className="home-system-hero-fields" aria-label={isZh ? '实践方向' : 'Practice fields'}>
+            <span>Live AV</span>
+            <span>Spatial Image</span>
+            <span>Realtime Systems</span>
+            <span>Workshops</span>
           </div>
         </div>
-
-        <Link to={mainWork.to} className="hero-home-v3-feature" data-reveal>
-          <img src={mainWork.image} alt={mainWork.title[language]} />
-          <span className="hero-home-v3-feature-caption">
-            <small>{mainWork.role[language]}</small>
-            <strong>{mainWork.title[language]}</strong>
-            <em>{mainWork.type[language]}</em>
-          </span>
-        </Link>
-
-        <div className="hero-home-v3-rail" data-reveal>
-          {visibleRail.map((work) => (
-            <Link to={work.to} className="hero-home-v3-rail-item" key={work.to + work.title.en}>
-              <img src={work.image} alt={work.title[language]} />
-              <span>
-                <small>{work.role[language]}</small>
-                <strong>{work.title[language]}</strong>
-                <em>{work.type[language]}</em>
-              </span>
-            </Link>
-          ))}
-        </div>
-
-        <div className="hero-guide-player" data-reveal aria-label={isZh ? '自动导览播放器' : 'Auto guide player'}>
-          <button type="button" onClick={() => stepBy(-1)} aria-label={isZh ? '上一项' : 'Previous'}>‹</button>
-          <button type="button" onClick={() => setGuiding((value) => !value)} aria-pressed={guiding}>
-            {guiding ? 'Ⅱ' : '▶'}
-          </button>
-          <button type="button" onClick={() => stepBy(1)} aria-label={isZh ? '下一项' : 'Next'}>›</button>
-          <span>{String(activeIndex + 1).padStart(2, '0')} / {String(heroWorks.length).padStart(2, '0')}</span>
-          <i aria-hidden="true"><b style={{ width: progress }} /></i>
-        </div>
-
       </div>
     </section>
   )

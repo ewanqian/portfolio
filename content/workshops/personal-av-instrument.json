@@ -1,0 +1,18 @@
+{
+  "slug": "personal-av-instrument",
+  "title": {
+    "zh": "Personal AV Instrument / 个人音画乐器",
+    "en": "Personal AV Instrument"
+  },
+  "short": {
+    "zh": "从个人采集的声音、图像和物件出发，制作一个可以实时演奏和控制的音画系统。",
+    "en": "Build a realtime audiovisual instrument from personally collected sounds, images, and objects."
+  },
+  "premise": {
+    "zh": "把视觉系统当作乐器，而不是成片工具：参与者最终得到的是一套可以持续表演、改造和扩展的现场系统。",
+    "en": "Treat the visual system as an instrument rather than a video-making tool: the result is a live system that can keep being performed, modified, and extended."
+  },
+  "tags": ["Live Visual", "Sound Reactive", "Realtime", "Performance Tool"],
+  "editions": [],
+  "resources": []
+}
