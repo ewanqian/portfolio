@@ -1,0 +1,37 @@
+{
+  "id": "zcool-hp-live-2021",
+  "title": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+  "subtitle": "实时音画互动表演的视觉制作与现场呈现",
+  "years": "2021",
+  "type": "live-audiovisual-production",
+  "summary": "在站酷 2021 CUBE 设计大会 HP G8 工作站发布会上，钱誉文参与实时音画互动表演的视觉制作与现场呈现。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["live audiovisual", "product launch", "stage visual", "production"],
+  "coverImage": "zcool-hp-g8-live-collage.webp",
+  "image": "/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+  "showOnHome": false,
+  "portfolioTier": "external",
+  "publicationStatus": "published",
+  "classification": "selected-collaboration",
+  "authorship": "personal-external-collaboration",
+  "featuredOn": ["production", "archive"],
+  "canonicalRoute": "/portfolio/#/projects/zcool-hp-g8",
+  "heroAssetId": "zcool-hp-g8-live-collage",
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["stage screen", "realtime audiovisual performance", "product launch"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/zcool-hp-live-2021.md"],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/zcool-hp-live-2021.md",
+  "links": [
+    {
+      "text": "项目页面",
+      "url": "/portfolio/#/projects/zcool-hp-g8"
+    },
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/zcool-hp-live-2021.md"
+    }
+  ],
+  "priority": 23
+}

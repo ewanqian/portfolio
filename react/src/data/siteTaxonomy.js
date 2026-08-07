@@ -16,6 +16,8 @@ export const galleryWorkIds = [
 ]
 
 export const productionWorkIds = [
+  'xtep-xdna22aw-visual-2022',
+  'zcool-hp-live-2021',
   'kashiwa',
   'kashiwa-band-visual-2025',
   'yujiayun-45ping-visual-2025',

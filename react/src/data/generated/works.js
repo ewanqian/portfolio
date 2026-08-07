@@ -279,8 +279,8 @@ export default [
       "art fair",
       "emotional container"
     ],
-    "coverImage": "featured-perceptual-environments.webp",
-    "image": "/assets/home/featured-perceptual-environments.webp",
+    "coverImage": "ether-fragment-westbund-2023.webp",
+    "image": "/portfolio/assets/ether-fragment/ether-fragment-westbund-2023.webp",
     "showOnHome": false,
     "relatedNodes": [],
     "relatedWritings": [],
@@ -290,6 +290,13 @@ export default [
       "art fair presentation"
     ],
     "analysisIds": [],
+    "media": [
+      {
+        "type": "image",
+        "src": "/portfolio/assets/ether-fragment/ether-fragment-westbund-2023.webp",
+        "caption": "《以太碎片》在 2023 西岸艺术与设计博览会的现场展映"
+      }
+    ],
     "sourceDocs": [
       "projects/ether-fragment-exhibit-2023.md"
     ],
@@ -984,6 +991,57 @@ export default [
     "priority": 6
   },
   {
+    "id": "xtep-xdna22aw-visual-2022",
+    "title": "XTEP XDNA / Shanghai Fashion Week",
+    "subtitle": "2022 年 9 月上海时装周发布的舞台影像与现场适配",
+    "years": "2022",
+    "type": "commissioned-stage-visual",
+    "summary": "为 XTEP XDNA 的上海时装周发布制作开场影像与部分单元视频，并完成屏幕内容交付和现场投影适配。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "stage visual",
+      "fashion week",
+      "screen content",
+      "production"
+    ],
+    "coverImage": "xtep-selected-01.webp",
+    "image": "/portfolio/assets/xtep-xdna/xtep-selected-01.webp",
+    "showOnHome": false,
+    "portfolioTier": "external",
+    "publicationStatus": "published",
+    "classification": "selected-collaboration",
+    "authorship": "personal-external-collaboration",
+    "featuredOn": [
+      "production",
+      "archive"
+    ],
+    "canonicalRoute": "/portfolio/#/projects/xtep-xdna",
+    "heroAssetId": "xtep-selected-01",
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "stage screens",
+      "floor projection",
+      "fashion presentation"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/xtep-xdna22aw-visual-2022.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/xtep-xdna22aw-visual-2022.md",
+    "links": [
+      {
+        "text": "项目页面",
+        "url": "/portfolio/#/projects/xtep-xdna"
+      },
+      {
+        "text": "项目文档",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/xtep-xdna22aw-visual-2022.md"
+      }
+    ],
+    "priority": 22
+  },
+  {
     "id": "yujiayun-45ping-visual-2025",
     "title": "余佳运「45㎡」演唱会 宁波站",
     "subtitle": "舞台视觉与工程交付",
@@ -1027,5 +1085,56 @@ export default [
       }
     ],
     "priority": 3
+  },
+  {
+    "id": "zcool-hp-live-2021",
+    "title": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+    "subtitle": "实时音画互动表演的视觉制作与现场呈现",
+    "years": "2021",
+    "type": "live-audiovisual-production",
+    "summary": "在站酷 2021 CUBE 设计大会 HP G8 工作站发布会上，钱誉文参与实时音画互动表演的视觉制作与现场呈现。",
+    "practiceLine": "collaborative-performance",
+    "tags": [
+      "live audiovisual",
+      "product launch",
+      "stage visual",
+      "production"
+    ],
+    "coverImage": "zcool-hp-g8-live-collage.webp",
+    "image": "/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+    "showOnHome": false,
+    "portfolioTier": "external",
+    "publicationStatus": "published",
+    "classification": "selected-collaboration",
+    "authorship": "personal-external-collaboration",
+    "featuredOn": [
+      "production",
+      "archive"
+    ],
+    "canonicalRoute": "/portfolio/#/projects/zcool-hp-g8",
+    "heroAssetId": "zcool-hp-g8-live-collage",
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "stage screen",
+      "realtime audiovisual performance",
+      "product launch"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/zcool-hp-live-2021.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/zcool-hp-live-2021.md",
+    "links": [
+      {
+        "text": "项目页面",
+        "url": "/portfolio/#/projects/zcool-hp-g8"
+      },
+      {
+        "text": "项目文档",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/zcool-hp-live-2021.md"
+      }
+    ],
+    "priority": 23
   }
 ];

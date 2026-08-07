@@ -7,13 +7,20 @@
   "summary": "《以太碎片》把扫描环境、点云采样与开放结构感带入西岸艺博会，成为数字情感容器线的重要公开呈现。",
   "practiceLine": "perceptual-environments",
   "tags": ["point cloud", "digital memory", "art fair", "emotional container"],
-  "coverImage": "featured-perceptual-environments.webp",
-  "image": "/assets/home/featured-perceptual-environments.webp",
+  "coverImage": "ether-fragment-westbund-2023.webp",
+  "image": "/portfolio/assets/ether-fragment/ether-fragment-westbund-2023.webp",
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": [],
   "displayModes": ["single-channel screening", "digital environment", "art fair presentation"],
   "analysisIds": [],
+  "media": [
+    {
+      "type": "image",
+      "src": "/portfolio/assets/ether-fragment/ether-fragment-westbund-2023.webp",
+      "caption": "《以太碎片》在 2023 西岸艺术与设计博览会的现场展映"
+    }
+  ],
   "sourceDocs": [
     "projects/ether-fragment-exhibit-2023.md"
   ],

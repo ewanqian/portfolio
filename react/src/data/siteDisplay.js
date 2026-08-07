@@ -22,7 +22,7 @@ const imageIdOverrides = {
   'lonely-av-live-2023': '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp',
   'mke-terminal': '/portfolio/assets/mke-terminal/pdf-p02-01.webp',
   'new-media-artist-simulator-2025': '/portfolio/assets/raw-library/project-new-media-artist-simulator-main.webp',
-  'ether-fragment-exhibit-2023': '/portfolio/assets/web-candidates/ether-fragment-sohu.webp',
+  'ether-fragment-exhibit-2023': '/portfolio/assets/ether-fragment/ether-fragment-westbund-2023.webp',
   'observation-and-symbiosis': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
   'observe-symbiosis-pingshan': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
   'observe-symbiosis-exhibit-2025': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
@@ -33,6 +33,8 @@ const imageIdOverrides = {
   'timer': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
   'timer-loading-access-2-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
   'timer-series-visual-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  'xtep-xdna22aw-visual-2022': '/portfolio/assets/xtep-xdna/xtep-selected-01.webp',
+  'zcool-hp-live-2021': '/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp',
   'vrplay-hackathon-visual-2025': '/portfolio/assets/raw-picks/vrplay-keynote-16x9.webp',
   'yujiayun-45ping-visual-2025': '/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp',
   'ufo-terminal': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp'
@@ -71,6 +73,14 @@ export function getDisplayImage(item) {
 }
 
 export function getWorkTargetUrl(work) {
+  if (work?.id === 'xtep-xdna22aw-visual-2022') {
+    return '/portfolio/#/projects/xtep-xdna'
+  }
+
+  if (work?.id === 'zcool-hp-live-2021') {
+    return '/portfolio/#/projects/zcool-hp-g8'
+  }
+
   if (work?.id === 'kashiwa' || work?.id === 'kashiwa-bo-live-shenzhen') {
     return '/portfolio/projects/kashiwa-titan'
   }

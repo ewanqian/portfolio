@@ -111,8 +111,18 @@ export default {
       "type": "work"
     },
     {
+      "id": "xtep-xdna22aw-visual-2022",
+      "label": "XTEP XDNA / Shanghai Fashion Week",
+      "type": "work"
+    },
+    {
       "id": "yujiayun-45ping-visual-2025",
       "label": "余佳运「45㎡」演唱会 宁波站",
+      "type": "work"
+    },
+    {
+      "id": "zcool-hp-live-2021",
+      "label": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
       "type": "work"
     },
     {
