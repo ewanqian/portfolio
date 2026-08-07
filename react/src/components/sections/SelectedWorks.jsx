@@ -59,12 +59,12 @@ function SelectedWorks() {
         <div className="section-heading-row">
           <div>
             <div className="eyebrow">{isZh ? '精选项目' : 'Selected Works'}</div>
-            <h2 className="section-title">{isZh ? '六个入口，不重复陈列' : 'Six entries, no repeated wall'}</h2>
+            <h2 className="section-title">{isZh ? '代表作品与系统' : 'Selected works and systems'}</h2>
           </div>
           <p className="section-intro">
             {isZh
-              ? '首页只保留能够快速解释实践结构的代表项目。完整履历、制作记录和历史节点进入 Works 与 Archive。'
-              : 'The homepage keeps only representative projects that explain the practice quickly. Full history and production records stay in Works and Archive.'}
+              ? '从长期艺术作品、现场音画、空间影像到实时系统，以下项目构成当前个人实践的主要入口。'
+              : 'From long-form artworks and live audiovisual work to spatial image and realtime systems, these projects form the main entry points into the current practice.'}
           </p>
         </div>
 
