@@ -16,6 +16,7 @@ import DigitalGarden from './pages/DigitalGarden.jsx'
 import MotionSystem from './motion/MotionSystem.jsx'
 import './styles/global.css'
 import './styles/home-system.css'
+import './styles/navigation-adjustments.css'
 
 function App() {
   const location = useLocation()
