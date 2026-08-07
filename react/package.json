@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node ../scripts/build-workshops.js",
+    "prebuild": "node ../scripts/build-content.js",
     "build": "vite build",
     "postbuild": "node scripts/copy-workspace-assets.mjs",
     "lint": "eslint .",
