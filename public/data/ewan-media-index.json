@@ -1,0 +1,168 @@
+{
+  "schema_version": "0.1.0",
+  "updated": "2026-08-10",
+  "policy": {
+    "purpose": "Map images/video/documentation to stable encyclopedia record IDs.",
+    "rule": "Do not hard-code media into biography text. Register media here first, then let pages select by record_id, role and public status."
+  },
+  "media": [
+    {
+      "id": "media-timer-main-clean",
+      "record_ids": ["series-timer"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/timer-main-clean.jpg",
+      "caption_zh": "TIMER / 控时者",
+      "usage": ["portfolio", "proposal", "timeline"],
+      "public": true
+    },
+    {
+      "id": "media-timer-detail-clean",
+      "record_ids": ["series-timer"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/timer-detail-clean.jpg",
+      "caption_zh": "TIMER / 控时者细节",
+      "usage": ["project-detail", "research"],
+      "public": true
+    },
+    {
+      "id": "media-timer-visionpro",
+      "record_ids": ["series-timer", "research-timer-to-drop-flow"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/timer-visionpro.jpg",
+      "caption_zh": "TIMER 的空间计算 / Vision Pro 迁移测试",
+      "usage": ["research", "current-practice"],
+      "public": true,
+      "note": "Use as a later migration/preview record, not as proof that the original 2024 work was initially designed for Vision Pro."
+    },
+    {
+      "id": "media-drop-flow-main-clean",
+      "record_ids": ["series-drop-flow", "research-timer-to-drop-flow"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/drop-flow-main-clean.jpg",
+      "caption_zh": "Drop Flow / 滴流",
+      "usage": ["portfolio", "proposal", "research"],
+      "public": true
+    },
+    {
+      "id": "media-drop-flow-detail-clean",
+      "record_ids": ["series-drop-flow"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/drop-flow-detail-clean.jpg",
+      "caption_zh": "Drop Flow / 滴流细节",
+      "usage": ["project-detail", "research"],
+      "public": true
+    },
+    {
+      "id": "media-drop-flow-ufo",
+      "record_ids": ["series-drop-flow", "performance-drop-flow-room719-2025"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/drop-flow-ufo.jpeg",
+      "caption_zh": "Drop Flow 在 UFO Terminal 现场",
+      "usage": ["live-av", "archive", "proposal"],
+      "public": true
+    },
+    {
+      "id": "media-drop-flow-hangzhou",
+      "record_ids": ["series-drop-flow", "event-drop-flow-hangzhou-biennale-2025"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/drop-flow-hangzhou.jpg",
+      "caption_zh": "Drop Flow 杭州公开呈现",
+      "usage": ["biennale", "portfolio", "timeline"],
+      "public": true
+    },
+    {
+      "id": "media-observation-main-clean",
+      "record_ids": ["work-observation-and-symbiosis"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/observation-symbiosis-clean.jpg",
+      "caption_zh": "观察与共生 / Observation and Symbiosis",
+      "usage": ["portfolio", "art-line"],
+      "public": true
+    },
+    {
+      "id": "media-observation-detail-clean",
+      "record_ids": ["work-observation-and-symbiosis"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/works/observation-symbiosis-detail-clean.jpg",
+      "caption_zh": "观察与共生细节",
+      "usage": ["project-detail", "art-line"],
+      "public": true
+    },
+    {
+      "id": "media-drop-flow-biennale-01",
+      "record_ids": ["event-drop-flow-hangzhou-biennale-2025", "series-drop-flow"],
+      "type": "image",
+      "repo": "ewanqian/VIRTURA-Collective",
+      "path": "prototype/assets/visionpro-content-system/drop-flow-biennale-version-01.png",
+      "caption_zh": "Drop Flow 双年展版本资料",
+      "usage": ["research", "archive"],
+      "public": true
+    },
+    {
+      "id": "media-kashiwa-titan-needs-ingest",
+      "record_ids": ["performance-titan-bolive-2025"],
+      "type": "image-set",
+      "status": "needs-ingest",
+      "source_note": "Multiple BO LIVE / TITAN performance images already exist in Ewan's document library and collaboration archive; ingest selected originals into a stable repository media path before public automation.",
+      "caption_zh": "Kashiwa Daisuke × Yuki Murata × Ewan Qian — TITAN / BO LIVE Shenzhen",
+      "public": true
+    },
+    {
+      "id": "media-digitalfutures-2026-needs-ingest",
+      "record_ids": ["event-digitalfutures-2026", "collaboration-ro-urban-resonance"],
+      "type": "video",
+      "status": "needs-ingest",
+      "source_note": "A short DigitalFUTURES 2026 Tongji live-performance clip is referenced in the current presentation archive. Ingest the original file and official event documentation.",
+      "public": true
+    },
+    {
+      "id": "media-ersha-scan-needs-ingest",
+      "record_ids": ["archive-zhengzhou-ersha"],
+      "type": "image-set",
+      "status": "needs-ingest",
+      "source_note": "Gaussian / scan materials for Zhengzhou China Second Grinding Wheel Factory exist in the personal archive. Add contact sheet, scene captures and scan date later.",
+      "public": true
+    },
+    {
+      "id": "media-ether-fragment-westbund-needs-index",
+      "record_ids": ["work-ether-fragment", "event-westbund-dreamvideo-2023"],
+      "type": "image-or-video",
+      "status": "needs-index",
+      "source_note": "Verified 2023 West Bund DREAMVIDEO documentation was added to the portfolio production/content sync. Resolve its final repository asset path and register it here.",
+      "public": true
+    },
+    {
+      "id": "media-vaoe-2023-needs-ingest",
+      "record_ids": ["exhibition-vaoe-2023"],
+      "type": "image-set",
+      "status": "needs-ingest",
+      "source_note": "Add Nanchang Road 312 installation views, invitation/poster and virtual-space captures.",
+      "public": true
+    },
+    {
+      "id": "media-ai-gala-needs-link",
+      "record_ids": ["production-china-ai-gala-2026"],
+      "type": "image-set",
+      "status": "needs-link",
+      "source_note": "VIRTURA public site already contains hero/project assets for China AI Gala; link the canonical team-repository or website asset path when the website repository is indexed here.",
+      "public": true
+    },
+    {
+      "id": "media-natgeo-crystal-needs-link",
+      "record_ids": ["production-natgeo-crystal-2026"],
+      "type": "image-set",
+      "status": "needs-link",
+      "source_note": "VIRTURA public site already contains National Geographic Crystal Landscape assets; add canonical project path and exact personal credit after verification.",
+      "public": true
+    }
+  ]
+}
