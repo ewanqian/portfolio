@@ -108,6 +108,15 @@ MIDI 是增强层，而不是参加门槛。即使没有任何控制器，参与
 
 正式活动前会提供 Preflight Guide，用于完成浏览器、声音、Starter Kit 与可选 MIDI 的基础测试。
 
+## 已有现场实践：Found VJ Deck
+
+这项工作坊并不是从抽象课程概念开始。2026 年 4 月 26 日的 **Found Video VJ Battle Royale 第八轮**中，我为了在“只能使用网页公开视频”的规则下完成现场 VJ，临时开发了 **Found VJ Deck**，并使用 APC mini mk2 把素材切换、节拍、状态推进、CLEAR / PANIC / RESYNC 等操作映射到独立物理控制器。
+
+这个实践实际验证了工作坊里最重要的几个判断：Mapping 比效果数量重要；状态需要能够被推进也能够被收回；控制界面必须形成身体可以记住的操作边界；系统失控时的恢复逻辑属于乐器设计的一部分。
+
+- [Found VJ Deck / VJ Battle 第八轮｜实践案例归档](./cases/202604-found-vj-battle-round8.md)
+- [现场实录｜Bilibili](https://www.bilibili.com/video/BV15voyB4Ey7/)
+
 ## 可扩展为 Workshop + After Party
 
 这项工作坊更适合被理解为一个持续过程，而不是一次三小时课程。
