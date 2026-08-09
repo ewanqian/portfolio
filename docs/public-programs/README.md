@@ -110,6 +110,13 @@ AI 可以帮助整理、实现和调试，但参与者仍然负责提出问题�
 
 MIDI Controller 是增强体验，不是门槛。所有核心功能都可以通过键盘和鼠标完成。现场如有条件，可设置约 2–4 个 MIDI Controller 体验位。
 
+### 已有相关实践
+
+这个方向也来自我自己的现场系统实践。2026 年 4 月的 **Found Video VJ Battle Royale** 第八轮中，我为了在“只能使用网页公开视频”的规则下完成现场 VJ，临时开发了 **Found VJ Deck**，并用 APC mini mk2 把素材切换、节拍、状态推进与安全操作映射到物理控制器。这个实践让我进一步确认：现场系统最重要的不是效果数量，而是 Mapping 是否清楚、动作能否被身体记住、失控时能否迅速恢复。
+
+- [Found VJ Deck / VJ Battle 第八轮｜实践案例归档](../../workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md)
+- [现场实录｜Bilibili](https://www.bilibili.com/video/BV15voyB4Ey7/)
+
 这项工作坊未来还可以发展为：
 
 **Build → 1–2 周继续修改 → Rehearse → After Party / Showcase**
