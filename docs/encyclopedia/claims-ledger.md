@@ -11,7 +11,7 @@
 - 团队项目与个人作品分开；系列项目按版本维护 credit。
 - VIRTURA Collective / SpacePort 是重要补充证据源。
 - 图片和视频通过 `ewan-media-index.json` 关联。
-- SIGGRAPH Asia 当前不进入百科公开记录，等待本年度结果后再处理。
+- 尚未形成公开结果或不需要当前公开的申请事项，不进入百科记录。
 
 ---
 
