@@ -30,6 +30,16 @@ const workTranslations = {
       subtitle: 'A public exhibition node within the digital-emotional-container line',
       summary: 'Ether Fragment brought scanned environments, point-cloud sampling, and unresolved structural feeling into West Bund Art & Design, preserving a key public trace of that line.'
     },
+    'xtep-xdna22aw-visual-2022': {
+      title: 'XTEP XDNA / Shanghai Fashion Week',
+      subtitle: 'Stage imagery and on-site adaptation for a September 2022 fashion presentation',
+      summary: "For XTEP XDNA's Shanghai Fashion Week presentation, Ewan created the opening film and selected visual segments, and supported screen-ready delivery and on-site projection adaptation."
+    },
+    'zcool-hp-live-2021': {
+      title: 'ZCOOL CUBE 2021 / HP G8 Workstation Launch',
+      subtitle: 'Visual production and live presentation for a realtime audiovisual performance',
+      summary: 'At the ZCOOL CUBE 2021 HP G8 Workstation launch, Ewan developed and presented visuals for a realtime audiovisual performance.'
+    },
     'kashiwa-band-visual-2025': {
       title: 'Kashiwa Daisuke / CAN Festival Zhoushan',
       subtitle: 'A second public performance node in the collaboration line',

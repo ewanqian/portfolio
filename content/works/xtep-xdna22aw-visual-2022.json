@@ -1,0 +1,37 @@
+{
+  "id": "xtep-xdna22aw-visual-2022",
+  "title": "XTEP XDNA / Shanghai Fashion Week",
+  "subtitle": "2022 年 9 月上海时装周发布的舞台影像与现场适配",
+  "years": "2022",
+  "type": "commissioned-stage-visual",
+  "summary": "为 XTEP XDNA 的上海时装周发布制作开场影像与部分单元视频，并完成屏幕内容交付和现场投影适配。",
+  "practiceLine": "collaborative-performance",
+  "tags": ["stage visual", "fashion week", "screen content", "production"],
+  "coverImage": "xtep-selected-01.webp",
+  "image": "/portfolio/assets/xtep-xdna/xtep-selected-01.webp",
+  "showOnHome": false,
+  "portfolioTier": "external",
+  "publicationStatus": "published",
+  "classification": "selected-collaboration",
+  "authorship": "personal-external-collaboration",
+  "featuredOn": ["production", "archive"],
+  "canonicalRoute": "/portfolio/#/projects/xtep-xdna",
+  "heroAssetId": "xtep-selected-01",
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["stage screens", "floor projection", "fashion presentation"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/xtep-xdna22aw-visual-2022.md"],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/xtep-xdna22aw-visual-2022.md",
+  "links": [
+    {
+      "text": "项目页面",
+      "url": "/portfolio/#/projects/xtep-xdna"
+    },
+    {
+      "text": "项目文档",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/xtep-xdna22aw-visual-2022.md"
+    }
+  ],
+  "priority": 22
+}
