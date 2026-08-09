@@ -1,11 +1,10 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.1.1",
   "updated": "2026-08-10",
   "canonical_person_id": "person-ewan-qian",
   "status_policy": {
     "public_default": ["verified-public", "ongoing", "presented"],
-    "restricted": ["needs-source", "proposal", "deprecated"],
-    "note": "SIGGRAPH Asia is intentionally excluded until the current-year result is confirmed."
+    "restricted": ["needs-source", "proposal", "deprecated"]
   },
   "person": {
     "id": "person-ewan-qian",
@@ -44,11 +43,7 @@
   ],
   "records": [
     {
-      "id": "series-timer",
-      "type": "series",
-      "title_zh": "TIMER / 控时者",
-      "period": "2024-",
-      "status": "ongoing",
+      "id": "series-timer", "type": "series", "title_zh": "TIMER / 控时者", "period": "2024-", "status": "ongoing",
       "tags": ["art", "live-av", "spatial-image", "realtime-system"],
       "role_zh": "视觉设计 / 空间影像 / 视觉系统与现场呈现",
       "people": ["person-ewan-qian", "person-xu-hao", "person-xu-sihui"],
@@ -56,41 +51,11 @@
       "related_record_ids": ["event-timer-hangzhou-2024", "award-chinagraph-2024", "event-timer-permission-2-2024"],
       "sources": ["ewanqian/VIRTURA-Collective:works/timer/", "ewanqian/VIRTURA-SpacePort:organization/works/timer-series/"]
     },
+    {"id": "event-timer-hangzhou-2024", "type": "performance", "title_zh": "杭州国际电子音乐节《TIMER / 控时者》", "date": "2024-09-26", "status": "presented", "venue_zh": "浙江音乐学院", "people": ["person-ewan-qian", "person-xu-hao"], "related_record_ids": ["series-timer"]},
+    {"id": "award-chinagraph-2024", "type": "award", "title_zh": "ChinaGraph 2024 电子剧场优秀音乐作品二等奖", "year": 2024, "status": "verified-public", "people": ["person-ewan-qian", "person-xu-hao", "person-xu-sihui"], "related_record_ids": ["series-timer"], "sources": ["ewanqian/VIRTURA-SpacePort:organization/works/timer-series/timer-chinagraph-2024.md", "ewanqian/VIRTURA-Collective:works/timer/awards-and-presentations.md"]},
+    {"id": "event-timer-permission-2-2024", "type": "exhibition", "title_zh": "UFO Terminal「加载…权限 2」《TIMER / 控时者》", "year": 2024, "status": "presented", "venue_zh": "UFO Terminal 未知终端 / 上海油罐艺术公园", "related_record_ids": ["series-timer"]},
     {
-      "id": "event-timer-hangzhou-2024",
-      "type": "performance",
-      "title_zh": "杭州国际电子音乐节《TIMER / 控时者》",
-      "date": "2024-09-26",
-      "status": "presented",
-      "venue_zh": "浙江音乐学院",
-      "people": ["person-ewan-qian", "person-xu-hao"],
-      "related_record_ids": ["series-timer"]
-    },
-    {
-      "id": "award-chinagraph-2024",
-      "type": "award",
-      "title_zh": "ChinaGraph 2024 电子剧场优秀音乐作品二等奖",
-      "year": 2024,
-      "status": "verified-public",
-      "people": ["person-ewan-qian", "person-xu-hao", "person-xu-sihui"],
-      "related_record_ids": ["series-timer"],
-      "sources": ["ewanqian/VIRTURA-SpacePort:organization/works/timer-series/timer-chinagraph-2024.md", "ewanqian/VIRTURA-Collective:works/timer/awards-and-presentations.md"]
-    },
-    {
-      "id": "event-timer-permission-2-2024",
-      "type": "exhibition",
-      "title_zh": "UFO Terminal「加载…权限 2」《TIMER / 控时者》",
-      "year": 2024,
-      "status": "presented",
-      "venue_zh": "UFO Terminal 未知终端 / 上海油罐艺术公园",
-      "related_record_ids": ["series-timer"]
-    },
-    {
-      "id": "series-drop-flow",
-      "type": "series",
-      "title_zh": "滴流 / Drop Flow",
-      "period": "2025-",
-      "status": "ongoing",
+      "id": "series-drop-flow", "type": "series", "title_zh": "滴流 / Drop Flow", "period": "2025-", "status": "ongoing",
       "tags": ["art", "live-av", "spatial-image", "digital-nature", "realtime-system"],
       "role_zh": "视觉开发 / 空间组织 / 系统实验；credit 按版本维护",
       "people": ["person-ewan-qian", "person-xu-hao", "person-xu-sihui"],
@@ -98,229 +63,29 @@
       "related_record_ids": ["performance-drop-flow-room719-2025", "award-drop-flow-composition-2025", "event-drop-flow-biennale-2025", "award-drop-flow-luminous-2025"],
       "sources": ["ewanqian/VIRTURA-Collective:works/drop-flow/"]
     },
-    {
-      "id": "performance-drop-flow-room719-2025",
-      "type": "performance",
-      "title_zh": "UFO Terminal × PRE / Rooooooom719 音画现场",
-      "year": 2025,
-      "status": "presented",
-      "related_record_ids": ["series-drop-flow"]
-    },
-    {
-      "id": "award-drop-flow-composition-2025",
-      "type": "award",
-      "title_zh": "杭州国际电子音乐作曲比赛 C 组一等奖",
-      "year": 2025,
-      "status": "verified-public",
-      "related_record_ids": ["series-drop-flow"],
-      "sources": ["ewanqian/VIRTURA-Collective:works/drop-flow/README.md"]
-    },
-    {
-      "id": "event-drop-flow-biennale-2025",
-      "type": "exhibition",
-      "title_zh": "首届中国（杭州）艺术与科技国际双年展《滴流 / Drop Flow》",
-      "year": 2025,
-      "status": "presented",
-      "tags": ["art", "biennale"],
-      "related_record_ids": ["series-drop-flow"]
-    },
-    {
-      "id": "award-drop-flow-luminous-2025",
-      "type": "award",
-      "title_zh": "2025「流光绘影」光影科技艺术节优秀作品奖",
-      "year": 2025,
-      "status": "verified-public",
-      "related_record_ids": ["series-drop-flow"]
-    },
-    {
-      "id": "research-timer-to-drop-flow",
-      "type": "research_line",
-      "title_zh": "TIMER → Drop Flow：从时间材料到空间生成",
-      "status": "ongoing",
-      "tags": ["research", "practice-evolution"],
-      "related_record_ids": ["series-timer", "series-drop-flow"],
-      "summary_zh": "TIMER 把时间和声音结构变成可观看的材料；Drop Flow 进一步把图像变成可进入的空间。连续性来自声音、图像、时间、场地与观看条件逐渐进入同一生成系统。"
-    },
-    {
-      "id": "performance-titan-bolive-2025",
-      "type": "performance",
-      "title_zh": "机械光合：TITAN 的全息声林",
-      "year": 2025,
-      "status": "presented",
-      "venue_zh": "BO LIVE Shenzhen",
-      "tags": ["art", "live-av", "external-collaboration"],
-      "role_zh": "视觉合作 / 空间影像组织",
-      "people": ["person-ewan-qian", "person-kashiwa-daisuke", "person-yuki-murata"]
-    },
-    {
-      "id": "work-ether-fragment",
-      "type": "work",
-      "title_zh": "以太碎片",
-      "title_en": "Ether Fragment",
-      "year": 2023,
-      "status": "presented",
-      "tags": ["art", "moving-image"],
-      "people": ["person-ewan-qian"],
-      "related_record_ids": ["event-westbund-dreamvideo-2023"]
-    },
-    {
-      "id": "event-westbund-dreamvideo-2023",
-      "type": "exhibition",
-      "title_zh": "上海西岸艺术与设计博览会 DREAMVIDEO 单元",
-      "date": "2023-11",
-      "status": "presented",
-      "related_record_ids": ["work-ether-fragment"]
-    },
-    {
-      "id": "exhibition-vaoe-2023",
-      "type": "exhibition",
-      "title_zh": "虚拟航线 VAOE 2023",
-      "year": 2023,
-      "status": "presented",
-      "venue_zh": "上海南昌路 312 号",
-      "tags": ["art", "solo-exhibition", "virtual-space"],
-      "people": ["person-ewan-qian"]
-    },
-    {
-      "id": "exhibition-ai-plaza-prism-2022",
-      "type": "exhibition",
-      "title_zh": "元语者·棱镜现实",
-      "year": 2022,
-      "status": "presented",
-      "venue_zh": "上海西岸凤巢 AI PLAZA",
-      "tags": ["art", "digital-art"],
-      "people": ["person-ewan-qian"],
-      "boundary": "participation verified; duo-exhibition framing still needs source"
-    },
-    {
-      "id": "work-observation-and-symbiosis",
-      "type": "work",
-      "title_zh": "观察与共生",
-      "title_en": "Observation and Symbiosis",
-      "period": "2025-",
-      "status": "ongoing",
-      "tags": ["art", "digital-nature", "point-cloud", "public-art"],
-      "people": ["person-ewan-qian", "person-shen-xuan"],
-      "related_record_ids": ["event-observation-sanlitun", "event-observation-shenzhen-2025"],
-      "sources": ["ewanqian/VIRTURA-Collective:works/observation-and-symbiosis/"]
-    },
-    {
-      "id": "event-observation-sanlitun",
-      "type": "exhibition",
-      "title_zh": "北京三里屯持续数字公共艺术展《观察与共生》",
-      "status": "presented",
-      "venue_zh": "北京三里屯一号场",
-      "related_record_ids": ["work-observation-and-symbiosis"]
-    },
-    {
-      "id": "event-observation-shenzhen-2025",
-      "type": "exhibition",
-      "title_zh": "深圳坪山数字群岛 / 数字水族馆相关群展《观察与共生》",
-      "year": 2025,
-      "status": "presented",
-      "related_record_ids": ["work-observation-and-symbiosis"]
-    },
-    {
-      "id": "event-hangzhou-center-babel-bottle-2025",
-      "type": "exhibition",
-      "title_zh": "杭州中心美术馆「巴别瓶」— 新媒体艺术家模拟器",
-      "year": 2025,
-      "status": "presented",
-      "tags": ["art", "ai", "public-program"],
-      "people": ["person-ewan-qian"],
-      "related_record_ids": ["workshop-gamified-ai-life-2025"]
-    },
-    {
-      "id": "workshop-gamified-ai-life-2025",
-      "type": "workshop",
-      "title_zh": "游戏化 AI 生活解构师",
-      "date": "2025-07-12",
-      "status": "presented",
-      "venue_zh": "杭州中心美术馆",
-      "people": ["person-ewan-qian"],
-      "next_iteration_id": "workshop-gamified-life-engineer"
-    },
-    {
-      "id": "workshop-gamified-life-engineer",
-      "type": "workshop",
-      "title_zh": "游戏化生活工程师",
-      "title_en": "Gamified Life Engineer",
-      "period": "2026-",
-      "status": "proposal",
-      "people": ["person-ewan-qian"],
-      "repo_path": "workshops/gamified-life-engineer/README.md"
-    },
-    {
-      "id": "workshop-personal-av-instrument",
-      "type": "workshop",
-      "title_zh": "音画同源乐器",
-      "title_en": "Personal A/V Instrument",
-      "period": "2026-",
-      "status": "proposal",
-      "people": ["person-ewan-qian"],
-      "repo_path": "workshops/personal-av-instrument/README.md"
-    },
-    {
-      "id": "performance-found-vj-battle-2026",
-      "type": "performance",
-      "title_zh": "Found Video VJ Battle Royale — Round 8 / Found VJ Deck",
-      "date": "2026-04-26",
-      "status": "presented",
-      "venue_zh": "UFO Terminal 未知终端 / 上海油罐艺术公园 1 号罐",
-      "tags": ["live-av", "web-tool", "midi", "mapping"],
-      "people": ["person-ewan-qian"],
-      "repo_path": "workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md"
-    },
-    {
-      "id": "collaboration-ro-urban-resonance",
-      "type": "collaboration",
-      "title_zh": "Ewan Qian × Georgy Robakidze（RÖ）持续音画研究线",
-      "title_en": "Urban Resonance",
-      "period": "2026-",
-      "status": "ongoing",
-      "tags": ["live-av", "sound-art", "urban-scanning", "research"],
-      "people": ["person-ewan-qian", "person-georgy-robakidze"]
-    },
-    {
-      "id": "event-digitalfutures-2026",
-      "type": "performance",
-      "title_zh": "DigitalFUTURES 2026 闭幕环节音画演出视觉",
-      "year": 2026,
-      "status": "needs-source",
-      "tags": ["live-av", "digitalfutures", "closing-performance"],
-      "people": ["person-ewan-qian", "person-georgy-robakidze"],
-      "note": "Ewan confirms the collaboration; official programme/date/full credit still needs ingestion."
-    },
-    {
-      "id": "archive-zhengzhou-ersha",
-      "type": "archive_project",
-      "title_zh": "郑州中国第二砂轮厂扫描 / Gaussian Archive",
-      "period": "2026-",
-      "status": "needs-source",
-      "tags": ["art", "scanning", "gaussian", "industrial-heritage", "archive"],
-      "people": ["person-ewan-qian"],
-      "boundary": "personal scanning/archive practice; do not claim official commission without evidence"
-    },
-    {
-      "id": "production-china-ai-gala-2026",
-      "type": "production_project",
-      "title_zh": "中国·AI盛典开场秀影像",
-      "year": 2026,
-      "status": "verified-public",
-      "tags": ["production", "stage-visual", "spatial-media"],
-      "organization_ids": ["org-virtura"],
-      "boundary": "team project; verify Ewan's exact personal credit before placing in personal selected works"
-    },
-    {
-      "id": "production-natgeo-crystal-2026",
-      "type": "production_project",
-      "title_zh": "中国国家地理·矿晶空间影像",
-      "year": 2026,
-      "status": "verified-public",
-      "tags": ["production", "spatial-media", "hotel", "commercial-space"],
-      "organization_ids": ["org-virtura"],
-      "boundary": "team project; verify exact venue name and Ewan personal credit"
-    }
+    {"id": "performance-drop-flow-room719-2025", "type": "performance", "title_zh": "UFO Terminal × PRE / Rooooooom719 音画现场", "year": 2025, "status": "presented", "related_record_ids": ["series-drop-flow"]},
+    {"id": "award-drop-flow-composition-2025", "type": "award", "title_zh": "杭州国际电子音乐作曲比赛 C 组一等奖", "year": 2025, "status": "verified-public", "related_record_ids": ["series-drop-flow"], "sources": ["ewanqian/VIRTURA-Collective:works/drop-flow/README.md"]},
+    {"id": "event-drop-flow-biennale-2025", "type": "exhibition", "title_zh": "首届中国（杭州）艺术与科技国际双年展《滴流 / Drop Flow》", "year": 2025, "status": "presented", "tags": ["art", "biennale"], "related_record_ids": ["series-drop-flow"]},
+    {"id": "award-drop-flow-luminous-2025", "type": "award", "title_zh": "2025「流光绘影」光影科技艺术节优秀作品奖", "year": 2025, "status": "verified-public", "related_record_ids": ["series-drop-flow"]},
+    {"id": "research-timer-to-drop-flow", "type": "research_line", "title_zh": "TIMER → Drop Flow：从时间材料到空间生成", "status": "ongoing", "tags": ["research", "practice-evolution"], "related_record_ids": ["series-timer", "series-drop-flow"], "summary_zh": "TIMER 把时间和声音结构变成可观看的材料；Drop Flow 进一步把图像变成可进入的空间。连续性来自声音、图像、时间、场地与观看条件逐渐进入同一生成系统。"},
+    {"id": "performance-titan-bolive-2025", "type": "performance", "title_zh": "机械光合：TITAN 的全息声林", "year": 2025, "status": "presented", "venue_zh": "BO LIVE Shenzhen", "tags": ["art", "live-av", "external-collaboration"], "role_zh": "视觉合作 / 空间影像组织", "people": ["person-ewan-qian", "person-kashiwa-daisuke", "person-yuki-murata"]},
+    {"id": "work-ether-fragment", "type": "work", "title_zh": "以太碎片", "title_en": "Ether Fragment", "year": 2023, "status": "presented", "tags": ["art", "moving-image"], "people": ["person-ewan-qian"], "related_record_ids": ["event-westbund-dreamvideo-2023"]},
+    {"id": "event-westbund-dreamvideo-2023", "type": "exhibition", "title_zh": "上海西岸艺术与设计博览会 DREAMVIDEO 单元", "date": "2023-11", "status": "presented", "related_record_ids": ["work-ether-fragment"]},
+    {"id": "exhibition-vaoe-2023", "type": "exhibition", "title_zh": "虚拟航线 VAOE 2023", "year": 2023, "status": "presented", "venue_zh": "上海南昌路 312 号", "tags": ["art", "solo-exhibition", "virtual-space"], "people": ["person-ewan-qian"]},
+    {"id": "exhibition-ai-plaza-prism-2022", "type": "exhibition", "title_zh": "元语者·棱镜现实", "year": 2022, "status": "presented", "venue_zh": "上海西岸凤巢 AI PLAZA", "tags": ["art", "digital-art"], "people": ["person-ewan-qian"], "boundary": "participation verified; duo-exhibition framing still needs source"},
+    {"id": "work-observation-and-symbiosis", "type": "work", "title_zh": "观察与共生", "title_en": "Observation and Symbiosis", "period": "2025-", "status": "ongoing", "tags": ["art", "digital-nature", "point-cloud", "public-art"], "people": ["person-ewan-qian", "person-shen-xuan"], "related_record_ids": ["event-observation-sanlitun", "event-observation-shenzhen-2025"], "sources": ["ewanqian/VIRTURA-Collective:works/observation-and-symbiosis/"]},
+    {"id": "event-observation-sanlitun", "type": "exhibition", "title_zh": "北京三里屯持续数字公共艺术展《观察与共生》", "status": "presented", "venue_zh": "北京三里屯一号场", "related_record_ids": ["work-observation-and-symbiosis"]},
+    {"id": "event-observation-shenzhen-2025", "type": "exhibition", "title_zh": "深圳坪山数字群岛 / 数字水族馆相关群展《观察与共生》", "year": 2025, "status": "presented", "related_record_ids": ["work-observation-and-symbiosis"]},
+    {"id": "event-hangzhou-center-babel-bottle-2025", "type": "exhibition", "title_zh": "杭州中心美术馆「巴别瓶」— 新媒体艺术家模拟器", "year": 2025, "status": "presented", "tags": ["art", "ai", "public-program"], "people": ["person-ewan-qian"], "related_record_ids": ["workshop-gamified-ai-life-2025"]},
+    {"id": "workshop-gamified-ai-life-2025", "type": "workshop", "title_zh": "游戏化 AI 生活解构师", "date": "2025-07-12", "status": "presented", "venue_zh": "杭州中心美术馆", "people": ["person-ewan-qian"], "next_iteration_id": "workshop-gamified-life-engineer"},
+    {"id": "workshop-gamified-life-engineer", "type": "workshop", "title_zh": "游戏化生活工程师", "title_en": "Gamified Life Engineer", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/gamified-life-engineer/README.md"},
+    {"id": "workshop-personal-av-instrument", "type": "workshop", "title_zh": "音画同源乐器", "title_en": "Personal A/V Instrument", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/personal-av-instrument/README.md"},
+    {"id": "performance-found-vj-battle-2026", "type": "performance", "title_zh": "Found Video VJ Battle Royale — Round 8 / Found VJ Deck", "date": "2026-04-26", "status": "presented", "venue_zh": "UFO Terminal 未知终端 / 上海油罐艺术公园 1 号罐", "tags": ["live-av", "web-tool", "midi", "mapping"], "people": ["person-ewan-qian"], "repo_path": "workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md"},
+    {"id": "collaboration-ro-urban-resonance", "type": "collaboration", "title_zh": "Ewan Qian × Georgy Robakidze（RÖ）持续音画研究线", "title_en": "Urban Resonance", "period": "2026-", "status": "ongoing", "tags": ["live-av", "sound-art", "urban-scanning", "research"], "people": ["person-ewan-qian", "person-georgy-robakidze"]},
+    {"id": "event-digitalfutures-2026", "type": "performance", "title_zh": "DigitalFUTURES 2026 闭幕环节音画演出视觉", "year": 2026, "status": "needs-source", "tags": ["live-av", "digitalfutures", "closing-performance"], "people": ["person-ewan-qian", "person-georgy-robakidze"], "note": "Ewan confirms the collaboration; official programme/date/full credit still needs ingestion."},
+    {"id": "archive-zhengzhou-ersha", "type": "archive_project", "title_zh": "郑州中国第二砂轮厂扫描 / Gaussian Archive", "period": "2026-", "status": "needs-source", "tags": ["art", "scanning", "gaussian", "industrial-heritage", "archive"], "people": ["person-ewan-qian"], "boundary": "personal scanning/archive practice; do not claim official commission without evidence"},
+    {"id": "production-china-ai-gala-2026", "type": "production_project", "title_zh": "中国·AI盛典开场秀影像", "year": 2026, "status": "verified-public", "tags": ["production", "stage-visual", "spatial-media"], "organization_ids": ["org-virtura"], "boundary": "team project; verify Ewan's exact personal credit before placing in personal selected works"},
+    {"id": "production-natgeo-crystal-2026", "type": "production_project", "title_zh": "中国国家地理·矿晶空间影像", "year": 2026, "status": "verified-public", "tags": ["production", "spatial-media", "hotel", "commercial-space"], "organization_ids": ["org-virtura"], "boundary": "team project; verify exact venue name and Ewan personal credit"}
   ],
   "pending_terms": [
     {"term": "绿色苔原", "status": "needs-source", "need": ["year", "venue", "work format", "role", "media"]},
