@@ -13,7 +13,7 @@
 - [个人百科](./README.md)
 - [事实与证据账本](./claims-ledger.md)
 - [长期工作坊总览](../public-programs/README.md)
-- [MANA Ground Zeroes｜2026-08-29](../../workshops/mana-ground-zeroes-20260829/README.md)
+- [游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
 
 ### Agent / Codex
 
@@ -173,13 +173,15 @@
 
 [长期工作坊项目内容介绍](../public-programs/README.md)
 
-## 当前第一期：MANA Ground Zeroes｜2026-08-29
+## 当前第一期：游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29
 
-**定位：** 《游戏化 AI 新媒体艺术工程师》×《音画同源乐器》的速通先导版。
+**公开定位：** AI 协作、工程化创作与音画原型的基础入口；3 小时工作坊 + 当日晚间 After Party / Micro Showcase。
 
-- [公开流程](../../workshops/mana-ground-zeroes-20260829/README.md)
-- [Issue #18｜执行清单](https://github.com/ewanqian/portfolio/issues/18)
-- 硬目标：三小时后形成可运行 A/V 原型，并为当日晚间 After Party / Micro Showcase 准备 30–60 秒 Micro Set
+- [公开课程页](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [Issue #18｜内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
+- 目标：三小时后形成可运行、可操作的 A/V 原型，并准备 30–60 秒 Micro Set
+
+旧研发代号 `Ground Zeroes` 仅保留为兼容入口，不再作为公开课程名称。
 
 ## 游戏化 AI 新媒体艺术工程师
 
@@ -201,14 +203,14 @@
 ```text
 2025 杭州：游戏化 AI 生活解构师
                ↓
-2026：游戏化 AI 新媒体艺术工程师
+2026 MANA：游戏化 AI 新媒体艺术工程师 101
+               ↓
+长期：游戏化 AI 新媒体艺术工程师
                ↓
          音画同源乐器
                ↓
 Build → Rehearse → After Party / Performance
 ```
-
-MANA Ground Zeroes 是这条路线的第一期压缩预览，不替代后面的完整版本。
 
 ---
 
@@ -234,6 +236,12 @@ MANA Ground Zeroes 是这条路线的第一期压缩预览，不替代后面的�
 `docs/public-programs/README.md`
 
 旧路径只保留跳转说明，不再维护第二份正文。
+
+`workshops/mana-ground-zeroes-20260829/README.md`
+
+这是 MANA 8.29 的内部研发代号路径；现在只作为兼容跳转，公开正文已经迁移到：
+
+`workshops/gamified-ai-new-media-art-engineer-101/README.md`
 
 ## Legacy / 历史文档
 
