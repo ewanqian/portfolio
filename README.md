@@ -78,8 +78,8 @@
 
 ### 当前第一期
 
-- [MANA Ground Zeroes｜2026-08-29｜三小时速通 + After Party](./workshops/mana-ground-zeroes-20260829/README.md)
-- [Issue #18｜MANA 8.29 执行清单](https://github.com/ewanqian/portfolio/issues/18)
+- [游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [Issue #18｜MANA 8.29 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
 ### 长期系列
 
