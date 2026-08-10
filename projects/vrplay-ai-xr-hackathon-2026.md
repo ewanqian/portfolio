@@ -1,36 +1,58 @@
 # VRplay AI / XR Hackathon 2026
 
-> Ongoing visual identity, motion system, and digital campaign study
+> Work in Progress / Visual identity, motion system, and spatial campaign concept
 
-## Context
+## Project Status
 
-This ongoing collaboration with VRplay develops the communication layer for a planned AI / XR hackathon: how an event can be encountered as a visual system, a moving identity, and a spatial digital entry rather than only a collection of posters and forms.
+This project is currently in the early development stage. The focus is to establish the visual language and communication system for VRplay's AI / XR Hackathon, exploring how an XR event can be presented through identity, motion, narrative, and spatial online experiences.
 
-The project extends an earlier collaboration on the 2025 WORLD REMIX XR Hackathon while shifting the emphasis toward narrative, spatial perception, and web-native presentation.
+## Current Focus
 
-## Current public scope
+### 01 — Visual System
 
-- Visual identity and key visual direction
-- Motion identity and short-form campaign assets
-- PPT / keynote presentation system
-- Event information hierarchy for public-facing pages
-- A browser-based special page that can operate as a dynamic poster and narrative entry
+- Brand visual direction
+- Key visual / campaign image
+- Motion identity
+- PPT / keynote templates
+- Promotional assets and presentation materials
 
-## Spatial campaign concept
+### 02 — Narrative Visual Content
 
-The web direction treats the campaign page as a small world rather than a conventional event microsite. Possible elements include a lightweight 3D or Gaussian-splat scene, an archive viewer, maps, roles, signals, documents, and other objects that let visitors discover the event through navigation and fragments of information.
+The project explores a world-building approach based on a **greenhouse universe / living archive** concept. Instead of treating the hackathon as a simple event page, the visual system builds an environment where information, tools, creators, and digital memories can exist as connected elements.
 
-One visual direction starts from the idea of a **greenhouse universe / living archive**: a synthetic environment where tools, teams, prompts, references, and event information appear as parts of the same growing system.
+### 03 — Spatial Web Experiment
 
-The ARG-like layer is intended as a communication device, not a separate game. Its purpose is to give the hackathon a sense of arrival, scale, and a world already in motion before the event begins.
+A possible extension is a lightweight interactive web experience:
 
-## Design position
+- Dynamic campaign landing page
+- 3D welcome space / digital lobby
+- Archive-style navigation
+- Maps, signals, documents, and project nodes
+- Sponsor showcase spaces
+- Experimental WebGL / Gaussian Splatting presentation
 
-The project focuses on two qualities central to the practice:
+This direction references virtual exhibitions and online worlds, while remaining a communication experience rather than a complete platform or metaverse product.
 
-1. **Content as narrative structure** — information is organized through sequences, objects, clues, and transitions rather than treated as flat promotional copy.
-2. **Spatial perception as interface** — the web page can use depth, movement, scanning, realtime graphics, and navigable scenes to make the event feel spatial before entering an XR device.
+## Current Scope Boundary
 
-## Related project
+The current stage focuses on:
+
+- Visual identity
+- Motion design
+- Presentation system
+- Public information organization
+- Spatial campaign prototype
+
+Future possibilities such as participant workspaces, submission systems, long-term archives, or full event infrastructure will require separate technical planning and resources.
+
+## Design Position
+
+The project investigates two ideas:
+
+**Content as narrative structure** — information can be experienced through sequences, objects, environments, and discovery rather than only through text.
+
+**Spatial perception as interface** — web experiences can borrow methods from games and XR environments to create a sense of presence before entering immersive devices.
+
+## Related Project
 
 - [VRplay WORLD REMIX XR Hackathon 2025](./vrplay-hackathon-visual-2025.md)
