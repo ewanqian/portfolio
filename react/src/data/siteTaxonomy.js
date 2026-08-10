@@ -1,3 +1,7 @@
+export const currentWorkIds = [
+  'vrplay-ai-xr-hackathon-2026'
+]
+
 export const homeGalleryWorkIds = [
   'timer',
   'drop-flow',
