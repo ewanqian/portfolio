@@ -1,10 +1,10 @@
-# VRplay AI / XR Hackathon 2026
+# VRplay XR Hackathon 2026
 
 > Work in Progress / Visual identity, motion system, spatial campaign concept, and online exhibition prototype
 
 ## Project Status
 
-This project is currently in the early development stage. The focus is to establish the visual language, communication system, and digital experience concept for VRplay's AI / XR Hackathon.
+This project is currently in the early development stage. The focus is to establish the visual language, communication system, and digital experience concept for VRplay's XR Hackathon.
 
 The first phase focuses on creating a recognizable event identity through:
 
@@ -20,7 +20,7 @@ The project explores how an XR event can move beyond conventional posters and in
 
 ### 01 — Visual System
 
-Development of a complete communication toolkit:
+Development of a communication toolkit:
 
 - Brand visual direction
 - Key visual / campaign image
@@ -33,13 +33,7 @@ Development of a complete communication toolkit:
 
 The project develops a world-building direction based on a **greenhouse universe / living archive** concept.
 
-The greenhouse is imagined as a growing digital ecosystem where:
-
-- creators become nodes of exploration
-- tools and technologies become living elements
-- projects become archived organisms
-- information becomes spatial objects
-- event memories continue to evolve after the hackathon
+The greenhouse is imagined as a growing digital ecosystem where creators, tools, projects, and event memories become connected elements inside a shared environment.
 
 Rather than presenting an event schedule as flat information, the visual system builds an environment with atmosphere, history, and discovery.
 
@@ -47,31 +41,24 @@ Rather than presenting an event schedule as flat information, the visual system 
 
 ### Greenhouse Universe / Living Archive
 
-Visual exploration:
-
 - futuristic botanical structures
 - synthetic ecosystems
 - transparent glass architecture
 - digital organisms and information plants
 - floating data archives
 - spatial diagrams
-- artificial intelligence as a growing environment
+- evolving digital environments
 
 ### Digital Exploration / ARG Narrative
-
-Visual exploration:
 
 - hidden signals
 - maps and navigation systems
 - fragments of documents
 - digital artifacts
 - character roles
-- mission-like information discovery
-- unfinished worlds waiting to be explored
+- discovery-based information structures
 
 ### Spatial Computing Aesthetic
-
-Visual exploration:
 
 - Vision Pro inspired interfaces
 - translucent materials
@@ -85,19 +72,15 @@ Visual exploration:
 
 A possible extension is a lightweight interactive web experience, functioning as an online exhibition and campaign entrance rather than a full platform.
 
-Possible technical routes:
-
-### Web-based 3D Experience
-
-Potential tools:
+Potential technical routes:
 
 - Spline for rapid interactive scene building
 - Three.js / React Three Fiber for customized WebGL experiences
 - GSAP for motion and interaction design
 - Gaussian Splatting viewers for scanned or volumetric environments
-- WebXR as a future extension
+- WebXR as future extension
 
-Possible experience structure:
+Possible structure:
 
 ```
 Landing Page
@@ -113,29 +96,22 @@ Project Archive / Online Exhibition
 
 ## Online Exhibition / Sponsor Space Concept
 
-The online space can become an additional value proposition for partners and sponsors.
+The online space can provide additional value for partners and sponsors.
 
-Instead of only displaying logos on a webpage, sponsors can have lightweight digital exhibition spaces:
-
-### Sponsor Package Concept
-
-Each partner can provide:
+Sponsors can provide:
 
 - Brand logo and visual assets
 - Product images or 3D models
 - Brand introduction materials
 - Videos and interactive content
-- Technical resources or developer support information
+- Technical resources
 
-The project team can help transform these materials into:
+These materials can be transformed into:
 
 - virtual exhibition booths
 - interactive showcases
 - spatial presentations
-- AI-assisted visual concepts
 - lightweight 3D scenes
-
-This creates a stronger connection between sponsorship, technology demonstration, and audience experience.
 
 ## Technical Roadmap
 
@@ -168,7 +144,7 @@ Future possibilities:
 - Online exhibition database
 - XR community platform
 
-These require separate technical planning, development resources, and operational support.
+These require separate technical planning and resources.
 
 ## Current Scope Boundary
 
