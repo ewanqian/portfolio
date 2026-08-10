@@ -3,6 +3,16 @@
 > 作用：为 Portfolio、CV、申请材料、项目页、公开简介、工作坊与长期档案提供统一事实层。  
 > 原则：**Bio 是输出，不是事实源。**
 
+## 先从哪里读
+
+- [Knowledge Map / 知识地图](./KNOWLEDGE-MAP.md)：个人仓库、Collective、SpacePort、Newsroom 之间的统一导航
+- [Claims Ledger / 事实与证据账本](./claims-ledger.md)：当前可用事实、待补事实与边界
+- [Agent API](./api/README.md)：Codex / Agent 的读取规则
+- [Encyclopedia JSON](../../public/data/ewan-encyclopedia.json)：结构化人物、项目、事件、奖项与合作记录
+- [Media Index](../../public/data/ewan-media-index.json)：图片 / 视频 / 文档索引
+
+如果只是想快速理解“一个项目应该去哪里读”，优先看 **Knowledge Map**；如果要生成 Bio、CV、Proposal 或自动选项目，则从 JSON 与 Claims Ledger 开始。
+
 ## 为什么要有这一层
 
 Ewan 的资料已经分布在个人 Portfolio、VIRTURA Collective / SpacePort、项目 README、PDF、视频、演出记录、工作坊、研究稿和历史 Git 提交中。百科的任务不是再写一篇更长的简介，而是把这些资料整理成可以被人和 Agent 共同调用的事实系统。
@@ -20,14 +30,6 @@ Ewan 的资料已经分布在个人 Portfolio、VIRTURA Collective / SpacePort�
 ```
 
 任何新的成就、合作、奖项、展演、教学或项目版本，优先进入事实层，再由公开页面提取。
-
-## 当前入口
-
-- [`claims-ledger.md`](./claims-ledger.md)：给人阅读和审查的事实账本
-- [`AUDIT-2026-08.md`](./AUDIT-2026-08.md)：当前资料缺口与维护优先级
-- [`api/README.md`](./api/README.md)：Agent / Codex 调用规则
-- [`/public/data/ewan-encyclopedia.json`](../../public/data/ewan-encyclopedia.json)：结构化人物、项目、事件、奖项与合作记录
-- [`/public/data/ewan-media-index.json`](../../public/data/ewan-media-index.json)：图片 / 视频 / 文档媒体索引
 
 ## 状态词表
 
