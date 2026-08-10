@@ -13,6 +13,7 @@
 - [个人百科](./README.md)
 - [事实与证据账本](./claims-ledger.md)
 - [长期工作坊总览](../public-programs/README.md)
+- [MANA Ground Zeroes｜2026-08-29](../../workshops/mana-ground-zeroes-20260829/README.md)
 
 ### Agent / Codex
 
@@ -172,17 +173,42 @@
 
 [长期工作坊项目内容介绍](../public-programs/README.md)
 
-## 游戏化生活工程师
+## 当前第一期：MANA Ground Zeroes｜2026-08-29
+
+**定位：** 《游戏化 AI 新媒体艺术工程师》×《音画同源乐器》的速通先导版。
+
+- [公开流程](../../workshops/mana-ground-zeroes-20260829/README.md)
+- [Issue #18｜执行清单](https://github.com/ewanqian/portfolio/issues/18)
+- 硬目标：三小时后形成可运行 A/V 原型，并为当日晚间 After Party / Micro Showcase 准备 30–60 秒 Micro Set
+
+## 游戏化 AI 新媒体艺术工程师
 
 - [公开 README](../../workshops/gamified-life-engineer/README.md)
 - [Issue #14](https://github.com/ewanqian/portfolio/issues/14)
-- 前代：[2025 杭州工作坊](../../workshops/202507-%E6%9D%AD%E5%B7%9E%E4%B8%AD%E5%BF%83-AI-Agent%E5%B7%A5%E4%BD%9C%E5%9D%8A.md)
+- 前代：[2025 杭州《游戏化 AI 生活解构师》](../../workshops/202507-%E6%9D%AD%E5%B7%9E%E4%B8%AD%E5%BF%83-AI-Agent%E5%B7%A5%E4%BD%9C%E5%9D%8A.md)
+- 角色：AI 协作、工程化创作、项目 / 版本 / 测试与新媒体基础
+- 与下一阶段关系：作为《音画同源乐器》的基础铺垫，也可以独立发展成长期工作坊
 
 ## 音画同源乐器
 
 - [公开 README](../../workshops/personal-av-instrument/README.md)
 - [Issue #15](https://github.com/ewanqian/portfolio/issues/15)
 - 既有实践：[Found VJ Deck](../../workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md)
+- 角色：Sound / Visual / Mapping / State / Instrument / Performance
+
+### 当前课程升级关系
+
+```text
+2025 杭州：游戏化 AI 生活解构师
+               ↓
+2026：游戏化 AI 新媒体艺术工程师
+               ↓
+         音画同源乐器
+               ↓
+Build → Rehearse → After Party / Performance
+```
+
+MANA Ground Zeroes 是这条路线的第一期压缩预览，不替代后面的完整版本。
 
 ---
 
