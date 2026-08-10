@@ -1,0 +1,24 @@
+{
+  "id": "vrplay-ai-xr-hackathon-2026",
+  "title": "VRplay AI / XR Hackathon 2026",
+  "subtitle": "Visual identity, motion system, and spatial digital campaign concept",
+  "years": "2026 — ongoing",
+  "type": "current-collaboration",
+  "summary": "An ongoing collaboration developing the visual identity, motion language, presentation templates, information hierarchy, and a web-native spatial campaign concept for a planned AI / XR hackathon.",
+  "practiceLine": "perceptual-environments",
+  "tags": ["xr", "ai", "hackathon", "visual-identity", "motion-system", "spatial-web", "vrplay"],
+  "showOnHome": false,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["visual identity", "motion system", "spatial campaign"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/vrplay-ai-xr-hackathon-2026.md"],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md",
+  "links": [
+    {
+      "text": "Project record",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md"
+    }
+  ],
+  "priority": 1
+}
