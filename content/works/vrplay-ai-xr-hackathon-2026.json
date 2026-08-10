@@ -1,23 +1,31 @@
 {
   "id": "vrplay-ai-xr-hackathon-2026",
-  "title": "VRplay AI / XR Hackathon 2026",
-  "subtitle": "Visual identity, motion system, and spatial digital campaign concept",
+  "title": "VR Play Hackathon / WORLD REMIX 2026",
+  "subtitle": "Visual identity, motion system, and spatial campaign concept",
   "years": "2026 — ongoing",
   "type": "current-collaboration",
-  "summary": "An ongoing collaboration developing the visual identity, motion language, presentation templates, information hierarchy, and a web-native spatial campaign concept for a planned AI / XR hackathon.",
+  "summary": "WORLD REMIX 的持续视觉升级：围绕品牌视觉、动态系统、SlidesV / PPT、空间化专题网页与可插拔 Sponsor 展示模块，构建一个持续生长、持续被重混的数字世界。",
   "practiceLine": "perceptual-environments",
-  "tags": ["xr", "ai", "hackathon", "visual-identity", "motion-system", "spatial-web", "vrplay"],
+  "tags": ["xr", "hackathon", "world-remix", "visual-identity", "motion-system", "spatial-web", "vr-play"],
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": [],
   "displayModes": ["visual identity", "motion system", "spatial campaign"],
   "analysisIds": [],
-  "sourceDocs": ["projects/vrplay-ai-xr-hackathon-2026.md"],
+  "sourceDocs": [
+    "projects/vrplay-ai-xr-hackathon-2026.md",
+    "docs/vrplay-world-remix-visual-system.md",
+    "docs/vrplay-xr-hackathon-concept.md"
+  ],
   "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md",
   "links": [
     {
       "text": "Project record",
       "url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md"
+    },
+    {
+      "text": "Visual system",
+      "url": "https://github.com/ewanqian/portfolio/blob/main/docs/vrplay-world-remix-visual-system.md"
     }
   ],
   "priority": 1
