@@ -96,7 +96,9 @@ Project Archive / Online Exhibition
 
 ## Online Exhibition / Sponsor Space Concept
 
-The online space can provide additional value for partners and sponsors.
+The online space can provide additional value for partners and sponsors by extending traditional sponsorship exposure into an interactive digital environment.
+
+### Sponsor Content Package
 
 Sponsors can provide:
 
@@ -104,14 +106,31 @@ Sponsors can provide:
 - Product images or 3D models
 - Brand introduction materials
 - Videos and interactive content
-- Technical resources
+- Technical resources or developer support information
 
-These materials can be transformed into:
+The project team can help transform these materials into:
 
 - virtual exhibition booths
 - interactive showcases
 - spatial presentations
 - lightweight 3D scenes
+- AI-assisted visual direction proposals
+
+### Sponsor Presentation Workflow
+
+A supporting presentation template will be developed with SlideV-assisted workflow, helping organize sponsor proposals and digital exhibition concepts.
+
+The template structure can include:
+
+- Brand introduction
+- Exhibition space concept
+- Suggested interaction method
+- 3D model / asset requirements
+- Visual references and mood direction
+- Technical implementation options
+- Sponsorship value and audience experience
+
+This creates a clearer connection between sponsorship cooperation, digital experience design, and event communication.
 
 ## Technical Roadmap
 
