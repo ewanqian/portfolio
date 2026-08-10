@@ -1,191 +1,216 @@
 # VRplay XR Hackathon 2026
 
-> Work in Progress / Visual identity, motion system, spatial campaign concept, and online exhibition prototype
+> Work in Progress / 品牌视觉系统、动态视觉、空间化专题体验概念
 
-## Project Status
+## 项目状态
 
-This project is currently in the early development stage. The focus is to establish the visual language, communication system, and digital experience concept for VRplay's XR Hackathon.
+本项目处于前期策划与视觉探索阶段，目标是围绕 VRplay XR Hackathon 建立统一的视觉语言、传播体系，以及未来线上展示体验方向。
 
-The first phase focuses on creating a recognizable event identity through:
+当前阶段重点：
 
-- Visual identity system
-- Key visual and campaign graphics
-- Motion design language
-- PPT / keynote templates
-- Promotional and partner communication materials
+- 品牌视觉系统
+- 主视觉与动态视觉
+- PPT / Keynote 模板
+- 宣传与合作伙伴沟通材料
+- 空间化专题网页概念
 
-The project explores how an XR event can move beyond conventional posters and information pages, becoming a narrative environment that introduces participants, creators, and partners into a shared digital world.
+本阶段不涉及完整赛事运营平台开发，而是探索 XR 活动如何从传统信息页面转变为具有进入感、探索感和空间叙事能力的数字入口。
 
-## Current Focus
+---
 
-### 01 — Visual System
+# 第一阶段工作重点
 
-Development of a communication toolkit:
+## 01 — 品牌视觉系统
 
-- Brand visual direction
-- Key visual / campaign image
-- Motion identity
-- Presentation system
-- Social media and event templates
-- Partner / sponsor presentation materials
+建立活动传播基础：
 
-### 02 — Narrative Visual Content
+- KV 主视觉
+- 动态视觉语言
+- 海报与社交媒体模板
+- PPT / Keynote 模板
+- 活动宣传包装
+- 合作伙伴展示模板
 
-The project develops a world-building direction based on a **greenhouse universe / living archive** concept.
+## 02 — 世界观与视觉内容
 
-The greenhouse is imagined as a growing digital ecosystem where creators, tools, projects, and event memories become connected elements inside a shared environment.
+以 **“温室空间群 / Living Archive”** 作为视觉探索方向。
 
-Rather than presenting an event schedule as flat information, the visual system builds an environment with atmosphere, history, and discovery.
+温室作为数字生态隐喻：
 
-## Visual Direction Keywords
+- 创作者成为探索节点
+- 工具与技术成为生态元素
+- 项目作品成为数字档案
+- 信息转化为空间对象
+- 活动内容形成可持续扩展的环境
 
-### Greenhouse Universe / Living Archive
+目标不是制作普通活动页面，而是建立一个具有探索感的 XR 活动入口。
 
-- futuristic botanical structures
-- synthetic ecosystems
-- transparent glass architecture
-- digital organisms and information plants
-- floating data archives
-- spatial diagrams
-- evolving digital environments
+---
 
-### Digital Exploration / ARG Narrative
+# 视觉方向关键词
 
-- hidden signals
-- maps and navigation systems
-- fragments of documents
-- digital artifacts
-- character roles
-- discovery-based information structures
+## 温室宇宙 / 数字生态
 
-### Spatial Computing Aesthetic
+- 未来植物结构
+- 透明建筑
+- 人工生态系统
+- 数字生命体
+- 信息植物
+- 漂浮档案节点
+- 生长中的数字空间
 
-- Vision Pro inspired interfaces
-- translucent materials
-- depth-based UI
-- floating panels
-- volumetric information layers
-- realtime graphics
-- WebGL environments
+## ARG / 探索叙事
 
-## Spatial Web Experiment
+- 隐藏信号
+- 地图系统
+- 数字遗迹
+- 档案碎片
+- 角色节点
+- 任务式信息探索
 
-A possible extension is a lightweight interactive web experience, functioning as an online exhibition and campaign entrance rather than a full platform.
+## 空间计算视觉
 
-Potential technical routes:
+- Vision Pro 风格界面
+- 半透明材质
+- 深度 UI
+- 浮动信息层
+- 实时图形
+- WebGL 空间环境
 
-- Spline for rapid interactive scene building
-- Three.js / React Three Fiber for customized WebGL experiences
-- GSAP for motion and interaction design
-- Gaussian Splatting viewers for scanned or volumetric environments
-- WebXR as future extension
+---
 
-Possible structure:
+# 空间化网页实验
+
+未来可扩展为一个轻量线上展示入口，而非完整平台。
+
+结构：
 
 ```
-Landing Page
-    ↓
+活动 Landing Page
+        ↓
 3D Welcome Lobby
-    ↓
-Event Information Spaces
-    ↓
-Sponsor Exhibition Areas
-    ↓
-Project Archive / Online Exhibition
+        ↓
+活动信息空间
+        ↓
+合作伙伴展示区
+        ↓
+作品档案 / 在线展览
 ```
 
-## Online Exhibition / Sponsor Space Concept
+技术路线：
 
-The online space can provide additional value for partners and sponsors by extending traditional sponsorship exposure into an interactive digital environment.
+- Spline：快速交互空间原型
+- Three.js / React Three Fiber：定制 WebGL 场景
+- GSAP：动态交互
+- Gaussian Splatting：空间扫描与档案展示
+- WebXR：未来设备扩展
 
-### Sponsor Content Package
+---
 
-Sponsors can provide:
+# 线上展览与供应商合作概念
 
-- Brand logo and visual assets
-- Product images or 3D models
-- Brand introduction materials
-- Videos and interactive content
-- Technical resources or developer support information
+线上空间可以成为合作伙伴和赞助商的额外展示价值。
 
-The project team can help transform these materials into:
+## 供应商素材需求
 
-- virtual exhibition booths
-- interactive showcases
-- spatial presentations
-- lightweight 3D scenes
-- AI-assisted visual direction proposals
+合作方可提供：
 
-### Sponsor Presentation Workflow
+- 品牌 Logo
+- 品牌视觉资料
+- 产品图片
+- 3D 模型
+- 视频内容
+- 技术介绍
 
-A supporting presentation template will be developed with SlideV-assisted workflow, helping organize sponsor proposals and digital exhibition concepts.
+## 可提供的展示形式
 
-The template structure can include:
+转化为：
 
-- Brand introduction
-- Exhibition space concept
-- Suggested interaction method
-- 3D model / asset requirements
-- Visual references and mood direction
-- Technical implementation options
-- Sponsorship value and audience experience
+- 虚拟展台
+- 品牌展示空间
+- 互动介绍页面
+- 轻量 3D 场景
+- 空间化视觉方案
 
-This creates a clearer connection between sponsorship cooperation, digital experience design, and event communication.
+通过数字展览提升赞助合作价值，让品牌从 Logo 露出转向体验式传播。
 
-## Technical Roadmap
+## 供应商提案模板
 
-### Phase 1 — Communication Layer
+计划使用 SlidesV 等工具建立标准化合作 PPT 模板：
 
-Current priority:
+内容结构：
 
-- Visual identity
-- Motion system
-- Presentation templates
-- Campaign webpage concept
-- Event information structure
+1. 项目介绍
+2. 线上空间概念
+3. 品牌展示方式
+4. 视觉参考与 Moodboard
+5. 展示空间方案
+6. 所需素材清单
+7. 技术实现路线
+8. 合作价值说明
 
-### Phase 2 — Spatial Campaign Prototype
+---
 
-Possible development:
+# 项目推进阶段
 
-- Interactive 3D landing page
-- Digital welcome lobby
-- Sponsor exhibition prototype
-- Archive viewer
-- WebGL / Gaussian Splatting experiments
+## Phase 1 — 传播视觉层（当前）
 
-### Phase 3 — Long-term Infrastructure Exploration
+- 品牌视觉
+- 动态系统
+- PPT 模板
+- 宣传物料
+- 专题网页概念
 
-Future possibilities:
+## Phase 2 — 空间展示原型
 
-- Digital archive system
-- Participant workspace
-- Online exhibition database
-- XR community platform
+- 3D Landing Page
+- 数字欢迎大厅
+- 赞助商展示空间
+- 档案浏览器
+- WebGL / Gaussian Splatting 实验
 
-These require separate technical planning and resources.
+## Phase 3 — 长期数字基础设施探索
 
-## Current Scope Boundary
+未来可能：
 
-The current stage focuses on:
+- 长期作品档案
+- 在线展览数据库
+- 创作者工作空间
+- XR 社区平台
 
-- Visual identity
-- Motion design
-- Presentation system
-- Public information organization
-- Spatial campaign prototype
-- Online exhibition concept
+以上需要结合活动规模、预算和技术资源进一步规划。
 
-The project does not currently claim responsibility for complete hackathon operation systems such as participant accounts, team management, submission platforms, or full event infrastructure.
+---
 
-## Design Position
+# 当前范围边界
 
-The project investigates two ideas:
+当前负责：
 
-**Content as narrative structure** — information can be experienced through sequences, objects, environments, and discovery rather than only through text.
+- 品牌视觉
+- 动态视觉
+- PPT / Keynote 系统
+- 信息组织
+- 空间化专题体验概念
+- 线上展览方向研究
 
-**Spatial perception as interface** — web experiences can borrow methods from games and XR environments to create a sense of presence before entering immersive devices.
+暂不承诺：
+
+- 完整报名系统
+- 用户账号系统
+- 组队系统
+- 提交后台
+- 完整赛事运营平台
+
+这些属于后续产品与技术开发范围。
+
+---
+
+# 设计定位
+
+**内容作为叙事结构**：信息不仅通过文字呈现，也可以通过空间、对象和探索路径被体验。
+
+**空间感知作为界面**：借鉴游戏与 XR 环境，让活动在进入沉浸设备之前具备数字世界入口感。
 
 ## Related Project
 
-- [VRplay WORLD REMIX XR Hackathon 2025](./vrplay-hackathon-visual-2025.md)
+- VRplay WORLD REMIX XR Hackathon 2025
