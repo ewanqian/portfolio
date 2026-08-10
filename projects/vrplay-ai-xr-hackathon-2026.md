@@ -1,197 +1,166 @@
-# VRplay XR Hackathon 2026
+# VR Play Hackathon / WORLD REMIX 2026
 
-> Work in Progress / 品牌视觉系统、动态视觉、空间化专题体验概念
+> Work in Progress / 品牌视觉、动态系统、空间化专题体验
 
-## 项目状态
+## 当前状态
 
-本项目处于前期策划与视觉探索阶段，目标是围绕 VRplay XR Hackathon 建立统一的视觉语言、传播体系，以及未来线上展示体验方向。
+本项目处于前期视觉与体验设计阶段。
 
-当前阶段重点：
+当前第一优先级不是完整赛事平台，而是把 **WORLD REMIX** 延续并升级成一套可以同时作用于平面、动态、PPT、网页、Sponsor 展示与未来空间体验的视觉母系统。
 
-- 品牌视觉系统
-- 主视觉与动态视觉
-- PPT / Keynote 模板
-- 宣传与合作伙伴沟通材料
-- 空间化专题网页概念
+核心概念：
 
-本阶段不涉及完整赛事运营平台开发，而是探索 XR 活动如何从传统信息页面转变为具有进入感、探索感和空间叙事能力的数字入口。
+> **一个持续生长、持续被重混的数字世界。**
+
+它不是一个已经完成的“未来绿洲”。世界还在搭建，活动已经开始；植物、项目、工具、合作伙伴和活动记忆不断接入，成为新的空间节点。
 
 ---
 
-# 第一阶段工作重点
+## P0 — 当前交付
 
-## 01 — 品牌视觉系统
+- WORLD REMIX 2026 主视觉方向
+- 品牌 / 活动视觉规则
+- 动态视觉基础组件
+- PPT / SlidesV 模板
+- 海报、社交媒体与合作伙伴物料
+- 中文导视与文案语气
 
-建立活动传播基础：
+## P1 — 空间化传播
 
-- KV 主视觉
-- 动态视觉语言
-- 海报与社交媒体模板
-- PPT / Keynote 模板
-- 活动宣传包装
-- 合作伙伴展示模板
+- Greenhouse Core / Living Archive
+- Spatial Landing Page
+- 3D Welcome Lobby
+- Sponsor S / M / L 模块
+- 可交互动态海报
 
-## 02 — 世界观与视觉内容
+## P2 — 后续探索
 
-以 **“温室空间群 / Living Archive”** 作为视觉探索方向。
-
-温室作为数字生态隐喻：
-
-- 创作者成为探索节点
-- 工具与技术成为生态元素
-- 项目作品成为数字档案
-- 信息转化为空间对象
-- 活动内容形成可持续扩展的环境
-
-目标不是制作普通活动页面，而是建立一个具有探索感的 XR 活动入口。
+- Living Archive 数据化
+- Gaussian / 点云档案节点
+- 长期线上作品展览
+- WebXR / 空间计算扩展
 
 ---
 
-# 视觉方向关键词
+## WORLD REMIX 视觉升级
 
-## 温室宇宙 / 数字生态
+2025 已形成的资产继续保留：
 
-- 未来植物结构
-- 透明建筑
-- 人工生态系统
-- 数字生命体
-- 信息植物
-- 漂浮档案节点
-- 生长中的数字空间
+- Iridescent CD / Disc
+- Tape / Media Archive
+- Code / Terminal
+- Grid / Coordinate / Wireframe
+- Point Cloud / Gaussian Plant
+- WORLD REMIX Ribbon / Orbit
+- 黑色数字空间 + 彩色 Remix Signal
 
-## ARG / 探索叙事
+2026 新增更明确的空间结构：
 
-- 隐藏信号
-- 地图系统
-- 数字遗迹
-- 档案碎片
-- 角色节点
-- 任务式信息探索
+### GRID / FRAME
 
-## 空间计算视觉
+Truss、脚手架、临时平台、半透明布、设备箱、施工围挡。
 
-- Vision Pro 风格界面
-- 半透明材质
-- 深度 UI
-- 浮动信息层
-- 实时图形
-- WebGL 空间环境
+代表：**正在建造**。
+
+### DISC / ORBIT
+
+CD、圆盘、WORLD REMIX 字带、舞台、数据轨道。
+
+代表：**正在 Remix**。
+
+### GREENHOUSE / GROWTH
+
+温室、透明结构、植物、扫描植物、Living Archive。
+
+代表：**正在生长**。
+
+完整规则见：
+
+- [WORLD REMIX 视觉设定](../docs/vrplay-world-remix-visual-system.md)
+- [2025 视觉资产归档](../docs/vrplay-world-remix-2025-visual-archive.md)
+- [2026 项目概念文档](../docs/vrplay-xr-hackathon-concept.md)
 
 ---
 
-# 空间化网页实验
+## 空间网页概念
 
-未来可扩展为一个轻量线上展示入口，而非完整平台。
-
-结构：
-
-```
-活动 Landing Page
+```text
+Dynamic Poster / Landing
         ↓
-3D Welcome Lobby
+Welcome Lobby
         ↓
-活动信息空间
+Greenhouse Core
         ↓
-合作伙伴展示区
+Event Information
         ↓
-作品档案 / 在线展览
+Partner Modules
+        ↓
+Living Archive / Showcase
 ```
 
 技术路线：
 
-- Spline：快速交互空间原型
-- Three.js / React Three Fiber：定制 WebGL 场景
-- GSAP：动态交互
-- Gaussian Splatting：空间扫描与档案展示
-- WebXR：未来设备扩展
+- Spline：第一版空间与交互验证
+- Three.js / React Three Fiber：需要更强定制后升级
+- GSAP：镜头、滚动与界面动效
+- Gaussian Splatting：扫描档案节点
+- WebXR：后续扩展
+
+目标是一个“游戏主菜单 + 可逛的线上大厅”，不是第一阶段就开发完整多人元宇宙。
 
 ---
 
-# 线上展览与供应商合作概念
-
-线上空间可以成为合作伙伴和赞助商的额外展示价值。
-
-## 供应商素材需求
+## Sponsor / 合作伙伴展示
 
 合作方可提供：
 
-- 品牌 Logo
-- 品牌视觉资料
+- Logo
+- 品牌色与介绍
 - 产品图片
-- 3D 模型
-- 视频内容
-- 技术介绍
+- 3D 模型（可选）
+- 视频 / Demo
+- 技术资料
 
-## 可提供的展示形式
+统一接入 WORLD REMIX 模块：
 
-转化为：
+- **S / Display**：基础品牌与产品展示
+- **M / Lab**：模型、技术 Demo、互动屏
+- **L / Garden**：独立体验 / Workshop / 重点合作区
 
-- 虚拟展台
-- 品牌展示空间
-- 互动介绍页面
-- 轻量 3D 场景
-- 空间化视觉方案
-
-通过数字展览提升赞助合作价值，让品牌从 Logo 露出转向体验式传播。
-
-## 供应商提案模板
-
-计划使用 SlidesV 等工具建立标准化合作 PPT 模板：
-
-内容结构：
-
-1. 项目介绍
-2. 线上空间概念
-3. 品牌展示方式
-4. 视觉参考与 Moodboard
-5. 展示空间方案
-6. 所需素材清单
-7. 技术实现路线
-8. 合作价值说明
+这样能让 Sponsor 从单纯 Logo 露出变成世界中的可进入节点，同时控制建模与制作成本。
 
 ---
 
-# 项目推进阶段
+## 中文视觉语气
 
-## Phase 1 — 传播视觉层（当前）
+辅助信息以中文为主，短、直接、游戏化：
 
-- 品牌视觉
-- 动态系统
-- PPT 模板
-- 宣传物料
-- 专题网页概念
+- 欢迎回到温室
+- 先来逛逛
+- 点子上桌
+- 先试玩
+- 温室档案
+- 媒体花园
+- 正在搭建
+- 测试中
+- 先别急
+- 还在搭，但先开场
+- 一起把世界搭起来
 
-## Phase 2 — 空间展示原型
-
-- 3D Landing Page
-- 数字欢迎大厅
-- 赞助商展示空间
-- 档案浏览器
-- WebGL / Gaussian Splatting 实验
-
-## Phase 3 — 长期数字基础设施探索
-
-未来可能：
-
-- 长期作品档案
-- 在线展览数据库
-- 创作者工作空间
-- XR 社区平台
-
-以上需要结合活动规模、预算和技术资源进一步规划。
+避免企业展厅式口号。
 
 ---
 
-# 当前范围边界
+## 当前边界
 
-当前负责：
+当前负责 / 优先研究：
 
 - 品牌视觉
 - 动态视觉
-- PPT / Keynote 系统
+- PPT / SlidesV
+- 宣传物料
 - 信息组织
-- 空间化专题体验概念
-- 线上展览方向研究
+- 空间化网页与线上展览概念
 
 暂不承诺：
 
@@ -201,16 +170,10 @@
 - 提交后台
 - 完整赛事运营平台
 
-这些属于后续产品与技术开发范围。
+以上属于后续产品与技术开发范围。
 
 ---
 
-# 设计定位
+## Related
 
-**内容作为叙事结构**：信息不仅通过文字呈现，也可以通过空间、对象和探索路径被体验。
-
-**空间感知作为界面**：借鉴游戏与 XR 环境，让活动在进入沉浸设备之前具备数字世界入口感。
-
-## Related Project
-
-- VRplay WORLD REMIX XR Hackathon 2025
+- [VR Play WORLD REMIX XR Hackathon 2025](./vrplay-hackathon-visual-2025.md)
