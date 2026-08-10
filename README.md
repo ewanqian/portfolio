@@ -76,13 +76,20 @@
 
 ## Workshops / Public Programs
 
+### 当前第一期
+
+- [MANA Ground Zeroes｜2026-08-29｜三小时速通 + After Party](./workshops/mana-ground-zeroes-20260829/README.md)
+- [Issue #18｜MANA 8.29 执行清单](https://github.com/ewanqian/portfolio/issues/18)
+
+### 长期系列
+
 - [长期工作坊项目总览](./docs/public-programs/README.md)
-- [游戏化生活工程师 / Gamified Life Engineer](./workshops/gamified-life-engineer/README.md)
+- [游戏化 AI 新媒体艺术工程师 / Gamified AI New Media Art Engineer](./workshops/gamified-life-engineer/README.md)
 - [音画同源乐器 / Personal A/V Instrument](./workshops/personal-av-instrument/README.md)
 
-内部长期研发：
+长期研发：
 
-- [Issue #14 — 游戏化生活工程师](https://github.com/ewanqian/portfolio/issues/14)
+- [Issue #14 — 游戏化 AI 新媒体艺术工程师](https://github.com/ewanqian/portfolio/issues/14)
 - [Issue #15 — 音画同源乐器](https://github.com/ewanqian/portfolio/issues/15)
 
 ---
