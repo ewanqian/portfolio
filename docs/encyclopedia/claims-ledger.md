@@ -89,7 +89,7 @@ Ewan 创立并持续参与的团队 / 协作语境。团队项目不能自动写
 Ewan × 沈轩。包含北京三里屯持续数字公共艺术展与 2025 深圳坪山相关公开呈现；来源见 `VIRTURA-Collective/works/observation-and-symbiosis/*`。
 
 **杭州中心美术馆「巴别瓶」** — `presented`  
-2025《新媒体艺术家模拟器》及 2025.07.12《游戏化 AI 生活解构师》；后者是 2026《游戏化生活工程师》的前代方法。
+2025《新媒体艺术家模拟器》及 2025.07.12《游戏化 AI 生活解构师》；后者是 2026《游戏化 AI 新媒体艺术工程师》的前代方法。
 
 ---
 
@@ -115,11 +115,14 @@ Ewan 已确认与 RÖ 的现场合作；现有演讲档案记录“同济现场�
 
 ## 长期工作坊
 
-**游戏化生活工程师 / Gamified Life Engineer** — `proposal`  
-前代为 2025 杭州《游戏化 AI 生活解构师》。公开页：`workshops/gamified-life-engineer/README.md`；研发 Issue #14。
+**游戏化 AI 新媒体艺术工程师 / Gamified AI New Media Art Engineer** — `proposal`  
+前代为 2025 杭州《游戏化 AI 生活解构师》。2026 版本将 AI 协作、工程化开发、版本、测试与新媒体艺术基础合并为长期方法，并作为《音画同源乐器》的基础铺垫。公开页：`workshops/gamified-life-engineer/README.md`；研发 Issue #14。
 
 **音画同源乐器 / Personal A/V Instrument** — `proposal`  
 核心为 Personal Material → Gesture → Mapping → Sound + Visual → State → Performance。公开页：`workshops/personal-av-instrument/README.md`；研发 Issue #15。
+
+**MANA Ground Zeroes / 2026-08-29** — `proposal`  
+两条长期工作坊的三小时速通先导版，计划接当日晚间 After Party / Micro Showcase。目标是让参与者在三小时内形成一个可运行、可操作并可准备 30–60 秒 Micro Set 的 A/V 原型。公开页：`workshops/mana-ground-zeroes-20260829/README.md`；执行 Issue #18。
 
 ---
 
