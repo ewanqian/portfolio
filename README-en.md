@@ -1,46 +1,68 @@
-# portfolio
+# Ewan Qian Portfolio
 
 [中文](./README.md) | English
 
-This repository is Ewan Qian's personal entry point.
+This repository is Ewan Qian's personal portfolio, archive entry point, and structured knowledge layer.
 
-Its role in the VIRTURA public graph is specific: this repo holds personal identity, selected works, practice lines, services, and personal archive entry points. For the team, public frontstage, or publication layer, go to `VIRTURA-Collective`, `VIRTURA-SpacePort`, and `VIRTURA-Newsroom`.
+Current practice is organized across four lines:
 
-It is meant to answer four questions quickly:
+- **Live AV** — audiovisual performance, live visuals, realtime control
+- **Spatial Image & Scanning** — spatial image systems, point cloud / Gaussian scanning, digital environments
+- **Realtime Systems & Creative Tools** — realtime systems, browser tools, creative infrastructure
+- **Workshops & Shared Methods** — workshops, public programs, reusable methods
 
-- who I am and what kind of work I do
-- which projects are worth seeing first
-- what kind of methods and research directions I am building
-- where to go next if you want the wider team, archive, or tool ecosystem
+## Start Here
 
-## Read This First
+- [Current Directions](./about/current-directions.md)
+- [Practice Ecosystem](./about/practice-ecosystem.md)
+- [Visual Arts](./visual-arts/README.md)
+- [Projects / Credits](./projects/README.md)
+- [Personal Encyclopedia](./docs/encyclopedia/README.md)
+- [Knowledge Map](./docs/encyclopedia/KNOWLEDGE-MAP.md)
 
-- want representative projects: [Selected Projects](./README.md#精选项目--selected)
-- want the working method: [Tooling & Method](./README.md#核心能力--tooling--method)
-- want research and writing: [Research & Writing](./README.md#研究与文章)
-- want talks, workshops, and public activity: [Public Sharing & Workshops](./README.md#行业分享与交流活动)
+## Agent / Structured Data
+
+- [Ewan Encyclopedia JSON](./public/data/ewan-encyclopedia.json)
+- [Media Index JSON](./public/data/ewan-media-index.json)
+- [Agent API Rules](./docs/encyclopedia/api/README.md)
+
+## Core Practice Lines
+
+### TIMER
+
+- [Personal view](./visual-arts/timer-series/README.md)
+- [VIRTURA team view](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/timer)
+- [SpacePort archive](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/timer-series)
+
+### Drop Flow
+
+- [Personal view](./visual-arts/drop-flow-series/README.md)
+- [VIRTURA team view](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/drop-flow)
+- [SpacePort archive](https://github.com/ewanqian/VIRTURA-SpacePort/tree/main/organization/works/drop-flow-series)
+
+### Observation and Symbiosis
+
+- [Personal practice entry](./visual-arts/perceptual-environments/README.md)
+- [VIRTURA team archive](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/observation-and-symbiosis)
+
+### Live AV / External Collaborations
+
+- [Kashiwa Daisuke × Yuki Murata × Ewan Qian](./visual-arts/kashiwa-daisuke/README.md)
+- [Found VJ Deck / VJ Battle Round 8](./workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md)
+
+## Workshops / Public Programs
+
+- [Long-term workshop overview](./docs/public-programs/README.md)
+- [Gamified Life Engineer](./workshops/gamified-life-engineer/README.md)
+- [Personal A/V Instrument](./workshops/personal-av-instrument/README.md)
 
 ## Related Repositories
 
-- [VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective): team entry point
-- [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort): public front desk, archive gateway, and knowledge-network host
-- [VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom): publication outlet
-- [SceneForge](https://github.com/ewanqian/SceneForge): stage viewer and digital-stage experiment line
+- [VIRTURA-Collective](https://github.com/ewanqian/VIRTURA-Collective): team works and collaboration network
+- [VIRTURA-SpacePort](https://github.com/ewanqian/VIRTURA-SpacePort): version archive, evidence, knowledge network
+- [VIRTURA-Newsroom](https://github.com/ewanqian/VIRTURA-Newsroom): publication and research writing
+- [SceneForge](https://github.com/ewanqian/SceneForge): stage / spatial preview and tool experiments
 
-## Position
+## Source-of-Truth Rule
 
-My work focuses on live visual performance, immersive content production, and spatial image systems.
-
-The core question behind this practice is how to turn one-time performances and exhibitions into digital assets that can be preserved, re-entered, migrated, and reused across later contexts.
-
-In practical terms, that means holding three layers together:
-
-- procedural visual construction
-- spatial and stage-aware image design
-- migration to web, digital-stage, and spatial-computing formats
-
-## Where The Full Material Lives
-
-For now, the full body of work, credits, writing, workshops, and collaboration notes remains in the Chinese README:
-
-- [Open the full Chinese entry](./README.md)
+Facts should flow from project sources and evidence into the personal encyclopedia, structured JSON, and media index before being reused in bios, CVs, proposals, presentations, or generated pages.
