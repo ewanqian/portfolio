@@ -2,22 +2,25 @@
 
 - [返回 Visual Arts](../README.md)
 - [返回首页](../../README.md)
-- [返回 Projects / Credits](../../README.md#projects--credits)
+- [返回 Projects / Credits](../../projects/README.md)
+- [Knowledge Map](../../docs/encyclopedia/KNOWLEDGE-MAP.md)
 
 ---
 
-这一组作品与实践主要围绕扫描空间、点云环境、数字采样、观察与共生、以及数字环境中的生命感展开。它们通常不像舞台项目那样有清晰的“演出时刻”，但构成了我长期处理数字空间、记忆残留、环境生成与非人视角的重要基础。
+这一组作品与实践主要围绕扫描空间、点云环境、数字采样、观察与共生，以及数字环境中的生命感展开。它们通常不像舞台项目那样有清晰的“演出时刻”，但构成了我长期处理数字空间、记忆残留、环境生成与非人视角的重要基础。
 
-## Public Graph / 对象关系
+## Canonical Graph / 对象关系
 
 - `object_id`: `observation-and-symbiosis`
+- `encyclopedia_id`: `work-observation-and-symbiosis`
 - `view_type`: `personal_view`
 - `authorship_type`: `collaboration`
 - `personal_view`: 当前页面，说明它在钱誉文个人数字环境与感知空间研究中的位置
 - `team_view`: [VIRTURA-Collective / Observation and Symbiosis](https://github.com/ewanqian/VIRTURA-Collective/tree/main/works/observation-and-symbiosis)
 - `archive_view`: [VIRTURA-SpacePort / Observation and Symbiosis](https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/%E8%A7%82%E5%AF%9F%E4%B8%8E%E5%85%B1%E7%94%9F%20Observation%20and%20Symbiosis.md)
+- `fact_layer`: [Ewan Encyclopedia](../../docs/encyclopedia/README.md) / [Claims Ledger](../../docs/encyclopedia/claims-ledger.md)
 
-这里保留个人研究入口；团队协作与公开语境看 `VIRTURA-Collective`，展览记录、版本资料和深层档案看 `VIRTURA-SpacePort`。
+这里保留个人研究入口；团队协作与公开语境看 `VIRTURA-Collective`，展览记录、版本资料和深层档案看 `VIRTURA-SpacePort`，个人事实状态回到 Encyclopedia。
 
 ## Why This Series Matters
 
@@ -37,8 +40,6 @@
 - [Projects / 项目总表](../../projects/README.md)
 - [Visual Arts / 视觉艺术系列总表](../README.md)
 
----
-
 ## Representative Project / 代表项目
 
 ### Observation and Symbiosis / 观察与共生
@@ -47,21 +48,20 @@
 
 这件作品关注数字环境中的“生命感”——自然不再作为静态对象被再现，而被转化为一个可编程、可迭代、可持续演化的系统。它既是一件展览作品，也是一条关于数据景观、数字生态与感知空间的长期研究线索。
 
-Observation and Symbiosis is developed around the concept of “digital nature,” where natural phenomena and ecological logic are encoded and reconstructed within a virtual environment. The work transforms geographic data into continuously flowing particle animation, blending point-cloud techniques with ink-inspired aesthetics to reorganize landform, color, and spatial relationships within a digital landscape.
+## Archive / 下一步
 
-Rather than treating nature as a static image, the project shifts it into a programmable, iterative, and evolving system, focusing on the sense of “life” within digital environments.
+这一组内容目前还没有像 TIMER 和 Drop Flow 那样形成完整系列档案，因此后续优先补：
 
-## Notes
+- 郑州中国第二砂轮厂扫描 / Gaussian Archive
+- 绿色苔原
+- 点云 / 扫描方法文档
+- 三里屯、深圳等公开呈现的图片与节目资料
 
-这一组内容目前在 portfolio 中还没有像 TIMER 和 Drop Flow 那样形成完整的系列结构，但它们对我后续的空间叙事、扫描环境建构和感知迁移研究都非常重要。
-
-后续可继续补充：
-- 代表作品缩略索引
-- 点云/扫描相关方法说明
-- 与 VIRTURA-SpacePort 研究线的关系
-- 公开展示与实验版本
+未补齐的词条先进入 Encyclopedia 的 `needs-source` / `pending_terms`，不在这里提前写成完整履历。
 
 ## Related Links
 
+- [Knowledge Map](../../docs/encyclopedia/KNOWLEDGE-MAP.md)
+- [个人百科](../../docs/encyclopedia/README.md)
 - [返回 Visual Arts](../README.md)
 - [返回首页](../../README.md)
