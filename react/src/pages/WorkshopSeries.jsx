@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
@@ -50,10 +50,7 @@ function WorkshopSeries() {
   }
 
   const isCurrentEdition = series.kind === 'current-edition'
-  const markdown = useMemo(
-    () => stripReadmeTitle(series.readmeMarkdown || runtimeMarkdown),
-    [series.readmeMarkdown, runtimeMarkdown]
-  )
+  const markdown = stripReadmeTitle(series.readmeMarkdown || runtimeMarkdown)
 
   return (
     <>
