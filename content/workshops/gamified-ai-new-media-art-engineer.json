@@ -1,0 +1,22 @@
+{
+  "slug": "gamified-ai-new-media-art-engineer",
+  "kind": "series",
+  "order": 10,
+  "title": {
+    "zh": "游戏化 AI 新媒体艺术工程师",
+    "en": "Gamified AI New Media Art Engineer"
+  },
+  "short": {
+    "zh": "从一个能运行的最小版本开始，学习怎样与 AI 协作、组织项目、测试版本，并把创意逐渐发展成可持续维护的新媒体系统。",
+    "en": "Start from a working minimum version and learn how to collaborate with AI, structure a project, test versions, and develop an idea into a maintainable new-media system."
+  },
+  "premise": {
+    "zh": "重点不是掌握某一个 AI 工具，而是建立 FRAME → FILL → FINISH、Human-in-the-loop、V1 / V2 与长期开发的基本方法。",
+    "en": "The focus is not one AI tool, but a repeatable method: FRAME → FILL → FINISH, human-in-the-loop, V1 / V2, testing, and long-term development."
+  },
+  "tags": ["AI", "New Media", "Creative Coding", "Human-in-the-loop", "Project Systems"],
+  "readmePath": "workshops/gamified-life-engineer/README.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/gamified-life-engineer/README.md",
+  "editions": [],
+  "resources": []
+}
