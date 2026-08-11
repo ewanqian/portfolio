@@ -1,0 +1,186 @@
+.workshop-reader-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 72px;
+  align-items: start;
+}
+
+.workshop-reader-meta {
+  position: sticky;
+  top: 96px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.workshop-reader-meta strong {
+  display: block;
+  color: var(--text);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.workshop-reader-meta a {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--text);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.markdown-reader {
+  width: min(100%, 780px);
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.markdown-reader > :first-child {
+  margin-top: 0;
+}
+
+.markdown-reader h2,
+.markdown-reader h3,
+.markdown-reader h4,
+.markdown-reader h5 {
+  color: var(--text);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  scroll-margin-top: 110px;
+}
+
+.markdown-reader h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  margin: 84px 0 18px;
+}
+
+.markdown-reader h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  margin: 58px 0 16px;
+}
+
+.markdown-reader h4 {
+  font-size: 20px;
+  margin: 38px 0 12px;
+}
+
+.markdown-reader h5 {
+  font-size: 17px;
+  margin: 30px 0 10px;
+}
+
+.markdown-reader p {
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.markdown-reader ul,
+.markdown-reader ol {
+  margin: 0 0 24px;
+  padding-left: 24px;
+}
+
+.markdown-reader li {
+  margin: 6px 0;
+}
+
+.markdown-reader blockquote {
+  margin: 30px 0;
+  padding: 18px 0 18px 22px;
+  border-left: 2px solid var(--text);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.markdown-reader hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 64px 0;
+}
+
+.markdown-reader a {
+  color: var(--text);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.markdown-reader a:hover {
+  border-color: var(--text);
+}
+
+.markdown-reader code {
+  padding: 0.12em 0.34em;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 0.9em;
+}
+
+.markdown-reader pre {
+  overflow-x: auto;
+  margin: 28px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  line-height: 1.55;
+}
+
+.markdown-reader pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.workshop-current-badge {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 5px 9px;
+  border: 1px solid var(--text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.workshop-event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.workshop-series-card.current-edition {
+  grid-column: 1 / -1;
+  border-color: var(--line-strong);
+}
+
+@media (max-width: 900px) {
+  .workshop-reader-shell {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .workshop-reader-meta {
+    position: static;
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .markdown-reader {
+    font-size: 15px;
+  }
+
+  .markdown-reader h2 {
+    margin-top: 60px;
+  }
+
+  .markdown-reader h3 {
+    margin-top: 44px;
+  }
+
+  .markdown-reader blockquote {
+    font-size: 16px;
+  }
+}
