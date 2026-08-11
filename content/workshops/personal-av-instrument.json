@@ -1,18 +1,22 @@
 {
   "slug": "personal-av-instrument",
+  "kind": "series",
+  "order": 20,
   "title": {
-    "zh": "Personal AV Instrument / 个人音画乐器",
-    "en": "Personal AV Instrument"
+    "zh": "音画同源乐器",
+    "en": "Personal A/V Instrument"
   },
   "short": {
-    "zh": "从个人采集的声音、图像和物件出发，制作一个可以实时演奏和控制的音画系统。",
-    "en": "Build a realtime audiovisual instrument from personally collected sounds, images, and objects."
+    "zh": "从个人采集的声音、图像和动作出发，设计 Mapping、状态与操作逻辑，制作一件能够实时演奏和继续发展的浏览器音画乐器。",
+    "en": "Build a browser-based audiovisual instrument from personally collected sounds, images, and gestures by designing mappings, states, and performance controls."
   },
   "premise": {
-    "zh": "把视觉系统当作乐器，而不是成片工具：参与者最终得到的是一套可以持续表演、改造和扩展的现场系统。",
-    "en": "Treat the visual system as an instrument rather than a video-making tool: the result is a live system that can keep being performed, modified, and extended."
+    "zh": "重点不是做一段自动音乐可视化，而是让声音、图像与人的动作共同形成一套可以练习、测试和演奏的数字乐器。",
+    "en": "The goal is not automatic music visualization, but a digital instrument in which sound, image, and human gesture form a system that can be practiced, tested, and performed."
   },
-  "tags": ["Live Visual", "Sound Reactive", "Realtime", "Performance Tool"],
+  "tags": ["Audiovisual", "Mapping", "Realtime", "Browser Instrument", "Performance"],
+  "readmePath": "workshops/personal-av-instrument/README.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/personal-av-instrument/README.md",
   "editions": [],
   "resources": []
 }
