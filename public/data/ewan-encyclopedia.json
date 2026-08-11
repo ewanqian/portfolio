@@ -1,6 +1,6 @@
 {
-  "schema_version": "0.1.1",
-  "updated": "2026-08-10",
+  "schema_version": "0.1.2",
+  "updated": "2026-08-11",
   "canonical_person_id": "person-ewan-qian",
   "status_policy": {
     "public_default": ["verified-public", "ongoing", "presented"],
@@ -77,8 +77,9 @@
     {"id": "event-observation-sanlitun", "type": "exhibition", "title_zh": "北京三里屯持续数字公共艺术展《观察与共生》", "status": "presented", "venue_zh": "北京三里屯一号场", "related_record_ids": ["work-observation-and-symbiosis"]},
     {"id": "event-observation-shenzhen-2025", "type": "exhibition", "title_zh": "深圳坪山数字群岛 / 数字水族馆相关群展《观察与共生》", "year": 2025, "status": "presented", "related_record_ids": ["work-observation-and-symbiosis"]},
     {"id": "event-hangzhou-center-babel-bottle-2025", "type": "exhibition", "title_zh": "杭州中心美术馆「巴别瓶」— 新媒体艺术家模拟器", "year": 2025, "status": "presented", "tags": ["art", "ai", "public-program"], "people": ["person-ewan-qian"], "related_record_ids": ["workshop-gamified-ai-life-2025"]},
-    {"id": "workshop-gamified-ai-life-2025", "type": "workshop", "title_zh": "游戏化 AI 生活解构师", "date": "2025-07-12", "status": "presented", "venue_zh": "杭州中心美术馆", "people": ["person-ewan-qian"], "next_iteration_id": "workshop-gamified-life-engineer"},
-    {"id": "workshop-gamified-life-engineer", "type": "workshop", "title_zh": "游戏化生活工程师", "title_en": "Gamified Life Engineer", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/gamified-life-engineer/README.md"},
+    {"id": "workshop-gamified-ai-life-2025", "type": "workshop", "title_zh": "游戏化 AI 生活解构师", "date": "2025-07-12", "status": "presented", "venue_zh": "杭州中心美术馆", "people": ["person-ewan-qian"], "next_iteration_id": "workshop-gamified-ai-new-media-art-engineer"},
+    {"id": "workshop-gamified-ai-new-media-art-engineer-101-20260829", "type": "workshop", "title_zh": "游戏化 AI 新媒体艺术工程师 101", "date": "2026-08-29", "time": "13:30–17:30", "status": "proposal", "schedule_status": "confirmed", "format_zh": "4 小时工作坊 + 结课 Showcase", "venue_context": "MANA", "people": ["person-ewan-qian"], "repo_path": "workshops/gamified-ai-new-media-art-engineer-101/README.md", "note": "Venue confirmed the date/time and four-hour format. First edition has no After Party; final Showcase is included in class."},
+    {"id": "workshop-gamified-ai-new-media-art-engineer", "type": "workshop", "title_zh": "游戏化 AI 新媒体艺术工程师", "title_en": "Gamified AI New Media Art Engineer", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/gamified-life-engineer/README.md"},
     {"id": "workshop-personal-av-instrument", "type": "workshop", "title_zh": "音画同源乐器", "title_en": "Personal A/V Instrument", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/personal-av-instrument/README.md"},
     {"id": "performance-found-vj-battle-2026", "type": "performance", "title_zh": "Found Video VJ Battle Royale — Round 8 / Found VJ Deck", "date": "2026-04-26", "status": "presented", "venue_zh": "UFO Terminal 未知终端 / 上海油罐艺术公园 1 号罐", "tags": ["live-av", "web-tool", "midi", "mapping"], "people": ["person-ewan-qian"], "repo_path": "workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md"},
     {"id": "collaboration-ro-urban-resonance", "type": "collaboration", "title_zh": "Ewan Qian × Georgy Robakidze（RÖ）持续音画研究线", "title_en": "Urban Resonance", "period": "2026-", "status": "ongoing", "tags": ["live-av", "sound-art", "urban-scanning", "research"], "people": ["person-ewan-qian", "person-georgy-robakidze"]},
