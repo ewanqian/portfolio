@@ -175,11 +175,15 @@
 
 ## 当前第一期：游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29
 
-**公开定位：** AI 协作、工程化创作与音画原型的基础入口；3 小时工作坊 + 当日晚间 After Party / Micro Showcase。
+**公开定位：** AI 协作、工程化创作与音画原型的基础入口。  
+**已确认时间：** 13:30–17:30。  
+**形式：** 4 小时工作坊 + 结课大屏幕 Showcase。
 
 - [公开课程页](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
 - [Issue #18｜内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
-- 目标：三小时后形成可运行、可操作的 A/V 原型，并准备 30–60 秒 Micro Set
+- 目标：四小时内形成可运行、可操作的新媒体 / A/V 原型，并完成一次 30–90 秒公开展示
+
+本期不设置 After Party。After Party 进入未来的初级 + 进阶组合课程或更完整的《音画同源乐器》排练 / 表演版本。
 
 旧研发代号 `Ground Zeroes` 仅保留为兼容入口，不再作为公开课程名称。
 
@@ -209,7 +213,9 @@
                ↓
          音画同源乐器
                ↓
-Build → Rehearse → After Party / Performance
+Advanced / Combined Course
+               ↓
+After Party / Performance
 ```
 
 ---
