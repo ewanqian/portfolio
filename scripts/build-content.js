@@ -32,12 +32,34 @@ function writeGenerated(name, data) {
   )
 }
 
+function attachWorkshopReadme(workshop) {
+  if (!workshop.readmePath) return workshop
+
+  const absolutePath = path.resolve(repoRoot, workshop.readmePath)
+  const relativePath = path.relative(repoRoot, absolutePath)
+
+  if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
+    throw new Error(`Workshop README escapes repository root: ${workshop.readmePath}`)
+  }
+
+  if (!fs.existsSync(absolutePath)) {
+    throw new Error(`Workshop README not found: ${workshop.readmePath}`)
+  }
+
+  return {
+    ...workshop,
+    readmeMarkdown: fs.readFileSync(absolutePath, 'utf8')
+  }
+}
+
 const works = readJsonFiles(path.join(contentDir, 'works'))
 const nodes = readJsonFiles(path.join(contentDir, 'nodes'))
 const assets = readJsonFiles(path.join(contentDir, 'assets'))
 const writings = readJsonFiles(path.join(contentDir, 'writings'))
 const relations = readJsonFiles(path.join(contentDir, 'relations'))
 const workshops = readJsonFiles(path.join(contentDir, 'workshops'))
+  .map(attachWorkshopReadme)
+  .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
 
 writeGenerated('works', works)
 writeGenerated('nodes', nodes)
