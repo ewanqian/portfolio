@@ -8,13 +8,13 @@
 
 **[《游戏化 AI 新媒体艺术工程师 101》｜AI 协作、工程化创作与音画原型](../gamified-ai-new-media-art-engineer-101/README.md)**
 
-公开定位：
+当前确认形式：
 
-> 3 小时公众工作坊 + 当日晚间 After Party / Micro Showcase。通过一条最低可用路径，让参与者从 AI 协作和工程化创作入门，完成声音—图像 Mapping，并在当天完成第一次短演出或公开试玩。
+> 2026 年 8 月 29 日 13:30–17:30，4 小时公众工作坊，结尾直接在大屏幕进行 Showcase。第一期不设置 After Party。
 
 ## 内部执行
 
-技术准备、Starter Kit、Preflight、现场设备、After Party 接线与活动后归档继续维护在：
+Starter Kit、Preflight、线上嘉宾、现场设备、Showcase 与活动后归档继续维护在：
 
 [Issue #18｜MANA 2026-08-29 执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
