@@ -78,7 +78,7 @@
 
 ### 当前第一期
 
-- [游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [游戏化 AI 新媒体艺术工程师 101｜MANA｜2026-08-29 13:30–17:30｜4 小时 + Showcase](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
 - [Issue #18｜MANA 8.29 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
 ### 长期系列
