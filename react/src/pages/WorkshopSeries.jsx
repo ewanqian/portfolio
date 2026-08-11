@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
@@ -21,13 +22,38 @@ function WorkshopSeries() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
   const series = getWorkshopSeries(slug)
+  const [runtimeMarkdown, setRuntimeMarkdown] = useState('')
+
+  useEffect(() => {
+    setRuntimeMarkdown('')
+
+    if (!series?.readmePath || series.readmeMarkdown) return undefined
+
+    const controller = new AbortController()
+    const rawUrl = `https://raw.githubusercontent.com/ewanqian/portfolio/main/${series.readmePath}`
+
+    fetch(rawUrl, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`README fetch failed: ${response.status}`)
+        return response.text()
+      })
+      .then(setRuntimeMarkdown)
+      .catch((error) => {
+        if (error.name !== 'AbortError') console.warn(error)
+      })
+
+    return () => controller.abort()
+  }, [series])
 
   if (!series) {
     return <Navigate to="/workshops" replace />
   }
 
   const isCurrentEdition = series.kind === 'current-edition'
-  const markdown = stripReadmeTitle(series.readmeMarkdown)
+  const markdown = useMemo(
+    () => stripReadmeTitle(series.readmeMarkdown || runtimeMarkdown),
+    [series.readmeMarkdown, runtimeMarkdown]
+  )
 
   return (
     <>
@@ -68,37 +94,29 @@ function WorkshopSeries() {
           </div>
         </section>
 
-        {markdown ? (
-          <section className="section">
-            <div className="container workshop-reader-shell">
-              <MarkdownReader markdown={markdown} sourcePath={series.readmePath} />
-              <aside className="workshop-reader-meta">
-                <strong>{isZh ? 'Canonical document' : 'Canonical document'}</strong>
-                <div>{isZh ? '本页正文直接来自仓库中的长期 README。网站负责阅读排版，GitHub 负责版本、历史与长期维护。' : 'This page reads directly from the repository README. The website handles presentation; GitHub keeps versions and history.'}</div>
-                {series.githubUrl && (
-                  <a href={series.githubUrl} target="_blank" rel="noreferrer">
-                    GitHub README ↗
-                  </a>
-                )}
-              </aside>
+        <section className="section">
+          <div className="container workshop-reader-shell">
+            <div>
+              {markdown ? (
+                <MarkdownReader markdown={markdown} sourcePath={series.readmePath} />
+              ) : (
+                <div className="markdown-reader">
+                  <h2>{isZh ? '完整文档正在从 GitHub 载入' : 'Loading the canonical README'}</h2>
+                  <p>{isZh ? '如果当前网络无法访问 GitHub Raw，请直接打开右侧 README 原文。' : 'If GitHub Raw is unavailable on the current network, open the canonical README directly.'}</p>
+                </div>
+              )}
             </div>
-          </section>
-        ) : (
-          <section className="section">
-            <div className="container workshop-detail-modules">
-              <article>
-                <span>01</span>
-                <h2>{isZh ? 'Editions / 期次' : 'Editions'}</h2>
-                <p>{isZh ? '不同城市、机构与参与者版本都保存在同一个系列页面下，形成连续档案。' : 'Each city, host, and participant edition stays under this stable series page as a continuous archive.'}</p>
-              </article>
-              <article>
-                <span>02</span>
-                <h2>Resources</h2>
-                <p>{isZh ? '采集任务、模板、starter kit、示例与 FAQ 作为可复用资源与系列共同维护。' : 'Collection tasks, templates, starter kits, examples, and FAQs are maintained as reusable resources alongside the series.'}</p>
-              </article>
-            </div>
-          </section>
-        )}
+            <aside className="workshop-reader-meta">
+              <strong>Canonical document</strong>
+              <div>{isZh ? '本页正文优先在构建时直接读取仓库 README；运行时仅作为兼容方式再次读取。网站负责阅读排版，GitHub 负责版本、历史与长期维护。' : 'The page reads the repository README at build time, with a runtime fallback. The website handles presentation; GitHub keeps versions and history.'}</div>
+              {series.githubUrl && (
+                <a href={series.githubUrl} target="_blank" rel="noreferrer">
+                  GitHub README ↗
+                </a>
+              )}
+            </aside>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
