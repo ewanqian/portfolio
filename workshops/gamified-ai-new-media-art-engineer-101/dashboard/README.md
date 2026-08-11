@@ -1,119 +1,188 @@
 # MANA 101｜Workshop Dashboard
 ## 游戏化 AI 新媒体艺术工程师 101
 
-> **用途：** 8 月 29 日工作坊的统一信息面板。  
-> **原则：** 公开介绍看课程 README；内部执行看 Issue #18；本页负责告诉人和 Agent「现在到哪了、去哪继续读」。
+> **用途：** 8 月 29 日工作坊统一信息面板。  
+> **原则：** 公开介绍看课程 README；内部执行看 Issue #18；本页负责同步当前版本、嘉宾、时间轴、物料与待确认事项。
 
 ---
 
-## 当前状态
+## 当前版本
 
-| 项目 | 当前版本 |
+| 项目 | 当前状态 |
 |---|---|
 | 活动 | 游戏化 AI 新媒体艺术工程师 101 |
 | 英文 | Gamified AI New Media Art Engineer 101 |
 | 日期 | 2026-08-29 |
-| 时间 | 13:30–17:30 |
-| 形式 | 4 小时公众工作坊 + 结课 Showcase |
-| After Party | 本期取消，保留给后续进阶 / 组合课程 |
+| 核心课程时长 | **3 小时** |
+| 核心时间轴 | **13:30–16:30** |
+| 场地窗口 | 前期曾沟通 13:30–17:30；16:30 后是否保留为自由交流 / 追加 Showcase / 技术缓冲，待与 MANA 最终确认 |
+| 形式 | 3 小时工作坊 + 结尾快速 Showcase |
+| After Party | 本期不设置，保留给后续进阶 / 组合课程 |
 | 导师 | 钱誉文 Ewan Qian |
-| 远程嘉宾 | yiyi / yiyisogreen（约 30 分钟，最终公开身份与题目待确认） |
-| MANA 推文计划 | 2026-08-19 发布 |
-| 当前阶段 | 课程文案确认 + 嘉宾信息确认 + 推文 / 图片 / 海报准备 |
+| 特邀艺术家 / 线上分享嘉宾 | **yiyisogreen** |
+| yiyi 身份 | 华南农业大学珠江学院录音艺术系讲师；芝加哥艺术学院科技与艺术（声音）专业背景 |
+| MANA 推文计划 | 2026-08-19 |
+| 当前阶段 | 课程母稿确认 + 嘉宾内容确认 + 推文 / 图片 / 海报准备 |
 
 ---
 
-# 01｜最先看这里
+# 01｜三小时主时间轴
 
-### 公开课程介绍
-
-[游戏化 AI 新媒体艺术工程师 101｜README](../README.md)
-
-适合：MANA、参与者、合作方、第一次了解课程的人。
-
-内容包括：
-
-- 课程为什么存在
-- AI + 工程化创作方法
-- 4 小时课程结构
-- Sound + Visual Mapping
-- Showcase
-- 参与者准备事项
-
----
-
-# 02｜4 小时当前结构
+这次不追求“讲完两门课”，而是走完一次完整路径：
 
 ```text
-13:30–13:50  START HERE
-               ↓
-13:50–14:35  BUILD THE FRAME
-               ↓
-14:35–15:10  BUILD A VISUAL SYSTEM
-               ↓
-15:10–15:40  REMOTE GUEST / yiyi
-               ↓
-15:40–16:20  CONNECT SOUND + VISUAL
-               ↓
-16:20–16:50  MAKE IT PLAYABLE
-               ↓
-16:50–17:30  SHOWCASE
+第一小时｜CONTEXT + CONTROL
+建立语境 / 环境 / 工程化方法 / Audio Visual 与 Mapping
+        ↓
+第二小时｜GUIDED BUILD
+跟着 Starter Kit 做出一个最小的 Sound + Visual 系统
+        ↓
+第三小时｜MAKE YOUR OWN
+参与者自己做 / 导师答疑 / 测试 / 快速 Showcase
 ```
 
-### 本期硬目标
+## 13:30–14:30｜HOUR 1 / CONTEXT + CONTROL
+### 先知道自己在做什么
 
-四小时结束时，每位参与者至少拥有：
+**13:30–13:45｜完整 Demo + 今日地图**
 
-- 一个可以运行的 V1
-- 一个可以操作的视觉系统
-- 至少一组 Sound + Visual Mapping
-- Quiet / Active 等基础 State
-- 一个经过他人试玩的 V2 或下一版计划
-- 一次 30–90 秒大屏幕 Showcase
+- 一个输入如何改变视觉
+- 一个动作如何同时触发 Sound + Visual
+- V1 → Test → V2
+- 为什么今天只学最少的工具
 
----
-
-# 03｜课程方法
-
-第一期只保留最基础的完整路径：
-
-```text
-想法
- ↓
-FRAME
- ↓
-AI 辅助搭建 V1
- ↓
-视觉 / 声音素材
- ↓
-Mapping
- ↓
-Blind Test
- ↓
-V2
- ↓
-Showcase
-```
-
-核心方法：
+**13:45–14:00｜Ewan：AI + 工程化创作最低框架**
 
 - FRAME → FILL → FINISH
 - Human-in-the-loop
-- V1 → Test → V2
-- Trigger / Continuous / State
-- 先做能跑的系统，再做细节
+- 先做能跑的框架，再做细节
+- AI Coding / Creative Coding / Web 为什么只是工具层
 
-第一期不追求软件覆盖率。
+**14:00–14:30｜yiyisogreen：控制、Mapping 与表演界面**
+
+建议以实际案例和简单问题进入：
+
+- Audio Visual 为什么最终要回到“同源”与表演
+- 一个鼠标 / 一个按键到底可以玩多少东西
+- 离散输入如何通过规则、时间、状态变成连续表现
+- 为什么限制反而可能产生更清楚的表演语言
+- 怎样让观众看见“操作 → 结果”的因果关系
+- 表演界面与表演风格为什么比软件功能数量更重要
+
+> 本环节不是软件教学，也不要求讲完完整艺术史。重点是给参与者建立一套看待控制、声音、视觉和表演的基本方式。
 
 ---
 
-# 04｜默认技术路径
+## 14:30–15:30｜HOUR 2 / GUIDED BUILD
+### 做出一个最小音画系统
 
-参与者主线：
+参与者使用统一 Starter Kit 跟做。
+
+### Step 1｜一个输入
+
+先只保留一个最简单的输入：
+
+- 鼠标
+- 一个按键
+- 一个按钮
+
+### Step 2｜让它产生多个结果
+
+至少完成：
+
+- 一个视觉事件
+- 一个声音事件
+- 一个状态变化
+
+核心关系：
+
+```text
+INPUT
+  ↓
+RULE / MAPPING
+  ↓
+SOUND + VISUAL + STATE
+```
+
+### Step 3｜让结果不要完全死板
+
+可以尝试：
+
+- 随机
+- 延迟
+- 连锁触发
+- 按键速度 / 间隔
+- 简单物理规则
+- Quiet / Active
+
+**本小时目标：所有人至少有一个能运行、能操作的 V1。**
+
+---
+
+## 15:30–16:30｜HOUR 3 / MAKE YOUR OWN
+### 用自己的材料做一个版本
+
+**15:30–16:05｜自由制作 + 双导师答疑**
+
+参与者替换 / 增加自己的：
+
+- 环境录音
+- 人声 / 敲击 / 机械声
+- 图片 / Logo / 纹理
+- AI 图像
+- Creative Coding / Generative Art
+
+要求不是功能越多越好，而是至少有一条自己决定的关系。
+
+**16:05–16:20｜交换试玩 / 只修一个最大问题**
+
+- 作者先不解释
+- 让别人直接操作
+- 找到最不清楚的一点
+- 修正
+- 保存 V2 或下一版计划
+
+**16:20–16:30｜快速 Showcase**
+
+- 30–60 秒 / 人或小组
+- 演示一个最有意思的操作 / Mapping / 状态
+- 大班人数较多时采用小组或精选展示
+
+---
+
+# 02｜本期硬目标
+
+三小时结束时，参与者至少拥有：
+
+- 一个可以运行的 V1
+- 一个明确输入
+- 至少一组 Sound + Visual Mapping
+- 至少一个 State / 变化规则
+- 一次他人试玩
+- 一个 V2 或下一版计划
+- 一次简短 Showcase / Demo
+
+优先级：
+
+```text
+能运行
+> 一个输入真的有反馈
+> Sound + Visual 有关系
+> 能被别人操作
+> 完成一次测试
+> 功能数量
+> 软件覆盖率
+```
+
+---
+
+# 03｜默认技术路径
+
+参与者只面对一条默认路径：
 
 **Browser Starter Kit + AI Coding + Creative Coding / Audio + Keyboard / Mouse**
 
-本期不要求全员掌握：
+第一期不要求全员掌握：
 
 - Processing 独立工程
 - Resolume / Arena
@@ -124,44 +193,41 @@ Showcase
 - 复杂 Git
 - 高级 Agent / API 自动化
 
-这些进入后续技能树。
+Processing、游戏引擎、MIDI、物理系统等可以用于导师 Demo 或进阶例子。
 
 ---
 
-# 05｜Remote Guest / yiyi
+# 04｜特邀艺术家 / yiyisogreen
 
-当前计划：约 **30 分钟线上连线**。
+**yiyisogreen**  
+**华南农业大学珠江学院｜录音艺术系 讲师**  
+**芝加哥艺术学院｜科技与艺术（声音）专业背景**
 
-建议形式：
+本次角色：**特邀艺术家 / 线上分享嘉宾**。
 
-- 20 分钟分享
-- 10 分钟 Q&A / 对谈
+公开介绍重点建议放在：
 
-当前工作标题：
+- Audio Visual 创作与历史脉络
+- Mapping Strategy / 控制策略
+- 表演界面与因果关系
+- 限制、随机与“不完全控制”
+- 声音、视觉与身体操作之间的关系
+- 实时系统怎样从技术界面转为个人表演语言
 
-**《不要急着修好它：故障、控制与实时音画系统》**  
-*Don’t Fix It Yet: Glitch, Control and Real-time Audiovisual Systems*
+### 当前分享工作题目
 
-建议内容：
+**《一个按键可以怎么玩一整场？》**  
+副题：Mapping、限制与实时表演界面
 
-- Audio Visual 的基本历史与观看方式
-- 声音与图像怎样共享 Gesture / Mapping / State
-- 程序错误与系统故障怎样成为创作材料
-- 实时控制为什么与作品语言有关
-- 网页 / Creative Coding / 游戏引擎为什么可以成为跨平台媒介
+这个标题比“故障、控制与实时系统”更贴近目前你们真正讨论出的主线；最终题目仍可由 yiyi 自己修改。
 
-待确认：
+### yiyi 资料工作页
 
-- [ ] yiyi 最终公开姓名 / artist name
-- [ ] 是否公开大学任教身份
-- [ ] 最终分享题目
-- [ ] 50–100 字公开简介
-- [ ] 允许 MANA 使用的 2–4 张作品图
-- [ ] 1–2 个公开作品 / 演出链接
+https://app.notion.com/p/31338a09cf3580dbb1c1caca07709682
 
 ---
 
-# 06｜课程来源与长期线
+# 05｜课程来源与长期线
 
 ```text
 TIMER / 控时者
@@ -189,82 +255,55 @@ Found VJ Deck
 
 相关入口：
 
+- [公开课程介绍](../README.md)
 - [长期工作坊总览](../../../docs/public-programs/README.md)
 - [游戏化 AI 新媒体艺术工程师｜长期版](../../gamified-life-engineer/README.md)
-- [音画同源乐器｜Personal A/V Instrument](../../personal-av-instrument/README.md)
+- [音画同源乐器](../../personal-av-instrument/README.md)
 - [Found VJ Deck｜现场实践](../../personal-av-instrument/cases/202604-found-vj-battle-round8.md)
 
 ---
 
-# 07｜宣传 / MANA 交接
+# 06｜宣传 / 执行入口
 
-### 当前推文交接页
+- [MANA 推文与物料交接](../../../docs/public-programs/MANA-20260829-PROMOTION.md)
+- [Issue #18｜执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
-[MANA 2026-08-29｜推文与物料交接](../../../docs/public-programs/MANA-20260829-PROMOTION.md)
-
-### 内部执行
-
-[Issue #18｜MANA 101 执行清单](https://github.com/ewanqian/portfolio/issues/18)
-
-### 最终 Word 计划
-
-最终确认后输出：
-
-`MANA-20260829-Gamified-AI-New-Media-Art-Engineer-101.docx`
-
-Word 与 GitHub README 使用同一份母稿，不维护两套文字。
+最终 Word 与公开 README 使用同一母稿，不维护微信 / Word / GitHub 三套不同课程版本。
 
 ---
 
-# 08｜现在缺什么
+# 07｜现在缺什么
 
-## P0｜文案
+## yiyi
 
-- [ ] yiyi 最终信息
-- [ ] 导师 Ewan 最终长 / 中 / 短 Bio
-- [ ] MANA 最终推文删减版
-- [ ] Word 最终稿
+- [x] artist name：yiyisogreen
+- [x] 华南农业大学珠江学院录音艺术系讲师
+- [x] 芝加哥艺术学院科技与艺术（声音）专业背景
+- [x] 本期身份：特邀艺术家 / 线上分享嘉宾
+- [ ] 最终分享题目
+- [ ] 80–150 字最终 Bio
+- [ ] 2–4 张允许 MANA 使用的作品图
+- [ ] 2–3 个前置观看视频 / 文章
 
-## P0｜图片
+## MANA
 
-建议先准备：
-
-- [ ] Ewan 正式肖像 1 张
-- [ ] TIMER 1–2 张
-- [ ] Drop Flow 1–2 张
-- [ ] Kashiwa Daisuke / 柏大辅合作现场 1 张
-- [ ] 杭州中心美术馆 / 工作坊 1–2 张
-- [ ] Found VJ Deck / APC / 现场 1–2 张
-- [ ] yiyi 作品 2–4 张
-
-## P0｜MANA 待确认
-
-- [ ] 场地准确名称 / 地址
+- [ ] 最终确认课程核心时段是否调整为 13:30–16:30
+- [ ] 若场地仍保留至 17:30，确定最后一小时用途
 - [ ] 人数上限
 - [ ] 票价 / 报名方式
-- [ ] 年龄 / 经验限制
-- [ ] 大屏幕比例与接口
-- [ ] 扩声
-- [ ] Wi-Fi
-- [ ] 是否可以提前进场测试
+- [ ] 大屏幕 / 扩声 / Wi-Fi
+- [ ] 是否可课前发送 Preflight 与前置阅读
 
----
+## Ewan
 
-# 09｜给 Agent 的读取顺序
-
-如果需要快速了解这个项目：
-
-1. 读本页 Dashboard
-2. 读 `../README.md`
-3. 如果需要执行细节，读 Issue #18
-4. 如果需要长期方法，读两项长期 Workshop README
-5. 如果需要 Ewan 背景，读 `docs/encyclopedia/`
-6. 如果需要图像，读 `public/data/ewan-media-index.json`
-
-不要从旧的 Ground Zeroes 页面重新生成一套课程版本。
+- [ ] Starter Kit V0
+- [ ] “一个按键”导师 Demo
+- [ ] 课程技能树 / 前置阅读目录
+- [ ] MANA Word 最终稿
+- [ ] 海报 / 主视觉
 
 ---
 
 ## 当前一句话
 
-**MANA 101 是一场四小时的新媒体创作基础工作坊：用最少的 AI、工程化与音画系统知识，让参与者在当天真正做出、测试并公开展示一个属于自己的可运行原型。**
+**MANA 101 是一场三小时的新媒体创作速通工作坊：第一小时建立 AI、工程化与音画控制的共同语境，第二小时跟着做出最小系统，第三小时用自己的声音和视觉材料完成、测试并展示第一个可运行原型。**
