@@ -4,9 +4,43 @@ import Footer from '../components/layout/Footer'
 import { workshopSeries } from '../data/workshops'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
+function WorkshopCard({ series, language, isZh }) {
+  const isCurrent = series.kind === 'current-edition'
+
+  return (
+    <article className={`workshop-series-card ${isCurrent ? 'current-edition' : ''}`}>
+      <span className="workshop-series-index">{isCurrent ? 'NOW' : 'SERIES'}</span>
+      <div>
+        <div className="eyebrow">
+          {isCurrent
+            ? (isZh ? '当前期次 / Current Edition' : 'Current Edition')
+            : (isZh ? '长期系列 / Long-term Series' : 'Long-term Series')}
+        </div>
+        <h2>{series.title[language]}</h2>
+        <p>{series.short[language]}</p>
+        {(series.date || series.time || series.format?.[language]) && (
+          <div className="workshop-event-meta">
+            {series.date && <span>{series.date}</span>}
+            {series.time && <span>{series.time}</span>}
+            {series.format?.[language] && <span>{series.format[language]}</span>}
+          </div>
+        )}
+        <div className="workshop-series-tags">
+          {series.tags.map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
+        <Link className="text-link" to={`/workshops/${series.slug}`}>
+          {isZh ? '阅读完整项目说明' : 'Read full project document'}
+        </Link>
+      </div>
+    </article>
+  )
+}
+
 function Workshops() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
+  const currentEditions = workshopSeries.filter((series) => series.kind === 'current-edition')
+  const longTermSeries = workshopSeries.filter((series) => series.kind !== 'current-edition')
 
   return (
     <>
@@ -15,54 +49,59 @@ function Workshops() {
         <section className="workshops-hero section">
           <div className="container workshops-hero-grid">
             <div>
-              <div className="eyebrow">{isZh ? '长期工作坊计划' : 'Long-term workshop program'}</div>
-              <h1>{isZh ? '把个人创作方法变成可进入的工具。' : 'Turning personal practice into tools others can enter.'}</h1>
+              <div className="eyebrow">{isZh ? 'Workshop / Public Program' : 'Workshop / Public Program'}</div>
+              <h1>{isZh ? '从正在发生的一期，进入长期方法。' : 'Enter the long-term method through a current edition.'}</h1>
             </div>
             <div className="workshops-hero-copy">
               <p>
                 {isZh
-                  ? 'Workshop 不是独立于作品之外的教学栏目，而是个人实践的另一种输出：把扫描、实时图像、AI、creative coding 与现场系统拆成可学习、可修改、可继续使用的方法。'
-                  : 'Workshops are not separate from the artworks. They are another output of the practice: scanning, realtime image, AI, creative coding, and live systems are opened into methods that can be learned, modified, and reused.'}
+                  ? '这里不再单独维护一套很快过期的网站文案。每个专题页直接读取 GitHub 中持续更新的 README，网站只负责更清楚的阅读、导航与当前期次入口。'
+                  : 'The site no longer maintains a second copy of workshop text. Each topic page reads from the continuously maintained GitHub README, while the website focuses on presentation, navigation, and current editions.'}
               </p>
               <p>
                 {isZh
-                  ? '每个系列使用稳定页面保存不同期次的现场记录、参与者成果与公开资源，因此这里同时是项目入口、长期档案和教学资源库。'
-                  : 'Each series has a stable page for editions, participant outcomes, documentation, and public resources, making this both an entry point and a long-term archive.'}
+                  ? 'Issue 用于内部研发和执行；README 用于公开阅读；网站把这些长期文档整理成更适合浏览的入口。'
+                  : 'Issues hold internal R&D and execution; READMEs are the public source; the website turns those documents into a clearer reading layer.'}
               </p>
             </div>
           </div>
         </section>
 
+        {currentEditions.length > 0 && (
+          <section className="section">
+            <div className="container">
+              <div className="eyebrow">{isZh ? '当前 / Upcoming' : 'Upcoming'}</div>
+              <h2 className="section-title">{isZh ? '最近一期' : 'Current edition'}</h2>
+              <div className="workshop-series-grid">
+                {currentEditions.map((series) => (
+                  <WorkshopCard key={series.slug} series={series} language={language} isZh={isZh} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className="section">
-          <div className="container workshop-series-grid">
-            {workshopSeries.map((series, index) => (
-              <article key={series.slug} className="workshop-series-card">
-                <span className="workshop-series-index">{String(index + 1).padStart(2, '0')}</span>
-                <div>
-                  <div className="eyebrow">{isZh ? '系列' : 'Series'}</div>
-                  <h2>{series.title[language]}</h2>
-                  <p>{series.short[language]}</p>
-                  <div className="workshop-series-tags">
-                    {series.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                  </div>
-                  <Link className="text-link" to={`/workshops/${series.slug}`}>
-                    {isZh ? '打开系列页' : 'Open series'}
-                  </Link>
-                </div>
-              </article>
-            ))}
+          <div className="container">
+            <div className="eyebrow">{isZh ? '长期系列 / Series' : 'Long-term series'}</div>
+            <h2 className="section-title">{isZh ? '持续维护的工作坊方法' : 'Long-term workshop methods'}</h2>
+            <div className="workshop-series-grid">
+              {longTermSeries.map((series) => (
+                <WorkshopCard key={series.slug} series={series} language={language} isZh={isZh} />
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="section workshop-structure-section">
           <div className="container">
-            <div className="eyebrow">{isZh ? '长期结构' : 'Long-term structure'}</div>
-            <h2 className="section-title">{isZh ? '每一期都进入同一套档案结构' : 'Every edition enters the same archive structure'}</h2>
+            <div className="eyebrow">{isZh ? '文档结构' : 'Documentation structure'}</div>
+            <h2 className="section-title">{isZh ? 'README 是公开母版，网站是阅读器' : 'README is the public source; the site is the reader'}</h2>
             <div className="workshop-structure-grid">
-              <div><strong>01</strong><span>{isZh ? '时间 / 地点 / 合作机构' : 'Date / place / host'}</span></div>
-              <div><strong>02</strong><span>{isZh ? '参与者成果与过程记录' : 'Participant outcomes & process'}</span></div>
-              <div><strong>03</strong><span>{isZh ? '模板 / Starter Kit / FAQ' : 'Templates / starter kit / FAQ'}</span></div>
-              <div><strong>04</strong><span>{isZh ? '个人报名 / 机构合作' : 'Join / host a workshop'}</span></div>
+              <div><strong>01</strong><span>{isZh ? 'README：公开介绍与长期版本' : 'README: public source & versions'}</span></div>
+              <div><strong>02</strong><span>{isZh ? 'Website：阅读、导航与当前期次' : 'Website: reading & navigation'}</span></div>
+              <div><strong>03</strong><span>{isZh ? 'Issues：研发、执行与待做事项' : 'Issues: R&D & execution'}</span></div>
+              <div><strong>04</strong><span>{isZh ? 'Archive：成果、媒体与后续版本' : 'Archive: outcomes & media'}</span></div>
             </div>
           </div>
         </section>
