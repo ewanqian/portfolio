@@ -22,15 +22,17 @@ function WorkshopSeries() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
   const series = getWorkshopSeries(slug)
+  const readmePath = series?.readmePath || ''
+  const buildMarkdown = series?.readmeMarkdown || ''
   const [runtimeMarkdown, setRuntimeMarkdown] = useState('')
 
   useEffect(() => {
     setRuntimeMarkdown('')
 
-    if (!series?.readmePath || series.readmeMarkdown) return undefined
+    if (!readmePath || buildMarkdown) return undefined
 
     const controller = new AbortController()
-    const rawUrl = `https://raw.githubusercontent.com/ewanqian/portfolio/main/${series.readmePath}`
+    const rawUrl = `https://raw.githubusercontent.com/ewanqian/portfolio/main/${readmePath}`
 
     fetch(rawUrl, { signal: controller.signal })
       .then((response) => {
@@ -43,14 +45,14 @@ function WorkshopSeries() {
       })
 
     return () => controller.abort()
-  }, [series])
+  }, [readmePath, buildMarkdown])
 
   if (!series) {
     return <Navigate to="/workshops" replace />
   }
 
   const isCurrentEdition = series.kind === 'current-edition'
-  const markdown = stripReadmeTitle(series.readmeMarkdown || runtimeMarkdown)
+  const markdown = stripReadmeTitle(buildMarkdown || runtimeMarkdown)
 
   return (
     <>
