@@ -1,0 +1,28 @@
+{
+  "slug": "gamified-ai-new-media-art-engineer-101",
+  "kind": "current-edition",
+  "order": 1,
+  "title": {
+    "zh": "游戏化 AI 新媒体艺术工程师 101",
+    "en": "Gamified AI New Media Art Engineer 101"
+  },
+  "short": {
+    "zh": "2026 年 8 月 29 日 MANA 先导课：4 小时完成 AI 协作、视觉原型、声音—图像 Mapping，并在结尾直接进行大屏幕 Showcase。",
+    "en": "MANA pilot on Aug 29, 2026: build an AI-assisted visual and audiovisual prototype in four hours, ending with an on-screen showcase."
+  },
+  "premise": {
+    "zh": "这是两条长期工作坊共同的基础入口：先完整走过一次想法 → V1 → Mapping → 测试 → Showcase，再决定后续向系统开发或音画乐器继续深入。",
+    "en": "A shared entry point to the two long-term workshop lines: move through idea → V1 → mapping → test → showcase before choosing a deeper systems or audiovisual-instrument path."
+  },
+  "tags": ["MANA", "101", "AI", "Creative Coding", "Audiovisual", "Showcase"],
+  "date": "2026-08-29",
+  "time": "13:30–17:30",
+  "format": {
+    "zh": "4 小时工作坊 + 结课 Showcase",
+    "en": "4-hour workshop + final showcase"
+  },
+  "readmePath": "workshops/gamified-ai-new-media-art-engineer-101/README.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/gamified-ai-new-media-art-engineer-101/README.md",
+  "editions": [],
+  "resources": []
+}
