@@ -7,22 +7,29 @@
     "en": "Gamified AI New Media Art Engineer 101"
   },
   "short": {
-    "zh": "2026 年 8 月 29 日 MANA 先导课：4 小时完成 AI 协作、视觉原型、声音—图像 Mapping，并在结尾直接进行大屏幕 Showcase。",
-    "en": "MANA pilot on Aug 29, 2026: build an AI-assisted visual and audiovisual prototype in four hours, ending with an on-screen showcase."
+    "zh": "2026 年 8 月 29 日 MANA 先导课：3 小时完成 AI / 工程化语境、最小 Sound + Visual Mapping、个人原型与快速 Showcase。",
+    "en": "MANA pilot on Aug 29, 2026: a three-hour introduction to AI-assisted project framing, minimal sound-visual mapping, personal prototyping, and a quick showcase."
   },
   "premise": {
-    "zh": "这是两条长期工作坊共同的基础入口：先完整走过一次想法 → V1 → Mapping → 测试 → Showcase，再决定后续向系统开发或音画乐器继续深入。",
-    "en": "A shared entry point to the two long-term workshop lines: move through idea → V1 → mapping → test → showcase before choosing a deeper systems or audiovisual-instrument path."
+    "zh": "第一小时建立共同语境与控制观念，第二小时完成最小音画系统，第三小时用个人材料制作、测试并展示自己的版本。",
+    "en": "Hour one establishes context and control concepts, hour two builds a minimal audiovisual system, and hour three turns it into a personal prototype that is tested and shown."
   },
-  "tags": ["MANA", "101", "AI", "Creative Coding", "Audiovisual", "Showcase"],
+  "tags": ["MANA", "101", "AI", "Creative Coding", "Audiovisual", "Mapping", "Showcase"],
   "date": "2026-08-29",
-  "time": "13:30–17:30",
+  "time": "13:30–16:30",
   "format": {
-    "zh": "4 小时工作坊 + 结课 Showcase",
-    "en": "4-hour workshop + final showcase"
+    "zh": "3 小时工作坊 + 快速 Showcase",
+    "en": "3-hour workshop + quick showcase"
+  },
+  "guest": {
+    "name": "yiyisogreen",
+    "role_zh": "特邀艺术家 / 线上分享嘉宾",
+    "affiliation_zh": "华南农业大学珠江学院录音艺术系讲师；芝加哥艺术学院科技与艺术（声音）专业背景"
   },
   "readmePath": "workshops/gamified-ai-new-media-art-engineer-101/README.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/gamified-ai-new-media-art-engineer-101/README.md",
   "editions": [],
-  "resources": []
+  "resources": [
+    "workshops/gamified-ai-new-media-art-engineer-101/dashboard/README.md"
+  ]
 }
