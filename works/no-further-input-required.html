@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>无需进一步输入 / No Further Input Required — Ewan Qian</title>
+  <meta name="description" content="《无需进一步输入 / No Further Input Required》是钱誉文于 2026 年持续发展中的单通道影像作品，围绕自动化、人类判断与外部记忆展开。" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #111111;
+      --text: #f0f0f0;
+      --muted: #9b9b9b;
+      --line: rgba(255,255,255,0.13);
+      --line-strong: rgba(255,255,255,0.28);
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(10,10,10,0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand,
+    .back-link,
+    .eyebrow,
+    .meta-label,
+    .status {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .brand { font-weight: 700; }
+    .back-link { color: var(--muted); }
+    .back-link:hover { color: var(--text); }
+
+    .hero { padding: 28px 0 92px; }
+
+    .wip-frame {
+      min-height: clamp(420px, 62vh, 700px);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, transparent 49.9%, var(--line) 50%, transparent 50.1%),
+        linear-gradient(transparent 49.9%, var(--line) 50%, transparent 50.1%),
+        var(--panel);
+      background-size: 48px 48px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .wip-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid var(--line);
+      pointer-events: none;
+    }
+
+    .wip-message {
+      max-width: 540px;
+      padding: 36px;
+      background: rgba(10,10,10,.88);
+      border: 1px solid var(--line-strong);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .status { color: var(--text); font-weight: 700; margin-bottom: 14px; }
+    .wip-message p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .hero-copy { max-width: 900px; padding-top: 42px; }
+    .eyebrow { color: var(--muted); margin-bottom: 18px; }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: .96;
+      letter-spacing: -.055em;
+      font-weight: 700;
+    }
+
+    .en-title {
+      display: block;
+      margin-top: 12px;
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.05;
+      color: var(--muted);
+      letter-spacing: -.035em;
+      font-weight: 500;
+    }
+
+    .tagline {
+      max-width: 760px;
+      margin: 26px 0 0;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .meta-grid {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      border: 1px solid var(--line);
+    }
+
+    .meta-item { padding: 18px; border-right: 1px solid var(--line); }
+    .meta-item:last-child { border-right: 0; }
+    .meta-label { color: var(--muted); display: block; margin-bottom: 5px; }
+    .meta-value { font-size: 14px; }
+
+    .section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(190px, .35fr) minmax(0, 1fr);
+      gap: 54px;
+      align-items: start;
+    }
+
+    h2 { margin: 0; font-size: 17px; letter-spacing: -.02em; }
+    .section-kicker { margin-top: 6px; color: var(--muted); font-size: 12px; }
+    .body-copy { max-width: 790px; color: #d0d0d0; font-size: 15px; }
+    .body-copy p { margin: 0 0 18px; }
+    .body-copy p:last-child { margin-bottom: 0; }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .analysis-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 22px;
+      min-height: 190px;
+    }
+
+    .analysis-card h3 { margin: 0 0 9px; font-size: 15px; }
+    .analysis-card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    .analysis-card .small-status { margin-top: 16px; color: #d7d7d7; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+
+    .question-list { display: grid; gap: 12px; }
+    .question {
+      border-top: 1px solid var(--line);
+      padding: 18px 0 0;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .note {
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer { padding: 30px 0 54px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .hero { padding-bottom: 64px; }
+      .section { padding: 58px 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .meta-grid { grid-template-columns: 1fr 1fr; }
+      .meta-item { border-bottom: 1px solid var(--line); }
+      .meta-item:nth-child(2) { border-right: 0; }
+      .meta-item:nth-child(3), .meta-item:nth-child(4) { border-bottom: 0; }
+      .analysis-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Ewan Qian / Work in Progress</div>
+      <a class="back-link" href="../index.html#works">← Back to Works</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="wip-frame" aria-label="Work in progress image placeholder">
+        <div class="wip-message">
+          <div class="status">Work in Progress</div>
+          <p>作品影像仍在制作中。此页面先保存作品结构、研究问题与当前发展状态；最终画面、声音与展览现场将在完成后补入。</p>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="eyebrow">2026 / Single-channel Moving Image / 8–10 min / Loop</div>
+        <h1>
+          无需进一步输入
+          <span class="en-title">No Further Input Required</span>
+        </h1>
+        <p class="tagline">一套系统在不再需要外部输入之后，仍持续携带着先前输入的痕迹。</p>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2026</span></div>
+        <div class="meta-item"><span class="meta-label">Medium</span><span class="meta-value">Single-channel moving image</span></div>
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">Approx. 8–10 min / loop</span></div>
+        <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <h2>作品简介</h2>
+          <div class="section-kicker">Work Statement</div>
+        </div>
+        <div class="body-copy">
+          <p>《无需进一步输入》围绕自动化与人类判断之间的关系展开。作品关注人的输入、修正与偏好如何被逐步吸收进系统内部，并使系统最终呈现出能够独立运行的状态。</p>
+          <p>持续生成、校准、沉积与回流构成目前影像结构的主要方向。当外部输入逐渐减少，过去留下的判断并未随之消失，而继续以参数、规则、权重与历史痕迹的形式影响系统。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <h2>作品结构</h2>
+          <div class="section-kicker">Artwork Framework</div>
+        </div>
+        <div class="analysis-grid">
+          <article class="analysis-card">
+            <h3>技术 / Technology</h3>
+            <p>具体生成方式、制作软件与系统结构仍在开发中。当前不把尚未确定的技术方案写成作品定义，待最终影像与生成逻辑确定后补录。</p>
+            <div class="small-status">Developing</div>
+          </article>
+
+          <article class="analysis-card">
+            <h3>媒介与形式 / Medium & Form</h3>
+            <p>单通道影像，约 8–10 分钟，可循环。当前以抽象运动影像为主要形式，通过生成、校准、残留、回流与自我维持建立连续的时间过程。</p>
+            <div class="small-status">Defined / Developing</div>
+          </article>
+
+          <article class="analysis-card">
+            <h3>艺术语言 / Artistic Language</h3>
+            <p>重点观察一个系统如何从“持续接受输入”逐步过渡到“依靠已有痕迹继续运行”。形式上关注重复、偏移、沉积、回返、消退与残留如何形成一种持续变化但并未真正归零的状态。</p>
+            <div class="small-status">Developing</div>
+          </article>
+
+          <article class="analysis-card">
+            <h3>艺术问题 / Artistic Inquiry</h3>
+            <p>当人的经验、修正与偏好已经进入系统，一个看似自主运行的系统中还保存着多少人的判断？当这些判断能够被长期保存并再次调用，创作者的边界会发生怎样的变化？</p>
+            <div class="small-status">Active Inquiry</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <h2>当前问题</h2>
+          <div class="section-kicker">Questions in Development</div>
+        </div>
+        <div class="question-list">
+          <div class="question">当持续输入停止以后，人的判断是否仍然存在于系统内部？</div>
+          <div class="question">作品、代码、版本与偏好被机器保存和再次调用时，它们是否正在成为一种外部记忆？</div>
+          <div class="question">当数字内容的制作能力被快速普及，艺术家的差异会更多体现在哪里？</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <h2>理论与研究</h2>
+          <div class="section-kicker">Working Concepts / Research</div>
+        </div>
+        <div class="body-copy">
+          <p>目前更适合将“外部记忆”“自动化中的残留判断”“创作者边界”视为工作概念，而暂不把它们写成已经完成的理论体系。后续理论阅读需要从作品中的具体形式出发，逐步连接自动化、记忆、作者性、媒介与人机关系等既有研究。</p>
+          <div class="note">当前原则：先完成作品形式，再建立更精确的理论连接；避免用理论词汇替代作品本身的形式判断。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-grid">
+        <div>
+          <h2>制作状态</h2>
+          <div class="section-kicker">Current Development</div>
+        </div>
+        <div class="body-copy">
+          <p>作品当前处于 Work in Progress。专题页面暂不使用概念图或替代性视觉冒充最终画面。</p>
+          <p>下一阶段将依次补入：最终影像结构、声音设计、生成规则或系统图、作品截图、展览现场与版本记录。页面中的分析文字也将随作品完成继续修改。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Ewan Qian — No Further Input Required / Work in Progress / 2026</div>
+  </footer>
+</body>
+</html>
