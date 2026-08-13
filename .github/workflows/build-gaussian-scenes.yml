@@ -1,9 +1,6 @@
-name: Build Gaussian Scenes Preview
+name: Build React Pages
 
 on:
-  push:
-    branches:
-      - update/gaussian-scenes-cleanup
   workflow_dispatch:
 
 permissions:
@@ -44,6 +41,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No build output changes"
           else
-            git commit -m "build: update Gaussian Scenes site bundle"
+            git commit -m "build: update React Pages bundle"
             git push
           fi
