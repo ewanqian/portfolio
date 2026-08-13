@@ -36,6 +36,8 @@ Every project should move through the same path:
 | `yujiayun-45m2-case-manifest.md` | First complete production-case manifest. |
 | `external-source-approval.md` | Review flow for web-found sources before public use. |
 | `roadmap.md` | Next targets and maintenance rhythm. |
+| `github-workflow.md` | Issue, branch, PR, and secure GitHub CLI workflow. |
+| `issues/spatial-capture-infrastructure-upgrade.md` | Prepared long-term spatial-capture Issue. |
 
 ## Public / Local Boundary
 
