@@ -124,6 +124,27 @@ function KashiwaTitan() {
             </div>
           </div>
         </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>{isZh ? '录像与完整档案' : 'Video and Full Archive'}</h2>
+            <p className="section-intro">
+              {isZh
+                ? '制作笔记、曲目视觉基因库、现场测试与可下载方法文档保留在完整 HTML 档案页。Infrared 现场录像已在 Bilibili 公开。'
+                : 'Production notes, track visual gene bank, on-site tests, and downloadable method docs live on the full HTML archive page. The Infrared live recording is public on Bilibili.'}
+            </p>
+            <div className="project-link-list">
+              <a href="/works/kashiwa.html">{isZh ? '打开完整档案页' : 'Open full archive'}</a>
+              <a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer">
+                Infrared — Bilibili
+              </a>
+              <a href="/works/mke-terminal.html">MKE Terminal</a>
+              <a href="https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" target="_blank" rel="noreferrer">
+                {isZh ? '微信回顾' : 'WeChat recap'}
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
