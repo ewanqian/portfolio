@@ -16,8 +16,11 @@
 | **计划时长** | 约 8–10 分钟，可循环 |
 | **长期形态** | 生成式音画系统 / 影像版本 / Live performance system |
 | **2026-08-15 更新** | 将作品从“关于自动化的影像”进一步明确为“能够实际运行并保存先前判断痕迹的音画系统” |
+| **2026-08-14 V0** | 私人仓库已有可运行最小系统原型（6 states + transition + audio + NEXT/HOLD/AUTO）；**preference history 未实现** |
 
 > 当前作品影像仍在制作中。专题页暂不使用替代性概念图冒充最终画面；系统图、研究结构与 WIP 信息可以公开，最终作品截图、声音与展览现场待完成后补录。
+
+> **V0 可运行原型位置（private，非公开交付）：** `ewanqian/no-further-input-required` → `index.html`
 
 ---
 
@@ -85,7 +88,7 @@ AI 当前不被定义为最终画面的唯一生成器。
 
 **AI 负责扩大可能性，人的判断负责形成作品。系统随后保存这些判断留下的结构。**
 
-后续如果加入“根据操作历史自动调整转移权重”的机制，应明确标记为真实实现后再写入最终作品说明。目前这一层仍属于 planned / prototype。
+后续如果加入“根据操作历史自动调整转移权重”的机制，应明确标记为真实实现后再写入最终作品说明。目前这一层仍属于 planned / not implemented。
 
 ---
 
@@ -99,6 +102,17 @@ V0 目标：**6 个状态**。
 
 每个状态都应是一套可以独立持续运行的 visual behaviour，而不是一段预渲染素材。
 
+**V0 已实现的 6 个 behaviour 名称（私人原型，待视觉验收）：**
+
+| ID | Name | Formal focus |
+|----|------|----------------|
+| 01 | FIELD | sparse residual field |
+| 02 | LINES | offset accumulating lines |
+| 03 | ARCS | expand / interrupt arcs |
+| 04 | RECT | local rule rectangles |
+| 05 | ACCUM | history accumulation |
+| 06 | SPARSE | negative space + rare events |
+
 可使用的形式变量：
 
 - line / arc / rectangle / field 等少量 primitive；
@@ -109,6 +123,8 @@ V0 目标：**6 个状态**。
 - 密度、尺度、方向、速度与留白。
 
 当前原则：**不要模仿 touch:waves 的白线视觉，不复制其视觉资产或代码；借鉴的是“一个输入对应一套完整音画行为”的交互语法。**
+
+**状态：implemented in private V0 / awaiting visual QA**
 
 ---
 
@@ -126,7 +142,9 @@ V0 目标：**6 个状态**。
 
 系统可以存在确定转移、概率转移、基于声音的转移和基于历史的转移。
 
-这样“时间”不再只是视频播放进度，而成为系统内部正在发生的决策过程。
+**V0 已实现：** 加权 transition graph + MANUAL / HOLD / AUTO 运行模式。基于历史的权重自适应 **未实现**。
+
+**状态：implemented (core) / developing (tuning)**
 
 ---
 
@@ -142,7 +160,9 @@ V0 目标：**6 个状态**。
 - energy → 状态的稳定程度或变化密度；
 - silence / low activity → 增加自主运行或结构回返的可能性。
 
-视觉模块决定“发生什么”，音乐结构决定“什么时候发生”，状态机决定“接下来去哪里”。
+**V0 已实现：** WebAudio mic analyser + internal pulse fallback；energy / onset 用于 AUTO 转移门控与局部事件。完整 phrase / bar 结构仍属 developing。
+
+**状态：implemented (interface) / developing (musical structure)**
 
 ---
 
@@ -157,7 +177,9 @@ V0 可以只保留：
 - `AUTO`：进入自主运行；
 - `RESET`：回到初始结构（可后续加入）。
 
-目标不是证明人完全离开，而是让少量人工判断能够改变长时间运行的结构。
+**V0 已实现：** NEXT / HOLD / AUTO + 键盘快捷键；操作写入 in-memory log。
+
+**状态：implemented**
 
 ---
 
@@ -176,6 +198,8 @@ V0 可以只保留：
 
 **状态：planned / not yet implemented**
 
+V0 仅保存 operation log，**不**根据日志改权重，**不**宣称系统已学习艺术家偏好。
+
 ---
 
 # 三种作品形态
@@ -192,6 +216,8 @@ V0 可以只保留：
 
 影像版本与系统版本属于同一作品的不同 manifestation，而不是互相独立的项目。
 
+> 点云 + 数据流图谱的影像结构见 Issue #24；与本系统 V0 并行，不互相替代。
+
 ## 3. Live / 演出系统
 
 音乐实时进入系统。艺术家通过少量控制进行 NEXT / HOLD / AUTO 等干预。
@@ -204,9 +230,9 @@ V0 可以只保留：
 
 ## 技术 / Technology
 
-候选技术方向：Web Canvas / WebGL / Processing / p5.js / WebAudio / realtime audio analysis / state machine / AI-assisted coding。
+当前 V0 实际使用：**Web Canvas 2D + WebAudio + 浏览器状态机**。
 
-最终技术栈尚未锁定。技术选择应服从视觉语言、稳定性和现场使用，不作为艺术价值本身。
+候选仍包括 WebGL / Processing / p5.js 等。最终技术栈尚未锁定。技术选择应服从视觉语言、稳定性和现场使用，不作为艺术价值本身。
 
 **状态：developing**
 
@@ -217,7 +243,7 @@ V0 可以只保留：
 - live audiovisual performance system；
 - realtime / semi-autonomous software work。
 
-作品的关键形式变化，是从固定线性影像进一步转向由状态、转移与运行历史共同组织的时间结构。
+作品的关键形式变化，是从固定线性影像进一步转向由状态、转移与运行过程共同组织的时间结构。
 
 **状态：defined / developing**
 
@@ -367,14 +393,16 @@ Daito Manabe 的长期实践将音乐、计算、视听、身体信号、人工�
 - [`about/media-profile-2026.md`](../about/media-profile-2026.md)
 - [Issue #21 — 2026-08 艺术家简介、创作方向与 AI 采访议题](https://github.com/ewanqian/portfolio/issues/21)
 - [Issue #22 — Gallery 作品分析与维护框架](https://github.com/ewanqian/portfolio/issues/22)
+- [Issue #24 — 外滩大会影像落地](https://github.com/ewanqian/portfolio/issues/24)
+- Private V0 prototype: `ewanqian/no-further-input-required` (private)
 
 ## 后续补录
 
-- [ ] V0：6 个 visual states
-- [ ] transition graph
-- [ ] WebAudio / audio-structure prototype
-- [ ] NEXT / HOLD / AUTO control
-- [ ] operation log / preference-history experiment
+- [x] V0：6 个 visual states — **implemented in private repo; awaiting visual QA**
+- [x] transition graph — **implemented (weights + AUTO)**
+- [x] WebAudio / audio-structure prototype — **interface implemented; phrase structure developing**
+- [x] NEXT / HOLD / AUTO control — **implemented**
+- [ ] operation log / preference-history experiment — **log only; adaptation not implemented**
 - [ ] 最终技术栈确认
 - [ ] 完成影像结构与最终时长
 - [ ] 补声音设计 / 音乐信息
