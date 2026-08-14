@@ -1,0 +1,34 @@
+{
+  "id": "ersha-time-eternal-observer-2026",
+  "title": "时间是空间恒久的观察者 / Time is the eternal observer of space",
+  "subtitle": "3D Visual Artist / Capture & 3D Reconstruction · SYSTEM系统 × 二砂",
+  "years": "2026",
+  "type": "spatial-film",
+  "summary": "围绕郑州中国第二砂轮厂展开的空间实验电影。镜头在“时间”与“个人”两种位置之间移动，让空间本身及历史留下的痕迹成为观看对象。钱誉文负责三维视觉、空间采集与三维重建。",
+  "practiceLine": "perceptual-environments",
+  "tags": ["ersha", "spatial capture", "point cloud", "3d reconstruction", "video art"],
+  "coverImage": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
+  "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
+  "showOnHome": true,
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": ["spatial film", "point-cloud media", "3D reconstruction", "architectural study"],
+  "analysisIds": [],
+  "sourceDocs": ["projects/ersha-time-eternal-observer-2026.md"],
+  "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/ersha-time-eternal-observer-2026.md",
+  "links": [
+    {
+      "text": "项目详情",
+      "url": "./works/ersha-time-eternal-observer.html"
+    },
+    {
+      "text": "正式发布 / Official Release",
+      "url": "https://mp.weixin.qq.com/s/9m3z-7eEtul9LSp5KGH7Qw"
+    },
+    {
+      "text": "观看影片 / Watch Film",
+      "url": "https://weixin.qq.com/sph/ASOJ1ze8vn"
+    }
+  ],
+  "priority": 2
+}
