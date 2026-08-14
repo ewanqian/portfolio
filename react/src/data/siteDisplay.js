@@ -17,6 +17,7 @@ const imageIdOverrides = {
   'glance-thousand-install-2023': '/portfolio/assets/raw-library/glance-thousand-anchang-bridge-projection.webp',
   'hallu-resonance-live-2024': '/portfolio/assets/raw-library/ewan-event-phantom-resonance.webp',
   'kashiwa': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
+  'titan': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
   'kashiwa-band-visual-2025': '/portfolio/assets/raw-library/event-2025-can-festival-zhoushan-01.webp',
   'kashiwa-bo-live-shenzhen': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
   'lonely-av-live-2023': '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp',
@@ -58,7 +59,7 @@ export const homeNodeIds = [
 
 export const nodeLinks = {
   'babel-bottle': '/archive',
-  'can-festival': '/works/kashiwa.html',
+  'can-festival': '/works/titan',
   'drop-flow-hangzhou-biennale': '/works/drop-flow.html',
   'observation-and-symbiosis': '/archive',
   'ufo-terminal': '/works/drop-flow.html'
@@ -81,8 +82,8 @@ export function getWorkTargetUrl(work) {
     return '/portfolio/#/projects/zcool-hp-g8'
   }
 
-  if (work?.id === 'kashiwa' || work?.id === 'kashiwa-bo-live-shenzhen') {
-    return '/portfolio/projects/kashiwa-titan'
+  if (work?.id === 'kashiwa' || work?.id === 'titan' || work?.id === 'kashiwa-bo-live-shenzhen') {
+    return '/works/titan'
   }
 
   if (work?.id === 'yujiayun-45ping-visual-2025') {
