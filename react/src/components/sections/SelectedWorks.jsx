@@ -5,6 +5,12 @@ import { useLanguage } from '../../i18n/LanguageContext.jsx'
 import { localizeWork } from '../../i18n/content.js'
 
 const projectNotes = {
+  'ersha-time-eternal-observer-2026': {
+    label: 'Spatial film / 3D reconstruction',
+    labelZh: '空间电影 / 三维重建',
+    role: '3D Visual Artist / Capture & 3D Reconstruction',
+    roleZh: '三维视觉 / 空间采集与三维重建'
+  },
   timer: {
     label: 'Media artwork / temporal system',
     labelZh: '媒体艺术 / 时间系统',
