@@ -8,6 +8,8 @@ const repoRoot = path.resolve(reactRoot, '..')
 const sourceAssetsDir = path.join(repoRoot, 'assets')
 const targetAssetsDir = path.join(reactRoot, 'dist', 'assets')
 const portfolioAssetsDir = path.join(reactRoot, 'dist', 'portfolio', 'assets')
+const sourceWorksDir = path.join(repoRoot, 'works')
+const targetWorksDir = path.join(reactRoot, 'dist', 'works')
 const maxCloudflarePagesFileBytes = 25 * 1024 * 1024
 const skippedLargeFiles = []
 
@@ -39,6 +41,28 @@ fs.cpSync(targetAssetsDir, portfolioAssetsDir, {
   recursive: true,
   force: true
 })
+
+// Static project archive pages (kashiwa / timer / drop-flow / mke-terminal …)
+if (fs.existsSync(sourceWorksDir)) {
+  fs.mkdirSync(targetWorksDir, { recursive: true })
+  const copied = []
+  for (const name of fs.readdirSync(sourceWorksDir)) {
+    if (!name.endsWith('.html')) continue
+    fs.copyFileSync(path.join(sourceWorksDir, name), path.join(targetWorksDir, name))
+    copied.push(name)
+  }
+  console.log(`Copied ${copied.length} works HTML file(s) → dist/works/: ${copied.join(', ')}`)
+}
+
+// Keep SPA from swallowing static HTML if a host uses rewrite rules
+const redirectsPath = path.join(reactRoot, 'dist', '_redirects')
+fs.writeFileSync(
+  redirectsPath,
+  [
+    '/works/*  /works/:splat  200',
+    '/*    /index.html   200',
+  ].join('\n') + '\n'
+)
 
 if (skippedLargeFiles.length > 0) {
   console.warn(
