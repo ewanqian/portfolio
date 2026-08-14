@@ -42,7 +42,8 @@ fs.cpSync(targetAssetsDir, portfolioAssetsDir, {
   force: true
 })
 
-// Static project archive pages (kashiwa / timer / drop-flow / mke-terminal …)
+// Static project archive pages must exist as real files in the deploy output,
+// otherwise SPA hosts rewrite /works/*.html to index.html.
 if (fs.existsSync(sourceWorksDir)) {
   fs.mkdirSync(targetWorksDir, { recursive: true })
   const copied = []
@@ -53,16 +54,6 @@ if (fs.existsSync(sourceWorksDir)) {
   }
   console.log(`Copied ${copied.length} works HTML file(s) → dist/works/: ${copied.join(', ')}`)
 }
-
-// Keep SPA from swallowing static HTML if a host uses rewrite rules
-const redirectsPath = path.join(reactRoot, 'dist', '_redirects')
-fs.writeFileSync(
-  redirectsPath,
-  [
-    '/works/*  /works/:splat  200',
-    '/*    /index.html   200',
-  ].join('\n') + '\n'
-)
 
 if (skippedLargeFiles.length > 0) {
   console.warn(
