@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="/assets/home/archive-timer-clean.webp" />
+  <title>Ewan Qian / TITAN</title>
+  <meta name="description" content="《机械光合：TITAN 的全息声林》— 与日本音乐人 Kashiwa Daisuke 合作的现场视觉项目，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。" />
+  <link rel="canonical" href="https://ewanqian.site/works/titan" />
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0b0b0b;
+      --text: #f3f1eb;
+      --muted: #9e9b93;
+      --line: rgba(243, 241, 235, 0.13);
+      --line-strong: rgba(243, 241, 235, 0.3);
+      --accent: #f0f0f0;
+      --inverse: #0a0a0a;
+      --max: 1360px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", "Noto Sans SC", "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(5, 5, 5, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; min-height: 60px;
+    }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .brand { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav a { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .nav a:hover { color: var(--text); }
+    .section { padding: 88px 0; border-top: 1px solid var(--line); }
+    .back-link {
+      display: inline-flex; font-size: 12px; color: var(--muted); margin-bottom: 18px;
+      text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+    }
+    .back-link:hover { color: var(--text); }
+    .project-hero { margin-bottom: 24px; }
+    .project-hero img { width: 100%; border: 1px solid var(--line); }
+    .project-title {
+      font-size: clamp(24px, 3.2vw, 36px); line-height: 1.05;
+      margin: 24px 0 12px; letter-spacing: -0.04em; font-weight: 700;
+    }
+    .project-subtitle { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
+    .project-intro { font-size: 15px; max-width: 760px; color: var(--muted); margin-bottom: 32px; }
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 36px 0; }
+    .gallery-item { overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .iframe-container { width: 100%; position: relative; aspect-ratio: 16/9; background: #000; }
+    .iframe-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .links-section, .credits-section, .project-info {
+      background: var(--panel); border: 1px solid var(--line); padding: 24px; margin-top: 36px;
+    }
+    .project-info {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px; margin-bottom: 24px; margin-top: 0;
+    }
+    .info-item label {
+      color: var(--muted); display: block; margin-bottom: 4px;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;
+    }
+    .info-item value { color: var(--text); font-weight: 600; display: block; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 42px; padding: 0 18px; border: 1px solid var(--text);
+      background: var(--panel); color: var(--text); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; transition: 0.15s ease; cursor: pointer;
+    }
+    .button.primary { background: var(--text); color: var(--inverse); }
+    .button:hover { background: var(--text); color: var(--inverse); }
+    .links-grid, .video-links, .credits-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;
+    }
+    .credits-grid { gap: 18px; }
+    .credit-item strong {
+      color: var(--text); display: block; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 6px;
+    }
+    .credit-item span { color: var(--text); display: block; margin-bottom: 4px; font-size: 14px; }
+    .video-embed { margin: 32px 0; border: 1px solid var(--line); overflow: hidden; }
+    .footer {
+      padding: 28px 0 56px; color: var(--muted); font-size: 13px;
+      border-top: 1px solid var(--line); margin-top: 48px;
+    }
+    .work-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-top: 24px; align-items: start;
+    }
+    .work-item { border: 1px solid var(--line); background: var(--panel); overflow: hidden; }
+    .work-item-header {
+      padding: 16px 14px; display: flex; align-items: center;
+      justify-content: space-between; cursor: pointer;
+    }
+    .work-item-header:hover { background: rgba(255,255,255,0.04); }
+    .work-item-title { display: flex; align-items: center; gap: 10px; }
+    .work-item-number {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--muted); font-weight: 600; min-width: 32px;
+    }
+    .work-item-name { font-size: 15px; font-weight: 600; }
+    .work-item-toggle { font-size: 20px; color: var(--muted); transition: transform 0.22s ease; }
+    .work-item.open .work-item-toggle { transform: rotate(45deg); }
+    .work-item-content { border-top: 1px solid var(--line); }
+    .work-item-inner { padding: 14px; }
+    .work-item-image {
+      width: 100%; aspect-ratio: 16/9; background: #050505; overflow: hidden;
+    }
+    .work-item-image img { width: 100%; height: 100%; object-fit: cover; }
+    .work-item-video { display: none; width: 100%; aspect-ratio: 16/9; background: #000; margin: 0 0 12px; }
+    .work-item-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .work-item.has-video.open .work-item-image { display: none; }
+    .work-item.has-video.open .work-item-video { display: block; }
+    .work-item-meta {
+      display: none; font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 12px;
+    }
+    .work-item.open .work-item-meta { display: block; }
+    .work-item-meta strong { color: var(--text); }
+    .work-item-meta a { color: var(--text); text-decoration: underline; }
+    @media (max-width: 760px) {
+      .gallery, .work-grid { grid-template-columns: 1fr; }
+      .section { padding: 60px 0; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">Ewan Qian / TITAN</div>
+      <div class="header-actions">
+        <nav class="nav"><a href="/#/">← Back to Home</a></nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <a href="/#/works" class="back-link">← 返回首页 / 代表作品</a>
+
+      <div class="project-hero">
+        <img src="/assets/home/featured-kashiwa-bolive-shenzhen.webp" alt="TITAN BO LIVE Shenzhen" />
+      </div>
+
+      <h1 class="project-title">机械光合：TITAN 的全息声林</h1>
+      <p class="project-subtitle">柏大辅 / KASHIWA Daisuke《TITAN》深圳 BO LIVE 现场音画专场</p>
+
+      <p class="project-intro">
+        本次展演于 2025 年 10 月 21 日在 BO LIVE 前海店呈现，围绕日本音乐人、作曲家柏大辅 / KASHIWA Daisuke 的《TITAN》展开。钱誉文负责现场视觉制作，内容包含全息纱幕、裸眼 3D、雾气纵深与音画互动段落；村田有希 / Yuki Murata 作为现场钢琴与音乐演出阵容成员参与。
+      </p>
+
+      <div class="project-info">
+        <div class="info-item"><label>音乐 / 作曲</label><value>KASHIWA Daisuke 柏大辅</value></div>
+        <div class="info-item"><label>钢琴 / 现场音乐</label><value>Yuki Murata 村田有希</value></div>
+        <div class="info-item"><label>现场视觉制作</label><value>Ewan Qian 钱誉文</value></div>
+        <div class="info-item"><label>时间</label><value>2025.10.21</value></div>
+        <div class="info-item"><label>地点</label><value>BO LIVE 前海店 / 深圳</value></div>
+        <div class="info-item"><label>视觉范围</label><value>全息纱幕 / 裸眼 3D / 音画互动视觉</value></div>
+      </div>
+
+      <h2 style="font-size: 26px; margin: 32px 0 16px;">项目说明</h2>
+      <p style="color: var(--muted); margin-bottom: 24px; max-width: 700px;">
+        这场特别视听表演围绕《TITAN》的声音世界展开。视觉语言聚焦雾气、光线、白空间深度、环境过渡、沉浸错觉与感知运动：部分段落由强烈的音频结构驱动，部分段落则转向柔和、漂浮、治愈和沉思的状态。
+      </p>
+
+      <div class="gallery">
+        <div class="gallery-item"><img src="/assets/home/featured-kashiwa-bolive-shenzhen-2.webp" alt="TITAN live 2" /></div>
+        <div class="gallery-item"><img src="/assets/home/featured-kashiwa-bolive-shenzhen-3.webp" alt="TITAN live 3" /></div>
+      </div>
+
+      <h2 style="font-size: 26px; margin: 36px 0 16px;">现场录像</h2>
+      <p style="color: var(--muted); margin-bottom: 16px; max-width: 700px; font-size: 13px;">
+        Infrared 现场录像已公开；其余为演出前测试片段。
+      </p>
+      <div class="gallery">
+        <div class="gallery-item">
+          <div class="iframe-container">
+            <iframe src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1wvZLBZEQS&p=1" allowfullscreen="true"></iframe>
+          </div>
+          <div style="padding: 14px;">
+            <div style="font-size: 13px; font-weight: 600;">04 Infrared 现场录像</div>
+            <div style="font-size: 12px; color: var(--muted);">Infrared — KASHIWA Daisuke ✕ Yuki Murata</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="iframe-container">
+            <iframe src="//player.bilibili.com/player.html?isOutside=true&bvid=BV152QMByEft&p=1" allowfullscreen="true"></iframe>
+          </div>
+          <div style="padding: 14px;">
+            <div style="font-size: 13px; font-weight: 600;">03 Haze 测试视频</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="credits-section">
+        <h3 style="margin: 0 0 18px; font-size: 20px;">主创与工作人员</h3>
+        <div class="credits-grid">
+          <div class="credit-item"><strong>展演音乐家</strong><span>KASHIWA Daisuke 柏大辅</span><span>Yuki Murata 村田有希</span></div>
+          <div class="credit-item"><strong>视觉艺术家</strong><span>Ewan Qian 钱誉文</span></div>
+          <div class="credit-item"><strong>演出统筹</strong><span>欧阳毅</span><span>雪山</span></div>
+          <div class="credit-item"><strong>展演策划</strong><span>张秋童</span></div>
+          <div class="credit-item"><strong>技术总监</strong><span>宽敬</span></div>
+          <div class="credit-item"><strong>灯光师</strong><span>王以玮</span></div>
+          <div class="credit-item"><strong>调音师</strong><span>天赐</span></div>
+          <div class="credit-item"><strong>舞台总监</strong><span>韩俊谦</span></div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 26px; margin: 36px 0 16px;">演出曲目与视觉档案</h2>
+      <div class="work-grid">
+        <div class="work-item has-video">
+          <div class="work-item-header"><div class="work-item-title"><span class="work-item-number">01</span><span class="work-item-name">Lead</span></div><span class="work-item-toggle">+</span></div>
+          <div class="work-item-content"><div class="work-item-inner">
+            <div class="work-item-image"><img src="/assets/kashiwa-titan/01_Lead.webp" alt="01 Lead" /></div>
+            <div class="work-item-video"><iframe src="https://www.manamana.net/video/2831761" allowfullscreen></iframe></div>
+            <div class="work-item-meta"><strong>Notes:</strong> 开场段落，白空间纵深与金属块体螺旋。</div>
+          </div></div>
+        </div>
+        <div class="work-item has-video">
+          <div class="work-item-header"><div class="work-item-title"><span class="work-item-number">04</span><span class="work-item-name">Infrared</span></div><span class="work-item-toggle">+</span></div>
+          <div class="work-item-content"><div class="work-item-inner">
+            <div class="work-item-image"><img src="/assets/kashiwa-titan/04_Infrared.webp" alt="04 Infrared" /></div>
+            <div class="work-item-video"><iframe src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1wvZLBZEQS&p=1" allowfullscreen></iframe></div>
+            <div class="work-item-meta"><strong>Notes:</strong> 点阵与圆体切片的三维循环。<br /><a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer">Bilibili 完整录像</a></div>
+          </div></div>
+        </div>
+        <div class="work-item has-video">
+          <div class="work-item-header"><div class="work-item-title"><span class="work-item-number">08</span><span class="work-item-name">Titan</span></div><span class="work-item-toggle">+</span></div>
+          <div class="work-item-content"><div class="work-item-inner">
+            <div class="work-item-image"><img src="/assets/kashiwa-titan/08_Titan.webp" alt="08 Titan" /></div>
+            <div class="work-item-video"><iframe src="https://www.manamana.net/video/2831892" allowfullscreen></iframe></div>
+            <div class="work-item-meta"><strong>Notes:</strong> 核心视听段落，空间压力与深度错觉。</div>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="links-section">
+        <h3 style="margin: 0 0 16px; font-size: 20px;">更多入口</h3>
+        <div class="links-grid">
+          <a class="button primary" href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer">Infrared / Bilibili</a>
+          <a class="button" href="https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" target="_blank" rel="noreferrer">微信回顾</a>
+          <a class="button" href="/#/projects/titan">React 项目摘要</a>
+          <a class="button" href="/works/mke-terminal.html">MKE 音画研究页</a>
+          <a class="button" href="/#/works">返回作品列表</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© Ewan Qian / VIRTURA · TITAN live visual archive</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.work-item-header').forEach(function (el) {
+      el.addEventListener('click', function () {
+        el.closest('.work-item').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
