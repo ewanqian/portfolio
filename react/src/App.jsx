@@ -54,6 +54,7 @@ function App() {
         <Route path="/production" element={<Production />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/gaussian-scenes" element={<GaussianScenes />} />
+        <Route path="/projects/titan" element={<KashiwaTitan />} />
         <Route path="/projects/kashiwa-titan" element={<KashiwaTitan />} />
         <Route path="/projects/yujiayun-45m2" element={<YuJiayun45m2 />} />
         <Route path="/projects/rain-singapore" element={<RainSingapore />} />

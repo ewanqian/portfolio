@@ -1,12 +1,12 @@
 {
-  "id": "kashiwa",
+  "id": "titan",
   "title": "《机械光合：TITAN 的全息声林》",
   "subtitle": "与 Kashiwa Daisuke 合作",
   "years": "2025",
   "type": "collaboration",
   "summary": "围绕日本音乐人、作曲家柏大辅 / KASHIWA Daisuke《TITAN》展开的现场音画视觉项目，涉及雾气、白空间纵深、全息纱幕、裸眼 3D 与音画互动结构。",
   "practiceLine": "collaborative-performance",
-  "tags": ["live", "collaboration", "audiovisual"],
+  "tags": ["live", "collaboration", "audiovisual", "titan"],
   "coverImage": "featured-kashiwa-bolive-shenzhen.webp",
   "image": "/assets/home/featured-kashiwa-bolive-shenzhen.webp",
   "showOnHome": true,
@@ -15,14 +15,14 @@
   "displayModes": ["holographic scrim", "naked-eye 3D", "live audiovisual", "stage screen"],
   "analysisIds": ["kashiwa-live-collaboration"],
   "sourceDocs": [
-    "works/kashiwa.html",
+    "works/titan.html",
     "projects/kashiwa-titan-visual-2025.md",
     "visual-arts/kashiwa-daisuke/README.md",
     "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
   ],
-  "repoLink": "/works/kashiwa.html",
+  "repoLink": "/works/titan.html",
   "links": [
-    { "text": "详情页", "url": "./works/kashiwa.html" },
+    { "text": "详情页", "url": "/works/titan.html" },
     { "text": "微信文章", "url": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g" }
   ],
   "priority": 0

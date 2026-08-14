@@ -134,7 +134,7 @@ function KashiwaTitan() {
                 : 'Production notes, track visual gene bank, on-site tests, and downloadable method docs live on the full HTML archive page. The Infrared live recording is public on Bilibili.'}
             </p>
             <div className="project-link-list">
-              <a href="/works/kashiwa.html">{isZh ? '打开完整档案页' : 'Open full archive'}</a>
+              <a href="/works/titan">{isZh ? '打开完整档案页 TITAN' : 'Open full TITAN archive'}</a>
               <a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer">
                 Infrared — Bilibili
               </a>
