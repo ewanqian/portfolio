@@ -8,15 +8,15 @@
   <meta name="description" content="与日本音乐人 Kashiwa Daisuke 合作的现场视觉系列，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。" />
   <style>
     :root {
-      --bg: #0a0a0a;
-      --panel: #111111;
-      --text: #f0f0f0;
-      --muted: #a0a0a0;
-      --line: rgba(255,255,255,0.12);
-      --line-strong: rgba(255,255,255,0.28);
+      --bg: #050505;
+      --panel: #0b0b0b;
+      --text: #f3f1eb;
+      --muted: #9e9b93;
+      --line: rgba(243, 241, 235, 0.13);
+      --line-strong: rgba(243, 241, 235, 0.3);
       --accent: #f0f0f0;
       --inverse: #0a0a0a;
-      --max: 1240px;
+      --max: 1360px;
     }
 
 
@@ -27,13 +27,14 @@
       background: var(--bg);
       color: var(--text);
       font-family:
+        "IBM Plex Sans",
+        "Noto Sans SC",
+        "PingFang SC",
         -apple-system,
         BlinkMacSystemFont,
         "Helvetica Neue",
         Helvetica,
         Arial,
-        "PingFang SC",
-        "Noto Sans SC",
         sans-serif;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -52,7 +53,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(5, 5, 5, 0.95);
       border-bottom: 1px solid var(--line);
     }
 
@@ -521,7 +522,7 @@
       <div class="brand">Ewan Qian / Kashiwa</div>
       <div class="header-actions">
         <nav class="nav">
-          <a href="../index.html">← Back to Home</a>
+          <a href="/#/">← Back to Home</a>
         </nav>
         <div class="language-toggle" role="group" aria-label="Language switcher">
           <button type="button" class="language-toggle-option" data-set-language="zh">中</button>
@@ -533,7 +534,7 @@
 
   <main class="container">
     <section class="section">
-      <a href="../index.html#works" class="back-link" id="back-link">← 返回首页 / 代表作品</a>
+      <a href="/#/works" class="back-link" id="back-link">← 返回首页 / 代表作品</a>
 
       <div class="project-hero">
         <img src="../assets/home/featured-kashiwa-bolive-shenzhen.webp" alt="Kashiwa Daisuke Shenzhen BO LIVE" />
@@ -595,7 +596,7 @@
       <div style="margin: 36px 0;">
         <h2 id="test-video-heading" style="font-size: 26px; margin: 0 0 16px; letter-spacing: -0.03em;">现场测试视频记录</h2>
         <p id="test-video-paragraph" style="color: var(--muted); margin-bottom: 24px; max-width: 700px; font-size: 13px;">
-          演出前的现场测试视频，包含灯光效果与视觉配合的调试过程。正式演出视频已上传至 MANA，待审核通过后将作为官方资料展示。
+          演出前的现场测试视频，包含灯光效果与视觉配合的调试过程。正式演出视频已上传至 MANA，待审核通过后将作为官方资料展示。Infrared 现场录像已在 Bilibili 公开。
         </p>
       </div>
 
@@ -635,12 +636,12 @@
         </div>
         <div class="gallery-item">
           <div class="iframe-container" style="aspect-ratio: 16/9; position: relative;">
-            <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116384285597109&bvid=BV17kQMB7EMw&cid=37411094836&p=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+            <iframe src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1wvZLBZEQS&p=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
           </div>
           <div style="padding: 14px;">
-            <div style="font-size: 13px; font-weight: 600; margin-bottom: 6px;">06 Amb 测试视频</div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 6px;">04 Infrared 现场录像</div>
             <div style="font-size: 12px; color: var(--muted); line-height: 1.5;">
-              高沉浸氛围视觉方向，漂浮、治愈、几乎超然的感觉
+              Infrared — KASHIWA Daisuke ✕ Yuki Murata
             </div>
           </div>
         </div>
@@ -958,11 +959,13 @@
                 <img src="../assets/kashiwa-titan/04_Infrared.webp" alt="04 Infrared" />
               </div>
               <div class="work-item-video">
-                <iframe src="https://www.manamana.net/video/2903434" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
+                <iframe src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1wvZLBZEQS&p=1" frameborder="0" allowfullscreen="true" scrolling="no" style="max-width:100%;width:100%;aspect-ratio:16/9;border:0;display:block;"></iframe>
               </div>
               <div class="work-item-meta">
                 <strong>Format:</strong> Moving image / live visual<br />
-                <strong>Notes:</strong> Spatial construction emphasizing three-dimensional composition. Dot-matrix visuals, expanding, contracting, and splitting circular slices, connected by various lines in an infinite loop.（强调三维构成的空间建构。点阵的视觉，圆体切片的伸、缩、拆分，通过不同的线连接到一起，无限循环。）
+                <strong>Notes:</strong> Spatial construction emphasizing three-dimensional composition. Dot-matrix visuals, expanding, contracting, and splitting circular slices, connected by various lines in an infinite loop.（强调三维构成的空间建构。点阵的视觉，圆体切片的伸、缩、拆分，通过不同的线连接到一起，无限循环。）<br />
+                <a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer">External Preview: Bilibili — Infrared</a><br />
+                <a href="https://www.manamana.net/video/detail?id=2903434#!zh" target="_blank" rel="noreferrer">External Preview: MANA</a>
               </div>
             </div>
           </div>
@@ -1121,6 +1124,7 @@
         <h3 id="selected-links-heading" style="margin: 0 0 16px; font-size: 20px; letter-spacing: -0.02em;">精选曲目观看</h3>
         <div class="video-links">
           <a href="https://www.manamana.net/video/detail?id=2831761#!zh" target="_blank" rel="noreferrer" class="button">01 Lead</a>
+          <a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer" class="button">04 Infrared (Bilibili)</a>
           <a href="https://www.manamana.net/video/detail?id=2831703#!zh" target="_blank" rel="noreferrer" class="button">05 Whitenight</a>
           <a href="https://www.manamana.net/video/detail?id=2831826#!zh" target="_blank" rel="noreferrer" class="button">06 Amb</a>
           <a href="https://www.manamana.net/video/detail?id=2831892#!zh" target="_blank" rel="noreferrer" class="button">08 Titan</a>
@@ -1139,10 +1143,16 @@
           <a href="https://github.com/ewanqian/portfolio/blob/main/projects/kashiwa-titan-visual-2025.md" target="_blank" rel="noreferrer" class="button" id="link-project-doc">
             项目详情页
           </a>
-          <a href="../works/mke-terminal.html" class="button" id="link-mke-terminal">
+          <a href="/works/mke-terminal.html" class="button" id="link-mke-terminal">
             MKE 音画研究页
           </a>
-          <a href="../index.html#works" class="button" id="link-home">
+          <a href="/#/projects/kashiwa-titan" class="button" id="link-react-summary">
+            React 项目摘要页
+          </a>
+          <a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer" class="button" id="link-infrared-bili">
+            Infrared / Bilibili
+          </a>
+          <a href="/#/works" class="button" id="link-home">
             返回首页看更多作品
           </a>
         </div>
@@ -1161,6 +1171,9 @@
             </a>
             <a href="https://www.bilibili.com/video/BV17kQMB7EMw" target="_blank" rel="noreferrer" class="button" style="font-size: 12px;">
               06 Amb 测试视频
+            </a>
+            <a href="https://www.bilibili.com/video/BV1wvZLBZEQS/" target="_blank" rel="noreferrer" class="button" style="font-size: 12px;">
+              04 Infrared 现场录像
             </a>
           </div>
         </div>
@@ -1192,88 +1205,6 @@
     </div>
   </footer>
 
-  <script>
-    window.PORTFOLIO_LEGACY_I18N = {
-      zh: {
-        title: 'Ewan Qian / Kashiwa',
-        description: '与日本音乐人 Kashiwa Daisuke 合作的现场视觉系列，围绕白空间纵深、雾气、环境过渡与沉浸式错觉展开。',
-        ops: [
-          { selector: '.nav a', text: '← 返回首页' },
-          { selector: '#back-link', text: '← 返回首页 / 代表作品' },
-          { selector: '#project-title', text: '机械光合：TITAN 的全息声林' },
-          { selector: '#project-subtitle', text: '柏大辅 / KASHIWA Daisuke《TITAN》深圳 BO LIVE 现场音画专场' },
-          { selector: '#project-intro', text: '本次展演于 2025 年 10 月 21 日在 BO LIVE 前海店呈现，围绕日本音乐人、作曲家柏大辅 / KASHIWA Daisuke 的《TITAN》展开。钱誉文负责现场视觉制作，内容包含全息纱幕、裸眼 3D、雾气纵深与音画互动段落；村田有希 / Yuki Murata 作为现场钢琴与音乐演出阵容成员参与。项目由策划、统筹、技术、舞台、声音、灯光、宣传与场地方共同完成。' },
-          { selector: '.project-info .info-item label', text: ['音乐 / 作曲', '钢琴 / 现场音乐', '现场视觉制作', '时间', '地点', '视觉范围'] },
-          { selector: '.project-info .info-item value', text: ['KASHIWA Daisuke 柏大辅', 'Yuki Murata 村田有希', 'Ewan Qian 钱誉文', '2025.10.21', 'BO LIVE 前海店', '全息纱幕 / 裸眼 3D / 音画互动视觉'] },
-          { selector: '#project-description-heading', text: '项目说明' },
-          { selector: '#project-description-paragraph', text: '这场特别视听表演围绕《TITAN》的声音世界展开。视觉语言聚焦雾气、光线、白空间深度、环境过渡、沉浸错觉与感知运动：部分段落由强烈的音频结构驱动，部分段落则转向柔和、漂浮、治愈和沉思的状态。' },
-          { selector: '#featured-project-heading', text: '代表项目' },
-          { selector: '#featured-project-paragraph', text: '《机械光合：TITAN 的全息声林》是围绕柏大辅 / KASHIWA Daisuke《TITAN》展开的深圳 BO LIVE 专场视觉系统。页面前半部分展示公开项目结构、现场画面与视频记录；制作笔记与曲目档案放在后半部分，作为更完整的视觉交付记录。' },
-          { selector: '#test-video-heading', text: '现场测试视频记录' },
-          { selector: '#test-video-paragraph', text: '演出前的现场测试视频，包含灯光效果与视觉配合的调试过程。正式演出视频已上传至 MANA，待审核通过后将作为官方资料展示。' },
-          { selector: '#production-notes-heading', text: '制作笔记：创作与技术的现场实践' },
-          { selector: '#gene-bank-heading', text: '制作方法与视觉基因库' },
-          { selector: '#gene-bank-version', text: 'v0.1 · 持续更新中' },
-          { selector: '#downloadFullProductionNotes', text: '下载完整制作方法笔记 JSON' },
-          { selector: '#downloadVisualPrompts', text: '下载视觉提示词包 TXT' },
-          { selector: '#credits-heading', text: '主创与工作人员' },
-          { selector: '#credits-subtitle', text: '(协作记录)' },
-          { selector: '#track-archive-heading', text: '演出曲目与视觉档案' },
-          { selector: '#track-archive-subtitle', text: '(视觉制作记录)' },
-          { selector: '#part2-note', text: 'Note: Part2 bg is currently treated as supporting/background material and is not included in the main archive list. (当前作为辅助/背景素材处理，未列入主档案列表。)' },
-          { selector: '#selected-links-heading', text: '精选曲目观看' },
-          { selector: '#more-links-heading', text: '更多信息与外部资料' },
-          { selector: '#link-wechat', text: '演出回顾 / 微信文章' },
-          { selector: '#link-series-doc', text: 'GitHub 系列文档' },
-          { selector: '#link-project-doc', text: '项目详情页' },
-          { selector: '#link-home', text: '返回首页看更多作品' },
-          { selector: '#bilibili-tests-heading', text: '现场测试视频（Bilibili）' },
-          { selector: '#copyright-heading', text: '版权与引用声明' },
-          { selector: '#copyright-body', html: '本页面中：<ul style="margin: 8px 0 8px 18px; padding: 0;"><li>艺人音乐、演出照片、艺人肖像等内容的版权归各自所有者所有</li><li>Ewan Qian 的制作方法、技术方案、视觉逻辑部分可被引用和参考</li><li>引用时请注明来源：Ewan Qian Portfolio</li></ul>' },
-          { selector: '#photo-note', text: '本页面中的图片包含粉丝站及社交媒体发布的照片。若对收录有任何疑问，请通过联系方式告知我们，我们将予以移除。' }
-        ]
-      },
-      en: {
-        title: 'Mechanical Photosynthesis: TITAN’s Holographic Sound Forest — Ewan Qian Portfolio',
-        description: 'A live audiovisual project centered on TITAN by Kashiwa Daisuke, with visual production by Ewan Qian.',
-        ops: [
-          { selector: '.nav a', text: '← Back to Home' },
-          { selector: '#back-link', text: '← Back to Home / Featured Works' },
-          { selector: '#project-title', text: "Mechanical Photosynthesis: TITAN's Holographic Sound Forest" },
-          { selector: '#project-subtitle', text: 'KASHIWA Daisuke / TITAN — BO LIVE Shenzhen audiovisual performance visual system' },
-          { selector: '#project-intro', text: 'Presented on October 21, 2025 at BO LIVE Qianhai, this performance was centered on TITAN by Japanese musician and composer KASHIWA Daisuke. Ewan Qian was responsible for live visual production, including holographic scrims, naked-eye 3D, haze-based depth, and audiovisual interaction passages. Yuki Murata joined the live music lineup on piano. The project was completed with planning, coordination, technical, stage, sound, lighting, publicity, and venue teams.' },
-          { selector: '.project-info .info-item label', text: ['Music / Composition', 'Piano / Live Music', 'Live Visual Production', 'Date', 'Venue', 'Visual Scope'] },
-          { selector: '.project-info .info-item value', text: ['KASHIWA Daisuke', 'Yuki Murata', 'Ewan Qian', '2025.10.21', 'BO LIVE Qianhai', 'Holographic scrim / naked-eye 3D / audiovisual interaction'] },
-          { selector: '#project-description-heading', text: 'Project Description' },
-          { selector: '#project-description-paragraph', text: 'This audiovisual performance unfolds around the sonic world of TITAN. The visual language focuses on haze, light, white-space depth, environmental transition, immersive illusion, and perceptual motion: some sections are driven by strong audio structures, while others move toward softer, floating, healing, and contemplative states.' },
-          { selector: '#featured-project-heading', text: 'Featured Project' },
-          { selector: '#featured-project-paragraph', text: 'Mechanical Photosynthesis: TITAN’s Holographic Sound Forest is a BO LIVE Shenzhen visual system centered on KASHIWA Daisuke’s TITAN. The first half of this page presents the public case structure, live imagery, and video records; production notes and track archives are kept further down as the detailed delivery record.' },
-          { selector: '#test-video-heading', text: 'On-site Test Video Records' },
-          { selector: '#test-video-paragraph', text: 'These are pre-show on-site test videos documenting the tuning process between lighting and visuals. The official performance video has already been uploaded to MANA and will be presented there once review is complete.' },
-          { selector: '#production-notes-heading', text: 'Production Notes: Creative and Technical Practice On Site' },
-          { selector: '#gene-bank-heading', text: 'Method Notes and Visual Gene Library' },
-          { selector: '#gene-bank-version', text: 'v0.1 · ongoing update' },
-          { selector: '#downloadFullProductionNotes', text: 'Download Full Production Notes JSON' },
-          { selector: '#downloadVisualPrompts', text: 'Download Visual Prompt Pack TXT' },
-          { selector: '#credits-heading', text: 'Core Team and Crew' },
-          { selector: '#credits-subtitle', text: '(collaboration record)' },
-          { selector: '#track-archive-heading', text: 'Performance Tracks and Visual Archive' },
-          { selector: '#track-archive-subtitle', text: '(visual production record)' },
-          { selector: '#part2-note', text: 'Note: Part2 bg is currently treated as supporting/background material and is not included in the main archive list.' },
-          { selector: '#selected-links-heading', text: 'Selected Track Viewing' },
-          { selector: '#more-links-heading', text: 'More Information and External References' },
-          { selector: '#link-wechat', text: 'Performance Recap / WeChat Article' },
-          { selector: '#link-series-doc', text: 'GitHub Series Note' },
-          { selector: '#link-project-doc', text: 'Project Sheet' },
-          { selector: '#link-home', text: 'Back to Home / More Works' },
-          { selector: '#bilibili-tests-heading', text: 'On-site Test Videos (Bilibili)' },
-          { selector: '#copyright-heading', text: 'Copyright and Citation Notice' },
-          { selector: '#copyright-body', html: 'On this page:<ul style="margin: 8px 0 8px 18px; padding: 0;"><li>Artist music, performance photos, and portrait images remain copyrighted by their respective owners</li><li>The production method, technical approach, and visual logic developed by Ewan Qian may be cited and referenced</li><li>Please credit the source as: Ewan Qian Portfolio</li></ul>' },
-          { selector: '#photo-note', text: 'Some images on this page originate from fan stations and social-media posts. If there are any concerns about inclusion, please reach out through the contact channels and the material will be removed.' }
-        ]
-      }
-    };
-  </script>
   <script src="../assets/scripts/legacy-language.js"></script>
 
   <script>
@@ -1306,83 +1237,8 @@
           unexpectedEffect: '意外的层次感，全息声林状态'
         },
         visualPrompts: {
-          keywords: [
-            '白空间纵深',
-            '雾气穿透',
-            '折角纱幕投影',
-            '冰屏高亮补光',
-            '点阵矩阵',
-            '螺旋几何',
-            '粒子流',
-            '极光曲线'
-          ],
+          keywords: ['白空间纵深', '雾气穿透', '折角纱幕投影', '冰屏高亮补光', '点阵矩阵', '螺旋几何', '粒子流', '极光曲线'],
           promptForAI: '白空间 + 折角纱幕 + 雾气穿透 + 高亮度冰屏补光 + 空间纵深感 + 全息声林'
-        },
-        trackVisuals: {
-          '01_Lead': {
-            name: 'Lead',
-            visualGene: '不断生成的金属块体，通过光的节奏运动，螺旋旋转',
-            spatialEffect: '视觉欺骗建构空间感'
-          },
-          '02_Green': {
-            name: 'Green',
-            visualGene: '计算机生成的持续流动，金字塔结构的绵延感',
-            spatialEffect: 'TBD'
-          },
-          '03_Haze': {
-            name: 'Haze',
-            visualGene: '强烈的节奏打击感，动与静的鲜明对比，点与线连接',
-            spatialEffect: '配合雾气形成裸眼 3D 效果'
-          },
-          '04_Infrared': {
-            name: 'Infrared',
-            visualGene: '强调三维构成的空间建构，点阵视觉，圆体切片伸、缩、拆分',
-            spatialEffect: '无限循环的线连接'
-          },
-          '05_Whitenight': {
-            name: 'Whitenight',
-            visualGene: '更悬浮和发光的段落，空间扩散，缓慢过渡',
-            spatialEffect: '沉浸式白色氛围，极具震撼力与爆发力的粒子流'
-          },
-          '06_Amb': {
-            name: 'Amb',
-            visualGene: '高氛围 ambient 视觉方向，远离激进的音频分析逻辑',
-            spatialEffect: '漂浮、治愈、几乎超然的感觉'
-          },
-          '07_Rose': {
-            name: 'Rose',
-            visualGene: '深红色的螺旋几何结构',
-            spatialEffect: '激烈的暗红色状态'
-          },
-          '08_Titan': {
-            name: 'Titan',
-            visualGene: '与 TITAN 氛围相连的核心视听段落',
-            spatialEffect: '空间压力、深度错觉与声音建筑'
-          },
-          '09_Phantom': {
-            name: 'Phantom',
-            visualGene: '强光照射点阵矩阵',
-            spatialEffect: '在四个象限中不断游走，生成式视觉'
-          },
-          '10_Aurora': {
-            name: 'Aurora',
-            visualGene: '像极光一样的优雅曲线',
-            spatialEffect: '不断生成螺旋上升的音频检测内容'
-          }
-        },
-        productionNotes: {
-          workflow: [
-            '音频分析驱动',
-            '混合渲染策略',
-            '折角纱幕空间',
-            '实时信号触发细节'
-          ],
-          creativeLogic: [
-            '白空间纵深',
-            '空间感知迁移',
-            '生成式系统方法'
-          ],
-          versionNote: 'v0.1 持续更新中，欢迎引用、扩展和重新组合'
         },
         copyright: {
           ewanPart: 'Ewan Qian 的制作方法、技术方案、视觉逻辑部分可被引用和参考',
@@ -1390,7 +1246,6 @@
           attribution: '引用时请注明来源：Ewan Qian Portfolio'
         }
       };
-      
       const blob = new Blob([JSON.stringify(fullNotes, null, 2)], {type: 'application/json'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -1400,42 +1255,7 @@
     });
 
     document.getElementById('downloadVisualPrompts').addEventListener('click', () => {
-      const prompts = `# TITAN: A Holographic Sound Forest of Mechanical Photosynthesis - Visual Prompts
-# Subtitle: BO LIVE Shenzhen 2025 现场视听演出视觉制作
-# Version: v0.1
-# Author: Ewan Qian
-# License: CC-BY-NC 4.0
-
-## Technical State
-Near Screen: 折角纱幕（双纱幕向外凸的折角结构）
-Far Screen: 冰屏（高亮度补光，弥补投影不足）
-Fog Device: 雾气装置（光穿过雾气形成可见路径）
-Rendering: 音频分析驱动 + 实时响应 + 预渲染框架
-
-## Visual Keywords
-白空间纵深 / 雾气穿透 / 折角纱幕投影 / 冰屏高亮补光 / 点阵矩阵 / 螺旋几何 / 粒子流 / 极光曲线
-
-## Track Visual Genes
-01 Lead: 不断生成的金属块体，通过光的节奏运动，螺旋旋转 · 视觉欺骗建构空间感
-02 Green: 计算机生成的持续流动，金字塔结构的绵延感
-03 Haze: 强烈的节奏打击感，动与静的鲜明对比，点与线连接 · 配合雾气形成裸眼 3D 效果
-04 Infrared: 强调三维构成的空间建构，点阵视觉，圆体切片伸、缩、拆分 · 无限循环的线连接
-05 Whitenight: 更悬浮和发光的段落，空间扩散，缓慢过渡 · 沉浸式白色氛围，极具震撼力与爆发力的粒子流
-06 Amb: 高氛围 ambient 视觉方向，远离激进的音频分析逻辑 · 漂浮、治愈、几乎超然的感觉
-07 Rose: 深红色的螺旋几何结构 · 激烈的暗红色状态
-08 Titan: 与 TITAN 氛围相连的核心视听段落 · 空间压力、深度错觉与声音建筑
-09 Phantom: 强光照射点阵矩阵 · 在四个象限中不断游走，生成式视觉
-10 Aurora: 像极光一样的优雅曲线 · 不断生成螺旋上升的音频检测内容
-
-## AI Prompt
-白空间 + 折角纱幕 + 雾气穿透 + 高亮度冰屏补光 + 空间纵深感 + 全息声林
-
-## Copyright
-Ewan Qian 的制作方法、技术方案、视觉逻辑部分可被引用和参考
-艺人音乐、演出照片、艺人肖像等内容均受版权保护
-引用时请注明来源：Ewan Qian Portfolio
-`;
-      
+      const prompts = '# TITAN Visual Prompts\n# Author: Ewan Qian\n\n白空间纵深 / 雾气穿透 / 折角纱幕投影 / 冰屏高亮补光 / 点阵矩阵 / 螺旋几何 / 粒子流 / 极光曲线\n';
       const blob = new Blob([prompts], {type: 'text/plain;charset=utf-8'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
