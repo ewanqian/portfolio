@@ -3,6 +3,7 @@ export const currentWorkIds = [
 ]
 
 export const homeGalleryWorkIds = [
+  'ersha-time-eternal-observer-2026',
   'timer',
   'drop-flow',
   'kashiwa',
