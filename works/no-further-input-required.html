@@ -201,7 +201,7 @@
       padding: 12px;
       background: #0d0d0d;
     }
-    .state strong { font-size: clamp(20px, 3vw, 34px); letter-spacing: -.04em; }
+    .state strong { font-size: clamp(16px, 2.4vw, 22px); letter-spacing: -.03em; }
     .state span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
 
     .cards {
@@ -267,13 +267,21 @@
     .todo { display: grid; gap: 9px; }
     .todo-item {
       display: grid;
-      grid-template-columns: 28px 1fr;
+      grid-template-columns: 28px 1fr auto;
       gap: 10px;
       padding: 12px 0;
       border-bottom: 1px solid var(--line);
       font-size: 14px;
+      align-items: baseline;
     }
     .todo-item span:first-child { color: var(--muted); }
+    .todo-flag {
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
 
     .footer { padding: 30px 0 54px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 
@@ -295,6 +303,8 @@
       .state-grid { grid-template-columns: repeat(3,1fr); }
       .reference-head { display: block; }
       .reference-head a { display: inline-block; margin-top: 5px; }
+      .todo-item { grid-template-columns: 28px 1fr; }
+      .todo-flag { grid-column: 2; }
     }
   </style>
 </head>
@@ -311,7 +321,7 @@
       <div class="wip-frame" aria-label="Work in progress placeholder">
         <div class="wip-message">
           <strong>Work in Progress</strong>
-          <p>作品画面仍在制作中。此处不使用替代性概念图冒充最终作品；当前页面先公开作品结构、运行逻辑、研究方向与制作状态。</p>
+          <p>作品画面仍在制作中。此处不使用替代性概念图冒充最终作品；当前页面先公开作品结构、运行逻辑、研究方向与制作状态。可运行的系统 V0 仅存在于私人仓库，不作为本页最终画面。</p>
         </div>
       </div>
 
@@ -325,7 +335,7 @@
         <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2026</span></div>
         <div class="meta-item"><span class="meta-label">Exhibition Edition</span><span class="meta-value">Single-channel moving image</span></div>
         <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">Approx. 8–10 min / loop</span></div>
-        <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress</span></div>
+        <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress · V0 system private</span></div>
       </div>
     </section>
 
@@ -341,6 +351,10 @@
           <div class="update-note">
             <div class="date">Direction update / 2026.08.15</div>
             <p>当前方向进一步从“关于自动化的一条影像”发展为“一套能够实际运行的生成式音画系统，以及由该系统产生的单通道影像与现场版本”。概念需要进入真实运行机制，而不只停留在作品说明中。</p>
+          </div>
+          <div class="update-note">
+            <div class="date">V0 runtime / 2026.08.14</div>
+            <p><strong>已实现（私人原型）：</strong> 6 个可持续 visual behaviours、加权状态转移、音频输入接口、NEXT / HOLD / AUTO、操作日志。<strong>未实现：</strong> 根据操作历史自动改写转移权重，以及任何“系统已学习艺术家”的表述。公开页不展示原型画面冒充最终作品。</p>
           </div>
         </div>
       </div>
@@ -363,12 +377,12 @@
             <div class="flow-step"><span>06</span><strong>Autonomous audiovisual runtime</strong></div>
           </div>
           <div class="state-grid" aria-label="Six-state prototype sketch">
-            <div class="state"><strong>01</strong><span>Visual state</span></div>
-            <div class="state"><strong>02</strong><span>Visual state</span></div>
-            <div class="state"><strong>03</strong><span>Visual state</span></div>
-            <div class="state"><strong>04</strong><span>Visual state</span></div>
-            <div class="state"><strong>05</strong><span>Visual state</span></div>
-            <div class="state"><strong>06</strong><span>Visual state</span></div>
+            <div class="state"><strong>FIELD</strong><span>01 residual field</span></div>
+            <div class="state"><strong>LINES</strong><span>02 offset lines</span></div>
+            <div class="state"><strong>ARCS</strong><span>03 interrupt arcs</span></div>
+            <div class="state"><strong>RECT</strong><span>04 local rules</span></div>
+            <div class="state"><strong>ACCUM</strong><span>05 history marks</span></div>
+            <div class="state"><strong>SPARSE</strong><span>06 rare events</span></div>
           </div>
         </div>
       </div>
@@ -397,23 +411,23 @@
         <div class="cards">
           <article class="card">
             <h3>Visual Vocabulary</h3>
-            <p>先建立少量完整 visual behaviours，而不是直接剪出一条时间线。V0 目标为 6 个状态，每个状态都可以持续运行，并具有统一但不同的形式规则。</p>
-            <div class="status">Prototype</div>
+            <p>先建立少量完整 visual behaviours，而不是直接剪出一条时间线。V0 为 6 个状态：FIELD / LINES / ARCS / RECT / ACCUM / SPARSE。每个状态都可以持续运行，并具有统一但不同的形式规则。</p>
+            <div class="status">Implemented · Private V0 · Awaiting visual QA</div>
           </article>
           <article class="card">
             <h3>State Machine</h3>
-            <p>状态通过 entry、duration、behaviour、exit 与 transition weight 组织时间。系统可以拥有确定转移、概率转移、基于声音的转移和后续可能加入的历史转移。</p>
-            <div class="status">Prototype</div>
+            <p>状态通过 entry、duration、behaviour、exit 与 transition weight 组织时间。V0 已具备加权转移与 MANUAL / HOLD / AUTO。基于操作历史的权重自适应尚未实现。</p>
+            <div class="status">Implemented core · Developing tuning</div>
           </article>
           <article class="card">
             <h3>Audio Structure</h3>
-            <p>音乐不只控制尺寸或亮度。更重要的是 onset、beat、phrase、energy 与 silence 如何决定“什么时候允许结构变化”，让音乐组织系统时间。</p>
-            <div class="status">Developing</div>
+            <p>音乐不只控制尺寸或亮度。V0 已接入麦克风分析与内部 pulse fallback，用 energy / onset 门控 AUTO 转移与局部事件。完整 phrase / bar 结构仍在开发。</p>
+            <div class="status">Implemented interface · Developing structure</div>
           </article>
           <article class="card">
             <h3>Human Control / History</h3>
-            <p>现场版本计划只保留 NEXT / HOLD / AUTO 等少量控制。操作历史未来可用于调整状态持续时间与转移权重，但这一层只有在真实实现后才会进入最终作品说明。</p>
-            <div class="status">Planned</div>
+            <p>现场版本保留 NEXT / HOLD / AUTO。操作可写入日志。根据日志自动改写持续时间与转移权重属于后续实验，当前不得写成已实现能力。</p>
+            <div class="status">Controls implemented · Preference history planned</div>
           </article>
         </div>
       </div>
@@ -434,7 +448,7 @@
           <article class="mode">
             <div class="mini-label">Film</div>
             <h3>8–10 分钟影像版本</h3>
-            <p>从系统长时间运行中形成或选择一个单通道版本，作为当前展览交付。影像是系统的一次 manifestation。</p>
+            <p>从系统长时间运行中形成或选择一个单通道版本，作为当前展览交付。影像是系统的一次 manifestation。点云与数据流图谱方向见 Issue #24，与系统 V0 并行。</p>
           </article>
           <article class="mode">
             <div class="mini-label">Live</div>
@@ -454,7 +468,7 @@
         <div class="cards">
           <article class="card">
             <h3>技术 / Technology</h3>
-            <p>候选方向包括 Web Canvas / WebGL / Processing / p5.js、WebAudio、实时声音分析、状态机与 AI-assisted coding。最终技术栈尚未锁定，技术选择服从视觉语言与现场稳定性。</p>
+            <p>V0 实际使用 Web Canvas 2D、WebAudio 与浏览器状态机。候选仍包括 WebGL / Processing / p5.js。最终技术栈尚未锁定，技术选择服从视觉语言与现场稳定性。</p>
             <div class="status">Developing</div>
           </article>
           <article class="card">
@@ -560,19 +574,19 @@
           <div class="section-kicker">Minimum Working System</div>
         </div>
         <div class="todo">
-          <div class="todo-item"><span>01</span><div>完成 6 个 visual states。</div></div>
-          <div class="todo-item"><span>02</span><div>建立 1 个 transition graph。</div></div>
-          <div class="todo-item"><span>03</span><div>接入音频输入，并至少读取 beat / phrase 或等价结构信息。</div></div>
-          <div class="todo-item"><span>04</span><div>完成 NEXT / HOLD / AUTO 三个主要控制。</div></div>
-          <div class="todo-item"><span>05</span><div>连续运行 10–20 分钟，产生不同但仍保持统一语言的结果。</div></div>
-          <div class="todo-item"><span>06</span><div>保存人工操作日志，为 preference history 实验准备数据。</div></div>
+          <div class="todo-item"><span>01</span><div>完成 6 个 visual states。</div><span class="todo-flag">Implemented · QA pending</span></div>
+          <div class="todo-item"><span>02</span><div>建立 1 个 transition graph。</div><span class="todo-flag">Implemented</span></div>
+          <div class="todo-item"><span>03</span><div>接入音频输入，并至少读取 energy / onset；phrase 结构继续开发。</div><span class="todo-flag">Partial</span></div>
+          <div class="todo-item"><span>04</span><div>完成 NEXT / HOLD / AUTO 三个主要控制。</div><span class="todo-flag">Implemented</span></div>
+          <div class="todo-item"><span>05</span><div>连续运行 10–20 分钟，产生不同但仍保持统一语言的结果。</div><span class="todo-flag">Ready for test</span></div>
+          <div class="todo-item"><span>06</span><div>保存人工操作日志；权重自适应实验仍属 planned。</div><span class="todo-flag">Log only</span></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">Ewan Qian — No Further Input Required / Work in Progress / updated 2026.08.15</div>
+    <div class="container">Ewan Qian — No Further Input Required / Work in Progress / updated 2026.08.14</div>
   </footer>
 </body>
 </html>
