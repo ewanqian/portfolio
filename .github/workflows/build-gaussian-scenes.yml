@@ -1,0 +1,46 @@
+name: Build React Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: react/package-lock.json
+
+      - name: Install
+        working-directory: react
+        run: npm ci
+
+      - name: Build
+        working-directory: react
+        run: npm run build
+
+      - name: Copy build to Pages root
+        run: |
+          cp react/dist/index.html ./index.html
+          cp -r react/dist/assets/* ./assets/
+
+      - name: Commit build output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/
+          if git diff --cached --quiet; then
+            echo "No build output changes"
+          else
+            git commit -m "build: update React Pages bundle"
+            git push
+          fi
