@@ -1,1 +1,51 @@
-FILE:/tmp/titan-full.html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ewan Qian / TITAN</title>
+  <link rel="canonical" href="https://ewanqian.site/works/titan" />
+  <meta name="description" content="《机械光合：TITAN 的全息声林》完整档案 — 制作笔记、曲目视觉、Infrared 录像与视觉基因库。" />
+  <style>
+    body { margin: 0; background: #050505; color: #f3f1eb; font-family: system-ui, sans-serif; }
+    .boot { padding: 48px 24px; max-width: 640px; margin: 0 auto; color: #9e9b93; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="boot" id="boot">正在加载 TITAN 完整档案…</div>
+  <script>
+    (async function () {
+      var sources = [
+        'https://cdn.jsdelivr.net/gh/ewanqian/portfolio@7f9979a380b553e4d8438fbf2a934f2fae7de6fc/works/kashiwa.html',
+        'https://raw.githubusercontent.com/ewanqian/portfolio/7f9979a380b553e4d8438fbf2a934f2fae7de6fc/works/kashiwa.html'
+      ];
+      var html = null;
+      var lastErr = null;
+      for (var i = 0; i < sources.length; i++) {
+        try {
+          var res = await fetch(sources[i], { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          html = await res.text();
+          break;
+        } catch (err) {
+          lastErr = err;
+        }
+      }
+      if (!html) {
+        document.getElementById('boot').innerHTML =
+          '完整档案加载失败。请打开 <a href="https://github.com/ewanqian/portfolio/blob/7f9979a380b553e4d8438fbf2a934f2fae7de6fc/works/kashiwa.html" style="color:#f3f1eb">GitHub 源文件</a>。<br/>' +
+          String(lastErr || '');
+        return;
+      }
+      html = html
+        .replace(/\.\.\/assets\//g, '/assets/')
+        .replace(/Ewan Qian \/ Kashiwa/g, 'Ewan Qian / TITAN')
+        .replace(/href="\/#\/projects\/kashiwa-titan"/g, 'href="/#/projects/titan"')
+        .replace(/\/works\/kashiwa\.html/g, '/works/titan');
+      document.open();
+      document.write(html);
+      document.close();
+    })();
+  </script>
+</body>
+</html>
