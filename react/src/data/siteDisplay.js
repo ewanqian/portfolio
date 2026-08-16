@@ -105,7 +105,7 @@ export function getWorkTargetUrl(work) {
     return '/archive'
   }
 
-  return rawUrl.startsWith('./') ? `/portfolio/${rawUrl.replace(/^\.\//, '')}` : rawUrl
+  return rawUrl.startsWith('./') ? `/${rawUrl.replace(/^\.\//, '')}` : rawUrl
 }
 
 export function getNodeTargetUrl(node) {
