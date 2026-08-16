@@ -10,6 +10,7 @@ const targetAssetsDir = path.join(reactRoot, 'dist', 'assets')
 const portfolioAssetsDir = path.join(reactRoot, 'dist', 'portfolio', 'assets')
 const sourceWorksDir = path.join(repoRoot, 'works')
 const targetWorksDir = path.join(reactRoot, 'dist', 'works')
+const portfolioWorksDir = path.join(reactRoot, 'dist', 'portfolio', 'works')
 const maxCloudflarePagesFileBytes = 25 * 1024 * 1024
 const skippedLargeFiles = []
 
@@ -43,16 +44,20 @@ fs.cpSync(targetAssetsDir, portfolioAssetsDir, {
 })
 
 // Static project archive pages must exist as real files in the deploy output,
-// otherwise SPA hosts rewrite /works/*.html to index.html.
+// otherwise SPA hosts rewrite /works/*.html to index.html. Keep a mirrored
+// /portfolio/works copy as a compatibility path for older generated links.
 if (fs.existsSync(sourceWorksDir)) {
   fs.mkdirSync(targetWorksDir, { recursive: true })
+  fs.mkdirSync(portfolioWorksDir, { recursive: true })
   const copied = []
   for (const name of fs.readdirSync(sourceWorksDir)) {
     if (!name.endsWith('.html')) continue
-    fs.copyFileSync(path.join(sourceWorksDir, name), path.join(targetWorksDir, name))
+    const sourcePath = path.join(sourceWorksDir, name)
+    fs.copyFileSync(sourcePath, path.join(targetWorksDir, name))
+    fs.copyFileSync(sourcePath, path.join(portfolioWorksDir, name))
     copied.push(name)
   }
-  console.log(`Copied ${copied.length} works HTML file(s) → dist/works/: ${copied.join(', ')}`)
+  console.log(`Copied ${copied.length} works HTML file(s) → dist/works/ + dist/portfolio/works/: ${copied.join(', ')}`)
 }
 
 if (skippedLargeFiles.length > 0) {
