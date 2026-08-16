@@ -1,0 +1,86 @@
+{
+  "library": "VIRTURA media library",
+  "basePath": "/assets/media/",
+  "items": [
+    {
+      "id": "kashiwa-titan-bo-live-01",
+      "path": "works/kashiwa-titan-2025/bo-live-01.jpg",
+      "type": "image",
+      "work": "kashiwa-band-visual-2025",
+      "caption": "KASHIWA Daisuke × Yuki Murata × Ewan Qian, BO LIVE Shenzhen, 2025.",
+      "credit": "Video photography: Liu Tian @ LVISIONSCHANNEL"
+    },
+    {
+      "id": "kashiwa-titan-bo-live-02",
+      "path": "works/kashiwa-titan-2025/bo-live-02.jpg",
+      "type": "image",
+      "work": "kashiwa-band-visual-2025",
+      "caption": "KASHIWA Daisuke × Yuki Murata × Ewan Qian, BO LIVE Shenzhen, 2025.",
+      "credit": "Video photography: Liu Tian @ LVISIONSCHANNEL"
+    },
+    {
+      "id": "kashiwa-titan-visual",
+      "path": "works/kashiwa-titan-2025/titan-visual.jpg",
+      "type": "image",
+      "work": "kashiwa-band-visual-2025",
+      "caption": "TITAN visual still.",
+      "credit": "Ewan Qian"
+    },
+    {
+      "id": "kashiwa-titan-grid",
+      "path": "works/kashiwa-titan-2025/titan-grid.gif",
+      "type": "gif",
+      "work": "kashiwa-band-visual-2025",
+      "caption": "TITAN nine-panel visual sequence.",
+      "credit": "Ewan Qian"
+    },
+    {
+      "id": "drop-flow-stage-01",
+      "path": "works/drop-flow-2025/stage-01.jpg",
+      "type": "image",
+      "work": "drop-flow-visual-2025",
+      "caption": "DROP FLOW performance still, China (Hangzhou) Art and Technology Biennale, 2025.",
+      "credit": "DROP FLOW artists"
+    },
+    {
+      "id": "drop-flow-stage-02",
+      "path": "works/drop-flow-2025/stage-02.jpg",
+      "type": "image",
+      "work": "drop-flow-visual-2025",
+      "caption": "DROP FLOW performance still, China (Hangzhou) Art and Technology Biennale, 2025.",
+      "credit": "DROP FLOW artists"
+    },
+    {
+      "id": "drop-flow-stage-03",
+      "path": "works/drop-flow-2025/stage-03.jpg",
+      "type": "image",
+      "work": "drop-flow-visual-2025",
+      "caption": "DROP FLOW performance still, China (Hangzhou) Art and Technology Biennale, 2025.",
+      "credit": "DROP FLOW artists"
+    },
+    {
+      "id": "timer-stage",
+      "path": "works/timer-2024/stage.jpg",
+      "type": "image",
+      "work": "timer-loading-access-2-2024",
+      "caption": "TIMER live digital stage, Loading… Permission 2 exhibition.",
+      "credit": "Ewan Qian"
+    },
+    {
+      "id": "portfolio-2026-work-01",
+      "path": "portfolio-2026/work-01.jpg",
+      "type": "image",
+      "work": "portfolio-2026",
+      "caption": "Ewan Qian portfolio image.",
+      "credit": "Ewan Qian"
+    },
+    {
+      "id": "portfolio-2026-work-02",
+      "path": "portfolio-2026/work-02.jpg",
+      "type": "image",
+      "work": "portfolio-2026",
+      "caption": "Ewan Qian portfolio image.",
+      "credit": "Ewan Qian"
+    }
+  ]
+}
