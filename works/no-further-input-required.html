@@ -334,9 +334,9 @@
           src="./no-further-input-required-v0.html"
           title="《无需进一步输入》V0 浏览器运行原型"
           loading="eager"
-          allow="microphone"
+          allow="microphone; autoplay"
         ></iframe>
-        <p class="prototype-note"><strong>当前可运行：</strong>6 个独立生成系统、机械式状态转换、可选择设备的麦克风 / 本地音频接口与 NEXT / HOLD / AUTO。原型默认只显示实时画面；移动指针或按 N / H / A / I 时，控制层短暂出现。</p>
+        <p class="prototype-note"><strong>当前可运行：</strong>6 个独立生成系统、机械式状态转换、72–156 BPM 本地生成乐器、麦克风 / 本地音频接口，以及 NEXT / HOLD / AUTO。原型默认只显示实时画面；移动指针或按 N / H / A / I / S 时，控制层短暂出现。</p>
       </div>
 
       <div class="hero-copy">
@@ -352,8 +352,8 @@
         <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress</span></div>
       </div>
       <div class="status-overview" aria-label="当前开发状态">
-        <div class="status-block implemented"><strong>已实现 / Implemented V0</strong><p>6 个视觉状态、小型数字寄存器脉冲、固定顺序的循环状态链、可选择设备的浏览器音频输入、NEXT / HOLD / AUTO 与可运行预览。</p></div>
-        <div class="status-block"><strong>开发中 / Developing</strong><p>phrase 检测调校、声音设计、长时间稳定性与最终 8–10 分钟影像结构。</p></div>
+        <div class="status-block implemented"><strong>已实现 / Implemented V0</strong><p>6 个视觉状态、共享 16-step transport 的本地生成乐器、可调 BPM、视觉参数、固定顺序状态链、音频输入与 NEXT / HOLD / AUTO。</p></div>
+        <div class="status-block"><strong>开发中 / Developing</strong><p>本地乐器的音色与混音、外部 phrase 检测、长时间稳定性与最终 8–10 分钟影像结构。</p></div>
         <div class="status-block research"><strong>研究假设 / Research</strong><p>preference history 与自动调整转移权重尚未实现，当前系统不会学习或吸收艺术家偏好。</p></div>
       </div>
     </section>
@@ -436,12 +436,12 @@
           </article>
           <article class="card">
             <h3>Audio Structure</h3>
-            <p>麦克风与本地音频文件已可接入，麦克风授权后可选择具体输入设备；分析结果提供 low / mid / high、onset 与 8-beat phrase gate。当前映射已运行，phrase 与现场音乐结构的准确性仍需调校。</p>
+            <p>本地生成乐器以 72–156 BPM 的 16-step transport 组织低频脉冲、短噪声、金属点击、低音与稀疏和声；声音与视觉共享 step、beat 和 phrase。麦克风与本地音频文件仍可接入，外部 phrase 检测正在调校。</p>
             <div class="status">Implemented V0 / Tuning</div>
           </article>
           <article class="card">
             <h3>Human Control</h3>
-            <p>NEXT、HOLD 与 AUTO 已成为主要控制，并支持 N / H / A 键盘操作。HOLD 覆盖自动转移；NEXT 仍允许人工决定关键切换时刻。</p>
+            <p>NEXT、HOLD 与 AUTO 控制状态运行；BPM 控制本地 transport。默认隐藏的 STYLE 面板允许实时调整 LINE、POINT、ARRAY 与 TRACE，参数只在当前会话生效。</p>
             <div class="status">Implemented / V0</div>
           </article>
           <article class="card">
@@ -594,13 +594,13 @@
       <div class="container section-grid">
         <div>
           <h2>V0 当前状态</h2>
-          <div class="section-kicker">Minimum Working System / V0.3 / 2026.08.16</div>
+          <div class="section-kicker">Minimum Working System / V0.4 / 2026.08.16</div>
         </div>
         <div class="todo">
           <div class="todo-item"><span>01</span><div><strong>已实现：</strong>6 个独立 visual states / behaviours。</div></div>
           <div class="todo-item"><span>02</span><div><strong>已实现：</strong>1 条固定顺序的循环状态链，以及“拆解—校准—重组”的机械切换。</div></div>
-          <div class="todo-item"><span>03</span><div><strong>已实现 V0：</strong>麦克风设备选择、本地音频与 demo signal；beat / phrase 分析仍在调校。</div></div>
-          <div class="todo-item"><span>04</span><div><strong>已实现：</strong>NEXT / HOLD / AUTO 与键盘控制。</div></div>
+          <div class="todo-item"><span>03</span><div><strong>已实现 V0：</strong>可调 BPM 本地生成乐器、麦克风设备选择与本地音频；外部 phrase 分析仍在调校。</div></div>
+          <div class="todo-item"><span>04</span><div><strong>已实现：</strong>NEXT / HOLD / AUTO、键盘控制与 LINE / POINT / ARRAY / TRACE 视觉参数。</div></div>
           <div class="todo-item"><span>05</span><div><strong>开发中：</strong>10–20 分钟连续运行、不同输入与设备的稳定性验证。</div></div>
           <div class="todo-item"><span>06</span><div><strong>研究假设：</strong>preference history / weight adaptation 尚未实现；本次 V0 不宣称系统会学习偏好。</div></div>
         </div>
