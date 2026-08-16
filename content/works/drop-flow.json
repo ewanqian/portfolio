@@ -22,7 +22,7 @@
   ],
   "repoLink": "/works/drop-flow.html",
   "links": [
-    { "text": "详情页", "url": "./works/drop-flow.html" },
+    { "text": "详情页", "url": "/works/drop-flow.html" },
     { "text": "看录像", "url": "https://www.bilibili.com/video/BV1PREczgEzC/" }
   ],
   "priority": 5
