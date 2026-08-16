@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070805" />
+  <link rel="icon" href="data:," />
+  <title>No Further Input Required — V0 Runtime</title>
+  <meta name="description" content="《无需进一步输入》浏览器 V0：六个实时视觉状态、加权状态转换、音频输入与 NEXT / HOLD / AUTO 控制。" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070805;
+      --surface: rgba(12, 13, 10, .88);
+      --surface-solid: #0c0d0a;
+      --ink: #e8eadf;
+      --muted: #92978c;
+      --faint: #555a52;
+      --line: rgba(232, 234, 223, .19);
+      --line-strong: rgba(232, 234, 223, .48);
+      --accent: #e8eadf;
+      --accent-ink: #070805;
+      --warning: #e8eadf;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --text-xs: 10px;
+      --text-sm: 12px;
+      --text-md: 14px;
+      --text-lg: clamp(18px, 2.1vw, 28px);
+      --dur-1: 160ms;
+      --dur-2: 320ms;
+      --ease-out: cubic-bezier(.2, .8, .2, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100%; }
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    button, .file-label { min-height: 44px; }
+    button:focus-visible, .file-label:focus-within, a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    a { color: inherit; }
+    .skip-link {
+      position: fixed;
+      left: 14px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      transition: top var(--dur-1) var(--ease-out);
+    }
+    .skip-link:focus { top: 14px; }
+
+    .runtime {
+      position: relative;
+      width: 100vw;
+      height: 100svh;
+      min-height: 520px;
+      isolation: isolate;
+      background: var(--bg);
+    }
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: .14;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+    .frame {
+      position: absolute;
+      inset: 18px;
+      z-index: 3;
+      border: 1px solid var(--line);
+      pointer-events: none;
+    }
+    .frame::before, .frame::after {
+      content: "";
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border-color: var(--ink);
+      opacity: .62;
+    }
+    .frame::before { left: -1px; top: -1px; border-left: 1px solid; border-top: 1px solid; }
+    .frame::after { right: -1px; bottom: -1px; border-right: 1px solid; border-bottom: 1px solid; }
+
+    .top-hud {
+      position: absolute;
+      z-index: 5;
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      pointer-events: none;
+    }
+    .identity, .runtime-readout {
+      padding: 15px 17px;
+      background: linear-gradient(90deg, rgba(7, 8, 5, .94), rgba(7, 8, 5, .66) 72%, transparent);
+    }
+    .identity { max-width: 620px; }
+    .kicker, .mono-label, .status-pill, .control, .audio-control, .state-node {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .kicker { color: var(--muted); }
+    .identity h1 {
+      margin: 7px 0 0;
+      font-size: var(--text-lg);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      font-weight: 550;
+    }
+    .identity h1 span { color: var(--muted); font-weight: 400; }
+    .runtime-readout {
+      min-width: 218px;
+      text-align: right;
+      background: linear-gradient(270deg, rgba(7, 8, 5, .94), rgba(7, 8, 5, .66) 74%, transparent);
+    }
+    .mode-line { display: flex; justify-content: flex-end; align-items: center; gap: 9px; }
+    .mode-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(216, 255, 67, .12);
+    }
+    .mode-dot.is-held { background: var(--warning); box-shadow: 0 0 0 3px rgba(244, 189, 98, .14); }
+    .timecode { margin-top: 7px; font-family: var(--font-mono); color: var(--muted); font-size: var(--text-sm); }
+
+    .state-caption {
+      position: absolute;
+      z-index: 5;
+      left: clamp(38px, 5vw, 84px);
+      top: 50%;
+      width: min(360px, 38vw);
+      transform: translateY(-38%);
+      pointer-events: none;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .85);
+    }
+    .state-number {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: var(--text-sm);
+      letter-spacing: .12em;
+    }
+    .state-caption h2 {
+      margin: 10px 0 8px;
+      font-size: clamp(30px, 5vw, 76px);
+      line-height: .87;
+      letter-spacing: -.065em;
+      font-weight: 520;
+    }
+    .state-caption p {
+      max-width: 310px;
+      margin: 0;
+      color: var(--muted);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+    .state-caption.is-changing { animation: caption-shift 1.2s var(--ease-out); }
+    @keyframes caption-shift {
+      0% { opacity: .18; transform: translateY(-34%) translateX(-12px); }
+      100% { opacity: 1; transform: translateY(-38%) translateX(0); }
+    }
+
+    .audio-panel {
+      position: absolute;
+      z-index: 6;
+      top: 110px;
+      right: 35px;
+      width: 190px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .audio-head { padding: 12px 13px 10px; border-bottom: 1px solid var(--line); }
+    .audio-status { margin-top: 6px; color: var(--muted); font: var(--text-xs)/1.4 var(--font-mono); }
+    .device-row { padding: 8px 10px 9px; border-top: 1px solid var(--line); }
+    .device-select {
+      width: 100%;
+      min-height: 32px;
+      padding: 0 7px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 9px/1 var(--font-mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .device-select:disabled { color: var(--faint); cursor: not-allowed; }
+    .meters { padding: 12px 13px 5px; display: grid; gap: 7px; }
+    .meter-row { display: grid; grid-template-columns: 36px 1fr; gap: 8px; align-items: center; }
+    .meter-row span { color: var(--muted); font: var(--text-xs)/1 var(--font-mono); }
+    .meter { height: 2px; background: var(--faint); overflow: hidden; }
+    .meter i { display: block; width: 10%; height: 100%; background: var(--ink); transform-origin: left; transform: scaleX(.1); }
+    .audio-actions { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--line); }
+    .audio-control, .file-label {
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-right: 1px solid var(--line);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color var(--dur-1), background var(--dur-1);
+    }
+    .audio-control:last-child { border-right: 0; }
+    .audio-control:hover, .file-label:hover { color: var(--ink); background: rgba(255, 255, 255, .05); }
+    .audio-control.is-active { color: var(--accent); }
+    .file-label input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+
+    .bottom-hud {
+      position: absolute;
+      z-index: 7;
+      left: 35px;
+      right: 35px;
+      bottom: 35px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .state-rail {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(72px, 1fr));
+      background: var(--surface);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+    .state-node {
+      position: relative;
+      min-height: 64px;
+      padding: 11px 12px;
+      border-right: 1px solid var(--line);
+      color: var(--muted);
+      transition: background var(--dur-2), color var(--dur-2);
+    }
+    .state-node:last-child { border-right: 0; }
+    .state-node strong { display: block; color: inherit; font-weight: 500; }
+    .state-node span { display: block; margin-top: 7px; font-size: 9px; letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .state-node::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--accent); }
+    .state-node.is-active { color: var(--ink); background: rgba(232, 234, 223, .06); }
+    .state-node.is-active::after { right: var(--progress-right, 100%); transition: right 80ms linear; }
+    .state-node.is-next { color: var(--accent); }
+
+    .transport { display: grid; grid-template-columns: repeat(3, minmax(72px, 88px)); border: 1px solid var(--line-strong); background: var(--surface-solid); }
+    .control {
+      border: 0;
+      border-right: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background var(--dur-1), color var(--dur-1);
+    }
+    .control:last-child { border-right: 0; }
+    .control:hover { background: rgba(232, 234, 223, .08); }
+    .control.is-active { background: var(--accent); color: var(--accent-ink); }
+    .control.hold.is-active { background: var(--warning); }
+
+    .status-ledger {
+      position: absolute;
+      z-index: 6;
+      right: 35px;
+      bottom: 116px;
+      width: min(390px, calc(100vw - 70px));
+      display: grid;
+      gap: 5px;
+      pointer-events: none;
+    }
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 10px;
+      align-items: baseline;
+      padding: 5px 8px;
+      background: rgba(7, 8, 5, .75);
+      color: var(--muted);
+      font-size: var(--text-xs);
+      line-height: 1.4;
+    }
+    .status-pill { color: var(--ink); }
+    .status-pill.implemented { color: var(--accent); }
+    .status-pill.research { color: var(--warning); }
+    .back-link {
+      position: absolute;
+      z-index: 8;
+      left: 35px;
+      bottom: 116px;
+      padding: 8px 9px;
+      color: var(--muted);
+      background: rgba(7, 8, 5, .72);
+      font: var(--text-xs)/1.2 var(--font-mono);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .back-link:hover { color: var(--ink); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 900px) {
+      .audio-panel { top: 104px; right: 27px; }
+      .bottom-hud { left: 27px; right: 27px; bottom: 27px; grid-template-columns: 1fr; }
+      .state-rail { order: 2; }
+      .transport { justify-self: end; height: 54px; }
+      .status-ledger { right: 27px; bottom: 151px; }
+      .back-link { left: 27px; bottom: 151px; }
+    }
+    @media (max-width: 680px) {
+      .runtime { min-height: 640px; }
+      .frame { inset: 10px; }
+      .top-hud { top: 10px; left: 10px; right: 10px; grid-template-columns: 1fr; }
+      .identity { padding: 13px; }
+      .runtime-readout { position: absolute; right: 0; top: 0; min-width: auto; padding: 13px; }
+      .identity h1 { max-width: calc(100% - 138px); font-size: 18px; }
+      .identity h1 span { display: none; }
+      .state-caption { left: 24px; top: 42%; width: 56vw; }
+      .state-caption h2 { font-size: clamp(38px, 13vw, 64px); }
+      .state-caption p { display: none; }
+      .audio-panel { top: 106px; right: 18px; width: 150px; }
+      .meters { padding: 10px; }
+      .audio-head { padding: 10px; }
+      .bottom-hud { left: 18px; right: 18px; bottom: 18px; gap: 8px; }
+      .transport { width: 100%; grid-template-columns: repeat(3, 1fr); }
+      .state-rail { grid-template-columns: repeat(6, 1fr); }
+      .state-node { min-width: 0; min-height: 48px; padding: 9px 7px; }
+      .state-node span { display: none; }
+      .status-ledger { right: 18px; bottom: 129px; width: calc(100vw - 36px); }
+      .ledger-row { grid-template-columns: 82px 1fr; }
+      .back-link { display: none; }
+    }
+    @media (max-height: 670px) and (min-width: 681px) {
+      .status-ledger { display: none; }
+      .back-link { bottom: 109px; }
+      .audio-panel { top: 88px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+      .grain { display: none; }
+    }
+
+    /* V0.2 — the artwork is the first and only persistent layer. */
+    .grain, .frame, .top-hud, .status-ledger, .back-link { display: none; }
+    .state-caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .bottom-hud {
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      grid-template-columns: minmax(180px, 1fr) auto;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+    }
+    .bottom-hud.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .state-rail {
+      align-self: end;
+      height: 46px;
+      background: rgba(7, 8, 5, .78);
+      border-color: rgba(232, 234, 223, .25);
+      backdrop-filter: blur(8px);
+    }
+    .state-node {
+      min-width: 0;
+      min-height: 44px;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      background: transparent;
+    }
+    .state-node strong, .state-node span { display: none; }
+    .state-node::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border: 1px solid rgba(232, 234, 223, .42);
+      transition: width 220ms var(--ease-out), background 220ms var(--ease-out), border-color 220ms var(--ease-out);
+    }
+    .state-node.is-active::before {
+      width: 22px;
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+    .state-node.is-next::before { border-color: var(--ink); }
+    .state-node::after { height: 1px; background: var(--ink); }
+    .transport { grid-template-columns: repeat(4, minmax(66px, 82px)); height: 46px; border-color: rgba(232, 234, 223, .34); background: rgba(7, 8, 5, .86); backdrop-filter: blur(8px); }
+    .control { min-height: 44px; color: rgba(232, 234, 223, .72); }
+    .control.is-active { background: var(--ink); color: var(--bg); }
+    .control.hold.is-active { background: var(--ink); color: var(--bg); }
+
+    .audio-panel {
+      top: auto;
+      right: 18px;
+      bottom: 72px;
+      width: 190px;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      background: rgba(7, 8, 5, .88);
+      border-color: rgba(232, 234, 223, .28);
+      transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out);
+    }
+    .audio-panel.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .audio-head .mono-label { display: none; }
+    .audio-status { margin-top: 0; }
+
+    @media (max-width: 680px) {
+      .runtime { min-height: 540px; }
+      .bottom-hud { left: 10px; right: 10px; bottom: 10px; grid-template-columns: 1fr; }
+      .transport { order: 1; width: 100%; grid-template-columns: repeat(4, 1fr); }
+      .state-rail { order: 2; height: 34px; }
+      .state-node { min-height: 32px; }
+      .audio-panel { right: 10px; bottom: 98px; width: 170px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#controls">跳到运行控制</a>
+  <main class="runtime" id="runtime" aria-label="《无需进一步输入》V0 浏览器原型">
+    <canvas id="artwork" role="img" aria-label="六种状态实时生成的单色视觉画面"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="frame" aria-hidden="true"></div>
+
+    <header class="top-hud">
+      <div class="identity">
+        <div class="kicker">WIP runtime · browser V0.3 · 2026.08.16</div>
+        <h1>无需进一步输入 <span>/ No Further Input Required</span></h1>
+      </div>
+      <div class="runtime-readout" aria-live="polite">
+        <div class="mode-line"><span class="mode-dot" id="modeDot"></span><span class="mono-label" id="modeLabel">AUTO RUNNING</span></div>
+        <div class="timecode" id="timecode">00:00:00</div>
+      </div>
+    </header>
+
+    <section class="state-caption" id="stateCaption" aria-live="polite">
+      <div class="state-number" id="stateNumber">STATE 01 / 06</div>
+      <h2 id="stateName">约束机构</h2>
+      <p id="stateDescription">关节、拉杆与锚点组成持续求解的机械约束场。</p>
+    </section>
+
+    <section class="audio-panel" id="audioPanel" aria-label="音频输入">
+      <div class="audio-head">
+        <div class="mono-label">Audio input</div>
+        <div class="audio-status" id="audioStatus" aria-live="polite">DEMO SIGNAL · ACTIVE</div>
+      </div>
+      <div class="meters" aria-hidden="true">
+        <div class="meter-row"><span>LOW</span><div class="meter"><i id="meterLow"></i></div></div>
+        <div class="meter-row"><span>MID</span><div class="meter"><i id="meterMid"></i></div></div>
+        <div class="meter-row"><span>HIGH</span><div class="meter"><i id="meterHigh"></i></div></div>
+        <div class="meter-row"><span>GATE</span><div class="meter"><i id="meterGate"></i></div></div>
+      </div>
+      <div class="device-row">
+        <label class="sr-only" for="micSelect">选择麦克风</label>
+        <select class="device-select" id="micSelect" aria-label="选择麦克风">
+          <option value="">DEFAULT INPUT</option>
+        </select>
+      </div>
+      <div class="audio-actions">
+        <button class="audio-control" id="micButton" type="button">MIC</button>
+        <label class="file-label audio-control" id="fileLabel">FILE<input id="fileInput" type="file" accept="audio/*" aria-label="选择本地音频文件" /></label>
+        <button class="audio-control is-active" id="demoButton" type="button">DEMO</button>
+      </div>
+    </section>
+
+    <div class="status-ledger" aria-label="功能状态说明">
+      <div class="ledger-row"><span class="status-pill implemented">已实现</span><span>6 states · weighted graph · audio input · NEXT / HOLD / AUTO</span></div>
+      <div class="ledger-row"><span class="status-pill">开发中</span><span>phrase detection tuning · sound design · long-run validation</span></div>
+      <div class="ledger-row"><span class="status-pill research">研究假设</span><span>preference history / weight adaptation · not implemented</span></div>
+    </div>
+
+    <a class="back-link" href="./no-further-input-required.html">← WIP work page</a>
+
+    <section class="bottom-hud" id="controls" aria-label="状态与播放控制">
+      <div class="state-rail" id="stateRail" aria-label="六个视觉状态"></div>
+      <div class="transport">
+        <button class="control" id="nextButton" type="button" title="Next state (N)">NEXT</button>
+        <button class="control hold" id="holdButton" type="button" aria-pressed="false" title="Hold state (H)">HOLD</button>
+        <button class="control is-active" id="autoButton" type="button" aria-pressed="true" title="Automatic transitions (A)">AUTO</button>
+        <button class="control" id="inputButton" type="button" aria-expanded="false" aria-controls="audioPanel" title="Audio input (I)">INPUT</button>
+      </div>
+    </section>
+    <p class="sr-only" id="keyboardHelp">键盘快捷键：N 进入下一状态，H 保持当前状态，A 切换自动运行，I 打开音频输入。</p>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const canvas = document.getElementById('artwork');
+      const ctx = canvas.getContext('2d', { alpha: false });
+      const runtimeEl = document.getElementById('runtime');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const palette = {
+        bg: '#070805',
+        ink: '#e8eadf',
+        muted: '#73786f',
+        faint: '#343831',
+        accent: '#e8eadf',
+        warning: '#e8eadf'
+      };
+
+      const stateDefinitions = [
+        {
+          id: 'constraint',
+          name: '约束机构',
+          short: 'CONSTRAINT',
+          description: '关节、拉杆与锚点组成持续求解的机械约束场。',
+          duration: [13, 19],
+          weights: [0, .31, .25, .18, .16, .10]
+        },
+        {
+          id: 'index',
+          name: '索引场',
+          short: 'INDEX FIELD',
+          description: '规则网格把连续声音量化为离散位置与局部位移。',
+          duration: [12, 18],
+          weights: [.14, 0, .30, .26, .18, .12]
+        },
+        {
+          id: 'projection',
+          name: '高维投影',
+          short: 'PROJECTION',
+          description: '超立方体在多个旋转平面之间变换，并被投影窗口重新切分。',
+          duration: [14, 20],
+          weights: [.17, .12, 0, .27, .30, .14]
+        },
+        {
+          id: 'inference',
+          name: '信号层',
+          short: 'SIGNAL LAYERS',
+          description: '离散激活穿过多层矩阵，连接只在阈值被满足时短暂出现。',
+          duration: [11, 17],
+          weights: [.20, .16, .18, 0, .30, .16]
+        },
+        {
+          id: 'quantized',
+          name: '量化记忆',
+          short: 'QUANTIZED',
+          description: '二值规则逐行计算、覆盖并保留有限长度的机器记忆。',
+          duration: [15, 22],
+          weights: [.20, .17, .22, .16, 0, .25]
+        },
+        {
+          id: 'assembly',
+          name: '递归装配',
+          short: 'ASSEMBLY',
+          description: '同一组矩形模块按照递归分割规则持续拆解和重新装配。',
+          duration: [12, 19],
+          weights: [.39, .21, .12, .15, .13, 0]
+        }
+      ];
+
+      const ui = {
+        caption: document.getElementById('stateCaption'),
+        number: document.getElementById('stateNumber'),
+        name: document.getElementById('stateName'),
+        description: document.getElementById('stateDescription'),
+        rail: document.getElementById('stateRail'),
+        bottom: document.getElementById('controls'),
+        audioPanel: document.getElementById('audioPanel'),
+        modeDot: document.getElementById('modeDot'),
+        modeLabel: document.getElementById('modeLabel'),
+        timecode: document.getElementById('timecode'),
+        next: document.getElementById('nextButton'),
+        hold: document.getElementById('holdButton'),
+        auto: document.getElementById('autoButton'),
+        input: document.getElementById('inputButton'),
+        mic: document.getElementById('micButton'),
+        demo: document.getElementById('demoButton'),
+        file: document.getElementById('fileInput'),
+        fileLabel: document.getElementById('fileLabel'),
+        micSelect: document.getElementById('micSelect'),
+        audioStatus: document.getElementById('audioStatus'),
+        meters: {
+          low: document.getElementById('meterLow'),
+          mid: document.getElementById('meterMid'),
+          high: document.getElementById('meterHigh'),
+          gate: document.getElementById('meterGate')
+        }
+      };
+
+      const railNodes = stateDefinitions.map((state, index) => {
+        const node = document.createElement('div');
+        node.className = 'state-node';
+        node.innerHTML = `<strong>${String(index + 1).padStart(2, '0')}</strong><span>${state.short}</span>`;
+        ui.rail.appendChild(node);
+        return node;
+      });
+
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let currentIndex = 0;
+      let nextIndex = null;
+      let stateStartedAt = performance.now();
+      let stateDuration = pickDuration(stateDefinitions[0]);
+      let transition = null;
+      let autoMode = true;
+      let holdMode = false;
+      let runStartedAt = performance.now();
+      let lastFrameAt = performance.now();
+      let lastUiAt = 0;
+      let frameRequest = 0;
+      let interfaceTimer = 0;
+      const operationLog = [];
+
+      const audio = {
+        mode: 'demo',
+        context: null,
+        analyser: null,
+        source: null,
+        stream: null,
+        element: null,
+        bins: null,
+        previousBins: null,
+        energy: .18,
+        low: .16,
+        mid: .12,
+        high: .08,
+        onset: 0,
+        gate: 0,
+        beatCount: 0,
+        phrase: false,
+        lastBeatAt: 0,
+        demoNextBeat: performance.now() + 460,
+        demoBeatInterval: 610,
+        requestPending: false
+      };
+
+      function pickDuration(state) {
+        const [min, max] = state.duration;
+        return (min + Math.random() * (max - min)) * 1000;
+      }
+
+      function randomRange(min, max) { return min + Math.random() * (max - min); }
+      function clamp(value, min = 0, max = 1) { return Math.min(max, Math.max(min, value)); }
+      function lerp(a, b, amount) { return a + (b - a) * amount; }
+      function easeInOut(value) { return value < .5 ? 2 * value * value : 1 - Math.pow(-2 * value + 2, 2) / 2; }
+
+      function createLayer(index) {
+        const layerCanvas = document.createElement('canvas');
+        const layerContext = layerCanvas.getContext('2d');
+        return { canvas: layerCanvas, ctx: layerContext, data: {}, index };
+      }
+      const layers = stateDefinitions.map((_, index) => createLayer(index));
+
+      function clearLayer(layer, opacity = 1) {
+        const layerCtx = layer.ctx;
+        layerCtx.save();
+        layerCtx.setTransform(1, 0, 0, 1, 0, 0);
+        layerCtx.globalCompositeOperation = 'source-over';
+        layerCtx.fillStyle = opacity >= 1 ? palette.bg : `rgba(7, 8, 5, ${opacity})`;
+        layerCtx.fillRect(0, 0, layer.canvas.width, layer.canvas.height);
+        layerCtx.restore();
+      }
+
+      function resize() {
+        const bounds = runtimeEl.getBoundingClientRect();
+        width = Math.max(320, bounds.width);
+        height = Math.max(480, bounds.height);
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        for (const layer of layers) {
+          layer.canvas.width = Math.round(width * dpr);
+          layer.canvas.height = Math.round(height * dpr);
+          layer.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          layer.data = {};
+          clearLayer(layer);
+        }
+      }
+
+      function weightedNext(fromIndex) {
+        const weights = stateDefinitions[fromIndex].weights;
+        let draw = Math.random() * weights.reduce((total, weight) => total + weight, 0);
+        for (let index = 0; index < weights.length; index += 1) {
+          draw -= weights[index];
+          if (draw <= 0 && index !== fromIndex) return index;
+        }
+        return (fromIndex + 1) % stateDefinitions.length;
+      }
+
+      function logOperation(type, detail = {}) {
+        operationLog.push({ type, at: Math.round(performance.now() - runStartedAt), state: stateDefinitions[currentIndex].id, ...detail });
+        if (operationLog.length > 120) operationLog.shift();
+      }
+
+      function requestTransition(reason, forcedIndex = null) {
+        if (transition) return;
+        nextIndex = forcedIndex ?? weightedNext(currentIndex);
+        if (nextIndex === currentIndex) nextIndex = (currentIndex + 1) % stateDefinitions.length;
+        transition = {
+          from: currentIndex,
+          to: nextIndex,
+          startedAt: performance.now(),
+          duration: reducedMotion ? 80 : 1180,
+          reason
+        };
+        layers[nextIndex].data = {};
+        clearLayer(layers[nextIndex]);
+        logOperation(reason === 'manual' ? 'next' : 'auto-transition', { to: stateDefinitions[nextIndex].id });
+        updateRail();
+      }
+
+      function completeTransition(now) {
+        currentIndex = transition.to;
+        nextIndex = null;
+        transition = null;
+        stateStartedAt = now;
+        stateDuration = pickDuration(stateDefinitions[currentIndex]);
+        ui.caption.classList.remove('is-changing');
+        void ui.caption.offsetWidth;
+        ui.caption.classList.add('is-changing');
+        updateStateCopy();
+        updateRail();
+      }
+
+      function updateStateCopy() {
+        const state = stateDefinitions[currentIndex];
+        ui.number.textContent = `STATE ${String(currentIndex + 1).padStart(2, '0')} / 06`;
+        ui.name.textContent = state.name;
+        ui.description.textContent = state.description;
+      }
+
+      function updateModeUi() {
+        const label = holdMode ? 'HOLDING STATE' : autoMode ? 'AUTO RUNNING' : 'MANUAL READY';
+        ui.modeLabel.textContent = label;
+        ui.modeDot.classList.toggle('is-held', holdMode);
+        ui.hold.classList.toggle('is-active', holdMode);
+        ui.hold.setAttribute('aria-pressed', String(holdMode));
+        ui.auto.classList.toggle('is-active', autoMode);
+        ui.auto.setAttribute('aria-pressed', String(autoMode));
+      }
+
+      function scheduleInterfaceHide() {
+        window.clearTimeout(interfaceTimer);
+        if (ui.audioPanel.classList.contains('is-open')) return;
+        interfaceTimer = window.setTimeout(() => ui.bottom.classList.remove('is-visible'), 2400);
+      }
+
+      function revealInterface() {
+        ui.bottom.classList.add('is-visible');
+        scheduleInterfaceHide();
+      }
+
+      function setAudioPanel(open) {
+        ui.audioPanel.classList.toggle('is-open', open);
+        ui.input.classList.toggle('is-active', open);
+        ui.input.setAttribute('aria-expanded', String(open));
+        if (open) {
+          window.clearTimeout(interfaceTimer);
+          ui.bottom.classList.add('is-visible');
+        } else {
+          scheduleInterfaceHide();
+        }
+      }
+
+      function updateRail() {
+        railNodes.forEach((node, index) => {
+          node.classList.toggle('is-active', index === currentIndex);
+          node.classList.toggle('is-next', index === nextIndex);
+        });
+      }
+
+      function updateMeters() {
+        ui.meters.low.style.transform = `scaleX(${clamp(audio.low)})`;
+        ui.meters.mid.style.transform = `scaleX(${clamp(audio.mid)})`;
+        ui.meters.high.style.transform = `scaleX(${clamp(audio.high)})`;
+        ui.meters.gate.style.transform = `scaleX(${clamp(audio.gate)})`;
+      }
+
+      function setAudioButtons(mode) {
+        ui.demo.classList.toggle('is-active', mode === 'demo');
+        ui.mic.classList.toggle('is-active', mode === 'mic');
+        ui.fileLabel.classList.toggle('is-active', mode === 'file');
+      }
+
+      function stopAudioSource() {
+        if (audio.stream) {
+          audio.stream.getTracks().forEach(track => track.stop());
+          audio.stream = null;
+        }
+        if (audio.element) {
+          audio.element.pause();
+          if (audio.element.src.startsWith('blob:')) URL.revokeObjectURL(audio.element.src);
+          audio.element = null;
+        }
+        if (audio.source) {
+          try { audio.source.disconnect(); } catch (_) { /* already disconnected */ }
+          audio.source = null;
+        }
+        if (audio.analyser) {
+          try { audio.analyser.disconnect(); } catch (_) { /* already disconnected */ }
+        }
+        audio.analyser = null;
+        audio.bins = null;
+        audio.previousBins = null;
+      }
+
+      function ensureAudioContext() {
+        if (!audio.context) audio.context = new (window.AudioContext || window.webkitAudioContext)();
+        return audio.context.resume().then(() => audio.context);
+      }
+
+      function createAnalyser(context) {
+        const analyser = context.createAnalyser();
+        analyser.fftSize = 1024;
+        analyser.smoothingTimeConstant = .68;
+        audio.analyser = analyser;
+        audio.bins = new Uint8Array(analyser.frequencyBinCount);
+        audio.previousBins = new Uint8Array(analyser.frequencyBinCount);
+        return analyser;
+      }
+
+      async function refreshMicrophones(preferredDeviceId = '') {
+        if (!navigator.mediaDevices?.enumerateDevices) {
+          ui.micSelect.disabled = true;
+          return;
+        }
+        try {
+          const devices = (await navigator.mediaDevices.enumerateDevices()).filter(device => device.kind === 'audioinput');
+          const currentValue = preferredDeviceId || ui.micSelect.value;
+          ui.micSelect.replaceChildren();
+          if (!devices.length) {
+            ui.micSelect.add(new Option('NO INPUT DEVICE', ''));
+            ui.micSelect.disabled = true;
+            return;
+          }
+          devices.forEach((device, index) => {
+            const label = device.label || `INPUT ${String(index + 1).padStart(2, '0')}`;
+            ui.micSelect.add(new Option(label.toUpperCase(), device.deviceId));
+          });
+          ui.micSelect.disabled = false;
+          const matchingValue = devices.some(device => device.deviceId === currentValue) ? currentValue : devices[0].deviceId;
+          ui.micSelect.value = matchingValue;
+        } catch (_) {
+          ui.micSelect.disabled = true;
+        }
+      }
+
+      async function useMicrophone(requestedDeviceId = ui.micSelect.value) {
+        if (audio.requestPending) return;
+        if (!navigator.mediaDevices?.getUserMedia) {
+          ui.audioStatus.textContent = location.protocol === 'file:' ? 'MIC NEEDS LOCALHOST · USE FILE' : 'MIC UNAVAILABLE · USE FILE';
+          ui.micSelect.disabled = true;
+          return;
+        }
+        audio.requestPending = true;
+        ui.mic.disabled = true;
+        ui.audioStatus.textContent = 'MICROPHONE · REQUESTING';
+        try {
+          const context = await ensureAudioContext();
+          const audioConstraints = requestedDeviceId
+            ? { deviceId: { exact: requestedDeviceId }, echoCancellation: false, noiseSuppression: false, autoGainControl: false }
+            : { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: audioConstraints, video: false });
+          stopAudioSource();
+          const source = context.createMediaStreamSource(stream);
+          const analyser = createAnalyser(context);
+          source.connect(analyser);
+          audio.source = source;
+          audio.stream = stream;
+          audio.mode = 'mic';
+          setAudioButtons('mic');
+          ui.audioStatus.textContent = 'MICROPHONE · LIVE';
+          const activeDeviceId = stream.getAudioTracks()[0]?.getSettings?.().deviceId || requestedDeviceId;
+          await refreshMicrophones(activeDeviceId);
+          logOperation('audio-input', { mode: 'mic' });
+        } catch (error) {
+          const reason = error?.name === 'NotAllowedError'
+            ? 'MIC PERMISSION DENIED · USE FILE'
+            : error?.name === 'NotFoundError' || error?.name === 'OverconstrainedError'
+              ? 'NO MICROPHONE FOUND · USE FILE'
+              : error?.name === 'NotReadableError'
+                ? 'MICROPHONE BUSY · USE FILE'
+                : 'MIC ERROR · USE FILE';
+          ui.audioStatus.textContent = reason;
+        } finally {
+          audio.requestPending = false;
+          ui.mic.disabled = false;
+        }
+      }
+
+      async function useAudioFile(file) {
+        if (!file) return;
+        try {
+          stopAudioSource();
+          const context = await ensureAudioContext();
+          const element = new Audio(URL.createObjectURL(file));
+          element.loop = true;
+          element.crossOrigin = 'anonymous';
+          const source = context.createMediaElementSource(element);
+          const analyser = createAnalyser(context);
+          source.connect(analyser);
+          analyser.connect(context.destination);
+          await element.play();
+          audio.source = source;
+          audio.element = element;
+          audio.mode = 'file';
+          setAudioButtons('file');
+          ui.audioStatus.textContent = `FILE · ${file.name.slice(0, 22).toUpperCase()}`;
+          logOperation('audio-input', { mode: 'file' });
+        } catch (error) {
+          useDemoSignal('FILE ERROR · DEMO ACTIVE');
+        }
+      }
+
+      function useDemoSignal(status = 'DEMO SIGNAL · ACTIVE') {
+        stopAudioSource();
+        audio.mode = 'demo';
+        audio.demoNextBeat = performance.now() + 180;
+        setAudioButtons('demo');
+        ui.audioStatus.textContent = status;
+        logOperation('audio-input', { mode: 'demo' });
+      }
+
+      function averageBand(data, start, end) {
+        let sum = 0;
+        const safeEnd = Math.min(data.length, end);
+        for (let index = start; index < safeEnd; index += 1) sum += data[index];
+        return safeEnd > start ? sum / (safeEnd - start) / 255 : 0;
+      }
+
+      function updateAudio(now) {
+        audio.phrase = false;
+        audio.onset *= .86;
+        audio.gate *= .88;
+        if (audio.analyser && audio.bins) {
+          audio.analyser.getByteFrequencyData(audio.bins);
+          const low = averageBand(audio.bins, 1, 14);
+          const mid = averageBand(audio.bins, 14, 82);
+          const high = averageBand(audio.bins, 82, 220);
+          let flux = 0;
+          for (let index = 2; index < 180; index += 2) flux += Math.max(0, audio.bins[index] - audio.previousBins[index]);
+          flux /= 90 * 255;
+          audio.previousBins.set(audio.bins);
+          audio.low = lerp(audio.low, low, .18);
+          audio.mid = lerp(audio.mid, mid, .18);
+          audio.high = lerp(audio.high, high, .18);
+          audio.energy = clamp(audio.low * .43 + audio.mid * .38 + audio.high * .19);
+          if (flux > .065 && now - audio.lastBeatAt > 260) registerBeat(now, flux);
+        } else {
+          const seconds = now * .001;
+          audio.low = clamp(.16 + .14 * (Math.sin(seconds * .73) * .5 + .5) + audio.onset * .35);
+          audio.mid = clamp(.10 + .13 * (Math.sin(seconds * 1.17 + 2.2) * .5 + .5) + audio.onset * .16);
+          audio.high = clamp(.06 + .10 * (Math.sin(seconds * 1.89 + 1.1) * .5 + .5) + audio.onset * .11);
+          audio.energy = audio.low * .46 + audio.mid * .35 + audio.high * .19;
+          if (now >= audio.demoNextBeat) {
+            registerBeat(now, .16);
+            const sway = Math.sin(seconds * .31) * 55;
+            audio.demoBeatInterval = clamp(610 + sway, 480, 720);
+            audio.demoNextBeat = now + audio.demoBeatInterval;
+          }
+        }
+      }
+
+      function registerBeat(now, strength) {
+        audio.lastBeatAt = now;
+        audio.beatCount += 1;
+        audio.onset = clamp(.55 + strength * 3.2);
+        audio.gate = 1;
+        if (audio.beatCount % 8 === 0) audio.phrase = true;
+      }
+
+      function strokeSetup(targetCtx, alpha = 1, widthValue = 1) {
+        targetCtx.strokeStyle = `rgba(232, 234, 223, ${alpha})`;
+        targetCtx.lineWidth = widthValue;
+        targetCtx.lineCap = 'square';
+        targetCtx.lineJoin = 'miter';
+      }
+
+      function drawConstraint(layer, now) {
+        const targetCtx = layer.ctx;
+        const data = layer.data;
+        const cols = width < 680 ? 7 : 11;
+        const rows = 7;
+        if (!data.nodes || data.cols !== cols) {
+          data.cols = cols;
+          data.nodes = [];
+          data.edges = [];
+          const left = width * .09;
+          const right = width * .91;
+          const top = height * .12;
+          const bottom = height * .88;
+          for (let row = 0; row < rows; row += 1) {
+            for (let col = 0; col < cols; col += 1) {
+              const x = lerp(left, right, col / (cols - 1));
+              const y = lerp(top, bottom, row / (rows - 1));
+              data.nodes.push({ x, y, px: x, py: y, ax: x, ay: y, fixed: (row === 0 || row === rows - 1) && col % 3 === 0 });
+              if (col > 0) data.edges.push([row * cols + col - 1, row * cols + col]);
+              if (row > 0) data.edges.push([(row - 1) * cols + col, row * cols + col]);
+              if (row > 0 && col > 0 && (row + col) % 2 === 0) data.edges.push([(row - 1) * cols + col - 1, row * cols + col]);
+            }
+          }
+          data.edges.forEach(edge => {
+            const a = data.nodes[edge[0]];
+            const b = data.nodes[edge[1]];
+            edge.push(Math.hypot(b.x - a.x, b.y - a.y));
+          });
+          data.lastBeat = -1;
+          data.rhythmMode = 0;
+        }
+        clearLayer(layer);
+        if (data.lastBeat !== audio.beatCount) {
+          data.lastBeat = audio.beatCount;
+          data.rhythmMode = Math.floor(audio.beatCount / 4) % 3;
+          const amplitudeX = 32 + audio.low * 118;
+          const amplitudeY = 26 + audio.mid * 96;
+          if (data.rhythmMode === 0) {
+            const pulseCol = audio.beatCount % cols;
+            for (let row = 0; row < rows; row += 1) {
+              const node = data.nodes[row * cols + pulseCol];
+              node.px += (row % 2 ? -1 : 1) * amplitudeX * (.48 + row / rows * .52);
+            }
+          } else if (data.rhythmMode === 1) {
+            const pulseRow = audio.beatCount % rows;
+            for (let col = 0; col < cols; col += 1) {
+              const node = data.nodes[pulseRow * cols + col];
+              node.py += Math.sin(col * .9 + audio.beatCount) * amplitudeY;
+            }
+          } else {
+            const centerCol = (audio.beatCount * 3) % cols;
+            const centerRow = (audio.beatCount * 2) % rows;
+            data.nodes.forEach((node, index) => {
+              const col = index % cols;
+              const row = Math.floor(index / cols);
+              const distance = Math.max(1, Math.hypot(col - centerCol, row - centerRow));
+              if (distance > 3.4) return;
+              node.px += (col - centerCol) / distance * amplitudeX * .62;
+              node.py += (row - centerRow) / distance * amplitudeY * .62;
+            });
+          }
+        }
+        data.nodes.forEach((node, index) => {
+          if (node.fixed) return;
+          const vx = (node.x - node.px) * .92;
+          const vy = (node.y - node.py) * .92;
+          node.px = node.x;
+          node.py = node.y;
+          const col = index % cols;
+          const row = Math.floor(index / cols);
+          const mechanicalWave = Math.sin(now * .0022 + col * .72 - row * .47) * (1.2 + audio.energy * 4.8);
+          node.x += vx + (node.ax - node.x) * (.011 + audio.high * .018) + (data.rhythmMode === 1 ? mechanicalWave * .16 : 0);
+          node.y += vy + (node.ay - node.y) * (.011 + audio.high * .018) + (data.rhythmMode === 0 ? mechanicalWave * .18 : mechanicalWave * .07);
+        });
+        for (let iteration = 0; iteration < 5; iteration += 1) {
+          data.edges.forEach(([aIndex, bIndex, rest]) => {
+            const a = data.nodes[aIndex];
+            const b = data.nodes[bIndex];
+            const dx = b.x - a.x;
+            const dy = b.y - a.y;
+            const distance = Math.max(.001, Math.hypot(dx, dy));
+            const correction = (distance - rest) / distance * .48;
+            if (!a.fixed) { a.x += dx * correction; a.y += dy * correction; }
+            if (!b.fixed) { b.x -= dx * correction; b.y -= dy * correction; }
+          });
+        }
+        targetCtx.strokeStyle = 'rgba(232,234,223,.14)';
+        targetCtx.lineWidth = .7;
+        if (data.rhythmMode === 0) {
+          for (let row = 0; row < rows; row += 1) {
+            for (let col = 0; col < cols - 2; col += 2) {
+              const a = data.nodes[row * cols + col];
+              const b = data.nodes[row * cols + col + 2];
+              targetCtx.beginPath();
+              targetCtx.moveTo(a.x, a.y);
+              targetCtx.lineTo(b.x, b.y);
+              targetCtx.stroke();
+            }
+          }
+        } else if (data.rhythmMode === 1) {
+          for (let col = 0; col < cols; col += 1) {
+            for (let row = 0; row < rows - 2; row += 2) {
+              const a = data.nodes[row * cols + col];
+              const b = data.nodes[(row + 2) * cols + col];
+              targetCtx.beginPath();
+              targetCtx.moveTo(a.x, a.y);
+              targetCtx.lineTo(b.x, b.y);
+              targetCtx.stroke();
+            }
+          }
+        } else {
+          for (let row = 0; row < rows - 1; row += 1) {
+            for (let col = 0; col < cols - 1; col += 1) {
+              if ((row + col + audio.beatCount) % 3 !== 0) continue;
+              const a = data.nodes[row * cols + col + 1];
+              const b = data.nodes[(row + 1) * cols + col];
+              targetCtx.beginPath();
+              targetCtx.moveTo(a.x, a.y);
+              targetCtx.lineTo(b.x, b.y);
+              targetCtx.stroke();
+            }
+          }
+        }
+        data.edges.forEach(([aIndex, bIndex, rest], edgeIndex) => {
+          const a = data.nodes[aIndex];
+          const b = data.nodes[bIndex];
+          const tension = clamp(Math.abs(Math.hypot(b.x - a.x, b.y - a.y) - rest) / Math.max(rest, 1) * 9);
+          targetCtx.strokeStyle = `rgba(232,234,223,${.22 + tension * .7})`;
+          targetCtx.lineWidth = edgeIndex % 7 === 0 ? 1.65 : .82;
+          targetCtx.beginPath();
+          targetCtx.moveTo(a.x, a.y);
+          targetCtx.lineTo(b.x, b.y);
+          targetCtx.stroke();
+        });
+        data.nodes.forEach((node, index) => {
+          const size = node.fixed ? 6 : index % 5 === 0 ? 4 : 2;
+          targetCtx.fillStyle = node.fixed ? palette.ink : 'rgba(232,234,223,.62)';
+          targetCtx.fillRect(node.x - size * .5, node.y - size * .5, size, size);
+          if (node.fixed) {
+            targetCtx.strokeStyle = 'rgba(232,234,223,.36)';
+            targetCtx.lineWidth = .9;
+            targetCtx.strokeRect(node.ax - 10, node.ay - 10, 20, 20);
+          }
+        });
+      }
+
+      function drawIndexField(layer, now) {
+        const targetCtx = layer.ctx;
+        const data = layer.data;
+        if (!data.seed) {
+          data.seed = randomRange(0, 100);
+          data.mode = 0;
+          data.lastModeBeat = -1;
+        }
+        if (data.lastModeBeat !== audio.beatCount && audio.beatCount % 4 === 0) {
+          data.lastModeBeat = audio.beatCount;
+          data.mode = Math.floor(audio.beatCount / 4) % 4;
+        }
+        clearLayer(layer);
+        const cols = width < 680 ? 10 : 18;
+        const rows = width < 680 ? 12 : 10;
+        const fieldLeft = width * .07;
+        const fieldRight = width * .93;
+        const fieldTop = height * .10;
+        const fieldBottom = height * .90;
+        const cellW = (fieldRight - fieldLeft) / cols;
+        const cellH = (fieldBottom - fieldTop) / rows;
+        const seconds = now * .001;
+        for (let row = 0; row < rows; row += 1) {
+          for (let col = 0; col < cols; col += 1) {
+            const index = row * cols + col;
+            const wave = Math.sin(seconds * (.34 + audio.mid) + index * .23 + data.seed);
+            const gate = Math.sin(index * 12.9898 + audio.beatCount * .73) > .72;
+            const active = gate && (index + audio.beatCount * 3) % 5 < 2;
+            const rowShift = data.mode === 2 && row % 2 ? cellW * .18 : 0;
+            const x = fieldLeft + col * cellW + rowShift;
+            const y = fieldTop + row * cellH + wave * audio.energy * cellH * (data.mode === 1 ? .25 : .62);
+            const inset = Math.max(3, Math.min(cellW, cellH) * (.12 + (1 - audio.high) * .08));
+            targetCtx.strokeStyle = active ? 'rgba(232,234,223,.96)' : `rgba(232,234,223,${.17 + Math.abs(wave) * .3})`;
+            targetCtx.lineWidth = active ? 1.6 : .82;
+            if (data.mode === 0 && (row + col) % 4 === 0) {
+              targetCtx.strokeRect(x + inset, y + inset, Math.max(2, cellW - inset * 2), Math.max(2, cellH - inset * 2));
+            } else if (data.mode === 1) {
+              const boxW = Math.max(3, cellW - inset * 2);
+              const boxH = Math.max(3, cellH - inset * 2);
+              if ((row * 3 + col + audio.beatCount) % 5 === 0 || active) {
+                targetCtx.strokeRect(x + inset, y + inset, boxW, boxH);
+                if (active) targetCtx.strokeRect(x + inset * 1.75, y + inset * 1.75, Math.max(2, boxW - inset * 1.5), Math.max(2, boxH - inset * 1.5));
+              } else {
+                targetCtx.beginPath();
+                targetCtx.moveTo(x + inset, y + cellH * .34);
+                targetCtx.lineTo(x + cellW - inset, y + cellH * .34);
+                targetCtx.moveTo(x + inset, y + cellH * .66);
+                targetCtx.lineTo(x + cellW - inset, y + cellH * .66);
+                targetCtx.stroke();
+              }
+            } else if (data.mode === 2) {
+              const direction = (row + col) % 2 ? 1 : -1;
+              const centerX = x + cellW * .5;
+              const barH = cellH * (.18 + Math.abs(wave) * .54);
+              targetCtx.beginPath();
+              targetCtx.moveTo(centerX - cellW * .13, y + cellH * .5 - barH * direction);
+              targetCtx.lineTo(centerX - cellW * .13, y + cellH * .5 + barH * direction);
+              targetCtx.moveTo(centerX + cellW * .13, y + cellH * .5 + barH * direction);
+              targetCtx.lineTo(centerX + cellW * .13, y + cellH * .5 - barH * direction);
+              targetCtx.stroke();
+            } else if (data.mode === 3) {
+              const leftX = x + inset;
+              const rightX = x + cellW - inset;
+              const centerY = y + cellH * .5;
+              const spread = cellH * (.1 + Math.abs(wave) * .22);
+              targetCtx.beginPath();
+              targetCtx.moveTo(leftX, centerY - spread);
+              targetCtx.lineTo(x + cellW * .5, centerY);
+              targetCtx.lineTo(rightX, centerY + spread);
+              if (active) {
+                targetCtx.moveTo(leftX, centerY + spread);
+                targetCtx.lineTo(x + cellW * .5, centerY);
+                targetCtx.lineTo(rightX, centerY - spread);
+              }
+              targetCtx.stroke();
+            } else {
+              const direction = (row + col) % 2 ? 1 : -1;
+              targetCtx.beginPath();
+              targetCtx.moveTo(x + inset, y + cellH * .5 - wave * 2);
+              targetCtx.lineTo(x + cellW - inset, y + cellH * .5 + direction * wave * cellH * .18);
+              targetCtx.stroke();
+            }
+          }
+        }
+        strokeSetup(targetCtx, .3, .92);
+        targetCtx.strokeRect(fieldLeft, fieldTop, fieldRight - fieldLeft, fieldBottom - fieldTop);
+      }
+
+      function rotatePlane(point, a, b, angle) {
+        const cosine = Math.cos(angle);
+        const sine = Math.sin(angle);
+        const av = point[a];
+        const bv = point[b];
+        point[a] = av * cosine - bv * sine;
+        point[b] = av * sine + bv * cosine;
+      }
+
+      function drawProjection(layer, now) {
+        const targetCtx = layer.ctx;
+        const data = layer.data;
+        if (!data.vertices) {
+          data.vertices = Array.from({ length: 16 }, (_, index) => [
+            index & 1 ? 1 : -1,
+            index & 2 ? 1 : -1,
+            index & 4 ? 1 : -1,
+            index & 8 ? 1 : -1
+          ]);
+          data.edges = [];
+          for (let a = 0; a < 16; a += 1) {
+            for (let dimension = 0; dimension < 4; dimension += 1) {
+              const b = a ^ (1 << dimension);
+              if (a < b) data.edges.push([a, b, dimension]);
+            }
+          }
+          data.phases = Array.from({ length: 12 }, () => randomRange(0, Math.PI * 2));
+        }
+        clearLayer(layer);
+        const gridCols = width < 680 ? 3 : 4;
+        const gridRows = width < 680 ? 4 : 3;
+        const left = width * .07;
+        const right = width * .93;
+        const top = height * .08;
+        const bottom = height * .92;
+        const cellW = (right - left) / gridCols;
+        const cellH = (bottom - top) / gridRows;
+        const seconds = now * .001;
+        const convergence = easeInOut(clamp(((Math.cos(seconds * .43) * .5 + .5) - .7) / .3));
+        const dispersion = 1 - convergence;
+        const groupProfiles = [
+          { directionA: 1, directionB: .72, scaleRate: .47, scalePhase: 0 },
+          { directionA: -.68, directionB: 1.18, scaleRate: .31, scalePhase: 2.1 },
+          { directionA: .46, directionB: -1.06, scaleRate: .63, scalePhase: 4.2 }
+        ];
+        for (let cell = 0; cell < gridCols * gridRows; cell += 1) {
+          const col = cell % gridCols;
+          const row = Math.floor(cell / gridCols);
+          const x = left + col * cellW;
+          const y = top + row * cellH;
+          const phase = data.phases[cell];
+          const group = (row + col * 2) % 3;
+          const profile = groupProfiles[group];
+          const sharedA = seconds * (.12 + audio.low * .1);
+          const sharedB = seconds * (.085 + audio.mid * .13);
+          const angleA = sharedA + dispersion * (phase + seconds * .09 * profile.directionA);
+          const angleB = sharedB + dispersion * (phase * .37 + seconds * .11 * profile.directionB);
+          const groupScale = .78 + (Math.sin(seconds * profile.scaleRate + profile.scalePhase) * .5 + .5) * .34;
+          const unifiedScale = .92 + Math.sin(seconds * .52) * .08;
+          const rhythmScale = lerp(groupScale, unifiedScale, convergence);
+          const projected = data.vertices.map(vertex => {
+            const point = [...vertex];
+            rotatePlane(point, 0, 3, angleA);
+            rotatePlane(point, 1, 2, angleB);
+            rotatePlane(point, 0, 1, seconds * .055 + dispersion * (cell * .11 + group * .42));
+            if (group === 0) rotatePlane(point, 0, 2, seconds * .08 * dispersion);
+            if (group === 1) rotatePlane(point, 1, 3, -seconds * .095 * dispersion);
+            if (group === 2) rotatePlane(point, 2, 3, seconds * .07 * dispersion);
+            const wScale = 1 / (2.7 - point[3]);
+            const z = point[2] * wScale;
+            const zScale = 1 / (3.2 - z);
+            const scale = Math.min(cellW, cellH) * .88 * rhythmScale;
+            return {
+              x: x + cellW * .5 + point[0] * wScale * zScale * scale,
+              y: y + cellH * .5 + point[1] * wScale * zScale * scale,
+              depth: z
+            };
+          });
+          targetCtx.save();
+          targetCtx.beginPath();
+          targetCtx.rect(x + 5, y + 5, cellW - 10, cellH - 10);
+          targetCtx.clip();
+          data.edges.forEach(([a, b, dimension], edgeIndex) => {
+            const va = projected[a];
+            const vb = projected[b];
+            const depth = clamp((va.depth + vb.depth + 1.5) / 3);
+            targetCtx.strokeStyle = `rgba(232,234,223,${.19 + depth * .7})`;
+            targetCtx.lineWidth = dimension === audio.beatCount % 4 ? 1.7 : edgeIndex % 5 === 0 ? 1.18 : .74;
+            targetCtx.beginPath();
+            targetCtx.moveTo(va.x, va.y);
+            targetCtx.lineTo(vb.x, vb.y);
+            targetCtx.stroke();
+          });
+          targetCtx.restore();
+          targetCtx.strokeStyle = 'rgba(232,234,223,.27)';
+          targetCtx.lineWidth = .84;
+          targetCtx.strokeRect(x + 5, y + 5, cellW - 10, cellH - 10);
+        }
+      }
+
+      function signalHash(value) {
+        const sine = Math.sin(value * 127.1 + 311.7) * 43758.5453123;
+        return sine - Math.floor(sine);
+      }
+
+      function drawSignalLayers(layer, now) {
+        const targetCtx = layer.ctx;
+        const data = layer.data;
+        const layerCount = width < 680 ? 7 : 10;
+        const units = width < 680 ? 15 : 19;
+        if (!data.values || data.layerCount !== layerCount) {
+          data.layerCount = layerCount;
+          data.values = Array.from({ length: layerCount }, () => Array.from({ length: units }, () => 0));
+          data.layerTicks = new Array(layerCount).fill(-1);
+          data.seed = Math.floor(randomRange(10, 9000));
+          data.mode = 0;
+          data.nextModeAt = now + 760;
+          data.flashUntil = 0;
+          data.lastBeat = -1;
+          data.flashType = 0;
+          data.counter = 1;
+        }
+
+        if (now >= data.nextModeAt) {
+          const previousMode = data.mode;
+          const choice = Math.floor(signalHash(data.seed + now * .0017 + audio.beatCount * 3.1) * 4);
+          data.mode = choice === previousMode ? (choice + 1 + audio.beatCount % 2) % 4 : choice;
+          const modeDurations = [680, 420, 290, 190];
+          data.nextModeAt = now + modeDurations[data.mode] + signalHash(data.seed + audio.beatCount) * 520;
+        }
+
+        if (data.lastBeat !== audio.beatCount) {
+          data.lastBeat = audio.beatCount;
+          data.counter = audio.beatCount % 10 + 1;
+          if (audio.beatCount % 2 === 0 || audio.onset > .72) {
+            data.flashType = Math.floor(signalHash(data.seed + audio.beatCount * 17) * 4);
+            data.flashUntil = now + 66 + data.flashType * 31;
+          }
+        }
+
+        for (let layerIndex = 0; layerIndex < layerCount; layerIndex += 1) {
+          const clock = 73 + layerIndex * 17 + (layerIndex % 3) * 13;
+          const tick = Math.floor(now / Math.max(38, clock - audio.energy * 31));
+          if (tick === data.layerTicks[layerIndex]) continue;
+          data.layerTicks[layerIndex] = tick;
+          if (layerIndex === 0) {
+            for (let unit = 0; unit < units; unit += 1) {
+              const pulse = signalHash(data.seed + tick * 7 + unit * 31);
+              const band = unit % 3 === 0 ? audio.low : unit % 3 === 1 ? audio.mid : audio.high;
+              data.values[0][unit] = clamp(pulse * .72 + band * .58 - .12);
+            }
+          } else {
+            for (let unit = 0; unit < units; unit += 1) {
+              let sum = 0;
+              for (let offset = -2; offset <= 2; offset += 1) {
+                const source = data.values[layerIndex - 1][(unit + offset + units) % units];
+                const sign = signalHash(data.seed + layerIndex * 101 + unit * 13 + offset * 29) > .44 ? 1 : -1;
+                sum += source * sign * (1 - Math.abs(offset) * .13);
+              }
+              const threshold = -.16 + signalHash(data.seed + layerIndex * 47 + tick) * .64;
+              data.values[layerIndex][unit] = clamp(.5 + Math.tanh(sum - threshold) * .5);
+            }
+          }
+        }
+
+        clearLayer(layer);
+        const left = width * .055;
+        const right = width * .945;
+        const top = height * .075;
+        const bottom = height * .925;
+        const layerGap = (right - left) / (layerCount - 1);
+        const unitGap = (bottom - top) / (units - 1);
+        const dropoutLayer = Math.floor(signalHash(data.seed + Math.floor(now / 241)) * layerCount);
+        const scanX = left + ((now * (.00016 + audio.mid * .00013)) % 1) * (right - left);
+
+        if (data.mode === 1) {
+          const latchCount = 1 + audio.beatCount % layerCount;
+          targetCtx.fillStyle = 'rgba(232,234,223,.045)';
+          for (let layerIndex = 0; layerIndex < latchCount; layerIndex += 1) {
+            const x = left + layerIndex * layerGap;
+            targetCtx.fillRect(x - layerGap * .24, top - 7, layerGap * .48, bottom - top + 14);
+          }
+        }
+
+        targetCtx.strokeStyle = data.mode === 3 ? 'rgba(232,234,223,.5)' : 'rgba(232,234,223,.2)';
+        targetCtx.lineWidth = data.mode === 3 ? 1.2 : .74;
+        [top - 13, bottom + 13].forEach((busY, busIndex) => {
+          targetCtx.beginPath();
+          targetCtx.moveTo(left, busY);
+          targetCtx.lineTo(right, busY);
+          targetCtx.stroke();
+          for (let marker = busIndex; marker < layerCount; marker += data.mode === 3 ? 2 : 3) {
+            const markerX = left + marker * layerGap;
+            targetCtx.fillStyle = marker === audio.beatCount % layerCount ? palette.ink : 'rgba(232,234,223,.34)';
+            targetCtx.fillRect(markerX - 2, busY - 2, 4, 4);
+          }
+        });
+
+        targetCtx.strokeStyle = `rgba(232,234,223,${data.mode === 1 ? .2 : .1})`;
+        targetCtx.lineWidth = .68;
+        for (let unit = 0; unit < units; unit += 1) {
+          if (data.mode === 2 && unit % 3 !== audio.beatCount % 3) continue;
+          const y = top + unit * unitGap;
+          targetCtx.beginPath();
+          targetCtx.moveTo(left, y);
+          targetCtx.lineTo(right, y);
+          targetCtx.stroke();
+        }
+
+        for (let layerIndex = 0; layerIndex < layerCount - 1; layerIndex += 1) {
+          if (data.mode === 2 && layerIndex === dropoutLayer) continue;
+          const x1 = left + layerIndex * layerGap;
+          const x2 = x1 + layerGap;
+          for (let unit = 0; unit < units; unit += 1) {
+            const value = data.values[layerIndex][unit];
+            const offset = Math.round((signalHash(data.seed + layerIndex * 71 + unit * 19) - .5) * (data.mode === 3 ? 8 : 4));
+            const primaryTarget = (unit + offset + units) % units;
+            const targetCount = data.mode === 3 ? 3 : data.mode === 1 ? 1 : 2;
+            for (let targetIndex = 0; targetIndex < targetCount; targetIndex += 1) {
+              const targetUnit = (primaryTarget + targetIndex * 2 - Math.floor(targetCount / 2) + units) % units;
+              const targetValue = data.values[layerIndex + 1][targetUnit];
+              const strength = value * targetValue;
+              if (strength < (data.mode === 3 ? .08 : .17)) continue;
+              targetCtx.strokeStyle = `rgba(232,234,223,${.045 + strength * (data.mode === 1 ? .58 : .36)})`;
+              targetCtx.lineWidth = strength > .63 ? 1.2 : .62;
+              targetCtx.beginPath();
+              targetCtx.moveTo(x1, top + unit * unitGap);
+              targetCtx.lineTo(x2, top + targetUnit * unitGap);
+              targetCtx.stroke();
+            }
+          }
+        }
+
+        for (let layerIndex = 0; layerIndex < layerCount; layerIndex += 1) {
+          if (data.mode === 2 && layerIndex === dropoutLayer) continue;
+          const x = left + layerIndex * layerGap;
+          const isLatched = data.mode === 1 && layerIndex <= audio.beatCount % layerCount;
+          targetCtx.strokeStyle = isLatched ? 'rgba(232,234,223,.82)' : 'rgba(232,234,223,.27)';
+          targetCtx.lineWidth = isLatched ? 1.3 : .76;
+          targetCtx.strokeRect(x - 6, top - 7, 12, bottom - top + 14);
+          for (let unit = 0; unit < units; unit += 1) {
+            const value = data.values[layerIndex][unit];
+            const active = value > (data.mode === 3 ? .39 : .56);
+            const markerW = 1.5 + value * (active ? 21 : 6);
+            targetCtx.fillStyle = active ? `rgba(232,234,223,${.24 + value * .75})` : `rgba(232,234,223,${.05 + value * .16})`;
+            targetCtx.fillRect(x - markerW * .5, top + unit * unitGap - (active ? 1.15 : .4), markerW, active ? 2.3 : .8);
+            if (data.mode === 3 && active && (unit + layerIndex) % 4 === audio.beatCount % 4) {
+              const size = 3 + value * 4;
+              targetCtx.strokeStyle = `rgba(232,234,223,${.32 + value * .56})`;
+              targetCtx.lineWidth = .8;
+              targetCtx.strokeRect(x - size * .5, top + unit * unitGap - size * .5, size, size);
+            }
+          }
+        }
+
+        if (data.mode === 2) {
+          const gapX = left + dropoutLayer * layerGap;
+          targetCtx.strokeStyle = 'rgba(232,234,223,.7)';
+          targetCtx.lineWidth = 1.1;
+          targetCtx.beginPath();
+          targetCtx.moveTo(gapX - layerGap * .28, top - 18);
+          targetCtx.lineTo(gapX + layerGap * .28, top - 18);
+          targetCtx.moveTo(gapX - layerGap * .28, bottom + 18);
+          targetCtx.lineTo(gapX + layerGap * .28, bottom + 18);
+          targetCtx.stroke();
+        }
+
+        targetCtx.fillStyle = 'rgba(232,234,223,.38)';
+        targetCtx.fillRect(scanX, top - 13, .8, bottom - top + 26);
+
+        if (now < data.flashUntil) {
+          const flashAlpha = clamp((data.flashUntil - now) / 72);
+          const digitFont = `500 ${Math.max(12, Math.min(width, height) * .021)}px "SFMono-Regular", Consolas, monospace`;
+          targetCtx.font = digitFont;
+          targetCtx.textBaseline = 'middle';
+          targetCtx.letterSpacing = '0';
+          if (data.flashType === 0) {
+            const bandY = top + ((audio.beatCount * 7) % units) * unitGap;
+            targetCtx.fillStyle = `rgba(232,234,223,${.72 + flashAlpha * .28})`;
+            targetCtx.fillRect(left, bandY - unitGap * .58, right - left, unitGap * 1.16);
+            targetCtx.fillStyle = palette.bg;
+            targetCtx.textAlign = 'center';
+            const sequence = Array.from({ length: 10 }, (_, index) => String(index + 1).padStart(2, '0'));
+            sequence.forEach((digit, index) => targetCtx.fillText(digit, left + (index + .5) * (right - left) / 10, bandY));
+          } else if (data.flashType === 1) {
+            targetCtx.fillStyle = `rgba(232,234,223,${.5 + flashAlpha * .45})`;
+            targetCtx.textAlign = 'center';
+            for (let layerIndex = 0; layerIndex < layerCount; layerIndex += 1) {
+              const value = data.values[layerIndex][(audio.beatCount + layerIndex * 3) % units];
+              targetCtx.fillText(String(Math.floor(value * 9)), left + layerIndex * layerGap, height * .5);
+            }
+          } else if (data.flashType === 2) {
+            targetCtx.fillStyle = `rgba(232,234,223,${.64 + flashAlpha * .36})`;
+            targetCtx.textAlign = 'left';
+            targetCtx.font = `500 ${Math.max(48, Math.min(width, height) * .18)}px "SFMono-Regular", Consolas, monospace`;
+            targetCtx.fillText(String(data.counter).padStart(2, '0'), left, height * .5);
+          } else {
+            const column = audio.beatCount % layerCount;
+            const x = left + column * layerGap;
+            targetCtx.fillStyle = `rgba(232,234,223,${.58 + flashAlpha * .42})`;
+            targetCtx.fillRect(x - layerGap * .42, top, layerGap * .84, bottom - top);
+            targetCtx.fillStyle = palette.bg;
+            targetCtx.textAlign = 'center';
+            for (let unit = 0; unit < units; unit += 1) {
+              targetCtx.fillText(String((unit + data.counter) % 10), x, top + unit * unitGap);
+            }
+          }
+        }
+      }
+
+      function drawQuantized(layer, now) {
+        const targetCtx = layer.ctx;
+        const data = layer.data;
+        const cols = width < 680 ? 48 : 84;
+        const rows = width < 680 ? 54 : 48;
+        if (!data.grid || data.cols !== cols) {
+          data.cols = cols;
+          data.rows = rows;
+          data.grid = new Uint8Array(cols * rows);
+          for (let col = 0; col < cols; col += 1) data.grid[col] = Math.sin(col * 2.41) > .72 ? 1 : 0;
+          for (let row = 1; row < rows; row += 1) {
+            const previousOffset = (row - 1) * cols;
+            const rowOffset = row * cols;
+            for (let col = 0; col < cols; col += 1) {
+              const leftBit = data.grid[previousOffset + (col - 1 + cols) % cols];
+              const rightBit = data.grid[previousOffset + (col + 1) % cols];
+              data.grid[rowOffset + col] = leftBit ^ rightBit;
+            }
+          }
+          data.lastStep = now;
+          data.lastBeat = -1;
+          data.ruleMode = 0;
+        }
+        const interval = 78 - audio.energy * 34;
+        if (now - data.lastStep > interval) {
+          data.lastStep = now;
+          const previous = data.grid.slice(0, cols);
+          data.grid.copyWithin(cols, 0, data.grid.length - cols);
+          for (let col = 0; col < cols; col += 1) {
+            const leftBit = previous[(col - 1 + cols) % cols];
+            const centerBit = previous[col];
+            const rightBit = previous[(col + 1) % cols];
+            let rule = leftBit ^ rightBit;
+            if (data.ruleMode === 1) rule = leftBit ^ centerBit ^ rightBit;
+            if (data.ruleMode === 2) rule = (leftBit | rightBit) ^ centerBit;
+            if (data.ruleMode === 3) rule = leftBit ^ (centerBit & rightBit);
+            data.grid[col] = rule;
+          }
+        }
+        if (data.lastBeat !== audio.beatCount) {
+          data.lastBeat = audio.beatCount;
+          data.ruleMode = Math.floor(audio.beatCount / 8) % 4;
+          const center = (audio.beatCount * 17) % cols;
+          if (data.ruleMode === 0) {
+            for (let offset = -2; offset <= 2; offset += 1) data.grid[(center + offset + cols) % cols] = offset % 2 === 0 ? 1 : 0;
+          } else if (data.ruleMode === 1) {
+            for (let offset = -5; offset <= 5; offset += 1) data.grid[(center + offset + cols) % cols] = Math.abs(offset) % 3 === 0 ? 1 : 0;
+          } else if (data.ruleMode === 2) {
+            data.grid[center] = 1;
+            data.grid[(cols - 1 - center + cols) % cols] = 1;
+          } else {
+            for (let offset = -3; offset <= 3; offset += 1) data.grid[(center + offset + cols) % cols] = offset <= 0 ? 1 : offset % 2;
+          }
+        }
+        clearLayer(layer);
+        const left = width * .055;
+        const right = width * .945;
+        const top = height * .07;
+        const bottom = height * .93;
+        const cellW = (right - left) / cols;
+        const cellH = (bottom - top) / rows;
+        const textureStepX = cellW * 4;
+        const textureStepY = cellH * 4;
+        targetCtx.strokeStyle = `rgba(232,234,223,${.105 + audio.high * .13})`;
+        targetCtx.lineWidth = .78;
+        for (let y = top; y < bottom; y += textureStepY) {
+          for (let x = left; x < right; x += textureStepX) {
+            const reveal = signalHash(data.ruleMode * 1000 + x * .013 + y * .017 + Math.floor(audio.beatCount / 2));
+            if (reveal < .28 - audio.energy * .12) continue;
+            const x2 = Math.min(right, x + textureStepX);
+            const y2 = Math.min(bottom, y + textureStepY);
+            targetCtx.beginPath();
+            if (data.ruleMode === 0) {
+              targetCtx.moveTo(x, y2);
+              targetCtx.lineTo((x + x2) * .5, y);
+              targetCtx.lineTo(x2, y2);
+            } else if (data.ruleMode === 1) {
+              targetCtx.moveTo(x, y);
+              targetCtx.lineTo((x + x2) * .5, y2);
+              targetCtx.lineTo(x2, y);
+            } else if (data.ruleMode === 2) {
+              targetCtx.moveTo(x, y2);
+              targetCtx.lineTo(x2, y);
+              targetCtx.moveTo(x, y);
+              targetCtx.lineTo((x + x2) * .5, y2);
+              targetCtx.lineTo(x2, y);
+            } else {
+              targetCtx.moveTo(x, y2);
+              targetCtx.lineTo((x + x2) * .5, y);
+              targetCtx.lineTo(x2, y2);
+              targetCtx.moveTo((x + x2) * .5, y);
+              targetCtx.lineTo((x + x2) * .5, y2);
+            }
+            targetCtx.stroke();
+          }
+        }
+        for (let row = 0; row < rows; row += 1) {
+          const age = 1 - row / rows;
+          for (let col = 0; col < cols; col += 1) {
+            if (!data.grid[row * cols + col]) continue;
+            const x = left + col * cellW;
+            const y = top + row * cellH;
+            targetCtx.fillStyle = `rgba(232,234,223,${.16 + age * .78})`;
+            if ((row + col) % 7 === 0) targetCtx.fillRect(x, y, Math.max(1, cellW * .82), Math.max(1, cellH * .72));
+            else targetCtx.fillRect(x, y + cellH * .45, Math.max(1, cellW * .72), Math.max(.7, cellH * .12));
+          }
+        }
+        targetCtx.fillStyle = 'rgba(232,234,223,.62)';
+        targetCtx.fillRect(left, top, right - left, .8);
+      }
+
+      function seededRandom(seed) {
+        let value = seed >>> 0;
+        return () => {
+          value += 0x6D2B79F5;
+          let result = value;
+          result = Math.imul(result ^ result >>> 15, result | 1);
+          result ^= result + Math.imul(result ^ result >>> 7, result | 61);
+          return ((result ^ result >>> 14) >>> 0) / 4294967296;
+        };
+      }
+
+      function makeAssemblyLayout(seed, count = 32) {
+        const random = seededRandom(seed);
+        const cells = [{ x: .06, y: .07, w: .88, h: .86 }];
+        while (cells.length < count) {
+          let selectedIndex = 0;
+          let largestArea = 0;
+          cells.forEach((cell, index) => {
+            const area = cell.w * cell.h * (.8 + random() * .4);
+            if (area > largestArea) { largestArea = area; selectedIndex = index; }
+          });
+          const cell = cells.splice(selectedIndex, 1)[0];
+          const vertical = cell.w / cell.h > .92 ? true : cell.h / cell.w > 1.45 ? false : random() > .5;
+          const ratio = .34 + random() * .32;
+          if (vertical) {
+            cells.push({ x: cell.x, y: cell.y, w: cell.w * ratio, h: cell.h });
+            cells.push({ x: cell.x + cell.w * ratio, y: cell.y, w: cell.w * (1 - ratio), h: cell.h });
+          } else {
+            cells.push({ x: cell.x, y: cell.y, w: cell.w, h: cell.h * ratio });
+            cells.push({ x: cell.x, y: cell.y + cell.h * ratio, w: cell.w, h: cell.h * (1 - ratio) });
+          }
+        }
+        return cells;
+      }
+
+      function drawAssembly(layer, now) {
+        const targetCtx = layer.ctx;
+        const data = layer.data;
+        if (!data.cells) {
+          data.seed = Math.floor(randomRange(1, 100000));
+          data.cells = makeAssemblyLayout(data.seed).map(cell => ({ ...cell }));
+          data.targets = makeAssemblyLayout(data.seed + 1);
+          data.lastPhrase = -1;
+          data.lastRetarget = now;
+          data.lastBeat = -1;
+          data.motionPulse = 0;
+          data.rhythmMode = 0;
+          data.subdivisionDepth = 1;
+        }
+        if (data.lastBeat !== audio.beatCount) {
+          data.lastBeat = audio.beatCount;
+          data.motionPulse = 1;
+          data.rhythmMode = Math.floor(audio.beatCount / 4) % 3;
+          data.subdivisionDepth = 1 + Math.floor(audio.beatCount / 8) % 2;
+        }
+        data.motionPulse *= .9;
+        const retargetInterval = data.rhythmMode === 0 ? 7200 : data.rhythmMode === 1 ? 5200 : 6400;
+        if ((audio.phrase && data.lastPhrase !== audio.beatCount) || now - data.lastRetarget > retargetInterval) {
+          data.lastPhrase = audio.beatCount;
+          data.lastRetarget = now;
+          data.seed += 1;
+          data.targets = makeAssemblyLayout(data.seed + 1);
+        }
+        data.cells.forEach((cell, index) => {
+          const target = data.targets[index];
+          const baseSpeed = data.rhythmMode === 0 ? .012 : data.rhythmMode === 1 ? .032 : .019;
+          const stagger = data.rhythmMode === 2 ? .55 + (index % 7) * .075 : 1;
+          const speed = (baseSpeed + audio.mid * .025 + data.motionPulse * (data.rhythmMode === 1 ? .045 : .016)) * stagger;
+          cell.x = lerp(cell.x, target.x, speed);
+          cell.y = lerp(cell.y, target.y, speed);
+          cell.w = lerp(cell.w, target.w, speed);
+          cell.h = lerp(cell.h, target.h, speed);
+        });
+        clearLayer(layer);
+        data.cells.forEach((cell, index) => {
+          const gap = 3 + (index % 4);
+          const x = cell.x * width + gap;
+          const y = cell.y * height + gap;
+          const w = Math.max(2, cell.w * width - gap * 2);
+          const h = Math.max(2, cell.h * height - gap * 2);
+          const active = (index + audio.beatCount) % 11 === 0;
+          targetCtx.strokeStyle = active ? 'rgba(232,234,223,.96)' : `rgba(232,234,223,${.25 + (index % 5) * .07})`;
+          targetCtx.lineWidth = active ? 1.65 : .84;
+          targetCtx.strokeRect(x, y, w, h);
+          if (w > 28 && h > 20) {
+            let x1;
+            let y1;
+            let x2;
+            let y2;
+            if (index % 2 === 0) {
+              const hinge = clamp(.2 + audio.low * .6);
+              x1 = x;
+              y1 = y + h * hinge;
+              x2 = x + w;
+              y2 = y + h * (1 - hinge);
+            } else {
+              const hinge = clamp(.2 + audio.high * .6);
+              x1 = x + w * hinge;
+              y1 = y;
+              x2 = x + w * (1 - hinge);
+              y2 = y + h;
+            }
+            const mx = (x1 + x2) * .5;
+            const my = (y1 + y2) * .5;
+            targetCtx.beginPath();
+            targetCtx.moveTo(x1, y1);
+            targetCtx.lineTo(x2, y2);
+            if (data.subdivisionDepth >= 1) {
+              const anchorX = index % 3 === 0 ? x + w * .5 : index % 3 === 1 ? x : x + w;
+              const anchorY = index % 3 === 0 ? (index % 2 ? y : y + h) : y + h * .5;
+              targetCtx.moveTo(mx, my);
+              targetCtx.lineTo(anchorX, anchorY);
+            }
+            if (data.subdivisionDepth >= 2 && w > 48 && h > 36) {
+              const q1x = lerp(x1, x2, .25);
+              const q1y = lerp(y1, y2, .25);
+              const q3x = lerp(x1, x2, .75);
+              const q3y = lerp(y1, y2, .75);
+              targetCtx.moveTo(q1x, q1y);
+              targetCtx.lineTo(index % 2 ? x : x + w * .5, index % 2 ? y + h * .5 : y);
+              targetCtx.moveTo(q3x, q3y);
+              targetCtx.lineTo(index % 2 ? x + w : x + w * .5, index % 2 ? y + h * .5 : y + h);
+            }
+            targetCtx.stroke();
+          }
+        });
+      }
+
+      const renderers = [drawConstraint, drawIndexField, drawProjection, drawSignalLayers, drawQuantized, drawAssembly];
+
+      function renderState(index, now, dt) {
+        const layer = layers[index];
+        layer.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        renderers[index](layer, now, dt);
+      }
+
+      function drawMechanicalTransition(fromCanvas, toCanvas, progress) {
+        const bands = width < 680 ? 12 : 24;
+        const bandWidth = width / bands;
+        const closeProgress = clamp(progress / .58);
+        const revealProgress = clamp((progress - .34) / .66);
+
+        ctx.drawImage(fromCanvas, 0, 0, width, height);
+        for (let index = 0; index < bands; index += 1) {
+          const delay = (index % 6) * .028;
+          const local = easeInOut(clamp((closeProgress - delay) / (1 - delay)));
+          const x = index * bandWidth;
+          const shutterHeight = height * local;
+          ctx.fillStyle = palette.bg;
+          if (index % 2 === 0) ctx.fillRect(x - .5, 0, bandWidth + 1, shutterHeight);
+          else ctx.fillRect(x - .5, height - shutterHeight, bandWidth + 1, shutterHeight);
+        }
+
+        for (let index = 0; index < bands; index += 1) {
+          const delay = ((bands - 1 - index) % 7) * .024;
+          const local = easeInOut(clamp((revealProgress - delay) / (1 - delay)));
+          if (local <= 0) continue;
+          const x = index * bandWidth;
+          const revealHeight = height * local;
+          const y = index % 2 === 0 ? height - revealHeight : 0;
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(x - .5, y, bandWidth + 1, revealHeight);
+          ctx.clip();
+          ctx.drawImage(toCanvas, 0, 0, width, height);
+          ctx.restore();
+          ctx.fillStyle = `rgba(232,234,223,${(1 - local) * .34})`;
+          const seamY = index % 2 === 0 ? y : revealHeight;
+          ctx.fillRect(x, seamY, bandWidth, .7);
+        }
+
+        if (progress > .31 && progress < .69) {
+          const pulse = Math.floor(progress * 100) % 4;
+          if (pulse === 0 || pulse === 1) {
+            const sequence = Array.from({ length: 10 }, (_, index) => String(index + 1).padStart(2, '0'));
+            const y = height * (.46 + (transition.to % 3 - 1) * .08);
+            ctx.font = `500 ${Math.max(10, Math.min(width, height) * .018)}px "SFMono-Regular", Consolas, monospace`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            sequence.forEach((digit, index) => {
+              const x = (index + .5) * width / sequence.length;
+              ctx.fillStyle = index === transition.to + 1 ? palette.ink : `rgba(232,234,223,${pulse === 0 ? .42 : .18})`;
+              ctx.fillText(digit, x, y);
+            });
+          }
+        }
+      }
+
+      function render(now) {
+        const dt = Math.min(50, now - lastFrameAt);
+        lastFrameAt = now;
+        updateAudio(now);
+        renderState(currentIndex, now, dt);
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = palette.bg;
+        ctx.fillRect(0, 0, width, height);
+
+        if (transition) {
+          renderState(transition.to, now, dt);
+          const progress = clamp((now - transition.startedAt) / transition.duration);
+          drawMechanicalTransition(layers[transition.from].canvas, layers[transition.to].canvas, progress);
+          if (progress >= 1) completeTransition(now);
+        } else {
+          ctx.drawImage(layers[currentIndex].canvas, 0, 0, width, height);
+          const elapsed = now - stateStartedAt;
+          if (autoMode && !holdMode && elapsed >= stateDuration && (audio.phrase || elapsed > stateDuration + 4200)) requestTransition('auto');
+        }
+
+        if (now - lastUiAt > 75) {
+          lastUiAt = now;
+          const total = now - runStartedAt;
+          const hours = Math.floor(total / 3600000);
+          const minutes = Math.floor(total / 60000) % 60;
+          const seconds = Math.floor(total / 1000) % 60;
+          ui.timecode.textContent = [hours, minutes, seconds].map(value => String(value).padStart(2, '0')).join(':');
+          const stateElapsed = now - stateStartedAt;
+          const progress = holdMode ? 0 : clamp(stateElapsed / stateDuration);
+          railNodes[currentIndex].style.setProperty('--progress-right', `${(1 - progress) * 100}%`);
+          updateMeters();
+        }
+
+        frameRequest = requestAnimationFrame(render);
+      }
+
+      ui.next.addEventListener('click', () => requestTransition('manual'));
+      ui.hold.addEventListener('click', () => {
+        holdMode = !holdMode;
+        logOperation(holdMode ? 'hold-start' : 'hold-end');
+        if (!holdMode) {
+          stateStartedAt = performance.now();
+          stateDuration = pickDuration(stateDefinitions[currentIndex]);
+        }
+        updateModeUi();
+      });
+      ui.auto.addEventListener('click', () => {
+        autoMode = !autoMode;
+        if (autoMode) holdMode = false;
+        logOperation('auto-mode', { enabled: autoMode });
+        stateStartedAt = performance.now();
+        stateDuration = pickDuration(stateDefinitions[currentIndex]);
+        updateModeUi();
+      });
+      ui.input.addEventListener('click', () => setAudioPanel(!ui.audioPanel.classList.contains('is-open')));
+      ui.mic.addEventListener('click', () => useMicrophone());
+      ui.micSelect.addEventListener('change', () => useMicrophone(ui.micSelect.value));
+      ui.demo.addEventListener('click', () => useDemoSignal());
+      ui.file.addEventListener('change', event => useAudioFile(event.target.files?.[0]));
+
+      window.addEventListener('keydown', event => {
+        if (event.target instanceof HTMLInputElement) return;
+        const key = event.key.toLowerCase();
+        revealInterface();
+        if (key === 'n') ui.next.click();
+        if (key === 'h') ui.hold.click();
+        if (key === 'a') ui.auto.click();
+        if (key === 'i') ui.input.click();
+        if (key === 'escape') setAudioPanel(false);
+      });
+      window.addEventListener('pointermove', revealInterface, { passive: true });
+      window.addEventListener('pointerdown', revealInterface, { passive: true });
+      ui.bottom.addEventListener('pointerenter', () => window.clearTimeout(interfaceTimer));
+      ui.bottom.addEventListener('pointerleave', scheduleInterfaceHide);
+      ui.audioPanel.addEventListener('pointerenter', () => window.clearTimeout(interfaceTimer));
+      window.addEventListener('resize', resize, { passive: true });
+      navigator.mediaDevices?.addEventListener?.('devicechange', () => refreshMicrophones());
+      window.addEventListener('pagehide', () => {
+        cancelAnimationFrame(frameRequest);
+        stopAudioSource();
+        if (audio.context) audio.context.close();
+      });
+
+      resize();
+      updateStateCopy();
+      updateRail();
+      updateModeUi();
+      refreshMicrophones();
+      revealInterface();
+      frameRequest = requestAnimationFrame(render);
+    })();
+  </script>
+</body>
+</html>

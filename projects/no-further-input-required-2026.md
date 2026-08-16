@@ -3,6 +3,7 @@
 > Work in Progress / Generative Audiovisual System / Single-channel Moving Image / Live System
 
 - [专题页面 / Work Page](../works/no-further-input-required.html)
+- [2026-08-16 中期开发日志](./no-further-input-required-devlog-2026-08-16.md)
 
 ---
 
@@ -16,6 +17,7 @@
 | **计划时长** | 约 8–10 分钟，可循环 |
 | **长期形态** | 生成式音画系统 / 影像版本 / Live performance system |
 | **2026-08-15 更新** | 将作品从“关于自动化的影像”进一步明确为“能够实际运行并保存先前判断痕迹的音画系统” |
+| **2026-08-16 V0.3** | 形成约束、索引、投影、信号、量化与装配六种纯黑白算法框架；加入数字寄存器式瞬时脉冲、麦克风设备选择与缩略图安全的线宽层级，控制层默认隐藏 |
 
 > 当前作品影像仍在制作中。专题页暂不使用替代性概念图冒充最终画面；系统图、研究结构与 WIP 信息可以公开，最终作品截图、声音与展览现场待完成后补录。
 
@@ -359,22 +361,72 @@ Daito Manabe 的长期实践将音乐、计算、视听、身体信号、人工�
 
 当 V0 能稳定运行，再从系统中发展最终单通道影像。
 
+## 2026-08-16 V0.3 浏览器实现记录
+
+- [独立运行原型 / Browser V0](../works/no-further-input-required-v0.html)
+
+### 已实现 / Implemented V0
+
+- 6 个独立生成系统：约束机构、索引场、高维投影、信号层、量化记忆、递归装配；
+- 约束机构加入逐列、逐行与径向节奏脉冲；索引场加入四种内部模式；
+- 高维投影拆分为三组旋转与缩放节奏，并周期性收束和分散；
+- 量化记忆加入四种二值规则与三角隐纹变体；递归装配加入一至两级斜线细分与三种运动节奏；
+- 每个状态拥有独立持续时间范围与有向加权 transition graph；
+- 状态切换使用约 1.18 秒的“拆解—校准—重组”机械遮板过程，并在校准段短暂显示数字序列，不使用普通 crossfade；
+- AUTO 在持续时间满足后等待 phrase gate，超时后执行安全转移；
+- 麦克风输入与具体设备选择、本地音频文件输入，以及无权限时可用的 demo signal；
+- low / mid / high、onset 与 8-beat phrase gate 的浏览器端分析接口；
+- `NEXT / HOLD / AUTO` 控制，以及 `N / H / A` 键盘操作；
+- 信号层以异步传播、扫描、锁存、失活与突发节拍降低中段重复；数字只作为短时运行脉冲进入画面；
+- 各状态的细线、主结构线与激活线采用三级线宽与明度，保证录屏缩略图中的结构可读性；
+- 本次运行内的操作事件日志，只保存在内存中，不跨会话保存，也不修改系统权重。
+
+### 开发中 / Developing
+
+- phrase detection 与不同音乐材料之间的映射调校；
+- 作品声音设计与最终音画关系；
+- 已选定 MusicRadar / SampleRadar Micro Modulars 作为试听素材；原始采样不进入仓库，后续需要完成筛选、二次声音设计与授权复核；
+- 10–20 分钟连续运行、不同设备尺寸与浏览器输入权限的稳定性验证；
+- 从系统执行中形成 8–10 分钟单通道影像版本。
+- 视觉事件到声像、空间轨迹、音色与声场聚散的参数接口；当前尚未实现空间音频合成。
+
+### 研究假设 / Not Implemented
+
+- preference history；
+- 根据 NEXT / HOLD 历史自动调整状态持续时间或 transition weight；
+- “系统学习了艺术家”或“系统吸收偏好”的任何功能性表述。
+- AI 分析视觉运动并直接生成空间音频；
+- 视觉与声音共享同一生成事件的完整 visual-instrument 系统。
+
+当前 V0 只保存艺术家已经写入视觉模块、持续时间与初始权重的判断。它不会根据本次运行记录改变下一次运行。
+
+### 技术路线判断 / Runtime Decision
+
+V0 继续使用原生 Web Canvas + WebAudio，不在当前阶段迁移到 p5.js。索引场已经证明浏览器渲染能力足够，现阶段的质量差异主要来自 visual system、算法规则与状态转换，而不是绘图 API。
+
+Processing 4 继续作为 Gallery / Film / Live 版本候选：P3D、Sound、Video、PixelFlow、Syphon / Spout 等库更适合独立运行、GPU 计算、录制与现场纹理输出。只有在浏览器 V0 的 6 个状态通过视觉验收后，再评估是否移植，避免同时维护两套尚未确定的形式语言。
+
+openFrameworks 暂不进入 V0。它在 C++、OpenGL、音频 FFT 与跨平台现场工程上更强，但当前会显著提高构建与维护成本；只有出现多屏、纹理共享、低延迟硬件 I/O 或更严格性能要求时再升级。
+
 ---
 
 ## Related
 
 - [专题页面 / Work Page](../works/no-further-input-required.html)
+- [V0 浏览器原型 / Browser Runtime](../works/no-further-input-required-v0.html)
+- [2026-08-16 中期开发日志](./no-further-input-required-devlog-2026-08-16.md)
 - [`about/media-profile-2026.md`](../about/media-profile-2026.md)
 - [Issue #21 — 2026-08 艺术家简介、创作方向与 AI 采访议题](https://github.com/ewanqian/portfolio/issues/21)
 - [Issue #22 — Gallery 作品分析与维护框架](https://github.com/ewanqian/portfolio/issues/22)
 
 ## 后续补录
 
-- [ ] V0：6 个 visual states
-- [ ] transition graph
-- [ ] WebAudio / audio-structure prototype
-- [ ] NEXT / HOLD / AUTO control
-- [ ] operation log / preference-history experiment
+- [x] V0：6 个 visual states
+- [x] transition graph
+- [x] WebAudio / audio-structure prototype
+- [x] NEXT / HOLD / AUTO control
+- [x] session-only operation log（不跨会话、不修改权重）
+- [ ] preference-history / weight-adaptation experiment
 - [ ] 最终技术栈确认
 - [ ] 完成影像结构与最终时长
 - [ ] 补声音设计 / 音乐信息

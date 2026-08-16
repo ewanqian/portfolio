@@ -56,43 +56,36 @@
     .back-link { color: var(--muted); }
 
     .hero { padding: 28px 0 84px; }
-    .wip-frame {
-      min-height: clamp(400px, 59vh, 680px);
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, transparent 49.9%, rgba(255,255,255,.05) 50%, transparent 50.1%),
-        linear-gradient(transparent 49.9%, rgba(255,255,255,.05) 50%, transparent 50.1%),
-        #0e0e0e;
-      background-size: 44px 44px;
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .wip-frame::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid var(--line);
-      pointer-events: none;
-    }
-    .wip-message {
-      width: min(620px, calc(100% - 48px));
-      padding: 30px;
-      background: rgba(9,9,9,.9);
-      border: 1px solid var(--line-strong);
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-    .wip-message strong {
-      display: block;
-      margin-bottom: 12px;
-      font-size: 12px;
-      letter-spacing: .12em;
+    .prototype-wrap { border: 1px solid var(--line); background: #070805; }
+    .prototype-toolbar {
+      min-height: 48px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .1em;
       text-transform: uppercase;
     }
-    .wip-message p { margin: 0; color: var(--muted); font-size: 14px; }
+    .prototype-toolbar a { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+    .prototype-frame {
+      display: block;
+      width: 100%;
+      min-height: clamp(560px, 76vh, 820px);
+      border: 0;
+      background: #070805;
+    }
+    .prototype-note {
+      margin: 0;
+      padding: 13px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .prototype-note strong { color: var(--text); }
 
     .hero-copy { max-width: 970px; padding-top: 42px; }
     .eyebrow { color: var(--muted); margin-bottom: 18px; }
@@ -130,6 +123,25 @@
     .meta-item:last-child { border-right: 0; }
     .meta-label { color: var(--muted); display: block; margin-bottom: 5px; }
     .meta-value { font-size: 14px; }
+
+    .status-overview {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      margin-top: 14px;
+      border: 1px solid var(--line);
+    }
+    .status-block { padding: 16px 18px; border-right: 1px solid var(--line); }
+    .status-block:last-child { border-right: 0; }
+    .status-block strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .status-block p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .status-block.implemented strong { color: var(--text); }
+    .status-block.research strong { color: #b7b7b7; }
 
     .section { padding: 76px 0; border-top: 1px solid var(--line); }
     .section-grid {
@@ -231,6 +243,7 @@
     .mode .mini-label { color: var(--muted); margin-bottom: 9px; }
     .mode h3 { margin-bottom: 10px; font-size: 18px; }
     .mode p { color: var(--muted); font-size: 13.5px; margin-bottom: 0; }
+    .mode .status { margin-top: 14px; color: #d7d7d7; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 
     .questions { display: grid; gap: 10px; }
     .question {
@@ -290,6 +303,9 @@
       .meta-item { border-bottom: 1px solid var(--line); }
       .meta-item:nth-child(2) { border-right: 0; }
       .meta-item:nth-child(3), .meta-item:nth-child(4) { border-bottom: 0; }
+      .status-overview { grid-template-columns: 1fr; }
+      .status-block { border-right: 0; border-bottom: 1px solid var(--line); }
+      .status-block:last-child { border-bottom: 0; }
       .cards, .modes { grid-template-columns: 1fr; }
       .flow { grid-template-columns: 1fr 1fr; }
       .state-grid { grid-template-columns: repeat(3,1fr); }
@@ -308,11 +324,19 @@
 
   <main>
     <section class="container hero">
-      <div class="wip-frame" aria-label="Work in progress placeholder">
-        <div class="wip-message">
-          <strong>Work in Progress</strong>
-          <p>作品画面仍在制作中。此处不使用替代性概念图冒充最终作品；当前页面先公开作品结构、运行逻辑、研究方向与制作状态。</p>
+      <div class="prototype-wrap">
+        <div class="prototype-toolbar">
+          <span>已实现 / Browser V0 Runtime</span>
+          <a href="./no-further-input-required-v0.html">独立打开原型 ↗</a>
         </div>
+        <iframe
+          class="prototype-frame"
+          src="./no-further-input-required-v0.html"
+          title="《无需进一步输入》V0 浏览器运行原型"
+          loading="eager"
+          allow="microphone"
+        ></iframe>
+        <p class="prototype-note"><strong>当前可运行：</strong>6 个独立生成系统、机械式状态转换、可选择设备的麦克风 / 本地音频接口与 NEXT / HOLD / AUTO。原型默认只显示实时画面；移动指针或按 N / H / A / I 时，控制层短暂出现。</p>
       </div>
 
       <div class="hero-copy">
@@ -327,6 +351,11 @@
         <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">Approx. 8–10 min / loop</span></div>
         <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress</span></div>
       </div>
+      <div class="status-overview" aria-label="当前开发状态">
+        <div class="status-block implemented"><strong>已实现 / Implemented V0</strong><p>6 个视觉状态、数字寄存器式瞬时脉冲、transition graph、可选择设备的浏览器音频输入、NEXT / HOLD / AUTO 与可运行预览。</p></div>
+        <div class="status-block"><strong>开发中 / Developing</strong><p>phrase 检测调校、声音设计、长时间稳定性与最终 8–10 分钟影像结构。</p></div>
+        <div class="status-block research"><strong>研究假设 / Research</strong><p>preference history 与自动调整转移权重尚未实现，当前系统不会学习或吸收艺术家偏好。</p></div>
+      </div>
     </section>
 
     <section class="section">
@@ -336,8 +365,8 @@
           <div class="section-kicker">Work Statement</div>
         </div>
         <div class="body-copy">
-          <p>《无需进一步输入》围绕自动化与人类判断之间的关系展开。作品关注人的输入、修正与偏好如何逐步进入系统，并使系统最终呈现出能够自行运行的状态。</p>
-          <p>当持续操作减少以后，人的判断并未随之消失。它仍可能以被选择的视觉模块、规则、参数、转移关系、权重与历史记录继续影响系统。作品因此把“自动运行”理解为一种判断被内化后的状态。</p>
+          <p>《无需进一步输入》围绕自动化与人类判断之间的关系展开。当前 V0 已把艺术家选择的视觉模块、持续时间范围与状态转移关系写进一个能够自行运行的浏览器系统。</p>
+          <p>当持续操作减少以后，人的判断并未随之消失：它已经存在于被保留的 visual behaviours、规则、参数与初始转移权重中。让系统根据长期操作记录自行修改权重仍是研究假设，尚未进入当前实现。</p>
           <div class="update-note">
             <div class="date">Direction update / 2026.08.15</div>
             <p>当前方向进一步从“关于自动化的一条影像”发展为“一套能够实际运行的生成式音画系统，以及由该系统产生的单通道影像与现场版本”。概念需要进入真实运行机制，而不只停留在作品说明中。</p>
@@ -363,12 +392,12 @@
             <div class="flow-step"><span>06</span><strong>Autonomous audiovisual runtime</strong></div>
           </div>
           <div class="state-grid" aria-label="Six-state prototype sketch">
-            <div class="state"><strong>01</strong><span>Visual state</span></div>
-            <div class="state"><strong>02</strong><span>Visual state</span></div>
-            <div class="state"><strong>03</strong><span>Visual state</span></div>
-            <div class="state"><strong>04</strong><span>Visual state</span></div>
-            <div class="state"><strong>05</strong><span>Visual state</span></div>
-            <div class="state"><strong>06</strong><span>Visual state</span></div>
+            <div class="state"><strong>01</strong><span>Constraint</span></div>
+            <div class="state"><strong>02</strong><span>Index field</span></div>
+            <div class="state"><strong>03</strong><span>Projection</span></div>
+            <div class="state"><strong>04</strong><span>Signal layers</span></div>
+            <div class="state"><strong>05</strong><span>Quantized</span></div>
+            <div class="state"><strong>06</strong><span>Assembly</span></div>
           </div>
         </div>
       </div>
@@ -397,23 +426,28 @@
         <div class="cards">
           <article class="card">
             <h3>Visual Vocabulary</h3>
-            <p>先建立少量完整 visual behaviours，而不是直接剪出一条时间线。V0 目标为 6 个状态，每个状态都可以持续运行，并具有统一但不同的形式规则。</p>
-            <div class="status">Prototype</div>
+            <p>当前 V0 包含约束机构、索引场、高维投影、信号层、量化记忆与递归装配 6 个独立生成系统。每个状态拥有不同算法骨架，并共享纯黑白的线、网格、矩阵与模块语言。</p>
+            <div class="status">Implemented / V0</div>
           </article>
           <article class="card">
             <h3>State Machine</h3>
-            <p>状态通过 entry、duration、behaviour、exit 与 transition weight 组织时间。系统可以拥有确定转移、概率转移、基于声音的转移和后续可能加入的历史转移。</p>
-            <div class="status">Prototype</div>
+            <p>当前状态机使用每个状态独立的 duration range 与加权 transition graph 组织时间；状态不再通过普通 crossfade 切换，而经过拆解、校准与重组的机械遮板过程。</p>
+            <div class="status">Implemented / V0</div>
           </article>
           <article class="card">
             <h3>Audio Structure</h3>
-            <p>音乐不只控制尺寸或亮度。更重要的是 onset、beat、phrase、energy 与 silence 如何决定“什么时候允许结构变化”，让音乐组织系统时间。</p>
-            <div class="status">Developing</div>
+            <p>麦克风与本地音频文件已可接入，麦克风授权后可选择具体输入设备；分析结果提供 low / mid / high、onset 与 8-beat phrase gate。当前映射已运行，phrase 与现场音乐结构的准确性仍需调校。</p>
+            <div class="status">Implemented V0 / Tuning</div>
           </article>
           <article class="card">
-            <h3>Human Control / History</h3>
-            <p>现场版本计划只保留 NEXT / HOLD / AUTO 等少量控制。操作历史未来可用于调整状态持续时间与转移权重，但这一层只有在真实实现后才会进入最终作品说明。</p>
-            <div class="status">Planned</div>
+            <h3>Human Control</h3>
+            <p>NEXT、HOLD 与 AUTO 已成为主要控制，并支持 N / H / A 键盘操作。HOLD 覆盖自动转移；NEXT 仍允许人工决定关键切换时刻。</p>
+            <div class="status">Implemented / V0</div>
+          </article>
+          <article class="card">
+            <h3>Preference History</h3>
+            <p>当前只在内存中保留本次运行的操作事件，既不跨会话保存，也不用于修改 duration 或 transition weight。偏好历史仍属于下一阶段研究。</p>
+            <div class="status">Research hypothesis / Not implemented</div>
           </article>
         </div>
       </div>
@@ -430,16 +464,19 @@
             <div class="mini-label">Gallery</div>
             <h3>持续运行的系统</h3>
             <p>观众面对一套不断变化、但不完全重复的音画过程。控制界面可以被隐藏，作品只显示系统运行的结果。</p>
+            <div class="status">Developing from V0 runtime</div>
           </article>
           <article class="mode">
             <div class="mini-label">Film</div>
             <h3>8–10 分钟影像版本</h3>
             <p>从系统长时间运行中形成或选择一个单通道版本，作为当前展览交付。影像是系统的一次 manifestation。</p>
+            <div class="status">Planned / not yet rendered</div>
           </article>
           <article class="mode">
             <div class="mini-label">Live</div>
             <h3>个人音画演出系统</h3>
             <p>音乐实时进入，系统自主运行，艺术家只进行少量关键干预。长期可继续发展为个人现场视听工具与作品。</p>
+            <div class="status">Control interface implemented / live validation developing</div>
           </article>
         </div>
       </div>
@@ -556,23 +593,23 @@
     <section class="section">
       <div class="container section-grid">
         <div>
-          <h2>V0 制作目标</h2>
-          <div class="section-kicker">Minimum Working System</div>
+          <h2>V0 当前状态</h2>
+          <div class="section-kicker">Minimum Working System / V0.3 / 2026.08.16</div>
         </div>
         <div class="todo">
-          <div class="todo-item"><span>01</span><div>完成 6 个 visual states。</div></div>
-          <div class="todo-item"><span>02</span><div>建立 1 个 transition graph。</div></div>
-          <div class="todo-item"><span>03</span><div>接入音频输入，并至少读取 beat / phrase 或等价结构信息。</div></div>
-          <div class="todo-item"><span>04</span><div>完成 NEXT / HOLD / AUTO 三个主要控制。</div></div>
-          <div class="todo-item"><span>05</span><div>连续运行 10–20 分钟，产生不同但仍保持统一语言的结果。</div></div>
-          <div class="todo-item"><span>06</span><div>保存人工操作日志，为 preference history 实验准备数据。</div></div>
+          <div class="todo-item"><span>01</span><div><strong>已实现：</strong>6 个独立 visual states / behaviours。</div></div>
+          <div class="todo-item"><span>02</span><div><strong>已实现：</strong>1 个有向加权 transition graph，以及“拆解—校准—重组”的机械切换。</div></div>
+          <div class="todo-item"><span>03</span><div><strong>已实现 V0：</strong>麦克风设备选择、本地音频与 demo signal；beat / phrase 分析仍在调校。</div></div>
+          <div class="todo-item"><span>04</span><div><strong>已实现：</strong>NEXT / HOLD / AUTO 与键盘控制。</div></div>
+          <div class="todo-item"><span>05</span><div><strong>开发中：</strong>10–20 分钟连续运行、不同输入与设备的稳定性验证。</div></div>
+          <div class="todo-item"><span>06</span><div><strong>研究假设：</strong>preference history / weight adaptation 尚未实现；本次 V0 不宣称系统会学习偏好。</div></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">Ewan Qian — No Further Input Required / Work in Progress / updated 2026.08.15</div>
+    <div class="container">Ewan Qian — No Further Input Required / Work in Progress / updated 2026.08.16</div>
   </footer>
 </body>
 </html>
