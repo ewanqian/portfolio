@@ -352,7 +352,7 @@
         <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress</span></div>
       </div>
       <div class="status-overview" aria-label="当前开发状态">
-        <div class="status-block implemented"><strong>已实现 / Implemented V0</strong><p>6 个视觉状态、数字寄存器式瞬时脉冲、transition graph、可选择设备的浏览器音频输入、NEXT / HOLD / AUTO 与可运行预览。</p></div>
+        <div class="status-block implemented"><strong>已实现 / Implemented V0</strong><p>6 个视觉状态、小型数字寄存器脉冲、固定顺序的循环状态链、可选择设备的浏览器音频输入、NEXT / HOLD / AUTO 与可运行预览。</p></div>
         <div class="status-block"><strong>开发中 / Developing</strong><p>phrase 检测调校、声音设计、长时间稳定性与最终 8–10 分钟影像结构。</p></div>
         <div class="status-block research"><strong>研究假设 / Research</strong><p>preference history 与自动调整转移权重尚未实现，当前系统不会学习或吸收艺术家偏好。</p></div>
       </div>
@@ -366,7 +366,7 @@
         </div>
         <div class="body-copy">
           <p>《无需进一步输入》围绕自动化与人类判断之间的关系展开。当前 V0 已把艺术家选择的视觉模块、持续时间范围与状态转移关系写进一个能够自行运行的浏览器系统。</p>
-          <p>当持续操作减少以后，人的判断并未随之消失：它已经存在于被保留的 visual behaviours、规则、参数与初始转移权重中。让系统根据长期操作记录自行修改权重仍是研究假设，尚未进入当前实现。</p>
+          <p>当持续操作减少以后，人的判断并未随之消失：它已经存在于被保留的 visual behaviours、规则、参数与固定状态顺序中。让系统根据长期操作记录自行改变时间结构仍是研究假设，尚未进入当前实现。</p>
           <div class="update-note">
             <div class="date">Direction update / 2026.08.15</div>
             <p>当前方向进一步从“关于自动化的一条影像”发展为“一套能够实际运行的生成式音画系统，以及由该系统产生的单通道影像与现场版本”。概念需要进入真实运行机制，而不只停留在作品说明中。</p>
@@ -388,7 +388,7 @@
             <div class="flow-step"><span>02</span><strong>Visual possibilities</strong></div>
             <div class="flow-step"><span>03</span><strong>Human selection / deletion</strong></div>
             <div class="flow-step"><span>04</span><strong>Approved visual vocabulary</strong></div>
-            <div class="flow-step"><span>05</span><strong>Transitions / timing / weights</strong></div>
+            <div class="flow-step"><span>05</span><strong>Ordered transitions / timing</strong></div>
             <div class="flow-step"><span>06</span><strong>Autonomous audiovisual runtime</strong></div>
           </div>
           <div class="state-grid" aria-label="Six-state prototype sketch">
@@ -431,7 +431,7 @@
           </article>
           <article class="card">
             <h3>State Machine</h3>
-            <p>当前状态机使用每个状态独立的 duration range 与加权 transition graph 组织时间；状态不再通过普通 crossfade 切换，而经过拆解、校准与重组的机械遮板过程。</p>
+            <p>当前状态机为每个状态保留独立的 duration range，并固定按 1→2→3→4→5→6→1 循环；状态不再通过普通 crossfade 切换，而经过拆解、校准与重组的机械遮板过程。</p>
             <div class="status">Implemented / V0</div>
           </article>
           <article class="card">
@@ -446,7 +446,7 @@
           </article>
           <article class="card">
             <h3>Preference History</h3>
-            <p>当前只在内存中保留本次运行的操作事件，既不跨会话保存，也不用于修改 duration 或 transition weight。偏好历史仍属于下一阶段研究。</p>
+            <p>当前只在内存中保留本次运行的操作事件，既不跨会话保存，也不用于改变 duration 或固定状态顺序。偏好历史仍属于下一阶段研究。</p>
             <div class="status">Research hypothesis / Not implemented</div>
           </article>
         </div>
@@ -598,7 +598,7 @@
         </div>
         <div class="todo">
           <div class="todo-item"><span>01</span><div><strong>已实现：</strong>6 个独立 visual states / behaviours。</div></div>
-          <div class="todo-item"><span>02</span><div><strong>已实现：</strong>1 个有向加权 transition graph，以及“拆解—校准—重组”的机械切换。</div></div>
+          <div class="todo-item"><span>02</span><div><strong>已实现：</strong>1 条固定顺序的循环状态链，以及“拆解—校准—重组”的机械切换。</div></div>
           <div class="todo-item"><span>03</span><div><strong>已实现 V0：</strong>麦克风设备选择、本地音频与 demo signal；beat / phrase 分析仍在调校。</div></div>
           <div class="todo-item"><span>04</span><div><strong>已实现：</strong>NEXT / HOLD / AUTO 与键盘控制。</div></div>
           <div class="todo-item"><span>05</span><div><strong>开发中：</strong>10–20 分钟连续运行、不同输入与设备的稳定性验证。</div></div>

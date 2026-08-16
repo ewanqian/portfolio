@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#070805" />
   <link rel="icon" href="data:," />
   <title>No Further Input Required — V0 Runtime</title>
-  <meta name="description" content="《无需进一步输入》浏览器 V0：六个实时视觉状态、加权状态转换、音频输入与 NEXT / HOLD / AUTO 控制。" />
+  <meta name="description" content="《无需进一步输入》浏览器 V0：六个实时视觉状态、固定顺序状态转换、音频输入与 NEXT / HOLD / AUTO 控制。" />
   <style>
     :root {
       color-scheme: dark;
@@ -544,48 +544,42 @@
           name: '约束机构',
           short: 'CONSTRAINT',
           description: '关节、拉杆与锚点组成持续求解的机械约束场。',
-          duration: [13, 19],
-          weights: [0, .31, .25, .18, .16, .10]
+          duration: [13, 19]
         },
         {
           id: 'index',
           name: '索引场',
           short: 'INDEX FIELD',
           description: '规则网格把连续声音量化为离散位置与局部位移。',
-          duration: [12, 18],
-          weights: [.14, 0, .30, .26, .18, .12]
+          duration: [12, 18]
         },
         {
           id: 'projection',
           name: '高维投影',
           short: 'PROJECTION',
           description: '超立方体在多个旋转平面之间变换，并被投影窗口重新切分。',
-          duration: [14, 20],
-          weights: [.17, .12, 0, .27, .30, .14]
+          duration: [14, 20]
         },
         {
           id: 'inference',
           name: '信号层',
           short: 'SIGNAL LAYERS',
           description: '离散激活穿过多层矩阵，连接只在阈值被满足时短暂出现。',
-          duration: [11, 17],
-          weights: [.20, .16, .18, 0, .30, .16]
+          duration: [11, 17]
         },
         {
           id: 'quantized',
           name: '量化记忆',
           short: 'QUANTIZED',
           description: '二值规则逐行计算、覆盖并保留有限长度的机器记忆。',
-          duration: [15, 22],
-          weights: [.20, .17, .22, .16, 0, .25]
+          duration: [15, 22]
         },
         {
           id: 'assembly',
           name: '递归装配',
           short: 'ASSEMBLY',
           description: '同一组矩形模块按照递归分割规则持续拆解和重新装配。',
-          duration: [12, 19],
-          weights: [.39, .21, .12, .15, .13, 0]
+          duration: [12, 19]
         }
       ];
 
@@ -712,16 +706,6 @@
         }
       }
 
-      function weightedNext(fromIndex) {
-        const weights = stateDefinitions[fromIndex].weights;
-        let draw = Math.random() * weights.reduce((total, weight) => total + weight, 0);
-        for (let index = 0; index < weights.length; index += 1) {
-          draw -= weights[index];
-          if (draw <= 0 && index !== fromIndex) return index;
-        }
-        return (fromIndex + 1) % stateDefinitions.length;
-      }
-
       function logOperation(type, detail = {}) {
         operationLog.push({ type, at: Math.round(performance.now() - runStartedAt), state: stateDefinitions[currentIndex].id, ...detail });
         if (operationLog.length > 120) operationLog.shift();
@@ -729,7 +713,7 @@
 
       function requestTransition(reason, forcedIndex = null) {
         if (transition) return;
-        nextIndex = forcedIndex ?? weightedNext(currentIndex);
+        nextIndex = forcedIndex ?? (currentIndex + 1) % stateDefinitions.length;
         if (nextIndex === currentIndex) nextIndex = (currentIndex + 1) % stateDefinitions.length;
         transition = {
           from: currentIndex,
@@ -1379,9 +1363,9 @@
         if (data.lastBeat !== audio.beatCount) {
           data.lastBeat = audio.beatCount;
           data.counter = audio.beatCount % 10 + 1;
-          if (audio.beatCount % 2 === 0 || audio.onset > .72) {
-            data.flashType = Math.floor(signalHash(data.seed + audio.beatCount * 17) * 4);
-            data.flashUntil = now + 66 + data.flashType * 31;
+          if (audio.beatCount % 4 === 0 || audio.onset > .84) {
+            data.flashType = Math.floor(signalHash(data.seed + audio.beatCount * 17) * 3);
+            data.flashUntil = now + 72 + data.flashType * 24;
           }
         }
 
@@ -1516,40 +1500,42 @@
         targetCtx.fillRect(scanX, top - 13, .8, bottom - top + 26);
 
         if (now < data.flashUntil) {
-          const flashAlpha = clamp((data.flashUntil - now) / 72);
-          const digitFont = `500 ${Math.max(12, Math.min(width, height) * .021)}px "SFMono-Regular", Consolas, monospace`;
-          targetCtx.font = digitFont;
+          const flashAlpha = clamp((data.flashUntil - now) / 96);
+          const digitSize = Math.max(9, Math.min(13, Math.min(width, height) * .014));
+          targetCtx.font = `500 ${digitSize}px "SFMono-Regular", Consolas, monospace`;
           targetCtx.textBaseline = 'middle';
-          targetCtx.letterSpacing = '0';
+          targetCtx.strokeStyle = `rgba(232,234,223,${.22 + flashAlpha * .3})`;
+          targetCtx.fillStyle = `rgba(232,234,223,${.44 + flashAlpha * .46})`;
           if (data.flashType === 0) {
-            const bandY = top + ((audio.beatCount * 7) % units) * unitGap;
-            targetCtx.fillStyle = `rgba(232,234,223,${.72 + flashAlpha * .28})`;
-            targetCtx.fillRect(left, bandY - unitGap * .58, right - left, unitGap * 1.16);
-            targetCtx.fillStyle = palette.bg;
+            const registerY = audio.beatCount % 2 === 0 ? top - 27 : bottom + 27;
             targetCtx.textAlign = 'center';
-            const sequence = Array.from({ length: 10 }, (_, index) => String(index + 1).padStart(2, '0'));
-            sequence.forEach((digit, index) => targetCtx.fillText(digit, left + (index + .5) * (right - left) / 10, bandY));
+            const sequence = Array.from({ length: 10 }, (_, index) => String(index));
+            const registerWidth = Math.min(right - left, 10 * Math.max(24, layerGap * .52));
+            const registerLeft = left + ((right - left) - registerWidth) * .5;
+            targetCtx.strokeRect(registerLeft, registerY - digitSize, registerWidth, digitSize * 2);
+            sequence.forEach((digit, index) => {
+              const digitX = registerLeft + (index + .5) * registerWidth / 10;
+              targetCtx.fillStyle = index === data.counter % 10
+                ? `rgba(232,234,223,${.72 + flashAlpha * .28})`
+                : `rgba(232,234,223,${.22 + flashAlpha * .34})`;
+              targetCtx.fillText(digit, digitX, registerY);
+            });
           } else if (data.flashType === 1) {
-            targetCtx.fillStyle = `rgba(232,234,223,${.5 + flashAlpha * .45})`;
             targetCtx.textAlign = 'center';
             for (let layerIndex = 0; layerIndex < layerCount; layerIndex += 1) {
               const value = data.values[layerIndex][(audio.beatCount + layerIndex * 3) % units];
-              targetCtx.fillText(String(Math.floor(value * 9)), left + layerIndex * layerGap, height * .5);
+              const digitY = top + ((audio.beatCount * 3 + layerIndex * 2) % units) * unitGap;
+              targetCtx.fillStyle = `rgba(232,234,223,${.34 + value * .56 * flashAlpha})`;
+              targetCtx.fillText(String(Math.floor(value * 9)), left + layerIndex * layerGap, digitY);
             }
-          } else if (data.flashType === 2) {
-            targetCtx.fillStyle = `rgba(232,234,223,${.64 + flashAlpha * .36})`;
-            targetCtx.textAlign = 'left';
-            targetCtx.font = `500 ${Math.max(48, Math.min(width, height) * .18)}px "SFMono-Regular", Consolas, monospace`;
-            targetCtx.fillText(String(data.counter).padStart(2, '0'), left, height * .5);
           } else {
             const column = audio.beatCount % layerCount;
             const x = left + column * layerGap;
-            targetCtx.fillStyle = `rgba(232,234,223,${.58 + flashAlpha * .42})`;
-            targetCtx.fillRect(x - layerGap * .42, top, layerGap * .84, bottom - top);
-            targetCtx.fillStyle = palette.bg;
             targetCtx.textAlign = 'center';
-            for (let unit = 0; unit < units; unit += 1) {
-              targetCtx.fillText(String((unit + data.counter) % 10), x, top + unit * unitGap);
+            const startUnit = Math.max(0, (audio.beatCount * 3) % (units - 5));
+            targetCtx.strokeRect(x - digitSize, top + startUnit * unitGap - digitSize, digitSize * 2, unitGap * 4 + digitSize * 2);
+            for (let offset = 0; offset < 5; offset += 1) {
+              targetCtx.fillText(String((offset + data.counter) % 10), x, top + (startUnit + offset) * unitGap);
             }
           }
         }
@@ -1751,43 +1737,33 @@
           targetCtx.lineWidth = active ? 1.65 : .84;
           targetCtx.strokeRect(x, y, w, h);
           if (w > 28 && h > 20) {
-            let x1;
-            let y1;
-            let x2;
-            let y2;
-            if (index % 2 === 0) {
-              const hinge = clamp(.2 + audio.low * .6);
-              x1 = x;
-              y1 = y + h * hinge;
-              x2 = x + w;
-              y2 = y + h * (1 - hinge);
-            } else {
-              const hinge = clamp(.2 + audio.high * .6);
-              x1 = x + w * hinge;
-              y1 = y;
-              x2 = x + w * (1 - hinge);
-              y2 = y + h;
-            }
-            const mx = (x1 + x2) * .5;
-            const my = (y1 + y2) * .5;
             targetCtx.beginPath();
-            targetCtx.moveTo(x1, y1);
-            targetCtx.lineTo(x2, y2);
-            if (data.subdivisionDepth >= 1) {
-              const anchorX = index % 3 === 0 ? x + w * .5 : index % 3 === 1 ? x : x + w;
-              const anchorY = index % 3 === 0 ? (index % 2 ? y : y + h) : y + h * .5;
-              targetCtx.moveTo(mx, my);
-              targetCtx.lineTo(anchorX, anchorY);
-            }
-            if (data.subdivisionDepth >= 2 && w > 48 && h > 36) {
-              const q1x = lerp(x1, x2, .25);
-              const q1y = lerp(y1, y2, .25);
-              const q3x = lerp(x1, x2, .75);
-              const q3y = lerp(y1, y2, .75);
-              targetCtx.moveTo(q1x, q1y);
-              targetCtx.lineTo(index % 2 ? x : x + w * .5, index % 2 ? y + h * .5 : y);
-              targetCtx.moveTo(q3x, q3y);
-              targetCtx.lineTo(index % 2 ? x + w : x + w * .5, index % 2 ? y + h * .5 : y + h);
+            const vertical = w > h * 1.08 ? true : h > w * 1.08 ? false : (index + data.rhythmMode) % 2 === 0;
+            const split = clamp(.32 + (index % 5) * .085 + (vertical ? audio.low : audio.high) * .07, .3, .7);
+            const branchA = clamp(.3 + (index % 3) * .17 + audio.mid * .06, .28, .72);
+            const branchB = 1 - branchA;
+            if (vertical) {
+              const splitX = x + w * split;
+              targetCtx.moveTo(splitX, y);
+              targetCtx.lineTo(splitX, y + h);
+              const firstOnLeft = index % 2 === 0;
+              targetCtx.moveTo(firstOnLeft ? x : splitX, y + h * branchA);
+              targetCtx.lineTo(firstOnLeft ? splitX : x + w, y + h * branchA);
+              if (data.subdivisionDepth >= 2 && w > 48 && h > 36) {
+                targetCtx.moveTo(firstOnLeft ? splitX : x, y + h * branchB);
+                targetCtx.lineTo(firstOnLeft ? x + w : splitX, y + h * branchB);
+              }
+            } else {
+              const splitY = y + h * split;
+              targetCtx.moveTo(x, splitY);
+              targetCtx.lineTo(x + w, splitY);
+              const firstOnTop = index % 2 === 0;
+              targetCtx.moveTo(x + w * branchA, firstOnTop ? y : splitY);
+              targetCtx.lineTo(x + w * branchA, firstOnTop ? splitY : y + h);
+              if (data.subdivisionDepth >= 2 && w > 48 && h > 36) {
+                targetCtx.moveTo(x + w * branchB, firstOnTop ? splitY : y);
+                targetCtx.lineTo(x + w * branchB, firstOnTop ? y + h : splitY);
+              }
             }
             targetCtx.stroke();
           }
@@ -1837,21 +1813,6 @@
           ctx.fillRect(x, seamY, bandWidth, .7);
         }
 
-        if (progress > .31 && progress < .69) {
-          const pulse = Math.floor(progress * 100) % 4;
-          if (pulse === 0 || pulse === 1) {
-            const sequence = Array.from({ length: 10 }, (_, index) => String(index + 1).padStart(2, '0'));
-            const y = height * (.46 + (transition.to % 3 - 1) * .08);
-            ctx.font = `500 ${Math.max(10, Math.min(width, height) * .018)}px "SFMono-Regular", Consolas, monospace`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            sequence.forEach((digit, index) => {
-              const x = (index + .5) * width / sequence.length;
-              ctx.fillStyle = index === transition.to + 1 ? palette.ink : `rgba(232,234,223,${pulse === 0 ? .42 : .18})`;
-              ctx.fillText(digit, x, y);
-            });
-          }
-        }
       }
 
       function render(now) {
