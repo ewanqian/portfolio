@@ -51,7 +51,7 @@ export default {
       "type": "work"
     },
     {
-      "id": "kashiwa",
+      "id": "titan",
       "label": "《机械光合：TITAN 的全息声林》",
       "type": "work"
     },
@@ -106,8 +106,13 @@ export default {
       "type": "work"
     },
     {
+      "id": "vrplay-ai-xr-hackathon-2026",
+      "label": "VR Play Hackathon / WORLD REMIX 2026",
+      "type": "work"
+    },
+    {
       "id": "vrplay-hackathon-visual-2025",
-      "label": "VRplay WORLD REMIX XR 黑客松",
+      "label": "VR Play WORLD REMIX XR 黑客松",
       "type": "work"
     },
     {
@@ -183,11 +188,11 @@ export default {
       "target": "can-festival"
     },
     {
-      "source": "kashiwa",
+      "source": "titan",
       "target": "kashiwa-bo-live-shenzhen"
     },
     {
-      "source": "kashiwa",
+      "source": "titan",
       "target": "can-festival"
     },
     {
@@ -255,4 +260,4 @@ export default {
       "target": "drop-flow"
     }
   ]
-};
+}

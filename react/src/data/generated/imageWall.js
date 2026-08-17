@@ -13,4 +13,4 @@ export default [
     "year": 2025,
     "relatedWork": "drop-flow"
   }
-];
+]

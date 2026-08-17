@@ -1,23 +1,39 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <script>
+(function () {
+  var m = location.hash.match(/^#\/works\/([^/?#]+)/);
+  if (!m) return;
+  var slug = decodeURIComponent(m[1]).replace(/\.html$/i, '');
+  if (!slug) return;
+  var allowed = {
+    'drop-flow': 1, 'timer': 1, 'titan': 1, 'kashiwa': 1,
+    'mke-terminal': 1, 'sre-realtime-liveset': 1,
+    'no-further-input-required': 1
+  };
+  if (!allowed[slug]) return;
+  var base = location.pathname.indexOf('/portfolio') === 0 ? '/portfolio' : '';
+  location.replace(base + '/works/' + slug);
+})();
+</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/webp" href="./assets/home/archive-timer-clean.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ewan Qian — Portfolio / Production Services</title>
-    <meta name="description" content="Media Artist / Spatial Image Creator / Live Visual Producer. Works, services, pricing, and inquiry." />
+    <title>Ewan Qian — Media Art / Spatial Image / Realtime Systems</title>
+    <meta name="description" content="Ewan Qian is a media artist working across live audiovisual performance, spatial image, realtime systems, creative tools, and workshops." />
     <link rel="canonical" href="https://ewanqian.site/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ewan Qian — Portfolio" />
-    <meta property="og:description" content="Media artist, spatial image creator, and live visual producer working across spatial image, audiovisual performance, and real-time systems." />
+    <meta property="og:title" content="Ewan Qian — Media Art / Spatial Image / Realtime Systems" />
+    <meta property="og:description" content="Works, spatial archives, realtime systems, creative tools, and long-term workshop programs by Ewan Qian." />
     <meta property="og:url" content="https://ewanqian.site/" />
     <meta property="og:image" content="https://ewanqian.site/assets/home/featured-dropflow-main.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ewan Qian — Portfolio" />
-    <meta name="twitter:description" content="Media artist, spatial image creator, and live visual producer working across spatial image, audiovisual performance, and real-time systems." />
+    <meta name="twitter:title" content="Ewan Qian — Media Art / Spatial Image / Realtime Systems" />
+    <meta name="twitter:description" content="Works, spatial archives, realtime systems, creative tools, and long-term workshop programs by Ewan Qian." />
     <meta name="twitter:image" content="https://ewanqian.site/assets/home/featured-dropflow-main.webp" />
-    <script type="module" crossorigin src="./assets/index-BBtPpsrv.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bkwhunuw.css">
+    <script type="module" crossorigin src="./assets/index-Cqa0DkFC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-pXGFMsTC.css">
   </head>
   <body>
     <div id="root"></div>

@@ -32,4 +32,4 @@ export default [
     "source": "local-library",
     "featured": false
   }
-];
+]

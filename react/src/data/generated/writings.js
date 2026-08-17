@@ -288,4 +288,4 @@ export default [
     "featured": false,
     "order": 5
   }
-];
+]

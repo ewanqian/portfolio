@@ -19,9 +19,34 @@ import './styles/global.css'
 import './styles/home-system.css'
 import './styles/navigation-adjustments.css'
 
+const STATIC_WORK_SLUGS = {
+  'drop-flow': true,
+  'timer': true,
+  'titan': true,
+  'kashiwa': true,
+  'mke-terminal': true,
+  'sre-realtime-liveset': true,
+  'no-further-input-required': true,
+}
+
 function App() {
   const location = useLocation()
   const { key, pathname, state } = location
+
+  useEffect(() => {
+    const match = pathname.match(/^\/works\/([^/?#]+)/)
+    if (!match) {
+      return
+    }
+
+    const slug = decodeURIComponent(match[1]).replace(/\.html$/i, '')
+    if (!STATIC_WORK_SLUGS[slug]) {
+      return
+    }
+
+    const base = window.location.pathname.indexOf('/portfolio') === 0 ? '/portfolio' : ''
+    window.location.replace(`${base}/works/${slug}`)
+  }, [pathname])
 
   useEffect(() => {
     const targetId = state?.scrollTo

@@ -1,18 +1,28 @@
 .home-system-hero {
   position: relative;
-  min-height: min(860px, 88vh);
-  display: flex;
-  align-items: flex-end;
+  height: 100dvh;
+  min-height: 100dvh;
+  display: block;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   color: #f5f3ee;
-  background: #050505;
+  background: #050506;
+}
+
+.home-system-hero-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  pointer-events: auto;
+  background: #050506;
 }
 
 .home-system-hero-media,
 .home-system-hero::after {
-  position: absolute;
-  inset: 0;
+  display: none;
 }
 
 .home-system-hero-media img {
@@ -20,11 +30,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.home-system-hero::after {
-  content: '';
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.38) 55%, rgba(0, 0, 0, 0.08) 100%);
 }
 
 .home-system-hero-inner {
@@ -358,12 +363,9 @@
   }
 
   .home-system-hero {
-    min-height: 720px;
-    margin-top: -56px;
-  }
-
-  .home-system-hero::after {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.38) 68%, rgba(0, 0, 0, 0.14) 100%);
+    height: 100dvh;
+    min-height: 100dvh;
+    margin-top: 0;
   }
 
   .home-system-hero-inner {
