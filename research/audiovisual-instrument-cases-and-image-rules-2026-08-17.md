@@ -1,105 +1,225 @@
-# 音画同源：外部案例、试玩链接与图片使用规则
+# 音画同源｜五个试玩、源头与图片使用规则
 
 更新：2026-08-17
 
-这份资料服务于课程文章、课程海报与课堂演示。优先级是：**可验证出处 > 可试玩 > 可合法取得图片 > 视觉冲击力**。
+本轮不再把“一键 Live Set”理解成一个自动播放的 60–90 秒作品。课程真正的递进是：
 
-## 一、图片与视频的编辑规则
+**一个成立的最小单元 → 改变输入与 Mapping → 复制/变体 → 组织成多个状态 → 形成可演奏的乐器 / Live Set。**
 
-### A｜可直接进入文章的材料
-
-1. 自己编写的软件 / 网页乐器的截图与录屏。
-2. 自己重新绘制的 mapping 图、信号流图、时间线与结构示意。
-3. 明确标注为可供媒体使用、且许可范围覆盖当前用途的 press image；保留作者、摄影、作品名、年份与来源。
-4. 官方网页、作品页与在线 app 的**文字链接**。链接本身不等于取得网页图片的转载许可。
-
-### B｜需要再确认后进入文章的材料
-
-1. 官方项目页提供的 press image，但页面没有写清具体 license：先检查下载页 / Flickr / press kit 的许可；不明确就联系作者或机构。
-2. 艺术家官网、博物馆、档案馆中的现场照片：页面公开可看，不代表可直接转载。
-3. 视频帧截图：除非得到明确许可，或确实属于评论/介绍所必需的适当引用，否则不作为默认素材方案。
-
-### C｜默认不直接复制的材料
-
-1. 明确标注 `© Artist`、`Photo: Photographer`、`Courtesy of ...` 且没有再利用许可的图片。
-2. 新闻媒体、摄影师、图库、展览机构网页上的照片，没有取得许可时不拿来做课程海报主视觉。
-3. 别人的作品图进行大面积裁切、去水印、二次调色后当成自己的视觉素材。
-
-中国《著作权法》第二十四条允许在介绍、评论作品或说明问题时，对已发表作品作“适当引用”，同时要求署名、不得影响作品正常使用，也不得不合理损害权利人合法权益。这个条款适合支撑**必要、克制、与评论直接相关**的引用，不应该被理解为“网上搜到的图都能用”。课程文章如准备公开发行，仍以取得明确许可或使用自己生成的示意图为最稳妥工作流。
+开场“一按钮”只负责把这个思想压缩到最小；结尾的“五状态乐器”才负责展示多个有效单元如何组成一个可以演出的系统。
 
 ---
 
-## 二、核心外部案例
+## 0. 与 2026-08-29 三小时课的关系
 
-| 案例 | 为什么值得放 | 可试玩 / 官方出处 | 图片建议 |
-|---|---|---|---|
-| **Michel Waisvisz — The Hands, 1984** | MIDI 标准刚出现后的关键身体化数字乐器案例：手、臂、手指动作被转换为 MIDI 控制与声音。适合讲“输入装置不是键盘，也可以是身体”。 | Digital Canon: https://www.digitalcanon.nl/artworks/michel-waisvisz/ | **不要直接复制 Digital Canon 的主图作为默认方案。** 页面明确写有 `Copyright Michel Waisvisz / crackle.org`。文章如必须使用，先向档案/权利方确认。课堂投影可以优先打开官方档案页现场讲解。 |
-| **Golan Levin + Gregory Shakar + Scott Gibbons — Scribble, 2000** | AVES 同时实时生成抽象动画与声音；不是“音乐可视化”，而是同一演奏界面生成两个域。 | Official: https://www.flong.com/archive/projects/scribble/index.html | 官方页明确提供 **High-resolution press images**，这是目前最适合向编辑申请/核对的外部案例之一。但仍要进入 Flickr/press 资源确认具体 license 和署名要求；视频标有 courtesy Ars Electronica。 |
-| **sascacci + ksmt — touch:waves, 2021–** | 与本课最接近的网页视觉乐器之一：屏幕分成 27 个区域，每个区域映射声音与视觉；触摸并拖动可以改变声音。 | App: https://www.sascacci.com/icc/ · ICC: https://www.ntticc.or.jp/en/archive/works/touch-waves/ | **强烈建议发试玩链接而不是抓图。** ICC 展览照片明确标注摄影 KIOKU Keizo；未见开放转载许可时不要直接放文章。需要图片可向 ICC / 作者请求。 |
-| **Ryoji Ikeda — test pattern, 2008–** | 极强的音画同步案例；实时程序把音频信号模式转换成高速黑白条码视觉。适合讲“一个信号被翻译为两个感知层”。 | Official: https://www.ryojiikeda.com/project/testpattern/ | **默认不转载官网图片。** 页面现场照有独立摄影署名，部分材料明确 `© Ryoji Ikeda` / courtesy YCAM。另需提醒高频黑白闪烁可能引发光敏不适，课堂或文章嵌入视频时应加提示。 |
-| **Ei Wada + Nicos Orchest-Lab — ELECTRONICOS FANTASTICOS!** | 把 CRT、风扇、摄像机、电话等废旧电器重新变成电磁乐器。适合把“输入”从 MIDI 控制器扩展到物体与电磁现象。 | Official: https://www.electronicosfantasticos.com/en/ | 官网现场图经常带独立摄影署名，例如 Florian Voggeneder / Mao Yamamoto。默认发官方链接；需要刊图时联系项目方取得 press image。 |
-| **Reactable, 2003–** | 实体模块、触控桌面、声音合成与实时图形反馈形成一个可被观众读懂的演奏系统。适合讲 tangible interface 与多参数 mapping。 | Legacy: https://reactable.com/ · Manual: https://reactable.com/live/manual/introduction.html | 官方历史页适合做出处；图像转载许可未明确时，不把网页截图当默认文章配图。可以自己重绘“模块 → 参数 → 声音 / 图形反馈”的结构图。 |
-| **Toshio Iwai + Yamaha — TENORI-ON** | 16×16 / 256 个发光按键同时承担演奏和视觉反馈，背面 LED 让观众也能看见演奏结构。是“乐器本身就是视觉界面”的清楚案例。 | Yamaha Design: https://www.yamaha.com/en/tech-design/design/insights/id_005/ | Yamaha 页面图片为品牌/产品资料，不等于自由授权。文章可先引用官方链接；若需要产品图，走 Yamaha press / media usage 规则。 |
-| **Steina Vasulka — Violin Power, 1970s– / MIDI version from 1990s** | 从声音/振动影响图像，发展到 MIDI 小提琴直接控制影像。特别适合讲“演奏动作 → 视觉参数”与历史连续性。 | Artist archive: https://vasulka.org/Steina/Steina_ViolinPower/ViolinPower.html · Smithsonian: https://www.si.edu/object/violin-power%3Asaam_2008.21.12 | Smithsonian 对馆藏图明确提示 usage conditions；作品版权标注 © Steina Vasulka。优先链接或向 EAI/艺术家档案询权。 |
-| **Patatap, 2014–** | 键盘 / 触控即时触发成对的声音与动态图形，学习成本几乎为零。非常适合课堂前 5 分钟直接试玩。 | https://patatap.com/ | 官网有 © 2014–2024 与 terms / inquiries。作为课堂试玩链接很好；文章截图或海报图不默认当自由素材。页面本身也有 flashing images 警告。 |
+当前现场执行稿已经明确：
+
+- 进场先玩现成的一个按钮版、鼠标版；
+- 一个按钮是理解输入、时间和状态的小 Demo，不要求参与者从零复刻；
+- Starter Case 阶段才由参与者自己选择 **一个输入 + 一条规则**，得到 **一个声音反应 + 一个画面反应 + 一个状态**；
+- V1 被别人试玩后，只修一个最明显的问题，保存成 V2。
+
+所以五个试玩不是“五个作业”，而是一套从最小限制到可演奏系统的参照物。
 
 ---
 
-## 三、理论来源：Mapping 不是“声音分析后驱动画”
+# 1. 五个试玩
 
-### Andy Hunt & Ross Kirk — *Mapping Strategies for Musical Performance* (2000)
+## 01｜ONE BUTTON STUDY
 
-出处：收录于 *Trends in Gestural Control of Music*，IRCAM – Centre Pompidou，2000。
+文件：`works/audiovisual-one-button-study.html`
 
-它适合解释三种基础关系：
+**课堂位置：开场。**
 
-- one-to-one：一个控制量 → 一个参数；
-- divergent / one-to-many：一个控制量 → 多个参数；
-- convergent / many-to-one：多个控制量共同决定一个参数；
-- multiparametric mapping：多个输入与多个输出之间形成交叉关系。
+唯一的主要表演输入就是一个按钮。它不是“一按就自动播完整 set”，而是让同一个按钮因为**时间**而出现多种行为：
 
-**编辑处理：引用论文观点，但不要直接把论文里的图复制到文章。** 原论文与图表有版权标注；我们自己重新画一套更适合课程的四张 mapping 示意图即可。
+- 短按：进入下一个视觉 / 声音状态；
+- 连续快速按：按键间隔变成 energy，画面与声音更强；
+- 长按：进入持续控制，释放时发生另一种变化；
+- 每次按下都让整个框架产生可见变化；
+- 可额外打开 120 BPM 伴奏时钟，但 BPM 不是主要表演输入。
 
-参考全文页面：https://www.researchgate.net/publication/243774325_Mapping_Strategies_for_Musical_Performance
+### 源头
 
----
+这套“一按钮塞进多个时间关系”的具体教学例子，直接来自 2026-08-17 课程讨论：一次/二次/三次、循环计数、按键速度、长短按都可以成为状态判断。核心并不是炫技，而是**简化控制、打包控制，让表演者只需要专心向一个动作注入能量**。
 
-## 四、建议文章里的案例顺序
+Zach Lieberman 的 daily sketch 实践可以作为更大的方法论背景，但不要把“先做一个有效内容再复制”写成未经核对的逐字引语。他本人公开写过更稳妥的表述：从简单想法开始，通过 iteration / remix 把旧东西推成新东西；ECAL 的 Circle Studies 也让所有学生从同一个 circle 出发持续变体。
 
-不要变成“媒体艺术史十佳”。只用案例回答几个明确问题：
-
-1. **输入是什么？** — The Hands / Violin Power
-2. **一个输入怎么同时变成声音和画面？** — Scribble / touch:waves / Patatap
-3. **乐器界面本身如何成为视觉？** — TENORI-ON / Reactable
-4. **输入还可以是什么？** — ELECTRONICOS FANTASTICOS!
-5. **极端的同步能到什么程度？** — test pattern
-6. **我们自己怎么做？** — 浏览器 WebAudio + Canvas + Web MIDI 的课程 demo
-
-这样外部案例只承担“建立坐标系”，最后自然落回自己的乐器与演出实践。
+- Zach Lieberman, Daily Sketches / iteration: https://zachlieberman.medium.com/
+- ECAL, Circle Studies: https://ecal.ch/en/feed/projects/4961/circle-studies/
 
 ---
 
-## 五、本轮自己的两个 demo
+## 02｜TRIGGER CELLS
 
-### 1. 音画同源乐器 · Special Edition
+文件：`works/audiovisual-trigger-cells.html`
+
+**问题：一个“有效单元”到底是什么？**
+
+屏幕被理解为五个不可见的触发区域。每个区域都不是“只有一个视觉效果”，而是一对已经成立的行为：
+
+`触发 → 声音事件 + 视觉事件`
+
+打开 BPM 后，触发会进入更明显的节拍关系，参与者可以感受到“自由触发”和“被时钟组织”之间的区别。
+
+### 源头
+
+**touch:waves** 是最直接的参照：ICC 的作品说明明确写到，画面被分成 27 个区域，每个区域分别映射声音和对应视觉；触摸、拖动都可以改变声音。
+
+- ICC / sascacci + ksmt, `touch:waves`: https://www.ntticc.or.jp/ja/archive/works/touch-waves/
+
+也可以把 Patatap 作为“键盘触发一对声音/视觉”的轻量补充案例，但正文不需要展开。
+
+---
+
+## 03｜GESTURE MAPPING
+
+文件：`works/audiovisual-gesture-mapping.html`
+
+**问题：一个动作能不能同时控制很多东西？**
+
+拖动不是触发预制 clip，而是连续参数：
+
+- X → 滤波、声像、横向位置；
+- Y → 音高、纵向位置；
+- 速度 → 能量、Q、线宽与残留；
+
+即同一个动作被拆成多组连续数值，并同时进入声音与视觉。
+
+### 源头
+
+**Michel Waisvisz — The Hands (1984)**：MIDI 标准出现后，把手、臂、手指动作翻译成声音控制，重点是身体和电子乐器之间形成连续关系。
+
+- Digital Canon: https://www.digitalcanon.nl/artworks/michel-waisvisz/
+
+**Andy Hunt & Ross Kirk — Mapping Strategies for Musical Performance (2000)**：可用于解释 divergent / convergent / multiparametric mapping。论文的关键不是让每个旋钮只控制一个东西，而是说明连续、多参数 mapping 对数字乐器的演奏感很重要。
+
+- https://www.researchgate.net/publication/243774325_Mapping_Strategies_for_Musical_Performance
+
+---
+
+## 04｜STEP PATTERN
+
+文件：`works/audiovisual-step-pattern.html`
+
+**问题：时间本身能不能成为界面？**
+
+一个简化的 BPM 网格：
+
+- 横向 = time；
+- 纵向 = pitch / voice；
+- 点亮一个单元 = 同时写入声音事件与视觉事件；
+- transport 扫过时，音乐结构本身就是可见结构。
+
+### 源头
+
+**Toshio Iwai + Yamaha — TENORI-ON** 是非常干净的历史例子。Yamaha 对 TNR-i/TENORI-ON 的说明直接把 16×16 网格定义为“横向时间、纵向音高”，按钮被触发时同时发声与发光。
+
+- Yamaha TNR-i: https://usa.yamaha.com/products/music_production/apps/tnr-i/index.html
+
+这里不要复制 TENORI-ON 的外观；只借用“时间 / 音高 / 发声 / 发光来自同一矩阵”的结构原则。
+
+---
+
+## 05｜FIVE-STATE INSTRUMENT
 
 文件：`works/audiovisual-instrument-special.html`
 
-核心逻辑：不是 FFT 驱动画。鼠标 / 触控 / 键盘 / MIDI 先进入统一 event model；同一个 event 的 `x / y / energy / note` 同时被声音合成器和 Canvas 视觉读取。
+**课堂位置：结尾 / Starter Case 的目标参照。**
 
-映射：
+这不是自动播放的 Live Set，而是一件真的可以现场操作的网页乐器：
 
-- X → filter brightness + horizontal position
-- Y → pitch/register + vertical position
-- SPEED / velocity → amplitude + trace strength
-- MIDI Note → pitch + node
-- MIDI CC1 → output energy
-- MIDI CC74 → brightness / visual event
+- 1–5 切换五种已成立的表演状态；
+- 所有状态共享同一个 BPM；
+- 鼠标/触控在不同状态里被不同方式解释；
+- State 01：Pulse；
+- State 02：Trigger Cells；
+- State 03：Continuous Trace；
+- State 04：Step Pattern；
+- State 05：Stack / high-energy combination；
+- 不自动替表演者完成完整演出。
 
-### 2. One Button Live Set
+它要证明的是：**Live Set 不需要从“做一场 Live Set”开始。先攒下 3、5、10 个真正成立的单元，再把它们组织成状态，就自然可以支撑更长的表演。**
 
-文件：`works/audiovisual-one-button-live-set.html`
+### 源头
 
-一次点击启动约 69 秒、112 BPM、32 bars、4 scenes 的自动演出。没有外部 sample；声音由 WebAudio oscillator / noise 生成。声音与画面共享同一个 16-step transport，因此可以作为“音画同源”和“一键 live set”的直接演示，而不是播放一条预渲染视频。
+**Golan Levin + Gregory Shakar + Scott Gibbons — Scribble / AVES (2000)**：官方说明把 AVES 定义为一组可同时实时生成抽象动画与声音的 interactive systems；Scribble 进一步把这些系统组织成现场演出。这个案例适合用来解释“软件工具 → 乐器 → 演出”的升级。
 
-浏览器通常要求用户手势后才能启动 WebAudio；因此“START LIVE SET”这一个按钮同时是作品交互设计和浏览器音频权限入口。Web MIDI 则需要安全上下文以及用户授权，课程现场应保留键鼠备用方案。
+- https://www.flong.com/archive/projects/scribble/index.html
+
+本人的 `No Further Input Required V0.4` 则提供了当前网页实现的直接技术母体：浏览器 WebAudio、共享 transport、多个视觉状态与状态切换。
+
+---
+
+# 2. 课程里要明确区分的两个尺度
+
+## A｜一个有效内容 / A Valid Unit
+
+最小单位不等于“一个效果”。它至少要有：
+
+`输入 → 规则 → 声音结果 + 视觉结果`
+
+最好再有一个可判断的时间关系或状态变化。
+
+开场一个按钮，就是把这个问题限制到最狠：如果只有一个动作，你还能设计什么？
+
+## B｜一系列有效内容 / An Instrument
+
+当多个有效单元已经成立后，再做：
+
+- 复制；
+- 变体；
+- 排列；
+- 切换；
+- 共享 BPM；
+- 安静 / 高能状态；
+- MIDI / 键盘控制；
+- 最终组织成 30–60 秒，甚至更长的演出。
+
+所以“演出框架”是结果，不是课程一开始就要解决的主旨。
+
+---
+
+# 3. 海报方向
+
+海报不要使用外部艺术家的作品截图作为主视觉，也不要再重新发明一套视觉风格。
+
+直接从这五个网页的真实运行中取一张画面，尤其建议：
+
+- One Button 的按钮 + 一次状态扩散；或
+- Five-State Instrument 中五个状态留下的结构痕迹。
+
+画面延续《无需进一步输入》已经成立的黑底、灰白、稀疏线、节点、正交路径与状态痕迹。
+
+海报核心内容可以只保留：
+
+**一个动作，可以有多少种结果？**
+
+以及课程名称 / 时间 / 地点 / 报名信息。不要在海报上解释 Mapping 历史。
+
+---
+
+# 4. 图片与视频使用规则
+
+## 可直接使用
+
+1. 我们自己写的五个 Demo 的截图、录屏、GIF；
+2. 自己重新绘制的 mapping / state / signal-flow 图；
+3. 明确授权给媒体使用且许可覆盖本次用途的 press image。
+
+## 默认需要再次确认
+
+1. 艺术家官网、博物馆、档案馆里的现场照片；
+2. 官方项目页写有 photographer / © / courtesy 的图片；
+3. 视频截图；
+4. 品牌产品页图片。
+
+## 当前重点案例判断
+
+- **The Hands**：Digital Canon 页面有版权归属信息，文章默认以链接和文字为主；需要刊图再询权。
+- **Scribble**：作者页提供 high-resolution press images 入口，是最值得继续核实授权条件的一组。
+- **touch:waves**：ICC 现场照片明确有摄影署名；优先发可试玩链接，刊图另行确认。
+- **TENORI-ON**：Yamaha 官方资料适合作出处，不默认理解为自由转载。
+- **test pattern**：如果作为延伸案例，现场图和作品资料均要尊重摄影/艺术家版权，同时视频使用需加高频闪烁提示。
+
+原则：**“官方网站能看”不等于“官方网站的图可以自由转载”。**
