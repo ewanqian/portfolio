@@ -244,12 +244,16 @@ function initAudio(){
   scheduler=setInterval(schedule,25);
 }
 async function wake(){
+  const first=!started;
   initAudio();
   if(ac.state!=='running')await ac.resume();
-  started=true;start.classList.add('off');stateStart=performance.now();
-  const t=ac.currentTime+.04;
-  pad(t,chords[0],3.8,.045);
-  bass(t,bassRoots[0],.06,1.4);
+  started=true;start.classList.add('off');
+  if(first){
+    stateStart=performance.now();
+    const t=ac.currentTime+.04;
+    pad(t,chords[0],3.8,.045);
+    bass(t,bassRoots[0],.06,1.4);
+  }
 }
 function connectVoice(node,bus=musicBus,pan=0){
   const p=ac.createStereoPanner();p.pan.value=clamp(pan,-1,1);
