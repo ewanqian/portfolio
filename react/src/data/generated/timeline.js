@@ -48,4 +48,4 @@ export default [
     "category": "Digital Environment / Exhibition",
     "summary": "扫描、数字环境、观察系统与共生关系的持续实践。"
   }
-];
+]

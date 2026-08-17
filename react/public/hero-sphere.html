@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ewan Qian / 钱誉文 — media sphere</title>
+  <meta name="description" content="Rotating media-sphere hero prototype for ewanqian.site" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050506;
+      --ink: #e8e2d6;
+      --mute: rgba(232, 226, 214, 0.48);
+      --accent: #c4452f;
+      --line: rgba(232, 226, 214, 0.18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Syne", "Noto Sans SC", system-ui, sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+    #stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 48%, #141218 0%, #08080a 46%, #030304 100%);
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+    }
+    #stage.is-dragging { cursor: grabbing; }
+    #c {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    #vignette {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 58% 62% at 50% 46%, transparent 40%, rgba(0,0,0,0.38) 78%, rgba(0,0,0,0.78) 100%);
+      z-index: 2;
+    }
+    #grain {
+      pointer-events: none;
+      position: absolute;
+      inset: -20%;
+      z-index: 3;
+      opacity: 0.11;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.85'/%3E%3C/svg%3E");
+      animation: grain 1.2s steps(2) infinite;
+    }
+    @keyframes grain {
+      0% { transform: translate(0,0); }
+      25% { transform: translate(-2%, 1%); }
+      50% { transform: translate(1%, -2%); }
+      75% { transform: translate(-1%, 2%); }
+      100% { transform: translate(0,0); }
+    }
+    header {
+      position: absolute;
+      top: max(18px, env(safe-area-inset-top));
+      left: max(22px, env(safe-area-inset-left));
+      z-index: 5;
+      pointer-events: none;
+    }
+    header .name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+      opacity: 0.82;
+    }
+    header .tag {
+      margin-top: 5px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .enter {
+      position: absolute;
+      left: 50%;
+      bottom: max(28px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      z-index: 5;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 10px 18px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(5,5,6,0.28);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 0.35s ease, color 0.35s ease, background 0.35s ease, letter-spacing 0.35s ease;
+    }
+    .enter::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 10px;
+      margin-bottom: 1px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      vertical-align: middle;
+    }
+    .enter:hover {
+      border-color: rgba(196, 69, 47, 0.7);
+      background: rgba(196, 69, 47, 0.12);
+      letter-spacing: 0.34em;
+    }
+    #hint, #loader {
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    #hint {
+      bottom: 86px;
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--mute);
+      opacity: 0;
+      animation: fadeHint 5.5s ease 1.6s forwards;
+    }
+    @keyframes fadeHint {
+      0% { opacity: 0; }
+      18% { opacity: 0.7; }
+      75% { opacity: 0.55; }
+      100% { opacity: 0; }
+    }
+    #loader {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 11px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--mute);
+      transition: opacity 0.8s ease;
+    }
+    #loader span {
+      display: block;
+      margin-top: 10px;
+      letter-spacing: 0.2em;
+      font-size: 9px;
+      opacity: 0.55;
+    }
+    #works {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #grain { animation: none; }
+      #hint { animation: none; opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="vignette"></div>
+    <div id="grain"></div>
+    <header>
+      <div class="name">Ewan Qian / 钱誉文</div>
+      <div class="tag">live visuals · spatial images</div>
+    </header>
+    <div id="loader">assembling signal<span>loading media tiles</span></div>
+    <div id="hint">drag to orbit · 拖拽旋转</div>
+    <a class="enter" target="_top" href="#/works">enter / 进入作品</a>
+  </div>
+  <section id="works" aria-hidden="true">works</section>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.170.0/build/three.module.min.js"
+    }
+  }
+  </script>
+  <script type="module">
+  import * as THREE from "three";
+  /* =====================================================================
+     MEDIA array — drop in local gif / mp4 later.
+     type: "image" | "gif" | "video"
+     src:  absolute URL, or a path under /assets/ (fallbacks are tried)
+     Animated GIFs are redrawn each frame from an <img>; mp4/webm use
+     HTMLVideoElement textures (muted, loop, playsinline).
+     ===================================================================== */
+  const MEDIA = [
+    // { type: "gif", src: "./local/loop.gif", title: "local gif" },
+    // { type: "video", src: "./local/dropflow-clip.mp4", title: "local mp4" },
+    { type: "image", src: "raw-library/timer-red-spatial-preview.webp", title: "TIMER red spatial" },
+    { type: "image", src: "raw-picks/dropflow-concept-250426.webp", title: "Drop Flow concept" },
+    { type: "image", src: "drop-flow/optimized/dropflow-main.webp", title: "Drop Flow main" },
+    { type: "image", src: "drop-flow/optimized/ufo-stage-01.webp", title: "UFO stage 01" },
+    { type: "image", src: "raw-picks/titan-bolive-clean-16x9.webp", title: "TITAN BO LIVE" },
+    { type: "image", src: "raw-library/observation-symbiosis-large.webp", title: "Observation & Symbiosis" },
+    { type: "image", src: "gaussian-scenes/dropflow-collection-rooms719.webp", title: "Rooms719 collection" },
+    { type: "image", src: "home/featured-dropflow-hangzhou-biennale-scene.webp", title: "Hangzhou biennale" },
+    { type: "image", src: "raw-library/ufo-terminal-drop-flow-creation-camp.webp", title: "UFO Terminal camp" },
+    { type: "image", src: "public-nodes/dropflow-hangzhou.webp", title: "Drop Flow Hangzhou" },
+    { type: "image", src: "raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp", title: "Babel Bottle exhibition" },
+    { type: "image", src: "sre-realtime-liveset/sre-benchmark-all-visible.webp", title: "SRE live set" },
+    { type: "image", src: "home/featured-dropflow-main.webp", title: "Drop Flow featured" },
+    { type: "image", src: "home/hero-dropflow-ufo-2025.webp", title: "UFO 2025 hero" },
+    { type: "image", src: "home/featured-timer-main.webp", title: "TIMER featured" },
+    { type: "image", src: "kashiwa-titan/08_Titan.webp", title: "TITAN" },
+    { type: "image", src: "gaussian-scenes/timer-gaussian-0531.webp", title: "TIMER gaussian" },
+    { type: "image", src: "drop-flow/optimized/ufo-hero.webp", title: "UFO hero" },
+    { type: "image", src: "raw-picks/timer-main.webp", title: "TIMER main" },
+    { type: "image", src: "digital-garden/digital-garden-xian-mixc-01.webp", title: "Digital Garden Xi'an" },
+    { type: "image", src: "ether-fragment/ether-fragment-westbund-2023.webp", title: "Ether Fragment" },
+    { type: "image", src: "drop-flow/optimized/hero-hangzhou-performance.webp", title: "Hangzhou performance" },
+    { type: "image", src: "gaussian-scenes/shibuya-sakura-stage.webp", title: "Shibuya sakura" },
+    { type: "image", src: "home/featured-kashiwa-bolive-shenzhen.webp", title: "Kashiwa Shenzhen" },
+    { type: "image", src: "raw-library/floating-life-ii-performance.webp", title: "Floating Life II" },
+    { type: "image", src: "kashiwa-titan/10_Aurora.webp", title: "Aurora" },
+    { type: "image", src: "home/featured-timer-visionpro.webp", title: "TIMER Vision Pro" },
+    { type: "image", src: "drop-flow/optimized/ufo-stage-02.webp", title: "UFO stage 02" },
+    { type: "image", src: "home/glimpse-ewan-ufo-2025.webp", title: "UFO 2025 glimpse" },
+    { type: "image", src: "home/landing.webp", title: "Landing" },
+    { type: "image", src: "gaussian-scenes/shinjuku-gyoen-greenhouse.webp", title: "Shinjuku Gyoen" },
+    { type: "image", src: "drop-flow/optimized/ufo-stage-03.webp", title: "UFO stage 03" },
+    { type: "image", src: "home/vrplay-world-remix-2025.webp", title: "VRPlay 2025" }
+  ];
+
+  const MAX_TEX = 512;
+  const RADIUS = 5.35;
+  const TILE_W = 1.38;
+  const TILE_H = 0.78;
+
+  const stage = document.getElementById("stage");
+  const canvas = document.getElementById("c");
+  const loaderEl = document.getElementById("loader");
+
+  function assetCandidates(src) {
+    if (/^https?:\/\//i.test(src)) return [src];
+    // Local relative files (./clips/foo.mp4) are used as-is — no remote fallback.
+    if (src.startsWith("./") || src.startsWith("../") || src.startsWith("/")) return [src];
+    const path = src.replace(/^\/+/, "").replace(/^portfolio\/assets\//, "").replace(/^assets\//, "");
+    return [
+      "https://ewanqian.site/assets/" + path,
+      "https://ewanqian.site/portfolio/assets/" + path,
+      "https://ewanqian.github.io/portfolio/assets/" + path
+    ];
+  }
+
+  function loadImageBitmap(url) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error("img fail " + url));
+      img.src = url;
+    });
+  }
+
+  async function loadImageWithFallback(src) {
+    const urls = assetCandidates(src);
+    let last;
+    for (const url of urls) {
+      try {
+        const img = await loadImageBitmap(url);
+        if (!img.width) throw new Error("empty");
+        return { img, url };
+      } catch (err) {
+        last = err;
+      }
+    }
+    throw last || new Error("no image");
+  }
+
+  function downsampleToTexture(img) {
+    const w = img.naturalWidth || img.width;
+    const h = img.naturalHeight || img.height;
+    const scale = Math.min(1, MAX_TEX / Math.max(w, h));
+    const cw = Math.max(2, Math.round(w * scale));
+    const ch = Math.max(2, Math.round(h * scale));
+    const cnv = document.createElement("canvas");
+    cnv.width = cw;
+    cnv.height = ch;
+    const ctx = cnv.getContext("2d");
+    ctx.drawImage(img, 0, 0, cw, ch);
+    const tex = new THREE.CanvasTexture(cnv);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.anisotropy = 4;
+    tex.minFilter = THREE.LinearMipmapLinearFilter;
+    tex.magFilter = THREE.LinearFilter;
+    tex.generateMipmaps = true;
+    tex.needsUpdate = true;
+    return tex;
+  }
+
+  function loadVideoTexture(url) {
+    return new Promise((resolve, reject) => {
+      const video = document.createElement("video");
+      video.crossOrigin = "anonymous";
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.preload = "auto";
+      video.setAttribute("playsinline", "");
+      video.setAttribute("muted", "");
+      video.setAttribute("loop", "");
+      let settled = false;
+      const ok = () => {
+        if (settled) return;
+        if (!video.videoWidth) return;
+        settled = true;
+        video.play().catch(() => {});
+        const tex = new THREE.VideoTexture(video);
+        tex.colorSpace = THREE.SRGBColorSpace;
+        tex.minFilter = THREE.LinearFilter;
+        tex.magFilter = THREE.LinearFilter;
+        tex.generateMipmaps = false;
+        resolve({ tex, video, url });
+      };
+      video.addEventListener("loadeddata", ok);
+      video.addEventListener("canplay", ok);
+      video.onerror = () => {
+        if (!settled) {
+          settled = true;
+          reject(new Error("video fail " + url));
+        }
+      };
+      setTimeout(() => {
+        if (!settled) {
+          settled = true;
+          reject(new Error("video timeout " + url));
+        }
+      }, 12000);
+      video.src = url;
+      video.load();
+    });
+  }
+
+  function fibonacciSphere(n, radius) {
+    const pts = [];
+    const golden = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < n; i++) {
+      const y = n === 1 ? 0 : 1 - (i / (n - 1)) * 2;
+      const r = Math.sqrt(Math.max(0, 1 - y * y));
+      const theta = golden * i;
+      pts.push(new THREE.Vector3(Math.cos(theta) * r, y, Math.sin(theta) * r).multiplyScalar(radius));
+    }
+    return pts;
+  }
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: false,
+    powerPreference: "high-performance"
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+  renderer.setSize(stage.clientWidth, stage.clientHeight, false);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  renderer.setClearColor(0x050506, 1);
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x050506, 0.042);
+
+  const camera = new THREE.PerspectiveCamera(40, stage.clientWidth / Math.max(1, stage.clientHeight), 0.1, 80);
+  camera.position.set(0, 0.15, 11.2);
+
+  scene.add(new THREE.AmbientLight(0xb7c4d8, 0.42));
+  const key = new THREE.PointLight(0xffe6d2, 18, 28, 2);
+  key.position.set(4.5, 3.2, 7);
+  scene.add(key);
+  const fill = new THREE.PointLight(0x6a8cff, 8, 24, 2);
+  fill.position.set(-6, -2.5, 4);
+  scene.add(fill);
+  const core = new THREE.PointLight(0xc4452f, 6, 12, 2);
+  scene.add(core);
+
+  const sphereGroup = new THREE.Group();
+  scene.add(sphereGroup);
+
+  const dustGeo = new THREE.BufferGeometry();
+  const dustCount = 220;
+  const dustPos = new Float32Array(dustCount * 3);
+  for (let i = 0; i < dustCount; i++) {
+    const r = 7 + Math.random() * 10;
+    const t = Math.random() * Math.PI * 2;
+    const p = Math.acos(2 * Math.random() - 1);
+    dustPos[i * 3] = r * Math.sin(p) * Math.cos(t);
+    dustPos[i * 3 + 1] = r * Math.cos(p) * 0.7;
+    dustPos[i * 3 + 2] = r * Math.sin(p) * Math.sin(t);
+  }
+  dustGeo.setAttribute("position", new THREE.BufferAttribute(dustPos, 3));
+  const dust = new THREE.Points(
+    dustGeo,
+    new THREE.PointsMaterial({
+      color: 0xc8c0b0,
+      size: 0.025,
+      transparent: true,
+      opacity: 0.35,
+      depthWrite: false
+    })
+  );
+  scene.add(dust);
+
+  const tiles = [];
+  const videos = [];
+  const gifRedraw = [];
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+
+  const planeGeo = new THREE.PlaneGeometry(TILE_W, TILE_H);
+  const frameGeo = new THREE.PlaneGeometry(TILE_W + 0.05, TILE_H + 0.05);
+  const frameMat = new THREE.MeshBasicMaterial({ color: 0x09090c });
+
+  async function loadItem(item) {
+    if (item.type === "video") {
+      const urls = assetCandidates(item.src);
+      let last;
+      for (const url of urls) {
+        try {
+          const got = await loadVideoTexture(url);
+          return { item, ...got, kind: "video" };
+        } catch (err) {
+          last = err;
+        }
+      }
+      throw last;
+    }
+    const { img, url } = await loadImageWithFallback(item.src);
+    if (item.type === "gif") {
+      const cnv = document.createElement("canvas");
+      const max = MAX_TEX;
+      const w = img.naturalWidth || img.width;
+      const h = img.naturalHeight || img.height;
+      const scale = Math.min(1, max / Math.max(w, h));
+      cnv.width = Math.max(2, Math.round(w * scale));
+      cnv.height = Math.max(2, Math.round(h * scale));
+      const ctx = cnv.getContext("2d");
+      ctx.drawImage(img, 0, 0, cnv.width, cnv.height);
+      const tex = new THREE.CanvasTexture(cnv);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.minFilter = THREE.LinearFilter;
+      tex.generateMipmaps = false;
+      return { item, tex, url, kind: "gif", img, ctx, cnv };
+    }
+    return { item, tex: downsampleToTexture(img), url, kind: "image" };
+  }
+
+  function makeTile(loaded, position) {
+    const group = new THREE.Group();
+    group.position.copy(position);
+    group.lookAt(0, 0, 0);
+    group.rotateY(Math.PI);
+
+    const back = new THREE.Mesh(frameGeo, frameMat);
+    back.position.z = -0.012;
+    back.rotation.y = Math.PI;
+
+    const mat = new THREE.MeshStandardMaterial({
+      map: loaded.tex,
+      emissiveMap: loaded.tex,
+      emissive: new THREE.Color(0xffffff),
+      emissiveIntensity: 0.28,
+      roughness: 0.42,
+      metalness: 0.04,
+      toneMapped: true
+    });
+    const mesh = new THREE.Mesh(planeGeo, mat);
+    mesh.userData.tile = true;
+    group.add(back);
+    group.add(mesh);
+    group.userData = {
+      mesh,
+      pulse: 0,
+      baseScale: 1,
+      loaded
+    };
+    sphereGroup.add(group);
+    tiles.push(group);
+    if (loaded.kind === "video") videos.push(loaded.video);
+    if (loaded.kind === "gif") gifRedraw.push(loaded);
+  }
+
+  function layoutTiles() {
+    const pts = fibonacciSphere(tiles.length, RADIUS);
+    tiles.forEach((g, i) => {
+      g.position.copy(pts[i]);
+      g.lookAt(0, 0, 0);
+      g.rotateY(Math.PI);
+    });
+  }
+
+  let rotY = 0.35;
+  let rotX = 0.14;
+  let velY = 0;
+  let velX = 0;
+  let dragging = false;
+  let dragMoved = false;
+  let lastPX = 0;
+  let lastPY = 0;
+  let lastT = 0;
+  let visible = true;
+  let running = true;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const AUTO = reduceMotion ? 0 : 0.085;
+
+  function setPointerFromEvent(e) {
+    const r = canvas.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top) / r.height;
+    pointer.set(x * 2 - 1, -(y * 2 - 1));
+  }
+
+  function onDown(e) {
+    if (e.target.closest("a")) return;
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    dragging = true;
+    dragMoved = false;
+    lastPX = e.clientX;
+    lastPY = e.clientY;
+    lastT = performance.now();
+    velY = 0;
+    velX = 0;
+    stage.classList.add("is-dragging");
+    try { stage.setPointerCapture(e.pointerId); } catch (_) {}
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    const now = performance.now();
+    const dt = Math.max(8, now - lastT);
+    const dx = e.clientX - lastPX;
+    const dy = e.clientY - lastPY;
+    if (Math.abs(dx) + Math.abs(dy) > 3) dragMoved = true;
+    const k = 0.0048;
+    velY = (dx * k) * (16 / dt);
+    velX = (dy * k) * (16 / dt);
+    rotY += dx * k;
+    rotX += dy * k;
+    lastPX = e.clientX;
+    lastPY = e.clientY;
+    lastT = now;
+  }
+  function onUp(e) {
+    if (!dragging) return;
+    dragging = false;
+    stage.classList.remove("is-dragging");
+    try { stage.releasePointerCapture(e.pointerId); } catch (_) {}
+    if (!dragMoved) {
+      setPointerFromEvent(e);
+      raycaster.setFromCamera(pointer, camera);
+      const hits = raycaster.intersectObjects(tiles.map((t) => t.userData.mesh), false);
+      if (hits[0]) {
+        const g = hits[0].object.parent;
+        g.userData.pulse = 1;
+      }
+    }
+  }
+
+  stage.addEventListener("pointerdown", onDown);
+  stage.addEventListener("pointermove", onMove);
+  stage.addEventListener("pointerup", onUp);
+  stage.addEventListener("pointercancel", onUp);
+  stage.addEventListener("lostpointercapture", () => {
+    dragging = false;
+    stage.classList.remove("is-dragging");
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    visible = !document.hidden;
+    videos.forEach((v) => {
+      if (visible && running) v.play().catch(() => {});
+      else v.pause();
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    running = entries.some((en) => en.isIntersecting);
+    videos.forEach((v) => {
+      if (running && visible) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, { threshold: 0.05 });
+  io.observe(stage);
+
+  function onResize() {
+    const w = stage.clientWidth;
+    const h = Math.max(1, stage.clientHeight);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false);
+    camera.position.z = w < 700 ? 13.2 : 11.2;
+  }
+  window.addEventListener("resize", onResize);
+  onResize();
+
+  const clock = new THREE.Clock();
+  let built = false;
+
+  function tick() {
+    requestAnimationFrame(tick);
+    const dt = Math.min(0.05, clock.getDelta());
+    if (!running || !visible) return;
+
+    gifRedraw.forEach((g) => {
+      g.ctx.drawImage(g.img, 0, 0, g.cnv.width, g.cnv.height);
+      g.tex.needsUpdate = true;
+    });
+
+    if (!dragging) {
+      velY *= Math.pow(0.92, dt * 60);
+      velX *= Math.pow(0.92, dt * 60);
+      rotY += velY + AUTO * dt;
+      rotX += velX;
+    }
+    rotX = Math.max(-0.72, Math.min(0.72, rotX));
+    sphereGroup.rotation.y = rotY;
+    sphereGroup.rotation.x = rotX;
+    dust.rotation.y += dt * 0.02;
+
+    if (built) {
+      const t = clock.elapsedTime;
+      sphereGroup.scale.setScalar(1 + Math.sin(t * 0.35) * 0.008);
+      tiles.forEach((g) => {
+        if (g.userData.pulse > 0) {
+          g.userData.pulse = Math.max(0, g.userData.pulse - dt * 2.4);
+          const p = g.userData.pulse;
+          const s = 1 + Math.sin((1 - p) * Math.PI) * 0.22 * (p > 0 ? 1 : 0);
+          g.scale.setScalar(s);
+        }
+      });
+    }
+
+    renderer.render(scene, camera);
+  }
+  tick();
+
+  (async function boot() {
+    const results = await Promise.allSettled(MEDIA.map(loadItem));
+    const ok = [];
+    const failed = [];
+    results.forEach((r, i) => {
+      if (r.status === "fulfilled") ok.push(r.value);
+      else failed.push(MEDIA[i].src);
+    });
+    const pts = fibonacciSphere(ok.length, RADIUS);
+    ok.forEach((loaded, i) => makeTile(loaded, pts[i]));
+    built = true;
+
+    const nImg = ok.filter((x) => x.kind !== "video").length;
+    const nVid = ok.filter((x) => x.kind === "video").length;
+    const nPh = ok.filter((x) => x.item.placeholder).length;
+    loaderEl.style.opacity = "0";
+    setTimeout(() => { loaderEl.style.display = "none"; }, 900);
+
+    window.__MEDIA_SPHERE__ = {
+      tiles: ok.length,
+      images: nImg,
+      videos: nVid,
+      placeholders: nPh,
+      loaded: ok.map((x) => ({ title: x.item.title, kind: x.kind, url: x.url, placeholder: !!x.item.placeholder })),
+      failed
+    };
+    console.info("[media-sphere]", window.__MEDIA_SPHERE__);
+  })().catch((err) => {
+    loaderEl.innerHTML = "failed to assemble<span>" + String(err.message || err) + "</span>";
+  });
+  </script>
+</body>
+</html>

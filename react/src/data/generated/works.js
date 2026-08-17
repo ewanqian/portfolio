@@ -256,7 +256,7 @@ export default [
     "links": [
       {
         "text": "详情页",
-        "url": "./works/drop-flow.html"
+        "url": "/works/drop-flow.html"
       },
       {
         "text": "看录像",
@@ -428,7 +428,7 @@ export default [
     "priority": 12
   },
   {
-    "id": "kashiwa",
+    "id": "titan",
     "title": "《机械光合：TITAN 的全息声林》",
     "subtitle": "与 Kashiwa Daisuke 合作",
     "years": "2025",
@@ -438,7 +438,8 @@ export default [
     "tags": [
       "live",
       "collaboration",
-      "audiovisual"
+      "audiovisual",
+      "titan"
     ],
     "coverImage": "featured-kashiwa-bolive-shenzhen.webp",
     "image": "/assets/home/featured-kashiwa-bolive-shenzhen.webp",
@@ -458,16 +459,16 @@ export default [
       "kashiwa-live-collaboration"
     ],
     "sourceDocs": [
-      "works/kashiwa.html",
+      "works/titan.html",
       "projects/kashiwa-titan-visual-2025.md",
       "visual-arts/kashiwa-daisuke/README.md",
       "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
     ],
-    "repoLink": "/works/kashiwa.html",
+    "repoLink": "/works/titan.html",
     "links": [
       {
         "text": "详情页",
-        "url": "./works/kashiwa.html"
+        "url": "/works/titan.html"
       },
       {
         "text": "微信文章",
@@ -885,7 +886,7 @@ export default [
     "links": [
       {
         "text": "作品页面",
-        "url": "./works/timer.html"
+        "url": "/works/timer.html"
       },
       {
         "text": "团队档案源",
@@ -950,18 +951,63 @@ export default [
     "priority": 9
   },
   {
-    "id": "vrplay-hackathon-visual-2025",
-    "title": "VRplay WORLD REMIX XR 黑客松",
-    "subtitle": "XR 黑客松主视觉与活动视觉系统",
-    "years": "2025",
-    "type": "event-visual-system",
-    "summary": "为 WORLD REMIX XR 黑客松制作主视觉、动态与静态物料及周边视觉系统，把 XR 创作活动转化为一套更完整的视觉识别入口。",
+    "id": "vrplay-ai-xr-hackathon-2026",
+    "title": "VR Play Hackathon / WORLD REMIX 2026",
+    "subtitle": "Visual identity, motion system, and spatial campaign concept",
+    "years": "2026 — ongoing",
+    "type": "current-collaboration",
+    "summary": "WORLD REMIX 的持续视觉升级：围绕品牌视觉、动态系统、SlidesV / PPT、空间化专题网页与可插拔 Sponsor 展示模块，构建一个持续生长、持续被重混的数字世界。",
     "practiceLine": "perceptual-environments",
     "tags": [
       "xr",
       "hackathon",
+      "world-remix",
+      "visual-identity",
+      "motion-system",
+      "spatial-web",
+      "vr-play"
+    ],
+    "showOnHome": false,
+    "relatedNodes": [],
+    "relatedWritings": [],
+    "displayModes": [
+      "visual identity",
+      "motion system",
+      "spatial campaign"
+    ],
+    "analysisIds": [],
+    "sourceDocs": [
+      "projects/vrplay-ai-xr-hackathon-2026.md",
+      "docs/vrplay-world-remix-visual-system.md",
+      "docs/vrplay-xr-hackathon-concept.md"
+    ],
+    "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md",
+    "links": [
+      {
+        "text": "Project record",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md"
+      },
+      {
+        "text": "Visual system",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/docs/vrplay-world-remix-visual-system.md"
+      }
+    ],
+    "priority": 1
+  },
+  {
+    "id": "vrplay-hackathon-visual-2025",
+    "title": "VR Play WORLD REMIX XR 黑客松",
+    "subtitle": "XR 黑客松主视觉与活动视觉系统",
+    "years": "2025",
+    "type": "event-visual-system",
+    "summary": "为 WORLD REMIX XR 黑客松制作主视觉、动态与静态物料及周边视觉系统，形成 CD / 磁带、代码、Wireframe、点云植物与重复字带等视觉语言，并作为 2026 WORLD REMIX 世界系统的视觉基础。",
+    "practiceLine": "perceptual-environments",
+    "tags": [
+      "xr",
+      "hackathon",
+      "world-remix",
       "visual-system",
-      "vrplay"
+      "vr-play"
     ],
     "coverImage": "vrplay-world-remix-2025.webp",
     "image": "/assets/home/vrplay-world-remix-2025.webp",
@@ -975,7 +1021,8 @@ export default [
     ],
     "analysisIds": [],
     "sourceDocs": [
-      "projects/vrplay-hackathon-visual-2025.md"
+      "projects/vrplay-hackathon-visual-2025.md",
+      "docs/vrplay-world-remix-2025-visual-archive.md"
     ],
     "repoLink": "https://www.vr-play.cn/rules.html",
     "links": [
@@ -986,6 +1033,10 @@ export default [
       {
         "text": "项目记录",
         "url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-hackathon-visual-2025.md"
+      },
+      {
+        "text": "视觉归档",
+        "url": "https://github.com/ewanqian/portfolio/blob/main/docs/vrplay-world-remix-2025-visual-archive.md"
       }
     ],
     "priority": 6
@@ -1137,4 +1188,4 @@ export default [
     ],
     "priority": 23
   }
-];
+]

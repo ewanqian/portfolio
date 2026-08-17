@@ -1,6 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <script>
+(function () {
+  var m = location.hash.match(/^#\/works\/([^/?#]+)/);
+  if (!m) return;
+  var slug = decodeURIComponent(m[1]).replace(/\.html$/i, '');
+  if (!slug) return;
+  var allowed = {
+    'drop-flow': 1, 'timer': 1, 'titan': 1, 'kashiwa': 1,
+    'mke-terminal': 1, 'sre-realtime-liveset': 1,
+    'no-further-input-required': 1
+  };
+  if (!allowed[slug]) return;
+  var base = location.pathname.indexOf('/portfolio') === 0 ? '/portfolio' : '';
+  location.replace(base + '/works/' + slug);
+})();
+</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/webp" href="./assets/home/archive-timer-clean.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
