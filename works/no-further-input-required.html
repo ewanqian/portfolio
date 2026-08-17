@@ -1,578 +1,589 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>无需进一步输入 / No Further Input Required — Ewan Qian</title>
-  <meta name="description" content="《无需进一步输入 / No Further Input Required》是钱誉文于 2026 年持续发展中的生成式音画系统与单通道影像作品，围绕自动化、人类判断、外部记忆与 AI 协作展开。" />
-  <style>
-    :root {
-      --bg: #090909;
-      --panel: #111;
-      --panel-2: #151515;
-      --text: #f2f2f2;
-      --muted: #9a9a9a;
-      --line: rgba(255,255,255,.13);
-      --line-strong: rgba(255,255,255,.28);
-      --max: 1240px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans SC", sans-serif;
-      line-height: 1.72;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: #fff; }
-    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(9,9,9,.94);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-    .topbar-inner {
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .brand, .back-link, .eyebrow, .meta-label, .mini-label {
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .brand { font-weight: 700; }
-    .back-link { color: var(--muted); }
-
-    .hero { padding: 28px 0 84px; }
-    .wip-frame {
-      min-height: clamp(400px, 59vh, 680px);
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, transparent 49.9%, rgba(255,255,255,.05) 50%, transparent 50.1%),
-        linear-gradient(transparent 49.9%, rgba(255,255,255,.05) 50%, transparent 50.1%),
-        #0e0e0e;
-      background-size: 44px 44px;
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .wip-frame::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid var(--line);
-      pointer-events: none;
-    }
-    .wip-message {
-      width: min(620px, calc(100% - 48px));
-      padding: 30px;
-      background: rgba(9,9,9,.9);
-      border: 1px solid var(--line-strong);
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-    .wip-message strong {
-      display: block;
-      margin-bottom: 12px;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .wip-message p { margin: 0; color: var(--muted); font-size: 14px; }
-
-    .hero-copy { max-width: 970px; padding-top: 42px; }
-    .eyebrow { color: var(--muted); margin-bottom: 18px; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      margin-bottom: 18px;
-      font-size: clamp(42px, 7vw, 86px);
-      line-height: .95;
-      letter-spacing: -.055em;
-      font-weight: 700;
-    }
-    .en-title {
-      display: block;
-      margin-top: 12px;
-      font-size: clamp(22px, 3vw, 36px);
-      line-height: 1.05;
-      color: var(--muted);
-      letter-spacing: -.035em;
-      font-weight: 500;
-    }
-    .tagline {
-      max-width: 790px;
-      margin: 26px 0 0;
-      font-size: clamp(17px, 2vw, 22px);
-      line-height: 1.55;
-    }
-
-    .meta-grid {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      border: 1px solid var(--line);
-    }
-    .meta-item { padding: 18px; border-right: 1px solid var(--line); }
-    .meta-item:last-child { border-right: 0; }
-    .meta-label { color: var(--muted); display: block; margin-bottom: 5px; }
-    .meta-value { font-size: 14px; }
-
-    .section { padding: 76px 0; border-top: 1px solid var(--line); }
-    .section-grid {
-      display: grid;
-      grid-template-columns: minmax(190px,.34fr) minmax(0,1fr);
-      gap: 56px;
-      align-items: start;
-    }
-    h2 { margin-bottom: 0; font-size: 18px; letter-spacing: -.02em; }
-    .section-kicker { margin-top: 6px; color: var(--muted); font-size: 12px; }
-    .body-copy { max-width: 830px; color: #d1d1d1; font-size: 15px; }
-    .body-copy p { margin-bottom: 18px; }
-    .body-copy p:last-child { margin-bottom: 0; }
-
-    .update-note {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 22px;
-      margin-top: 28px;
-    }
-    .update-note .date { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 9px; }
-    .update-note p { margin: 0; }
-
-    .system-map {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 22px;
-    }
-    .system-map-note { color: var(--muted); font-size: 12px; margin-bottom: 18px; }
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0,1fr));
-      align-items: stretch;
-      gap: 10px;
-    }
-    .flow-step {
-      min-height: 120px;
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      padding: 14px;
-      position: relative;
-    }
-    .flow-step:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      right: -10px;
-      top: 50%;
-      transform: translate(50%,-50%);
-      color: var(--muted);
-      background: var(--panel);
-      padding: 1px 3px;
-      z-index: 2;
-    }
-    .flow-step span { display: block; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
-    .flow-step strong { display: block; font-size: 13px; line-height: 1.45; }
-
-    .state-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .state {
-      aspect-ratio: 1 / 1;
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 12px;
-      background: #0d0d0d;
-    }
-    .state strong { font-size: clamp(20px, 3vw, 34px); letter-spacing: -.04em; }
-    .state span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 14px;
-    }
-    .card {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 22px;
-      min-height: 190px;
-    }
-    .card h3 { margin-bottom: 9px; font-size: 15px; }
-    .card p { color: var(--muted); font-size: 13.5px; margin-bottom: 0; }
-    .card .status { margin-top: 16px; color: #d7d7d7; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
-
-    .modes {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 14px;
-    }
-    .mode {
-      border-top: 1px solid var(--line-strong);
-      padding-top: 18px;
-    }
-    .mode .mini-label { color: var(--muted); margin-bottom: 9px; }
-    .mode h3 { margin-bottom: 10px; font-size: 18px; }
-    .mode p { color: var(--muted); font-size: 13.5px; margin-bottom: 0; }
-
-    .questions { display: grid; gap: 10px; }
-    .question {
-      border-top: 1px solid var(--line);
-      padding: 17px 0 0;
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.5;
-    }
-
-    .reference-list { display: grid; gap: 12px; }
-    .reference {
-      border: 1px solid var(--line);
-      padding: 18px;
-      background: var(--panel);
-    }
-    .reference-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: baseline;
-      margin-bottom: 7px;
-    }
-    .reference h3 { margin: 0; font-size: 15px; }
-    .reference a { color: var(--muted); font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
-    .reference p { color: var(--muted); font-size: 13.5px; margin: 0; }
-
-    .warning {
-      border-left: 2px solid var(--text);
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 13.5px;
-    }
-
-    .todo { display: grid; gap: 9px; }
-    .todo-item {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 10px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 14px;
-    }
-    .todo-item span:first-child { color: var(--muted); }
-
-    .footer { padding: 30px 0 54px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-
-    @media (max-width: 980px) {
-      .flow { grid-template-columns: repeat(3,1fr); }
-      .flow-step:not(:last-child)::after { display: none; }
-    }
-    @media (max-width: 760px) {
-      .container { width: min(100% - 28px, var(--max)); }
-      .hero { padding-bottom: 62px; }
-      .section { padding: 56px 0; }
-      .section-grid { grid-template-columns: 1fr; gap: 24px; }
-      .meta-grid { grid-template-columns: 1fr 1fr; }
-      .meta-item { border-bottom: 1px solid var(--line); }
-      .meta-item:nth-child(2) { border-right: 0; }
-      .meta-item:nth-child(3), .meta-item:nth-child(4) { border-bottom: 0; }
-      .cards, .modes { grid-template-columns: 1fr; }
-      .flow { grid-template-columns: 1fr 1fr; }
-      .state-grid { grid-template-columns: repeat(3,1fr); }
-      .reference-head { display: block; }
-      .reference-head a { display: inline-block; margin-top: 5px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#060705">
+<title>No Further Input Required — Interactive V0.6</title>
+<meta name="description" content="《无需进一步输入》交互式浏览器原型：六个音画状态、程序化音乐、实时触发与自主状态转换。">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#060705;
+  --ink:#e9eadf;
+  --muted:rgba(233,234,223,.52);
+  --line:rgba(233,234,223,.2);
+  --line2:rgba(233,234,223,.48);
+  --panel:rgba(6,7,5,.78);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Noto Sans SC",sans-serif}
+button,input{font:inherit}
+button{color:inherit}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E")}
+.top{position:fixed;z-index:7;left:16px;right:16px;top:14px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;transition:opacity .25s}
+.identity,.readout{font:10px/1.55 var(--mono);letter-spacing:.09em;text-transform:uppercase;text-shadow:0 2px 12px #000}
+.identity strong{display:block;font-size:11px;font-weight:600;color:var(--ink)}
+.identity span,.readout span{color:var(--muted)}
+.readout{text-align:right}
+.readout b{font-weight:500}
+.hud{position:fixed;z-index:8;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;transition:opacity .25s}
+.group{display:flex;align-items:center;gap:6px}
+.btn,.state-btn,.info-btn{
+  height:40px;border:1px solid var(--line);background:var(--panel);color:var(--muted);
+  font:10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  backdrop-filter:blur(8px);transition:background .16s,color .16s,border-color .16s
+}
+.btn{min-width:56px;padding:0 11px}
+.btn:hover,.state-btn:hover,.info-btn:hover{color:var(--ink);border-color:var(--line2)}
+.btn.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.states{display:flex;align-items:center;height:40px;padding:0 4px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(8px)}
+.state-btn{width:30px;height:38px;border:0;background:transparent;position:relative;padding:0}
+.state-btn::after{content:"";position:absolute;left:50%;top:50%;width:5px;height:5px;transform:translate(-50%,-50%);border:1px solid rgba(233,234,223,.42);transition:width .16s,background .16s}
+.state-btn.on::after{width:19px;background:var(--ink);border-color:var(--ink)}
+.bpm{height:40px;display:flex;align-items:center;gap:8px;padding:0 10px;border:1px solid var(--line);background:var(--panel);font:10px/1 var(--mono);color:var(--muted);backdrop-filter:blur(8px)}
+.bpm output{min-width:24px;color:var(--ink);text-align:right}
+.bpm input{width:86px;accent-color:var(--ink)}
+.info-btn{position:fixed;z-index:9;right:14px;top:66px;width:42px}
+.info{
+  position:fixed;z-index:10;right:14px;top:112px;width:min(420px,calc(100vw - 28px));max-height:calc(100vh - 190px);
+  overflow:auto;padding:20px;border:1px solid var(--line2);background:rgba(6,7,5,.94);backdrop-filter:blur(14px);
+  transform:translateX(calc(100% + 30px));transition:transform .24s ease
+}
+.info.open{transform:translateX(0)}
+.info h1{font-size:18px;line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
+.info .en{color:var(--muted);font-size:12px;margin-bottom:20px}
+.info p{font-size:13px;line-height:1.7;color:rgba(233,234,223,.75);margin:0 0 14px}
+.info .keys{border-top:1px solid var(--line);padding-top:13px;font:10px/1.8 var(--mono);color:var(--muted);text-transform:uppercase}
+.start{position:fixed;z-index:20;inset:0;display:grid;place-items:center;background:rgba(6,7,5,.97);transition:opacity .3s}
+.start.off{opacity:0;pointer-events:none}
+.start-box{width:min(460px,calc(100vw - 36px));text-align:center}
+.start-title{font-size:clamp(26px,5vw,52px);line-height:.95;letter-spacing:-.045em;margin-bottom:16px}
+.start-sub{font:10px/1.7 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+.start button{width:100%;height:72px;border:1px solid var(--line2);background:transparent;color:var(--ink);font:11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.start button:hover{background:var(--ink);color:var(--bg)}
+.hint{position:fixed;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);font:9px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(233,234,223,.22);pointer-events:none;transition:opacity .35s}
+.hint.hide{opacity:0}
+@media(max-width:760px){
+  .hud{left:9px;right:9px;bottom:9px;flex-direction:column;align-items:stretch}
+  .hud>.group{justify-content:space-between}
+  .states{flex:1}
+  .state-btn{flex:1}
+  .btn{flex:1;min-width:0;padding:0 7px}
+  .bpm{flex:1}
+  .bpm input{width:72px}
+  .top{left:10px;right:10px;top:10px}
+  .info-btn{right:10px;top:59px}
+  .info{right:10px;top:105px;width:calc(100vw - 20px)}
+}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">Ewan Qian / Work in Progress</div>
-      <a class="back-link" href="../index.html#works">← Back to Works</a>
-    </div>
-  </header>
+<canvas id="c" aria-label="No Further Input Required interactive audiovisual canvas"></canvas>
+<div class="grain"></div>
 
-  <main>
-    <section class="container hero">
-      <div class="wip-frame" aria-label="Work in progress placeholder">
-        <div class="wip-message">
-          <strong>Work in Progress</strong>
-          <p>作品画面仍在制作中。此处不使用替代性概念图冒充最终作品；当前页面先公开作品结构、运行逻辑、研究方向与制作状态。</p>
-        </div>
-      </div>
+<div class="top">
+  <div class="identity"><strong>NO FURTHER INPUT REQUIRED</strong><span>interactive audiovisual runtime · v0.6</span></div>
+  <div class="readout"><b id="stateName">01 / ROUTE</b><br><span id="clock">BAR 01 · 104 BPM</span></div>
+</div>
 
-      <div class="hero-copy">
-        <div class="eyebrow">2026 / Generative Audiovisual System / Single-channel Moving Image / Live System</div>
-        <h1>无需进一步输入<span class="en-title">No Further Input Required</span></h1>
-        <p class="tagline">一套系统在不再需要持续外部输入之后，仍持续携带着先前输入、修正与判断留下的痕迹。</p>
-      </div>
+<button class="info-btn" id="infoBtn" aria-label="作品说明">INFO</button>
+<aside class="info" id="info">
+  <h1>无需进一步输入</h1>
+  <div class="en">No Further Input Required · Work in Progress · 2026</div>
+  <p>这是一套正在发展的生成式音画系统。人的触发、选择和修正先进入系统，系统再在没有持续操作的情况下继续运行。当前版本优先保留“可以直接演奏”的状态：触摸、鼠标、键盘和程序化音乐共享同一套时间结构。</p>
+  <p>AI 参与代码原型和视觉可能性的生成；最终留下哪些状态、节奏和关系仍由人工持续筛选。当前版本尚未实现“偏好学习”，因此不会把自动运行误写成已经学会艺术家的判断。</p>
+  <div class="keys">1–6 视觉状态 · SPACE / N 下一状态 · H HOLD · A AUTO · M MUSIC · I INFO · F FULLSCREEN · TAP / DRAG 触发音画</div>
+</aside>
 
-      <div class="meta-grid">
-        <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2026</span></div>
-        <div class="meta-item"><span class="meta-label">Exhibition Edition</span><span class="meta-value">Single-channel moving image</span></div>
-        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">Approx. 8–10 min / loop</span></div>
-        <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Work in Progress</span></div>
-      </div>
-    </section>
+<div class="hud">
+  <div class="group">
+    <button class="btn" id="next">NEXT</button>
+    <button class="btn" id="hold">HOLD</button>
+    <button class="btn on" id="auto">AUTO</button>
+    <div class="states" id="states" aria-label="visual states"></div>
+  </div>
+  <div class="group">
+    <button class="btn on" id="music">MUSIC</button>
+    <label class="bpm"><span>BPM</span><input id="bpm" type="range" min="82" max="126" value="104"><output id="bpmOut">104</output></label>
+  </div>
+</div>
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>作品简介</h2>
-          <div class="section-kicker">Work Statement</div>
-        </div>
-        <div class="body-copy">
-          <p>《无需进一步输入》围绕自动化与人类判断之间的关系展开。作品关注人的输入、修正与偏好如何逐步进入系统，并使系统最终呈现出能够自行运行的状态。</p>
-          <p>当持续操作减少以后，人的判断并未随之消失。它仍可能以被选择的视觉模块、规则、参数、转移关系、权重与历史记录继续影响系统。作品因此把“自动运行”理解为一种判断被内化后的状态。</p>
-          <div class="update-note">
-            <div class="date">Direction update / 2026.08.15</div>
-            <p>当前方向进一步从“关于自动化的一条影像”发展为“一套能够实际运行的生成式音画系统，以及由该系统产生的单通道影像与现场版本”。概念需要进入真实运行机制，而不只停留在作品说明中。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="hint" id="hint">tap / drag · play the image</div>
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>系统草图</h2>
-          <div class="section-kicker">System Sketch / Not Artwork Still</div>
-        </div>
-        <div class="system-map">
-          <div class="system-map-note">以下为当前制作逻辑图，仅用于说明作品机制，不代表最终画面。</div>
-          <div class="flow">
-            <div class="flow-step"><span>01</span><strong>AI / code collaboration</strong></div>
-            <div class="flow-step"><span>02</span><strong>Visual possibilities</strong></div>
-            <div class="flow-step"><span>03</span><strong>Human selection / deletion</strong></div>
-            <div class="flow-step"><span>04</span><strong>Approved visual vocabulary</strong></div>
-            <div class="flow-step"><span>05</span><strong>Transitions / timing / weights</strong></div>
-            <div class="flow-step"><span>06</span><strong>Autonomous audiovisual runtime</strong></div>
-          </div>
-          <div class="state-grid" aria-label="Six-state prototype sketch">
-            <div class="state"><strong>01</strong><span>Visual state</span></div>
-            <div class="state"><strong>02</strong><span>Visual state</span></div>
-            <div class="state"><strong>03</strong><span>Visual state</span></div>
-            <div class="state"><strong>04</strong><span>Visual state</span></div>
-            <div class="state"><strong>05</strong><span>Visual state</span></div>
-            <div class="state"><strong>06</strong><span>Visual state</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="start" id="start">
+  <div class="start-box">
+    <div class="start-title">无需进一步输入<br><span style="color:var(--muted);font-size:.48em;font-weight:400">No Further Input Required</span></div>
+    <div class="start-sub">six visual states · generative music · live interaction<br>headphones recommended</div>
+    <button id="startBtn">ENTER / 点击开始</button>
+  </div>
+</div>
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>AI 的位置</h2>
-          <div class="section-kicker">AI as Production Relation</div>
-        </div>
-        <div class="body-copy">
-          <p>AI 当前不被设定为最终画面的唯一生成器。更重要的角色发生在代码协作、视觉算法候选、状态逻辑和系统结构的形成过程中。</p>
-          <p>AI 可以扩大艺术家能够迅速测试的形式可能性；艺术家负责筛选、删减、修改、决定持续时间与空间关系，并判断哪些结果真正进入作品。最终的系统保存的是这些经过判断后留下来的结构。</p>
-          <p><strong>AI 生成可能性，人形成判断，系统继续携带这些判断运行。</strong></p>
-        </div>
-      </div>
-    </section>
+<script>
+(()=>{'use strict';
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>运行结构</h2>
-          <div class="section-kicker">Runtime Structure</div>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <h3>Visual Vocabulary</h3>
-            <p>先建立少量完整 visual behaviours，而不是直接剪出一条时间线。V0 目标为 6 个状态，每个状态都可以持续运行，并具有统一但不同的形式规则。</p>
-            <div class="status">Prototype</div>
-          </article>
-          <article class="card">
-            <h3>State Machine</h3>
-            <p>状态通过 entry、duration、behaviour、exit 与 transition weight 组织时间。系统可以拥有确定转移、概率转移、基于声音的转移和后续可能加入的历史转移。</p>
-            <div class="status">Prototype</div>
-          </article>
-          <article class="card">
-            <h3>Audio Structure</h3>
-            <p>音乐不只控制尺寸或亮度。更重要的是 onset、beat、phrase、energy 与 silence 如何决定“什么时候允许结构变化”，让音乐组织系统时间。</p>
-            <div class="status">Developing</div>
-          </article>
-          <article class="card">
-            <h3>Human Control / History</h3>
-            <p>现场版本计划只保留 NEXT / HOLD / AUTO 等少量控制。操作历史未来可用于调整状态持续时间与转移权重，但这一层只有在真实实现后才会进入最终作品说明。</p>
-            <div class="status">Planned</div>
-          </article>
-        </div>
-      </div>
-    </section>
+const canvas=document.querySelector('#c');
+const ctx=canvas.getContext('2d',{alpha:false});
+const $=s=>document.querySelector(s);
+const nextBtn=$('#next'),holdBtn=$('#hold'),autoBtn=$('#auto'),musicBtn=$('#music');
+const bpmInput=$('#bpm'),bpmOut=$('#bpmOut'),statesEl=$('#states');
+const stateNameEl=$('#stateName'),clockEl=$('#clock'),start=$('#start'),startBtn=$('#startBtn');
+const info=$('#info'),infoBtn=$('#infoBtn'),hint=$('#hint');
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>作品形态</h2>
-          <div class="section-kicker">Three Manifestations</div>
-        </div>
-        <div class="modes">
-          <article class="mode">
-            <div class="mini-label">Gallery</div>
-            <h3>持续运行的系统</h3>
-            <p>观众面对一套不断变化、但不完全重复的音画过程。控制界面可以被隐藏，作品只显示系统运行的结果。</p>
-          </article>
-          <article class="mode">
-            <div class="mini-label">Film</div>
-            <h3>8–10 分钟影像版本</h3>
-            <p>从系统长时间运行中形成或选择一个单通道版本，作为当前展览交付。影像是系统的一次 manifestation。</p>
-          </article>
-          <article class="mode">
-            <div class="mini-label">Live</div>
-            <h3>个人音画演出系统</h3>
-            <p>音乐实时进入，系统自主运行，艺术家只进行少量关键干预。长期可继续发展为个人现场视听工具与作品。</p>
-          </article>
-        </div>
-      </div>
-    </section>
+const INK=[233,234,223];
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const midi=n=>440*Math.pow(2,(n-69)/12);
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>作品结构</h2>
-          <div class="section-kicker">Artwork Framework</div>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <h3>技术 / Technology</h3>
-            <p>候选方向包括 Web Canvas / WebGL / Processing / p5.js、WebAudio、实时声音分析、状态机与 AI-assisted coding。最终技术栈尚未锁定，技术选择服从视觉语言与现场稳定性。</p>
-            <div class="status">Developing</div>
-          </article>
-          <article class="card">
-            <h3>媒介与形式 / Medium & Form</h3>
-            <p>生成式音画系统、单通道影像与现场表演系统共同构成作品。时间从固定剪辑进一步转向由状态、转移与运行过程共同组织。</p>
-            <div class="status">Defined / Developing</div>
-          </article>
-          <article class="card">
-            <h3>艺术语言 / Artistic Language</h3>
-            <p>进入、停留、回返、退出；重复中的偏差；修正后的残留；已经消失的输入继续改变当前结构。作品需要避免沦为普通“漂亮生成动画”。</p>
-            <div class="status">Developing</div>
-          </article>
-          <article class="card">
-            <h3>艺术问题 / Artistic Inquiry</h3>
-            <p>当人的经验、修正与偏好已经进入系统，一个看似自主运行的系统中还保存着多少人的判断？当操作停止以后，作者是否真的离开了作品？</p>
-            <div class="status">Active Inquiry</div>
-          </article>
-        </div>
-      </div>
-    </section>
+let W=0,H=0,DPR=1;
+let visualState=0, stateStart=performance.now(), auto=true, hold=false, musicOn=true, started=false;
+let bpm=104, step=0, barCount=0, nextStepTime=0, scheduler=null;
+let beatPulse=0, transitionPulse=0, pointerDown=false, pointer={x:.5,y:.5,px:.5,py:.5,speed:0};
+let events=[], gestureNotes=[], userCells=new Set(), partitions=[], orbitCenter={x:.5,y:.5};
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>当前问题</h2>
-          <div class="section-kicker">Questions in Development</div>
-        </div>
-        <div class="questions">
-          <div class="question">当 AI 让大量形式可以被快速实现，艺术家的工作会不会更多落在选择、删减、组织和判断上？</div>
-          <div class="question">当这些判断被写回软件结构，系统是否开始携带一个创作者过去的判断历史？</div>
-          <div class="question">一件作品能否同时是一段影像、一套乐器和一套持续演化的运行规则？</div>
-          <div class="question">“无需进一步输入”究竟意味着系统自主，还是意味着人的判断已经被提前吸收？</div>
-        </div>
-      </div>
-    </section>
+const stateNames=['ROUTE','FIELD','ORBIT','REWIND','CELLS','PARTITION'];
+const autoBars=[8,8,8,8,8,8];
+let stateBars=0;
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>相关语境</h2>
-          <div class="section-kicker">Media Art Context / References</div>
-        </div>
-        <div class="reference-list">
-          <article class="reference">
-            <div class="reference-head">
-              <h3>sascacci + ksmt — touch:waves</h3>
-              <a href="https://www.ntticc.or.jp/ja/archive/works/touch-waves/" target="_blank" rel="noopener">NTT ICC ↗</a>
-            </div>
-            <p>参考其“visual instrument”的组织逻辑：一个输入对应完整的声音—视觉行为，软件本身成为可演奏媒介。本项目不复制其白线视觉或代码，而把单次 trigger 进一步扩展为可持续运行的 state / behaviour。</p>
-          </article>
+for(let i=0;i<6;i++){
+  const b=document.createElement('button');
+  b.className='state-btn'+(i===0?' on':'');
+  b.setAttribute('aria-label','state '+(i+1)+' '+stateNames[i]);
+  b.dataset.i=i;
+  statesEl.appendChild(b);
+}
 
-          <article class="reference">
-            <div class="reference-head">
-              <h3>Casey Reas — Process</h3>
-              <a href="https://reas.com/process" target="_blank" rel="noopener">REAS ↗</a>
-            </div>
-            <p>Process 把规则、软件执行与持续变化的图像连接起来，使“产生图像的系统”本身成为作品结构。这里的联系主要在规则、运行和开放结果，而本项目进一步加入音画、AI-assisted coding 与人工判断的沉积。</p>
-          </article>
+function markState(){
+  [...statesEl.children].forEach((b,i)=>b.classList.toggle('on',i===visualState));
+  stateNameEl.textContent=String(visualState+1).padStart(2,'0')+' / '+stateNames[visualState];
+}
+function resize(){
+  DPR=Math.min(devicePixelRatio||1,2);
+  W=innerWidth;H=innerHeight;
+  canvas.width=W*DPR;canvas.height=H*DPR;
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  buildPartitions();
+}
+addEventListener('resize',resize);resize();
 
-          <article class="reference">
-            <div class="reference-head">
-              <h3>Sougwen Chung — Drawing Operations</h3>
-              <a href="https://sougwen.com/work/mimicry-drawing-operations" target="_blank" rel="noopener">Artist site ↗</a>
-            </div>
-            <p>其长期实践将人的动作、机器人、机器学习和共同表演放进同一反馈过程。对本项目更重要的启发，是 AI / 机器可以改变创作关系本身，而不只负责输出一张“AI 图像”。</p>
-          </article>
+function buildPartitions(){
+  partitions=[];
+  splitRect(W*.10,H*.12,W*.80,H*.72,0,true);
+}
+function splitRect(x,y,w,h,d,vertical){
+  if(d>3||w<115||h<82){partitions.push({x,y,w,h,d});return}
+  const ratios=[.382,.5,.618];
+  const r=ratios[d%ratios.length];
+  if(vertical){
+    splitRect(x,y,w*r,h,d+1,false);
+    splitRect(x+w*r,y,w*(1-r),h,d+1,false);
+  }else{
+    splitRect(x,y,w,h*r,d+1,true);
+    splitRect(x,y+h*r,w,h*(1-r),d+1,true);
+  }
+}
 
-          <article class="reference">
-            <div class="reference-head">
-              <h3>Memo Akten — Learning to See</h3>
-              <a href="https://www.memo.tv/works/learning-to-see/" target="_blank" rel="noopener">Artist site ↗</a>
-            </div>
-            <p>作品关注机器如何通过已有经验过滤当前输入。本项目把类似问题转向创作判断：当系统保存并重新调用过去的选择，它是否开始通过这些历史继续运行？</p>
-          </article>
+/* ----------------------- AUDIO ----------------------- */
+let ac=null, master=null, musicBus=null, gestureBus=null, dryBus=null, verb=null, delay=null, delayFB=null, delayFilter=null;
+let noiseBuffer=null, impulse=null;
+const motif=[0,2,4,3,2,1,4,2];
+const scale=[62,65,67,69,72,74];
+const chords=[
+  [50,53,57,60,64],
+  [46,50,53,57,60],
+  [53,57,60,62,67],
+  [48,52,55,62,64]
+];
+const bassRoots=[38,34,41,36];
 
-          <article class="reference">
-            <div class="reference-head">
-              <h3>Daito Manabe — computational audiovisual practice</h3>
-              <a href="https://daito.ws/en/" target="_blank" rel="noopener">Artist site ↗</a>
-            </div>
-            <p>音乐、计算、身体信号、实时视觉与 AI agents 可以在现场、装置和表演中构成连续实践。这里的参照帮助把本项目放回更长的 computational / audiovisual art 语境，而不必把它收缩成单纯“AI art”。</p>
-          </article>
-        </div>
-      </div>
-    </section>
+function makeNoise(seconds=.3){
+  const b=ac.createBuffer(1,Math.floor(ac.sampleRate*seconds),ac.sampleRate);
+  const a=b.getChannelData(0);
+  for(let i=0;i<a.length;i++)a[i]=Math.random()*2-1;
+  return b;
+}
+function makeImpulse(seconds=2.8,decay=2.7){
+  const len=Math.floor(ac.sampleRate*seconds);
+  const b=ac.createBuffer(2,len,ac.sampleRate);
+  for(let ch=0;ch<2;ch++){
+    const d=b.getChannelData(ch);
+    for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,decay);
+  }
+  return b;
+}
+function initAudio(){
+  if(ac)return;
+  ac=new (window.AudioContext||window.webkitAudioContext)();
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>边界</h2>
-          <div class="section-kicker">What This Work Should Avoid</div>
-        </div>
-        <div class="warning">
-          不复制 touch:waves 的视觉皮肤；不把 AI 使用本身当作主题；不让“自主”只存在于文案；不把随机等同于生成；不让画面退化为高级 screensaver；在 preference history 真正实现之前，不宣称系统已经“学会了艺术家”。
-        </div>
-      </div>
-    </section>
+  master=ac.createGain();
+  master.gain.value=.72;
+  const comp=ac.createDynamicsCompressor();
+  comp.threshold.value=-15;comp.knee.value=18;comp.ratio.value=3.2;comp.attack.value=.008;comp.release.value=.24;
+  master.connect(comp).connect(ac.destination);
 
-    <section class="section">
-      <div class="container section-grid">
-        <div>
-          <h2>V0 制作目标</h2>
-          <div class="section-kicker">Minimum Working System</div>
-        </div>
-        <div class="todo">
-          <div class="todo-item"><span>01</span><div>完成 6 个 visual states。</div></div>
-          <div class="todo-item"><span>02</span><div>建立 1 个 transition graph。</div></div>
-          <div class="todo-item"><span>03</span><div>接入音频输入，并至少读取 beat / phrase 或等价结构信息。</div></div>
-          <div class="todo-item"><span>04</span><div>完成 NEXT / HOLD / AUTO 三个主要控制。</div></div>
-          <div class="todo-item"><span>05</span><div>连续运行 10–20 分钟，产生不同但仍保持统一语言的结果。</div></div>
-          <div class="todo-item"><span>06</span><div>保存人工操作日志，为 preference history 实验准备数据。</div></div>
-        </div>
-      </div>
-    </section>
-  </main>
+  musicBus=ac.createGain(); musicBus.gain.value=.9;
+  gestureBus=ac.createGain(); gestureBus.gain.value=.8;
+  dryBus=ac.createGain(); dryBus.gain.value=.8;
+  verb=ac.createConvolver(); impulse=makeImpulse(); verb.buffer=impulse;
+  const verbGain=ac.createGain();verbGain.gain.value=.34;
+  delay=ac.createDelay(2);delay.delayTime.value=(60/bpm)*.75;
+  delayFB=ac.createGain();delayFB.gain.value=.27;
+  delayFilter=ac.createBiquadFilter();delayFilter.type='lowpass';delayFilter.frequency.value=3200;
+  const delayGain=ac.createGain();delayGain.gain.value=.24;
 
-  <footer class="footer">
-    <div class="container">Ewan Qian — No Further Input Required / Work in Progress / updated 2026.08.15</div>
-  </footer>
+  musicBus.connect(dryBus);gestureBus.connect(dryBus);dryBus.connect(master);
+  musicBus.connect(verb);gestureBus.connect(verb);verb.connect(verbGain).connect(master);
+  musicBus.connect(delay);gestureBus.connect(delay);delay.connect(delayFilter).connect(delayFB).connect(delay);
+  delayFilter.connect(delayGain).connect(master);
+
+  noiseBuffer=makeNoise(.5);
+  nextStepTime=ac.currentTime+.08;
+  scheduler=setInterval(schedule,25);
+}
+async function wake(){
+  initAudio();
+  if(ac.state!=='running')await ac.resume();
+  started=true;start.classList.add('off');stateStart=performance.now();
+  const t=ac.currentTime+.04;
+  pad(t,chords[0],3.8,.045);
+  bass(t,bassRoots[0],.06,1.4);
+}
+function connectVoice(node,bus=musicBus,pan=0){
+  const p=ac.createStereoPanner();p.pan.value=clamp(pan,-1,1);
+  node.connect(p).connect(bus);
+  return p;
+}
+function envGain(t,a,d,s,r,peak=.1){
+  const g=ac.createGain();
+  g.gain.setValueAtTime(.0001,t);
+  g.gain.exponentialRampToValueAtTime(Math.max(.0002,peak),t+a);
+  g.gain.exponentialRampToValueAtTime(Math.max(.0002,peak*s),t+a+d);
+  g.gain.setValueAtTime(Math.max(.0002,peak*s),t+a+d+Math.max(0,r*.15));
+  g.gain.exponentialRampToValueAtTime(.0001,t+a+d+r);
+  return g;
+}
+function pluck(t,n,vel=.055,pan=0){
+  if(!ac||!musicOn)return;
+  const o1=ac.createOscillator(),o2=ac.createOscillator(),f=ac.createBiquadFilter(),g=envGain(t,.006,.09,.22,.65,vel);
+  o1.type='triangle';o2.type='sine';
+  o1.frequency.value=midi(n);o2.frequency.value=midi(n+12);o2.detune.value=5;
+  f.type='lowpass';f.frequency.setValueAtTime(2800,t);f.frequency.exponentialRampToValueAtTime(900,t+.55);f.Q.value=1.2;
+  o1.connect(f);o2.connect(f);f.connect(g);connectVoice(g,musicBus,pan);
+  o1.start(t);o2.start(t);o1.stop(t+1);o2.stop(t+1);
+}
+function gestureTone(t,n,vel=.06,pan=0){
+  if(!ac||!musicOn)return;
+  const o=ac.createOscillator(),o2=ac.createOscillator(),f=ac.createBiquadFilter(),g=envGain(t,.008,.12,.28,.9,vel);
+  o.type='sine';o2.type='triangle';o.frequency.value=midi(n);o2.frequency.value=midi(n-12);o2.detune.value=-4;
+  f.type='lowpass';f.frequency.value=1800+vel*9000;f.Q.value=.9;
+  o.connect(f);o2.connect(f);f.connect(g);connectVoice(g,gestureBus,pan);
+  o.start(t);o2.start(t);o.stop(t+1.25);o2.stop(t+1.25);
+  gestureNotes.push(n);if(gestureNotes.length>24)gestureNotes.shift();
+}
+function bass(t,n,vel=.055,dur=.6){
+  if(!ac||!musicOn)return;
+  const o1=ac.createOscillator(),o2=ac.createOscillator(),f=ac.createBiquadFilter(),g=envGain(t,.012,.08,.62,dur,vel);
+  o1.type='sine';o2.type='triangle';o1.frequency.value=midi(n);o2.frequency.value=midi(n+12);o2.detune.value=-7;
+  f.type='lowpass';f.frequency.value=420;f.Q.value=.7;
+  o1.connect(f);o2.connect(f);f.connect(g);connectVoice(g,musicBus,0);
+  o1.start(t);o2.start(t);o1.stop(t+dur+1);o2.stop(t+dur+1);
+}
+function pad(t,notes,dur=4,vel=.035){
+  if(!ac||!musicOn)return;
+  notes.slice(0,5).forEach((n,i)=>{
+    const o1=ac.createOscillator(),o2=ac.createOscillator(),f=ac.createBiquadFilter();
+    const g=ac.createGain();
+    o1.type='sine';o2.type='triangle';o1.frequency.value=midi(n);o2.frequency.value=midi(n);o2.detune.value=i%2?7:-7;
+    f.type='lowpass';f.frequency.value=900+visualState*90;f.Q.value=.6;
+    g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(vel,t+.8);
+    g.gain.setValueAtTime(vel,t+Math.max(1,dur-.9));g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    o1.connect(f);o2.connect(f);f.connect(g);connectVoice(g,musicBus,(i/(notes.length-1||1))*1.2-.6);
+    o1.start(t);o2.start(t);o1.stop(t+dur+.05);o2.stop(t+dur+.05);
+  });
+}
+function kick(t,vel=.08){
+  if(!ac||!musicOn)return;
+  const o=ac.createOscillator(),g=ac.createGain();
+  o.type='sine';o.frequency.setValueAtTime(118,t);o.frequency.exponentialRampToValueAtTime(45,t+.13);
+  g.gain.setValueAtTime(vel,t);g.gain.exponentialRampToValueAtTime(.0001,t+.28);
+  o.connect(g);connectVoice(g,musicBus,0);o.start(t);o.stop(t+.3);
+}
+function noiseHit(t,type='hat',vel=.02){
+  if(!ac||!musicOn)return;
+  const s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();s.buffer=noiseBuffer;
+  if(type==='hat'){f.type='highpass';f.frequency.value=6200;g.gain.setValueAtTime(vel,t);g.gain.exponentialRampToValueAtTime(.0001,t+.055)}
+  else{f.type='bandpass';f.frequency.value=1800;f.Q.value=.7;g.gain.setValueAtTime(vel,t);g.gain.exponentialRampToValueAtTime(.0001,t+.16)}
+  s.connect(f).connect(g);connectVoice(g,musicBus,type==='hat'?.25:-.15);s.start(t);s.stop(t+.2);
+}
+
+function schedule(){
+  if(!ac||ac.state!=='running')return;
+  while(nextStepTime<ac.currentTime+.11){
+    musicStep(step,nextStepTime);
+    nextStepTime+=60/bpm/4;
+    step++;
+  }
+}
+function musicStep(s,t){
+  const six=s%16, quarter=s%4===0, eighth=s%2===0, bar=s%16===0;
+  const barNo=Math.floor(s/16);
+  const chordIndex=Math.floor(barNo/2)%chords.length;
+  const beatIndex=(s/4)|0;
+  if(bar){
+    barCount=barNo+1;stateBars++;
+    clockEl.textContent='BAR '+String(barCount).padStart(2,'0')+' · '+bpm+' BPM';
+    if(barNo%2===0)pad(t,chords[chordIndex],(60/bpm)*7.7,.026+(visualState===2?0.012:0));
+    if(auto&&!hold&&stateBars>=autoBars[visualState]){setState((visualState+1)%6,true);stateBars=0}
+  }
+  const intensity=[.32,.46,.28,.22,.62,.38][visualState];
+  if(quarter){
+    if(beatIndex%4===0||((visualState===4||visualState===1)&&beatIndex%4===2))kick(t,.045+intensity*.035);
+    if(beatIndex%2===0)bass(t,bassRoots[chordIndex],.038+intensity*.025,.48);
+    beatPulse=1;
+  }
+  if(eighth && (visualState===1||visualState===4) && s%4!==0)noiseHit(t,'hat',.008+intensity*.008);
+  if(visualState===4 && six===12)noiseHit(t,'snare',.018);
+  if(eighth){
+    const pos=(s/2)%motif.length;
+    const mp=visualState===3 ? motif[motif.length-1-pos] : motif[pos];
+    const chordTone=chords[chordIndex][mp%chords[chordIndex].length]+(visualState===2?12:0);
+    const gatePatterns=[
+      pos%4===0,
+      pos%2===0,
+      pos===0||pos===3||pos===6,
+      pos%2===0,
+      pos!==1&&pos!==5,
+      pos===0||pos===4
+    ];
+    if(gatePatterns[visualState])pluck(t,chordTone,.028+intensity*.025,(pos/(motif.length-1))*1.2-.6);
+  }
+}
+
+/* --------------------- INTERACTION -------------------- */
+function normPos(e){
+  const r=canvas.getBoundingClientRect();
+  return{x:clamp((e.clientX-r.left)/r.width),y:clamp((e.clientY-r.top)/r.height)};
+}
+function noteFromXY(x,y){
+  const degree=Math.min(scale.length-1,Math.floor(x*scale.length));
+  const oct=y<.33?12:y>.72?-12:0;
+  return scale[degree]+oct;
+}
+function addEvent(kind,x,y,energy=.5,data={}){
+  events.push({kind,x,y,e:energy,t:performance.now(),life:1800,seed:Math.random(),state:visualState,...data});
+  if(events.length>180)events.shift();
+}
+function perform(x,y,energy=.55,drag=false){
+  if(!started)return;
+  hint.classList.add('hide');
+  const n=noteFromXY(x,y);
+  const pan=x*2-1;
+  if(ac)gestureTone(ac.currentTime+.005,n,.035+energy*.055,pan);
+  addEvent('gesture',x,y,energy,{note:n,drag});
+  if(visualState===2){orbitCenter.x=lerp(orbitCenter.x,x,.45);orbitCenter.y=lerp(orbitCenter.y,y,.45)}
+  if(visualState===4){
+    const col=Math.min(11,Math.floor(x*12)),row=Math.min(6,Math.floor(y*7)),key=row*12+col;
+    userCells.has(key)?userCells.delete(key):userCells.add(key);
+  }
+  if(visualState===5)addEvent('split',x,y,energy,{life:2400});
+}
+canvas.addEventListener('pointerdown',async e=>{
+  await wake();pointerDown=true;canvas.setPointerCapture?.(e.pointerId);
+  const p=normPos(e);pointer={...p,px:p.x,py:p.y,speed:.45};perform(p.x,p.y,.55,false)
+});
+canvas.addEventListener('pointermove',e=>{
+  if(!pointerDown)return;
+  const p=normPos(e);const dist=Math.hypot(p.x-pointer.x,p.y-pointer.y);
+  pointer.px=pointer.x;pointer.py=pointer.y;pointer.x=p.x;pointer.y=p.y;pointer.speed=clamp(dist*18,.12,1);
+  const last=events.at(-1);
+  if(!last||performance.now()-last.t>(visualState===2?85:130))perform(p.x,p.y,pointer.speed,true)
+});
+canvas.addEventListener('pointerup',()=>pointerDown=false);
+canvas.addEventListener('pointercancel',()=>pointerDown=false);
+
+function setState(n,fromAuto=false){
+  visualState=(n+6)%6;stateStart=performance.now();stateBars=0;transitionPulse=1;markState();
+  addEvent('switch',.5,.5,.8,{life:700});
+  if(ac&&musicOn){
+    const chordIndex=Math.floor((Math.max(0,barCount-1))/2)%chords.length;
+    const t=ac.currentTime+.01;
+    pad(t,chords[chordIndex],1.7,.022);
+    const accent=chords[chordIndex][visualState%chords[chordIndex].length]+12;
+    pluck(t,accent,.045,fromAuto?.3:-.3);
+  }
+}
+function nextState(){setState(visualState+1,false)}
+statesEl.addEventListener('click',async e=>{
+  const b=e.target.closest('.state-btn');if(!b)return;await wake();setState(+b.dataset.i,false)
+});
+nextBtn.addEventListener('click',async()=>{await wake();nextState()});
+holdBtn.addEventListener('click',()=>{hold=!hold;holdBtn.classList.toggle('on',hold)});
+autoBtn.addEventListener('click',()=>{auto=!auto;autoBtn.classList.toggle('on',auto)});
+musicBtn.addEventListener('click',async()=>{
+  await wake();musicOn=!musicOn;musicBtn.classList.toggle('on',musicOn);
+  const target=musicOn?.72:.0001;master.gain.setTargetAtTime(target,ac.currentTime,.08);
+});
+bpmInput.addEventListener('input',()=>{
+  bpm=+bpmInput.value;bpmOut.value=bpm;clockEl.textContent='BAR '+String(Math.max(1,barCount)).padStart(2,'0')+' · '+bpm+' BPM';
+  if(delay&&ac)delay.delayTime.setTargetAtTime((60/bpm)*.75,ac.currentTime,.08);
+});
+startBtn.addEventListener('click',wake);
+infoBtn.addEventListener('click',()=>info.classList.toggle('open'));
+
+addEventListener('keydown',async e=>{
+  if(e.target===bpmInput)return;
+  const i='123456'.indexOf(e.key);
+  if(i>=0){await wake();setState(i,false);return}
+  const k=e.key.toLowerCase();
+  if(e.code==='Space'||k==='n'){e.preventDefault();await wake();nextState()}
+  else if(k==='h'){hold=!hold;holdBtn.classList.toggle('on',hold)}
+  else if(k==='a'){auto=!auto;autoBtn.classList.toggle('on',auto)}
+  else if(k==='m'){await wake();musicBtn.click()}
+  else if(k==='i'){info.classList.toggle('open')}
+  else if(k==='f'){document.fullscreenElement?document.exitFullscreen?.():document.documentElement.requestFullscreen?.()}
+});
+
+/* ----------------------- VISUALS ----------------------- */
+const routes=[
+ [.10,.18,.86,.18,.86,.34,.34,.34,.34,.82],
+ [.14,.75,.14,.24,.72,.24,.72,.63,.27,.63],
+ [.83,.13,.49,.13,.49,.52,.88,.52,.88,.86],
+ [.22,.87,.22,.45,.62,.45,.62,.17,.11,.17]
+];
+function sampleRoute(a,t){
+  const seg=[];let total=0;
+  for(let i=2;i<a.length;i+=2){const l=Math.hypot(a[i]-a[i-2],a[i+1]-a[i-1]);seg.push(l);total+=l}
+  let z=((t%1)+1)%1*total;
+  for(let i=0;i<seg.length;i++){
+    if(z<=seg[i]){const u=z/seg[i],j=i*2;return{x:lerp(a[j],a[j+2],u),y:lerp(a[j+1],a[j+3],u)}}
+    z-=seg[i];
+  }
+  return{x:a.at(-2),y:a.at(-1)};
+}
+function stroke(a=.2){ctx.strokeStyle=`rgba(${INK[0]},${INK[1]},${INK[2]},${a})`}
+function fill(a=.8){ctx.fillStyle=`rgba(${INK[0]},${INK[1]},${INK[2]},${a})`}
+
+function drawRoute(now){
+  ctx.lineWidth=.75;stroke(.10);
+  routes.forEach(a=>{ctx.beginPath();ctx.moveTo(a[0]*W,a[1]*H);for(let i=2;i<a.length;i+=2)ctx.lineTo(a[i]*W,a[i+1]*H);ctx.stroke()});
+  routes.forEach((a,i)=>{
+    const p=sampleRoute(a,(now-stateStart)*.000035+i*.22);
+    fill(.92);ctx.fillRect(p.x*W-2,p.y*H-2,4,4);
+    if(beatPulse>.35){stroke(.12*beatPulse);ctx.beginPath();ctx.arc(p.x*W,p.y*H,8+beatPulse*18,0,Math.PI*2);ctx.stroke()}
+  });
+}
+function drawField(now){
+  const cols=11,rows=7,mx=W*.10,my=H*.13,gw=W*.80,gh=H*.72;
+  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+    const ph=now*.0007+i*.39+j*.27;
+    const px=mx+gw*i/(cols-1)+Math.sin(ph*1.8)*10*(.4+beatPulse*.6);
+    const py=my+gh*j/(rows-1)+Math.cos(ph*1.4)*7;
+    const s=3+7*Math.abs(Math.sin(ph));
+    stroke(.10+((i+j+(step>>3))%5===0?.22:0));
+    ctx.strokeRect(px-s,py-s,s*2,s*2);
+    if((i*3+j*5+(step>>4))%9===0){fill(.75);ctx.fillRect(px-1.5,py-1.5,3,3)}
+  }
+}
+function drawOrbit(now){
+  const cx=orbitCenter.x*W,cy=orbitCenter.y*H;
+  for(let i=0;i<7;i++){
+    const size=Math.min(W,H)*(.12+i*.06);
+    const rx=size*(1+.10*Math.sin(now*.0008+i)),ry=size*(.52+.08*Math.cos(now*.001+i));
+    ctx.save();ctx.translate(cx,cy);ctx.rotate((now-stateStart)*.00007*(i%2?1:-1)+i*.28);
+    stroke(.09+i*.055+beatPulse*.035);ctx.lineWidth=.7+(i===6?.5:0);ctx.strokeRect(-rx/2,-ry/2,rx,ry);ctx.restore();
+  }
+  fill(.9);ctx.fillRect(cx-2,cy-2,4,4);
+}
+function drawRewind(now){
+  const n=8,mx=W*.10,my=H*.14,gw=W*.80,gh=H*.70;
+  stroke(.08);ctx.lineWidth=.7;
+  for(let i=0;i<n;i++){const y=my+(i+.5)*gh/n;ctx.beginPath();ctx.moveTo(mx,y);ctx.lineTo(mx+gw,y);ctx.stroke()}
+  const prog=1-(((now-stateStart)*.000055)%1);
+  const sx=mx+prog*gw;stroke(.30);ctx.beginPath();ctx.moveTo(sx,my);ctx.lineTo(sx,my+gh);ctx.stroke();
+  const hist=events.filter(e=>e.kind==='gesture').slice(-18).reverse();
+  hist.forEach((e,i)=>{
+    const a=.24*(1-i/hist.length),xx=(1-e.x)*W,yy=e.y*H;
+    stroke(a);ctx.beginPath();ctx.moveTo(xx-28-i*2,yy);ctx.lineTo(xx+28+i*2,yy);ctx.stroke();
+  });
+}
+function drawCells(){
+  const cols=12,rows=7,mx=W*.11,my=H*.14,gw=W*.78,gh=H*.69;
+  const cell=Math.min(gw/cols,gh/rows);
+  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+    const key=j*cols+i;
+    const autoOn=((i+j+(step>>2))%5===0)||((i*5+j*3+(step>>3))%13===0);
+    const on=userCells.has(key)||autoOn;
+    const px=mx+(i+.5)*gw/cols,py=my+(j+.5)*gh/rows,s=cell*(on?.22:.11);
+    stroke(on?.56:.08);ctx.strokeRect(px-s,py-s,s*2,s*2);
+    if(on){fill(.72);ctx.fillRect(px-1.3,py-1.3,2.6,2.6)}
+  }
+}
+function edgePoint(r,t){
+  const p=2*(r.w+r.h);let d=(((t%1)+1)%1)*p;
+  if(d<r.w)return{x:r.x+d,y:r.y};d-=r.w;
+  if(d<r.h)return{x:r.x+r.w,y:r.y+d};d-=r.h;
+  if(d<r.w)return{x:r.x+r.w-d,y:r.y+r.h};d-=r.w;
+  return{x:r.x,y:r.y+r.h-d};
+}
+function drawPartition(now){
+  ctx.lineWidth=.7;
+  partitions.forEach((r,i)=>{
+    stroke(.07+(i%5===0?.06:0));ctx.strokeRect(r.x,r.y,r.w,r.h);
+  });
+  for(let i=0;i<Math.min(12,partitions.length);i+=2){
+    const p=edgePoint(partitions[i],(now-stateStart)*.000045+i*.071);
+    fill(.82);ctx.fillRect(p.x-1.8,p.y-1.8,3.6,3.6);
+  }
+}
+function drawEvents(now){
+  for(let i=events.length-1;i>=0;i--){
+    const q=events[i],age=now-q.t,a=clamp(1-age/(q.life||1800));
+    if(a<=0){events.splice(i,1);continue}
+    if(q.kind==='switch'){
+      stroke(a*.42);ctx.lineWidth=.8;const r=(1-a)*Math.min(W,H)*.42+18;
+      ctx.strokeRect(W/2-r,H/2-r,r*2,r*2);continue;
+    }
+    if(q.kind!=='gesture'&&q.kind!=='split')continue;
+    const x=q.x*W,y=q.y*H,p=(1-a)*(45+q.e*120);
+    ctx.lineWidth=.7+q.e*.9;stroke(a*(.18+q.e*.45));
+    const s=q.state;
+    if(s===0){
+      ctx.beginPath();ctx.arc(x,y,8+p,0,Math.PI*2);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo((q.seed*.8+.1)*W,(1-q.seed*.7-.15)*H);ctx.stroke();
+    }else if(s===1){
+      const z=10+p*.7;ctx.strokeRect(x-z,y-z,z*2,z*2);
+      ctx.strokeRect(x-z*.35,y-z*.35,z*.7,z*.7);
+    }else if(s===2){
+      ctx.beginPath();ctx.ellipse(x,y,20+p,8+p*.34,q.seed*Math.PI,0,Math.PI*2);ctx.stroke();
+    }else if(s===3){
+      for(let k=0;k<4;k++){ctx.beginPath();ctx.moveTo(x-p-k*12,y+k*6);ctx.lineTo(x+p*.6,y+k*6);ctx.stroke()}
+    }else if(s===4){
+      const z=8+p*.45;ctx.strokeRect(x-z,y-z,z*2,z*2);
+    }else{
+      const z=12+p*.5;ctx.strokeRect(x-z,y-z*.6,z*2,z*1.2);
+      ctx.beginPath();ctx.moveTo(x,y-z*.6);ctx.lineTo(x,y+z*.6);ctx.stroke();
+    }
+  }
+}
+function draw(now){
+  requestAnimationFrame(draw);
+  beatPulse*=.90;transitionPulse*=.92;
+  ctx.fillStyle='#060705';ctx.fillRect(0,0,W,H);
+  if(visualState===0)drawRoute(now);
+  else if(visualState===1)drawField(now);
+  else if(visualState===2)drawOrbit(now);
+  else if(visualState===3)drawRewind(now);
+  else if(visualState===4)drawCells(now);
+  else drawPartition(now);
+  drawEvents(now);
+  if(transitionPulse>.02){stroke(transitionPulse*.16);ctx.lineWidth=1;ctx.strokeRect(14+transitionPulse*14,14+transitionPulse*14,W-28-transitionPulse*28,H-28-transitionPulse*28)}
+}
+markState();requestAnimationFrame(draw);
+
+})();
+</script>
 </body>
 </html>
