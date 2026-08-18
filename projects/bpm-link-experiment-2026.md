@@ -9,30 +9,59 @@
 | **名称** | BPM Link Experiment |
 | **年份** | 2026 |
 | **语境** | 2026 UFO Terminal「加载…创作营」期间的 SRE 合作与视觉系统实验 |
-| **创作者 / 视觉系统** | 钱誉文 Ewan Qian |
-| **工具** | Codex、Processing、Processing MCP、Creative Coding |
+| **视觉系统** | 钱誉文 Ewan Qian |
+| **协作者** | Shukai / Mark、Georgy Robakidze (RÖ)、钱誉文 Ewan Qian |
+| **工具** | CDJ / Loop、效果器、Bit Machine、MIDI、Processing、Processing MCP、Codex、Creative Coding |
 | **状态** | Experiment / Ongoing Archive |
-| **相关合作** | SRE｜Shukai / Mark × Georgy Robakidze (RÖ) × 钱誉文 Ewan Qian |
 | **支持** | 由 UFO Terminal「加载…」计划支持创作 |
 
-> **关系说明：** BPM Link Experiment 是 Ewan 在 SRE 语境下发展的个人实时视觉方法实验，不等同于 SRE 整体，也不应被描述为 UFO Terminal 的“现场单元”。
+> **关系说明：** BPM Link Experiment 是在 SRE 合作语境中形成的实时音画控制实验，不等同于 UFO Terminal 的“现场单元”。
 
 ---
 
-## 实验是什么
+## 三人实验结构
 
-BPM Link Experiment 记录的是一次以 **AI 辅助 Creative Coding + 多套实时 Processing 系统 + 人工筛选** 为核心的视觉实验。
+这次实验的重点，是让三个人的声音处理、节奏信息和实时视觉进入一条持续连接的现场链路。
 
-演出 / 展示准备前一晚，Ewan 使用 Codex 与 Processing MCP，在较短时间内连续建立了约 **10 套彼此独立、能够实时运行的 Processing 视觉工程**。这些工程不是预渲染视频，而是持续运行的程序化视觉系统。
+### Shukai / Mark
 
-每一套工程内部继续保留多个可触发状态，通过数字键等离散输入即时切换构图、运动、密度、节奏感或整体视觉状态。此前语音记录中明确提到“一晚上做出来 10 套”，并描述每套存在多个编号状态；后续工作总结进一步将其整理为 `1–9` 等数字键状态的实时切换结构。
+Mark 使用 **CDJ** 和自己的素材建立 Loop，其中包括一段带有人声采样的循环，并通过现场播放、重复与结构控制形成持续的节奏输入。
 
-实验最终没有把十套全部带入结果，而是经过运行、比较、删除和继续修改，**筛选出约 4 组更成立的视觉方向**。
+### Georgy Robakidze (RÖ)
+
+RÖ 使用多组效果器与 **Bit Machine** 继续处理声音，同时向视觉端持续发送 **MIDI / BPM 信号**，让音乐节奏信息可以直接进入视觉系统，而不需要视觉端重新分析整段音频。
+
+### 钱誉文 Ewan Qian
+
+Ewan 接收来自声音端的 MIDI / BPM 信息，并将它接入实时视觉系统。演出准备阶段使用 **Codex + Processing MCP** 在一晚内建立约 10 套可运行的 Processing 视觉工程，每套内部再包含多个可通过数字键切换的实时状态；经过观看、比较和删除，最终保留约 4 组更适合现场的视觉方向。
+
+```text
+Mark / CDJ + Voice Loop
+          ↓
+RÖ / FX + Bit Machine
+          ↓
+     MIDI / BPM
+          ↓
+Ewan / Processing Realtime Visuals
+          ↓
+  State / Visual Switching
+```
+
+这里的重点不是让视觉简单“跟着声音跳”，而是把音乐时间信息直接作为视觉系统中的控制信号之一。
+
+---
+
+## 实验方法
+
+BPM Link Experiment 同时验证了两件事：
+
+1. **Signal Link**：音乐端持续把 MIDI / BPM 信息送入视觉端，使声音与视觉共享同一条实时节奏信息。
+2. **Rapid Prototyping**：利用 Codex 与 Processing MCP 快速生成大量可运行的视觉候选，再由人实际观看、筛选和删除。
 
 ```text
 Codex + Processing MCP
         ↓
-约 10 套可运行 Processing 视觉原型
+约 10 套实时 Processing 视觉原型
         ↓
 每套多个实时状态 / 数字键切换
         ↓
@@ -42,119 +71,64 @@ Codex + Processing MCP
         ↓
 留下约 4 组
         ↓
-进入后续现场 / 演示与继续优化
+接入 MIDI / BPM 与现场控制
 ```
 
----
-
-## 为什么这个实验重要
-
-这次实验的重点不是“AI 一晚上生成了很多视觉”。
-
-更准确地说，它验证了一种新的制作节奏：
-
-**先快速生成足够多的可运行候选，再把创作者的时间集中到观看、比较、选择与删除上。**
-
-AI 在这里承担的是加速原型开发、代码修改和变体生成；真正决定结果的是人的筛选：
-
-- 哪个系统真的能持续看；
-- 哪组状态切换有现场感；
-- 哪些视觉虽然技术上成立，但应该删除；
-- 哪些系统值得继续打磨；
-- 哪些变化能够被操作者在现场记住并控制。
-
-因此，这次实验也是 Ewan 当前“**生成不是终点，选择才是创作的一部分**”这一工作方法的具体案例。
-
----
-
-## 与 BPM / Link 的关系
-
-**BPM Link Experiment** 是本实验当前确认的正式名称。
-
-这里的 “Link” 指向的是音乐时间、实时视觉系统与人工控制之间的连接关系；实验关注节奏、状态切换和现场控制如何进入同一套运行结构。
-
-需要注意：当前档案**不把所有 Processing sketch 都描述成已经完成自动 BPM 分析或严格 beat-sync 的系统**。现阶段已确认的核心事实是多套实时视觉原型、多个可切换状态，以及围绕音乐 / 现场节奏进行选择和控制。后续若补入明确的 BPM / beat / bar 数据链，再单独记录其协议与实现。
-
----
-
-## 与早期实时系统研究的关系
-
-BPM Link Experiment 并不是突然出现的单次尝试。
-
-在更早的实时演出系统研究中，Ewan 已经持续讨论过一套共同控制协议，包括：
-
-- state / section；
-- BPM / beat / bar；
-- energy envelope；
-- low / mid / high / peak；
-- manual override；
-- look / transition；
-- fail-safe。
-
-BPM Link Experiment 把其中一部分思路压缩成更轻、更快速的 Processing 原型工作流：先建立大量候选 visual grammar，再通过实时运行完成筛选。
-
----
-
-## 与后续 Audio Visual Analysis / Processing Adapter 的关系
-
-后续研究已经把这次实践抽象成更明确的产品化方法：
-
-- 一首音乐快速生成多个视觉方向；
-- 每个方向继续生成多个 variation；
-- 使用 Processing 作为轻量 renderer / prototype adapter；
-- 自动截图 / 录屏；
-- 由人执行 keep / mute / delete；
-- 最终输出少量值得继续开发的方向。
-
-因此，BPM Link Experiment 可以视为后续 **Cross-Software Audiovisual Prototyping / Audio Visual Grammar Engine** 思路的重要实证节点之一。
+这次实验的重点不是“AI 一晚上生成了很多视觉”，而是：**当原型生产变快之后，把更多创作时间放到判断、筛选与现场控制上。**
 
 ---
 
 ## 媒体资产
 
-当前已知主机位正式视频文件名：
+主机位正式视频文件名：
 
 `SRE_2026_UFO-Terminal_加载创作营_主机位_正式版_1080p`
 
-建议后续归档为：
-
-- 主机位正式版视频；
-- 10 套 Processing 原型的 contact sheet / screen recording；
-- 最终 4 组入选方向的单独短视频；
-- 每组数字键状态说明；
-- Codex / Processing MCP 制作过程记录；
-- 现场 / 排练照片与 UFO Terminal 提供素材的 credit。
-
-> 当前仓库尚未 ingest 上述主机位视频原文件，本条只登记文件名与应有归档关系；不要在仓库中伪造视频链接。
+当前仓库只登记文件名，视频原文件尚未 ingest。
 
 ---
 
-## 对外短说明
+# 对外发布文案
 
-### 40–60 字
+## 推荐标题
 
-**BPM Link Experiment（2026）** 是钱誉文在 SRE 创作过程中进行的实时视觉实验：使用 Codex 与 Processing MCP 快速建立约十套可运行的视觉系统，再通过现场观看与筛选留下约四组方向，探索 AI 加速制作之后，人的选择与实时控制如何重新成为创作核心。
+**BPM Link Experiment｜SRE × UFO Terminal「加载…创作营」2026**
 
-### 更短 Caption
+## 视频说明｜通用版
 
-**BPM Link Experiment，2026｜Codex + Processing MCP 实时视觉原型实验；约 10 套系统 → 人工筛选约 4 组。视觉：钱誉文 Ewan Qian。**
+**BPM Link Experiment** 是我们在 2026 UFO Terminal「加载…创作营」期间进行的一次实时音画控制实验。
+
+Mark 使用 CDJ 与人声采样建立 Loop；RÖ 通过效果器与 Bit Machine 继续处理声音，并持续向视觉端发送 MIDI / BPM 信息；我接收这些节奏信号，在 Processing 实时视觉系统中控制不同视觉与状态切换。
+
+演出准备前一晚，我使用 Codex + Processing MCP 快速制作了约 10 套可运行的实时视觉工程，每套内部都有多个可切换状态，最后实际运行、筛选，只留下约 4 组进入这次实验。
+
+这次我更感兴趣的不是“AI 能做多少视觉”，而是：**当制作速度变快以后，音乐、控制信号、视觉系统和人的判断能不能真正连接起来。**
+
+## 短版｜小红书 / MANA
+
+**BPM Link Experiment，2026。**  
+Mark 用 CDJ + 人声采样建立 Loop，RÖ 通过效果器 / Bit Machine 处理声音并持续发送 MIDI / BPM 信号，我用 Processing 接收节奏信息并控制实时视觉。演出前一晚用 Codex + Processing MCP 做了约 10 套视觉系统，最后筛到约 4 组进入现场。
+
+不是让画面简单“跟着音乐跳”，而是尝试把**音乐时间、MIDI 信号、实时视觉和现场控制连接成同一套系统**。
 
 ---
 
-## Credit
+# Full Credit
 
-**BPM Link Experiment / SRE，2026；视觉与实时系统：钱誉文 Ewan Qian；创作语境：UFO Terminal「加载…创作营」；由 UFO Terminal「加载…」计划支持创作。**
+**BPM Link Experiment / SRE，2026**  
+**Shukai / Mark** — CDJ、Loop、Voice Sample / 声音结构  
+**Georgy Robakidze (RÖ)** — Effects、Bit Machine、MIDI / BPM Signal  
+**钱誉文 Ewan Qian** — Realtime Visual System、Processing、Processing MCP、Codex / Creative Coding  
 
-SRE 合作 Credit：
+**Context｜** UFO Terminal（未知终端）「加载…创作营」，2026  
+**Support｜** 由 UFO Terminal「加载…」计划支持创作  
 
-**Shukai / Mark × Georgy Robakidze (RÖ) × 钱誉文 Ewan Qian。**
+**Video master｜** `SRE_2026_UFO-Terminal_加载创作营_主机位_正式版_1080p`
 
 ---
 
-## 名称修订说明
+## 名称修订
 
-此前语音转写中曾出现 `Coffee link` 等明显识别异常，用户也曾回忆过类似 `bit link` 的临时称呼。当前由创作者明确确认的正式名称为：
+此前语音转写中曾出现 `Coffee link` 等识别异常，也曾暂时回忆为 `bit link`。当前统一正式名称：
 
 # **BPM Link Experiment**
-
-后续所有个人档案与对外材料统一使用该名称，除非另有版本说明。
