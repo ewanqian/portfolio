@@ -4,24 +4,79 @@
   "subtitle": "Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 在 2026 UFO Terminal「加载…创作营」期间发展的实时合作",
   "years": "2026",
   "type": "live-experiment",
-  "summary": "SRE 是 Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 在 2026 UFO Terminal「加载…创作营」期间发展的实时合作与视觉系统实验。项目并非 UFO Terminal 的“现场单元”或正式现场演出单元，不应如此表述。相关创作与影像素材由 UFO Terminal「加载…」计划支持创作；Ewan Qian 负责实时视觉与视觉系统部分。",
+  "summary": "SRE 是 Shukai / Mark、Georgy Robakidze (RÖ) 与 Ewan Qian 在 2026 UFO Terminal「加载…创作营」期间发展的实时合作与视觉系统实验。项目并非 UFO Terminal 的“现场单元”或正式现场演出单元，不应如此表述。相关创作与影像素材由 UFO Terminal「加载…」计划支持创作；Ewan Qian 负责实时视觉与视觉系统部分。其个人技术实验 BPM Link Experiment 记录了使用 Codex、Processing MCP 与 Creative Coding 在一晚内建立约 10 套可运行实时视觉原型、每套配置多个可切换状态，并通过人工观看、比较和删除最终筛选约 4 组方向的过程。",
   "practiceLine": "collaborative-performance",
-  "tags": ["ufo-terminal", "creation-camp", "realtime-visual", "collaboration", "ongoing"],
+  "tags": [
+    "ufo-terminal",
+    "creation-camp",
+    "realtime-visual",
+    "collaboration",
+    "processing",
+    "processing-mcp",
+    "codex",
+    "creative-coding",
+    "rapid-prototyping",
+    "ongoing"
+  ],
   "coverImage": "sre-benchmark-all-visible.webp",
   "image": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
   "showOnHome": false,
   "lifecycle": "active",
   "relatedNodes": ["ufo-terminal"],
-  "relatedWritings": ["rehearsal-to-public-node", "viewer-specs-part-of-system"],
-  "displayModes": ["pixelated realtime canvas", "high-fps realtime visual", "Arena / Blender workflow"],
-  "analysisIds": ["sre-flat-liveset-framework"],
+  "relatedWritings": [
+    "rehearsal-to-public-node",
+    "viewer-specs-part-of-system",
+    "projects/bpm-link-experiment-2026.md"
+  ],
+  "relatedExperiments": [
+    {
+      "id": "bpm-link-experiment-2026",
+      "title": "BPM Link Experiment",
+      "path": "projects/bpm-link-experiment-2026.md",
+      "relation": "Ewan Qian realtime-visual method experiment developed in the SRE context"
+    }
+  ],
+  "methods": {
+    "bpmLinkExperiment": {
+      "tools": ["Codex", "Processing", "Processing MCP", "Creative Coding"],
+      "prototypeCountApprox": 10,
+      "selectedDirectionsApprox": 4,
+      "interaction": "multiple numbered realtime states per sketch, including keyboard-triggered state switching",
+      "workflow": [
+        "generate runnable realtime sketches",
+        "run and compare",
+        "delete weak directions",
+        "select a small number of stronger systems",
+        "continue live control and refinement"
+      ],
+      "note": "The experiment name is canonical, but the current archive does not claim that every sketch implemented automatic BPM analysis or strict beat-sync."
+    }
+  },
+  "displayModes": [
+    "pixelated realtime canvas",
+    "high-fps realtime visual",
+    "Processing realtime sketch pack",
+    "keyboard state switching",
+    "Arena / Blender workflow"
+  ],
+  "analysisIds": ["sre-flat-liveset-framework", "bpm-link-experiment-2026"],
   "sourceDocs": [
+    "projects/bpm-link-experiment-2026.md",
     "works/sre-realtime-liveset.html"
+  ],
+  "mediaAssets": [
+    {
+      "name": "SRE_2026_UFO-Terminal_加载创作营_主机位_正式版_1080p",
+      "type": "video",
+      "status": "needs-ingest",
+      "note": "Local/master filename supplied by Ewan; repository does not yet contain the source video."
+    }
   ],
   "creditNote": "SRE｜Shukai / Mark × Georgy Robakidze (RÖ) × 钱誉文 Ewan Qian，UFO Terminal（未知终端）「加载…创作营」2026；视觉：钱誉文 Ewan Qian；由 UFO Terminal「加载…」计划支持创作。",
   "repoLink": "/works/sre-realtime-liveset.html",
   "links": [
-    { "text": "详情页", "url": "./works/sre-realtime-liveset.html" }
+    { "text": "详情页", "url": "./works/sre-realtime-liveset.html" },
+    { "text": "BPM Link Experiment", "url": "./projects/bpm-link-experiment-2026.md" }
   ],
   "priority": 8
 }
