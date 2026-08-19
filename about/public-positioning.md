@@ -7,7 +7,7 @@
 
 1998 年出生的钱誉文（Ewan Qian）是媒体艺术家与现场视听表演者，也是创作团体 VIRTURA 的发起人与核心创作者之一。其创作从音乐、动态影像与现场视觉出发，逐渐延伸至沉浸式影像、实时系统、空间扫描、点云、生成艺术与数字空间。
 
-近年来，他与 RO、徐浩、KASHIWA Daisuke 等音乐人合作进行现场视听创作，并参与 UFO Terminal「加载…创作营」及后续展演。TIMER、Drop Flow 等系列曾在杭州国际电子音乐节、ChinaGraph、UFO Terminal 及首届中国（杭州）艺术与科技国际双年展呈现。
+近年来，他与 RO、徐昊、KASHIWA Daisuke 等音乐人合作进行现场视听创作，并参与 UFO Terminal「加载…创作营」及后续展演。TIMER、Drop Flow 等系列曾在杭州国际电子音乐节、ChinaGraph、UFO Terminal 及首届中国（杭州）艺术与科技国际双年展呈现。
 
 Ewan Qian (b. 1998) is a media artist and live audiovisual performer, and a founder and core creator of VIRTURA. His practice grows from music, moving image, and live visuals into immersive moving image, realtime systems, spatial scanning, point-cloud imagery, generative art, and digital environments.
 
