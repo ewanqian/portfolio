@@ -5,6 +5,7 @@ __pycache__/
 *.pyd
 .env
 secrets.yaml
+
 # Node
 node_modules/
 *.log
@@ -19,14 +20,28 @@ _OUTPUT_作品集素材包/
 素材扫描清单.md
 react/public/assets/digital-garden/
 
+# Private / local-only portfolio memory
+# The repository is public. Anything sensitive must stay outside Git history.
+.private/
+private/
+.memory-private/
+inbox/private/
+CURRENT.local.md
+*.private.md
+*.private.json
+*.private.yaml
+*.private.yml
+
 # Blender
 *.blend1
 *.blend2
+
 # 3D资产
 *.fbx
 *.obj
 *.glb
 !/examples/*.glb
+
 # OS
 .DS_Store
 Thumbs.db
