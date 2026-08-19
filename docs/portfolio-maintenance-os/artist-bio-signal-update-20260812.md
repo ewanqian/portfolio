@@ -40,7 +40,7 @@ Public framing should therefore treat AI as an established and expanding working
 
 ## Evidence gaps / tasks
 
-### RO / 徐浩 collaborations
+### RO / 徐昊 collaborations
 
 Need project names, dates, venues, exact roles and public links before converting to canonical credits.
 
@@ -97,7 +97,7 @@ Need project-level evidence for:
 
 ## Next archive actions
 
-1. Complete RO / 徐浩 collaboration records.
+1. Complete RO / 徐昊 collaboration records.
 2. Complete SYSTEM documentary / ERSHA credits and assets.
 3. Add project-level documentation for the Drop Flow biennale motion-capture version.
 4. Reconstruct the early-2025 New Media Artist Simulator development history.
