@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>NFI Keyboard Liveset v0.1</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main id="app" class="app" aria-live="polite">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PERSONAL A/V INSTRUMENT · DEMO 01</div>
+        <h1>NFI Keyboard Liveset</h1>
+      </div>
+      <div class="status">
+        <span id="sceneLabel">SCENE · PLAYFUL</span>
+        <span id="keyLabel">KEY · —</span>
+      </div>
+    </header>
+
+    <section class="stage" id="stage">
+      <div class="shape" id="shape" aria-hidden="true"></div>
+      <div class="word" id="word">按任意 A–Z</div>
+      <div class="hint" id="hint">A–Z 演奏 · 1/2/3 切换场景 · 0 重置</div>
+    </section>
+
+    <section class="keyboard" id="keyboard" aria-label="可点击键盘"></section>
+
+    <footer class="footer">
+      <span>Minimal Input / Audiovisual System</span>
+      <span>Ewan Qian · workshop prototype</span>
+    </footer>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
