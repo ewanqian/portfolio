@@ -8,60 +8,71 @@
 
 NIULAI TAP is a workshop-side demo used to test a simple question: **can a familiar cultural / personal material pack become a playable audiovisual instrument before the participant understands any software?**
 
-The prototype follows a Patatap-like interaction principle—keyboard input produces immediate sound + visual feedback—but does not copy Patatap assets or visual language. The goal is to create a reusable workshop engine where a participant can later replace the voice, sound and visual pack with their own material.
+The prototype follows a Patatap-like keyboard interaction principle—keyboard input produces immediate sound + visual feedback—but does not copy Patatap assets or visual language. The goal is a reusable workshop engine where participants can later replace voice, sound and visual packs with their own material.
 
-## Two directions in v0.1
+## Two directions
 
 ### 1. NIULAI CORE
 
-A more direct NIULAI-themed mode. Short words such as `牛 / 来 / 欢迎 / 今天 / 昨天 / 将来 / 长大 / 不一样 / 一样` are treated as playable fragments rather than long dialogue playback. The page combines browser-synthesized speech, simple percussion / synth voices and a restrained organic visual system.
+A more direct NIULAI-themed mode. Short fragments such as `牛 / 来 / 欢迎 / 我的孩子 / 今天 / 将来 / 长大 / 不一样 / 一样` are treated as playable units rather than long dialogue playback. The public prototype uses browser-synthesized speech, procedural Web Audio, typography and generative geometry rather than source-film dialogue audio.
 
-### 2. HATSUNE NIULAI / 初音牛来
+### 2. 出音牛来 / CHUYIN NIULAI
 
-A fan-made virtual-idol / electronic-performance concept. It does **not** use or imitate Hatsune Miku voice data. Instead it reinterprets the idea of a synthetic singer as a bright, fast, glitchy NIULAI instrument with browser speech synthesis, pitch-like electronic gestures, scanline visuals and club-oriented feedback.
+A fan-made synthetic-performer / electronic-performance reinterpretation. “出音” emphasizes **making sound / performing sound** rather than copying Hatsune Miku as a character or voice product.
+
+- synthetic high voice
+- brighter electronic percussion / bass / chord bank
+- scanline / glitch / stage-like visual state
+- fast keyboard performance suitable for the “keyboard as guitar” promo video
+- no Hatsune Miku voice data or visual assets
 
 ## Current interaction
 
 - `A–Z`: trigger sound + visual events
-- key hold: keep an on-screen state alive
-- rapid repeated key presses: increase visual intensity
-- `SPACE`: global accent / flash
-- `TAB`: switch between `NIULAI CORE` and `HATSUNE NIULAI`
+- repeated `Q / W`: `牛 → 牛牛 → 牛牛牛` / `来 → 来来 → 来来来`
+- key hold: extended vocal / visual state
+- `SPACE`: global accent / drop
+- `TAB`: switch between `NIULAI CORE` and `出音牛来`
 - `ESC`: reset / panic
 
-The prototype intentionally uses only browser-native Web Audio + Speech Synthesis. No film audio samples are included in v0.1, so the public demo can be shared without redistributing source-film dialogue recordings.
+## Playable entry
+
+The current self-contained public file is stored at repository root:
+
+`/niulai-tap.html`
+
+Canonical website target after deployment:
+
+`https://ewanqian.site/niulai-tap.html`
+
+The older nested workshop route redirects to this file:
+
+`/workshops/personal-av-instrument/demos/niulai-tap/`
 
 ## Workshop role
 
 This demo is not the final class template. It is a **theme-pack proof of concept** showing that the same instrument engine could later become:
 
-- an artist's own song / visual pack;
+- an artist's song / visual pack;
 - a meme or internet-culture pack;
 - a personal field-recording instrument;
 - a participant's custom 26-key audiovisual instrument.
 
-The useful teaching sequence is:
+Useful teaching sequence:
 
 `play first → understand mapping → replace material → change rules → blind playtest → perform`
 
 ## Next iteration
 
-- [ ] replace generic synth voices with a curated original NIULAI sound pack
-- [ ] add three stronger musical banks: Ambient / Club / Playful
-- [ ] test 8-key reduced version for 15–30 second promo video
+- [ ] make the reduced 8-key version genuinely fun for 30 seconds
+- [ ] curate an original NIULAI sound pack
+- [ ] strengthen Ambient / Club / Playful musical banks
 - [ ] add optional BPM quantization
-- [ ] add per-key hold / release behaviours
-- [ ] add visual memory / decay inspired by *No Further Input Required*
-- [ ] export participant-friendly `starter/` version
+- [ ] deepen per-key hold / release behaviour
+- [ ] borrow visual memory / decay logic from *No Further Input Required*
+- [ ] export a participant-friendly `starter/` version
 - [ ] record keyboard-as-guitar performance teaser
-
-## Public URLs
-
-When GitHub Pages has deployed the main branch, the static demo should be reachable at:
-
-- `https://ewanqian.site/workshops/personal-av-instrument/demos/niulai-tap/`
-- fallback: `https://ewanqian.github.io/portfolio/workshops/personal-av-instrument/demos/niulai-tap/`
 
 ## Rights note
 
-This is a fan-made research / workshop prototype. v0.1 uses browser-generated speech and original procedural audio / visuals and does not bundle film audio, Hatsune Miku voice data, or Patatap assets.
+This is a fan-made research / workshop prototype. The public version uses browser-generated speech and original procedural audio / visuals and does not bundle film audio, Hatsune Miku voice data, Patatap assets, or other copyrighted source media.
