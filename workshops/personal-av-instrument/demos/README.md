@@ -9,36 +9,21 @@
 - 状态：v0.1 playable prototype
 - 目标：以干净的文字、纯色与基础几何建立即时 Sound + Visual 反馈，后续替换为真实语音 / 视频采样。
 
-### 发布路径
-
-`/workshops/personal-av-instrument/demos/nfi-keyboard-liveset/`
-
 ---
 
 ## Demo 02 — NIULAI TAP / 牛来 Tap
 
 - 路径：[`./niulai-tap/`](./niulai-tap/)
 - 说明：[`./niulai-tap/README.md`](./niulai-tap/README.md)
+- 可玩单文件入口：[`../../../..//niulai-tap.html`](../../../../niulai-tap.html)
 - 类型：Theme Pack / 26-key Audiovisual Instrument / browser synth
 - 状态：v0.1 playable prototype
 - 研究问题：一个熟悉、荒诞、可传播的主题素材包，能不能让完全不了解 Audio Visual 的人先产生“我想按一下”的冲动，再进入 Mapping 与系统设计？
 
 ### 当前双模式
 
-1. **NIULAI CORE**：从“牛 / 来 / 欢迎 / 今天 / 昨天 / 将来 / 长大 / 不一样 / 一样”等短词出发，以浏览器合成人声、程序声音、文字与有机几何组成更接近“牛来 core”的状态。
-2. **HATSUNE NIULAI / 初音牛来**：不使用初音未来音源，把“虚拟歌姬 / 电子偶像 / keyboard performance”的机制转译为更快、更亮、更 glitch 的牛来电子演奏模式。
-
-### 发布路径
-
-`/workshops/personal-av-instrument/demos/niulai-tap/`
-
-Custom Domain：
-
-`https://ewanqian.site/workshops/personal-av-instrument/demos/niulai-tap/`
-
-GitHub Pages fallback：
-
-`https://ewanqian.github.io/portfolio/workshops/personal-av-instrument/demos/niulai-tap/`
+1. **NIULAI CORE**：从“牛 / 来 / 欢迎 / 我的孩子 / 今天 / 将来 / 长大 / 不一样 / 一样”等短词出发，以浏览器合成人声、程序声音、文字与有机几何组成更接近“牛来 core”的状态。
+2. **出音牛来 / CHUYIN NIULAI**：不使用初音未来音源或视觉资产，把“synthetic performer / electronic keyboard performance”的机制转译成更快、更亮、更 glitch 的牛来电子演奏模式。“出音”强调让牛来真正成为一个会发声、会被演奏的网页角色。
 
 ### 为什么保留两个 Demo
 
