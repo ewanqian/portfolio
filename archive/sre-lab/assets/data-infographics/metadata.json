@@ -1,0 +1,8 @@
+{
+  "title": "SRE Data Field",
+  "source": "Processing realtime liveset study",
+  "category": "Visual Instrument",
+  "priority": "core",
+  "visual_features": ["data network", "particles", "spatial field", "dynamic density"],
+  "conversion": "p5.js / WebGL"
+}
