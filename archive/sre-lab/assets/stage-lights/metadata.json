@@ -1,0 +1,8 @@
+{
+  "title": "SRE Stage Light Motor",
+  "source": "Processing realtime liveset study",
+  "category": "Performance System",
+  "priority": "core",
+  "visual_features": ["stage beam", "light movement", "rhythm control", "spatial lighting"],
+  "conversion": "Three.js / WebGL"
+}
