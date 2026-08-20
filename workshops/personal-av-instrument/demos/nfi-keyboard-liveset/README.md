@@ -21,18 +21,26 @@
 
 ## 后续迭代
 
-- 从 `39929580155-1-192.mp4` 等素材中切分真实声音片段
+- 从真实素材中切分语音 / 单音节片段
 - 建立 sample manifest，把 A–Z 映射到真实素材
 - 为同一视频增加 Normal / Loop / Freeze / Stutter / Speed 等少量可控状态
 - 录制 15s / 30s promotion teaser
 - 将参与者自己的素材包做成可替换 pack
 
-## 发布
+## 发布与试玩
 
-构建时由 `scripts/copy-static-works.mjs` 将本目录复制到：
+Canonical source 仍保存在本工作坊目录；另外维护一个单文件发布入口：
 
-`dist/workshops/personal-av-instrument/demos/nfi-keyboard-liveset/`
+`works/nfi-keyboard-liveset.html`
 
-预期线上路径：
+该单文件版本不依赖外部 CSS / JS，便于独立预览和后续站点发布。
 
-`/workshops/personal-av-instrument/demos/nfi-keyboard-liveset/`
+当前可直接试玩的 immutable preview：
+
+https://rawcdn.githack.com/ewanqian/portfolio/c2b1d0b4959f69f369357ff592234b6f76b49cab/works/nfi-keyboard-liveset.html
+
+站点下一次成功 build / deploy 后，预期正式路径为：
+
+https://ewanqian.site/works/nfi-keyboard-liveset.html
+
+注意：`ewanqian.site` 是否已经更新取决于站点部署流程；仅提交到 `main` 不应被写成“已经上线”。
