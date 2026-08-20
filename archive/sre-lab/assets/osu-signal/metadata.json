@@ -1,0 +1,8 @@
+{
+  "title": "SRE Signal Game",
+  "source": "Processing realtime liveset study",
+  "category": "Interactive Visual Instrument",
+  "priority": "core",
+  "visual_features": ["signal input", "timing", "feedback", "interaction loop"],
+  "conversion": "p5.js + Web MIDI API"
+}
