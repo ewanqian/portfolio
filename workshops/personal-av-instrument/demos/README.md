@@ -1,15 +1,22 @@
 # Personal A/V Instrument — Demos
 
-本目录是《音画同源乐器 / Personal A/V Instrument》工作坊的可运行 Demo 区。后续所有 Starter、Golden Demo、宣传录屏与参与者可复用原型都优先在这里迭代。
+本目录是《音画同源乐器 / Personal A/V Instrument》工作坊的可运行 Demo 区。后续 Starter、Golden Demo、宣传录屏与参与者可复用原型都优先在这里迭代。
+
+从 2026-08-21 起，Demo 正式拆成两条线：
+
+- **Instrument Line / 乐器线**：关注按键、素材、Mapping、个人 sample pack 与“像乐器一样玩”。
+- **Performance System Line / 演出系统线**：关注 BPM、Phrase、Arrangement、Section、Transition 与观众视角的完整 Live Set。
+
+---
+
+# A · Instrument Line / 乐器线
 
 ## Demo 01 — NFI Keyboard Liveset
 
 - 路径：[`./nfi-keyboard-liveset/`](./nfi-keyboard-liveset/)
-- 类型：A–Z 键盘音画乐器 / Web Audio / Browser Instrument
+- 类型：QWERTY 键盘音画乐器 / Web Audio / Browser Instrument
 - 状态：v0.2 playable prototype
 - 目标：以干净的文字、纯色与基础几何建立即时 Sound + Visual 反馈，并承载真实语音 sample pack。
-
----
 
 ## Demo 02 — NIULAI TAP / 牛来 Tap
 
@@ -18,59 +25,111 @@
 - 当前可玩单文件入口：[`../../../../niulai-tap-v03.html`](../../../../niulai-tap-v03.html)
 - 类型：Theme Pack / 26-key Audiovisual Instrument / fixed formant browser synth
 - 状态：v0.3 playable prototype
-- 研究问题：一个熟悉、荒诞、可传播的主题素材包，能不能让完全不了解 Audio Visual 的人先产生“我想按一下”的冲动，再进入 Mapping 与系统设计？
+- 目标：测试 meme / personal material 如何快速变成“我也想按一下”的音画乐器。
 
-### 当前双模式
+Instrument Line 的研究重点：
 
-1. **NIULAI CORE**：从“牛 / 来 / 欢迎 / 我的孩子 / 今天 / 将来 / 长大 / 不一样 / 一样”等短词出发，以固定 Formant Web Synth、程序声音、文字与有机几何组成“牛来 core”的状态。
-2. **出音牛来 / CHUYIN NIULAI**：不使用初音未来音源或视觉资产，把 synthetic performer / electronic keyboard performance 的机制转译成更快、更亮、更 glitch 的牛来电子演奏模式。
-
-### v0.3 更新
-
-- 不再依赖设备自带 `SpeechSynthesis` TTS；
-- 人声改为固定 Web Audio Formant Synth，不同设备的核心音色更一致；
-- `Q / W` 保留 `牛 → 牛牛 → 牛牛牛` / `来 → 来来 → 来来来`；
-- 支持 Hold、Space Drop、Tab 模式切换与 Reset；
-- 鼓、Bass、Chord、FX 仍由 Web Audio 程序实时合成。
+`Input → Mapping → Sound / Visual → Personal Material → Playability`
 
 ---
 
-## Demo 03 — COMMON SOURCE / 同源场
+# B · Performance System Line / 演出系统线
+
+## Demo 03 — COMMON SOURCE / 同源场（Instrument reference）
 
 - 路径：[`./common-source-instrument/`](./common-source-instrument/)
 - 说明：[`./common-source-instrument/README.md`](./common-source-instrument/README.md)
-- 类型：Golden Demo / Shared-source Audiovisual Instrument / Web Audio + Canvas
-- 状态：v0.1 playable reference instrument
-- 目标：提供一个不依赖 meme 或整活素材、可以正常持续演奏并用于公开讲解的完整参考作品。
+- 类型：Shared-source Audiovisual Instrument / Web Audio + Canvas
+- 状态：v0.1 reference instrument
+- 用途：保留为 Mapping / shared-source 的教学参考，不再作为“完整 Live Set”的最终答案。
 
-### 三排键盘结构
+## Demo 04 — COMMON SOURCE / 同源场 — LIVE SET
 
-- `Q–P · TONE`：音高 / ring / orbit
-- `A–L · PULSE`：节奏 / bar / impact
-- `Z–M · TEXTURE`：纹理 / field / contour
+- 路径：[`./common-source-liveset/`](./common-source-liveset/)
+- 说明：[`./common-source-liveset/README.md`](./common-source-liveset/README.md)
+- 类型：Phrase-based Audiovisual Performance System / Internal BPM / Web Audio + Canvas
+- 状态：v0.2 playable performance prototype
+- 默认：124 BPM / 4-4 / 16-step grid
 
-声音和视觉不采用“声音驱动画面”的单向关系，而是共同读取同一个 event / state：
+### 核心变化
 
-`KEY / EVENT → STATE → SOUND + VISUAL`
+旧版本的基本单位是：
 
-`Tab` 可以直接打开 Mapping 面板，在演讲中展示当前输入怎样同时进入 Audio 与 Visual 两个维度。
+`KEY → NOTE / HIT`
 
-### 三个 Demo 的分工
+LIVE SET 版本改成：
 
-1. **COMMON SOURCE / 同源场**：专业参考 / Golden Demo，证明方法本身可以形成正常、完整的数字乐器。
-2. **NFI Keyboard Liveset**：工作坊 Starter / 个人作品衍生实验，测试真实语音切片与文字视觉。
-3. **NIULAI TAP**：Theme Pack / meme / personal material，测试传播性和“我也想按一下”的即时欲望。
+`KEY → PHRASE → ENTER / DEVELOP / TRANSFORM / RELEASE`
 
-因此工作坊的表达不再依赖某一种视觉风格，而是强调：
+也就是说，一次按键不再只闪一下或响一下，而要自己支撑数秒，内部包含多个声音与视觉事件。
 
-`Instrument Engine + Sound Pack + Visual Pack + Mapping Rules = Personal A/V Instrument`
+### 四个演出 Section
+
+1. `GROUND / 铺垫`
+2. `BUILD / 推进`
+3. `PEAK / 主段`
+4. `BRIDGE / 桥段`
+
+`1–4` 切换的是 Arrangement State，而不只是颜色。
+
+### 键盘结构
+
+- `Q–P`：Motif phrases
+- `A–L`：Pulse / rhythm phrases
+- `Z–M`：Texture / transition phrases
+- `[` / `]`：BPM -2 / +2
+- `Space`：安全 Fill
+- `H`：隐藏 HUD，进入纯观众画面
+- `0 / Esc`：Reset
+
+### 评价标准
+
+Performance System Line 的第一评价标准不是“像不像乐器”，而是：
+
+> **一个不具备专业音乐演奏能力的人，经过极短说明以后，能不能用它完成一段从观众角度成立的 5–10 分钟 Audio Visual Live Set？**
+
+因此后续重点评估：
+
+- internal BPM / quantization
+- phrase duration / variation
+- section transition
+- visual continuity
+- density protection
+- novice performer safety
+- audience-only video test
+
+---
+
+# 当前工作坊表达
+
+工作坊不需要在“乐器”与“演出系统”之间二选一。
+
+它们对应两个不同层级：
+
+```text
+Personal Material
+      ↓
+Instrument / Mapping
+      ↓
+Phrase
+      ↓
+BPM / Section / Arrangement
+      ↓
+Live Performance
+```
+
+因此：
+
+`NFI / NIULAI / 大狗叫叮咚鸡` 可以负责趣味性、个人素材和即时参与；
+
+`COMMON SOURCE — LIVE SET` 负责专业性、时间结构和真正的舞台演出问题。
 
 ### 迭代规则
 
-1. 先保证第一次打开就能玩；
-2. 先验证少量键位是否足够好玩，再扩展 26 键内容；
-3. 每个声音单元必须拥有清楚的视觉反馈；
-4. 不把版权素材写死进核心引擎，公开版优先使用原创 / 合成 / 授权素材；
-5. 真实素材通过 sample pack / manifest 替换；
-6. Demo 同时服务于线上试玩、工作坊 Starter Kit 与 15s/30s promotion 录屏；
-7. 重点评估 playability、legibility、mapping depth，而不是效果数量。
+1. 先保证第一次打开就能理解并开始玩；
+2. Instrument Line 评估 Mapping 与素材个性；
+3. Performance Line 评估 5–10 分钟整体演出是否成立；
+4. 一个 Live Set key 至少应支撑 2–8 秒，而不是单次闪现；
+5. Section 切换必须产生结构变化，而不只是换色；
+6. 所有音乐性内容尽量通过 scale / grid / quantization 保护非音乐专业表演者；
+7. Demo 同时服务于线上试玩、工作坊 Starter Kit、演讲与 promotion 录屏。
