@@ -1,0 +1,85 @@
+project: no-further-input-required
+version: interactive-v0.7
+role: reusable-performance-reference
+source: works/no-further-input-required.html
+public_url: https://ewanqian.site/works/no-further-input-required.html
+
+preserve:
+  - continuous_generative_music
+  - global_bpm_bar_clock
+  - autonomous_runtime
+  - sparse_manual_overrides
+  - multiple_behaviours_one_runtime
+  - keyboard_fallback
+  - touch_pointer_input
+  - fullscreen_browser_presentation
+  - audiovisual_event_phrases
+  - post_gesture_autonomous_evolution
+  - persistent_residue
+
+avoid:
+  - literal_cursor_following
+  - objects_tethered_to_pointer
+  - hard_scene_switching_as_primary_composition
+  - generic_scale_position_only_response
+  - requiring_keyboard_music_skill
+  - copying_current_visual_style_into_derivatives
+
+interaction_pipeline:
+  - raw_input
+  - gesture_analysis
+  - semantic_gesture
+  - quantized_phrase_trigger
+  - audiovisual_development
+  - autonomous_release
+  - residue_writeback
+  - future_state_bias
+
+gesture_metrics:
+  - position
+  - velocity
+  - acceleration
+  - direction
+  - curvature
+  - pathLength
+  - crossingCount
+  - dwellTime
+  - repetitionRate
+  - energy
+  - loopDetected
+
+gesture_semantics:
+  - TAP
+  - SWIPE
+  - LOOP
+  - FIGURE_EIGHT
+  - SCRUB
+  - CROSS
+  - DWELL
+  - ERASE
+  - RAPID_REPEAT
+
+performance_tests:
+  no_input_seconds: 30
+  one_gesture_must_continue: true
+  novice_instruction_minutes: 2
+  novice_performance_minutes: 5
+  audience_only_recording_minutes: 3
+  hud_hidden_for_audience_test: true
+
+process_modules:
+  - P01_DECOMPOSE
+  - P02_TOKEN_FIELD
+  - P03_CONTEXT_ASSEMBLY
+  - P04_BRANCH_SEARCH
+  - P05_WEIGHT_SPACE
+  - P06_COMMIT_COLLAPSE
+  - P07_KNOWLEDGE_EDGE
+  - P08_RESIDUAL_MEMORY
+
+read_order:
+  - projects/no-further-input-required/README.md
+  - projects/no-further-input-required/v0.7-performance-reference.md
+  - projects/no-further-input-required/AGENT-REFERENCE.md
+  - projects/no-further-input-required/P01-P08-PERFORMANCE-BRIDGE.md
+  - works/no-further-input-required.html
