@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="theme-color" content="#050608" />
+<title>COMMON SOURCE / 同源场 — LIVE SET</title>
+<style>
+:root{--bg:#050608;--fg:#f4f1e8;--muted:rgba(244,241,232,.48);--line:rgba(244,241,232,.15);--accent:#8dffd2;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--fg)}body{user-select:none}.app{position:relative;width:100%;height:100%;background:var(--bg)}canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.hud{position:absolute;inset:0;padding:22px;display:grid;grid-template-rows:auto 1fr auto;pointer-events:none}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.kicker{font-size:10px;letter-spacing:.2em;color:var(--muted)}h1{margin:5px 0 0;font-size:clamp(20px,2.3vw,31px);font-weight:630;letter-spacing:-.035em}h1 span{font-weight:450;color:var(--muted)}.status{display:flex;gap:16px;font-size:10px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase;align-items:center}.live{display:inline-flex;align-items:center;gap:7px;color:var(--fg)}.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}.middle{display:grid;place-items:center;text-align:center}.sectionWord{font-size:clamp(48px,10vw,144px);font-weight:730;letter-spacing:-.075em;line-height:.78;opacity:.9}.sectionSub{margin-top:17px;font-size:10px;letter-spacing:.2em;color:var(--muted)}.bottom{display:grid;gap:12px}.timeline{height:3px;background:rgba(255,255,255,.09);overflow:hidden}.timeline>i{display:block;height:100%;width:0;background:var(--fg);transition:width .08s linear}.legend{display:flex;justify-content:space-between;gap:16px;align-items:end;font-size:10px;letter-spacing:.1em;color:var(--muted)}.legend b{font-weight:650;color:var(--fg)}.help{text-align:right;line-height:1.7}.kbd{padding:2px 5px;border:1px solid var(--line);border-radius:3px;color:var(--fg)}.sectionRail{position:absolute;left:22px;top:50%;transform:translateY(-50%);display:grid;gap:7px;pointer-events:none}.sectionRail div{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.14em;color:var(--muted)}.sectionRail i{width:14px;height:1px;background:var(--line)}.sectionRail div.on{color:var(--fg)}.sectionRail div.on i{width:31px;background:var(--fg)}.phraseLog{position:absolute;right:22px;top:76px;width:190px;display:grid;gap:6px;pointer-events:none}.phraseLog div{border-top:1px solid var(--line);padding-top:5px;font-size:9px;letter-spacing:.1em;color:var(--muted);display:flex;justify-content:space-between}.phraseLog strong{color:var(--fg);font-weight:600}.hideHud .hud,.hideHud .sectionRail,.hideHud .phraseLog{opacity:0}.hud,.sectionRail,.phraseLog{transition:opacity .18s ease}.start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,6,8,.84);backdrop-filter:blur(9px);z-index:10}.start button{appearance:none;border:1px solid var(--fg);background:var(--fg);color:#080909;padding:13px 18px;font:600 11px/1 inherit;letter-spacing:.14em;cursor:pointer}.start p{margin:14px 0 0;font-size:10px;letter-spacing:.08em;color:var(--muted);text-align:center}.start.hidden{display:none}@media(max-width:720px){.hud{padding:12px}.status{display:none}.sectionRail,.phraseLog{display:none}.legend{font-size:8px}.help{display:none}h1{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+<canvas id="stage"></canvas>
+<div class="hud">
+<header class="top"><div><div class="kicker">AUDIOVISUAL PERFORMANCE SYSTEM · v0.2</div><h1>COMMON SOURCE <span>/ 同源场 — LIVE SET</span></h1></div><div class="status"><span class="live"><i class="dot"></i>LIVE</span><span id="bpmRead">124 BPM</span><span id="barRead">BAR 01 · 1</span><span id="voicesRead">0 PHRASES</span></div></header>
+<main class="middle"><div><div class="sectionWord" id="sectionWord">GROUND</div><div class="sectionSub" id="sectionSub">1 · 铺垫 / SPACE · AIR · LOW DENSITY</div></div></main>
+<footer class="bottom"><div class="timeline"><i id="timelineFill"></i></div><div class="legend"><div><b>Q–P</b> MOTIF · <b>A–L</b> PULSE · <b>Z–M</b> TEXTURE</div><div class="help"><span class="kbd">1–4</span> SECTION · <span class="kbd">[ ]</span> BPM · <span class="kbd">SPACE</span> FILL · <span class="kbd">H</span> HUD · <span class="kbd">0</span> RESET</div></div></footer>
+</div>
+<div class="sectionRail" id="sectionRail"></div>
+<div class="phraseLog" id="phraseLog"></div>
+<div class="start" id="start"><div><button id="startBtn">START LIVE SET</button><p>124 BPM · 4 sections · QWERTY phrases</p></div></div>
+</div>
+<script>
+(()=>{
+const canvas=document.querySelector('#stage'),ctx=canvas.getContext('2d'),app=document.querySelector('#app');
+const bpmRead=document.querySelector('#bpmRead'),barRead=document.querySelector('#barRead'),voicesRead=document.querySelector('#voicesRead'),sectionWord=document.querySelector('#sectionWord'),sectionSub=document.querySelector('#sectionSub'),timelineFill=document.querySelector('#timelineFill'),sectionRail=document.querySelector('#sectionRail'),phraseLog=document.querySelector('#phraseLog'),start=document.querySelector('#start'),startBtn=document.querySelector('#startBtn');
+let W=innerWidth,H=innerHeight,DPR=Math.min(devicePixelRatio||1,2);function resize(){W=innerWidth;H=innerHeight;DPR=Math.min(devicePixelRatio||1,2);canvas.width=W*DPR;canvas.height=H*DPR;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0)}addEventListener('resize',resize);resize();
+const SECTIONS=[
+ {id:1,name:'GROUND',cn:'铺垫',sub:'SPACE · AIR · LOW DENSITY',energy:.28,bg:['#050608','#0d1215'],fg:['#d8fff0','#7dd9bb','#8e98a2']},
+ {id:2,name:'BUILD',cn:'推进',sub:'PULSE · MOTION · ACCUMULATION',energy:.58,bg:['#06100e','#0d1b16'],fg:['#baff74','#75ffd2','#f1f5d7']},
+ {id:3,name:'PEAK',cn:'主段',sub:'FULL GRID · HIGH CONTRAST · RELEASE',energy:1,bg:['#08060c','#170b18'],fg:['#ff725c','#ffd64d','#f5f1ea','#73b6ff']},
+ {id:4,name:'BRIDGE',cn:'桥段',sub:'BREAK · ECHO · RECOMPOSE',energy:.43,bg:['#080916','#12152a'],fg:['#c1a7ff','#6fd8ff','#efc6b1']}
+];
+const ROWS={motif:'QWERTYUIOP',pulse:'ASDFGHJKL',texture:'ZXCVBNM'};const ALL=(ROWS.motif+ROWS.pulse+ROWS.texture).split('');
+let section=SECTIONS[0],pendingSection=null,bpm=124,audioCtx=null,master=null,comp=null,noiseBuffer=null,running=false,nextStepTime=0,step=0,bar=1,schedulerTimer=null,lastClockUi=0,startedAt=performance.now();
+let phrases=[],visEvents=[],held=new Map(),history=[];const MAX_PHRASES=7;
+function initRail(){sectionRail.innerHTML=SECTIONS.map(s=>`<div data-s="${s.id}"><i></i><span>${s.id} ${s.name}</span></div>`).join('');updateSectionUI()}initRail();
+function updateSectionUI(){sectionWord.textContent=section.name;sectionSub.textContent=`${section.id} · ${section.cn} / ${section.sub}`;[...sectionRail.children].forEach((el,i)=>el.classList.toggle('on',i===section.id-1));document.documentElement.style.setProperty('--accent',section.fg[0]);}
+function ensureAudio(){if(audioCtx)return;audioCtx=new(window.AudioContext||window.webkitAudioContext)();master=audioCtx.createGain();comp=audioCtx.createDynamicsCompressor();master.gain.value=.62;master.connect(comp);comp.connect(audioCtx.destination);noiseBuffer=audioCtx.createBuffer(1,audioCtx.sampleRate*2,audioCtx.sampleRate);const d=noiseBuffer.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}
+function hz(m){return 440*Math.pow(2,(m-69)/12)}
+const PENTA=[48,50,53,55,57,60,62,65,67,69,72,74,77,79,81];
+function synthTone(time,midi,dur=.18,gain=.055,type='sine'){const o=audioCtx.createOscillator(),g=audioCtx.createGain(),f=audioCtx.createBiquadFilter();o.type=type;o.frequency.setValueAtTime(hz(midi),time);f.type='lowpass';f.frequency.value=1300+section.energy*3600;g.gain.setValueAtTime(.0001,time);g.gain.exponentialRampToValueAtTime(gain,time+.012);g.gain.exponentialRampToValueAtTime(.0001,time+dur);o.connect(f);f.connect(g);g.connect(master);o.start(time);o.stop(time+dur+.03)}
+function noiseHit(time,dur=.07,gain=.035,freq=3500){const s=audioCtx.createBufferSource(),f=audioCtx.createBiquadFilter(),g=audioCtx.createGain();s.buffer=noiseBuffer;f.type='bandpass';f.frequency.value=freq;f.Q.value=1.2;g.gain.setValueAtTime(gain,time);g.gain.exponentialRampToValueAtTime(.0001,time+dur);s.connect(f);f.connect(g);g.connect(master);s.start(time);s.stop(time+dur+.02)}
+function kick(time,gain=.12){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(115,time);o.frequency.exponentialRampToValueAtTime(42,time+.18);g.gain.setValueAtTime(gain,time);g.gain.exponentialRampToValueAtTime(.0001,time+.24);o.connect(g);g.connect(master);o.start(time);o.stop(time+.26)}
+function drone(time,midi,dur=.8,gain=.018){const o=audioCtx.createOscillator(),g=audioCtx.createGain(),f=audioCtx.createBiquadFilter();o.type='triangle';o.frequency.value=hz(midi);f.type='lowpass';f.frequency.value=500+section.energy*900;g.gain.setValueAtTime(.0001,time);g.gain.exponentialRampToValueAtTime(gain,time+.18);g.gain.exponentialRampToValueAtTime(.0001,time+dur);o.connect(f);f.connect(g);g.connect(master);o.start(time);o.stop(time+dur+.05)}
+function family(k){if(ROWS.motif.includes(k))return'motif';if(ROWS.pulse.includes(k))return'pulse';if(ROWS.texture.includes(k))return'texture';return null}
+function keyIndex(k,f){return ROWS[f].indexOf(k)}
+function makePhrase(k,long=false){const f=family(k),i=keyIndex(k,f),bars=long?4:(f==='texture'?2:2),seed=(k.charCodeAt(0)*17+i*13)%97;return{key:k,f,i,bars,totalSteps:bars*16,startStep:null,seed,long,ageSteps:0,release:false,id:Math.random().toString(36).slice(2),created:performance.now()}}
+function queuePhrase(k,long=false){if(!family(k))return;phrases=phrases.filter(p=>p.key!==k||p.release);while(phrases.length>=MAX_PHRASES)phrases.shift();const p=makePhrase(k,long);p.startStep=step+(4-(step%4||4));if(step%4===0)p.startStep=step+4;phrases.push(p);history.unshift({k,f:p.f,t:performance.now()});history=history.slice(0,5);renderLog()}
+function renderLog(){phraseLog.innerHTML=history.map(x=>`<div><strong>${x.k}</strong><span>${x.f.toUpperCase()}</span></div>`).join('')}
+function onPhraseStep(p,local,time){const sec=section.id,beat=local%16,half=local%8,barLocal=Math.floor(local/16);const density=section.energy;const base=PENTA[(p.seed+p.i*2)%PENTA.length]+(sec===3?12:0);
+ if(p.f==='motif'){
+   const pattern=sec===1?[0,6,10]:sec===2?[0,3,6,10,12]:sec===3?[0,2,4,7,9,12,14]:[0,5,8,13];
+   if(pattern.includes(beat)){const shift=((beat+p.i+barLocal)%5);synthTone(time,base+[0,2,5,7,9][shift],sec===1?.5:.18,.045+density*.025,sec===3?'triangle':'sine');emitVisual(p,local,'tone')}
+ }
+ if(p.f==='pulse'){
+   let hit=false;if(sec===1)hit=[0,8].includes(beat);if(sec===2)hit=[0,4,8,12].includes(beat)||(p.i%2&&[6,14].includes(beat));if(sec===3)hit=[0,2,4,6,8,10,12,14].includes(beat);if(sec===4)hit=[0,7,10,15].includes(beat);
+   if(hit){if((beat+p.i)%4===0)kick(time,.07+density*.06);else noiseHit(time,.045,.025+density*.025,1800+(p.i%5)*1000);emitVisual(p,local,'pulse')}
+ }
+ if(p.f==='texture'){
+   const pts=sec===3?[0,4,8,12]:sec===2?[0,8]:sec===4?[0,6,12]:[0];if(pts.includes(beat)){drone(time,base-12+(p.i%3)*5,sec===1?1.4:.75,.012+density*.016);noiseHit(time,.18,.006+density*.007,350+(p.i*190));emitVisual(p,local,'texture')}
+ }
+ if(local===0||local===Math.floor(p.totalSteps*.25)||local===Math.floor(p.totalSteps*.5)||local===Math.floor(p.totalSteps*.75))emitVisual(p,local,'phase');
+}
+function emitVisual(p,local,type){const life=type==='phase'?1800:(p.f==='texture'?1400:850);visEvents.push({id:Math.random(),p,type,birth:performance.now(),life,phase:local/p.totalSteps,x:(.15+((p.seed+p.i*7)%70)/100)*W,y:(.18+((p.seed*3+p.i*11)%64)/100)*H})}
+function scheduleStep(time){const globalStep=step,stepInBar=globalStep%16;if(stepInBar===0){if(pendingSection){section=SECTIONS[pendingSection-1];pendingSection=null;updateSectionUI();visEvents.push({type:'section',birth:performance.now(),life:1500,x:W/2,y:H/2,p:{seed:section.id*17,f:'section',key:String(section.id)}})}if(globalStep>0)bar++}
+ // subtle bed, safe enough for novice performance
+ if(section.id===2&&stepInBar%4===0)kick(time,.028);if(section.id===3&&stepInBar%4===0)kick(time,.045);if(section.id===3&&[2,6,10,14].includes(stepInBar))noiseHit(time,.045,.012,6200);if(section.id===4&&stepInBar===0)drone(time,43,.9,.012);
+ for(const p of phrases){if(globalStep>=p.startStep&&globalStep<p.startStep+p.totalSteps){const local=globalStep-p.startStep;p.ageSteps=local;onPhraseStep(p,local,time)}else if(globalStep>=p.startStep+p.totalSteps)p.release=true}
+ phrases=phrases.filter(p=>!p.release);step++;}
+function secondsPerStep(){return 60/bpm/4}
+function scheduler(){if(!audioCtx)return;while(nextStepTime<audioCtx.currentTime+.12){scheduleStep(nextStepTime);nextStepTime+=secondsPerStep()}schedulerTimer=setTimeout(scheduler,25)}
+function startClock(){ensureAudio();if(running)return;running=true;nextStepTime=audioCtx.currentTime+.08;step=0;bar=1;scheduler();start.classList.add('hidden')}
+function changeSection(n){pendingSection=n;const s=SECTIONS[n-1];sectionWord.textContent=s.name;sectionSub.textContent=`NEXT BAR → ${n} · ${s.cn}`;setTimeout(()=>{if(pendingSection===n){sectionWord.textContent=section.name;sectionSub.textContent=`${section.id} · ${section.cn} / ${section.sub}`}},900)}
+function reset(){phrases=[];visEvents=[];history=[];renderLog();section=SECTIONS[0];pendingSection=null;step=0;bar=1;updateSectionUI()}
+function fill(){if(!running)return;const keys=section.id===1?['Z','Q']:section.id===2?['A','F','Q']:section.id===3?['A','D','J','W']:['X','M','E'];keys.forEach((k,i)=>setTimeout(()=>queuePhrase(k,false),i*70))}
+function colorFor(ev,alpha=1){const arr=section.fg;const idx=((ev.p?.seed||0)+(ev.p?.i||0))%arr.length;const c=arr[idx];if(alpha===1)return c;const x=c.replace('#','');const r=parseInt(x.slice(0,2),16),g=parseInt(x.slice(2,4),16),b=parseInt(x.slice(4,6),16);return`rgba(${r},${g},${b},${alpha})`}
+function drawBackground(t){const [a,b]=section.bg;ctx.fillStyle=a;ctx.fillRect(0,0,W,H);const pulse=(Math.sin(t*.001*(bpm/60)*Math.PI)+1)/2;const g=ctx.createRadialGradient(W*.5,H*.5,0,W*.5,H*.5,Math.max(W,H)*.7);g.addColorStop(0,b);g.addColorStop(1,a);ctx.globalAlpha=.18+section.energy*.09+pulse*.025;ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.globalAlpha=1;
+ // persistent BPM field so stage never dies
+ const beatPhase=((performance.now()-startedAt)/1000)/(60/bpm)%1;ctx.strokeStyle=colorFor({p:{seed:2,i:1}},.08+section.energy*.05);ctx.lineWidth=1;const count=6+section.id*3;for(let i=0;i<count;i++){const r=(40+i*70+beatPhase*70)%(Math.max(W,H)*.7);ctx.beginPath();ctx.arc(W*.5,H*.5,r,0,Math.PI*2);ctx.stroke()}}
+function drawPhraseField(t){for(const p of phrases){const local=Math.max(0,step-p.startStep),u=Math.min(1,local/p.totalSteps),col=colorFor({p},.1+section.energy*.08);ctx.strokeStyle=col;ctx.lineWidth=1+(p.f==='pulse'?1:0);const cx=W*(.2+((p.seed%60)/100)),cy=H*(.25+(((p.seed*7)%50)/100));const radius=(50+(p.i+1)*18)*(1+Math.sin(t*.002+p.seed)*.08);ctx.beginPath();if(p.f==='motif'){ctx.arc(cx,cy,radius+u*110,0,Math.PI*(1.2+u*.8))}else if(p.f==='pulse'){ctx.moveTo(0,cy);ctx.lineTo(W,cy+Math.sin(t*.004+p.seed)*50)}else{for(let x=0;x<W;x+=28){const y=cy+Math.sin(x*.012+t*.0015+p.seed)*radius*.35; if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}}ctx.stroke()}}
+function drawEvent(e,t){const age=t-e.birth,u=Math.min(1,Math.max(0,age/e.life)),fade=Math.sin(Math.PI*Math.min(1,u));const col=colorFor(e,.12+.65*fade);ctx.save();ctx.translate(e.x,e.y);ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=1.4;if(e.type==='section'){const r=Math.max(W,H)*(u*.85);ctx.globalAlpha=.5*(1-u);ctx.fillRect(-W/2,-H/2,W,H);ctx.globalAlpha=1;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.stroke()}else if(e.type==='tone'){const r=30+u*180+(e.p.i*6);ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(0,0,r*.58,0,Math.PI*2);ctx.stroke()}else if(e.type==='pulse'){const w=40+u*W*.45,h=3+section.energy*16*(1-u);ctx.fillRect(-w/2,-h/2,w,h);ctx.rotate(Math.PI/2);ctx.fillRect(-w*.18,-1,w*.36,2)}else if(e.type==='texture'){ctx.globalAlpha=.45*fade;for(let i=0;i<18;i++){const a=i*.55+e.p.seed,r=20+i*8+u*60;ctx.fillRect(Math.cos(a)*r,Math.sin(a)*r,2,2)}}else{const r=22+u*110;ctx.beginPath();for(let i=0;i<6;i++){const a=i/6*Math.PI*2+t*.0003;const x=Math.cos(a)*r,y=Math.sin(a)*r;i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.closePath();ctx.stroke()}ctx.restore()}
+function render(t){drawBackground(t);drawPhraseField(t);visEvents=visEvents.filter(e=>t-e.birth<e.life);for(const e of visEvents)drawEvent(e,t);if(running){const s=(step%16)/16;timelineFill.style.width=(s*100)+'%';bpmRead.textContent=`${bpm} BPM`;barRead.textContent=`BAR ${String(bar).padStart(2,'0')} · ${Math.floor((step%16)/4)+1}`;voicesRead.textContent=`${phrases.length} PHRASES`}requestAnimationFrame(render)}requestAnimationFrame(render);
+function press(k){if(!running)startClock();if('1234'.includes(k)){changeSection(Number(k));return}if(k==='0'||k==='ESCAPE'){reset();return}if(k===' '){fill();return}if(k==='['){bpm=Math.max(70,bpm-2);return}if(k===']'){bpm=Math.min(170,bpm+2);return}if(k==='H'){app.classList.toggle('hideHud');return}if(ALL.includes(k)&&!held.has(k)){held.set(k,performance.now());queuePhrase(k,false)}}
+function release(k){if(!held.has(k))return;const d=performance.now()-held.get(k);held.delete(k);if(d>650){const existing=phrases.find(p=>p.key===k&&!p.release);if(existing){existing.totalSteps=Math.max(existing.totalSteps,64);existing.long=true;emitVisual(existing,existing.ageSteps,'phase')}}}
+addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.altKey)return;let k=e.key.toUpperCase();if(e.key===' ')k=' ';if(['Tab','ArrowUp','ArrowDown'].includes(e.key))return;if(ALL.includes(k)||'12340H[]'.includes(k)||k===' '||k==='ESCAPE')e.preventDefault();if(!e.repeat)press(k)});addEventListener('keyup',e=>release(e.key.toUpperCase()));startBtn.addEventListener('click',startClock);
+})();
+</script>
+</body>
+</html>
