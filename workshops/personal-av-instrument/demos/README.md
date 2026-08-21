@@ -7,7 +7,7 @@
 - 路径：[`./nfi-keyboard-liveset/`](./nfi-keyboard-liveset/)
 - 类型：A–Z 键盘音画乐器 / Web Audio / Browser Instrument
 - 状态：v0.2 playable prototype
-- 目标：以干净的文字、纯色与基础几何建立即时 Sound + Visual 反馈，并承载“大狗叫 / 叮咚鸡”等真实语音 sample pack。
+- 目标：以干净的文字、纯色与基础几何建立即时 Sound + Visual 反馈，并承载真实语音 sample pack。
 
 ---
 
@@ -15,15 +15,23 @@
 
 - 路径：[`./niulai-tap/`](./niulai-tap/)
 - 说明：[`./niulai-tap/README.md`](./niulai-tap/README.md)
-- 可玩单文件入口：[`../../../..//niulai-tap.html`](../../../../niulai-tap.html)
-- 类型：Theme Pack / 26-key Audiovisual Instrument / browser synth
-- 状态：v0.1 playable prototype
+- 当前可玩单文件入口：[`../../../../niulai-tap-v03.html`](../../../../niulai-tap-v03.html)
+- 类型：Theme Pack / 26-key Audiovisual Instrument / fixed formant browser synth
+- 状态：v0.3 playable prototype
 - 研究问题：一个熟悉、荒诞、可传播的主题素材包，能不能让完全不了解 Audio Visual 的人先产生“我想按一下”的冲动，再进入 Mapping 与系统设计？
 
 ### 当前双模式
 
-1. **NIULAI CORE**：从“牛 / 来 / 欢迎 / 我的孩子 / 今天 / 将来 / 长大 / 不一样 / 一样”等短词出发，以浏览器合成人声、程序声音、文字与有机几何组成更接近“牛来 core”的状态。
-2. **出音牛来 / CHUYIN NIULAI**：不使用初音未来音源或视觉资产，把“synthetic performer / electronic keyboard performance”的机制转译成更快、更亮、更 glitch 的牛来电子演奏模式。“出音”强调让牛来真正成为一个会发声、会被演奏的网页角色。
+1. **NIULAI CORE**：从“牛 / 来 / 欢迎 / 我的孩子 / 今天 / 将来 / 长大 / 不一样 / 一样”等短词出发，以固定 Formant Web Synth、程序声音、文字与有机几何组成“牛来 core”的状态。
+2. **出音牛来 / CHUYIN NIULAI**：不使用初音未来音源或视觉资产，把 synthetic performer / electronic keyboard performance 的机制转译成更快、更亮、更 glitch 的牛来电子演奏模式。
+
+### v0.3 更新
+
+- 不再依赖设备自带 `SpeechSynthesis` TTS；
+- 人声改为固定 Web Audio Formant Synth，不同设备的核心音色更一致；
+- `Q / W` 保留 `牛 → 牛牛 → 牛牛牛` / `来 → 来来 → 来来来`；
+- 支持 Hold、Space Drop、Tab 模式切换与 Reset；
+- 鼓、Bass、Chord、FX 仍由 Web Audio 程序实时合成。
 
 ---
 
