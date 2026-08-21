@@ -3,37 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0b0b" />
-  <title>NFI Keyboard Liveset v0.1</title>
+  <meta name="theme-color" content="#0c0c0c" />
+  <title>NFI Keyboard Liveset — 大狗叫 / 叮咚鸡</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main id="app" class="app" aria-live="polite">
+  <main id="app" class="app">
     <header class="topbar">
       <div>
         <div class="eyebrow">PERSONAL A/V INSTRUMENT · DEMO 01</div>
         <h1>NFI Keyboard Liveset</h1>
       </div>
       <div class="status">
-        <span id="sceneLabel">SCENE · PLAYFUL</span>
+        <span id="loadState">SOUND · LOADING</span>
         <span id="keyLabel">KEY · —</span>
       </div>
     </header>
 
     <section class="stage" id="stage">
-      <div class="shape" id="shape" aria-hidden="true"></div>
-      <div class="word" id="word">按任意 A–Z</div>
-      <div class="hint" id="hint">A–Z 演奏 · 1/2/3 切换场景 · 0 重置</div>
+      <div class="word" id="word">QWERTY</div>
+      <div class="subword" id="subword">按键演奏：叮咚鸡 / 大狗大狗 / 叫叫叫</div>
     </section>
 
-    <section class="keyboard" id="keyboard" aria-label="可点击键盘"></section>
+    <section class="keyboard" id="keyboard" aria-label="QWERTY 可点击键盘"></section>
 
     <footer class="footer">
-      <span>Minimal Input / Audiovisual System</span>
-      <span>Ewan Qian · workshop prototype</span>
+      <span>QWE / RTY = 叮咚鸡 · UIOP / ZXCV = 大狗大狗 · ASD / BNM = 叫叫叫</span>
+      <span>source: 39929580155-1-192.mp4</span>
     </footer>
   </main>
-
   <script type="module" src="./app.js"></script>
 </body>
 </html>
