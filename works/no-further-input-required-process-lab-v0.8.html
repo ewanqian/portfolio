@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>No Further Input Required — Process Lab v0.8</title>
+<meta name="description" content="Playable process lab for No Further Input Required: Decompose, Branch, Weight, Commit." />
+<style>
+:root{--bg:#050604;--ink:#eceee6;--muted:rgba(236,238,230,.48);--line:rgba(236,238,230,.18);--panel:rgba(5,6,4,.76);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC",sans-serif}canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.grain{position:fixed;inset:0;pointer-events:none;opacity:.055;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E")}
+.top{position:fixed;z-index:5;left:15px;right:15px;top:13px;display:flex;justify-content:space-between;pointer-events:none;font:10px/1.55 var(--mono);letter-spacing:.09em;text-transform:uppercase}.top strong{display:block;font-size:11px;font-weight:600}.muted{color:var(--muted)}.right{text-align:right}.hud{position:fixed;z-index:8;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-between;gap:9px;align-items:flex-end}.group{display:flex;gap:6px;align-items:center}.btn{height:40px;min-width:52px;padding:0 11px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(10px);color:var(--muted);font:10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.btn:hover,.btn.on{color:var(--ink);border-color:rgba(236,238,230,.5)}.btn.on{background:rgba(236,238,230,.09)}.mode{min-width:92px}.start{position:fixed;z-index:20;inset:0;display:grid;place-items:center;background:rgba(5,6,4,.965);transition:opacity .35s}.start.off{opacity:0;pointer-events:none}.box{width:min(560px,calc(100vw - 36px));text-align:center}.title{font-size:clamp(28px,6vw,68px);line-height:.9;letter-spacing:-.055em;margin-bottom:18px}.sub{font:10px/1.75 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}.enter{width:100%;height:72px;border:1px solid rgba(236,238,230,.42);background:transparent;color:var(--ink);font:11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.enter:hover{background:var(--ink);color:var(--bg)}.hint{position:fixed;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;text-align:center;font:9px/1.7 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(236,238,230,.19);transition:opacity .4s}.hint.hide{opacity:0}@media(max-width:760px){.hud{left:8px;right:8px;bottom:8px;flex-direction:column;align-items:stretch}.group{justify-content:space-between}.btn{flex:1;min-width:0;padding:0 6px}.mode{min-width:0}.top{left:10px;right:10px}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas><div class="grain"></div>
+<div class="top"><div><strong>NO FURTHER INPUT REQUIRED</strong><span class="muted">process lab · v0.8</span></div><div class="right"><strong id="proc">01 / DECOMPOSE</strong><span class="muted" id="read">AUTO · 104 BPM</span></div></div>
+<div class="hint" id="hint">drag / loop / cross / scrub<br>1–4 switch process · space burst · a auto</div>
+<div class="hud"><div class="group" id="modes"></div><div class="group"><button class="btn on" id="auto">AUTO</button><button class="btn" id="burst">BURST</button><button class="btn on" id="sound">SOUND</button></div></div>
+<div class="start" id="start"><div class="box"><div class="title">无需进一步输入<br><span class="muted" style="font-size:.45em;font-weight:400">PROCESS LAB v0.8</span></div><div class="sub">decompose · branch · weight · commit<br>gesture injects energy — graphics do not follow the cursor</div><button class="enter" id="enter">ENTER / 点击开始</button></div></div>
+<script>
+(()=>{'use strict';
+const c=document.querySelector('#c'),ctx=c.getContext('2d',{alpha:false});ctx.lineCap='round';ctx.lineJoin='round';
+const $=s=>document.querySelector(s),procEl=$('#proc'),readEl=$('#read'),hint=$('#hint'),start=$('#start');
+const autoBtn=$('#auto'),burstBtn=$('#burst'),soundBtn=$('#sound'),modesEl=$('#modes');
+let W=0,H=0,DPR=1,t0=performance.now(),mode=0,auto=true,soundOn=true,lastAuto=performance.now();
+const names=['DECOMPOSE','BRANCH','WEIGHT','COMMIT'];
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),lerp=(a,b,t)=>a+(b-a)*t,rand=(a=1,b=0)=>b+Math.random()*(a-b);
+function resize(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*DPR;c.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0)}addEventListener('resize',resize);resize();
+for(let i=0;i<4;i++){const b=document.createElement('button');b.className='btn mode'+(i===0?' on':'');b.textContent=(i+1)+' '+names[i];b.onclick=()=>setMode(i);modesEl.appendChild(b)}
+function setMode(i){mode=i;t0=performance.now();[...modesEl.children].forEach((b,j)=>b.classList.toggle('on',j===i));procEl.textContent=String(i+1).padStart(2,'0')+' / '+names[i];if(i===0)resetDecompose();if(i===1)resetBranch();if(i===2)resetWeight();if(i===3)resetCommit();tone(45+i*3,.12,.05)}
+
+/* audio */
+let ac=null,master=null,nextBeat=0,beat=0;function initAudio(){if(ac)return;ac=new (AudioContext||webkitAudioContext)();master=ac.createGain();master.gain.value=.17;master.connect(ac.destination);nextBeat=ac.currentTime+.05;setInterval(schedule,60)}
+function tone(midi=52,dur=.12,amp=.08,type='sine'){if(!ac||!soundOn)return;const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=440*Math.pow(2,(midi-69)/12);g.gain.setValueAtTime(.0001,ac.currentTime);g.gain.exponentialRampToValueAtTime(Math.max(.002,amp),ac.currentTime+.012);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+dur);o.connect(g);g.connect(master);o.start();o.stop(ac.currentTime+dur+.02)}
+function schedule(){if(!ac||!soundOn)return;const q=60/104/2;while(nextBeat<ac.currentTime+.12){if(beat%2===0)tone([38,38,41,36][(beat>>1)%4],.18,.035,'triangle');if(beat%4===1)tone([57,60,64,67][(beat>>2)%4],.09,.018,'sine');if(beat%8===7)tone(74,.05,.012,'square');beat++;nextBeat+=q}}
+
+/* gesture interpreter */
+let down=false,path=[],lastPt=null,gesturePulse=0;const forceBursts=[];
+function pxy(e){const r=c.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height,t:performance.now()}}
+function metrics(p){if(p.length<3)return{energy:.4,curv:0,cross:0,loop:false,len:0};let len=0,turn=0,cross=0;for(let i=1;i<p.length;i++){const dx=p[i].x-p[i-1].x,dy=p[i].y-p[i-1].y;len+=Math.hypot(dx,dy);if(i>1){const a=Math.atan2(p[i-1].y-p[i-2].y,p[i-1].x-p[i-2].x),b=Math.atan2(dy,dx);let d=Math.abs(b-a);if(d>Math.PI)d=2*Math.PI-d;turn+=d}}
+for(let i=0;i<p.length-3;i+=3)for(let j=i+4;j<p.length-1;j+=3){const a=p[i],b=p[i+1],d=p[j],e=p[j+1];if(seg(a,b,d,e))cross++}
+const a=p[0],b=p[p.length-1],loop=Math.hypot(a.x-b.x,a.y-b.y)<.1&&len>.35;return{len,curv:turn/Math.max(1,p.length-2),cross,loop,energy:clamp(len*1.4+turn*.045+cross*.08,.18,1)}}
+function seg(a,b,c,d){const ccw=(p1,p2,p3)=>(p3.y-p1.y)*(p2.x-p1.x)>(p2.y-p1.y)*(p3.x-p1.x);return ccw(a,c,d)!==ccw(b,c,d)&&ccw(a,b,c)!==ccw(a,b,d)}
+function gestureEnd(){if(path.length<2)return;const m=metrics(path),mid=path[Math.floor(path.length*.5)];gesturePulse=1;forceBursts.push({x:mid.x,y:mid.y,e:m.energy,loop:m.loop,cross:m.cross,born:performance.now(),life:1700});if(forceBursts.length>14)forceBursts.shift();
+if(mode===0)decompKick=Math.min(1,decompKick+.32+m.energy*.35);if(mode===1)spawnBranch(mid.x,mid.y,4+Math.floor(m.energy*8),m.cross+m.loop*4);if(mode===2)addAttractor(mid.x,mid.y,(m.loop?1.4:1)*(.5+m.energy));if(mode===3)commitNow(m.energy);tone(60+Math.floor(m.energy*14)+(m.loop?7:0),.13,.04,'triangle');path=[]}
+c.addEventListener('pointerdown',e=>{down=true;path=[pxy(e)];lastPt=path[0];hint.classList.add('hide');c.setPointerCapture?.(e.pointerId)});c.addEventListener('pointermove',e=>{if(!down)return;const p=pxy(e);if(!lastPt||Math.hypot(p.x-lastPt.x,p.y-lastPt.y)>.006){path.push(p);lastPt=p;if(path.length>90)path.shift()}});c.addEventListener('pointerup',()=>{down=false;gestureEnd()});c.addEventListener('pointercancel',()=>{down=false;gestureEnd()});
+
+/* 01 decompose */
+let shards=[],decompKick=0;function resetDecompose(){shards=[];const rows=9;for(let r=0;r<rows;r++){const n=1+r*2;for(let i=0;i<n;i++){const y=.16+r*.068,x0=.5-(n-1)*.024;shards.push({x:x0+i*.048,y,baseX:x0+i*.048,baseY:y,row:r,phase:Math.random()*6.28,fall:Math.random()*.05})}}}
+resetDecompose();function drawDecompose(now){decompKick*=.965;const phase=clamp((now-t0)/9000);ctx.save();ctx.translate(W/2,H*.05);ctx.translate(-W/2,0);for(const s of shards){const k=clamp((phase*11-s.row)/2.2);const wave=Math.sin(now*.0012+s.phase)*(.002+s.row*.0007);const spread=(s.x-.5)*(.12*k);const y=(s.baseY+wave+s.fall*k+decompKick*.015*Math.sin(s.phase+now*.005))*H;const x=(s.baseX+spread+decompKick*.012*Math.cos(s.phase*2))*W;const size=2.5+s.row*.33;ctx.globalAlpha=.18+.62*(1-k*.33);ctx.strokeStyle='#eceee6';ctx.lineWidth=.7+(s.row%3===0?1.1:0);ctx.strokeRect(x-size,y-size,size*2,size*2);if((s.row+s.phase*10|0)%5===0){ctx.globalAlpha=.22;ctx.font='8px var(--mono)';ctx.fillStyle='#eceee6';ctx.fillText(String((s.row*17+(s.phase*100|0))%997).padStart(3,'0'),x+6,y+3)}}
+ctx.restore();ctx.globalAlpha=1;ctx.strokeStyle='rgba(236,238,230,.28)';ctx.beginPath();ctx.moveTo(W*.5,H*.11);ctx.lineTo(W*.29,H*.73);ctx.lineTo(W*.71,H*.73);ctx.closePath();ctx.stroke();}
+
+/* 02 branch */
+let nodes=[],edges=[];function resetBranch(){nodes=[{x:.5,y:.55,p:-1,life:1,depth:0,vx:0,vy:0}];edges=[];for(let i=0;i<6;i++)branchFrom(0)}
+function branchFrom(pi){const p=nodes[pi],a=-Math.PI/2+rand(.9,-.9),l=rand(.12,.055),n={x:p.x+Math.cos(a)*l,y:p.y+Math.sin(a)*l,p:pi,life:1,depth:p.depth+1,vx:0,vy:0};nodes.push(n);edges.push([pi,nodes.length-1]);return nodes.length-1}
+function spawnBranch(x,y,count=6,chaos=0){let nearest=0,best=9;for(let i=0;i<nodes.length;i++){const d=Math.hypot(nodes[i].x-x,nodes[i].y-y);if(d<best){best=d;nearest=i}}let p=nearest;for(let i=0;i<count;i++){p=branchFrom(Math.random()<.45?nearest:p);const n=nodes[p];n.x+=rand(.07,-.07)*(1+chaos*.1);n.y+=rand(.05,-.05)}while(nodes.length>150){nodes.splice(1,1);edges=edges.filter(e=>e[0]>0&&e[1]>0).map(e=>[e[0]-1,e[1]-1])}}
+resetBranch();function drawBranch(now){if(Math.random()<.016&&nodes.length<120)spawnBranch(rand(.65,.35),rand(.7,.25),2+Math.random()*3|0,0);if(Math.random()<.006&&nodes.length>28){for(let i=0;i<nodes.length;i++)if(Math.random()<.16)nodes[i].life*=.2}
+ctx.lineWidth=.7;for(const [a,b] of edges){const A=nodes[a],B=nodes[b];if(!A||!B)continue;const al=Math.min(A.life,B.life);if(al<.04)continue;ctx.strokeStyle=`rgba(236,238,230,${.08+.34*al})`;ctx.beginPath();ctx.moveTo(A.x*W,A.y*H);ctx.lineTo(B.x*W,B.y*H);ctx.stroke()}for(const n of nodes){n.life*=.9985;const p=.6+.4*Math.sin(now*.003+n.depth);ctx.globalAlpha=clamp(n.life)*(.25+.55*p);ctx.fillStyle='#eceee6';const r=1.2+(n.depth%4===0?2.3:0);ctx.fillRect(n.x*W-r,n.y*H-r,r*2,r*2)}ctx.globalAlpha=1;}
+
+/* 03 weight pseudo 3D */
+let particles=[],attractors=[];function resetWeight(){particles=[];attractors=[];for(let i=0;i<70;i++)particles.push({x:rand(1,-1),y:rand(.72,-.72),z:rand(1.8,-.6),vx:rand(.004,-.004),vy:rand(.004,-.004),vz:rand(.003,-.003),w:rand(1,.2)});addAttractor(.38,.48,.7);addAttractor(.65,.54,-.45)}
+function addAttractor(nx,ny,power=.8){attractors.push({x:(nx-.5)*2.2,y:(ny-.5)*-1.6,z:rand(.8,-.2),p:power,born:performance.now()});if(attractors.length>6)attractors.shift()}
+resetWeight();function project(p){const zz=p.z+3.1,s=1.05/zz;return{x:W*.5+p.x*W*.38*s,y:H*.52-p.y*H*.55*s,s,z:zz}}
+function drawWeight(now){for(const p of particles){for(const a of attractors){const dx=a.x-p.x,dy=a.y-p.y,dz=a.z-p.z,d2=dx*dx+dy*dy+dz*dz+.05,f=a.p*.00008/d2;p.vx+=dx*f;p.vy+=dy*f;p.vz+=dz*f}p.vx*=.993;p.vy*=.993;p.vz*=.993;p.x+=p.vx;p.y+=p.vy;p.z+=p.vz;if(Math.abs(p.x)>2.2)p.vx*=-1;if(Math.abs(p.y)>1.6)p.vy*=-1;if(p.z>2.2||p.z<-.9)p.vz*=-1}
+const ps=[...particles].sort((a,b)=>b.z-a.z);for(let i=0;i<ps.length;i++){const p=ps[i],q=project(p),r=(1.4+3*p.w)*q.s*2.4;ctx.globalAlpha=clamp(.16+.68*(1/(q.z*.55)));ctx.strokeStyle='#eceee6';ctx.lineWidth=.65;ctx.beginPath();ctx.arc(q.x,q.y,r,0,Math.PI*2);ctx.stroke();if(i%8===0){ctx.globalAlpha=.18;ctx.font='8px var(--mono)';ctx.fillStyle='#eceee6';ctx.fillText((p.w).toFixed(2),q.x+r+3,q.y)}}for(const a of attractors){const q=project(a);ctx.globalAlpha=.22;ctx.strokeStyle='#eceee6';ctx.beginPath();ctx.arc(q.x,q.y,14+Math.abs(a.p)*8,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.moveTo(q.x-22,q.y);ctx.lineTo(q.x+22,q.y);ctx.moveTo(q.x,q.y-22);ctx.lineTo(q.x,q.y+22);ctx.stroke()}ctx.globalAlpha=1;}
+
+/* 04 commit */
+let commitPhase=0,commitSeed=0,commitEnergy=.6;function resetCommit(){commitPhase=0;commitSeed=Math.random()*1000;commitEnergy=.6}function commitNow(e=.7){commitPhase=1;commitEnergy=e;commitSeed=Math.random()*1000;t0=performance.now()}
+function drawCommit(now){const elapsed=now-t0;if(commitPhase===0&&elapsed>2800)commitPhase=1;const p=clamp((elapsed-2800)/1700);const count=Math.floor(90*(1-p)+1);for(let i=0;i<count;i++){const a=i*2.399+commitSeed,r=Math.sqrt(i/90)*Math.min(W,H)*.34*(1-p*.65),x=W*.5+Math.cos(a+now*.00025)*r,y=H*.5+Math.sin(a+now*.00021)*r*.72;ctx.globalAlpha=(.08+.42*(1-i/90))*(1-p*.3);ctx.strokeStyle='#eceee6';ctx.lineWidth=.6;ctx.strokeRect(x-2,y-2,4,4);if(i%6===0){ctx.beginPath();ctx.moveTo(W*.5,H*.5);ctx.lineTo(x,y);ctx.stroke()}}
+ctx.globalAlpha=1;const ease=p*p*(3-2*p);const s=lerp(Math.min(W,H)*.18,8,ease),cy=lerp(H*.5,H*.5,ease);ctx.strokeStyle=`rgba(236,238,230,${.22+.7*ease})`;ctx.lineWidth=1+ease*1.4;ctx.beginPath();ctx.moveTo(W*.5,cy-s);ctx.lineTo(W*.5-s*.86,cy+s*.5);ctx.lineTo(W*.5+s*.86,cy+s*.5);ctx.closePath();ctx.stroke();if(p>.94){ctx.globalAlpha=.42;ctx.font='9px var(--mono)';ctx.fillStyle='#eceee6';ctx.textAlign='center';ctx.fillText('COMMIT / 01',W*.5,H*.5+30);ctx.textAlign='left';ctx.globalAlpha=1}if(elapsed>6200){t0=now;commitPhase=0}}
+
+function drawGesture(now){if(down&&path.length>1){ctx.strokeStyle='rgba(236,238,230,.22)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(path[0].x*W,path[0].y*H);for(let i=1;i<path.length;i++)ctx.lineTo(path[i].x*W,path[i].y*H);ctx.stroke()}for(let i=forceBursts.length-1;i>=0;i--){const b=forceBursts[i],p=(now-b.born)/b.life;if(p>1){forceBursts.splice(i,1);continue}ctx.globalAlpha=(1-p)*.2;ctx.strokeStyle='#eceee6';ctx.beginPath();ctx.arc(b.x*W,b.y*H,(15+80*p)*(1+b.e*.5),0,Math.PI*2);ctx.stroke()}ctx.globalAlpha=1;gesturePulse*=.95}
+function burst(){if(mode===0)decompKick=1;if(mode===1)spawnBranch(rand(.7,.3),rand(.65,.3),10,2);if(mode===2)addAttractor(rand(.8,.2),rand(.75,.25),rand(1.4,-1));if(mode===3)commitNow(1);tone(69,.18,.06,'sawtooth')}
+function bg(){ctx.fillStyle='#050604';ctx.fillRect(0,0,W,H);const g=ctx.createRadialGradient(W*.5,H*.52,0,W*.5,H*.52,Math.max(W,H)*.6);g.addColorStop(0,'rgba(236,238,230,.018)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H)}
+function loop(now){bg();if(auto&&now-lastAuto>10500){setMode((mode+1)%4);lastAuto=now}if(mode===0)drawDecompose(now);else if(mode===1)drawBranch(now);else if(mode===2)drawWeight(now);else drawCommit(now);drawGesture(now);readEl.textContent=(auto?'AUTO':'HOLD')+' · 104 BPM · '+(down?'GESTURE':'RUN');requestAnimationFrame(loop)}requestAnimationFrame(loop);
+
+autoBtn.onclick=()=>{auto=!auto;autoBtn.classList.toggle('on',auto);lastAuto=performance.now()};burstBtn.onclick=burst;soundBtn.onclick=()=>{soundOn=!soundOn;soundBtn.classList.toggle('on',soundOn);if(soundOn&&ac?.state==='suspended')ac.resume()};
+$('#enter').onclick=()=>{initAudio();ac?.resume();start.classList.add('off')};
+addEventListener('keydown',e=>{if(e.key>='1'&&e.key<='4')setMode(+e.key-1);if(e.code==='Space'){e.preventDefault();burst()}if(e.key.toLowerCase()==='a'){auto=!auto;autoBtn.classList.toggle('on',auto);lastAuto=performance.now()}if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.()});
+})();
+</script>
+</body></html>
