@@ -32,23 +32,36 @@ function writeGenerated(name, data) {
   )
 }
 
-function attachWorkshopReadme(workshop) {
-  if (!workshop.readmePath) return workshop
-
-  const absolutePath = path.resolve(repoRoot, workshop.readmePath)
+function resolveRepositoryDocument(documentPath, label) {
+  const absolutePath = path.resolve(repoRoot, documentPath)
   const relativePath = path.relative(repoRoot, absolutePath)
 
   if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
-    throw new Error(`Workshop README escapes repository root: ${workshop.readmePath}`)
+    throw new Error(`${label} escapes repository root: ${documentPath}`)
   }
 
   if (!fs.existsSync(absolutePath)) {
-    throw new Error(`Workshop README not found: ${workshop.readmePath}`)
+    throw new Error(`${label} not found: ${documentPath}`)
   }
+
+  return fs.readFileSync(absolutePath, 'utf8')
+}
+
+function attachWorkshopReadme(workshop) {
+  if (!workshop.readmePath) return workshop
 
   return {
     ...workshop,
-    readmeMarkdown: fs.readFileSync(absolutePath, 'utf8')
+    readmeMarkdown: resolveRepositoryDocument(workshop.readmePath, 'Workshop README')
+  }
+}
+
+function attachWritingArticle(writing) {
+  if (!writing.articlePath) return writing
+
+  return {
+    ...writing,
+    articleMarkdown: resolveRepositoryDocument(writing.articlePath, 'Writing article')
   }
 }
 
@@ -56,6 +69,7 @@ const works = readJsonFiles(path.join(contentDir, 'works'))
 const nodes = readJsonFiles(path.join(contentDir, 'nodes'))
 const assets = readJsonFiles(path.join(contentDir, 'assets'))
 const writings = readJsonFiles(path.join(contentDir, 'writings'))
+  .map(attachWritingArticle)
 const relations = readJsonFiles(path.join(contentDir, 'relations'))
 const workshops = readJsonFiles(path.join(contentDir, 'workshops'))
   .map(attachWorkshopReadme)
