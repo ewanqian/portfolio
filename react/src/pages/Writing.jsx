@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import writings from '../data/generated/writings'
@@ -13,7 +14,7 @@ const categoryMeta = [
 ]
 
 const statusLabels = {
-  draft: 'Coming Soon',
+  draft: 'Working Draft',
   planned: 'Coming Soon',
   published: 'Published'
 }
@@ -27,25 +28,26 @@ const statusRank = {
 function sortWritings(items) {
   return [...items].sort((a, b) => {
     const orderDelta = (a.order ?? 999) - (b.order ?? 999)
-
-    if (orderDelta !== 0) {
-      return orderDelta
-    }
+    if (orderDelta !== 0) return orderDelta
 
     const statusDelta = (statusRank[a.status] ?? 999) - (statusRank[b.status] ?? 999)
-
-    if (statusDelta !== 0) {
-      return statusDelta
-    }
+    if (statusDelta !== 0) return statusDelta
 
     return a.title.localeCompare(b.title, 'zh-Hans-CN')
   })
 }
 
+function WritingTitle({ writing }) {
+  if (!writing.articlePath) return <h3>{writing.title}</h3>
+  return (
+    <h3>
+      <Link to={`/writing/${writing.slug || writing.id}`}>{writing.title}</Link>
+    </h3>
+  )
+}
+
 function WritingList({ items, title }) {
-  if (!items.length) {
-    return null
-  }
+  if (!items.length) return null
 
   return (
     <section className="section">
@@ -56,7 +58,7 @@ function WritingList({ items, title }) {
             <article key={writing.id} className="writing-list-item">
               <div className="writing-list-type">{writing.type}</div>
               <div className="writing-list-content">
-                <h3>{writing.title}</h3>
+                <WritingTitle writing={writing} />
                 {writing.summary ? <p>{writing.summary}</p> : null}
               </div>
               <div className="writing-list-date">
@@ -111,7 +113,7 @@ function Writing() {
               {featuredWritings.map((writing) => (
                 <article key={writing.id} className="card writing-card">
                   <div className="writing-type">{writing.type}</div>
-                  <h3>{writing.title}</h3>
+                  <WritingTitle writing={writing} />
                   {writing.summary ? <p>{writing.summary}</p> : null}
                   <div className="writing-meta">
                     {writing.date}
@@ -135,7 +137,7 @@ function Writing() {
                 <article key={writing.id} className="writing-list-item">
                   <div className="writing-list-type">{writing.type}</div>
                   <div className="writing-list-content">
-                    <h3>{writing.title}</h3>
+                    <WritingTitle writing={writing} />
                     {writing.summary ? <p>{writing.summary}</p> : null}
                   </div>
                   <div className="writing-list-date">
