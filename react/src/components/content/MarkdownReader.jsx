@@ -18,6 +18,20 @@ function resolveRepositoryHref(href, sourcePath) {
   return `https://github.com/ewanqian/portfolio/blob/main/${resolved.join('/')}`
 }
 
+function headingId(text = '') {
+  const plain = text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .trim()
+    .toLowerCase()
+
+  return plain
+    .replace(/[\s/]+/g, '-')
+    .replace(/[^\p{L}\p{N}\-_]+/gu, '')
+    .replace(/^-+|-+$/g, '') || 'section'
+}
+
 function renderInline(text, sourcePath, keyPrefix = 'inline') {
   const pattern = /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`)/g
   const parts = text.split(pattern).filter(Boolean)
@@ -60,9 +74,7 @@ function parseMarkdown(markdown, sourcePath) {
   const flushParagraph = () => {
     if (!paragraph.length) return
     const text = paragraph.join(' ').trim()
-    if (text) {
-      blocks.push({ type: 'paragraph', text })
-    }
+    if (text) blocks.push({ type: 'paragraph', text })
     paragraph = []
   }
 
@@ -168,6 +180,7 @@ function parseMarkdown(markdown, sourcePath) {
 
 export default function MarkdownReader({ markdown, sourcePath }) {
   const blocks = useMemo(() => parseMarkdown(markdown, sourcePath), [markdown, sourcePath])
+  const headingCounts = new Map()
 
   return (
     <article className="markdown-reader">
@@ -176,7 +189,11 @@ export default function MarkdownReader({ markdown, sourcePath }) {
 
         if (block.type === 'heading') {
           const Tag = `h${Math.min(block.level + 1, 5)}`
-          return <Tag key={key}>{renderInline(block.text, sourcePath, key)}</Tag>
+          const baseId = headingId(block.text)
+          const count = headingCounts.get(baseId) || 0
+          headingCounts.set(baseId, count + 1)
+          const id = count ? `${baseId}-${count + 1}` : baseId
+          return <Tag id={id} className="markdown-heading-anchor" key={key}>{renderInline(block.text, sourcePath, key)}</Tag>
         }
 
         if (block.type === 'paragraph') {
