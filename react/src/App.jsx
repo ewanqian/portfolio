@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Writing from './pages/Writing.jsx'
+import WritingDetail from './pages/WritingDetail.jsx'
 import Production from './pages/Production.jsx'
 import Archive from './pages/Archive.jsx'
 import GaussianScenes from './pages/GaussianScenes.jsx'
@@ -76,6 +77,7 @@ function App() {
         <Route path="/workshops" element={<Workshops />} />
         <Route path="/workshops/:slug" element={<WorkshopSeries />} />
         <Route path="/writing" element={<Writing />} />
+        <Route path="/writing/:slug" element={<WritingDetail />} />
         <Route path="/production" element={<Production />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/gaussian-scenes" element={<GaussianScenes />} />
