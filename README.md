@@ -78,7 +78,9 @@
 
 ### 当前第一期
 
-- [游戏化 AI 新媒体艺术工程师 101｜MANA｜2026-08-29 13:30–17:30｜4 小时 + Showcase](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [游戏化 AI 新媒体艺术工程师 101｜MANA｜2026-08-29 13:30–16:30｜3 小时 + 快速 Showcase](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [公开工作坊讲义｜从一个动作，到一场演出](./workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
+- [新媒体工程控制论｜公开讲义](./research/performance-control-model/index.html)
 - [Issue #18｜MANA 8.29 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
 ### 长期系列
