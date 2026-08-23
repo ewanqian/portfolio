@@ -47,9 +47,9 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <PracticeLines />
-        <CurrentWork />
         <SelectedWorks />
+        <CurrentWork />
+        <PracticeLines />
         <ProfileBlock />
       </main>
       <Footer />
