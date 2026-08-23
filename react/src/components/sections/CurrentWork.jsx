@@ -1,36 +1,41 @@
-import works from '../../data/generated/works'
-import { currentWorkIds, pickWorksByIds } from '../../data/siteTaxonomy'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
+
+const MANA_ARCHIVE_TIME = Date.parse('2026-08-30T00:00:00+08:00')
 
 function CurrentWork() {
   const { language } = useLanguage()
   const isZh = language === 'zh'
-  const [work] = pickWorksByIds(works, currentWorkIds)
+  const workshopIsUpcoming = Date.now() < MANA_ARCHIVE_TIME
 
-  if (!work) return null
+  if (!workshopIsUpcoming) return null
 
   return (
     <section id="current-work" className="section profile-block-section">
       <div className="container profile-block-grid">
         <div>
-          <div className="eyebrow">{isZh ? '正在进行 / Current' : 'Current / Ongoing'}</div>
-          <h2 className="section-title">VRplay AI / XR Hackathon 2026</h2>
+          <div className="eyebrow">{isZh ? '近期公开活动 / Upcoming' : 'Upcoming Public Program'}</div>
+          <h2 className="section-title">{isZh ? 'MANA 8.29｜极简输入：构建视听系统' : 'MANA 8.29 · Minimal Input / Audiovisual System'}</h2>
         </div>
 
         <div className="profile-block-copy">
           <p>
             {isZh
-              ? '当前合作集中在品牌视觉、动态视觉系统、PPT / Keynote 模板与赛事信息组织，并尝试把专题网页做成一个可以独立传播的空间化动态海报。'
-              : 'The current collaboration focuses on visual identity, motion language, PPT / keynote templates, and public event information, with a spatial web page developed as a campaign object in its own right.'}
+              ? '2026 年 8 月 29 日，13:30–16:30。三小时从一个输入出发，比较“太薄”和“太满”的失败系统，再进入 State、Feedback、Safe Loop 与最小 Live System。'
+              : 'Aug 29, 2026, 13:30–16:30. A three-hour workshop that starts from one input, compares systems that are too thin or too overloaded, then moves into state, feedback, safe loops, and a minimal live system.'}
           </p>
           <p>
             {isZh
-              ? '网页概念从普通活动页进一步延伸到轻量 3D / GS 场景、档案查看、地图与角色化信息：用 ARG 式叙事和空间感知建立“进入活动”的感觉，而不是先承诺一套完整赛事后台。'
-              : 'The web study extends beyond a conventional event page toward lightweight 3D / GS scenes, archive-like viewing, maps, and role-based information, using ARG-like narrative and spatial perception as communication devices.'}
+              ? '公开讲义已经把概念、课堂步骤与可玩的 Demo 放在同一条阅读路径中；理论页进一步解释新媒体工程控制论的状态、反馈、稳定性与可控性。'
+              : 'The public guide keeps concepts, classroom steps, and playable demos in one reading path. A separate control-model lecture expands on state, feedback, stability, and controllability.'}
           </p>
-          <a className="text-link" href={work.repoLink} target="_blank" rel="noreferrer">
-            {isZh ? '查看当前项目记录' : 'Open current project record'}
-          </a>
+          <div className="hero-cta">
+            <a className="text-link" href="/workshops/gamified-ai-new-media-art-engineer-101/">
+              {isZh ? '打开工作坊讲义' : 'Open workshop guide'}
+            </a>
+            <a className="text-link" href="/research/performance-control-model/">
+              {isZh ? '阅读新媒体工程控制论' : 'Read the control model'}
+            </a>
+          </div>
         </div>
       </div>
     </section>
