@@ -5,105 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f4f1ea">
 <title>极简输入：音画同源控制｜MANA 8.29 工作坊讲义</title>
-<meta name="description" content="一份面向第一次接触实时视听系统的读者的独立讲义：从一个输入开始，理解 Mapping、State、Feedback、音乐结构与音画同源控制，并完成一个可运行的网页视听原型。">
+<meta name="description" content="一份可以独立阅读、可以直接试玩的实时视听工作坊讲义：从一个输入开始，理解 Mapping、State、Feedback、演出结构与音画同源控制，并完成一个可运行的网页视听原型。">
 <style>
-:root{
-  --paper:#f4f1ea;
-  --paper-2:#ece8df;
-  --ink:#171713;
-  --muted:#68665f;
-  --line:#c9c4b8;
-  --accent:#31553e;
-  --accent-soft:#dde7df;
-  --serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Noto Sans SC",Arial,sans-serif;
-  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.8}
-a{color:var(--accent);text-underline-offset:3px}
-header{border-bottom:1px solid var(--line)}
-.wrap{width:min(860px,calc(100% - 36px));margin:0 auto}
-.hero{padding:72px 0 54px}
-.kicker{font:700 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px,8vw,82px);line-height:1.06;letter-spacing:-.04em;margin:16px 0 20px}
-.lead{font-size:clamp(20px,2.4vw,28px);line-height:1.55;max-width:780px;margin:0;color:#34332e}
-.meta{display:flex;gap:10px 24px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.meta b{color:var(--ink);font-weight:650}
-nav{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:18px;overflow:auto;padding:11px 0;scrollbar-width:none}
-nav .wrap::-webkit-scrollbar{display:none}
-nav a{white-space:nowrap;text-decoration:none;font:650 12px/1.2 var(--mono);color:var(--muted)}
-nav a:hover{color:var(--ink)}
-main{padding-bottom:90px}
-section{padding:64px 0;border-bottom:1px solid var(--line);scroll-margin-top:48px}
-h2{font-family:var(--serif);font-size:clamp(30px,5vw,48px);line-height:1.2;letter-spacing:-.025em;margin:0 0 20px}
-h3{font-size:21px;line-height:1.4;margin:34px 0 10px}
-p{margin:0 0 18px}
-.small{font-size:15px;color:var(--muted)}
-.statement{font-family:var(--serif);font-size:clamp(25px,4vw,38px);line-height:1.45;margin:28px 0;padding-left:22px;border-left:4px solid var(--accent)}
-.diagram{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--paper-2);border-radius:14px;font:650 clamp(14px,2vw,18px)/1.7 var(--mono);white-space:pre-wrap;overflow:auto}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0}
-.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:rgba(255,255,255,.24)}
-.card b{display:block;font-size:18px;margin-bottom:8px}
-.card p{margin:0;color:#48463f;font-size:16px}
-.number{font:700 12px var(--mono);color:var(--accent);letter-spacing:.1em;margin-bottom:10px}
-.score{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:28px 0}
-.score article{border-top:3px solid var(--accent);padding:14px 10px 16px;background:var(--paper-2);min-height:160px}
-.score b{display:block;font:700 12px/1.3 var(--mono);letter-spacing:.05em;color:var(--accent);margin-bottom:9px}
-.score strong{display:block;font-size:17px;line-height:1.35;margin-bottom:7px}
-.score span{font-size:14px;line-height:1.55;color:var(--muted)}
-.table{margin:26px 0;border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
-.row b{font-size:15px}.row div{color:#44423c}
-.callout{margin:28px 0;padding:22px 24px;background:var(--accent-soft);border-radius:14px}
-.callout p:last-child{margin-bottom:0}
-.timeline{margin-top:26px}
-.time{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
-.time:first-child{border-top:0}
-.time time{font:700 13px var(--mono);color:var(--accent)}
-.time strong{display:block;margin-bottom:6px;font-size:18px}
-ul{padding-left:1.2em;margin:12px 0 22px}
-li{margin:6px 0}
-footer{padding:40px 0 70px;color:var(--muted);font-size:14px}
-@media(max-width:700px){body{font-size:17px}.hero{padding:52px 0 40px}.cards{grid-template-columns:1fr}.score{grid-template-columns:1fr 1fr}.row,.time{grid-template-columns:1fr;gap:4px}.time{padding:18px 0}}
-@media(max-width:430px){.score{grid-template-columns:1fr}.wrap{width:min(100% - 26px,860px)}}
-@media print{nav{display:none}body{background:white}.wrap{width:100%;max-width:none}.hero,section{break-inside:avoid}.card,.diagram,.callout,.score article{background:white}}
+:root{--paper:#f4f1ea;--paper2:#ece8df;--ink:#171713;--muted:#66635c;--line:#c9c4b8;--accent:#31553e;--accent2:#dde7df;--bad:#8c3b31;--bad2:#f0dfdb;--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif;--sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Noto Sans SC",Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.82}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(900px,calc(100% - 36px));margin:auto}header{border-bottom:1px solid var(--line)}.hero{padding:70px 0 52px}.kicker{font:700 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}h1{font-family:var(--serif);font-size:clamp(42px,8vw,82px);line-height:1.06;letter-spacing:-.045em;margin:16px 0 20px}.lead{font-size:clamp(20px,2.4vw,28px);line-height:1.55;max-width:800px;color:#34332e;margin:0}.meta{display:flex;gap:10px 24px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}.meta b{color:var(--ink)}nav{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:18px;overflow:auto;padding:11px 0;scrollbar-width:none}nav .wrap::-webkit-scrollbar{display:none}nav a{white-space:nowrap;text-decoration:none;font:650 12px/1.2 var(--mono);color:var(--muted)}nav a:hover{color:var(--ink)}main{padding-bottom:90px}section{padding:64px 0;border-bottom:1px solid var(--line);scroll-margin-top:48px}h2{font-family:var(--serif);font-size:clamp(30px,5vw,48px);line-height:1.2;letter-spacing:-.025em;margin:0 0 20px}h3{font-size:21px;line-height:1.4;margin:34px 0 10px}p{margin:0 0 18px}.small{font-size:15px;color:var(--muted)}.number{font:700 12px var(--mono);color:var(--accent);letter-spacing:.1em;margin-bottom:10px}.statement{font-family:var(--serif);font-size:clamp(25px,4vw,38px);line-height:1.45;margin:30px 0;padding-left:22px;border-left:4px solid var(--accent)}.diagram{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--paper2);border-radius:14px;font:650 clamp(14px,2vw,18px)/1.7 var(--mono);white-space:pre-wrap;overflow:auto}.cards,.demo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0}.card,.demo-card{border:1px solid var(--line);border-radius:14px;padding:22px;background:rgba(255,255,255,.24)}.card b,.demo-card b{display:block;font-size:18px;margin-bottom:8px}.card p,.demo-card p{margin:0;color:#48463f;font-size:16px}.demo-card{display:flex;flex-direction:column;gap:10px}.demo-card.bad{border-color:#c69c95;background:var(--bad2)}.demo-card .tag{font:700 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.demo-card.bad .tag{color:var(--bad)}.demo-link{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:auto;border:1px solid var(--ink);border-radius:999px;padding:10px 14px;text-decoration:none;color:var(--ink);font:700 11px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;background:transparent}.demo-link:hover{background:var(--ink);color:var(--paper)}.demo-card.bad .demo-link{border-color:var(--bad);color:var(--bad)}.demo-card.bad .demo-link:hover{background:var(--bad);color:#fff}.question{margin-top:4px;padding-top:12px;border-top:1px solid rgba(0,0,0,.12);font-size:14px;color:var(--muted)}.callout{margin:28px 0;padding:22px 24px;background:var(--accent2);border-radius:14px}.callout.bad{background:var(--bad2)}.callout p:last-child{margin-bottom:0}.table{margin:26px 0;border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:145px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}.row b{font-size:15px}.row div{color:#44423c}.score{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:28px 0}.score article{border-top:3px solid var(--accent);padding:14px 10px 16px;background:var(--paper2);min-height:160px}.score b{display:block;font:700 12px/1.3 var(--mono);letter-spacing:.05em;color:var(--accent);margin-bottom:9px}.score strong{display:block;font-size:17px;line-height:1.35;margin-bottom:7px}.score span{font-size:14px;line-height:1.55;color:var(--muted)}.timeline{margin-top:26px}.time{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line)}.time:first-child{border-top:0}.time time{font:700 13px var(--mono);color:var(--accent)}.time strong{display:block;margin-bottom:6px;font-size:18px}.run{counter-reset:step;margin:28px 0}.run article{counter-increment:step;display:grid;grid-template-columns:58px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}.run article:before{content:counter(step,decimal-leading-zero);font:800 20px var(--mono);color:var(--accent)}.run strong{font-size:19px}.run p{margin:5px 0 10px}.run .demo-link{margin-top:4px}.note{font-size:14px;color:var(--muted)}ul{padding-left:1.2em;margin:12px 0 22px}li{margin:6px 0}.reading{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.reading a{border:1px solid var(--line);border-radius:999px;padding:10px 14px;text-decoration:none;color:var(--ink);font-size:14px}.reading a:hover{border-color:var(--ink)}footer{padding:40px 0 70px;color:var(--muted);font-size:14px}@media(max-width:720px){body{font-size:17px}.hero{padding:52px 0 40px}.cards,.demo-grid{grid-template-columns:1fr}.score{grid-template-columns:1fr 1fr}.row,.time{grid-template-columns:1fr;gap:4px}.time{padding:18px 0}.run article{grid-template-columns:42px 1fr}}@media(max-width:430px){.score{grid-template-columns:1fr}.wrap{width:min(100% - 26px,900px)}}@media print{nav{display:none}body{background:white}.wrap{width:100%;max-width:none}.hero,section{break-inside:avoid}.card,.demo-card,.diagram,.callout,.score article{background:white}}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap hero">
-    <div class="kicker">Minimal Input · Audiovisual Control</div>
-    <h1>从一个动作，<br>到一场演出</h1>
-    <p class="lead">这是一份关于实时声音、视觉与控制的入门讲义。它不要求你先懂编程、音乐理论或舞台技术。我们从一个最简单的问题开始：当你按下一个键，系统究竟应该发生什么？</p>
-    <div class="meta">
-      <span><b>工作坊</b> 极简输入：构建视听系统</span>
-      <span><b>日期</b> 2026.08.29</span>
-      <span><b>核心时段</b> 13:30–16:30</span>
-      <span><b>导师</b> 钱誉文 Ewan Qian</span>
-      <span><b>线上分享</b> yiyisogreen</span>
-    </div>
-  </div>
-</header>
-<nav><div class="wrap">
-  <a href="#start">从哪里开始</a>
-  <a href="#mapping">什么是音画同源</a>
-  <a href="#control">为什么需要控制</a>
-  <a href="#structure">演出结构</a>
-  <a href="#score">五段剧本</a>
-  <a href="#practice">课堂实践</a>
-  <a href="#outcome">最后做出什么</a>
-</div></nav>
+<header><div class="wrap hero"><div class="kicker">Minimal Input · Audiovisual Control</div><h1>从一个动作，<br>到一场演出</h1><p class="lead">这是一份可以直接阅读、直接试玩的实时视听入门讲义。你不需要先懂编程、音乐理论或舞台技术。我们从一个最简单的问题开始：当你按下一个键，系统究竟应该发生什么？</p><div class="meta"><span><b>工作坊</b> 极简输入：构建视听系统</span><span><b>日期</b> 2026.08.29</span><span><b>核心时段</b> 13:30–16:30</span><span><b>导师</b> 钱誉文 Ewan Qian</span><span><b>线上分享</b> yiyisogreen</span></div></div></header>
+<nav><div class="wrap"><a href="#start">从哪里开始</a><a href="#mapping">音画同源</a><a href="#failure">两个坏例子</a><a href="#control">控制与反馈</a><a href="#structure">演出结构</a><a href="#play">试玩路线</a><a href="#flow">课堂流程</a><a href="#build">自己制作</a><a href="#test">怎么判断</a></div></nav>
 <main class="wrap">
-
-<section id="start">
-  <div class="number">01 / START</div>
-  <h2>先不要问“我该学哪个软件”</h2>
-  <p>实时视听创作很容易从工具开始：先打开一个软件，再寻找插件、参数和效果。这样当然可以工作，但它也很容易让创作者陷入一个循环——功能越来越多，作品却越来越难解释。</p>
-  <p>这场工作坊把顺序反过来。我们先确定一个动作，再决定这个动作和系统之间的关系。</p>
-  <div class="diagram">一个动作
+<section id="start"><div class="number">01 / START</div><h2>先不要问“我该学哪个软件”</h2><p>实时视听创作很容易从工具开始：先打开一个软件，再寻找插件、参数和效果。这样当然可以工作，但也很容易让创作者陷入一个循环——功能越来越多，作品却越来越难解释。</p><p>这场工作坊把顺序反过来。我们先确定一个动作，再决定这个动作和系统之间的关系。</p><div class="diagram">一个动作
    ↓
 一套规则 / Mapping
    ↓
@@ -111,42 +22,16 @@ footer{padding:40px 0 70px;color:var(--muted);font-size:14px}
    ↓
 观众看到结果
    ↓
-表演者根据结果再次判断</div>
-  <p class="statement">技术不是起点。<br>真正的起点是：<b>我希望这个系统怎样回应我？</b></p>
-  <p>所以第一步甚至可以简单到只有一个键、一次触摸或一次鼠标动作。问题不是“它能触发多少效果”，而是这个动作能不能在几秒钟里形成清楚、可理解、可继续发展的结果。</p>
-</section>
-
-<section id="mapping">
-  <div class="number">02 / MAPPING</div>
-  <h2>什么是“音画同源”？</h2>
-  <p>这里的“音画同源”不是一个固定的艺术史流派名称，而是我们在工作坊里使用的工作概念：声音和视觉不只是最后被摆在一起，而是尽可能从同一个动作、状态、参数或规则中共同产生。</p>
-  <div class="cards">
-    <div class="card"><b>常见的反应式可视化</b><p>声音先出现，再分析音量、频率或节拍，让画面跟着变化。声音是原因，视觉是反应。</p></div>
-    <div class="card"><b>同源控制</b><p>一个输入先进入控制系统，再分别影响声音与视觉。两者是同一套决定的不同结果。</p></div>
-  </div>
-  <div class="diagram">                INPUT / GESTURE
+表演者根据结果再次判断</div><p class="statement">技术不是起点。<br>真正的起点是：<b>我希望这个系统怎样回应我？</b></p><p>第一步可以简单到只有一个键、一次触摸或一次鼠标动作。问题不是“它能触发多少效果”，而是这个动作能不能形成清楚、可理解、可以继续发展的结果。</p></section>
+<section id="mapping"><div class="number">02 / MAPPING</div><h2>什么是“音画同源”？</h2><p>这里的“音画同源”不是一个固定的艺术史流派名称，而是我们在工作坊里使用的工作概念：声音和视觉不只是最后被摆在一起，而是尽可能从同一个动作、状态、参数或规则中共同产生。</p><div class="cards"><div class="card"><b>反应式可视化</b><p>声音先出现，再分析音量、频率或节拍，让画面跟着变化。声音是原因，视觉是反应。</p></div><div class="card"><b>同源控制</b><p>一个输入先进入控制系统，再分别影响声音与视觉。两者是同一套决定的不同结果。</p></div></div><div class="diagram">                INPUT / GESTURE
                        ↓
                   MAPPING / RULE
                 ↙               ↘
              SOUND             VISUAL
                 ↘               ↙
-                 SHARED STATE</div>
-  <p>最简单的例子是：按下一个键，同时出现一个声音和一个动画。但真正有意思的部分从第二层开始——同一个键在不同状态下，可以产生完全不同的意义。</p>
-  <div class="table">
-    <div class="row"><b>QUIET</b><div>同一个输入只留下一个很轻的声音和一小段视觉痕迹。</div></div>
-    <div class="row"><b>BUILD</b><div>同一个输入开始增加节奏密度、重复和空间运动。</div></div>
-    <div class="row"><b>PEAK</b><div>同一个输入成为一个强烈的主事件，但系统仍然限制音量与视觉密度。</div></div>
-    <div class="row"><b>BREAK</b><div>同一个输入不再“增加”，而是抽离、延长尾音、制造空间或帮助过渡。</div></div>
-  </div>
-  <p class="statement">按钮没有变多，<br>系统却变得更深。</p>
-</section>
-
-<section id="control">
-  <div class="number">03 / CONTROL</div>
-  <h2>为什么“会触发”还不等于“会演出”？</h2>
-  <p>一个网页可以很容易做到“按一下，响一下，闪一下”。这叫触发，它很直接，也很适合第一次试玩。但如果每次按下去都只发生一次短暂事件，表演者就必须不停地按。观众看到的也更像是在测试一个网页，而不是观看一场演出。</p>
-  <p>要让它变成现场系统，需要多一层：<b>状态、时间和反馈。</b></p>
-  <div class="diagram">现在系统是什么状态
+                 SHARED STATE</div><p>最简单的版本当然可以是“按一下，同时响一下、闪一下”。但如果结果永远只由当前这一下决定，它很快就会被观众看穿。真正有意思的部分，是让同一个输入进入不同状态、不同时间位置和不同历史之后，拥有不同意义。</p></section>
+<section id="failure"><div class="number">03 / FAILURE</div><h2>先玩两个故意做坏的版本</h2><p>很多实时 Demo 会失败在两个相反方向：一种太薄，另一种太满。它们看上去完全不同，根本问题却一样——只有事件，没有结构。</p><div class="demo-grid"><article class="demo-card bad"><span class="tag">Bad Demo A · Too Thin</span><b>Trigger Baseline</b><p>每次输入都得到完全相同的声音和视觉。请连续玩 20–30 秒，不要急着判断。</p><div class="question">回来以后问自己：第 1 次和第 20 次触发，有没有因为“前面发生过什么”而产生不同意义？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/00-trigger-baseline/index.html">试玩：太薄的系统 ↗</a></article><article class="demo-card bad"><span class="tag">Bad Demo B · Too Full</span><b>Overload Trap</b><p>连续按 Space 或点击 10–15 秒。每次输入只会继续增加层，鼠标还直接拖着视觉中心走。</p><div class="question">回来以后问自己：能不能只减少一点？能不能等待？能不能在 8 bars 后释放？还是只能全部 Reset？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/00b-overload-trap/index.html">试玩：过载陷阱 ↗</a></article></div><div class="callout bad"><p><b>两个坏例子的共同点：</b>一个什么都留不住，一个什么都舍不得删。它们都缺少 State、时间结构、退出方式和反馈回路。</p></div><p class="statement">更多效果，不等于更多控制。</p></section>
+<section id="control"><div class="number">04 / CONTROL</div><h2>从 Trigger 到 State，再到 Feedback</h2><p>要让一个实时网页从“会触发”走向“可以演”，至少要多出三件事：系统知道自己现在在哪里；输入会改变这个状态；表演者能看到结果并继续判断。</p><div class="diagram">现在系统是什么状态
 +
 人刚刚做了什么
 +
@@ -158,108 +43,30 @@ footer{padding:40px 0 70px;color:var(--muted);font-size:14px}
         ↓
 人听见、看见结果
         ↓
-再决定下一步</div>
-  <p>这就是一个最基本的反馈回路。它和播放一段固定视频的区别在于：表演不是沿着唯一时间轴自动走完，而是不断在“判断—结果—再判断”之间循环。</p>
-  <div class="callout">
-    <p><b>我们真正关心的不是“我能控制多少参数”，而是“我能不能在正确的时间做一个有意义的决定”。</b></p>
-  </div>
-  <h3>人和系统各自负责什么？</h3>
-  <div class="cards">
-    <div class="card"><b>系统负责安全</b><p>BPM、节拍边界、音量限制、最大声部、最大视觉密度、自动衰减、Reset / Panic。</p></div>
-    <div class="card"><b>人负责判断</b><p>什么时候进入、什么时候继续等待、什么时候增加、什么时候减少、什么时候释放、什么时候结束。</p></div>
-  </div>
-  <p>这样做的目的不是让机器替人表演，而是把最容易出错、最需要精确计算的部分交给系统，把最有创作价值的结构判断留给人。</p>
-</section>
-
-<section id="structure">
-  <div class="number">04 / STRUCTURE</div>
-  <h2>为什么音乐、灯光和大型现场都需要“结构”？</h2>
-  <p>一场演出通常不会把所有能量从第一秒开到最后一秒。音乐会有铺垫、推进、高潮、间隔和收束；灯光会隐藏、聚焦、打开、熄灭；视觉也需要建立、累积、转化和离开。</p>
-  <p>这些结构之所以有效，不是因为它们遵守某一种固定公式，而是因为它们帮助观众感受到<b>变化的方向</b>。如果没有前后的差异，就没有“现在更紧张”“终于释放”“突然空下来”这样的经验。</p>
-  <div class="cards">
-    <div class="card"><b>Micro / Event</b><p>一个声音、一次闪烁、一次敲击。发生在很短的时间尺度。</p></div>
-    <div class="card"><b>Meso / Phrase & Section</b><p>几个事件形成一段关系，例如 8 或 16 bars 的推进、等待与释放。</p></div>
-    <div class="card"><b>Macro / Show</b><p>整场演出的能量曲线、段落次序、高潮位置和结束方式。</p></div>
-    <div class="card"><b>Shared State</b><p>音乐、视觉、灯光可以用不同速度变化，但共同理解“现在处于什么阶段”。</p></div>
-  </div>
-  <p>这也是“音画同源”的更深一层。声音和视觉不一定每拍同步，也不一定做相同动作。它们可以共享的是一个更高层的意图，例如：</p>
-  <div class="diagram">STATE = PRE-RELEASE / 还不能释放
+再决定下一步</div><div class="demo-grid"><article class="demo-card"><span class="tag">Good Step 01</span><b>State Instrument</b><p>同一个 Space，在 QUIET 与 ACTIVE 中得到不同结果。先在 QUIET 触发几次，再切 ACTIVE，再触发同一个输入。</p><div class="question">注意：按钮没有增加，但“当前状态”开始参与结果。</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/01-state-instrument/index.html">试玩 State Instrument ↗</a></article><article class="demo-card"><span class="tag">Good Step 02</span><b>Safe Loop</b><p>启动以后先什么都不做 8 秒。系统自己维持 BPM 和基本连续性；然后只用 ADD、REMOVE、HOLD、RELEASE 去改变结构。</p><div class="question">注意：你不再手工制造每个 beat，而是在提出“增加、等待、减少、释放”的意图。</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/02-safe-loop/index.html">试玩 Safe Loop ↗</a></article></div><h3>人和系统各自负责什么？</h3><div class="cards"><div class="card"><b>系统负责安全</b><p>BPM、节拍边界、音量限制、最大声部、最大视觉密度、自动衰减、Reset / Panic。</p></div><div class="card"><b>人负责判断</b><p>什么时候进入、什么时候继续等待、什么时候增加、什么时候减少、什么时候释放、什么时候结束。</p></div></div><p>这样做不是让机器替人表演，而是把最容易出错、最需要精确计算的部分交给系统，把最有创作价值的结构判断留给人。</p></section>
+<section id="structure"><div class="number">05 / STRUCTURE</div><h2>为什么音乐、视觉和灯光都需要结构？</h2><p>一场演出通常不会把所有能量从第一秒开到最后一秒。音乐会有铺垫、推进、高潮、间隔和收束；灯光会隐藏、聚焦、打开、熄灭；视觉也需要建立、累积、转化和离开。</p><p>这些结构有效，不是因为存在唯一公式，而是因为它们让观众能够感受到<b>变化的方向</b>。</p><div class="cards"><div class="card"><b>Micro / Event</b><p>一个声音、一次闪烁、一次敲击。很短。</p></div><div class="card"><b>Meso / Phrase & Section</b><p>几个事件形成一段关系，例如推进、等待与释放。</p></div><div class="card"><b>Macro / Show</b><p>整场演出的能量曲线、段落次序、高潮位置和结束方式。</p></div><div class="card"><b>Shared State</b><p>音乐、视觉、灯光可以用不同速度变化，但共同理解“现在处于什么阶段”。</p></div></div><div class="diagram">STATE = PRE-RELEASE / 还不能释放
 
 音乐：减少完整鼓组，保留紧张感
 视觉：减少新对象，让已有结构继续积累
-灯光：保持狭窄，不完全打开空间</div>
-  <p>三种媒介没有复制彼此，却在解释同一个状态。</p>
-</section>
+灯光：保持狭窄，不完全打开空间</div><p>三种媒介没有复制彼此，却在解释同一个状态。这是“同源”比“每拍同步”更重要的一层。</p><h3>一个最小的五段演出剧本</h3><div class="score"><article><b>01 / OPEN</b><strong>铺垫</strong><span>少、慢、留白。先让观众理解空间和基本材料。</span></article><article><b>02 / BUILD</b><strong>推进</strong><span>增加重复、方向和密度，但先不把所有东西放出来。</span></article><article><b>03 / PEAK</b><strong>主段</strong><span>最明确的身体能量和视觉层级。高能，但仍可控。</span></article><article><b>04 / BRIDGE</b><strong>桥段</strong><span>抽离主要脉冲，留下尾音、空间、记忆或重新组合。</span></article><article><b>05 / RETURN</b><strong>收束</strong><span>回到更少的材料，决定结束、重启，或召回旧元素。</span></article></div><p class="statement">控制不是把更多参数握在手里。<br>控制是决定<b>什么在什么时候发生。</b></p></section>
+<section id="play"><div class="number">06 / PLAY ROUTE</div><h2>课堂试玩路线：按这个顺序就够了</h2><p>下面不是软件清单，而是一条从“坏”到“可演”的比较路线。每次试玩只需要几十秒到两分钟。重要的是每次回来都回答一个问题。</p><div class="run"><article><div><strong>Trigger Baseline：先感受“薄”</strong><p>连续触发 20–30 秒。不要加新功能。</p><div class="note">问题：如果我停手，系统还剩下什么？第 20 次按键和第 1 次有什么结构差异？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/00-trigger-baseline/index.html">打开 Demo 00 ↗</a></div></article><article><div><strong>Overload Trap：再感受“满”</strong><p>快速触发 10–15 秒，让画面和声音堆起来，然后停手。</p><div class="note">问题：我能不能只退一步？能不能降低能量而不是全部清空？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/00b-overload-trap/index.html">打开 Bad Demo B ↗</a></div></article><article><div><strong>State Instrument：同一个输入，不同意义</strong><p>在 QUIET 和 ACTIVE 中分别用同一个 Space 触发。</p><div class="note">问题：我们增加的是按钮，还是增加了系统对“现在在哪里”的理解？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/01-state-instrument/index.html">打开 Demo 01 ↗</a></div></article><article><div><strong>Safe Loop：把节拍和安全交给系统</strong><p>开始后先不动 8 秒，再依次尝试 ADD → HOLD → REMOVE → RELEASE。</p><div class="note">问题：为什么停手仍然成立？为什么输入可以早一点或晚一点，但结构仍然没有马上坏掉？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/02-safe-loop/index.html">打开 Demo 02 ↗</a></div></article><article><div><strong>Golden Mini：先看一场，再接管一场</strong><p>第一遍只听 AUTO，大约 62 秒，观察 OPEN → BUILD → PEAK → BREAK → RETURN。第二遍切 PERFORM，只使用少量结构动作。</p><div class="note">问题：如果不看 HUD，只听声音和看画面，段落是否仍然能被感受到？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/common-source-liveset/index.html">打开 Golden Mini ↗</a></div></article><article><div><strong>个人材料：让系统长出身份</strong><p>最后再玩“叮咚鸡 / 大狗叫”键盘版本。这里重点不是完整长时演出，而是理解自己的语音、图片和样本为什么会立刻改变一件数字乐器的性格。</p><div class="note">问题：如果把这些材料换成你自己的声音、照片或已有作品，会发生什么？</div><a class="demo-link" target="_blank" rel="noopener" href="../personal-av-instrument/demos/nfi-keyboard-liveset/index.html">打开个人 Sample Instrument ↗</a></div></article></div></section>
+<section id="flow"><div class="number">07 / WORKSHOP</div><h2>三小时现场怎么执行？</h2><p>这套流程刻意把“听理论”和“做东西”交替放在一起。理论只在一个对比之后出现，这样每个概念都有刚刚玩过的经验作为参照。</p><div class="timeline"><div class="time"><time>13:30–13:38</time><div><strong>坏例子 A + B：太薄 / 太满</strong><p>全场先玩 Trigger Baseline 与 Overload Trap。教师只问：为什么这两种都不像一场演出？</p></div></div><div class="time"><time>13:38–13:48</time><div><strong>State：同一个动作为什么会变</strong><p>试玩 State Instrument。讲清 `Result = Input + State`，不扩展技术。</p></div></div><div class="time"><time>13:48–14:00</time><div><strong>Safe Loop + Golden Mini：从输入进入时间结构</strong><p>先证明系统可以自己连续，再用 Golden Mini 看 OPEN / BUILD / PEAK / BREAK / RETURN。此时才引出 Feedback、Shared State 与演出结构。</p></div></div><div class="time"><time>14:00–14:30</time><div><strong>yiyisogreen：Mapping、限制与表演界面</strong><p>把前面的体验拉回真实 Audio Visual 实践：一个按键 / 鼠标如何通过时间、规则、状态和限制变成可演奏的界面。</p></div></div><div class="time"><time>14:30–15:30</time><div><strong>Guided Build：从 Baseline 做到 State / Safe Loop</strong><p>参与者从一个输入开始，先做能跑的 V1，再加入两个状态；进度允许时，让系统获得 BPM、自动连续或安全的 ADD / REMOVE / RELEASE。</p></div></div><div class="time"><time>15:30–16:05</time><div><strong>Make Your Own：换成自己的材料</strong><p>导入声音、图片、文字、AI 图像或 Creative Coding 材料。不要追求功能数量，只让至少一条关系变成自己的。</p></div></div><div class="time"><time>16:05–16:20</time><div><strong>Blind Test：作者先不解释</strong><p>交换试玩。观察对方第一步做什么、什么时候不知所措、什么时候觉得无聊，然后只修一个最大问题。</p></div></div><div class="time"><time>16:20–16:30</time><div><strong>Showcase：30–60 秒证明它成立</strong><p>不是汇报功能，而是演一个开始、一次变化和一个结束。大班时用小组或精选展示。</p></div></div></div></section>
+<section id="build"><div class="number">08 / BUILD</div><h2>你自己的版本，先只做四件事</h2><p>进入制作以后，不要马上给自己加 26 个键。先把一个很小的系统做深。</p><div class="table"><div class="row"><b>1 · INPUT</b><div>选一个输入：一个键、一个按钮、一次触摸或一种手势。</div></div><div class="row"><b>2 · STATE</b><div>先做两个明显不同的状态，例如 QUIET / ACTIVE，或 OPEN / BUILD。</div></div><div class="row"><b>3 · CONTROL</b><div>至少有一种“回来”的动作：REMOVE、RELEASE、CLEAR 或 RESET。不要只有 ADD。</div></div><div class="row"><b>4 · MATERIAL</b><div>换成自己的声音、图像、文字或视觉结构，让系统获得身份。</div></div></div><div class="callout"><p><b>如果时间够，再加 BPM / quantization。</b>它不是为了显得专业，而是为了让不精准的输入仍能落在可靠的时间边界上。</p></div><h3>一个最小制作模板</h3><div class="diagram">INPUT
+  ↓
+MAPPING
+  ↓
+STATE
+  ↓
+AUDIO + VISUAL
+  ↓
+FEEDBACK
+  ↓
+NEXT DECISION
 
-<section id="score">
-  <div class="number">05 / SCORE</div>
-  <h2>一个最小的五段演出剧本</h2>
-  <p>对于第一次做实时系统的人，不需要先写复杂乐谱。可以先用五个段落组织一段 60–90 秒的小演出。每一段只回答四个问题：现在能量多高？密度多高？谁是主角？下一段怎么进入？</p>
-  <div class="score">
-    <article><b>01 / OPEN</b><strong>铺垫</strong><span>少、慢、留白。先让观众理解空间和基本材料。</span></article>
-    <article><b>02 / BUILD</b><strong>推进</strong><span>增加重复、方向和密度，但暂时不把所有东西放出来。</span></article>
-    <article><b>03 / PEAK</b><strong>主段</strong><span>最明确的身体能量和视觉层级。高能，但仍然可控。</span></article>
-    <article><b>04 / BRIDGE</b><strong>桥段</strong><span>抽离主要脉冲，留下尾音、空间、记忆或重新组合。</span></article>
-    <article><b>05 / RETURN</b><strong>收束</strong><span>回到更少的材料，决定结束、重启，或把旧元素召回。</span></article>
-  </div>
-  <h3>同一个结构，不同媒介可以有不同动作</h3>
-  <div class="table">
-    <div class="row"><b>OPEN</b><div>音乐：稀疏；视觉：大负空间；控制：少操作，让系统自己存在。</div></div>
-    <div class="row"><b>BUILD</b><div>音乐：增加 subdivision；视觉：开始累积与分裂；控制：ADD / HOLD。</div></div>
-    <div class="row"><b>PEAK</b><div>音乐：完整低频与节奏；视觉：强前景与大尺度对比；控制：选择主行为，不无限叠加。</div></div>
-    <div class="row"><b>BRIDGE</b><div>音乐：抽离主脉冲；视觉：空场、残留、延迟；控制：REMOVE / RELEASE。</div></div>
-    <div class="row"><b>RETURN</b><div>音乐与视觉都重新获得空间；控制者决定结束还是再次进入。</div></div>
-  </div>
-  <p class="statement">结构不是限制创作。<br>结构让“什么时候发生”本身成为创作。</p>
-</section>
-
-<section id="practice">
-  <div class="number">06 / PRACTICE</div>
-  <h2>工作坊里，我们怎样把理论变成可以玩的东西？</h2>
-  <p>课堂不会先讲一长串软件功能。我们用几个非常小的版本做比较，让参与者亲手感受到“触发”和“系统”之间的差别。</p>
-  <div class="timeline">
-    <div class="time"><time>13:30–14:30</time><div><strong>理解：从效果到系统</strong><p>先看一个完整 Demo，再拆解 Input、Mapping、State、Feedback 与演出结构。yiyisogreen 从 Audio Visual、Mapping、限制与表演界面补充实际经验。</p></div></div>
-    <div class="time"><time>14:30–15:30</time><div><strong>搭建：做出一个最小 V1</strong><p>从一个键或一次鼠标输入开始，让它同时产生声音、视觉与状态变化。先做到“能跑”，再比较不同版本为什么一个薄、一个更可演奏。</p></div></div>
-    <div class="time"><time>15:30–16:05</time><div><strong>替换：把系统变成自己的</strong><p>加入个人声音、图片、文字、AI 图像或 Creative Coding 材料。重点不是功能数量，而是重新设计输入与结果之间的关系。</p></div></div>
-    <div class="time"><time>16:05–16:20</time><div><strong>盲测：作者先不解释</strong><p>把作品交给另一个人直接操作。观察对方第一步做什么、哪里看不懂、什么时候觉得无聊。然后只修一个最大问题。</p></div></div>
-    <div class="time"><time>16:20–16:30</time><div><strong>Showcase：用 30–60 秒证明它成立</strong><p>展示一个最有意思的 Mapping、一次状态变化，或者一段最小的音画演出。目标不是“做完所有功能”，而是让别人真正看懂并愿意继续玩。</p></div></div>
-  </div>
-  <h3>课堂里的四个版本</h3>
-  <div class="cards">
-    <div class="card"><b>Trigger Baseline</b><p>按一下 → 一个声音 + 一个视觉。故意保留最简单版本，用来说明为什么它很快耗尽。</p></div>
-    <div class="card"><b>State Instrument</b><p>同一个输入在不同状态中得到不同结果。开始出现“当前在哪里”的概念。</p></div>
-    <div class="card"><b>Safe Loop</b><p>系统拥有 BPM 和连续背景，人不需要手动制造每一个 beat，只负责增加、减少、等待和释放。</p></div>
-    <div class="card"><b>Mini Live System</b><p>声音与视觉共同读取结构状态，形成一段可以从 OPEN 走到 PEAK 再回来的小型演出。</p></div>
-  </div>
-</section>
-
-<section id="outcome">
-  <div class="number">07 / OUTCOME</div>
-  <h2>三个小时以后，你应该真正带走什么？</h2>
-  <p>这不是一门要求你在三小时里掌握某个专业软件的速成课。更现实也更重要的结果，是你亲手走完一次完整的小型创作循环。</p>
-  <ul>
-    <li>一个可以在浏览器里运行的实时视听原型；</li>
-    <li>一个明确的 Input；</li>
-    <li>至少一组由你决定的 Sound + Visual Mapping；</li>
-    <li>至少一个 State / 状态变化；</li>
-    <li>一次他人试玩；</li>
-    <li>一个经过修改的 V2，或一条明确的下一版计划；</li>
-    <li>一段 30–60 秒可以被观看的 Showcase。</li>
-  </ul>
-  <div class="callout">
-    <p><b>判断一个系统是否值得继续做，可以只问四句话：</b></p>
-    <p>现在是什么状态？<br>我这个动作改变了什么？<br>我停手以后会发生什么？<br>我怎么把它收回来？</p>
-  </div>
-  <p class="statement">最终目标不是让每个人变成程序员或音乐家。<br>而是让你开始拥有一套属于自己的<b>实时创作与判断方法</b>。</p>
-</section>
-
-<section>
-  <div class="number">08 / REFERENCE</div>
-  <h2>继续往下看</h2>
-  <p>如果你想理解这类界面为什么可以成为“乐器”或“演出系统”，可以继续寻找以下关键词与作品：Patatap、touch:waves、Golan Levin 的 Audiovisual Environment Suite（AVES），以及 NIME 领域关于 Mapping 与数字乐器的研究。</p>
-  <p class="small">这些案例用于理解不同的输入、映射和表演界面方法；本工作坊不会复制它们的视觉资产或代码。</p>
-</section>
-
+系统保护：BPM / MAX DENSITY / GAIN / RESET
+人来决定：ENTER / ADD / HOLD / REMOVE / RELEASE</div></section>
+<section id="test"><div class="number">09 / TEST</div><h2>怎么判断它是不是开始“成立”了？</h2><p>功能完成不等于作品完成。最有效的测试往往不是再写代码，而是把控制权交给别人。</p><div class="cards"><div class="card"><b>30 秒无输入测试</b><p>你停手以后，系统是不是马上死掉？还是仍然有一个可以被观看的状态？</p></div><div class="card"><b>返回测试</b><p>已经很满时，能不能在有限时间内主动回到更空的状态？</p></div><div class="card"><b>盲测</b><p>作者不解释，让另一个人玩。观察他第一步做什么，而不是告诉他正确答案。</p></div><div class="card"><b>观众测试</b><p>只录 Screen + Sound，不拍键盘、不解释操作。别人看到的是“演出”还是“测试网页”？</p></div></div><div class="callout"><p><b>可以反复问四句话：</b><br>现在是什么状态？<br>我这个动作改变了什么？<br>我停手以后会发生什么？<br>我怎么把它收回来？</p></div><p class="statement">最终目标不是让每个人变成程序员或音乐家。<br>而是开始拥有一套属于自己的<b>实时创作与判断方法</b>。</p></section>
+<section id="reference"><div class="number">10 / CONTINUE</div><h2>从这场工作坊继续往下</h2><p>如果你想把今天的方法扩展到更大的新媒体作品、展览系统、灯光、传感器、实时影像或完整 Live Set，可以继续阅读《新媒体工程控制论》。它把今天用到的 State、Feedback、Stability、Controllability、Observability、Robustness 与层级结构整理成一套独立的实践框架。</p><div class="reading"><a href="../../research/performance-control-model/index.html">阅读：新媒体工程控制论 →</a><a target="_blank" rel="noopener" href="../personal-av-instrument/demos/common-source-liveset/index.html">再玩一次 Golden Mini ↗</a></div><h3>可以继续寻找的参考</h3><p>Patatap、touch:waves、Golan Levin 的 Audiovisual Environment Suite（AVES），以及 NIME 领域关于 Mapping 与数字乐器的研究，都提供了不同的输入、映射和表演界面思路。这里借鉴的是方法和问题，不复制它们的代码或视觉资产。</p></section>
 </main>
 <footer><div class="wrap">MANA 8.29 · 极简输入：构建视听系统 / Minimal Input, Audiovisual System · 2026</div></footer>
 </body>
