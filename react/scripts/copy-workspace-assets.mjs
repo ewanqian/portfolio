@@ -11,13 +11,11 @@ const portfolioAssetsDir = path.join(reactRoot, 'dist', 'portfolio', 'assets')
 const sourceWorksDir = path.join(repoRoot, 'works')
 const targetWorksDir = path.join(reactRoot, 'dist', 'works')
 const portfolioWorksDir = path.join(reactRoot, 'dist', 'portfolio', 'works')
+const sourcePersonalAvDemosDir = path.join(repoRoot, 'workshops', 'personal-av-instrument', 'demos')
+const targetPersonalAvDemosDir = path.join(reactRoot, 'dist', 'lab', 'personal-av-instrument')
+const portfolioPersonalAvDemosDir = path.join(reactRoot, 'dist', 'portfolio', 'lab', 'personal-av-instrument')
 const maxCloudflarePagesFileBytes = 25 * 1024 * 1024
 const skippedLargeFiles = []
-
-if (!fs.existsSync(sourceAssetsDir)) {
-  console.warn(`Workspace assets not found: ${sourceAssetsDir}`)
-  process.exit(0)
-}
 
 function copyWithCloudflareLimit(fromDir, toDir) {
   fs.cpSync(fromDir, toDir, {
@@ -36,12 +34,15 @@ function copyWithCloudflareLimit(fromDir, toDir) {
   })
 }
 
-copyWithCloudflareLimit(sourceAssetsDir, targetAssetsDir)
-
-fs.cpSync(targetAssetsDir, portfolioAssetsDir, {
-  recursive: true,
-  force: true
-})
+if (fs.existsSync(sourceAssetsDir)) {
+  copyWithCloudflareLimit(sourceAssetsDir, targetAssetsDir)
+  fs.cpSync(targetAssetsDir, portfolioAssetsDir, {
+    recursive: true,
+    force: true
+  })
+} else {
+  console.warn(`Workspace assets not found: ${sourceAssetsDir}`)
+}
 
 // Static project archive pages must exist as real files in the deploy output,
 // otherwise SPA hosts rewrite /works/*.html to index.html. Keep a mirrored
@@ -60,10 +61,24 @@ if (fs.existsSync(sourceWorksDir)) {
   console.log(`Copied ${copied.length} works HTML file(s) → dist/works/ + dist/portfolio/works/: ${copied.join(', ')}`)
 }
 
+// Workshop demos are canonical inside workshops/personal-av-instrument/demos.
+// Publish that canonical tree instead of maintaining parallel copies under works/.
+// Resulting public paths:
+//   /lab/personal-av-instrument/<demo>/
+//   /portfolio/lab/personal-av-instrument/<demo>/
+if (fs.existsSync(sourcePersonalAvDemosDir)) {
+  copyWithCloudflareLimit(sourcePersonalAvDemosDir, targetPersonalAvDemosDir)
+  fs.cpSync(targetPersonalAvDemosDir, portfolioPersonalAvDemosDir, {
+    recursive: true,
+    force: true
+  })
+  console.log('Copied Personal A/V Instrument demos → dist/lab/personal-av-instrument/ + dist/portfolio/lab/personal-av-instrument/')
+}
+
 if (skippedLargeFiles.length > 0) {
   console.warn(
     `Skipped ${skippedLargeFiles.length} asset(s) larger than 25 MiB for Cloudflare Pages: ${skippedLargeFiles.join(', ')}`
   )
 }
 
-console.log(`Copied workspace assets to ${targetAssetsDir} and ${portfolioAssetsDir}`)
+console.log('Workspace static copy completed.')
