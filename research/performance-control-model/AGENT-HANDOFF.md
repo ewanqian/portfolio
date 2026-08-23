@@ -157,43 +157,186 @@ Agent 可以实验，但必须标记为 `PROVISIONAL`。
 
 ---
 
-# 3. TO PRODUCE — 禁止写成已完成
+# 3. IMPLEMENTED / UNVERIFIED — 源码已经存在，但不能写成“已验证完成”
 
-截至 2026-08-23，以下内容仍需要实际生产 / 验证：
+2026-08-23 已经完成第一轮**源码生产**。以下内容可以被 Agent 读取、比较、修改和测试，但在通过真实浏览器 / 声音 / 观众测试以前，不能写成“课程 Starter 已完成”“Golden Demo 已成立”或“线上已经可玩”。
 
-- [ ] `/writing/performance-control-model` 专题 Reader 完整部署与验证
-- [ ] Reader 的 3–4 个 micro demos
-- [ ] Starter 00 — Trigger Baseline
-- [ ] Starter 01 — State Instrument
-- [ ] Starter 02 — Safe Loop / Quantized Layering
-- [ ] Starter 03 — Shared State A/V
-- [ ] 60–90 秒 Golden Mini Live System
+## 3.1 Writing Reader source
+
+```text
+content/writings/performance-control-model.json
+react/src/pages/WritingDetail.jsx
+react/src/styles/writing-detail.css
+react/src/components/content/MarkdownReader.jsx
+scripts/build-content.js
+```
+
+当前事实：
+
+- `/writing/:slug` route 已实现；
+- Performance Control Model 专题 metadata 已实现；
+- `articlePath` 会在 build-time 读取 canonical Markdown 并写入 `articleMarkdown`；
+- 一个最小本地 fixture 已验证 article embedding 逻辑：PASS；
+- Reader 内已有 Trigger vs State / Open vs Controlled / Random vs Stable micro interaction source。
+
+仍未验证：
+
+- production build on actual deploy environment；
+- public Reader URL；
+- mobile reading；
+- real browser interaction。
+
+## 3.2 Starter 00 — Trigger Baseline
+
+```text
+workshops/personal-av-instrument/demos/00-trigger-baseline/
+```
+
+Source status:
+
+- index.html exists；
+- README exists；
+- inline JS `node --check`: PASS；
+- intentionally fixed one-shot behaviour；
+- public deploy / AudioContext / Chrome / Safari: NOT TESTED。
+
+## 3.3 Starter 01 — State Instrument
+
+```text
+workshops/personal-av-instrument/demos/01-state-instrument/
+```
+
+Source status:
+
+- index.html exists；
+- README exists；
+- inline JS `node --check`: PASS；
+- `1 = QUIET / 2 = ACTIVE / Space = same input`；
+- public deploy / AudioContext / Chrome / Safari: NOT TESTED。
+
+## 3.4 Starter 02 — Safe Loop
+
+```text
+workshops/personal-av-instrument/demos/02-safe-loop/
+```
+
+Source status:
+
+- index.html exists；
+- README exists；
+- inline JS `node --check`: PASS；
+- 120 BPM internal transport；
+- next-bar ADD / REMOVE / RELEASE；
+- HOLD；
+- max 3 layers；
+- master compressor；
+- automatic safety decay；
+- Reset；
+- public deploy / real listening / Chrome / Safari: NOT TESTED。
+
+## 3.5 Golden Mini v0.3 source
+
+Canonical runtime remains:
+
+```text
+workshops/personal-av-instrument/demos/common-source-liveset/index.html
+```
+
+Current implementation spec:
+
+```text
+workshops/personal-av-instrument/demos/common-source-liveset/GOLDEN-MINI-v0.3.md
+```
+
+Source facts:
+
+- ~62 sec / 32-bar AUTO score；
+- working form: `OPEN → BUILD → PEAK → BREAK → RETURN`；
+- AUTO + PERFORM modes；
+- shared provisional vector `energy / tension / density / space / memory`；
+- quantized ADD / REMOVE / RELEASE / RECALL；
+- HOLD / safe Accent；
+- 1–4 quantized section request；
+- H hides HUD；
+- master compressor / finite synthesized events；
+- inline JS `node --check`: PASS；
+- Python `HTMLParser`: PASS。
+
+This is **8.29 Golden Mini source**, not the final long-term 8-Hero-Phrase / 5–10 minute Performance System defined in Issue #55.
+
+Still NOT TESTED:
+
+- actual 62-sec sound quality / mix；
+- section distinction with HUD off；
+- no-input continuity as perceived by audience；
+- Chrome / Safari；
+- AudioContext first gesture；
+- novice performance；
+- audience-only blind test；
+- raw recording；
+- public URL。
+
+## 3.6 Static deploy-copy source
+
+`react/scripts/copy-workspace-assets.mjs` now publishes the canonical demo tree to:
+
+```text
+/lab/personal-av-instrument/<demo>/
+/portfolio/lab/personal-av-instrument/<demo>/
+```
+
+A minimal local fixture verified this copy logic: PASS.
+
+This does not prove the external Cloudflare build has completed.
+
+---
+
+# 4. TO PRODUCE / TO VERIFY — 禁止写成已完成
+
+截至当前，真正剩下的 P0 已经从“继续写源码”转向“听、看、部署、测试、重写内容”。
+
+- [ ] production build / deploy verification for Reader
+- [ ] verify public Reader URL
+- [ ] verify public Starter 00 URL
+- [ ] verify public Starter 01 URL
+- [ ] verify public Starter 02 URL
+- [ ] verify public Golden Mini URL
+- [ ] Chrome interaction + console test
+- [ ] Safari interaction + console test
+- [ ] AudioContext first-gesture test
+- [ ] raw 62-sec Golden Mini listening / viewing pass
+- [ ] HUD-off section distinction test
+- [ ] Sound-only test
+- [ ] Visual-only test
 - [ ] raw Screen + Sound recording
-- [ ] 至少一次 novice test
-- [ ] 至少一次 audience-only blind test
-- [ ] 3 个 DJ / Concert structural transcriptions
+- [ ] at least one novice 5-minute test
+- [ ] at least one audience-only blind test
+- [ ] revise Golden authored audio / choreography from those tests
+- [ ] Starter 03 — Shared State A/V as separate teaching artifact **only if still necessary after Golden test**
+- [ ] 3 DJ / Concert structural transcriptions
 - [ ] Reference Set Transfer Test
 - [ ] lighting / OSC / show-control integration
 - [ ] Vision Pro / touch input study
+- [ ] long-term 8 Hero Phrase / 5–10 minute Performance System
 - [ ] 半年 repertoire（至少 3 套不同 Set）
 
 ---
 
-# 4. 2026-08-29 P0
+# 5. 2026-08-29 P0 — current order
 
-不要继续扩理论。
+不要继续扩理论，也不要先增加 controls。
 
-优先顺序：
+当前优先顺序已经更新为：
 
 ```text
-1 Reader v0.1
-2 Trigger vs State demo
-3 Open vs Controlled Loop demo
-4 Random vs Stable demo
-5 Starter ladder update
-6 common-source-liveset → 60–90s Golden Mini Live System
-7 raw recording
-8 novice / audience test
+1 verify Reader build / URL
+2 verify Starter 00 / 01 / 02 in real browser
+3 listen + watch Golden Mini AUTO for full ~62 sec
+4 rewrite sound / visual choreography if it still reads like webpage demo
+5 record HUD-off raw Screen + Sound
+6 run 2-minute instruction → novice 5-minute test
+7 run audience-only blind test
+8 only then update public workshop page / teaser claims
 ```
 
 ## Explicit non-goals before 8.29
@@ -210,7 +353,7 @@ Agent 可以实验，但必须标记为 `PROVISIONAL`。
 
 ---
 
-# 5. Canonical code roles
+# 6. Canonical code roles
 
 ## Personal material / immediate fun
 
@@ -220,19 +363,29 @@ workshops/personal-av-instrument/demos/nfi-keyboard-liveset/
 
 Role: 叮咚鸡 / personal material / QWERTY identity / Starter reference.
 
+## Control comparison Starters
+
+```text
+workshops/personal-av-instrument/demos/00-trigger-baseline/
+workshops/personal-av-instrument/demos/01-state-instrument/
+workshops/personal-av-instrument/demos/02-safe-loop/
+```
+
+Role: 课堂 A/B / A/B/C comparison。不要把它们扩展成三套完整作品。
+
 ## Golden performance runtime
 
 ```text
 workshops/personal-av-instrument/demos/common-source-liveset/
 ```
 
-Role: Performance Control runtime candidate.
+Role: Performance Control runtime candidate / 8.29 Golden Mini / 后续 full Performance System 的 canonical 演进路径。
 
 Do not create a third parallel live-set system unless explicitly approved as a temporary experiment branch.
 
 ---
 
-# 6. Agent completion report
+# 7. Agent completion report
 
 任何声称完成 Reader / Starter / Golden System 的 Agent 必须报告：
 
