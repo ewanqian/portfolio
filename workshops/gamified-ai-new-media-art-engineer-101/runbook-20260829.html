@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a0a0a">
+<title>MANA 8.29｜极简输入：音画同源控制讲义 + Workshop Runbook</title>
+<style>
+:root{color-scheme:dark;--bg:#090909;--panel:#111;--panel2:#151515;--ink:#f2f0e8;--muted:#9b9a94;--line:#2c2c2a;--accent:#d8ff6a;--warn:#ffcf66;--danger:#ff887b;--ok:#8ff0c8;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}button{font:inherit}.shell{max-width:1180px;margin:0 auto;padding:20px 20px 96px}.topbar{position:sticky;top:0;z-index:30;background:linear-gradient(to bottom,rgba(9,9,9,.98),rgba(9,9,9,.86));backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.topbar-inner{max-width:1180px;margin:auto;padding:10px 20px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font:700 11px/1.2 var(--mono);letter-spacing:.09em;text-transform:uppercase}.toolbar{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#0e0e0e;color:var(--muted);padding:8px 11px;border-radius:999px;cursor:pointer;font:600 10px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase}.btn:hover,.btn.on{border-color:var(--ink);color:var(--ink)}.btn.on{background:var(--ink);color:var(--bg)}
+.hero{padding:54px 0 36px;border-bottom:1px solid var(--line)}.eyebrow{font:600 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(34px,7vw,88px);line-height:.92;letter-spacing:-.055em;margin:14px 0 18px;max-width:1000px}.lead{font-size:clamp(17px,2vw,24px);max-width:870px;color:#d7d5ce}.quote{margin:28px 0 0;border-left:3px solid var(--accent);padding:4px 0 4px 18px;font-size:clamp(20px,3vw,34px);line-height:1.2;font-weight:650;letter-spacing:-.025em}.meta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}.meta{background:var(--panel);padding:15px}.meta b{display:block;font:600 10px var(--mono);letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:5px}.meta span{font-size:15px}.countdown{color:var(--accent)}
+.nav{display:flex;gap:6px;overflow:auto;padding:14px 0 0;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 10px;font:600 9px var(--mono);letter-spacing:.06em;color:var(--muted)}.nav a:hover{color:var(--ink);border-color:#666}
+.section{padding:48px 0;border-bottom:1px solid var(--line);scroll-margin-top:72px}.section-head{display:grid;grid-template-columns:90px 1fr;gap:18px;margin-bottom:24px}.section-num{font:600 11px var(--mono);color:var(--accent);letter-spacing:.1em}.section h2{margin:0;font-size:clamp(28px,4vw,50px);letter-spacing:-.04em;line-height:1}.section h3{font-size:18px;margin:26px 0 8px}.sub{color:var(--muted);max-width:760px;margin-top:10px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.card{border:1px solid var(--line);background:var(--panel);padding:18px;border-radius:10px;min-width:0}.card strong{display:block;font-size:16px;margin-bottom:7px}.card p{margin:0;color:#cac8c2}.card .tag{display:inline-block;font:600 9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.bad{border-color:#4b2d2a}.good{border-color:#29463d}.warn{border-color:#4c4024}.accent{border-color:#536625}.formula{font:650 clamp(21px,3.2vw,38px)/1.25 var(--mono);padding:22px;border:1px solid var(--line);background:#0c0c0c;border-radius:10px;overflow:auto}.diagram{font:550 13px/1.7 var(--mono);white-space:pre;overflow:auto;background:#0b0b0b;border:1px solid var(--line);padding:18px;border-radius:10px;color:#dcdad3}.dim{color:var(--muted)}.highlight{color:var(--accent)}
+.timeline{display:grid;gap:9px}.slot{display:grid;grid-template-columns:116px 1fr;gap:14px;border:1px solid var(--line);background:var(--panel);padding:14px;border-radius:9px}.slot time{font:700 11px var(--mono);color:var(--accent)}.slot strong{display:block;margin-bottom:4px}.slot p{margin:0;color:#bbb9b2;font-size:14px}.slot.live{border-color:var(--accent);box-shadow:0 0 0 1px rgba(216,255,106,.12) inset}.script{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:20px 0}.act{border:1px solid var(--line);background:var(--panel);padding:14px;min-height:140px}.act b{font:700 11px var(--mono);letter-spacing:.06em;color:var(--accent)}.act strong{display:block;margin:8px 0;font-size:17px}.act small{color:var(--muted)}
+.ladder{display:grid;gap:8px}.rung{display:grid;grid-template-columns:72px 180px 1fr;gap:13px;align-items:start;border:1px solid var(--line);padding:14px;background:var(--panel);border-radius:8px}.rung code{font:700 11px var(--mono);color:var(--accent)}.rung b{font-size:15px}.rung span{color:#bbb9b2}.callout{padding:18px;border-left:3px solid var(--accent);background:#0d1009;margin:18px 0}.callout.warn{border-left-color:var(--warn);background:#110f09}.callout.danger{border-left-color:var(--danger);background:#130c0b}.callout p{margin:0}.record{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-top:1px solid var(--line)}.record:first-child{border-top:0}.record .date{font:700 10px var(--mono);color:var(--muted)}.record strong{display:block}.record p{margin:3px 0 0;color:#bbb9b2;font-size:14px}.status{display:inline-block;font:700 9px var(--mono);letter-spacing:.05em;padding:3px 6px;border-radius:999px;border:1px solid var(--line);margin-left:5px}.status.ok{color:var(--ok);border-color:#285345}.status.check{color:var(--warn);border-color:#66542c}.status.stop{color:var(--danger);border-color:#673b35}
+.checks{display:grid;gap:7px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);background:var(--panel);padding:11px 12px;border-radius:8px}.check input{margin-top:4px;accent-color:var(--accent)}.check label{cursor:pointer}.check.done label{text-decoration:line-through;color:var(--muted)}.day{display:grid;grid-template-columns:88px 1fr;gap:14px;border-top:1px solid var(--line);padding:15px 0}.day:first-child{border-top:0}.day b{font:700 11px var(--mono);color:var(--accent)}.day strong{display:block;margin-bottom:5px}.day p{margin:0;color:#bbb9b2}.sources{font:12px/1.8 var(--mono);color:#b4b2ac}.sources code{color:var(--ink)}.internal-flag{font:700 9px var(--mono);color:var(--warn);letter-spacing:.08em;text-transform:uppercase;border:1px solid #5b4b25;border-radius:999px;padding:3px 7px;margin-left:8px}.lecture-only-note{display:none}.lecture-mode .internal{display:none!important}.lecture-mode .lecture-only-note{display:block}.lecture-mode .hero{padding-top:72px}.lecture-mode .operator-only{display:none!important}.lecture-mode .section{min-height:min(78vh,760px);display:flex;flex-direction:column;justify-content:center}.lecture-mode .section#flow{min-height:auto}.lecture-mode .section#sources{display:none}.lecture-mode .section h2{font-size:clamp(36px,6vw,72px)}
+@media(max-width:820px){.meta-grid{grid-template-columns:repeat(2,1fr)}.grid3,.grid4{grid-template-columns:1fr 1fr}.script{grid-template-columns:1fr 1fr}.rung{grid-template-columns:58px 1fr}.rung span{grid-column:2}.section-head{grid-template-columns:1fr;gap:4px}.slot{grid-template-columns:92px 1fr}}
+@media(max-width:520px){.shell{padding-left:13px;padding-right:13px}.topbar-inner{padding-left:13px;padding-right:13px}.meta-grid,.grid2,.grid3,.grid4,.script{grid-template-columns:1fr}.slot,.record,.day{grid-template-columns:1fr;gap:4px}.rung{grid-template-columns:1fr}.rung span{grid-column:auto}.hero{padding-top:36px}.toolbar .btn{padding:8px 9px}}
+@media print{.topbar,.operator-only,.internal{display:none!important}body{background:white;color:black}.shell{max-width:none;padding:0}.section,.hero{break-inside:avoid;border-color:#bbb}.card,.act,.rung,.formula,.diagram,.slot{background:white;border-color:#bbb;color:black}.sub,.card p,.slot p,.rung span,.dim{color:#444}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner"><div class="brand">MANA 8.29 · Workshop Runbook v1</div><div class="toolbar"><button class="btn" id="lectureBtn">Lecture Mode</button><button class="btn on" id="controlBtn">Control Room</button><button class="btn" id="fullscreenBtn">Fullscreen</button><button class="btn" id="printBtn">Print</button></div></div></div>
+<main class="shell" id="app">
+<section class="hero" id="top">
+<div class="eyebrow">极简输入：构建视听系统 · Minimal Input / Audiovisual System</div>
+<h1>音画同源控制：<br>从“按一下”到“一场演出”</h1>
+<p class="lead">这不是软件功能课。课堂只保留最少的技术，把重点放在：一个输入如何进入状态、时间与反馈回路，并最终形成能够被测试、被修正、被演奏的系统。</p>
+<div class="quote">控制不是把更多参数握在手里，<br>而是决定<strong>什么在什么时候发生。</strong></div>
+<div class="meta-grid">
+<div class="meta"><b>Date</b><span>2026-08-29</span></div>
+<div class="meta"><b>Core session</b><span>13:30–16:30 · 3h</span></div>
+<div class="meta"><b>Format</b><span>Context → Build → Test → Showcase</span></div>
+<div class="meta"><b>Countdown</b><span class="countdown" id="countdown">—</span></div>
+</div>
+<div class="lecture-only-note callout"><p>投影建议：按 <b>Lecture Mode</b> 后，只展示讲义与课堂流程；内部宣传、风险与行动清单会隐藏。</p></div>
+<nav class="nav" aria-label="page sections"><a href="#thesis">核心命题</a><a href="#control">控制模型</a><a href="#shared">Shared State</a><a href="#score">演出剧本</a><a href="#starter">Starter Ladder</a><a href="#flow">3 小时流程</a><a href="#teaching">教学动作</a><a class="internal" href="#market">市场/传播</a><a class="internal" href="#promo">推文记录</a><a class="internal" href="#audit">状态审计</a><a class="internal" href="#plan">行动方案</a></nav>
+</section>
+
+<section class="section" id="thesis"><div class="section-head"><div class="section-num">01 / WHY</div><div><h2>为什么“一个按钮”很快会无聊？</h2><p class="sub">不是因为效果不够多，而是因为结果只由当下输入决定。课堂从这个失败版本开始。</p></div></div>
+<div class="grid3">
+<div class="card bad"><span class="tag">Trigger toy</span><strong>Result = Input</strong><p>A 永远是同一个声音和同一个视觉。第一次直接，30 秒以后结构耗尽。</p></div>
+<div class="card good"><span class="tag">State instrument</span><strong>Result = Input + State</strong><p>同一个 A 在 QUIET、BUILD、PEAK 中具有不同意义。按钮没变多，系统变深。</p></div>
+<div class="card accent"><span class="tag">Performance system</span><strong>Result = Input + State + History</strong><p>当前段落、过去留下的痕迹、下一次 musical boundary 一起决定结果。</p></div>
+</div>
+<div class="callout"><p><b>课堂问题：</b>“现在系统在哪里？我这个动作准备把它带到哪里？”——比“这个按钮触发什么？”更重要。</p></div>
+</section>
+
+<section class="section" id="control"><div class="section-head"><div class="section-num">02 / LOOP</div><div><h2>音画同源控制模型</h2><p class="sub">只讲一个公式，而且立刻翻译成人能操作的语言。</p></div></div>
+<div class="formula">x(t+1) = F( x(t), u(t), d(t) )</div>
+<div class="grid3" style="margin-top:12px">
+<div class="card"><span class="tag">x · state</span><strong>系统现在在哪里</strong><p>SECTION / ENERGY / TENSION / DENSITY / SPACE / MEMORY / ACTIVE LAYERS / BAR</p></div>
+<div class="card"><span class="tag">u · human</span><strong>人做什么结构判断</strong><p>ENTER / HOLD / ADD / REMOVE / RELEASE / RECALL / ACCENT</p></div>
+<div class="card"><span class="tag">d · disturbance</span><strong>现场永远不完美</strong><p>早按、晚按、延迟、素材差异、设备状态、参与者差异。</p></div>
+</div>
+<h3>Closed Loop / 反馈回路</h3>
+<div class="diagram">人做判断
+   ↓
+系统改变状态
+   ↓
+音乐 / 视觉 / 灯光产生结果
+   ↓
+人听见、看见、感受到
+   ↓
+重新判断 ───────────────┐
+                        └── 回到下一次输入</div>
+<p class="sub">工作坊不追求“完全自由”。采用 Hybrid Control：系统负责容易出错的底层安全，人负责高价值的结构判断。</p>
+</section>
+
+<section class="section" id="shared"><div class="section-head"><div class="section-num">03 / SOURCE</div><div><h2>“同源”不一定是同一个 Signal</h2><p class="sub">更成熟的同源可以是 Shared State / Shared Intention：声音和视觉不需要每拍做同一件事，但它们在解释同一个结构状态。</p></div></div>
+<div class="diagram">             STATE / INTENTION
+                    ↓
+              CONTROL MODEL
+                    ↓
+      ┌─────────────┼─────────────┐
+      ↓             ↓             ↓
+    MUSIC         VISUAL        LIGHT
+      ↓             ↓             ↓
+ Arrangement     Image Logic    Space Logic</div>
+<div class="grid3" style="margin-top:12px">
+<div class="card"><span class="tag">Music</span><strong>更快的时间尺度</strong><p>rhythm / anticipation / withholding / build / drop / release</p></div>
+<div class="card"><span class="tag">Visual</span><strong>更慢的持续结构</strong><p>persistence / accumulation / transformation / memory / return</p></div>
+<div class="card"><span class="tag">Light / Space</span><strong>现实空间的开合</strong><p>reveal / hide / isolate / narrow / expand / blackout / open</p></div>
+</div>
+<div class="callout"><p><b>例：</b>PEAK 不必等于“三边一起更满”。Music 可以增加身体能量；Visual 可以删掉 70% 细节只留下主结构；Light 可以突然打开整个房间。</p></div>
+</section>
+
+<section class="section" id="score"><div class="section-head"><div class="section-num">04 / SCORE</div><div><h2>演出需要剧本，但不是写死时间线</h2><p class="sub">参与者不需要懂复杂音乐理论。先用五个 Macro 状态写出一条最简单的演出曲线。</p></div></div>
+<div class="script">
+<div class="act"><b>01</b><strong>GROUND</strong><small>低密度 / 大空间 / 让系统先成立</small></div>
+<div class="act"><b>02</b><strong>BUILD</strong><small>增加 subdivision / accumulation / direction</small></div>
+<div class="act"><b>03</b><strong>PEAK</strong><small>高能但有限制 / 主体明确 / 不是全部堆满</small></div>
+<div class="act"><b>04</b><strong>BRIDGE</strong><small>抽离 / 延迟 / 重组 / 为下一次决定留空间</small></div>
+<div class="act"><b>05</b><strong>RETURN</strong><small>回到空 / 召回旧材料 / 结束或重新开始</small></div>
+</div>
+<div class="grid3">
+<div class="card"><span class="tag">Macro</span><strong>整场 / Section</strong><p>能量曲线、段落、高潮、转场、结束。</p></div>
+<div class="card"><span class="tag">Meso</span><strong>Phrase / 4–16 bars</strong><p>积累、等待、hold、break、return。</p></div>
+<div class="card"><span class="tag">Micro</span><strong>Event / Cell</strong><p>一次 hit、一个视觉事件、一次短 phrase。</p></div>
+</div>
+<p class="sub">失败版本通常只有 Micro：每一个 beat 都有反应，却没有更长的结构。</p>
+</section>
+
+<section class="section" id="starter"><div class="section-head"><div class="section-num">05 / BUILD</div><div><h2>Starter Ladder：用对比代替长理论</h2><p class="sub">8.29 的 Starter 不是“一次把所有功能做完”，而是四个递进的小系统。任何未实际测试的版本都保持 NOT TESTED。</p></div></div>
+<div class="ladder">
+<div class="rung"><code>00</code><b>Trigger Baseline</b><span>故意做一个薄的一对一 Mapping：KEY → Sound Hit + Visual Hit。让大家亲自发现它为什么很快耗尽。</span></div>
+<div class="rung"><code>01</code><b>State Instrument</b><span>同一个 Input 在 QUIET / ACTIVE 中有不同结果。先不增加更多按钮。</span></div>
+<div class="rung"><code>02</code><b>Safe Loop</b><span>加入 BPM / transport / quantization / density protection。用户停手 2–4 秒系统仍然成立。</span></div>
+<div class="rung"><code>03</code><b>Shared State A/V</b><span>Sound 与 Visual 读取同一个 State，但不做廉价 1:1 reactive mapping。可由 Golden Demo 展示，不要求全员从零实现。</span></div>
+<div class="rung"><code>GOLD</code><b>Mini Live System</b><span>60–90 秒认真完成。AUTO 自己成立；PERFORM 只接管 HOLD / ADD / REMOVE / RELEASE 等结构判断。</span></div>
+</div>
+<div class="callout warn"><p><b>范围控制：</b>“叮咚鸡 / 大狗叫”继续承担 Personal Material、趣味性和即时可玩；不要强行让它承担完整长时 Live Set。</p></div>
+</section>
+
+<section class="section" id="flow"><div class="section-head"><div class="section-num">06 / RUN</div><div><h2>8.29 · 三小时现场流程</h2><p class="sub">当前仓库 source of truth：3 小时核心课程，建议 13:30–16:30。早期 13:30–17:30 记录属于旧窗口，不能再当课程正文。</p></div></div>
+<div class="timeline" id="timeline">
+<div class="slot" data-start="13:30" data-end="13:40"><time>13:30–13:40</time><div><strong>PLAY BAD / PLAY BETTER</strong><p>不先定义术语。先玩 Trigger Baseline，再玩 State / Live System；问“差别在哪里？”</p></div></div>
+<div class="slot" data-start="13:40" data-end="14:00"><time>13:40–14:00</time><div><strong>Ewan｜控制模型 + 工程化</strong><p>FRAME → FILL → FINISH；Result = Input + State + History；Closed Loop；Shared State；只用一张控制图。</p></div></div>
+<div class="slot" data-start="14:00" data-end="14:25"><time>14:00–14:25</time><div><strong>yiyisogreen｜Mapping、限制与表演界面</strong><p>一个按键 / 一个鼠标如何形成持续行为；操作 → 结果的因果可见性；限制为什么会形成表演语言。</p></div></div>
+<div class="slot" data-start="14:25" data-end="14:30"><time>14:25–14:30</time><div><strong>Today’s Map</strong><p>告诉参与者：今天不会“学完新媒体”，只做 00 → 01 → 02 → Personal Material → Test → Showcase。</p></div></div>
+<div class="slot" data-start="14:30" data-end="15:00"><time>14:30–15:00</time><div><strong>GUIDED BUILD｜Starter 00 → 01</strong><p>先做能跑的 Trigger，再增加 State。保存 V1，不装修。</p></div></div>
+<div class="slot" data-start="15:00" data-end="15:30"><time>15:00–15:30</time><div><strong>GUIDED BUILD｜Starter 02</strong><p>加入 Safe Loop / BPM / ADD-REMOVE / Reset；系统开始能够在用户停手时继续成立。</p></div></div>
+<div class="slot" data-start="15:30" data-end="16:00"><time>15:30–16:00</time><div><strong>MAKE YOUR OWN</strong><p>换入自己的声音 / 图片 / 文字 / AI 图像。只要求一条自己决定的关系。</p></div></div>
+<div class="slot" data-start="16:00" data-end="16:18"><time>16:00–16:18</time><div><strong>BLIND TEST</strong><p>作者不解释。别人直接玩 30–60 秒。只找一个最大问题，然后修。</p></div></div>
+<div class="slot" data-start="16:18" data-end="16:30"><time>16:18–16:30</time><div><strong>MICRO PERFORMANCE / SHOWCASE</strong><p>每人或小组 30–60 秒：一个控制动作、一个 State 变化、一个自己材料形成的结果。</p></div></div>
+</div>
+<div class="callout"><p><b>完成标准：</b>至少一个可运行 V1 + 明确 Input + Sound/Visual 关系 + State + 一次他人试玩 + V2 或下一版计划。不要承诺所有人完成专业 Live Set。</p></div>
+</section>
+
+<section class="section" id="teaching"><div class="section-head"><div class="section-num">07 / TEACH</div><div><h2>讲课时真正做的 8 个动作</h2><p class="sub">理论不要独立占 40 分钟。每个概念都用“对比 → 运行 → 判断 → 修改”进入。</p></div></div>
+<div class="grid4">
+<div class="card"><span class="tag">1</span><strong>先玩坏版本</strong><p>让参与者自己感到“按一下、闪一下”的薄。</p></div>
+<div class="card"><span class="tag">2</span><strong>再玩更好版本</strong><p>同一个输入，在不同 State / History 下发生变化。</p></div>
+<div class="card"><span class="tag">3</span><strong>只问一个问题</strong><p>“刚才差别在哪里？”不要先给术语。</p></div>
+<div class="card"><span class="tag">4</span><strong>画一张控制图</strong><p>Input → State / Mapping → Sound + Visual → Feedback。</p></div>
+<div class="card"><span class="tag">5</span><strong>让 AI 做候选</strong><p>快速生成 2–3 个行为，不把第一个能跑的当答案。</p></div>
+<div class="card"><span class="tag">6</span><strong>人做删减</strong><p>Generate fast / Judge slowly。删掉最弱的变化。</p></div>
+<div class="card"><span class="tag">7</span><strong>交换试玩</strong><p>作者沉默；检查可观察性和因果是否清楚。</p></div>
+<div class="card"><span class="tag">8</span><strong>演，不要介绍功能</strong><p>最后展示“怎样演奏它”，不是“网页有多少功能”。</p></div>
+</div>
+</section>
+
+<section class="section internal" id="market"><div class="section-head"><div class="section-num">08 / MARKET <span class="internal-flag">internal</span></div><div><h2>市场定位：不要再卖“技能信息差”</h2><p class="sub">8 月 22 日后的研发记录已经把工作坊产品逻辑改得更清楚：公众价值应该优先是体验、完成感、个人材料和可分享结果。</p></div></div>
+<div class="grid2">
+<div class="card bad"><span class="tag">不要主卖</span><strong>“来学一个软件 / AI 技能”</strong><p>AI 已经压低信息门槛，参与者技能树差异也很大。工具名越多，越像一门短期过期的技能课。</p></div>
+<div class="card good"><span class="tag">优先主卖</span><strong>“三小时做出一个能玩的东西”</strong><p>像陶艺 / 披萨 / 手作体验：完成一个有名字、有个人材料、能让别人玩、能录下来分享的 A/V Instrument。</p></div>
+</div>
+<h3>传播钩子</h3>
+<div class="grid3"><div class="card accent"><strong>一个按钮怎么玩一整场？</strong><p>先证明一个简单输入能形成时间结构。</p></div><div class="card"><strong>把自己的声音做成乐器</strong><p>朋友语音、环境录音、已有歌曲、照片都能进入 Pack。</p></div><div class="card"><strong>不用会钢琴也能控制演出</strong><p>机器负责节拍、调性、密度安全；人负责进入、等待、增加、删减、释放。</p></div></div>
+<div class="callout warn"><p><b>市场上的关键证据不是文案：</b>先让 20–30 秒 raw Screen + Sound 本身像一段 AV Performance，再做宣传剪辑。Promotion 是 Acceptance Test，不是包装。</p></div>
+</section>
+
+<section class="section internal" id="promo"><div class="section-head"><div class="section-num">09 / PROMO <span class="internal-flag">internal</span></div><div><h2>推文 / 宣传记录</h2><p class="sub">这里区分“仓库已经记录的事实”和“仍需验证的对外信息”。不要再让公众号、Word、GitHub 各自长成不同版本。</p></div></div>
+<div class="record"><div class="date">2026-08-13</div><div><strong>公众号编辑 handoff 完成 <span class="status ok">recorded</span></strong><p>文章不要从 AI 趋势开头；从“一个操作让声音和画面一起发生”进入。Ewan 讲 FRAME→FILL→FINISH；yiyi 讲音画同源 / Mapping / 表演界面。</p></div></div>
+<div class="record"><div class="date">2026-08-14</div><div><strong>网站公开解释收口 <span class="status ok">recorded</span></strong><p>公开解释缩成：一个输入 → 音画同源 → 人在回路里 → 可运行的网页工具。/workshop 已有基础中英文版本。</p></div></div>
+<div class="record"><div class="date">2026-08-19</div><div><strong>MANA 推文计划发布日期 <span class="status check">publication not verified</span></strong><p>仓库只记录“计划发布日期”；本页没有找到可验证的正式发布证据，因此不能把“计划”写成“已发”。</p></div></div>
+<div class="record"><div class="date">2026-08-22</div><div><strong>产品定位转向体验型 Workshop <span class="status ok">recorded</span></strong><p>停止把 26 键 / 功能数量当完成度；Instrument 与 Performance System 分线；宣传以真实 20–30 秒演出质量作为验收。</p></div></div>
+<div class="record"><div class="date">2026-08-23</div><div><strong>Starter Ladder + Control Model 接入 8.29 <span class="status ok">recorded</span></strong><p>Trigger Baseline → State → Safe Loop → Golden Mini。理论通过比较 Demo + 一张控制回路图进入，不做长讲座。</p></div></div>
+<h3>当前传播主题</h3>
+<div class="callout"><p><b>建议对外主题：</b>“极简输入：构建视听系统 / Minimal Input, Audiovisual System”。仓库原始项目名“游戏化 AI 新媒体艺术工程师 101”继续作为归档 / 长期项目关系，不需要在每一条宣传里占据最大视觉权重。</p></div>
+</section>
+
+<section class="section internal" id="audit"><div class="section-head"><div class="section-num">10 / AUDIT <span class="internal-flag">internal</span></div><div><h2>当前信息一致性审计</h2><p class="sub">这部分很重要：现在不是缺文案，而是有些历史记录互相冲突。</p></div></div>
+<div class="checks">
+<div class="check"><input type="checkbox" data-id="audit-3h" checked><label><b>核心课程：3 小时 / 13:30–16:30</b> —— 当前 README、Issue #18、Promotion 母版一致。</label></div>
+<div class="check"><input type="checkbox" data-id="audit-old"><label><b>旧 13:30–17:30 / 4 小时记录必须标记 legacy</b> —— `mana-ground-zeroes` 旧兼容入口仍保留旧说法，不应再复制到新页面。</label></div>
+<div class="check"><input type="checkbox" data-id="audit-title"><label><b>公开标题 / 活动名最终统一</b> —— “游戏化 AI…101”与“极简输入：构建视听系统”需要明确一个是归档母项目、一个是当前传播主题。</label></div>
+<div class="check"><input type="checkbox" data-id="audit-market"><label><b>票价 / 报名方式 / 人数 / 最终场地设备</b> —— 仓库 Dashboard 仍标为待 MANA 确认；本页不自行补写。</label></div>
+<div class="check"><input type="checkbox" data-id="audit-push"><label><b>公众号是否已正式发布</b> —— 当前仓库只记录 8/19“计划发布日期”，需要从 MANA 当前公开页面人工复核。</label></div>
+<div class="check"><input type="checkbox" data-id="audit-yiyi"><label><b>yiyi 最终题目 / Bio / 图片 credits</b> —— 旧清单仍有未确认项，若已在公众号完成，需要回写仓库母版。</label></div>
+</div>
+</section>
+
+<section class="section internal" id="plan"><div class="section-head"><div class="section-num">11 / PLAN <span class="internal-flag">internal</span></div><div><h2>8.23 → 8.29 行动方案</h2><p class="sub">接下来不再开新研究线。按“课程能跑 → Demo 成立 → 宣传证明 → 现场保险”收口。</p></div></div>
+<div class="day"><b>8/23</b><div><strong>LOCK THE TEACHING</strong><p>冻结这份讲义与三小时流程。决定 Golden Demo 的唯一 canonical source。列出 Starter 00/01/02 哪些是 VERIFIED、哪些是 NOT TESTED。</p></div></div>
+<div class="day"><b>8/24</b><div><strong>GOLDEN MINI CONTENT LOCK</strong><p>只完成 60–90 秒：GROUND → BUILD → PEAK → BRIDGE / RELEASE。不要扩 26 键，不做新框架。</p></div></div>
+<div class="day"><b>8/25</b><div><strong>RAW PERFORMANCE QA</strong><p>录 30 秒 Screen + Sound，不拍手、不解释、不剪辑补救。若不像演出，只修最大问题。做 Chrome / Safari / AudioContext / Reset 测试。</p></div></div>
+<div class="day"><b>8/26</b><div><strong>PROMO + MARKET CHECK</strong><p>用通过 QA 的真实录屏做 15s / 30s teaser。与 MANA 核对标题、场地、票价、报名状态、人数上限、设备。</p></div></div>
+<div class="day"><b>8/27</b><div><strong>PARTICIPANT PREFLIGHT</strong><p>Starter Kit 一键打开；有线耳机；浏览器；个人素材；Reset。yiyi 线上连接做一次完整技术测试。</p></div></div>
+<div class="day"><b>8/28</b><div><strong>FULL REHEARSAL</strong><p>按真实 180 分钟跑一遍。准备离线备份、Golden Demo 备份、素材备份、备用浏览器。把讲义改动停止。</p></div></div>
+<div class="day"><b>8/29</b><div><strong>RUN THE LOOP</strong><p>PLAY → COMPARE → BUILD → TEST → FIX ONE THING → PERFORM。现场判断优先于把所有内容讲完。</p></div></div>
+<h3>现在明确不做</h3>
+<div class="grid3"><div class="card bad"><strong>不在 8.29 前重构 NFI Three.js v0.8</strong><p>它是作品线，不是本次工作坊 blocker。</p></div><div class="card bad"><strong>不扩 MIDI / OSC / 传感器</strong><p>这些属于后续技能树；第一期默认键鼠浏览器。</p></div><div class="card bad"><strong>不继续制造新 Demo 分支</strong><p>先完成一个 Golden Mini，验证 raw performance，再谈扩展。</p></div></div>
+<h3>今晚可以直接勾的 P0</h3>
+<div class="checks" id="p0checks">
+<div class="check"><input type="checkbox" data-id="p0-lecture"><label>讲义与 Run of Show 冻结为本页版本</label></div>
+<div class="check"><input type="checkbox" data-id="p0-golden"><label>确认 Golden Mini 的唯一 canonical path</label></div>
+<div class="check"><input type="checkbox" data-id="p0-starter"><label>Starter 00 / 01 / 02 各自标记 VERIFIED / NOT TESTED</label></div>
+<div class="check"><input type="checkbox" data-id="p0-mana"><label>整理一条发给 MANA 的“待确认信息”消息：标题 / 场地 / 票价 / 报名 / 人数 / 设备</label></div>
+<div class="check"><input type="checkbox" data-id="p0-yiyi"><label>整理 yiyi 的 25 分钟课堂 cue：案例 → 问题 → Mapping → 表演性 → 回到 Starter</label></div>
+</div>
+</section>
+
+<section class="section" id="sources"><div class="section-head"><div class="section-num">12 / SOURCES</div><div><h2>Source of Truth</h2><p class="sub">这页不是凭空重新写课程。它把当前仓库里分散的公开、执行、控制模型与市场研发记录收成一张可使用的 Runbook。</p></div></div>
+<div class="sources">
+<div><code>workshops/gamified-ai-new-media-art-engineer-101/README.md</code> — 当前 3 小时公开课程母版</div>
+<div><code>workshops/gamified-ai-new-media-art-engineer-101/dashboard/README.md</code> — 执行 Dashboard</div>
+<div><code>docs/public-programs/MANA-20260829-PROMOTION.md</code> — MANA 推文 / 物料母版</div>
+<div><code>docs/public-programs/MANA-20260829-EDITORIAL-TEXT-LIBRARY.md</code> — 编辑文本库 / Minimal Input 传播主题</div>
+<div><code>workshops/gamified-ai-new-media-art-engineer-101/promotion-handoff-20260813.md</code> — 公众号 handoff</div>
+<div><code>research/performance-control-model/README.md</code> — 音画同源控制模型</div>
+<div><code>workshops/personal-av-instrument/starter-control-model.md</code> — Starter Ladder v0.1</div>
+<div><code>Issue #18</code> — 8.29 执行源</div>
+<div><code>Issue #54 / #55</code> — Performance System / 市场与研发收束</div>
+</div>
+<div class="callout warn operator-only"><p><b>外部检索结果：</b>本轮没有检索到一个可以可靠验证 MANA 正式公众号发布、当前票价或实时报名状态的公开网页。因此这些信息继续标记为“需要 MANA / 当前报名页人工复核”，不在本页伪装成已确认事实。</p></div>
+</section>
+</main>
+<script>
+(()=>{
+const app=document.querySelector('#app');
+const lectureBtn=document.querySelector('#lectureBtn'),controlBtn=document.querySelector('#controlBtn');
+function setMode(mode){const lecture=mode==='lecture';document.body.classList.toggle('lecture-mode',lecture);lectureBtn.classList.toggle('on',lecture);controlBtn.classList.toggle('on',!lecture);const u=new URL(location.href);u.searchParams.set('mode',mode);history.replaceState(null,'',u);}
+lectureBtn.addEventListener('click',()=>setMode('lecture'));controlBtn.addEventListener('click',()=>setMode('control'));
+setMode(new URL(location.href).searchParams.get('mode')==='lecture'?'lecture':'control');
+document.querySelector('#fullscreenBtn').addEventListener('click',async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()}catch{}});
+document.querySelector('#printBtn').addEventListener('click',()=>window.print());
+const target=new Date('2026-08-29T13:30:00+08:00').getTime();
+function tick(){const el=document.querySelector('#countdown');const d=target-Date.now();if(d<=0){el.textContent='SESSION WINDOW / PASSED';return}const days=Math.floor(d/86400000),hrs=Math.floor((d%86400000)/3600000),mins=Math.floor((d%3600000)/60000);el.textContent=`${days}d ${hrs}h ${mins}m`;}
+tick();setInterval(tick,60000);
+function markLive(){const now=new Date();const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',hour12:false});const dateFmt=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'});if(dateFmt.format(now)!=='2026-08-29')return;const current=fmt.format(now);document.querySelectorAll('.slot').forEach(s=>s.classList.toggle('live',current>=s.dataset.start&&current<s.dataset.end));}
+markLive();setInterval(markLive,30000);
+const key='mana-20260829-runbook-checks-v1';let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
+document.querySelectorAll('.check input[data-id]').forEach(input=>{if(saved[input.dataset.id]!==undefined)input.checked=!!saved[input.dataset.id];const sync=()=>{input.closest('.check').classList.toggle('done',input.checked);saved[input.dataset.id]=input.checked;try{localStorage.setItem(key,JSON.stringify(saved))}catch{}};input.addEventListener('change',sync);sync();});
+addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select'))return;if(e.key.toLowerCase()==='l')setMode('lecture');if(e.key.toLowerCase()==='o')setMode('control');if(e.key.toLowerCase()==='f')document.querySelector('#fullscreenBtn').click();});
+})();
+</script>
+</body>
+</html>
