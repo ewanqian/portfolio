@@ -3,6 +3,8 @@
 > **Purpose:** 8.29 workshop P0 / raw performance proof  
 > **Canonical runtime:** `index.html`  
 > **Theory:** `research/performance-control-model/README.md`  
+> **Material contract:** [`MATERIAL-PACK.md`](./MATERIAL-PACK.md)  
+> **Listening / audience gate:** [`LISTENING-QA.md`](./LISTENING-QA.md)  
 > **Status:** source implemented 2026-08-23; auditory / browser / audience QA still required.
 
 This is deliberately smaller than the long-term full Performance System requested in Issue #55. It does **not** claim to complete the 8 Hero Phrase / 5–10 minute live-set target. Its job is to prove a smaller proposition first:
@@ -105,7 +107,23 @@ v0.2 improved architecture but still invited evaluation through many keyboard ph
 
 If the answer is no, do not add keys. Rewrite composition / sound / choreography first.
 
+## Current audio-material boundary
+
+The current runtime intentionally uses browser synthesis / noise as a fallback. A repository audit on 2026-08-23 did not reveal a conventional committed reusable audio stem pack. The embedded `叮 / 咚 / 鸡 / 大 / 狗 / 叫` speech samples in `nfi-keyboard-liveset` belong to the Personal Material / Instrument Identity line and are not Golden material by default.
+
+Therefore the next content pass must choose between:
+
+```text
+A. current synth fallback is already musically convincing enough
+or
+B. supply a small, rights-clear curated Material Pack and A/B test it
+```
+
+Do **not** invent stems, rip unrelated music, or build a general sample engine before real material is supplied. See [`MATERIAL-PACK.md`](./MATERIAL-PACK.md).
+
 ## Required QA
+
+The full test sheet is now [`LISTENING-QA.md`](./LISTENING-QA.md). It is the next P0 gate before any new controls or framework work.
 
 ### Code-level completed before commit
 
@@ -121,6 +139,8 @@ If the answer is no, do not add keys. Rewrite composition / sound / choreography
 - Section perceptual distinction with HUD off: NOT TESTED.
 - No-input continuity: NOT TESTED.
 - Gain / compressor listening test: NOT TESTED.
+- Sound-only form test: NOT TESTED.
+- Visual-only continuity test: NOT TESTED.
 - 60–90 sec raw screen+sound recording: NOT RECORDED.
 - 2-minute novice instruction test: NOT TESTED.
 - 5-minute performer test: NOT TESTED.
@@ -135,4 +155,15 @@ Ask:
 
 > “这更像一段 Audio Visual Performance，还是像一个自动播放的网页 Demo？”
 
-If it still reads primarily as a webpage demo, v0.3 fails. The next step is authored sound / visual choreography, not framework expansion.
+If it still reads primarily as a webpage demo, v0.3 fails.
+
+Then choose exactly one next P0:
+
+```text
+REWRITE AUDIO
+REWRITE VISUAL
+REWRITE STRUCTURE
+PASS TO PROMO
+```
+
+The next step is authored content / QA, not framework expansion.
