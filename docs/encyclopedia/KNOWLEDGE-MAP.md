@@ -14,6 +14,8 @@
 - [事实与证据账本](./claims-ledger.md)
 - [长期工作坊总览](../public-programs/README.md)
 - [游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [公开工作坊讲义｜从一个动作，到一场演出](../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
+- [新媒体工程控制论](../../research/performance-control-model/index.html)
 
 ### Agent / Codex
 
@@ -176,12 +178,16 @@
 ## 当前第一期：游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29
 
 **公开定位：** AI 协作、工程化创作与音画原型的基础入口。  
-**已确认时间：** 13:30–17:30。  
-**形式：** 4 小时工作坊 + 结课大屏幕 Showcase。
+**已确认核心时段：** 13:30–16:30。  
+**形式：** 3 小时工作坊 + 结尾快速 Showcase。
 
 - [公开课程页](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [公开工作坊讲义｜从一个动作，到一场演出](../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
+- [新媒体工程控制论](../../research/performance-control-model/index.html)
 - [Issue #18｜内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
-- 目标：四小时内形成可运行、可操作的新媒体 / A/V 原型，并完成一次 30–90 秒公开展示
+- 目标：三小时内形成可运行、可操作的新媒体 / A/V 原型，经过一次他人试玩，并完成一次 30–60 秒快速展示
+
+前期场地沟通过 13:30–17:30 的窗口；那是历史场地信息，不再作为课程时长。若场地仍额外开放，16:30 后的用途由 MANA 单独确认。
 
 本期不设置 After Party。After Party 进入未来的初级 + 进阶组合课程或更完整的《音画同源乐器》排练 / 表演版本。
 
