@@ -1,22 +1,21 @@
-export const currentWorkIds = [
-  'vrplay-ai-xr-hackathon-2026'
+export const homeMainlineWorkIds = [
+  'timer',
+  'drop-flow',
+  'sre-realtime-liveset-2026'
 ]
 
 export const homeGalleryWorkIds = [
-  'timer',
-  'drop-flow',
   'kashiwa',
   'mke-terminal',
-  'digital-garden-visual-2025',
-  'sre-realtime-liveset-2026'
+  'digital-garden-visual-2025'
 ]
 
 export const galleryWorkIds = [
-  'drop-flow',
-  'kashiwa',
   'timer',
-  'mke-terminal',
-  'sre-realtime-liveset-2026'
+  'drop-flow',
+  'sre-realtime-liveset-2026',
+  'kashiwa',
+  'mke-terminal'
 ]
 
 export const productionWorkIds = [
