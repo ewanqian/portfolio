@@ -3,7 +3,7 @@
 
 当前工作坊项目分成三个层级：
 
-1. **《游戏化 AI 新媒体艺术工程师 101》｜MANA 8 月 29 日先导课**：13:30–17:30，4 小时完整工作坊，结尾直接进行大屏幕 Showcase。
+1. **《游戏化 AI 新媒体艺术工程师 101》｜MANA 8 月 29 日先导课**：13:30–16:30，3 小时工作坊，结尾进行快速 Showcase。
 2. **《游戏化 AI 新媒体艺术工程师》**：继续深入 AI 协作、工程化开发、版本、测试与新媒体创作基础。
 3. **《音画同源乐器》**：进一步进入声音、图像、Mapping、实时系统与演奏。
 
@@ -30,10 +30,10 @@ After Party / Performance
 ### AI 协作、工程化创作与音画原型｜MANA 先导工作坊
 
 **日期：** 2026 年 8 月 29 日  
-**时间：** 13:30–17:30  
-**形式：** 4 小时工作坊 + 结课 Showcase
+**时间：** 13:30–16:30  
+**形式：** 3 小时工作坊 + 快速 Showcase
 
-> 四小时做出一个能够运行、操作和展示的新媒体原型。
+> 三小时走完一次最小但完整的新媒体创作循环：理解、搭建、替换个人材料、测试并展示。
 
 这是两条长期工作坊的第一期基础入口。课程只抽取最必要的能力：
 
@@ -42,13 +42,15 @@ After Party / Performance
 - 怎样保存 V1、测试并进入 V2
 - 怎样快速建立一个可操作的视觉系统
 - 怎样把自己的声音和图像接到一起
-- 怎样在大屏幕上完成一次 30–90 秒 Showcase
+- 怎样在大屏幕上完成一次 30–60 秒 Showcase
 
-第一期不安排 After Party。结课展示直接包含在四小时课程内，避免把初级课程的制作量和晚间演出压力绑在一起。
+第一期不安排 After Party。结课展示直接包含在三小时课程内，避免把初级课程的制作量和晚间演出压力绑在一起。
 
 After Party 将保留给后续初级 + 进阶组合课程，或《音画同源乐器》有更充分制作、排练时间后的公开版本。
 
-[查看《游戏化 AI 新媒体艺术工程师 101》完整公开介绍](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [查看《游戏化 AI 新媒体艺术工程师 101》完整公开介绍](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
+- [公开工作坊讲义｜从一个动作，到一场演出](../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
+- [新媒体工程控制论｜公开讲义](../../research/performance-control-model/index.html)
 
 ---
 
@@ -127,7 +129,7 @@ After Party 将保留给后续初级 + 进阶组合课程，或《音画同源�
 
 ## 基本形式
 
-- **MANA 101：** 2026-08-29，13:30–17:30，4 小时 + 结课 Showcase
+- **MANA 101：** 2026-08-29，13:30–16:30，3 小时 + 快速 Showcase
 - **长期公众版：** 单个工作坊约 3–6 小时，可按场地和参与者调整
 - **组合版本：** 可扩展为多日课程、排练与最终公开展示
 - **建议人数：** 12–20 人
@@ -140,10 +142,12 @@ After Party 将保留给后续初级 + 进阶组合课程，或《音画同源�
 ## 阅读顺序
 
 1. [游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
-2. [游戏化 AI 新媒体艺术工程师](../../workshops/gamified-life-engineer/README.md)
-3. [音画同源乐器](../../workshops/personal-av-instrument/README.md)
-4. [Issue #14｜AI 新媒体工程工作坊长期研发](https://github.com/ewanqian/portfolio/issues/14)
-5. [Issue #15｜音画同源乐器长期研发](https://github.com/ewanqian/portfolio/issues/15)
-6. [Issue #18｜MANA 101 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
+2. [公开工作坊讲义｜从一个动作，到一场演出](../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
+3. [新媒体工程控制论](../../research/performance-control-model/index.html)
+4. [游戏化 AI 新媒体艺术工程师](../../workshops/gamified-life-engineer/README.md)
+5. [音画同源乐器](../../workshops/personal-av-instrument/README.md)
+6. [Issue #14｜AI 新媒体工程工作坊长期研发](https://github.com/ewanqian/portfolio/issues/14)
+7. [Issue #15｜音画同源乐器长期研发](https://github.com/ewanqian/portfolio/issues/15)
+8. [Issue #18｜MANA 101 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
 **合作联络：Ewan Qian / 钱誉文**
