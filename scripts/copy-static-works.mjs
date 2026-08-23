@@ -38,9 +38,26 @@ if (fs.existsSync(worksFrom)) {
   console.warn(`Static works folder not found: ${worksFrom}`)
 }
 
-// Workshop demos stay next to their workshop source, then are copied into dist
-// so the canonical editable version remains under workshops/.
+// Personal A/V Instrument demos stay next to their workshop source, then are
+// copied into dist so the canonical editable version remains under workshops/.
 const demoFrom = path.join(root, 'workshops', 'personal-av-instrument', 'demos')
 const demoTo = path.join(root, 'dist', 'workshops', 'personal-av-instrument', 'demos')
 const demoCount = copyDirRecursive(demoFrom, demoTo)
 console.log(`Copied ${demoCount} Personal A/V Instrument demo file(s) → dist/workshops/personal-av-instrument/demos/`)
+
+// MANA 8.29 public workshop guide. The dated source remains explicit in the
+// repository, while the deployed folder also receives index.html for a clean URL.
+const manaGuideFrom = path.join(root, 'workshops', 'gamified-ai-new-media-art-engineer-101', 'runbook-20260829.html')
+const manaGuideTo = path.join(root, 'dist', 'workshops', 'gamified-ai-new-media-art-engineer-101')
+if (fs.existsSync(manaGuideFrom)) {
+  fs.mkdirSync(manaGuideTo, { recursive: true })
+  fs.copyFileSync(manaGuideFrom, path.join(manaGuideTo, 'index.html'))
+  fs.copyFileSync(manaGuideFrom, path.join(manaGuideTo, 'runbook-20260829.html'))
+  console.log('Published MANA 8.29 workshop guide → dist/workshops/gamified-ai-new-media-art-engineer-101/')
+}
+
+// Standalone public lecture for the New Media Engineering Control Model.
+const controlModelFrom = path.join(root, 'research', 'performance-control-model')
+const controlModelTo = path.join(root, 'dist', 'research', 'performance-control-model')
+const controlModelCount = copyDirRecursive(controlModelFrom, controlModelTo)
+console.log(`Copied ${controlModelCount} control-model file(s) → dist/research/performance-control-model/`)
