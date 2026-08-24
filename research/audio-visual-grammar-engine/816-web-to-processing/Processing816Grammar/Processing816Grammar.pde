@@ -8,6 +8,7 @@ final float BPM = 104.0;
 final int AUTO_BARS = 8;
 final int AGENT_COUNT = 420;
 final int MAX_RESIDUE = 180;
+final int CAPTURE_FRAMES_PER_STATE = 45;
 
 PGraphics layerOld;
 PGraphics layerNew;
@@ -34,6 +35,7 @@ int previousState = 1;
 boolean autoMode = true;
 boolean holdMode = false;
 boolean showHUD = true;
+boolean captureMode = false;
 
 long transportStartMs;
 long lastFrameMs;
@@ -52,16 +54,18 @@ int seed = 81626;
 
 void settings() {
   size(W, H, P3D);
+  smooth(8);
 }
 
 void setup() {
-  smooth(8);
   frameRate(60);
   randomSeed(seed);
   noiseSeed(seed);
 
-  layerOld = createGraphics(width, height, P3D);
-  layerNew = createGraphics(width, height, P3D);
+  // Keep the presentation surface P3D, but use stable 2D transition buffers.
+  // Two simultaneous offscreen P3D framebuffers fail validation on this macOS runtime.
+  layerOld = createGraphics(width, height, JAVA2D);
+  layerNew = createGraphics(width, height, JAVA2D);
 
   for (int i = 0; i < AGENT_COUNT; i++) {
     agents.add(new Agent(random(width), random(height), random(10000)));
@@ -70,6 +74,13 @@ void setup() {
   transportStartMs = millis();
   lastFrameMs = millis();
   resetBus();
+  captureMode = "816_GRAMMAR".equals(System.getenv("NFI_CAPTURE_MODE"));
+  if (captureMode) {
+    autoMode = false;
+    holdMode = true;
+    showHUD = false;
+    new java.io.File(sketchPath("captures")).mkdirs();
+  }
 }
 
 void draw() {
@@ -80,6 +91,16 @@ void draw() {
   updateTransport(now);
   updateControlBus(now, dt);
   updateWorld(now, dt);
+
+  if (captureMode) {
+    int captureFrame = (frameCount - 1) % CAPTURE_FRAMES_PER_STATE;
+    currentState = constrain((frameCount - 1) / CAPTURE_FRAMES_PER_STATE + 1, 1, 8);
+    previousState = currentState;
+    transitionStartMs = -9999;
+    if (captureFrame == 0 && (currentState == 2 || currentState == 3 || currentState == 7 || currentState == 8)) {
+      injectHit(1.0, 0.62, 0.48, false);
+    }
+  }
 
   float t = constrain((now - transitionStartMs) / transitionDurationMs, 0, 1);
   float eased = smoothstep(t);
@@ -101,6 +122,14 @@ void draw() {
   }
 
   if (showHUD) drawHUD(now);
+
+  if (captureMode) {
+    int captureFrame = (frameCount - 1) % CAPTURE_FRAMES_PER_STATE;
+    if (captureFrame == CAPTURE_FRAMES_PER_STATE - 1) {
+      saveFrame("captures/" + nf(currentState, 2) + "-" + stateNames[currentState - 1].toLowerCase() + ".png");
+    }
+    if (frameCount >= CAPTURE_FRAMES_PER_STATE * 8) exit();
+  }
 }
 
 // ------------------------------------------------------------
@@ -510,7 +539,6 @@ void drawScreenPoints(PGraphics g, long now) {
 // 8 — CHROMA_STRAND
 void drawChromaStrand(PGraphics g, long now) {
   g.pushMatrix();
-  g.translate(0, 0, -60);
 
   int strands = 3;
   int samples = 150;
@@ -532,8 +560,9 @@ void drawChromaStrand(PGraphics g, long now) {
       y += sin(phase + s * 0.7) * (36 + 88 * bus.energy);
       y += sin(phase * 2.7 + 1.4) * 18 * bus.tension;
       y += bus.direction * (u - 0.5) * height * 0.18;
-      float z = depth + sin(phase * 0.72) * 55 * bus.memory;
-      g.vertex(x, y, z);
+      // Preserve depth behavior as projected separation inside the 2D crossfade buffer.
+      float projectedDepth = depth + sin(phase * 0.72) * 55 * bus.memory;
+      g.vertex(x, y + projectedDepth * 0.12);
     }
     g.endShape();
   }
