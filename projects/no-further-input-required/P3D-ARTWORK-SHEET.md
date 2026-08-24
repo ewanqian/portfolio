@@ -7,30 +7,74 @@
 > **Duration target:** 180 seconds / loop  
 > **Reviewer:** Ewan + ChatGPT  
 > **Executor:** local Codex  
-> **Important:** This document is **NOT** the Performance / QWERTY P3D Harness. Do not import its 36-key instrument assumptions into this artwork.
+> **Correction:** 2026-08-24 — the visual Golden Reference is the **2026-08-16 exhibition study set**, NOT the 2026-08-17 audiovisual-instrument branch.
 
 ---
 
-# 0｜Current source of truth
+# 0｜Critical correction / source hierarchy
 
-Before implementation, read in this order:
+The previous revision incorrectly treated the 2026-08-17 audiovisual-instrument branch as the artwork visual baseline. That is now superseded.
 
-1. GitHub Issue #56 — latest artwork R&D and all 2026-08-24 comments.
-2. `works/no-further-input-required.html` — current canonical exhibition runtime.
-3. `works/no-further-input-required-3min.html` — independent 180-second study.
-4. `projects/no-further-input-required-2026.md` — project history / concept.
-5. 2026-08-17 visual reference branch:
-   - branch: `agent/audiovisual-instrument-special-20260817`
-   - visual reference: `works/audiovisual-instrument-special.html`
-6. Only when needed for historical visual behaviours, inspect older NFI/browser prototypes.
+## Current source hierarchy
 
-Do **not** use `research/performance-control-model/experiments/nfi-p3d-harness/` as the artwork source of truth. That project belongs to the Performance / Personal A/V Instrument line.
+1. **2026-08-16 exhibition visual study images — GOLDEN VISUAL REFERENCE.**
+2. GitHub Issue #56 — latest artwork decisions, especially the 2026-08-24 180-second exhibition lock.
+3. `works/no-further-input-required.html` — current canonical exhibition runtime / behaviour reference.
+4. `works/no-further-input-required-3min.html` — current 180-second web study / timing reference.
+5. `projects/no-further-input-required-2026.md` — concept / version history.
+6. Older browser and performance prototypes are secondary implementation references only.
+
+The following are explicitly **NOT** visual Golden References for this artwork:
+
+```text
+agent/audiovisual-instrument-special-20260817
+research/performance-control-model/experiments/nfi-p3d-harness/
+public Interactive v0.7 QWERTY instrument UI
+```
+
+They belong to the performance / instrument research line.
 
 ---
 
-# 1｜Frozen artwork decisions — 2026-08-24
+# 1｜2026-08-16 Golden Reference inventory
 
-These are not open to Executor redesign.
+The local source folder contains at least these seven reference images:
+
+```text
+00-六状态预览.jpg
+01-高维投影.jpg
+02-信号层.jpg
+03-约束机构.jpg
+04-索引场.jpg
+05-量化记忆.jpg
+06-递归装配.jpg
+```
+
+These exact files are the current visual evidence.
+
+## Important retrieval rule
+
+Before artistic P3D implementation, local Codex must locate the original 2026-08-16 images in the local project / asset folders using the exact filenames above.
+
+If any of the six state images `01–06` cannot be found:
+
+```text
+STATUS = BLOCKED_REFERENCE_MISSING
+REPORT missing filenames
+STOP
+```
+
+Do not reconstruct missing states from their names.
+Do not use AI-generated replacement imagery.
+Do not substitute 8/17 screenshots.
+
+The state names are identifiers, not permission for Executor interpretation.
+
+---
+
+# 2｜Frozen artwork decisions — 2026-08-24
+
+These remain valid after the baseline correction:
 
 ```text
 DURATION       180 seconds / loop
@@ -38,12 +82,11 @@ MODE           fully autonomous exhibition playback
 INTERACTION    no ongoing audience interaction
 VISIBLE UI     none
 STRUCTURE      four continuous dramaturgical phases
-VISUAL MOTHER  downward triangle / recursive partition / decomposition
-SECONDARY      route / sparse field / residue / incomplete structures
-PALETTE        black / white / very low-color disturbance
+PALETTE        preserve the 8/16 exhibition reference family
+P3D ROLE       spatial extension of an existing language, not a redesign
 ```
 
-Timeline:
+Current dramaturgy:
 
 ```text
 00:00–00:35  REGISTRATION / 发生
@@ -52,676 +95,477 @@ Timeline:
 02:15–03:00  REMAINDER / 余项
 ```
 
-No hard scene switching. These are temporal conditions, not four screens.
+These are temporal conditions, not four scene presets.
 
 ---
 
-# 2｜What “extend from the 8/17 version” means
+# 3｜What “extend the 8/16 version into P3D” means
 
-The 2026-08-17 branch is a **visual DNA reference**, not the final artwork architecture.
+The first rule is **visual continuity**.
 
-The reference is valuable because it has a restrained visual field:
-
-- very dark background;
-- off-white thin strokes;
-- basic geometric primitives;
-- large negative space;
-- sparse events;
-- clear figure / ground separation;
-- line, frame, circle, radial and trace-like behaviours;
-- low object count;
-- limited palette;
-- quiet, technical but not overloaded composition.
-
-The artwork should preserve this restraint while removing its instrumental/demo character.
-
-## KEEP from 8/17
+P3D is allowed to add:
 
 ```text
-thin line discipline
-black field
-large negative space
-clear geometric hierarchy
-few simultaneous subjects
-restrained motion
-small registration-like events
-simple forms that can accumulate meaning over time
+Z depth
+layer separation
+occlusion
+parallax
+spatial persistence
+history planes
+controlled camera perspective
+real spatial relationships between existing forms
 ```
 
-## DO NOT inherit from 8/17
+P3D is NOT allowed to add a new aesthetic vocabulary just to prove that the engine is 3D.
+
+Forbidden default additions:
 
 ```text
-state selector UI
-BPM UI
-pointer-driven visual position
-five-mode switching
-one-shot toy feedback
-interaction-as-content
-“each state is a different effect” logic
-radial burst used only because a click occurred
+new particle systems
+star fields
+random cubes
+large spheres
+glowing sci-fi objects
+constant camera orbit
+volumetric spectacle
+bloom used as finish
+new typography / HUD
+new colours not present in reference
 ```
 
-The target is:
+Core test:
 
-> **8/17 visual restraint + current 3-minute artwork dramaturgy + true spatial depth.**
+> When the P3D result is flattened back toward an orthographic front view, it must still read as a direct descendant of the 2026-08-16 reference image.
 
 ---
 
-# 3｜P3D principle: add depth, do not invent a new aesthetic
+# 4｜The six states are visual source material, not six mandatory scenes
 
-The P3D move is not permission to add generic 3D visuals.
-
-Do not translate:
+The current reference vocabulary is indexed as:
 
 ```text
-2D minimal system
-→ particles + spheres + camera orbit + glow
+01 HIGH-DIMENSION PROJECTION / 高维投影
+02 SIGNAL LAYER / 信号层
+03 CONSTRAINT MECHANISM / 约束机构
+04 INDEX FIELD / 索引场
+05 QUANTIZED MEMORY / 量化记忆
+06 RECURSIVE ASSEMBLY / 递归装配
 ```
 
-Translate instead:
+## Do not infer behaviour from names alone
+
+Until the original JPG is inspected, Executor may only record objective visual facts:
 
 ```text
-2D line / partition / route language
-→ spatial hierarchy
-→ historical layers
-→ occlusion
-→ depth relationships
-→ residue occupying different Z planes
+background
+composition
+number / type of visible primitives
+line weight
+filled vs outline forms
+position / scale
+symmetry / asymmetry
+repetition
+occlusion
+apparent depth cues
+motion implied by the still
+visual density
+negative space
 ```
 
-The strongest test is:
+The Reviewer decides the formal interpretation.
 
-> If the scene is viewed nearly orthographically or flattened, it should still feel related to the 8/17 visual family and the current downward-partition language.
+## Artwork use
 
-3D must add **history and spatial hierarchy**, not replace the language.
+The six references may later become:
+
+- behaviours that coexist;
+- source grammars that transition into one another;
+- foreground / midground / background layers;
+- historical states that return;
+- structures that get spatially recombined.
+
+They are **not automatically six chronological scenes**.
 
 ---
 
-# 4｜2D → P3D translation table
+# 5｜Mandatory Reference Audit before coding artwork
 
-## LINE
-
-2D:
+Create:
 
 ```text
-thin line / short registration mark
+reports/A000-REFERENCE-AUDIT.md
 ```
 
-P3D:
+For each image 01–06, report only objective facts in this template:
 
 ```text
-polyline at controlled depth
-line crossing several Z planes
-partial contour of a transparent plane
+REFERENCE ID
+SOURCE FILE
+PIXEL SIZE
+BACKGROUND
+PRIMARY FORM
+SECONDARY FORM
+COMPOSITION CENTER
+NEGATIVE SPACE
+LINE / SURFACE CHARACTER
+REPETITION
+APPARENT LAYERS
+APPARENT DEPTH
+DENSITY 0..1
+MOTION IMPLIED BY STILL
+UNRESOLVED / AMBIGUOUS FACTS
 ```
 
-Avoid glowing laser lines.
-
-## RECT / FRAME
-
-2D:
+Also create a contact sheet or review board:
 
 ```text
-rect / frame / cell
+captures/A000/reference-board.png
 ```
 
-P3D:
+It must show all six state references at equal review scale, labels outside the artwork frame.
 
-```text
-transparent plane outline
-stacked frames with shallow Z offsets
-open-sided spatial frame
-```
-
-Avoid default solid cubes.
-
-## CIRCLE / PULSE
-
-2D:
-
-```text
-circle / expanding pulse
-```
-
-P3D:
-
-```text
-very sparse planar ellipse / shell section
-propagating contour through several depth planes
-```
-
-Use rarely. It is secondary language, not the hero system.
-
-## PARTITION / DECOMPOSE
-
-2D:
-
-```text
-downward triangle
-recursive subdivision
-whole → parts
-```
-
-P3D:
-
-```text
-stacked triangular / polygonal planes
-recursive spatial subdivision
-fragments offset in depth while preserving parent structure
-partial extrusion only where it clarifies hierarchy
-```
-
-This is the **primary P3D benchmark**.
-
-## ROUTE
-
-2D:
-
-```text
-path / line / history route
-```
-
-P3D:
-
-```text
-polyline passing between historical planes
-route with selected Z deviations
-old route remains as faint spatial scaffold
-```
-
-Do not use chaotic splines.
-
-## FIELD
-
-2D:
-
-```text
-low-density point / line field
-```
-
-P3D:
-
-```text
-sparse XYZ points
-low-amplitude depth displacement
-selective neighbour connections
-```
-
-Field remains background / connective material. It must never become a starfield.
-
-## RESIDUE
-
-2D:
-
-```text
-old fragments / old path / incomplete structure remains
-```
-
-P3D:
-
-```text
-previous geometry persists on older depth planes
-opacity decays but structure remains identifiable
-old planes can be recalled and re-enter foreground
-```
-
-Residue is **not motion blur**.
+No artistic redesign is allowed before this audit exists.
 
 ---
 
-# 5｜Spatial composition rules
+# 6｜P3D translation protocol: 2D fidelity first, depth second
 
-## Camera
+Each state must go through **two gates**.
 
-Default camera should be almost stable.
+## Gate A — FRONT FIDELITY
 
-Allowed:
+Build a P3D scene using a near-orthographic / front-facing camera.
 
-- slow breathing / dolly on long timescale;
-- small perspective shift;
-- rare controlled move during Recall;
-- very subtle parallax.
+The rendered front view should reproduce the important formal relationships of the 8/16 reference:
 
-Forbidden:
+- composition;
+- scale hierarchy;
+- negative space;
+- density;
+- primitive family;
+- line / surface balance.
 
-- continuous orbit camera;
-- camera movement as default spectacle;
-- fast handheld motion;
-- random rotations;
-- camera trying to compensate for weak geometry.
+Do not improve it yet.
 
-## Depth budget
-
-Depth must be readable but restrained.
-
-Initial recommendation:
+Required capture pattern:
 
 ```text
-foreground     +250 to +600
-primary plane   -80 to +180
-history stack  -100 to -900
-far residue    -900 to -1600
+captures/A001/01-front.png
+captures/A001/02-front.png
+...
+captures/A001/06-front.png
 ```
 
-These are starting values, not artistic truth. Executor may tune only for legibility and must report changes.
+## Gate B — DEPTH EXTENSION
 
-## Simultaneous systems
+Only after Reviewer approves the front reproduction of a state, add controlled P3D depth.
 
-At most three major behavioural families should be clearly active at once:
+Allowed first depth operations:
 
 ```text
-PRIMARY STRUCTURE
-SECONDARY ROUTE / FIELD
-RESIDUE / HISTORY
+separate existing layers along Z
+turn existing flat surfaces into shallow planes
+preserve parent / child structures at different depth
+route an existing line through depth
+place earlier states behind current state as history
+allow limited occlusion
+use slight perspective / parallax to reveal relationships
 ```
 
-Do not make every behaviour visible because it exists in code.
+Do not add new geometry families during this gate.
+
+Required capture pattern per approved state:
+
+```text
+XX-front-p3d.png
+XX-perspective-a.png
+XX-side-debug.png
+```
+
+`side-debug` exists only to prove actual Z depth and is not an artwork frame.
 
 ---
 
-# 6｜180-second P3D dramaturgy
+# 7｜Processing OOP structure
 
-## 00:00–00:35 — REGISTRATION
+Do not build six monolithic sketches.
 
-Spatial condition:
-
-- almost 2D;
-- very shallow depth;
-- few isolated structures;
-- one plane / one route event can be clearly perceived;
-- large negative space;
-- decomposition starts slowly;
-- residue begins but remains faint.
-
-Goal:
-
-> Establish that an event leaves a spatial consequence.
-
-Do not “show 3D” aggressively here.
-
-## 00:35–01:25 — ABSORPTION
-
-Spatial condition:
-
-- depth range gradually expands;
-- partition planes begin to stack;
-- routes pass between layers;
-- field appears as connective tissue;
-- older structure remains visible behind new structure;
-- density rises while hierarchy stays readable.
-
-Goal:
-
-> New events no longer exist alone; they enter and alter an accumulating spatial system.
-
-## 01:25–02:15 — RECALL
-
-Spatial condition:
-
-- old planes / routes return from historical depth;
-- same geometry re-enters with altered scale / offset / subdivision;
-- foreground and background exchange priority;
-- old routes can cross or reframe current partition;
-- maximum tension comes from **relationship between past and present**, not maximum object count.
-
-Possible strongest gesture:
-
-```text
-current structure opens / separates
-↓
-older triangular parent structure becomes visible behind it
-↓
-route reconnects old and current fragments
-↓
-new partition occurs using historical boundaries
-```
-
-Do not use a generic explosion as climax.
-
-## 02:15–03:00 — REMAINDER
-
-Spatial condition:
-
-- new geometry generation drops sharply;
-- current foreground recedes;
-- historical fragments remain at several depths;
-- occasional route / boundary returns;
-- field becomes sparse;
-- space opens;
-- the system continues without appearing idle.
-
-Loop condition:
-
-- do not clear all geometry at 180 s;
-- keep a controlled history seed into next loop;
-- opening of next cycle should be visually related to first opening but not identical.
-
-Goal:
-
-> No new input is required, yet the accumulated history continues to operate.
-
----
-
-# 7｜Artwork OOP structure for Processing
-
-Use small explicit classes. Do not build a generic creative-coding framework.
-
-Suggested structure:
+Suggested minimum structure:
 
 ```text
 NFI_Artwork_P3D/
 ├── NFI_Artwork_P3D.pde
 ├── AppConfig.pde
 ├── ArtworkClock.pde
-├── ArtworkComposer.pde
 ├── Dramaturgy180.pde
+├── ArtworkComposer.pde
+├── ReferenceRegistry.pde
 ├── HistoryState.pde
 ├── ResidueStore.pde
 ├── CameraRig.pde
 ├── CaptureHarness.pde
-├── GeometryRecord.pde
-├── PartitionSystem.pde
-├── RouteSystem.pde
-├── FieldSystem.pde
+├── VisualState.pde
+├── State01HighDimProjection.pde
+├── State02SignalLayer.pde
+├── State03ConstraintMechanism.pde
+├── State04IndexField.pde
+├── State05QuantizedMemory.pde
+├── State06RecursiveAssembly.pde
 └── data/
-    ├── fixtures/
+    ├── reference-0816/
     ├── captures/
     └── presets/
 ```
 
-## `ArtworkClock`
+## `VisualState`
 
-- authoritative 180-second loop time;
-- exposes normalized time `0..1` and phase time;
-- supports LIVE and FAST modes;
-- loop does not automatically clear HistoryState.
+Common interface only. Do not force all states to share the same visual algorithm.
 
-## `Dramaturgy180`
+Suggested contract:
 
-Outputs only phase envelopes / targets such as:
-
-```text
-registration
-absorption
-recall
-remainder
-newEventRate
-historyVisibility
-depthRange
-partitionActivity
-routeActivity
-fieldActivity
+```java
+interface VisualState {
+  void reset(long seed);
+  void update(float dt, ArtworkContext ctx);
+  void draw(PGraphics pg, ArtworkContext ctx);
+  void setWeight(float w);
+  String id();
+}
 ```
 
-No drawing.
+## `ReferenceRegistry`
 
-## `HistoryState`
-
-Tracks what has happened before:
+Stores:
 
 ```text
-parent partitions
-surviving fragments
-routes
-field anchors
-age
-recall count
-loop age
+reference filename
+reference dimensions
+approved visual facts
+approved front-view camera
+approved P3D depth range
+review status
 ```
 
-History is a first-class artwork mechanism.
-
-## `PartitionSystem`
-
-Owns the downward / recursive decomposition visual mother.
-
-## `RouteSystem`
-
-Owns path/history connections.
-
-## `FieldSystem`
-
-Owns low-density connective spatial field only.
-
-## `ResidueStore`
-
-Controls long-lived visual remnants and recall eligibility.
-
-## `CameraRig`
-
-Camera only. It must not create dramaturgy.
+It must not generate design.
 
 ## `ArtworkComposer`
 
-Reads `Dramaturgy180 + HistoryState` and sets weights for the visual systems.
+Later combines approved states over the 180-second dramaturgy.
+It cannot modify the internal visual language of a frozen state.
 
 ---
 
 # 8｜Harness modes
 
-The local Codex must be able to test quickly.
-
-## LIVE
-
-```text
-180 seconds
-1× time
-final visual timing
-```
-
-## FAST
-
 Required:
 
-```text
-4×
-8×
-16×
-```
+## REFERENCE
 
-Audio may be disabled in FAST mode.
+Show one reference image and its P3D front reproduction side-by-side or sequentially for local review.
+
+## FRONT
+
+Near-flat approved camera, used for fidelity review.
+
+## DEPTH_DEBUG
+
+Side / oblique camera used only to prove Z structure.
 
 ## SNAPSHOT
 
-Must be able to jump deterministically to:
+Deterministic capture using fixed seed.
+
+## FAST
+
+For later 180-second composition:
 
 ```text
-T000  00:00
-T020  00:20
-T035  00:35
-T060  01:00
-T085  01:25
-T105  01:45
-T135  02:15
-T155  02:35
-T179  02:59
+1× / 4× / 8× / 16×
 ```
 
-For each checkpoint produce screenshot evidence.
-
-## REPLAY
-
-Same:
-
-```text
-seed
-initial history
-composer config
-```
-
-must produce comparable results.
+No timeline integration before the visual baseline gate passes.
 
 ---
 
-# 9｜Visual constraints / forbidden shortcuts
+# 9｜New implementation order
 
-Absolute non-goals:
+The previous task order is superseded.
+
+## A000 — REFERENCE RECOVERY + AUDIT
+
+Status: **READY_FOR_EXECUTOR**
+
+Tasks:
+
+1. locate all six `01–06` JPGs locally;
+2. copy/link them into a local-only reference path or repository-safe path if rights/size permit;
+3. record exact source paths without exposing private absolute paths publicly if sensitive;
+4. create `A000-REFERENCE-AUDIT.md`;
+5. create `reference-board.png`;
+6. do not write artwork rendering code beyond a minimal image review utility if useful;
+7. STOP.
+
+Reviewer output:
 
 ```text
-NO particle explosion as default
-NO random starfield
-NO giant glowing sphere
-NO bloom used to fake finish
-NO hacker UI
-NO dashboard
-NO visible state names
-NO BPM / NEXT / AUTO / HOLD UI
-NO QWERTY / keyboard instrument logic
-NO mouse-following centre
-NO constant camera orbit
-NO random 3D primitives for richness
-NO colour palette expansion without reviewer request
-NO six-state preset carousel
+REFERENCE_LOCKED
+or
+REFERENCE_INCOMPLETE
 ```
 
-If the result becomes “more 3D but less like the artwork”, it fails.
+## A001 — FRONT REPRODUCTION
+
+Locked until A000 review.
+
+Implement the six 8/16 references in P3D **as visually flat compositions first**.
+
+No 180-second timeline.
+No audio.
+No cross-state mixing.
+No depth spectacle.
+
+Reviewer judges each state independently:
+
+```text
+01 PASS / REVISE / REJECT
+02 PASS / REVISE / REJECT
+03 PASS / REVISE / REJECT
+04 PASS / REVISE / REJECT
+05 PASS / REVISE / REJECT
+06 PASS / REVISE / REJECT
+```
+
+States are frozen individually when passed.
+
+## A002 — CONTROLLED DEPTH EXTENSION
+
+Only approved front states enter A002.
+
+For each state:
+
+```text
+front reference
+→ shallow P3D
+→ oblique debug
+→ Reviewer comparison
+```
+
+No new primitives unless Reviewer explicitly authorizes them.
+
+## A003 — STATE RELATION STUDY
+
+Only after enough states pass P3D fidelity.
+
+Test a small number of relationships, e.g.:
+
+```text
+state A persists while state B enters
+state A becomes historical depth
+state B uses a boundary left by state A
+state C recalls an older layer
+```
+
+The relationship must emerge from approved state vocabularies.
+
+## A004 — 180 SECOND COMPOSITION
+
+Only after A003 passes.
+
+Map the approved visual systems into:
+
+```text
+REGISTRATION
+ABSORPTION
+RECALL
+REMAINDER
+```
+
+without turning the work into a six-preset carousel.
 
 ---
 
-# 10｜First implementation task — A000
+# 10｜Acceptance criteria for the visual baseline
 
-```text
-TASK ID        A000
-NAME           8/17 Visual DNA → P3D Baseline
-STATUS         READY_FOR_EXECUTOR
-ARTWORK TIME   diagnostic study only
-AUDIO          OFF
-UI             debug HUD allowed in capture B only; artwork capture must be clean
-```
+Reviewer — not Codex — answers:
 
-## Goal
+1. Does the front P3D reproduction visibly belong to the 8/16 reference?
+2. Did the implementation preserve the reference's negative space?
+3. Did it preserve density and hierarchy rather than merely primitive types?
+4. Is the result still visually controlled when all debug UI is hidden?
+5. Does the P3D extension reveal a spatial relationship that the 2D reference plausibly contains?
+6. If flattened, does it return to the reference family?
+7. Did the implementation add any generic creative-coding decoration not justified by the reference?
+8. Are differences intentional reviewer-approved extensions, or Agent improvisation?
 
-Produce a minimal P3D study proving that the 8/17 restrained line/geometry language and the current downward-partition mother can coexist in real depth **without becoming a generic 3D demo**.
-
-## Build only four studies
-
-### STUDY 01 — FLAT / SHALLOW BASELINE
-
-- near-orthographic camera;
-- black background;
-- off-white thin lines;
-- one downward triangular / recursive partition;
-- depth less than 150 units;
-- should look close to a strong 2D composition.
-
-### STUDY 02 — PARTITION DEPTH
-
-- same composition;
-- recursive child planes receive controlled Z offsets;
-- parent remains partially visible;
-- maximum 4–6 meaningful depth levels;
-- no extrusion spectacle.
-
-### STUDY 03 — ROUTE THROUGH HISTORY
-
-- add one route;
-- route crosses 2–4 partition depth layers;
-- old route remains as faint residue;
-- no field yet.
-
-### STUDY 04 — RESIDUE STACK
-
-- create 3 historical generations of the same parent structure;
-- each generation differs slightly in subdivision / scale / position;
-- older generations sit deeper and fainter;
-- current generation remains dominant;
-- history must still be identifiable.
-
-## Required evidence
-
-```text
-captures/A000/study-01-flat.png
-captures/A000/study-02-partition-depth.png
-captures/A000/study-03-route-history.png
-captures/A000/study-04-residue-stack.png
-captures/A000/study-04-side-debug.png   # debug camera proving real depth
-reports/A000-report.md
-```
-
-## Required report facts
-
-```text
-Processing version
-P3D renderer result
-window size
-average FPS
-stroke strategy
-camera settings
-depth ranges
-object / vertex count
-random seed
-files changed
-known technical limitations
-```
-
-## Stop condition
-
-After A000:
-
-```text
-STOP
-WAIT FOR REVIEW
-```
-
-Do **not** proceed to 180-second choreography.
-
-Reviewer decides whether the visual baseline is close enough to the 8/17 family.
-
----
-
-# 11｜A000 reviewer acceptance
-
-The Reviewer will judge only these questions:
-
-1. If depth is mentally flattened, does this still belong to the 8/17 visual family?
-2. Is the downward partition still the dominant visual language?
-3. Does P3D add hierarchy / history rather than generic spectacle?
-4. Are old structures spatially legible without clutter?
-5. Is the image still sparse and controlled?
-6. Does the route feel embedded in structure instead of drawn on top?
-7. Is real Z depth visible in the side-debug capture?
-8. Could this visual baseline plausibly support the current 180-second artwork without inventing a new ontology?
-
-Decision values:
+Decision:
 
 ```text
 PASS
-REVISE
+REVISE_SAME_DESIGN
+REVERT
 REJECT
 ```
 
-Local Codex must not decide this gate.
+The Executor does not own these decisions.
 
 ---
 
-# 12｜After A000 — locked future order
-
-Only if A000 passes:
+# 11｜Absolute non-goals
 
 ```text
-A001  REGISTRATION 35s composition
-A002  ABSORPTION + persistent history
-A003  RECALL mechanism
-A004  REMAINDER + non-reset loop
-A005  full 180s silent visual pass
-A006  visual rhythm / density polish
-A007  sound integration
-A008  180s raw screen + sound QA
-A009  exhibition stability / output
+NO 8/17 audiovisual-instrument visual baseline
+NO QWERTY performance logic
+NO five-state instrument UI
+NO scene buttons
+NO cursor-driven composition
+NO arbitrary particles
+NO starfield
+NO random geometry filler
+NO large glowing sphere
+NO automatic camera orbit
+NO generic cyber HUD
+NO visual redesign based only on Chinese state names
+NO advancing when the 8/16 reference files are missing
 ```
 
-No new visual behaviour family should be added between A000 and A005 unless Reviewer explicitly approves it.
+---
+
+# 12｜Local Codex handoff
+
+Use exactly this instruction:
+
+> Read `projects/no-further-input-required/P3D-ARTWORK-SHEET.md`. The 2026-08-16 exhibition JPG set is the Golden Visual Reference. Execute **A000 only**: locate the six reference JPGs by exact filename, build the reference audit and contact sheet, report factual findings, commit, and STOP. Do not implement new artwork visuals and do not infer a state's design from its name. Wait for Reviewer before A001.
 
 ---
 
-# 13｜Local Codex handoff
+# 13｜Reviewer ownership
 
-Use this exact instruction:
+Local Codex provides:
 
-> Read `projects/no-further-input-required/P3D-ARTWORK-SHEET.md`, Issue #56 and the 2026-08-17 visual reference it names. Execute **A000 only**. Do not redesign the artwork, do not import the QWERTY Performance Harness, and do not add new visual vocabularies. Produce the required captures and factual report, commit them, then stop for reviewer judgment.
+```text
+files
+code
+build
+screenshots
+measurements
+reports
+```
 
----
+Ewan + ChatGPT decide:
 
-# 14｜Current artistic test sentence
+```text
+what in the 8/16 image actually matters
+what is accidental
+what is retained
+what gets depth
+what must remain flat
+which state is strong enough to continue
+how states relate in the 180-second work
+PASS / REVISE / REJECT
+```
 
-> **Do not make the work “more 3D.” Make the history inside the existing image occupy real space.**
+The goal is no longer “make NFI more 3D.”
+
+The goal is:
+
+> **take the already-existing 2026-08-16 exhibition visual language, preserve its formal identity, and determine precisely where real spatial depth makes that language stronger.**
