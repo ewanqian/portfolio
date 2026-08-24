@@ -1,0 +1,81 @@
+{
+  "version": "vL4",
+  "grid": {"columns": 10, "rows": 4, "total": 40},
+  "rows": [
+    {"id": "R1", "mark": "·", "mode": "restrained", "energy": 0.20},
+    {"id": "R2", "mark": "◐", "mode": "active", "energy": 0.45},
+    {"id": "R3", "mark": "◉", "mode": "build", "energy": 0.72},
+    {"id": "R4", "mark": "✺", "mode": "peak", "energy": 1.00}
+  ],
+  "families": [
+    {"id": "FIELD", "symbol": "◌", "bus": "GROUND", "cells": [
+      {"row":"R1","symbol":"◌·","name":"Air Bed","music":"air drone","visual":"sparse haze"},
+      {"row":"R2","symbol":"◌◐","name":"Drift Field","music":"wide drone movement","visual":"slow drift field"},
+      {"row":"R3","symbol":"◌◉","name":"Grain Pressure","music":"granular pressure","visual":"dense pressure field"},
+      {"row":"R4","symbol":"◌✺","name":"White Field","music":"high-pressure noise field","visual":"full-field overpressure"}
+    ]},
+    {"id": "LOW", "symbol": "●", "bus": "LOW", "cells": [
+      {"row":"R1","symbol":"●·","name":"Sub Bed","music":"clean sub floor","visual":"low floor glow"},
+      {"row":"R2","symbol":"●◐","name":"Body Pulse","music":"sub pulse + sidechain","visual":"body-scale pulse"},
+      {"row":"R3","symbol":"●◉","name":"Rumble Drive","music":"rolling low percussion","visual":"floor pressure waves"},
+      {"row":"R4","symbol":"●✺","name":"Drop Core","music":"commit drop + low impact","visual":"floor collapse"}
+    ]},
+    {"id": "PULSE", "symbol": "▮", "bus": "RHYTHM", "cells": [
+      {"row":"R1","symbol":"▮·","name":"Clock","music":"minimal pulse","visual":"single shutter"},
+      {"row":"R2","symbol":"▮◐","name":"Offbeat","music":"groove + ghost hits","visual":"alternating blocks"},
+      {"row":"R3","symbol":"▮◉","name":"Ratchet","music":"triplet + ratchet","visual":"subdivided shutters"},
+      {"row":"R4","symbol":"▮✺","name":"Gate Storm","music":"dense gated slices","visual":"quantized shutter storm"}
+    ]},
+    {"id": "ROUTE", "symbol": "➜", "bus": "RHYTHM", "cells": [
+      {"row":"R1","symbol":"➜·","name":"Rail","music":"forward phrase","visual":"single directional rail"},
+      {"row":"R2","symbol":"➜◐","name":"Scan","music":"spectral travel","visual":"left-right scan"},
+      {"row":"R3","symbol":"➜◉","name":"Chase","music":"phrase chain","visual":"multi-rail chase"},
+      {"row":"R4","symbol":"➜✺","name":"Hyperlane","music":"high-speed phrase routing","visual":"multi-lane acceleration"}
+    ]},
+    {"id": "ORBIT", "symbol": "↻", "bus": "TONAL", "cells": [
+      {"row":"R1","symbol":"↻·","name":"Slow Loop","music":"long cycle","visual":"slow orbit"},
+      {"row":"R2","symbol":"↻◐","name":"Arp Ring","music":"recognisable arp motif","visual":"ring playhead"},
+      {"row":"R3","symbol":"↻◉","name":"Phase Loop","music":"phase-shifted loop","visual":"multi-ring phase"},
+      {"row":"R4","symbol":"↻✺","name":"Vortex","music":"dense cyclic build","visual":"expand-collapse vortex"}
+    ]},
+    {"id": "STRUCT", "symbol": "▦", "bus": "TONAL", "cells": [
+      {"row":"R1","symbol":"▦·","name":"Chord Block","music":"stable chord block","visual":"single architecture block"},
+      {"row":"R2","symbol":"▦◐","name":"Partition","music":"segmented phrase","visual":"2-4 way partition"},
+      {"row":"R3","symbol":"▦◉","name":"Cell Matrix","music":"multi-cell sequence","visual":"matrix articulation"},
+      {"row":"R4","symbol":"▦✺","name":"Architecture Shift","music":"high-tension chord rearrangement","visual":"large-scale block shift"}
+    ]},
+    {"id": "LIGHT", "symbol": "⌁", "bus": "EVENT", "cells": [
+      {"row":"R1","symbol":"⌁·","name":"Dimmer","music":"soft transient support","visual":"large dimmer breathing"},
+      {"row":"R2","symbol":"⌁◐","name":"Shutter","music":"shutter accent pattern","visual":"quantized shutter bounce"},
+      {"row":"R3","symbol":"⌁◉","name":"Beam Chase","music":"chase accents","visual":"moving beam + pan sweep"},
+      {"row":"R4","symbol":"⌁✺","name":"Blinder","music":"short peak transient","visual":"blinder + strobe + iris"}
+    ]},
+    {"id": "PEAK", "symbol": "✦", "bus": "EVENT", "cells": [
+      {"row":"R1","symbol":"✦·","name":"Accent","music":"single accent","visual":"single flash point"},
+      {"row":"R2","symbol":"✦◐","name":"Burst","music":"cluster fill","visual":"radial burst"},
+      {"row":"R3","symbol":"✦◉","name":"Impact","music":"low impact + transient","visual":"screen contraction"},
+      {"row":"R4","symbol":"✦✺","name":"Flare","music":"metallic/noise peak","visual":"controlled overexposure"}
+    ]},
+    {"id": "TRANSITION", "symbol": "⇄", "bus": "EVENT", "cells": [
+      {"row":"R1","symbol":"⇄·","name":"Crossfade","music":"smooth handoff","visual":"soft wipe"},
+      {"row":"R2","symbol":"⇄◐","name":"Gate Wipe","music":"quantized layer removal","visual":"gated screen wipe"},
+      {"row":"R3","symbol":"⇄◉","name":"Reverse Suction","music":"reverse + suction","visual":"reverse collapse"},
+      {"row":"R4","symbol":"⇄✺","name":"Hard Cut","music":"hard commit","visual":"black/white cut"}
+    ]},
+    {"id": "RESIDUE", "symbol": "∿", "bus": "TEXTURE", "cells": [
+      {"row":"R1","symbol":"∿·","name":"Tail","music":"short tail","visual":"afterimage"},
+      {"row":"R2","symbol":"∿◐","name":"Echo","music":"echo/delay","visual":"reflected glyph trail"},
+      {"row":"R3","symbol":"∿◉","name":"Shimmer Memory","music":"spectral memory","visual":"persistent shimmer trace"},
+      {"row":"R4","symbol":"∿✺","name":"Negative Space","music":"active subtraction","visual":"controlled blackout / sparse memory"}
+    ]}
+  ],
+  "safety": {
+    "maxSustainedFamilies": 5,
+    "maxLow": 1,
+    "maxPeak": 1,
+    "maxPulse": 2,
+    "maxStruct": 2,
+    "strobeBudget": "short-only",
+    "peakDecayBars": 2
+  }
+}
