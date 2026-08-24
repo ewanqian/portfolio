@@ -29,6 +29,8 @@ ESC   exit
 
 ## Captures
 
+Capture mode requires the exact opt-in value `NFI_CAPTURE_MODE=A001_FRONT`. Normal Processing GUI runs ignore the legacy capture flag and remain live.
+
 ```text
 captures/A001/01-front.png
 captures/A001/02-front.png

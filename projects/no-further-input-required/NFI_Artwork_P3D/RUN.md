@@ -24,7 +24,7 @@ No visible HUD is drawn.
 Run with environment variable:
 
 ```bash
-NFI_CAPTURE_A001=1 processing-java --sketch=/absolute/path/to/NFI_Artwork_P3D --run
+NFI_CAPTURE_MODE=A001_FRONT processing-java --sketch=/absolute/path/to/NFI_Artwork_P3D --run
 ```
 
 This writes:

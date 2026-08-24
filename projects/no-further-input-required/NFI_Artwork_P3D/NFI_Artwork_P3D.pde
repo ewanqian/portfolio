@@ -22,7 +22,7 @@ void setup() {
   cameraRig = new CameraRig();
   composer = new ArtworkComposer(config);
   captureHarness = new CaptureHarness(config);
-  captureOnly = "1".equals(System.getenv("NFI_CAPTURE_A001"));
+  captureOnly = "A001_FRONT".equals(System.getenv("NFI_CAPTURE_MODE"));
   previousMillis = millis();
 }
 
