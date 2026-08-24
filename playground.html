@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Topological Playground</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#050505;color:#f4f4f0}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#050505}.app,.stage{position:relative;width:100%;height:100%;overflow:hidden}.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.ui{position:absolute;inset:0;z-index:4;pointer-events:none}.brand{position:absolute;top:18px;left:20px;font:700 10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;color:rgba(255,255,255,.58)}.status{position:absolute;top:18px;right:20px;max-width:44vw;text-align:right;font:500 9px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(255,255,255,.48)}.legend{position:absolute;left:20px;bottom:18px;font:500 9px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(255,255,255,.38)}.dock{position:absolute;right:18px;bottom:18px;display:flex;gap:5px;pointer-events:auto;padding:5px;border:1px solid rgba(255,255,255,.12);background:rgba(5,5,5,.76);backdrop-filter:blur(12px)}button{min-height:34px;padding:0 10px;border:1px solid rgba(255,255,255,.16);background:#0b0b0b;color:#ddd;font:700 9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;cursor:pointer}button:hover,button.on{background:#edede8;color:#080808}.danger{border-color:rgba(255,255,255,.35)}.guideOff .brand,.guideOff .status,.guideOff .legend{opacity:.08}.guideOff .dock{opacity:.14}.guideOff .dock:hover{opacity:1}@media(max-width:740px){.brand{top:10px;left:10px}.status{top:10px;right:10px}.legend{display:none}.dock{left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));overflow-x:auto}.dock button{white-space:nowrap}}
+</style>
+</head>
+<body>
+<main class="app" id="app" tabindex="0"><section class="stage" id="stage"><canvas id="c"></canvas><div class="ui"><div class="brand">TOPOLOGICAL PLAYGROUND<br>D5 v12 · 148 BPM</div><div class="status" id="status">ENTER A NODE · TRAVEL THE ROUTE</div><div class="legend" id="legend">UP = PEAK / DENSE · DOWN = RELEASE / SPACE<br>RIGHT = RHYTHM / STRUCTURE · LEFT = FIELD / TEXTURE</div><div class="dock"><button id="play">PLAY</button><button id="auto">AUTO ROUTE</button><button id="guide" class="on">GUIDE ON</button><button id="fullscreen">FULLSCREEN</button><button id="panic" class="danger">PANIC</button></div></div></section></main>
+<script src="/research/performance-control-model/demos/2026-08-24/d5-v12-topological-playground.js"></script>
+</body>
+</html>
