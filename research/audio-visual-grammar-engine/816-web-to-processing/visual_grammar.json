@@ -1,0 +1,106 @@
+{
+  "version": "0.1",
+  "project": "816 Web to Processing Grammar",
+  "principle": "reproduce behavior, not assets",
+  "transport": {
+    "bpm": 104,
+    "beats_per_bar": 4,
+    "auto_bars_per_state": 8
+  },
+  "controls": {
+    "energy": { "range": [0, 1], "default": 0.34 },
+    "pressure": { "range": [0, 1], "default": 0.28 },
+    "tension": { "range": [0, 1], "default": 0.22 },
+    "density": { "range": [0, 1], "default": 0.32 },
+    "space": { "range": [0, 1], "default": 0.72 },
+    "memory": { "range": [0, 1], "default": 0.18 },
+    "hit": { "range": [0, 1], "default": 0, "transient": true },
+    "direction": { "range": [-1, 1], "default": 0 },
+    "stereoBias": { "range": [-1, 1], "default": 0 },
+    "sizzle": { "range": [0, 1], "default": 0.12 }
+  },
+  "states": [
+    {
+      "id": 1,
+      "name": "FLOWCHAIN",
+      "role": "directional motion and data flow",
+      "drivers": ["energy", "pressure", "direction", "hit", "memory"],
+      "behaviors": ["coherent_vector_field", "local_hit_bend", "autonomous_motion", "bounded_residue"],
+      "primitives": ["indexed_agents", "line_segments", "vector_field", "node_links"]
+    },
+    {
+      "id": 2,
+      "name": "RING_WAVE",
+      "role": "event timing made spatial",
+      "drivers": ["hit", "pressure", "tension", "memory"],
+      "behaviors": ["exact_frame_birth", "radial_expansion", "ring_deformation", "short_event_memory"],
+      "primitives": ["arcs", "elliptical_rings", "polar_points", "radial_spokes"]
+    },
+    {
+      "id": 3,
+      "name": "SCAR_FLASH",
+      "role": "directional hit and interruption",
+      "drivers": ["hit", "direction", "stereoBias", "tension"],
+      "behaviors": ["no_anticipation", "instant_birth", "short_decay", "phrase_accumulation"],
+      "primitives": ["polyline_fracture", "line_strips", "edge_flash", "alpha_decay"]
+    },
+    {
+      "id": 4,
+      "name": "RESIDUE_FIELD",
+      "role": "history as weak spatial bias",
+      "drivers": ["memory", "energy", "direction", "hit"],
+      "behaviors": ["persistent_trace", "history_bias", "slow_decay", "similar_action_reinforcement"],
+      "primitives": ["persistent_points", "faded_curves", "attractor_list", "stateful_history"]
+    },
+    {
+      "id": 5,
+      "name": "SIZZLE_GRAIN",
+      "role": "high-frequency microscopic agitation",
+      "drivers": ["sizzle", "energy", "hit", "density"],
+      "behaviors": ["local_micro_motion", "fragmentation", "stable_macro_composition", "sparse_sparks"],
+      "primitives": ["point_flicker", "short_line_jitter", "small_displacement", "scan_structures"]
+    },
+    {
+      "id": 6,
+      "name": "PRESSURE_CHAMBER",
+      "role": "large-scale asymmetric pressure",
+      "drivers": ["pressure", "tension", "stereoBias", "space"],
+      "behaviors": ["edge_asymmetry", "inward_compression", "negative_space_reduction", "gradual_release"],
+      "primitives": ["edge_bands", "perspective_planes", "field_brightness", "line_curtains"]
+    },
+    {
+      "id": 7,
+      "name": "SCREEN_POINTS",
+      "role": "readable quantized spatial score",
+      "drivers": ["density", "hit", "direction", "energy"],
+      "behaviors": ["indexed_topology", "cell_activation", "neighborhood_phrase", "controlled_density"],
+      "primitives": ["point_matrix", "adjacency_lines", "cell_envelopes", "row_column_diagonal_paths"]
+    },
+    {
+      "id": 8,
+      "name": "CHROMA_STRAND",
+      "role": "coherent moving strand",
+      "drivers": ["energy", "tension", "direction", "hit", "memory"],
+      "behaviors": ["curvature_control", "traveling_pulse", "persistent_legibility", "depth_offset"],
+      "primitives": ["sampled_curve", "polyline_ribbon", "traveling_pulse", "p3d_depth"]
+    }
+  ],
+  "motion": {
+    "fast_frames": [1, 4],
+    "medium_seconds": [0.2, 2.0],
+    "slow_seconds": [4.0, 30.0],
+    "state_transition_ms": [800, 1500]
+  },
+  "rules": {
+    "copy_source_assets": false,
+    "copy_source_dom_layout": false,
+    "raw_fft_direct_to_geometry": false,
+    "input_directly_sets_object_position": false,
+    "input_maps_to": ["impulse", "velocity", "density", "topology", "timing", "field_bias"],
+    "negative_space_required": true,
+    "quiet_state_required": true,
+    "deterministic_seed_required": true,
+    "variant_policy": "same_control_data_different_visual_grammar",
+    "review_policy": "run_then_keep_mute_delete"
+  }
+}
