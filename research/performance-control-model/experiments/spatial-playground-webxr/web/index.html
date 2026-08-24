@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>Spatial Playground — Sensor Scope</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PERFORMANCE CONTROL MODEL / EXPERIMENT 01</p>
+        <h1>Spatial Playground — Sensor Scope</h1>
+      </div>
+      <div id="status-pill" class="status-pill">BOOTING</div>
+    </header>
+
+    <section class="stage-card">
+      <div id="stage" class="stage" aria-label="3D tracking preview"></div>
+      <div class="stage-overlay">
+        <div class="metric"><span>MODE</span><strong id="mode-value">MOCK</strong></div>
+        <div class="metric"><span>XR</span><strong id="xr-value">CHECKING</strong></div>
+        <div class="metric"><span>HANDS</span><strong id="hands-value">0</strong></div>
+        <div class="metric"><span>FPS</span><strong id="fps-value">0</strong></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="toggle-mode" type="button">Run Mock</button>
+      <button id="record" type="button">Start Recording</button>
+      <button id="export" type="button" disabled>Export JSON</button>
+      <button id="clear" type="button">Clear</button>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Head Pose</h2>
+          <span>viewer pose</span>
+        </div>
+        <pre id="head-readout">waiting…</pre>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Left Hand</h2>
+          <span>25 WebXR joints</span>
+        </div>
+        <pre id="left-readout">waiting…</pre>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Right Hand</h2>
+          <span>25 WebXR joints</span>
+        </div>
+        <pre id="right-readout">waiting…</pre>
+      </article>
+
+      <article class="panel span-2">
+        <div class="panel-head">
+          <h2>Derived Signals</h2>
+          <span>calculated, not directly provided by WebXR</span>
+        </div>
+        <div class="signal-grid">
+          <div><span>LEFT PINCH</span><strong id="left-pinch">—</strong></div>
+          <div><span>RIGHT PINCH</span><strong id="right-pinch">—</strong></div>
+          <div><span>TWO-HAND DIST.</span><strong id="hand-distance">—</strong></div>
+          <div><span>HEAD YAW</span><strong id="head-yaw">—</strong></div>
+          <div><span>HEAD PITCH</span><strong id="head-pitch">—</strong></div>
+          <div><span>HEAD ROLL</span><strong id="head-roll">—</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Phase 01 proves sensing only. No OSC, no music mapping, no artistic state machine.</p>
+    </footer>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
