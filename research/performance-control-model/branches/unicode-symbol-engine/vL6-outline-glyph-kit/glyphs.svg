@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter">
+<defs>
+  <symbol id="circle-base" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30"/></symbol>
+  <symbol id="circle-score" viewBox="0 0 100 100"><circle cx="50" cy="50" r="27"/><g stroke-width="3"><path d="M50 11v10M50 79v10M11 50h10M79 50h10M22 22l7 7M71 71l7 7M78 22l-7 7M29 71l-7 7"/></g></symbol>
+  <symbol id="circle-dense" viewBox="0 0 100 100"><circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="19" stroke-width="3"/><circle cx="50" cy="50" r="6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="circle-event" viewBox="0 0 100 100"><circle cx="50" cy="50" r="18"/><circle cx="50" cy="50" r="35" stroke-width="3"/><path d="M50 5v13M50 82v13M5 50h13M82 50h13" stroke-width="3"/></symbol>
+
+  <symbol id="triangle-base" viewBox="0 0 100 100"><path d="M50 16L84 79H16Z"/></symbol>
+  <symbol id="triangle-score" viewBox="0 0 100 100"><path d="M50 16L84 79H16Z"/><g stroke-width="3"><path d="M39 35l7 4M54 39l7-4M73 60l-7 4M58 76h-9M31 76h-9M27 58l7 4"/></g></symbol>
+  <symbol id="triangle-dense" viewBox="0 0 100 100"><path d="M50 14L86 82H14Z"/><path d="M50 35L68 70H32Z" stroke-width="3"/><path d="M50 56v21" stroke-width="3"/></symbol>
+  <symbol id="triangle-event" viewBox="0 0 100 100"><path d="M18 78L76 50 18 22Z"/><path d="M76 50h18" stroke-width="3"/><path d="M30 50h30" stroke-width="3"/></symbol>
+
+  <symbol id="square-base" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60"/></symbol>
+  <symbol id="square-score" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60"/><g stroke-width="3"><path d="M35 20v60M50 20v60M65 20v60M20 50h60"/></g></symbol>
+  <symbol id="square-dense" viewBox="0 0 100 100"><rect x="17" y="17" width="66" height="66"/><g stroke-width="3"><path d="M39 17v66M61 17v66M17 39h66M17 61h66"/></g><rect x="41" y="41" width="18" height="18" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="square-event" viewBox="0 0 100 100"><rect x="12" y="28" width="76" height="44"/><path d="M12 50h76" stroke-width="3"/><path d="M50 12v76" stroke-width="3"/></symbol>
+
+  <symbol id="cross-base" viewBox="0 0 100 100"><path d="M25 25L75 75M75 25L25 75"/></symbol>
+  <symbol id="cross-score" viewBox="0 0 100 100"><path d="M22 22L78 78M78 22L22 78"/><g stroke-width="3"><path d="M31 25l6 6M63 63l6 6M69 25l-6 6M37 63l-6 6"/></g><circle cx="50" cy="50" r="4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="cross-dense" viewBox="0 0 100 100"><path d="M18 18L82 82M82 18L18 82"/><path d="M50 12v76M12 50h76" stroke-width="3"/></symbol>
+  <symbol id="cross-event" viewBox="0 0 100 100"><path d="M15 35h70M15 65h70M35 15v70M65 15v70"/><rect x="40" y="40" width="20" height="20" fill="currentColor" stroke="none"/></symbol>
+
+  <symbol id="diamond-base" viewBox="0 0 100 100"><path d="M50 15L85 50 50 85 15 50Z"/></symbol>
+  <symbol id="diamond-score" viewBox="0 0 100 100"><path d="M50 15L85 50 50 85 15 50Z"/><g stroke-width="3"><path d="M50 25v9M75 50h-9M50 75v-9M25 50h9"/></g></symbol>
+  <symbol id="diamond-dense" viewBox="0 0 100 100"><path d="M50 12L88 50 50 88 12 50Z"/><path d="M50 31L69 50 50 69 31 50Z" stroke-width="3"/><circle cx="50" cy="50" r="5" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="diamond-event" viewBox="0 0 100 100"><path d="M50 10L90 50 50 90 10 50Z"/><path d="M50 28L72 50 50 72 28 50Z" fill="currentColor" stroke="none"/></symbol>
+
+  <symbol id="arc-base" viewBox="0 0 100 100"><path d="M78 62C72 29 30 23 18 53C11 70 21 84 39 85"/><path d="M31 76l8 9-11 5" stroke-width="3"/></symbol>
+  <symbol id="arc-score" viewBox="0 0 100 100"><path d="M80 62C73 28 31 22 18 52C10 70 21 85 41 85"/><g stroke-width="3"><path d="M67 30l-5 8M48 24v9M29 32l6 7M20 51l9 1M25 70l8-5M42 80l1-9"/></g></symbol>
+  <symbol id="arc-dense" viewBox="0 0 100 100"><path d="M82 64C73 23 29 18 14 50C4 73 19 91 45 89"/><path d="M72 67C66 39 37 35 27 55C20 69 31 78 47 78" stroke-width="3"/></symbol>
+  <symbol id="arc-event" viewBox="0 0 100 100"><path d="M84 66C75 22 28 18 12 51C0 77 20 95 50 90"/><path d="M41 81l9 9-12 7" stroke-width="3"/><path d="M76 25l8-10M87 37l10-5" stroke-width="3"/></symbol>
+
+  <symbol id="star-base" viewBox="0 0 100 100"><path d="M50 14v72M14 50h72M25 25l50 50M75 25L25 75"/></symbol>
+  <symbol id="star-score" viewBox="0 0 100 100"><path d="M50 15v70M15 50h70M25 25l50 50M75 25L25 75"/><circle cx="50" cy="50" r="9" stroke-width="3"/></symbol>
+  <symbol id="star-dense" viewBox="0 0 100 100"><path d="M50 8v84M8 50h84M18 18l64 64M82 18L18 82M33 10l34 80M90 33L10 67" stroke-width="3"/></symbol>
+  <symbol id="star-event" viewBox="0 0 100 100"><path d="M50 5L58 40 95 50 58 60 50 95 42 60 5 50 42 40Z" fill="currentColor" stroke="none"/></symbol>
+
+  <symbol id="line-base" viewBox="0 0 100 100"><path d="M14 50h72"/></symbol>
+  <symbol id="line-score" viewBox="0 0 100 100"><path d="M12 50h76"/><g stroke-width="3"><path d="M20 42v16M32 45v10M44 42v16M56 45v10M68 42v16M80 45v10"/></g></symbol>
+  <symbol id="line-dense" viewBox="0 0 100 100"><path d="M10 36h80M10 50h80M10 64h80"/><path d="M30 28v44M50 28v44M70 28v44" stroke-width="3"/></symbol>
+  <symbol id="line-event" viewBox="0 0 100 100"><path d="M5 50h90" stroke-width="12"/><path d="M75 30l20 20-20 20" stroke-width="4"/></symbol>
+</defs>
+
+<rect width="800" height="800" fill="#050505" stroke="none"/>
+<g color="#f2f2ec">
+  <use href="#circle-base" x="50" y="0" width="100" height="100"/><use href="#circle-score" x="250" y="0" width="100" height="100"/><use href="#circle-dense" x="450" y="0" width="100" height="100"/><use href="#circle-event" x="650" y="0" width="100" height="100"/>
+  <use href="#triangle-base" x="50" y="100" width="100" height="100"/><use href="#triangle-score" x="250" y="100" width="100" height="100"/><use href="#triangle-dense" x="450" y="100" width="100" height="100"/><use href="#triangle-event" x="650" y="100" width="100" height="100"/>
+  <use href="#square-base" x="50" y="200" width="100" height="100"/><use href="#square-score" x="250" y="200" width="100" height="100"/><use href="#square-dense" x="450" y="200" width="100" height="100"/><use href="#square-event" x="650" y="200" width="100" height="100"/>
+  <use href="#cross-base" x="50" y="300" width="100" height="100"/><use href="#cross-score" x="250" y="300" width="100" height="100"/><use href="#cross-dense" x="450" y="300" width="100" height="100"/><use href="#cross-event" x="650" y="300" width="100" height="100"/>
+  <use href="#diamond-base" x="50" y="400" width="100" height="100"/><use href="#diamond-score" x="250" y="400" width="100" height="100"/><use href="#diamond-dense" x="450" y="400" width="100" height="100"/><use href="#diamond-event" x="650" y="400" width="100" height="100"/>
+  <use href="#arc-base" x="50" y="500" width="100" height="100"/><use href="#arc-score" x="250" y="500" width="100" height="100"/><use href="#arc-dense" x="450" y="500" width="100" height="100"/><use href="#arc-event" x="650" y="500" width="100" height="100"/>
+  <use href="#star-base" x="50" y="600" width="100" height="100"/><use href="#star-score" x="250" y="600" width="100" height="100"/><use href="#star-dense" x="450" y="600" width="100" height="100"/><use href="#star-event" x="650" y="600" width="100" height="100"/>
+  <use href="#line-base" x="50" y="700" width="100" height="100"/><use href="#line-score" x="250" y="700" width="100" height="100"/><use href="#line-dense" x="450" y="700" width="100" height="100"/><use href="#line-event" x="650" y="700" width="100" height="100"/>
+</g>
+</svg>
