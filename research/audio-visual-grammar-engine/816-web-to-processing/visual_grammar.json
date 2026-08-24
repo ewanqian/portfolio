@@ -1,6 +1,6 @@
 {
-  "version": "0.1",
-  "project": "816 Web to Processing Grammar",
+  "version": "0.2",
+  "project": "816 Web to Processing — Six State Grammar",
   "principle": "reproduce behavior, not assets",
   "transport": {
     "bpm": 104,
@@ -9,98 +9,81 @@
   },
   "controls": {
     "energy": { "range": [0, 1], "default": 0.34 },
-    "pressure": { "range": [0, 1], "default": 0.28 },
-    "tension": { "range": [0, 1], "default": 0.22 },
-    "density": { "range": [0, 1], "default": 0.32 },
-    "space": { "range": [0, 1], "default": 0.72 },
-    "memory": { "range": [0, 1], "default": 0.18 },
     "hit": { "range": [0, 1], "default": 0, "transient": true },
-    "direction": { "range": [-1, 1], "default": 0 },
-    "stereoBias": { "range": [-1, 1], "default": 0 },
-    "sizzle": { "range": [0, 1], "default": 0.12 }
+    "motion": { "range": [0, 1], "default": 0.32 },
+    "density": { "range": [0, 1], "default": 0.30 },
+    "memory": { "range": [0, 1], "default": 0.12 },
+    "direction": { "range": [-1, 1], "default": 0 }
   },
   "states": [
     {
       "id": 1,
-      "name": "FLOWCHAIN",
-      "role": "directional motion and data flow",
-      "drivers": ["energy", "pressure", "direction", "hit", "memory"],
-      "behaviors": ["coherent_vector_field", "local_hit_bend", "autonomous_motion", "bounded_residue"],
-      "primitives": ["indexed_agents", "line_segments", "vector_field", "node_links"]
+      "name": "ROUTE",
+      "identity": "directional lines and lanes",
+      "behavior": "pulses travel through stable routes; each lane has a distinct speed and direction",
+      "input": "inject pulse and directional bias",
+      "primitives": ["lines", "nodes", "moving_pulse", "short_tail"]
     },
     {
       "id": 2,
-      "name": "RING_WAVE",
-      "role": "event timing made spatial",
-      "drivers": ["hit", "pressure", "tension", "memory"],
-      "behaviors": ["exact_frame_birth", "radial_expansion", "ring_deformation", "short_event_memory"],
-      "primitives": ["arcs", "elliptical_rings", "polar_points", "radial_spokes"]
+      "name": "FIELD",
+      "identity": "floating layered field",
+      "behavior": "four layers drift with different amplitude, phase and vertical range; input adds local buoyancy",
+      "input": "local lift and spread, then slow settle",
+      "primitives": ["points", "circles", "layered_depth", "spring_force"]
     },
     {
       "id": 3,
-      "name": "SCAR_FLASH",
-      "role": "directional hit and interruption",
-      "drivers": ["hit", "direction", "stereoBias", "tension"],
-      "behaviors": ["no_anticipation", "instant_birth", "short_decay", "phrase_accumulation"],
-      "primitives": ["polyline_fracture", "line_strips", "edge_flash", "alpha_decay"]
+      "name": "ORBIT",
+      "identity": "four clean orbital rings",
+      "behavior": "rings rotate at related speeds; input changes phase, radius and orbital energy without moving the center",
+      "input": "phase impulse",
+      "primitives": ["ellipse", "arc", "polar_point", "ring_pulse"]
     },
     {
       "id": 4,
-      "name": "RESIDUE_FIELD",
-      "role": "history as weak spatial bias",
-      "drivers": ["memory", "energy", "direction", "hit"],
-      "behaviors": ["persistent_trace", "history_bias", "slow_decay", "similar_action_reinforcement"],
-      "primitives": ["persistent_points", "faded_curves", "attractor_list", "stateful_history"]
+      "name": "REWIND",
+      "identity": "large glyph and reverse traces",
+      "behavior": "key event creates a large glyph, brief stretch, then reverse traces return toward its origin",
+      "input": "glyph stamp and reverse trail",
+      "primitives": ["text", "scale", "stretch", "alpha_trail"]
     },
     {
       "id": 5,
-      "name": "SIZZLE_GRAIN",
-      "role": "high-frequency microscopic agitation",
-      "drivers": ["sizzle", "energy", "hit", "density"],
-      "behaviors": ["local_micro_motion", "fragmentation", "stable_macro_composition", "sparse_sparks"],
-      "primitives": ["point_flicker", "short_line_jitter", "small_displacement", "scan_structures"]
+      "name": "CELLS",
+      "identity": "indexed grid with different row and column grammar",
+      "behavior": "rows use distinct shapes; columns use distinct timing; activated cells create visible phrases",
+      "input": "cell activation plus weak neighbor response",
+      "primitives": ["rect", "ellipse", "line", "cell_envelope", "neighbor_link"]
     },
     {
       "id": 6,
-      "name": "PRESSURE_CHAMBER",
-      "role": "large-scale asymmetric pressure",
-      "drivers": ["pressure", "tension", "stereoBias", "space"],
-      "behaviors": ["edge_asymmetry", "inward_compression", "negative_space_reduction", "gradual_release"],
-      "primitives": ["edge_bands", "perspective_planes", "field_brightness", "line_curtains"]
-    },
-    {
-      "id": 7,
-      "name": "SCREEN_POINTS",
-      "role": "readable quantized spatial score",
-      "drivers": ["density", "hit", "direction", "energy"],
-      "behaviors": ["indexed_topology", "cell_activation", "neighborhood_phrase", "controlled_density"],
-      "primitives": ["point_matrix", "adjacency_lines", "cell_envelopes", "row_column_diagonal_paths"]
-    },
-    {
-      "id": 8,
-      "name": "CHROMA_STRAND",
-      "role": "coherent moving strand",
-      "drivers": ["energy", "tension", "direction", "hit", "memory"],
-      "behaviors": ["curvature_control", "traveling_pulse", "persistent_legibility", "depth_offset"],
-      "primitives": ["sampled_curve", "polyline_ribbon", "traveling_pulse", "p3d_depth"]
+      "name": "PARTITION",
+      "identity": "large blocks and bands",
+      "behavior": "input opens, closes, fills or shifts large partitions; dividers settle into a new composition",
+      "input": "partition mutation",
+      "primitives": ["rectangles", "bands", "moving_dividers", "large_negative_space"]
     }
   ],
-  "motion": {
-    "fast_frames": [1, 4],
-    "medium_seconds": [0.2, 2.0],
-    "slow_seconds": [4.0, 30.0],
-    "state_transition_ms": [800, 1500]
+  "timing": {
+    "fast": "1-12 frames",
+    "medium": "0.2-1.5 seconds",
+    "slow": "4-20 seconds"
+  },
+  "controls_ui": {
+    "1-6": "select state",
+    "space": "hit",
+    "a": "toggle auto",
+    "h": "hold",
+    "r": "reset",
+    "mouse": "inject impulse and direction"
   },
   "rules": {
-    "copy_source_assets": false,
-    "copy_source_dom_layout": false,
-    "raw_fft_direct_to_geometry": false,
+    "state_count": 6,
+    "add_more_states": false,
     "input_directly_sets_object_position": false,
-    "input_maps_to": ["impulse", "velocity", "density", "topology", "timing", "field_bias"],
-    "negative_space_required": true,
+    "each_state_requires_distinct_still_frame_identity": true,
     "quiet_state_required": true,
-    "deterministic_seed_required": true,
-    "variant_policy": "same_control_data_different_visual_grammar",
-    "review_policy": "run_then_keep_mute_delete"
+    "continue_after_input": true
   }
 }
