@@ -1,376 +1,424 @@
 # 816 Web → Local Processing Handoff
 
-Status: working implementation brief
+Status: current source of truth
 Date: 2026-08-25
 
-## 0. Goal
+## Goal
 
-Do **not** copy the webpage as pixels, DOM, cards, or decorative assets.
+Keep it simple.
 
-Translate the webpage / reference logic into a Processing runtime by preserving:
+The webpage logic only needs to become **six clear Processing states**. Do not keep adding new grammars, modules, or effect families.
 
-- hierarchy;
-- rhythm;
-- spatial relation;
-- state transitions;
-- input → mapping → behavior;
-- accumulation / decay / residue;
-- the difference between stable structure and transient event.
-
-The target is a **performable visual system**, not a webpage screenshot rendered in Java.
-
-## 1. Translation rule
-
-Use this chain for every source feature:
+The translation rule is:
 
 ```text
-SOURCE FEATURE
-→ VISUAL ROLE
-→ DRIVER
-→ BEHAVIOR
-→ PROCESSING PRIMITIVE
-→ STATE / TRANSITION
+web behavior
+→ what changes
+→ what drives it
+→ how it moves
+→ Processing primitive
 ```
 
-Example:
+Do not copy DOM, cards, layout chrome, or decorative assets. Rebuild the behavior.
+
+## Shared rules
+
+All six states share the same small set of values:
 
 ```text
-bright edge light
-→ edge pressure
-→ stereo bias / hit
-→ one-frame flash + exponential decay
-→ line / glow band / field brightness
-→ PRESSURE_CHAMBER
+energy    0..1
+hit       0..1
+motion    0..1
+density   0..1
+memory    0..1
+direction -1..1
 ```
 
-This follows the existing Audio Visual Grammar Engine rule: **reproduce behavior, not assets**.
+That is enough for the first Processing version.
 
-## 2. Shared control data
-
-Keep renderer-specific code downstream of a normalized control bus.
+Input should change **energy / direction / timing / topology**, not directly drag an object around.
 
 ```text
-energy       0..1
-pressure     0..1
-tension      0..1
-density      0..1
-space        0..1
-memory       0..1
-hit          0..1 transient
-direction   -1..1
-stereoBias  -1..1
-sizzle       0..1
+BAD
+mouse position → object position
+
+GOOD
+mouse / key input → impulse → system reacts → system keeps moving
 ```
 
-Raw audio, BPM, MIDI, pointer, keyboard, replay data, and autonomous score all map into this bus first.
+## The six states
 
-Do not connect raw FFT bins directly to geometry.
-
-## 3. Eight grammar states
-
-These are not eight unrelated effects. They are eight views of the same control system.
-
-### 1 — FLOWCHAIN
-
-Role: directional motion + data flow.
-
-Behavior:
-
-- agents move through a coherent vector field;
-- density grows with pressure;
-- direction biases the field, not object position;
-- event hits locally bend trajectories;
-- system continues after input stops.
-
-Processing primitives:
-
-- indexed agents;
-- short line segments;
-- curl / simplex-like field;
-- sparse node links;
-- bounded trail lifetime.
-
-Avoid:
-
-- random particle soup;
-- full-screen equal-density fill;
-- mouse = particle position.
-
-### 2 — RING_WAVE
-
-Role: event timing made spatial.
-
-Behavior:
-
-- exact hit creates a ring at the hit frame;
-- ring expands, thins, and decays;
-- stronger pressure changes radius / ring count / deformation;
-- multiple recent rings may coexist as a short memory.
-
-Processing primitives:
-
-- arcs;
-- elliptical rings;
-- polar points;
-- radial spokes.
-
-### 3 — SCAR_FLASH
-
-Role: directional hit / cut / interruption.
-
-Behavior:
-
-- a hit creates a line or broken scar with **no anticipation**;
-- birth is immediate, decay is short;
-- direction controls orientation / placement;
-- repeated hits build a phrase, not an explosion.
-
-Processing primitives:
-
-- line strips;
-- polyline fracture;
-- one-frame white field / edge accent;
-- short alpha decay.
-
-### 4 — RESIDUE_FIELD
-
-Role: previous events remain as weak bias.
-
-Behavior:
-
-- selected traces survive;
-- new motion is slightly attracted / repelled by residue;
-- memory grows through repeated similar actions;
-- residue decays slowly enough to make the system history-dependent.
-
-Processing primitives:
-
-- persistent points;
-- faded curves;
-- attractor list;
-- low-alpha history buffer implemented as state, not framebuffer smear.
-
-### 5 — SIZZLE_GRAIN
-
-Role: high-frequency activity / microscopic agitation.
-
-Behavior:
-
-- high / sizzle changes local micro-motion and fragmentation;
-- macro composition stays stable;
-- use small-scale instability as material, not global camera shake.
-
-Processing primitives:
-
-- point flicker;
-- short line jitter;
-- small-radius displacement;
-- sparse scan / spark structures.
-
-### 6 — PRESSURE_CHAMBER
-
-Role: large-scale tension and asymmetric pressure.
-
-Behavior:
-
-- left / right edge fields respond asymmetrically;
-- raw pressure changes inward compression;
-- high tension reduces empty space;
-- release restores space gradually.
-
-Processing primitives:
-
-- edge bands;
-- perspective planes;
-- field brightness;
-- inward-moving line curtains.
-
-### 7 — SCREEN_POINTS
-
-Role: readable spatial score / quantized structure.
-
-Behavior:
-
-- points live on an explicit grid / topology;
-- density is controlled, not random;
-- hits activate cells or neighborhoods;
-- rows / columns / diagonals can carry phrases.
-
-Processing primitives:
-
-- indexed point matrix;
-- adjacency lines;
-- cell activation envelope;
-- optional key / MIDI mapping.
-
-### 8 — CHROMA_STRAND
-
-Role: one coherent moving strand instead of many independent objects.
-
-Behavior:
-
-- one or several strands carry energy through the frame;
-- direction and tension change curvature;
-- hit creates a kink / pulse traveling along the strand;
-- strand remains legible at low density.
-
-Processing primitives:
-
-- bezier / Catmull-like sampled curve;
-- polyline ribbon;
-- traveling pulse;
-- depth offset in P3D.
-
-## 4. Motion design rules
-
-The visual system should feel designed even when nothing dramatic happens.
-
-### Structure before effects
-
-Every state needs:
-
-1. one dominant spatial rule;
-2. one secondary rhythm;
-3. one transient response;
-4. one decay / residue behavior;
-5. intentional negative space.
-
-### Timing hierarchy
-
-Use at least three timescales:
+These are the same six states already used by the previous NFI / P3D architecture:
 
 ```text
-FAST     1–4 frames        exact hit / flash / cut
-MEDIUM   0.2–2 sec         expansion / bend / settle
-SLOW     4–30 sec          field drift / memory / section change
+01 ROUTE
+02 FIELD
+03 ORBIT
+04 REWIND
+05 CELLS
+06 PARTITION
 ```
 
-Do not make all parameters oscillate continuously.
+The point now is not to invent more states. It is to make these six visually and behaviorally different enough.
 
-### Input semantics
+---
 
-Preferred:
+## 01 — ROUTE
+
+### What it is
+
+A readable directional score.
+
+The frame has several horizontal routes / lanes. Movement has a clear start, direction, and destination. It should feel like information being sent through a system rather than particles wandering around.
+
+### Motion
+
+- slow scan moves across the frame;
+- each lane has a slightly different speed;
+- key / click creates a pulse that travels along one route;
+- old pulses fade, but the route itself remains stable;
+- left → right input should be immediately readable.
+
+### Processing primitives
 
 ```text
-input
-→ impulse / velocity / density / topology / timing
-→ autonomous behavior continues
+lines
+small nodes
+moving pulse
+short tail
+route intersections
 ```
 
-Avoid:
+### Avoid
+
+- random flow-field soup;
+- too many particles;
+- every line moving independently.
+
+The still frame should already look ordered.
+
+---
+
+## 02 — FIELD
+
+### What it is
+
+A real floating / buoyant state.
+
+The previous version looked like a grid that merely wobbled. This one should actually feel suspended in a field.
+
+### Motion
+
+Use four horizontal layers.
+
+Each layer has its own:
 
 ```text
-mouse position
-→ object position
+amplitude
+speed
+phase
+vertical range
 ```
 
-### Transition
+Objects slowly rise and fall. Adjacent elements lag behind one another instead of moving together.
 
-State change is a designed event:
-
-- 0.8–1.5 s crossfade or structural morph;
-- pre-cue optional;
-- keep selected residue across states;
-- do not hard cut unless the score explicitly asks for HIT / BLACKOUT.
-
-## 5. Performance surface
-
-Initial controls:
+Input adds local buoyancy:
 
 ```text
-1–8       select grammar state
-SPACE     inject exact hit
-A         AUTO state cycle
-H         HOLD current state
-R         reset runtime / clear residue
-S         save frame
-mouse     inject directional disturbance, never direct dragging
+press
+→ nearby points rise / spread
+→ energy dissipates
+→ they slowly settle back into the field
 ```
 
-Future inputs:
-
-- MIDI / BPM;
-- OSC;
-- audio feature JSON;
-- replay fixtures;
-- 36-key keyboard topology.
-
-## 6. Variant strategy
-
-Do not polish one sketch forever.
-
-For each grammar state, generate 3 variants with one changed structural assumption only.
-
-Example:
+### Processing primitives
 
 ```text
-FLOWCHAIN-A  parallel corridor flow
-FLOWCHAIN-B  spiral field
-FLOWCHAIN-C  two-attractor crossing field
+points / circles
+soft vertical drift
+layered depth
+local spring force
+slow phase lag
 ```
 
-Then run them and delete weak versions.
+### Avoid
 
-Target loop:
+- simple sine-wave line;
+- global shake;
+- identical motion for every row.
+
+---
+
+## 03 — ORBIT
+
+### What it is
+
+A calm, controlled orbital structure.
+
+Keep the orbit idea, but remove the clutter.
+
+### Structure
+
+Use four main rings. The four rings can correspond to four keyboard rows / four input groups.
 
 ```text
-8 grammars
-→ 2–3 variants each
-→ run at fullscreen
-→ compare with same control data
-→ keep / mute / delete
-→ select 4–6 strongest behaviors
-→ integrate into performance runtime
+row 1 → ring 1
+row 2 → ring 2
+row 3 → ring 3
+row 4 → ring 4
 ```
 
-## 7. Acceptance test
+### Motion
 
-A state passes only if:
+- rings rotate at different but related speeds;
+- input changes phase / speed / radius slightly;
+- one press creates one clean orbital impulse;
+- after release, the ring keeps moving;
+- no radial explosion every time;
+- no cursor-following center.
 
-- it is visually readable in a still frame;
-- motion adds information rather than decoration;
-- an exact hit is visible at the correct moment;
-- input changes a system variable, not just a coordinate;
-- it still behaves when user stops touching it;
-- it has at least one quiet / sparse condition;
-- a second state can inherit residue without looking broken;
-- it can run for 2 minutes without obvious repetitive collapse.
+### Processing primitives
 
-## 8. First implementation
+```text
+ellipse / arc
+polar coordinates
+few satellites
+phase offset
+ring pulse
+```
 
-The first runnable sketch is:
+### Avoid
 
-`Processing816Grammar/Processing816Grammar.pde`
+- too many satellites;
+- full-screen bursts;
+- orbit center following the mouse.
 
-It is intentionally dependency-free Processing 4 / Java mode and provides:
+This state should feel quieter than ROUTE and FIELD.
 
-- P3D renderer;
-- 104 BPM internal transport;
-- 8 grammar states;
-- normalized control bus;
-- transient hit envelope;
-- state crossfade;
-- residue memory;
-- keyboard performance controls;
-- pointer-as-impulse behavior.
+---
 
-Treat this as a harness, not a final artwork.
+## 04 — REWIND
 
-## 9. Related project logic
+### What it is
 
-This handoff is compatible with the existing Processing/OOP work in:
+A typographic / trace state built around reverse motion and recall.
+
+The old small flying letters were too weak. Here the input itself becomes a large graphic event.
+
+### Motion
+
+On a key press:
+
+```text
+key
+→ large glyph appears
+→ briefly expands / stretches
+→ leaves 2–4 reverse traces
+→ traces move back toward the origin
+→ glyph fades
+```
+
+The glyph should be large enough to become composition, not annotation.
+
+Recommended browser-independent Processing font fallback:
+
+```text
+SansSerif / Helvetica / Arial-style bold
+```
+
+Do not depend on a custom font file.
+
+### Row differences
+
+Different input rows can behave differently:
+
+```text
+digits → narrow / vertical
+Q row  → wide / horizontal
+A row  → centered / heavy
+Z row  → low / compressed
+```
+
+### Processing primitives
+
+```text
+text()
+scale
+stretch
+alpha trail
+reverse position samples
+```
+
+### Avoid
+
+- tiny labels;
+- letters flying randomly;
+- every key producing the same animation.
+
+---
+
+## 05 — CELLS
+
+### What it is
+
+A grid / score state where rows and columns genuinely behave differently.
+
+### Structure
+
+Use a stable matrix. Do not make it another particle scene.
+
+Rows can use different visual grammar:
+
+```text
+row 1 → circles
+row 2 → squares
+row 3 → bars
+row 4 → filled blocks
+```
+
+Columns can carry timing differences:
+
+```text
+odd columns  → short pulse
+even columns → slow fill
+selected cols → invert / connect
+```
+
+### Motion
+
+- key press activates one cell;
+- neighboring cells can respond with a weaker envelope;
+- a phrase across keys becomes a visible path;
+- activity fades back to a readable empty grid.
+
+### Processing primitives
+
+```text
+indexed cells
+rect / ellipse / line
+row + column addressing
+activation envelope
+neighbor links
+```
+
+### Avoid
+
+- every cell pulsing all the time;
+- random activation;
+- making every row visually identical.
+
+---
+
+## 06 — PARTITION
+
+### What it is
+
+A large rectangular composition state.
+
+This one should be visually different from all point / line / orbit states.
+
+### Structure
+
+The frame is divided into a few large bands / panels.
+
+Input changes the partition itself:
+
+```text
+press
+→ open a section
+→ close another section
+→ fill a band
+→ shift a divider
+→ leave a short memory of the previous layout
+```
+
+### Motion
+
+- dividers move slowly;
+- large areas expand / contract;
+- hits can produce a fast snap or inversion;
+- after the hit, the layout settles into a new composition.
+
+### Processing primitives
+
+```text
+rectangles
+bands
+moving dividers
+mask-like fills
+large negative space
+```
+
+### Avoid
+
+- filling the whole screen with small details;
+- turning it into another grid;
+- decorative motion without changing composition.
+
+---
+
+## State difference
+
+The six states should be recognizable even as black-and-white screenshots:
+
+```text
+ROUTE      = directional lines
+FIELD      = floating layers
+ORBIT      = concentric / circular structure
+REWIND     = large type / reverse traces
+CELLS      = indexed grid
+PARTITION  = large blocks / bands
+```
+
+If two states look interchangeable in a still frame, one of them is not designed strongly enough yet.
+
+## Timing
+
+Only use three motion speeds:
+
+```text
+FAST    hit / key response        1–12 frames
+MEDIUM  settle / expand / rewind  0.2–1.5 sec
+SLOW    autonomous background     4–20 sec
+```
+
+No need for a larger dramaturgy system yet.
+
+## Controls
+
+First version only:
+
+```text
+1–6      select state
+SPACE    hit
+A        auto cycle
+H        hold
+R        reset
+mouse    inject impulse / direction
+keyboard performance keys can be added after the six states look right
+```
+
+## Acceptance
+
+A state is good enough when:
+
+1. one screenshot already shows its identity;
+2. it moves differently from the other five;
+3. input causes a clear response;
+4. it keeps moving after input stops;
+5. it has a quiet state;
+6. it does not need extra effects to look complete.
+
+That is the whole first milestone.
+
+## Current implementation
+
+Use:
+
+`Processing816Six/Processing816Six.pde`
+
+The earlier eight-state `Processing816Grammar` is kept only as an experiment/history. It is no longer the direction to continue.
+
+The existing six-state architecture remains compatible with:
 
 `research/performance-control-model/experiments/nfi-p3d-harness/PROCESSING-ARCHITECTURE.md`
-
-If the sketch grows beyond one file, split responsibilities in the same way:
-
-```text
-Transport
-→ InputController
-→ ControlBus
-→ StateController
-→ VisualEngine
-→ State Modules
-```
-
-Renderer does not own timing. Input does not draw. State modules do not redefine global controls.
