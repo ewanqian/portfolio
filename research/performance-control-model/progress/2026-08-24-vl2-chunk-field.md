@@ -4,7 +4,7 @@
 
 The low-fi playground is no longer constrained to a 4×4 or 16-node grid. The primary unit is now a **Chunk**: a meaningful playable region with a musical role, visual role, entry behaviour, inside behaviour, exit behaviour and local sequencer.
 
-The screen may contain as many chunks as remain legible and musically useful. The current first pass uses 24 chunks, grouped into six semantic families:
+The screen may contain as many chunks as remain legible and musically useful. The current first pass uses 25 chunks, grouped into six semantic families:
 
 - FIELD — ground / atmosphere / sustained body
 - PULSE — pulse / groove / subdivision
