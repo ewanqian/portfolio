@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>D0 — Direct Trigger Baseline</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#090909;color:#f3f3f3}*{box-sizing:border-box}body{margin:0;background:#090909}.wrap{max-width:1100px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.tag{font-size:12px;letter-spacing:.14em;color:#999}.status{font:12px ui-monospace,monospace;color:#aaa}.stage{position:relative;margin-top:18px;height:min(56vw,560px);min-height:360px;border:1px solid #2b2b2b;background:#050505;overflow:hidden}canvas{width:100%;height:100%;display:block}.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}button{min-height:64px;border:1px solid #333;background:#141414;color:#fff;font:600 14px ui-monospace,monospace;cursor:pointer}button:active{background:#262626}.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.panel{border-top:1px solid #222;padding-top:12px;color:#aaa;font-size:13px;line-height:1.5}.key{color:#fff;font-family:ui-monospace,monospace}@media(max-width:640px){.buttons{grid-template-columns:1fr 1fr}.meta{grid-template-columns:1fr}.stage{min-height:300px}}</style>
+</head>
+<body><main class="wrap" id="app" tabindex="0">
+<div class="top"><div><div class="tag">PERFORMANCE CONTROL MODEL / D0</div><h1>Direct Trigger Baseline</h1></div><div class="status" id="status">CLICK A PAD TO START AUDIO</div></div>
+<div class="stage"><canvas id="c"></canvas></div>
+<div class="buttons">
+<button data-i="0">A · PULSE</button><button data-i="1">S · LOW</button><button data-i="2">D · HIGH</button><button data-i="3">F · NOISE</button>
+</div>
+<div class="meta"><div class="panel"><b>测试目的</b><br>验证最简单的 <span class="key">input → note/effect</span> 为什么很快耗尽。连续玩 20–30 秒，记录什么时候开始无聊。</div><div class="panel"><b>测试动作</b><br>每个键单独按 4 次 → 混合乱按 15 秒 → 停止 5 秒。只观察“即时反馈”，没有 quantization、history、layer 或 state。</div></div>
+</main>
+<script>
+const app=document.querySelector('#app'),canvas=document.querySelector('#c'),ctx=canvas.getContext('2d'),statusEl=document.querySelector('#status');
+let ac=null,events=[];
+function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}addEventListener('resize',resize);resize();
+async function audio(){if(!ac)ac=new (window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')await ac.resume();statusEl.textContent='AUDIO READY · DIRECT / UNQUANTIZED';return ac}
+function tone(freq,dur,type='sine',gain=.12){const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(gain,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+dur+.03)}
+function noise(){const len=Math.floor(ac.sampleRate*.15),b=ac.createBuffer(1,len,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*(1-i/len);const s=ac.createBufferSource(),g=ac.createGain();s.buffer=b;g.gain.value=.16;s.connect(g).connect(ac.destination);s.start()}
+async function trigger(i){await audio();if(i===0)tone(220,.22,'square',.07);if(i===1)tone(73.42,.45,'sine',.18);if(i===2)tone(880,.12,'triangle',.08);if(i===3)noise();events.push({i,t:performance.now(),life:1});}
+document.querySelectorAll('button[data-i]').forEach(b=>b.addEventListener('click',()=>trigger(+b.dataset.i)));
+app.addEventListener('keydown',e=>{if(e.repeat)return;const m={a:0,s:1,d:2,f:3}[e.key.toLowerCase()];if(m!==undefined)trigger(m)});
+function draw(){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.fillStyle='#050505';ctx.fillRect(0,0,w,h);ctx.strokeStyle='#1b1b1b';for(let x=0;x<w;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}events=events.filter(e=>(e.life-=.018)>0);for(const e of events){const x=[.18,.38,.62,.82][e.i]*w,y=h*.5,r=(1-e.life)*140+18;ctx.globalAlpha=e.life;ctx.strokeStyle='#eee';ctx.lineWidth=1+e.i;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1}requestAnimationFrame(draw)}draw();
+</script>
+</body></html>
