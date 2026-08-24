@@ -1,0 +1,15 @@
+{
+  "version": "vL6",
+  "viewBox": [0,0,100,100],
+  "states": ["base","score","dense","event"],
+  "families": [
+    {"id":"CIRCLE","unicode":["◌","●","⊙"],"persistent":true,"svgIds":["circle-base","circle-score","circle-dense","circle-event"],"role":"field/pulse/pressure","x":"phrase span + phase","y":"density + scale","motion":"breathe/compress","light":"field pressure/pulse bloom"},
+    {"id":"TRIANGLE","unicode":["△","▶","➜"],"persistent":true,"svgIds":["triangle-base","triangle-score","triangle-dense","triangle-event"],"role":"route/rise/push","x":"route length + subdivision","y":"lift + instability","motion":"translate/shear","light":"scan/directional beam"},
+    {"id":"SQUARE","unicode":["□","■","▦"],"persistent":true,"svgIds":["square-base","square-score","square-dense","square-event"],"role":"gate/cell/structure","x":"pattern width + grouping","y":"fill + probability","motion":"shutter/tile","light":"block cut/matrix light"},
+    {"id":"CROSS","unicode":["╳","┼"],"persistent":true,"svgIds":["cross-base","cross-score","cross-dense","cross-event"],"role":"partition/split/crossing","x":"horizontal-vertical emphasis + phase","y":"subdivision + recurrence","motion":"split/cross","light":"screen partition/shutter cut"},
+    {"id":"DIAMOND","unicode":["◇","◆","⊙"],"persistent":true,"svgIds":["diamond-base","diamond-score","diamond-dense","diamond-event"],"role":"focus/commit/drop","x":"approach depth + phase","y":"impact pressure","motion":"concentrate/collapse","light":"iris/impact contraction"},
+    {"id":"ARC","unicode":["↶","↻","∿"],"persistent":true,"svgIds":["arc-base","arc-score","arc-dense","arc-event"],"role":"rewind/orbit/release","x":"arc span + retrace depth","y":"residue length + probability","motion":"rotate/reverse/trail","light":"sweep/release/afterimage"},
+    {"id":"STAR","unicode":["✦","✺"],"persistent":false,"svgIds":["star-base","star-score","star-dense","star-event"],"role":"accent/burst/flare","x":"spread + burst count","y":"peak intensity + duration","motion":"radiate","light":"blinder/strobe/flare"},
+    {"id":"LINE","unicode":["—","│","⇥","⌁"],"persistent":false,"svgIds":["line-base","line-score","line-dense","line-event"],"role":"scan/chase/route support","x":"travel + phase","y":"beam width + density","motion":"translate/chase","light":"beam/scan/wipe"}
+  ]
+}
