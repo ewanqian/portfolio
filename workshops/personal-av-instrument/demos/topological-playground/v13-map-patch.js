@@ -10,6 +10,50 @@ document.title='D5 v13 — Sequencer Map';
 const brand=document.querySelector('.brand'); if(brand) brand.innerHTML='SEQUENCER MAP<br>D5 v13 · 150 BPM';
 const legend=document.querySelector('.legend'); if(legend) legend.innerHTML='MAP = MUSICAL TOPOLOGY · MICRO SEQUENCER = LOCAL SCORE<br>ENTER → INSIDE → EXIT → CORRIDOR → NEXT NODE';
 
+/* Robust fullscreen: native Fullscreen API first, viewport stage-mode fallback second. */
+(function setupV13Fullscreen(){
+ const style=document.createElement('style');
+ style.textContent=`
+ html.v13-stage-mode,body.v13-stage-mode{width:100%!important;height:100%!important;overflow:hidden!important;background:#000!important;overscroll-behavior:none!important}
+ body.v13-stage-mode .app{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;min-height:100dvh!important;z-index:2147483646!important;background:#050505!important}
+ body.v13-stage-mode .stage{position:absolute!important;inset:0!important;width:100vw!important;height:100dvh!important;min-height:100dvh!important}
+ body.v13-stage-mode .dock{bottom:max(12px,env(safe-area-inset-bottom))!important}
+ body.v13-stage-mode .brand{top:max(14px,env(safe-area-inset-top))!important}
+ :fullscreen .app,:fullscreen .stage{width:100vw!important;height:100vh!important;min-height:100vh!important}
+ :-webkit-full-screen .app,:-webkit-full-screen .stage{width:100vw!important;height:100vh!important;min-height:100vh!important}
+ `;
+ document.head.appendChild(style);
+ const fsBtn=document.querySelector('#fullscreen');
+ if(!fsBtn)return;
+ let pseudo=false;
+ const isNative=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+ const refresh=()=>{fsBtn.textContent=(isNative()||pseudo)?'EXIT FULLSCREEN':'FULLSCREEN';fsBtn.classList.toggle('on',isNative()||pseudo);setTimeout(()=>{try{resize()}catch(e){}},40)};
+ const leavePseudo=()=>{pseudo=false;document.documentElement.classList.remove('v13-stage-mode');document.body.classList.remove('v13-stage-mode');refresh()};
+ const enterPseudo=()=>{pseudo=true;document.documentElement.classList.add('v13-stage-mode');document.body.classList.add('v13-stage-mode');window.scrollTo(0,0);refresh()};
+ async function toggleFullscreen(){
+   if(isNative()){
+     try{if(document.exitFullscreen)await document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen()}catch(e){}
+     refresh();return;
+   }
+   if(pseudo){leavePseudo();return;}
+   const target=document.documentElement;
+   try{
+     if(target.requestFullscreen){await target.requestFullscreen({navigationUI:'hide'});refresh();return;}
+     if(target.webkitRequestFullscreen){target.webkitRequestFullscreen();setTimeout(refresh,80);return;}
+   }catch(e){/* fall through to stage mode */}
+   enterPseudo();
+ }
+ fsBtn.onclick=toggleFullscreen;
+ document.addEventListener('fullscreenchange',refresh);
+ document.addEventListener('webkitfullscreenchange',refresh);
+ window.addEventListener('resize',()=>{if(pseudo)refresh()});
+ document.addEventListener('keydown',e=>{
+   if(e.key.toLowerCase()==='f'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){e.preventDefault();toggleFullscreen();}
+   if(e.key==='Escape'&&pseudo){e.preventDefault();leavePseudo();}
+ },true);
+ refresh();
+})();
+
 function v13NearestCorridor(from,x,y){
  if(!from||!BY_ID[from]) return null; let best=null,bd=1e9;
  const A=nodePoint(from);
