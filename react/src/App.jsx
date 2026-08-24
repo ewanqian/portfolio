@@ -15,6 +15,7 @@ import RainSingapore from './pages/RainSingapore.jsx'
 import KashiwaTitan from './pages/KashiwaTitan.jsx'
 import DigitalGarden from './pages/DigitalGarden.jsx'
 import CommissionedVisualProject from './pages/CommissionedVisualProject.jsx'
+import TopologicalPlayground from './pages/TopologicalPlayground.jsx'
 import MotionSystem from './motion/MotionSystem.jsx'
 import './styles/global.css'
 import './styles/home-system.css'
@@ -81,6 +82,7 @@ function App() {
         <Route path="/production" element={<Production />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/gaussian-scenes" element={<GaussianScenes />} />
+        <Route path="/playground" element={<TopologicalPlayground />} />
         <Route path="/projects/titan" element={<KashiwaTitan />} />
         <Route path="/projects/kashiwa-titan" element={<KashiwaTitan />} />
         <Route path="/projects/yujiayun-45m2" element={<YuJiayun45m2 />} />
