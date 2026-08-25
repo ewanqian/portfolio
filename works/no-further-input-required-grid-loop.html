@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<title>No Further Input Required — Grid Loop Study</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050505}
+  canvas{position:fixed;inset:0;width:100%;height:100%;display:block;background:#050505}
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<script>
+(()=>{'use strict';
+const canvas=document.querySelector('#stage');
+const ctx=canvas.getContext('2d',{alpha:false});
+let W=0,H=0,D=1,start=performance.now();
+const LOOP=72000;
+const TAU=Math.PI*2;
+const COLS=18,ROWS=10;
+
+function resize(){
+  D=Math.min(devicePixelRatio||1,2);
+  W=innerWidth;H=innerHeight;
+  canvas.width=Math.floor(W*D);canvas.height=Math.floor(H*D);
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  ctx.setTransform(D,0,0,D,0,0);
+}
+addEventListener('resize',resize);resize();
+addEventListener('keydown',e=>{if(e.key.toLowerCase()==='f'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.()}});
+
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const mix=(a,b,t)=>a+(b-a)*t;
+const smooth=(a,b,x)=>{const t=clamp((x-a)/(b-a));return t*t*(3-2*t)};
+const pulse=(p,c,w)=>{let d=Math.abs(p-c);d=Math.min(d,1-d);return 1-smooth(w*.55,w,d)};
+const hash=(x,y,s=0)=>{
+  const n=Math.sin(x*127.1+y*311.7+s*74.7)*43758.5453123;
+  return n-Math.floor(n);
+};
+
+function gridGeom(){
+  const marginX=Math.max(28,W*.055),marginY=Math.max(24,H*.07);
+  const gw=W-marginX*2,gh=H-marginY*2;
+  const sx=gw/COLS,sy=gh/ROWS;
+  return{marginX,marginY,gw,gh,sx,sy};
+}
+function P(i,j,g){return{x:g.marginX+i*g.sx,y:g.marginY+j*g.sy}}
+
+function stroke(alpha=1,width=.8){ctx.strokeStyle=`rgba(235,237,228,${alpha})`;ctx.lineWidth=width}
+function fill(alpha=1){ctx.fillStyle=`rgba(235,237,228,${alpha})`}
+function dot(x,y,r=1.5,a=.8){fill(a);ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fill()}
+function line(x1,y1,x2,y2,a=.2,w=.8){stroke(a,w);ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
+function rect(x,y,w,h,a=.15,lw=.8){stroke(a,lw);ctx.strokeRect(x,y,w,h)}
+
+function phaseEnvelope(p){
+  // Continuous dramaturgy inside a seamless loop.
+  // Registration -> Absorption -> Recall -> Remainder.
+  const registration=(1-smooth(.11,.24,p))*smooth(.00,.035,p);
+  const absorption=smooth(.14,.34,p)*(1-smooth(.55,.70,p));
+  const recall=smooth(.48,.62,p)*(1-smooth(.79,.91,p));
+  const remainder=smooth(.76,.90,p)*(1-smooth(.985,1.0,p));
+  return{registration,absorption,recall,remainder};
+}
+
+function drawBaseGrid(g,p,e){
+  // Very faint invariant scaffold; gives everything one measure system.
+  const base=.025+.02*e.absorption+.015*e.recall;
+  for(let i=0;i<=COLS;i++){
+    const x=g.marginX+i*g.sx;
+    line(x,g.marginY,x,g.marginY+g.gh,base,i%3===0?.65:.45);
+  }
+  for(let j=0;j<=ROWS;j++){
+    const y=g.marginY+j*g.sy;
+    line(g.marginX,y,g.marginX+g.gw,y,base,j%2===0?.65:.45);
+  }
+  // guide anchors
+  for(let j=0;j<=ROWS;j+=2)for(let i=0;i<=COLS;i+=3){
+    const q=P(i,j,g);dot(q.x,q.y,.75,.07+.05*e.recall);
+  }
+}
+
+function drawConstraint(g,p,e,timeShift=0,alphaScale=1){
+  // State 01: constrained joints and supports, always aligned to the master grid.
+  const q=(p+timeShift+1)%1;
+  const a=TAU*q;
+  const strength=(.20*e.registration+.55*e.absorption+.68*e.recall+.18*e.remainder)*alphaScale;
+  if(strength<.006)return;
+
+  const active=[];
+  for(let j=1;j<ROWS;j++)for(let i=1;i<COLS;i++){
+    const keep=((i*7+j*11)%5===0)||((i+j)%7===0);
+    if(!keep)continue;
+    const base=P(i,j,g);
+    const dir=((i+j)%2)*2-1;
+    const ox=Math.sin(a*2+i*.57+j*.31)*g.sx*.055*dir;
+    const oy=Math.cos(a*2+j*.49-i*.21)*g.sy*.045;
+    active.push({i,j,x:base.x+ox,y:base.y+oy,bx:base.x,by:base.y});
+  }
+  // axial connections
+  for(const n of active){
+    for(const m of active){
+      const di=Math.abs(n.i-m.i),dj=Math.abs(n.j-m.j);
+      if((di===1&&dj===0)||(di===0&&dj===1)){
+        line(n.x,n.y,m.x,m.y,.08*strength,.55);
+      }
+    }
+    line(n.bx,n.by,n.x,n.y,.16*strength,.6);
+    dot(n.x,n.y,1.15,.46*strength);
+  }
+  // periodic column / row restraint sweeps
+  const sweepX=g.marginX+g.gw*((q*1.5)%1);
+  const sweepY=g.marginY+g.gh*((q*.75+.15)%1);
+  line(sweepX,g.marginY,sweepX,g.marginY+g.gh,.055*strength,1);
+  line(g.marginX,sweepY,g.marginX+g.gw,sweepY,.035*strength,.8);
+}
+
+function drawIndexField(g,p,e,timeShift=0,alphaScale=1){
+  // State 02: indexed rectangles / nested cells / folded segments.
+  const q=(p+timeShift+1)%1;
+  const a=TAU*q;
+  const strength=(.22*e.registration+.72*e.absorption+.58*e.recall+.25*e.remainder)*alphaScale;
+  if(strength<.006)return;
+
+  for(let j=0;j<ROWS;j++)for(let i=0;i<COLS;i++){
+    const h=hash(i,j,3);
+    const gate=.28+.22*Math.sin(a+i*.41-j*.27);
+    if(h>gate+.42)continue;
+    const p0=P(i,j,g);
+    const cx=p0.x+g.sx*.5,cy=p0.y+g.sy*.5;
+    const size=.16+.16*(.5+.5*Math.sin(a*1.5+i*.29+j*.21));
+    const w=g.sx*size,hg=g.sy*size;
+    const family=(i*3+j*5)%4;
+    if(family===0){
+      rect(cx-w,cy-hg,w*2,hg*2,.13*strength,.65);
+      if((i+j)%3===0)rect(cx-w*.55,cy-hg*.55,w*1.1,hg*1.1,.22*strength,.7);
+    }else if(family===1){
+      line(cx,cy-hg*1.6,cx,cy+hg*1.6,.20*strength,.75);
+      line(cx-g.sx*.15,cy,cx+g.sx*.15,cy,.07*strength,.6);
+    }else if(family===2){
+      line(cx-g.sx*.18,cy+hg*.9,cx,cy-hg*.9,.20*strength,.7);
+      line(cx,cy-hg*.9,cx+g.sx*.18,cy+hg*.9,.20*strength,.7);
+    }else{
+      line(cx-g.sx*.18,cy-hg*.75,cx,cy-hg*.75,.11*strength,.6);
+      line(cx,cy-hg*.75,cx,cy+hg*.75,.11*strength,.6);
+      line(cx,cy+hg*.75,cx+g.sx*.18,cy+hg*.75,.18*strength,.75);
+    }
+    if(hash(i,j,9+Math.floor(q*8))>.78)dot(cx,cy,1.1,.50*strength);
+  }
+
+  // a few larger indexed territories aligned to 3x2 grid blocks
+  for(let j=0;j<ROWS;j+=2)for(let i=0;i<COLS;i+=3){
+    const h=hash(i,j,14);
+    if(h<.58)continue;
+    const p0=P(i,j,g),ww=g.sx*3,hh=g.sy*2;
+    const breathe=.92+.04*Math.sin(a+i*.23+j*.17);
+    const dw=ww*(1-breathe)*.5,dh=hh*(1-breathe)*.5;
+    rect(p0.x+dw,p0.y+dh,ww*breathe,hh*breathe,.055*strength,.8);
+  }
+}
+
+function memoryOn(i,j,step,rule){
+  if(rule===0)return ((i^j^step)&3)===0;
+  if(rule===1)return ((i*3+j*5+step)%7)<2;
+  if(rule===2)return (((i+step)%6===0)||((j+step)%5===0))&&((i+j)%2===0);
+  return ((i*7+j*11+step*3)%13)<3;
+}
+
+function drawMemory(g,p,e,timeShift=0,alphaScale=1){
+  // State 05: quantized memory, rendered at several past samples so residue is structural, not motion blur.
+  const q=(p+timeShift+1)%1;
+  const strength=(.10*e.registration+.34*e.absorption+.82*e.recall+.42*e.remainder)*alphaScale;
+  if(strength<.006)return;
+  const steps=6;
+  for(let age=steps-1;age>=0;age--){
+    const qp=(q-age*.015+1)%1;
+    const step=Math.floor(qp*32)%32;
+    const rule=Math.floor(qp*4)%4;
+    const fade=(1-age/steps);
+    const a=.34*strength*fade*fade;
+    for(let j=0;j<ROWS;j++)for(let i=0;i<COLS;i++){
+      if(!memoryOn(i,j,step,rule))continue;
+      const p0=P(i,j,g),cx=p0.x+g.sx*.5,cy=p0.y+g.sy*.5;
+      const drift=(age*.7)*(i%2?1:-1);
+      dot(cx+drift,cy,age===0?1.55:.7,a);
+      if(age===0 && (i+j+rule)%5===0){
+        // faint triangle as remembered internal topology
+        stroke(.055*strength,.55);
+        ctx.beginPath();
+        ctx.moveTo(cx,cy-g.sy*.27);
+        ctx.lineTo(cx-g.sx*.22,cy+g.sy*.23);
+        ctx.lineTo(cx+g.sx*.22,cy+g.sy*.23);
+        ctx.closePath();ctx.stroke();
+      }
+    }
+  }
+
+  // diagonal/downward memory formations: not literal triangle outlines, but a quantized density slope.
+  const center=COLS*.5+Math.sin(TAU*q)*2.1;
+  for(let j=0;j<ROWS;j++){
+    const spread=mix(1.4,COLS*.42,j/(ROWS-1));
+    for(let i=0;i<COLS;i++){
+      const d=Math.abs(i-center);
+      const inside=d<spread;
+      if(!inside)continue;
+      const edge=1-clamp(d/spread);
+      if(hash(i,j,22+Math.floor(q*16))>.76+edge*.14)continue;
+      const p0=P(i,j,g),cx=p0.x+g.sx*.5,cy=p0.y+g.sy*.5;
+      line(cx-g.sx*.15,cy,cx+g.sx*.15,cy,.06*strength*edge,.65);
+      if((i+j)%4===0)dot(cx,cy,1.2,.24*strength*edge);
+    }
+  }
+}
+
+function drawRecallEchoes(g,p,e){
+  // During recall, earlier configurations return as transformed echoes, all still grid-bound.
+  const k=e.recall;
+  if(k<.01)return;
+  drawConstraint(g,p,. {registration:0,absorption:0,recall:k,remainder:0});
+}
+
+function frame(now){
+  const p=((now-start)%LOOP)/LOOP;
+  const e=phaseEnvelope(p);
+  const g=gridGeom();
+  ctx.fillStyle='#050505';ctx.fillRect(0,0,W,H);
+
+  drawBaseGrid(g,p,e);
+
+  // Historical echoes behind the current state: 3 periodic samples, aligned to the same grid.
+  const echoes=[{dt:-.06,a:.16},{dt:-.035,a:.28},{dt:0,a:1}];
+  for(const s of echoes){
+    drawIndexField(g,(p+s.dt+1)%1,e,0,s.a);
+    drawConstraint(g,(p+s.dt+1)%1,e,0,s.a);
+    drawMemory(g,(p+s.dt+1)%1,e,0,s.a);
+  }
+
+  // Stronger recall pass: the old grammar returns slightly offset but never leaves the grid system.
+  if(e.recall>.03){
+    drawIndexField(g,(p-.23+1)%1,{registration:0,absorption:0,recall:e.recall,remainder:0},0,.35);
+    drawConstraint(g,(p-.31+1)%1,{registration:0,absorption:0,recall:e.recall,remainder:0},0,.30);
+  }
+
+  // Edge breathing: prevents a sterile static border while keeping order.
+  const breath=.5+.5*Math.sin(TAU*p);
+  line(g.marginX,g.marginY,g.marginX+g.gw,g.marginY,.035+.02*breath,.8);
+  line(g.marginX,g.marginY+g.gh,g.marginX+g.gw,g.marginY+g.gh,.025+.018*(1-breath),.8);
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
