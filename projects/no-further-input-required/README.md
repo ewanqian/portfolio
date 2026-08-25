@@ -2,6 +2,26 @@
 
 This directory contains reusable implementation and design records for **No Further Input Required / 无需进一步输入**.
 
+## Current exhibition master — 2026-08-25
+
+The current exhibition direction is now the Processing 4 / P2D **Unicode Pictographic Computation System**:
+
+- [`NFI_Unicode_Pictographic_Master/`](./NFI_Unicode_Pictographic_Master/)
+- entry point: [`NFI_Unicode_Pictographic_Master/NFI_Unicode_Pictographic_Master.pde`](./NFI_Unicode_Pictographic_Master/NFI_Unicode_Pictographic_Master.pde)
+- run / system boundary: [`NFI_Unicode_Pictographic_Master/README.md`](./NFI_Unicode_Pictographic_Master/README.md)
+
+It implements one unified visual language: symbolic code rows, Unicode pictographic grammar, ordered pattern fields, deterministic memory / residue, and logical connection history inside a 30-second recurrent score.
+
+Only five visual systems are allowed in this master:
+
+1. Row Engine
+2. Glyph Grammar
+3. Spring Motion
+4. Connection Engine
+5. Memory / Score Engine
+
+Do not reintroduce the discarded six-structure WebGL ontology into this branch.
+
 ## Start here for agents
 
 - [`AGENT-REFERENCE.md`](./AGENT-REFERENCE.md) — implementation rules, v0.7 reuse policy, touch-performance architecture, and P01–P08 process prototypes.
@@ -11,26 +31,15 @@ This directory contains reusable implementation and design records for **No Furt
 ## Canonical project files
 
 - Main project document: [`../no-further-input-required-2026.md`](../no-further-input-required-2026.md)
-- Current playable source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
-- Public playable URL: `https://ewanqian.site/works/no-further-input-required.html`
+- Historical playable source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
+- Historical public playable URL: `https://ewanqian.site/works/no-further-input-required.html`
 
-## 2026 WebGL exhibition runtime
+## Archived WebGL experiment
 
-A separate browser-native exhibition build is preserved at [`../../works/no-further-input-required-webgl/`](../../works/no-further-input-required-webgl/).
+The browser-native WebGL build is preserved for reference at [`../../works/no-further-input-required-webgl/`](../../works/no-further-input-required-webgl/) and `https://ewanqian.site/works/no-further-input-required-webgl.html`.
 
-- Stable public URL: `https://ewanqian.site/works/no-further-input-required-webgl.html`
-- Engine: WebGL 2 fragment-shader system + Web Audio API
-- Duration: 180 seconds, deterministic loop
-- Audience UI: none after entry
-- Click / `S`: enter fullscreen and start sound
-- `F`: fullscreen toggle
-- `0`: restart loop
-- `1`–`5`: jump to review checkpoints (15 / 45 / 82 / 126 / 162 seconds)
-- `R`: start / stop a browser-side WebM capture of the canvas; audio is included after sound has been started
-- `?t=126`: open directly at a review time without changing the artwork logic
-
-This WebGL build translates the exhibition grammar rather than the old interactive-instrument branch. The six structures coexist as weighted layers; the runtime emphasizes grid discipline, quantized memory, route persistence, constraint acceptance, index recall, recursive assembly, residue and autonomy. The Sierpinski reference appears only as a low-level recalled pattern inside the memory field rather than as a permanent central emblem.
+It is **not the current exhibition visual direction**. The six-structure / grid ontology from that experiment should not be treated as the master preset for new work.
 
 ## Rule
 
-Keep v0.7 available as a historical playable performance reference. Develop the gallery work through new process prototypes rather than destructively rewriting the only preserved v0.7 implementation.
+Keep earlier versions available as historical references. Develop the current gallery work only through the five-system Unicode Pictographic Processing master unless a later explicitly approved preset replaces it.
