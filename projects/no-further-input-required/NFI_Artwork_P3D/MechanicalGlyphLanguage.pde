@@ -1,30 +1,15 @@
 class MechanicalGlyphLanguage {
   final AppConfig config;
   final UnifiedGridSystem grid;
-  PFont asciiFont;
-  PFont symbolFont;
-
-  // No words. These marks are treated as machine-state primitives, not readable language.
-  final String[] ascii = {
-    "+", "-", "=", "/", "\\", "|", ":", ".", "_", "<", ">", "[", "]"
-  };
-
-  // Deliberately restricted to a compact, geometric set that stays legible at distance.
-  final String[] unicode = {
-    "·", "•", "□", "■", "◇", "◆", "△", "▽", "○", "●",
-    "─", "│", "┼", "╱", "╲", "╳", "⊕", "⊙", "∷", "≡"
-  };
 
   MechanicalGlyphLanguage(AppConfig config, UnifiedGridSystem grid) {
     this.config = config;
     this.grid = grid;
   }
 
+  // Kept for compatibility with the composer. The frozen exhibition glyph system
+  // no longer depends on platform fonts: every mark is drawn as geometry.
   void setupFonts() {
-    // Final exhibition target is Windows. Consolas + Segoe UI Symbol are widely available there.
-    // The sketch still runs if a glyph falls back; no font file is bundled into the repository.
-    asciiFont = createFont("Consolas", 32, true);
-    symbolFont = createFont("Segoe UI Symbol", 32, true);
   }
 
   float hash(int a, int b, int salt) {
@@ -46,16 +31,15 @@ class MechanicalGlyphLanguage {
     global *= 0.18 + ctx.absorption * 0.38 + ctx.recall * 0.82 + ctx.autonomy * 0.36;
 
     pg.pushStyle();
-    pg.textAlign(CENTER, CENTER);
-    pg.noStroke();
 
-    // Nothing-Glyph-inspired logic: a small set of addressable zones is activated in temporal
-    // patterns. We borrow the behaviour (zones, pulses, progress, persistence), not device shapes.
-    drawAddressableZone(pg, ctx, 0, global); // top rail
-    drawAddressableZone(pg, ctx, 1, global); // left register
-    drawAddressableZone(pg, ctx, 2, global); // centre cross
-    drawAddressableZone(pg, ctx, 3, global); // right register
-    drawAddressableZone(pg, ctx, 4, global); // descending memory lane
+    // Finite addressable zones share the same grid as Constraint / Index / Memory.
+    // The frozen vocabulary is geometric: point, line, square, triangle, diamond,
+    // cross, ring and return arc. No text rendering is required.
+    drawAddressableZone(pg, ctx, 0, global);
+    drawAddressableZone(pg, ctx, 1, global);
+    drawAddressableZone(pg, ctx, 2, global);
+    drawAddressableZone(pg, ctx, 3, global);
+    drawAddressableZone(pg, ctx, 4, global);
     drawProgressSequence(pg, ctx, global);
     drawPersistentMemoryAnchors(pg, ctx, global);
 
@@ -73,8 +57,7 @@ class MechanicalGlyphLanguage {
     int rows = config.majorRows * 2;
     float sx = (grid.right - grid.left) / cols;
     float sy = (grid.bottom - grid.top) / rows;
-    float textSize = min(sx, sy) * (zone == 4 ? 0.29 : 0.24);
-    pg.textSize(max(10, textSize));
+    float scale = min(sx, sy) * (zone == 4 ? 0.25 : 0.20);
 
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
@@ -85,7 +68,7 @@ class MechanicalGlyphLanguage {
         float y = grid.top + (r + 0.5) * sy;
         float local = 0.45 + 0.55 * pulse(ctx.loopT, (centers[zone] + hash(c, r, 223) * 0.055) % 1.0, 0.035);
         float alpha = 180 * intensity * local;
-        drawGlyph(pg, c, r, x, y, alpha, zone == 4);
+        drawMechanicalMark(pg, c, r, x, y, alpha, scale, zone == 4);
       }
     }
   }
@@ -104,56 +87,96 @@ class MechanicalGlyphLanguage {
   }
 
   void drawProgressSequence(PGraphics pg, ArtworkContext ctx, float global) {
-    // A finite segmented sweep: information appears as ordered illumination instead of moving objects.
+    // Segmented progress without text or moving objects.
     int segments = config.majorCols;
-    float progress = (0.5 - 0.5 * cos(TWO_PI * ctx.loopT)); // 0 -> 1 -> 0, seamless
+    float progress = 0.5 - 0.5 * cos(TWO_PI * ctx.loopT);
     float active = progress * (segments - 1);
     float y = grid.top + grid.dy * 0.38;
+    float s = max(2.0, grid.dy * 0.055);
 
-    pg.textFont(symbolFont);
-    pg.textSize(max(12, grid.dy * 0.14));
-    pg.textAlign(CENTER, CENTER);
+    pg.noStroke();
     for (int i = 0; i < segments; i++) {
       float distance = abs(i - active);
       float a = constrain(1.0 - distance / 2.2, 0, 1);
       if (a < 0.02) continue;
       float x = grid.majorX(i) + grid.dx * 0.5;
       pg.fill(232, 234, 223, 115 * a * global * (0.35 + 0.65 * ctx.pressure));
-      pg.text(i % 3 == 0 ? "■" : "·", x, y);
+      if (i % 3 == 0) pg.rect(x - s, y - s, s * 2, s * 2);
+      else pg.rect(x - s * 0.65, y - s * 0.18, s * 1.3, s * 0.36);
     }
   }
 
   void drawPersistentMemoryAnchors(PGraphics pg, ArtworkContext ctx, float global) {
-    // Similar to a persistent notification concept, but here it means historical residue:
-    // a few addressed marks remain available after the original pulse has ended.
     if (ctx.historyDepth < 0.08) return;
     int[][] anchors = {{2, 2}, {5, 4}, {8, 1}, {10, 5}};
-    pg.textFont(symbolFont);
-    pg.textSize(max(12, min(grid.dx, grid.dy) * 0.16));
+    float s = max(5.0, min(grid.dx, grid.dy) * 0.12);
+
     for (int i = 0; i < anchors.length; i++) {
       int c = anchors[i][0];
       int r = anchors[i][1];
       float x = grid.majorX(c) + grid.dx * 0.5;
       float y = grid.majorY(r) + grid.dy * 0.5;
       float a = (26 + 76 * ctx.historyDepth + 52 * ctx.recall * pulse(ctx.loopT, (0.64 + i * 0.07) % 1.0, 0.05)) * global;
-      pg.fill(232, 234, 223, a);
-      pg.text(i % 2 == 0 ? "⊙" : "◇", x, y);
+      drawAnchor(pg, x, y, a, s, i % 2);
     }
   }
 
-  void drawGlyph(PGraphics pg, int c, int r, float x, float y, float alpha, boolean preferUnicode) {
-    float h = hash(c, r, config.seed + 251);
-    boolean useUnicode = preferUnicode || h > 0.47;
-    if (useUnicode) {
-      pg.textFont(symbolFont);
-      String s = unicode[floor(hash(c, r, 257) * unicode.length) % unicode.length];
-      pg.fill(232, 234, 223, alpha);
-      pg.text(s, x, y);
+  void drawAnchor(PGraphics pg, float x, float y, float alpha, float s, int kind) {
+    pg.noFill();
+    pg.stroke(232, 234, 223, alpha);
+    pg.strokeWeight(max(0.8, s * 0.08));
+    if (kind == 0) {
+      pg.ellipse(x, y, s * 2.0, s * 2.0);
+      pg.noStroke();
+      pg.fill(232, 234, 223, alpha * 0.72);
+      pg.ellipse(x, y, max(2.0, s * 0.34), max(2.0, s * 0.34));
     } else {
-      pg.textFont(asciiFont);
-      String s = ascii[floor(hash(c, r, 263) * ascii.length) % ascii.length];
-      pg.fill(232, 234, 223, alpha * 0.92);
-      pg.text(s, x, y);
+      pg.beginShape();
+      pg.vertex(x, y - s);
+      pg.vertex(x + s, y);
+      pg.vertex(x, y + s);
+      pg.vertex(x - s, y);
+      pg.endShape(CLOSE);
     }
+  }
+
+  void drawMechanicalMark(PGraphics pg, int c, int r, float x, float y, float alpha, float s, boolean preferStructural) {
+    int kind = floor(hash(c, r, config.seed + 251) * 8.0) % 8;
+    if (preferStructural && kind < 3) kind += 3;
+
+    pg.pushStyle();
+    pg.noFill();
+    pg.stroke(232, 234, 223, alpha);
+    pg.strokeWeight(max(0.7, s * 0.10));
+
+    if (kind == 0) {
+      pg.noStroke();
+      pg.fill(232, 234, 223, alpha * 0.92);
+      pg.ellipse(x, y, max(2.0, s * 0.34), max(2.0, s * 0.34));
+    } else if (kind == 1) {
+      pg.line(x - s, y, x + s, y);
+    } else if (kind == 2) {
+      pg.rect(x - s * 0.72, y - s * 0.72, s * 1.44, s * 1.44);
+    } else if (kind == 3) {
+      pg.triangle(x, y - s, x + s * 0.88, y + s * 0.74, x - s * 0.88, y + s * 0.74);
+    } else if (kind == 4) {
+      pg.beginShape();
+      pg.vertex(x, y - s);
+      pg.vertex(x + s, y);
+      pg.vertex(x, y + s);
+      pg.vertex(x - s, y);
+      pg.endShape(CLOSE);
+    } else if (kind == 5) {
+      pg.line(x - s * 0.85, y - s * 0.85, x + s * 0.85, y + s * 0.85);
+      pg.line(x + s * 0.85, y - s * 0.85, x - s * 0.85, y + s * 0.85);
+    } else if (kind == 6) {
+      pg.ellipse(x, y, s * 1.75, s * 1.75);
+      pg.line(x - s * 0.54, y, x + s * 0.54, y);
+    } else {
+      pg.arc(x, y, s * 2.0, s * 2.0, PI * 0.10, PI * 1.52);
+      pg.line(x - s * 0.93, y - s * 0.08, x - s * 0.62, y - s * 0.38);
+    }
+
+    pg.popStyle();
   }
 }
