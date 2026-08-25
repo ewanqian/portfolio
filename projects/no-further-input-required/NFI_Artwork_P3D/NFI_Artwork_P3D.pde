@@ -62,7 +62,7 @@ void drawDebug() {
 }
 
 void keyPressed() {
-  if (key >= '1' && key <= '3') {
+  if (key >= '1' && key <= '4') {
     config.round = key - '0';
   } else if (key == ' ') {
     paused = !paused;
