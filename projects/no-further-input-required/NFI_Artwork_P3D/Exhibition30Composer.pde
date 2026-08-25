@@ -16,9 +16,6 @@ class Exhibition30Composer {
   void draw(PGraphics pg, ArtworkContext ctx) {
     grid.update(pg.width, pg.height);
 
-    // Round 1 — ORDER: recovered Constraint + Index + Memory on one hierarchical grid.
-    // Round 2 — MECHANICAL LANGUAGE: same system plus addressable ASCII/Unicode glyph pulses.
-    // Round 3 — EXHIBITION: reduced scaffolding, stronger memory weighting and restrained glyph layer.
     grid.drawBaseGrid(pg, ctx, config.round);
 
     if (config.round == 1) {
@@ -36,17 +33,14 @@ class Exhibition30Composer {
       return;
     }
 
-    // Round 3: current exhibition candidate. The same three sources coexist but are
-    // hierarchically weighted: constraint establishes order, index addresses it,
-    // memory becomes the dominant historical surface, and glyphs act as sparse machine speech.
     drawRoundThree(pg, ctx);
   }
 
   void drawRoundThree(PGraphics pg, ArtworkContext ctx) {
     float q = ctx.loopT;
 
-    // A previous configuration returns slightly before the current one during recall.
-    // We do not use a feedback buffer: time-shifted periodic drawing keeps the 30s loop exact.
+    // Earlier structure returns slightly before the current one during recall.
+    // Time-shifted periodic drawing keeps the 30-second loop exact without a feedback buffer.
     if (ctx.recall > 0.05) {
       pg.pushStyle();
       float oldRecall = ctx.recall;
@@ -68,10 +62,15 @@ class Exhibition30Composer {
     grid.drawConstraint(pg, ctx, 3);
     grid.drawIndexField(pg, ctx, 3);
     grid.drawQuantizedMemory(pg, ctx, 3);
+
+    // Frozen graph rule: history occasionally reveals relation between a small number
+    // of already-addressed grid anchors. This is not a new scene and not a network HUD;
+    // it is the recall surface becoming structurally legible for a few seconds.
+    drawHistoricalTopology(pg, ctx);
+
     glyphs.draw(pg, ctx, 3);
 
-    // Rare structural accent: a single long calibration segment enters and leaves in one cycle.
-    // It is intentionally not a HUD element; it belongs to the same grid measure.
+    // Rare long calibration segment, kept from R3.
     float accent = pulse(q, 0.515, 0.055) * ctx.recall;
     if (accent > 0.01) {
       float y = grid.majorY(2) + grid.dy * 0.5;
@@ -86,6 +85,53 @@ class Exhibition30Composer {
       pg.rect(x1 - s * 0.5, y - s * 0.5, s, s);
       pg.rect(x2 - s * 0.5, y - s * 0.5, s, s);
     }
+  }
+
+  void drawHistoricalTopology(PGraphics pg, ArtworkContext ctx) {
+    float presence = ctx.recall * (0.35 + 0.65 * ctx.historyDepth);
+    if (presence < 0.035) return;
+
+    int[][] anchors = {
+      {2, 1}, {5, 3}, {8, 2}, {10, 5}, {7, 6}, {3, 5}
+    };
+    int[][] edges = {
+      {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 1}, {1, 4}
+    };
+
+    pg.pushStyle();
+    pg.noFill();
+    float baseStroke = max(0.7, pg.width / 4300.0);
+
+    for (int i = 0; i < edges.length; i++) {
+      float local = pulse(ctx.loopT, (0.49 + i * 0.037) % 1.0, 0.085);
+      float a = presence * (0.18 + 0.82 * local);
+      if (a < 0.025) continue;
+
+      int aIndex = edges[i][0];
+      int bIndex = edges[i][1];
+      float x1 = grid.majorX(anchors[aIndex][0]) + grid.dx * 0.5;
+      float y1 = grid.majorY(anchors[aIndex][1]) + grid.dy * 0.5;
+      float x2 = grid.majorX(anchors[bIndex][0]) + grid.dx * 0.5;
+      float y2 = grid.majorY(anchors[bIndex][1]) + grid.dy * 0.5;
+
+      pg.stroke(232, 234, 223, 62 * a);
+      pg.strokeWeight(baseStroke * (0.8 + local * 0.55));
+      pg.line(x1, y1, x2, y2);
+    }
+
+    pg.noStroke();
+    float s = max(2.5, pg.width / 1850.0);
+    for (int i = 0; i < anchors.length; i++) {
+      float local = pulse(ctx.loopT, (0.46 + i * 0.061) % 1.0, 0.10);
+      float a = presence * (0.30 + 0.70 * local);
+      float x = grid.majorX(anchors[i][0]) + grid.dx * 0.5;
+      float y = grid.majorY(anchors[i][1]) + grid.dy * 0.5;
+      pg.fill(232, 234, 223, 112 * a);
+      if (i % 2 == 0) pg.rect(x - s * 0.5, y - s * 0.5, s, s);
+      else pg.ellipse(x, y, s, s);
+    }
+
+    pg.popStyle();
   }
 
   float pulse(float phase, float center, float width) {
