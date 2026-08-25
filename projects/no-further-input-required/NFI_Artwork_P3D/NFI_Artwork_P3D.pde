@@ -1,72 +1,78 @@
 AppConfig config;
 ArtworkContext artworkContext;
-ArtworkComposer composer;
-CameraRig cameraRig;
-CaptureHarness captureHarness;
+Exhibition30Composer exhibition;
 
 boolean paused = false;
-boolean captureOnly = false;
-int previousMillis = 0;
+boolean debug = false;
+int loopOriginFrame = 0;
 
 void settings() {
-  size(1840, 980, P3D);
-  smooth(8);
+  boolean review = "1".equals(System.getenv("NFI_REVIEW"));
+  if (review) size(1920, 1080, P3D);
+  else size(3840, 2160, P3D);
+  pixelDensity(1);
+  smooth(4);
 }
 
 void setup() {
-  surface.setTitle("No Further Input Required — 08/16 Front Fidelity");
+  surface.setTitle("No Further Input Required — 30s Processing Exhibition Loop");
   frameRate(60);
+  noCursor();
+  hint(DISABLE_DEPTH_TEST);
 
   config = new AppConfig();
   artworkContext = new ArtworkContext(config.seed);
-  cameraRig = new CameraRig();
-  composer = new ArtworkComposer(config);
-  captureHarness = new CaptureHarness(config);
-  captureOnly = "A001_FRONT".equals(System.getenv("NFI_CAPTURE_MODE"));
-  previousMillis = millis();
+  exhibition = new Exhibition30Composer(config);
+  exhibition.setup();
+  loopOriginFrame = frameCount;
 }
 
 void draw() {
-  int now = millis();
-  float dt = min(0.05, max(0, (now - previousMillis) / 1000.0));
-  previousMillis = now;
-
-  artworkContext.dt = paused ? 0 : dt;
-  if (!paused) artworkContext.time += dt;
+  // Frame-indexed time makes the master deterministic and exactly loopable at 60 fps.
+  // A 3-minute screen capture contains six identical 30-second temporal cycles.
+  int localFrame = paused ? artworkContext.loopFrame : frameCount - loopOriginFrame;
+  artworkContext.dt = paused ? 0 : 1.0 / config.targetFps;
   artworkContext.width = width;
   artworkContext.height = height;
-
-  if (captureOnly) {
-    int captureIndex = constrain(frameCount - 1, 0, 5);
-    composer.select(captureIndex, false);
-    artworkContext.time = captureHarness.captureTime(captureIndex);
-  } else {
-    composer.updateSelection(artworkContext);
-  }
+  artworkContext.setLoopFrame(localFrame, config);
 
   background(config.background);
-  cameraRig.applyFront(g);
-  composer.update(artworkContext);
-  composer.draw(g, artworkContext);
+  hint(DISABLE_DEPTH_TEST);
+  blendMode(BLEND);
+  exhibition.draw(g, artworkContext);
 
-  if (captureOnly) {
-    captureHarness.saveFront(g, composer.activeIndex());
-    if (frameCount >= 6) exit();
-  }
+  if (debug) drawDebug();
+}
+
+void drawDebug() {
+  hint(DISABLE_DEPTH_TEST);
+  cursor();
+  pushStyle();
+  textAlign(LEFT, TOP);
+  textFont(createFont("Consolas", 16, true));
+  textSize(16);
+  fill(232, 234, 223, 190);
+  String s = "R" + config.round +
+             "  LOOP " + nf(artworkContext.time, 2, 2) + " / 30.00" +
+             "  FRAME " + artworkContext.loopFrame + " / " + config.loopFrames +
+             "  FPS " + nf(frameRate, 2, 1) +
+             "  " + width + "x" + height;
+  text(s, 24, 22);
+  popStyle();
 }
 
 void keyPressed() {
-  if (key >= '1' && key <= '6') {
-    composer.select(key - '1', true);
-  } else if (key == 'a' || key == 'A') {
-    composer.resumeAuto(artworkContext.time);
+  if (key >= '1' && key <= '3') {
+    config.round = key - '0';
   } else if (key == ' ') {
     paused = !paused;
   } else if (key == 'r' || key == 'R') {
-    artworkContext.time = 0;
-    composer.resetAll(config.seed);
-    composer.resumeAuto(0);
+    loopOriginFrame = frameCount;
+    artworkContext.setLoopFrame(0, config);
+  } else if (key == 'd' || key == 'D') {
+    debug = !debug;
+    if (!debug) noCursor();
   } else if (key == 's' || key == 'S') {
-    captureHarness.saveFront(g, composer.activeIndex());
+    saveFrame("captures/NFI-R" + config.round + "-####.png");
   }
 }
