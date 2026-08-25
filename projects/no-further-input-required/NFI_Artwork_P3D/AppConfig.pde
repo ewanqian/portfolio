@@ -19,9 +19,10 @@ class AppConfig {
   final float marginX = 0.055;
   final float marginY = 0.075;
 
-  // Three refinement checkpoints remain available for visual comparison.
-  // 1 = order baseline, 2 = mechanical glyph layer, 3 = current exhibition candidate.
-  int round = 3;
+  // Comparison checkpoints remain available locally.
+  // 1 = order baseline, 2 = mechanical-language study, 3 = exhibition candidate,
+  // 4 = 2026-08-25 frozen exhibition master.
+  int round = 4;
 
   float alpha(float value) {
     return constrain(value, 0, 255);
