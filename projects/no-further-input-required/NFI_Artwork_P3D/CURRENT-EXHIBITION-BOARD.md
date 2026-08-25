@@ -1,26 +1,46 @@
 # CURRENT EXHIBITION BOARD — No Further Input Required
 
 Date: 2026-08-25
-Status: **R4 FROZEN EXHIBITION MASTER / RUNTIME QA PENDING**
-Engine: Processing 4 / Java / P3D
+Status: **R4 FROZEN ARTWORK / WEB PRESENTATION MASTER / QA PENDING**
 Issue anchor: `#56`
 Freeze: `FINAL-FREEZE-2026-08-25.md`
 
-This file is the canonical map for the current exhibition build. The artistic system is frozen; remaining work is local runtime evidence and measured taste tuning.
+The artwork is frozen. The browser build is now the primary viewing, recording and sharing implementation. Processing remains a reference implementation and provenance record.
 
-## 1. Current delivery model
+## 1. Primary viewing entry
 
 ```text
-GENERATIVE RUNTIME
-30-second deterministic seamless loop
-3840 × 2160 target
-60 fps target
+https://ewanqian.site/nfi-r4.html
+```
+
+Repository runtime:
+
+```text
+projects/no-further-input-required/NFI_Web_R4/
+  index.html
+  sketch.js
+```
+
+Runtime:
+
+```text
+p5.js / Canvas
+30-second deterministic loop
+1800 logical frames @ 60 fps
+16:9 responsive presentation
+fullscreen capable
 no audience input
 no visible UI
+```
 
-DELIVERY RECORDING
-approximately 3 minutes
-= six complete 30-second loops
+Keys are QA-only and invisible during presentation:
+
+```text
+F fullscreen
+D debug
+R restart loop
+S capture frame
+SPACE pause
 ```
 
 ## 2. Frozen visual system
@@ -33,7 +53,7 @@ Constraint Mechanism
 + Deterministic Outline Glyph Language
 ```
 
-All share one hierarchy:
+Shared hierarchy:
 
 ```text
 12 × 7 major grid
@@ -41,7 +61,7 @@ All share one hierarchy:
 → 72 × 42 memory micro-grid
 ```
 
-Continuous overlapping progression:
+Continuous progression:
 
 ```text
 registration / sparse address
@@ -51,30 +71,48 @@ registration / sparse address
 → seamless return
 ```
 
-No hard scene switch is part of the artwork.
+No hard scene switch.
 
-## 3. Active Processing files
+## 3. Why Web is now primary
+
+The artistic system does not require Processing-specific features. The frozen R4 consists of deterministic 2D geometry, timing and state envelopes, so p5.js can express the same behaviour directly while making visual review, screen recording and sharing much cheaper.
+
+Ponytail rule applied:
 
 ```text
-NFI_Artwork_P3D.pde         main runtime / frame clock / keys / review mode
-AppConfig.pde               4K, FPS, loop, grid and round configuration
-ArtworkContext.pde          loop phase + shared dramaturgical variables
-Exhibition30Composer.pde    frozen exhibition composition + recall topology
-UnifiedGridSystem.pde       Constraint + Index + Quantized Memory grid language
-MechanicalGlyphLanguage.pde deterministic geometric outline mark layer
-RUN.md                      local run + QA instructions
-CODEX-HANDSHAKE.md          local Codex startup contract
-FINAL-FREEZE-2026-08-25.md  artistic freeze and change boundary
-EXHIBITION-30S-R3-BRIEF.md  historical R3 brief / baseline
+do not maintain two active artwork implementations
+→ Web is presentation master
+→ PDE is frozen reference
 ```
 
-Anything under `archive/` is historical and should not be treated as active Processing code.
+Do not continue visual development in PDE unless Web parity exposes a specific missing behaviour.
 
-## 4. What changed in the freeze
+## 4. Processing reference implementation
 
-### Glyph layer
+Historical/frozen implementation remains at:
 
-The semantic ancestry remains ASCII / Unicode / Nothing-style addressable behaviour, but the final runtime no longer depends on rendered Unicode characters. The frozen mark vocabulary is drawn directly as geometry:
+```text
+projects/no-further-input-required/NFI_Artwork_P3D/
+```
+
+Important reference files:
+
+```text
+NFI_Artwork_P3D.pde
+AppConfig.pde
+ArtworkContext.pde
+Exhibition30Composer.pde
+UnifiedGridSystem.pde
+MechanicalGlyphLanguage.pde
+```
+
+The browser port preserves the R4 logic but is now the version to inspect first.
+
+## 5. Frozen glyph language
+
+No system-font Unicode is required for the final visual surface. Unicode research remains semantic ancestry only.
+
+Runtime geometry:
 
 ```text
 point
@@ -87,109 +125,56 @@ ring
 return arc
 ```
 
-This removes font-style drift and keeps the mark layer inside the same visual line system as the grid.
+Glyphs share the same measurement system as Constraint / Index / Memory.
 
-### Graph / topology
+## 6. Graph / historical topology
 
-A small fixed historical topology appears only during recall. It uses six existing grid anchors and seven fixed relations. It is not a network diagram, HUD or new scene; it is history becoming briefly legible as relation.
+During recall only, six fixed historical anchors expose seven fixed relations. The topology must read as historical relation, not network diagram, HUD or interface.
 
-## 5. Current research
-
-```text
-research/GLYPH-ASCII-NOTHING-RESEARCH.md
-research/DESIGN-AESTHETIC-CROSS-REFERENCE.md
-```
-
-Performance-control research contributes recurrence, topology, density budgeting, subtraction and formal glyph thinking only. Interactive controllers, sequencer UI and WebXR are explicitly outside the exhibition freeze.
-
-## 6. Archive structure
+## 7. Locked visual rules
 
 ```text
-archive/
-  2026-08-16-six-state/
-  2026-08-25-180s-v1/
-```
-
-## 7. Round status
-
-### R1 — ORDER
-Constraint + Index + Quantized Memory aligned to one hierarchical grid.
-
-### R2 — MECHANICAL LANGUAGE
-Addressable ASCII / Unicode research introduced.
-
-### R3 — EXHIBITION CANDIDATE
-Reduced scaffolding, stronger recall/history and restrained glyph density.
-
-### R4 — FROZEN MASTER
-R3 preserved, then two root-level refinements only:
-
-```text
-font-rendered symbols → deterministic outline geometry
-recall → sparse historical topology
-```
-
-There is no R5 feature backlog. Further rounds are QA/taste tuning only unless the artistic freeze is explicitly reopened.
-
-## 8. Locked visual rules
-
-```text
-grayscale / near-black
+near-black / grayscale
 no readable prose
-no state-name display
 no HUD/dashboard
 no random glitch
 no particle filler
 no decorative bloom
-no automatic camera orbit
+no camera orbit
 no hard scene switches
 no literal audio-reactive mapping
-no preference-learning claims
 no performance-controller UI
 ```
 
-Nothing Glyph remains a behavioural reference for finite addressable zones, timed patterns, progress, persistence and recall. No Nothing hardware geometry or branding is copied.
-
-## 9. Acceptance questions
+## 8. Acceptance questions
 
 1. Can an earlier structure be recognised when it returns?
 2. Does later structure visibly depend on prior history?
-3. Does the recall topology read as historical relation rather than diagram/UI?
+3. Does topology read as historical relation rather than diagram/UI?
 4. Is the densest moment ordered rather than merely busy?
-5. Is empty space active and intentional?
-6. When new activity decreases, does the system remain alive?
-7. Does the 30-second boundary feel like continuation rather than restart?
-8. From several metres away, is the hierarchy still legible?
-9. Do outline glyphs feel like machine material rather than typography?
+5. Is empty space active?
+6. Does the system remain alive when new activity falls away?
+7. Does 29.5s → 0s feel continuous?
+8. From several metres away, is hierarchy legible?
+9. Do glyphs feel like machine material rather than typography?
 
-## 10. Runtime truth status
+## 9. Remaining QA only
 
-Prepared in repository:
+```text
+browser visual parity with frozen R4
+30-second seam
+stable 60 fps at presentation resolution
+4K/fullscreen recording test
+10-minute stability
+several-metres distance view
+recording compression
+```
 
-- 4K target configuration;
-- 60 fps target;
-- deterministic 1800-frame loop;
-- 1080p review mode;
-- local debug toggle;
-- PNG capture;
-- frozen outline glyph layer;
-- frozen historical-topology layer.
+Do not add a new visual family while closing these checks.
 
-Still requires local evidence:
+## 10. Change boundary
 
-- compile/run after the freeze commits;
-- measured 3840×2160 FPS;
-- 10-minute stability run;
-- 29.5s → 0s seam observation;
-- final 3-minute screen recording;
-- distance-view check;
-- recording-compression check.
-
-Never convert untested items into completed claims.
-
-## 11. Ponytail change boundary
-
-Before adding code, use this order:
+Before adding code:
 
 ```text
 reuse current behaviour
@@ -199,4 +184,4 @@ reuse current behaviour
 → only then add minimum code
 ```
 
-Permitted final tuning: line weight, alpha, event timing, memory density, topology visibility, glyph scale/density and measured antialiasing cost.
+Permitted final tuning: line weight, alpha, timing, memory density, topology visibility, glyph scale/density and browser performance cost.
