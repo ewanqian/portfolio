@@ -26,6 +26,7 @@ float lineInk(float d,float px,float gain){
   float w=px/max(uResolution.y,1.0);
   return gain*(1.0-smoothstep(w,w*2.25,d));
 }
+float localInk(float d,float px,float gain,float scaleY){return lineInk(d*scaleY,px,gain);}
 float boxFill(vec2 p,vec2 c,vec2 h){
   vec2 q=abs(p-c)-h;
   return 1.0-step(0.0,max(q.x,q.y));
@@ -77,24 +78,24 @@ float projectionLayer(vec2 uv,float t,float history){
   vec2 ic=mix(c,cc,.69)+vec2(drift*.24,drift*.18);
   vec2 idd=mix(c,d,.61)+vec2(-drift*.44,-drift*.12);
   float ink=0.0;
-  ink+=lineInk(seg(l,a,b),.72,.19);
-  ink+=lineInk(seg(l,b,cc),.72,.19);
-  ink+=lineInk(seg(l,cc,d),.72,.19);
-  ink+=lineInk(seg(l,d,a),.72,.19);
-  ink+=lineInk(seg(l,ia,ib),.58,.17);
-  ink+=lineInk(seg(l,ib,ic),.58,.17);
-  ink+=lineInk(seg(l,ic,idd),.58,.17);
-  ink+=lineInk(seg(l,idd,ia),.58,.17);
-  ink+=lineInk(seg(l,a,ia),.50,.12);
-  ink+=lineInk(seg(l,b,ib),.50,.12);
-  ink+=lineInk(seg(l,cc,ic),.50,.12);
-  ink+=lineInk(seg(l,d,idd),.50,.12);
+  ink+=localInk(seg(l,a,b),.72,.19,.74/3.0);
+  ink+=localInk(seg(l,b,cc),.72,.19,.74/3.0);
+  ink+=localInk(seg(l,cc,d),.72,.19,.74/3.0);
+  ink+=localInk(seg(l,d,a),.72,.19,.74/3.0);
+  ink+=localInk(seg(l,ia,ib),.58,.17,.74/3.0);
+  ink+=localInk(seg(l,ib,ic),.58,.17,.74/3.0);
+  ink+=localInk(seg(l,ic,idd),.58,.17,.74/3.0);
+  ink+=localInk(seg(l,idd,ia),.58,.17,.74/3.0);
+  ink+=localInk(seg(l,a,ia),.50,.12,.74/3.0);
+  ink+=localInk(seg(l,b,ib),.50,.12,.74/3.0);
+  ink+=localInk(seg(l,cc,ic),.50,.12,.74/3.0);
+  ink+=localInk(seg(l,d,idd),.50,.12,.74/3.0);
   float mb=min(min(l.x,1.0-l.x)*ASP,min(l.y,1.0-l.y));
-  ink+=lineInk(mb,.45,.055);
+  ink+=localInk(mb,.45,.055,.74/3.0);
   if(history>.01){
     vec2 gh=l+vec2(.010*sin(id*2.2),.012*cos(id*1.3));
-    ink+=history*.16*lineInk(seg(gh,ia,ib),.52,1.0);
-    ink+=history*.11*lineInk(seg(gh,ic,idd),.52,1.0);
+    ink+=history*.16*localInk(seg(gh,ia,ib),.52,1.0,.74/3.0);
+    ink+=history*.11*localInk(seg(gh,ic,idd),.52,1.0,.74/3.0);
   }
   float scan=fract(t/17.0)*1.22-.11;
   float reveal=.72+.75*exp(-abs(q.x-scan)*34.0);
@@ -144,9 +145,9 @@ float constraintLayer(vec2 uv,float t,float history){
   float held=smoothstep(activation,activation+2.4,t)*(1.0-smoothstep(158.0,178.0,t))*accepted;
   float candidate=band(t,activation-1.2,activation+2.0,.35);
   float diag=seg(l,vec2(.08,.08),vec2(.92,.92));
-  ink+=lineInk(diag,.68,.11*candidate+(.10+.14*history)*held);
-  float anchorTop=lineInk(seg(l,vec2(.46,.0),vec2(.54,.0)),1.3,.24*(candidate+held*.25));
-  float anchorBot=lineInk(seg(l,vec2(.46,1.0),vec2(.54,1.0)),1.3,.17*(candidate+held*.20));
+  ink+=localInk(diag,.68,.11*candidate+(.10+.14*history)*held,.80/6.0);
+  float anchorTop=localInk(seg(l,vec2(.46,.0),vec2(.54,.0)),1.3,.24*(candidate+held*.25),.80/6.0);
+  float anchorBot=localInk(seg(l,vec2(.46,1.0),vec2(.54,1.0)),1.3,.17*(candidate+held*.20),.80/6.0);
   ink+=anchorTop+anchorBot;
   return ink;
 }
@@ -167,7 +168,7 @@ float indexLayer(vec2 uv,float t,float history,float recall){
   float pre=recall*step(.82,access);
   float a=exists*(.045+history*.045+active*.22+pre*.13);
   vec2 c=vec2(.5);
-  float square=boxStroke(l,c,vec2(.14),.75)*typ;
+  float square=boxStroke(l,c,vec2(.14),.75/(.84/18.0))*typ;
   float dash=boxFill(l,c,vec2(.27,.035))*(1.0-typ);
   return a*(square+dash);
 }
