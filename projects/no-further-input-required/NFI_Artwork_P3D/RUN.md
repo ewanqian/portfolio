@@ -2,7 +2,21 @@
 
 Processing 4 / Java mode / `P3D` OpenGL.
 
-Current target:
+## Start here
+
+For local Codex or any new working session, read in this order:
+
+```text
+CODEX-HANDSHAKE.md
+CURRENT-EXHIBITION-BOARD.md
+EXHIBITION-30S-R3-BRIEF.md
+research/GLYPH-ASCII-NOTHING-RESEARCH.md
+research/DESIGN-AESTHETIC-CROSS-REFERENCE.md
+```
+
+Historical six-state code and the superseded 180-second plan are under `archive/`; they are not active sketch tabs.
+
+## Current target
 
 ```text
 3840 × 2160
@@ -64,7 +78,7 @@ Remove `NFI_REVIEW` for the 3840×2160 master.
 
 3  ROUND 3 / EXHIBITION CANDIDATE
    reduced scaffolding, stronger memory/recall,
-   sparse mechanical glyphs, current recommended version
+   sparse mechanical glyphs, current recommended baseline
 ```
 
 Keys:
@@ -87,18 +101,21 @@ For recording, use Round 3, press `R`, then begin the screen capture. Record at 
 - `smooth(4)` is the current quality/performance compromise; if 4K misses 60 fps, test `smooth(2)` before changing visual logic.
 - no blur, bloom, full-frame noise, particles or feedback FBO are used in the current candidate.
 - animation time is frame-indexed rather than wall-clock based; at stable 60 fps the cycle is exactly 30 seconds and loops deterministically.
-- no external library is required for R1–R3. This is deliberate: the current work is line/grid/text-symbol heavy and Processing's OpenGL renderer already covers it with lower installation risk.
+- no external library is required for R1–R3.
 
 ## Optional future library test
 
-If later rounds require GPU feedback, optical flow or shader-heavy image processing, evaluate **PixelFlow** as a separate branch. Do not add it to the submission runtime unless it creates a visible artistic improvement and survives a 4K stability test.
+If a later round specifically requires GPU feedback, optical flow or shader-heavy image processing, evaluate PixelFlow on a separate branch. Do not add it to the submission runtime unless it creates a visible artistic improvement and survives a 4K stability test.
 
 ## QA before recording
 
-1. Run Round 3 at 4K for 10 minutes.
-2. Use `D` briefly and confirm FPS is near 60, then turn debug off.
-3. Watch the 29.5s → 0s boundary several times; there should be no obvious reset flash.
-4. Check the Unicode symbols on the exhibition Windows machine. If any unsupported squares appear, remove that symbol from `MechanicalGlyphLanguage.pde` rather than bundling a font.
-5. Record the clean output with cursor hidden and debug off.
+1. Pull latest main and complete the `CODEX-HANDSHAKE.md` status block.
+2. Run Round 3 at 1080p once before editing.
+3. Run Round 3 at 4K for 10 minutes.
+4. Use `D` briefly and record measured FPS, then turn debug off.
+5. Watch the 29.5s → 0s boundary several times; there should be no obvious reset flash.
+6. Check Unicode symbols on the exhibition Windows machine. If unsupported squares appear, remove/replace the symbol from `MechanicalGlyphLanguage.pde`; do not bundle font files into the repository as a quick fix.
+7. Check the image from several metres / reduced preview size for line hierarchy and order.
+8. Record the clean output with cursor hidden and debug off.
 
-Current status: code prepared in repository; **4K/60 runtime has not been physically benchmarked on the exhibition machine yet**.
+Current truth status: code is prepared in repository; **4K/60 runtime has not yet been physically benchmarked on the exhibition machine.**

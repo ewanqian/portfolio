@@ -3,7 +3,7 @@ class AppConfig {
   final int ink = color(232, 234, 223);
   final int seed = 160826;
 
-  // Exhibition master target.
+  // Current exhibition master target.
   final int outputW = 3840;
   final int outputH = 2160;
   final int targetFps = 60;
@@ -19,13 +19,9 @@ class AppConfig {
   final float marginX = 0.055;
   final float marginY = 0.075;
 
-  // Three local refinement rounds are built into the same sketch.
-  // 1 = order baseline, 2 = mechanical glyph layer, 3 = exhibition candidate.
+  // Three refinement checkpoints remain available for visual comparison.
+  // 1 = order baseline, 2 = mechanical glyph layer, 3 = current exhibition candidate.
   int round = 3;
-
-  // Legacy fields are kept so the recovered 08/16 source-state files still compile.
-  final float stateSeconds = 12.0;
-  final int stateCount = 6;
 
   float alpha(float value) {
     return constrain(value, 0, 255);
