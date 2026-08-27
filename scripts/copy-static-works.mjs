@@ -21,27 +21,27 @@ function copyDirRecursive(fromDir, toDir) {
   return count
 }
 
-// Legacy standalone work pages.
+// Standalone work pages and self-contained browser artworks.
 const worksFrom = path.join(root, 'works')
 const worksTo = path.join(root, 'dist', 'works')
 
 if (fs.existsSync(worksFrom)) {
   fs.mkdirSync(worksTo, { recursive: true })
   const copied = []
-  for (const name of fs.readdirSync(worksFrom)) {
-    if (!name.endsWith('.html')) continue
-    fs.copyFileSync(path.join(worksFrom, name), path.join(worksTo, name))
-    copied.push(name)
+  for (const entry of fs.readdirSync(worksFrom, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      const count = copyDirRecursive(path.join(worksFrom, entry.name), path.join(worksTo, entry.name))
+      copied.push(`${entry.name}/ (${count})`)
+      continue
+    }
+    if (!entry.name.endsWith('.html')) continue
+    fs.copyFileSync(path.join(worksFrom, entry.name), path.join(worksTo, entry.name))
+    copied.push(entry.name)
   }
-  console.log(`Copied ${copied.length} works HTML file(s) → dist/works/: ${copied.join(', ')}`)
+  console.log(`Copied ${copied.length} standalone work entry(s) → dist/works/: ${copied.join(', ')}`)
 } else {
   console.warn(`Static works folder not found: ${worksFrom}`)
 }
-
-const latticeFrom = path.join(root, 'works', 'no-further-input-required-lattice')
-const latticeTo = path.join(root, 'dist', 'works', 'no-further-input-required-lattice')
-const latticeCount = copyDirRecursive(latticeFrom, latticeTo)
-console.log(`Copied ${latticeCount} NFI lattice file(s) → dist/works/no-further-input-required-lattice/`)
 
 const latticeSourceFrom = path.join(root, 'projects', 'no-further-input-required', 'NFI_Lattice_Three')
 const latticeSourceTo = path.join(root, 'dist', 'projects', 'no-further-input-required', 'NFI_Lattice_Three')
