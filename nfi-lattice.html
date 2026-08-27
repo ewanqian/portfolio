@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="A generative 3D lattice that begins from one node and continues without further external input.">
+  <title>No Further Input Required — Lattice</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #stage { position: fixed; inset: 0; touch-action: none; overscroll-behavior: none; background: #000; }
+  </style>
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <div id="stage"></div>
+  <script type="module">
+    import { mountNfirLattice } from "/projects/no-further-input-required/NFI_Lattice_Three/nfir-lattice.js";
+    const stage = document.getElementById("stage");
+    if (stage) mountNfirLattice(stage);
+  </script>
+</body>
+</html>

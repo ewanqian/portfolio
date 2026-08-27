@@ -34,6 +34,15 @@ Do not reintroduce the discarded six-structure WebGL ontology into this branch.
 - Historical playable source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
 - Historical public playable URL: `https://ewanqian.site/works/no-further-input-required.html`
 
+
+## Lattice study — 2026-08-27
+
+A new Three.js / WebGL 3D lattice study lives in its own folder. It does not replace the Unicode Pictographic exhibition master and it does not reintroduce the discarded six-structure WebGL ontology into that branch.
+
+- source: [`NFI_Lattice_Three/`](./NFI_Lattice_Three/)
+- public: https://ewanqian.site/works/no-further-input-required-lattice/
+- short: https://ewanqian.site/nfi-lattice.html
+
 ## Archived WebGL experiment
 
 The browser-native WebGL build is preserved for reference at [`../../works/no-further-input-required-webgl/`](../../works/no-further-input-required-webgl/) and `https://ewanqian.site/works/no-further-input-required-webgl.html`.
