@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>No Further Input Required — Doubao Build</title>
+<meta name="description" content="No Further Input Required — generative Three.js artwork, Doubao build. A small initial condition splits, relates, evolves, and then continues by reading its own state.">
+<style>
+  html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;}
+  canvas{display:block;}
+  #vr-btn{position:fixed;left:12px;bottom:12px;border:1px solid rgba(238,234,224,.25);
+    background:rgba(0,0,0,.55);color:#EEEAE0;font:11px/1.4 ui-monospace,monospace;
+    padding:6px 10px;border-radius:3px;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;}
+  #vr-btn:hover{background:rgba(238,234,224,.08);}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { VRButton } from 'three/addons/webxr/VRButton.js';
+/* =====================================================================
+   No Further Input Required — Doubao Build
+   One continuous system: ORIGIN -> DIFFERENTIATION -> RELATION ->
+   EVOLUTION -> SELF-INPUT -> (cycle).
+   After external seeding stops, every generation is produced only from
+   the previous generation plus self-measurement (density / symmetry /
+   stability / entropy) that selects among four fixed rule variants.
+   No external assets. Deterministic seeded PRNG.
+   ===================================================================== */
+// ---------- Deterministic PRNG (mulberry32) ----------
+function mulberry32(seed){
+  let a = seed >>> 0;
+  return function(){
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const rng = mulberry32(0x4E464931); // 'NFI1'
+// ---------- Math helpers ----------
+const clamp = (v,a,b)=> v<a?a:(v>b?b:v);
+const clamp01 = v=> clamp(v,0,1);
+const easeOutCubic = x=> 1 - Math.pow(1-x, 3);
+const easeInOutCubic = x=> x<.5 ? 4*x*x*x : 1 - Math.pow(-2*x+2,3)/2;
+// ---------- Lattice : 4x4x4 = 64 ----------
+const N = 4;
+const CELL = N*N*N;                 // 64
+const AX = [-1.5, -0.5, 0.5, 1.5];  // binary-subdivision centres, spacing 1
+const idx = (x,y,z)=> x + N*(y + N*z);
+const fromIdx = i => {
+  const z = (i/(N*N))|0, y = ((i%(N*N))/N)|0, x = i%N;
+  return [x,y,z];
+};
+const mirrorI = i => {
+  const [x,y,z] = fromIdx(i);
+  return idx(N-1-x, N-1-y, N-1-z);
+};
+const CELL_POS = Array.from({length:CELL}, (_,i)=>{
+  const [x,y,z] = fromIdx(i);
+  return new THREE.Vector3(AX[x], AX[y], AX[z]);
+});
+// octant corner (±1,±1,±1) each cell subdivides from
+const CELL_OCT = Array.from({length:CELL}, (_,i)=>{
+  const [x,y,z] = fromIdx(i);
+  return new THREE.Vector3(x>1?1:-1, y>1?1:-1, z>1?1:-1);
+});
+const CELL_DIST = CELL_POS.map(p=>p.length());
+const FD = [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
+const NEIGHBORS = [];
+for(let i=0;i<CELL;i++){
+  const [x,y,z] = fromIdx(i); const arr=[];
+  for(const [dx,dy,dz] of FD){
+    const nx=x+dx,ny=y+dy,nz=z+dz;
+    if(nx>=0&&nx<N&&ny>=0&&ny<N&&nz>=0&&nz<N) arr.push(idx(nx,ny,nz));
+  }
+  NEIGHBORS.push(arr);
+}
+// unique undirected face-edges
+const EDGES = [];
+for(let i=0;i<CELL;i++) for(const j of NEIGHBORS[i]) if(i<j) EDGES.push([i,j]);
+const ECOUNT = EDGES.length;
+// ---------- CA rule variants (continuous activation, 6-neighbour) ----------
+const clamp01v = v => v<0?0:v>1?1:v;
+// Continuous activation model. Each cell's target is a soft logistic of its
+// face-neighbours' mean (cluster formation) plus a global bias set by the rule.
+const RATE = 0.35;         // soft-update rate per generation
+const NOISE = 0.012;       // deterministic perturbation
+const MUT_RATE = 0.07;     // fraction of cells hard-flipped during MUTATE
+const EDGE_THRESH = 0.45;  // only connect cells both above this activation
+// fixed per-cell personality (deterministic) — permanent subtle asymmetry
+const PERS = new Float32Array(CELL);
+{ const _r = mulberry32(0x4E464931); for(let i=0;i<CELL;i++) PERS[i]=(_r()-0.5)*0.10; }
+function _cluster(n){ return 0.08 + 0.72/(1+Math.exp(-(n-0.36)*7)); }
+// ---------- Simulation state ----------
+let act       = new Float32Array(CELL);
+let prevAct   = new Float32Array(CELL);
+let trace     = new Float32Array(CELL);
+let nodeScale = new Float32Array(CELL);
+let nodePulse = new Float32Array(CELL);
+let edgeStr   = new Float32Array(ECOUNT);
+let externalInputActive = true;
+let currentRule = 'EXPAND';
+let caInitDone = false;
+let lastMetrics = {density:0,symmetry:1,stability:1,entropy:0};
+// ---------- Split skeleton 1 -> 2 -> 4 -> 8 ----------
+const SPLIT = [
+  {lv:0, par:-1, t:[0,0,0],     emerge:0.0,  arrive:0.0},
+  {lv:1, par:0,  t:[1,0,0],     emerge:8.0,  arrive:14.0},
+  {lv:1, par:0,  t:[-1,0,0],    emerge:8.0,  arrive:14.0},
+  {lv:2, par:1,  t:[1,1,0],     emerge:15.0, arrive:20.0},
+  {lv:2, par:1,  t:[1,-1,0],    emerge:15.0, arrive:20.0},
+  {lv:2, par:2,  t:[-1,1,0],    emerge:15.0, arrive:20.0},
+  {lv:2, par:2,  t:[-1,-1,0],   emerge:15.0, arrive:20.0},
+  {lv:3, par:3,  t:[1,1,1],     emerge:20.0, arrive:25.0},
+  {lv:3, par:3,  t:[1,1,-1],    emerge:20.0, arrive:25.0},
+  {lv:3, par:4,  t:[1,-1,1],    emerge:20.0, arrive:25.0},
+  {lv:3, par:4,  t:[1,-1,-1],   emerge:20.0, arrive:25.0},
+  {lv:3, par:5,  t:[-1,1,1],    emerge:20.0, arrive:25.0},
+  {lv:3, par:5,  t:[-1,1,-1],   emerge:20.0, arrive:25.0},
+  {lv:3, par:6,  t:[-1,-1,1],   emerge:20.0, arrive:25.0},
+  {lv:3, par:6,  t:[-1,-1,-1],  emerge:20.0, arrive:25.0},
+];
+const SCOUNT = SPLIT.length;
+const TRACE_ALPHA = [0.08, 0.12, 0.16, 0.22];
+const TREE_EDGES = [];
+SPLIT.forEach((n,i)=>{ if(n.par>=0) TREE_EDGES.push([n.par,i]); });
+const CUBE_EDGES = [];
+for(let a=7;a<15;a++) for(let b=a+1;b<15;b++){
+  let diff=0;
+  for(let k=0;k<3;k++) if(SPLIT[a].t[k]!==SPLIT[b].t[k]) diff++;
+  if(diff===1) CUBE_EDGES.push([a,b]);
+}
+const splitPos   = Array.from({length:SCOUNT},()=>new THREE.Vector3());
+const splitAlpha = new Float32Array(SCOUNT);
+const splitScale = new Float32Array(SCOUNT);
+const treeEdgeAlpha  = new Float32Array(TREE_EDGES.length);
+const cubeEdgeAlpha  = new Float32Array(CUBE_EDGES.length);
+// ---------- Timeline ----------
+const CYCLE = 90.0;
+const EXT_SEEDS = [
+  {t:56.0, i:idx(2,2,2)},
+  {t:63.0, i:idx(1,1,2)},
+  {t:70.0, i:idx(2,1,1)},
+];
+const RULE_AT = [
+  {t:50.0, r:'EXPAND'},
+  {t:56.0, r:'CONNECT'},
+];
+// =====================================================================
+// Three.js setup
+// =====================================================================
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+scene.fog = new THREE.FogExp2(0x000000, 0.022);
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
+const rig = new THREE.Group();
+rig.add(camera);
+scene.add(rig);
+const renderer = new THREE.WebGLRenderer({antialias:true, powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.xr.enabled = true;
+document.body.appendChild(renderer.domElement);
+if(navigator.xr){
+  navigator.xr.isSessionSupported('immersive-vr').then(ok=>{
+    if(ok){
+      const b = VRButton.createButton(renderer);
+      b.id='vr-btn'; b.textContent='ENTER VR';
+      document.body.appendChild(b);
+    }
+  }).catch(()=>{});
+}
+window.addEventListener('resize', ()=>{
+  camera.aspect = window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+// ---------- Geometry / materials ----------
+const COL = new THREE.Color(0xEEEAE0);
+const tmpColor = new THREE.Color();
+const dummy = new THREE.Object3D();
+const cellGeo = new THREE.BoxGeometry(0.13, 0.13, 0.13);
+const nodeMat = new THREE.MeshBasicMaterial({color:0xffffff});
+const nodeMesh = new THREE.InstancedMesh(cellGeo, nodeMat, CELL);
+nodeMesh.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(CELL*3), 3);
+scene.add(nodeMesh);
+const traceMat = new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0.32, depthWrite:false});
+const traceMesh = new THREE.InstancedMesh(cellGeo, traceMat, CELL);
+traceMesh.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(CELL*3), 3);
+scene.add(traceMesh);
+const splitGeo = new THREE.BoxGeometry(0.13, 0.13, 0.13);
+const splitMat = new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0.55, depthWrite:false});
+const splitMesh = new THREE.InstancedMesh(splitGeo, splitMat, SCOUNT);
+splitMesh.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(SCOUNT*3), 3);
+scene.add(splitMesh);
+const edgePos = new Float32Array(ECOUNT*2*3);
+const edgeCol = new Float32Array(ECOUNT*2*3);
+const edgeGeo = new THREE.BufferGeometry();
+edgeGeo.setAttribute('position', new THREE.BufferAttribute(edgePos,3));
+edgeGeo.setAttribute('color', new THREE.BufferAttribute(edgeCol,3));
+const edgeMat = new THREE.LineBasicMaterial({vertexColors:true, transparent:true, opacity:0.7, depthWrite:false});
+const edgeLines = new THREE.LineSegments(edgeGeo, edgeMat);
+scene.add(edgeLines);
+const SEDGE_COUNT = TREE_EDGES.length + CUBE_EDGES.length;
+const sEdgePos = new Float32Array(SEDGE_COUNT*2*3);
+const sEdgeCol = new Float32Array(SEDGE_COUNT*2*3);
+const sEdgeGeo = new THREE.BufferGeometry();
+sEdgeGeo.setAttribute('position', new THREE.BufferAttribute(sEdgePos,3));
+sEdgeGeo.setAttribute('color', new THREE.BufferAttribute(sEdgeCol,3));
+const sEdgeMat = new THREE.LineBasicMaterial({vertexColors:true, transparent:true, opacity:0.7, depthWrite:false});
+const sEdgeLines = new THREE.LineSegments(sEdgeGeo, sEdgeMat);
+scene.add(sEdgeLines);
+// =====================================================================
+// Simulation
+// =====================================================================
+function resetCycle(){
+  act.fill(0); prevAct.fill(0); trace.fill(0);
+  nodeScale.fill(0); nodePulse.fill(0); edgeStr.fill(0);
+  externalInputActive = true;
+  currentRule = 'EXPAND';
+  caInitDone = false;
+}
+function caStep(ruleName, metrics){
+  const nbr = new Float32Array(CELL);
+  for(let i=0;i<CELL;i++){
+    let s=0; for(const k of NEIGHBORS[i]) s+=act[k];
+    nbr[i] = s/NEIGHBORS[i].length;
+  }
+  const bias = ruleName==='EXPAND' ? 0.12 : ruleName==='PRUNE' ? -0.14 : 0.0;
+  const next = new Float32Array(CELL);
+  const mutating = (ruleName==='MUTATE');
+  for(let i=0;i<CELL;i++){
+    let tgt = _cluster(nbr[i]) + bias + PERS[i];
+    let v = act[i] + (tgt-act[i])*RATE + (rng()-0.5)*NOISE;
+    if(mutating){
+      if(rng()<MUT_RATE) v = rng()<0.5 ? 0 : 1;
+      if(rng()<0.12) v += (rng()-0.5)*0.5;
+    }
+    next[i] = clamp01v(v);
+  }
+  if(mutating && metrics && metrics.symmetry > 0.85){
+    const i = Math.floor(rng()*CELL);
+    next[i] = 1.0;
+    for(const k of NEIGHBORS[i]) next[k] = clamp01v(next[k]+0.5);
+  }
+  for(let i=0;i<CELL;i++){
+    if(next[i] > 0.45)      trace[i] = Math.max(trace[i], next[i]*0.8);
+    else if(act[i] > 0.45)  trace[i] = Math.max(trace[i], act[i]*0.6);
+    trace[i] *= 0.90;
+  }
+  prevAct.set(act);
+  act = next;
+}
+function measure(){
+  let alive=0, sym=0, symN=0, binSame=0;
+  const hist = new Array(8).fill(0);
+  for(let i=0;i<CELL;i++){
+    alive += act[i];
+    if((act[i]>0.5)===(prevAct[i]>0.5)) binSame++;
+    const b = Math.min(7, (act[i]*8)|0); hist[b]++;
+    const m = mirrorI(i);
+    if(i<m){ symN++; sym += 1-Math.abs(act[i]-act[m]); }
+  }
+  let entropy=0;
+  for(let k=0;k<8;k++) if(hist[k]){ const p=hist[k]/CELL; entropy -= p*Math.log2(p); }
+  return {
+    density:   alive/CELL,
+    symmetry:  symN? sym/symN : 1,
+    stability: binSame/CELL,
+    entropy,
+  };
+}
+function selectRule(m){
+  if(m.density < 0.25) return 'EXPAND';
+  if(m.density > 0.62) return 'PRUNE';
+  if(currentRule==='MUTATE')  return 'CONNECT';
+  if(currentRule==='PRUNE')   return m.density<0.32 ? 'CONNECT' : 'PRUNE';
+  if(currentRule==='EXPAND')  return m.density>0.52 ? 'CONNECT' : 'EXPAND';
+  if(m.stability > 0.94) return 'MUTATE';
+  return 'CONNECT';
+}
+// =====================================================================
+// Per-frame evaluation
+// =====================================================================
+const AZ0 = 0.4;
+function evalSplitNodes(t){
+  for(let i=0;i<SCOUNT;i++){
+    const n = SPLIT[i];
+    const pos = splitPos[i];
+    if(t < n.emerge){
+      const pp = n.par>=0 ? splitPos[n.par] : _zero;
+      pos.copy(pp); splitAlpha[i]=0; splitScale[i]=0; continue;
+    }
+    const p = clamp01((t-n.emerge)/Math.max(0.001, n.arrive-n.emerge));
+    const e = easeOutCubic(p);
+    const parPos = n.par>=0 ? splitPos[n.par] : _zero;
+    pos.copy(parPos).lerp(_tmp.set(n.t[0],n.t[1],n.t[2]), e);
+    let a;
+    if(n.lv===0){
+      a = t<8 ? 1 : clamp01(1-(t-8)/6);
+      if(t>=14) a = TRACE_ALPHA[0];
+    } else if(n.lv===1){
+      if(t<15) a=1;
+      else if(t<20) a=1-clamp01((t-15)/5);
+      else a=TRACE_ALPHA[1];
+    } else if(n.lv===2){
+      if(t<20) a=1;
+      else if(t<25) a=1-clamp01((t-20)/5);
+      else a=TRACE_ALPHA[2];
+    } else {
+      if(t<30) a=1;
+      else if(t<42) a=1 - clamp01((t-30)/12)*0.6;
+      else if(t<50) a=0.4;
+      else a=TRACE_ALPHA[3];
+    }
+    splitAlpha[i] = a;
+    splitScale[i] = clamp01(e);
+  }
+  if(t>=86){
+    const k = clamp01((t-86)/4);
+    for(let i=0;i<SCOUNT;i++){
+      if(i===0){ splitAlpha[i] = k; splitScale[i] = k; }
+      else     { splitAlpha[i] *= (1-k); splitScale[i] *= (1-k); }
+    }
+  }
+}
+const _zero = new THREE.Vector3(0,0,0);
+const _tmp  = new THREE.Vector3();
+function evalSplitEdges(t){
+  for(let e=0;e<TREE_EDGES.length;e++){
+    const [pi,ci] = TREE_EDGES[e];
+    const child = SPLIT[ci];
+    let a;
+    if(t < child.emerge) a=0;
+    else if(t < child.arrive) a = easeOutCubic((t-child.emerge)/(child.arrive-child.emerge)) * 0.9;
+    else a = TRACE_ALPHA[child.lv] * 0.8;
+    treeEdgeAlpha[e] = a;
+  }
+  for(let e=0;e<CUBE_EDGES.length;e++){
+    let a;
+    if(t<25) a=0;
+    else if(t<30) a = clamp01((t-25)/5)*0.35;
+    else if(t<50) a=0.35;
+    else a=TRACE_ALPHA[3]*0.7;
+    cubeEdgeAlpha[e] = a;
+  }
+  if(t>=86){
+    const k = 1-clamp01((t-86)/4);
+    for(let e=0;e<treeEdgeAlpha.length;e++) treeEdgeAlpha[e]*=k;
+    for(let e=0;e<cubeEdgeAlpha.length;e++) cubeEdgeAlpha[e]*=k;
+  }
+}
+function cellTarget(i,t){
+  if(t<30) return 0;
+  if(t>=50 && t<86) return act[i];
+  if(t>=86){
+    const r = 2.6 * (1 - easeInOutCubic(clamp01((t-86)/3.4)));
+    return CELL_DIST[i] < r ? act[i] : 0;
+  }
+  return 1;
+}
+function seedActivation(){
+  for(let i=0;i<CELL;i++){
+    const [x,y,z] = fromIdx(i);
+    const b = (x===0||x===3?1:0)+(y===0||y===3?1:0)+(z===0||z===3?1:0);
+    act[i] = [0.22,0.42,0.66,0.95][b];
+  }
+}
+function cellEmerge(i,t){
+  if(t<30) return 0;
+  if(t>=40) return 1;
+  return easeOutCubic(clamp01((t-30)/9));
+}
+// =====================================================================
+// Main update
+// =====================================================================
+const clock = new THREE.Clock();
+let t = 0;
+let genAcc = 0;
+let firedSeeds = 0;
+let firedRules = 0;
+const _tu = new URLSearchParams(location.search);
+const FREEZE = _tu.get('freeze')==='1';
+if(_tu.get('t')){
+  t = clamp(parseFloat(_tu.get('t'))||0, 0, CYCLE-0.01);
+  clock.getDelta();
+  if(t>=50 && FREEZE){
+    const steps=300, span=t; for(let i=0;i<steps;i++){ update(span/steps); }
+  }
+}
+function update(dt){
+  evalSplitNodes(t);
+  evalSplitEdges(t);
+  if(t>=50 && t<86){
+    if(!caInitDone){
+      seedActivation();
+      for(let i=0;i<CELL;i++) trace[i] = act[i]*0.5;
+      prevAct.set(act);
+      caInitDone = true;
+      genAcc = 0;
+    }
+    while(firedRules<RULE_AT.length && t>=RULE_AT[firedRules].t){
+      currentRule = RULE_AT[firedRules].r; firedRules++;
+    }
+    while(firedSeeds<EXT_SEEDS.length && t>=EXT_SEEDS[firedSeeds].t){
+      const s = EXT_SEEDS[firedSeeds];
+      act[s.i] = 1.0; nodePulse[s.i] = 1.0;
+      firedSeeds++;
+      if(s.t>=70) externalInputActive = false;
+    }
+    const genInt = externalInputActive ? 0.75 : 0.50;
+    genAcc += dt;
+    while(genAcc >= genInt){
+      genAcc -= genInt;
+      let metricsForStep = lastMetrics;
+      if(!externalInputActive){
+        const m = measure();
+        lastMetrics = m;
+        currentRule = selectRule(m);
+        metricsForStep = m;
+      }
+      caStep(currentRule, metricsForStep);
+    }
+  }
+  const k = Math.min(1, dt*4.2);
+  for(let i=0;i<CELL;i++){
+    let target;
+    if(t<30) target=0;
+    else if(t<50) target = cellEmerge(i,t);
+    else target = cellTarget(i,t);
+    nodeScale[i] += (target - nodeScale[i])*k;
+    nodePulse[i] *= Math.max(0,1-dt*3.2);
+  }
+  for(let e=0;e<ECOUNT;e++){
+    const [a,b] = EDGES[e];
+    let tv=0;
+    if(t>=30 && t<50){
+      tv = (cellEmerge(a,t)>0.5 && cellEmerge(b,t)>0.5) ? 1 : 0;
+      if(t>40) tv *= clamp01((t-40)/8);
+    } else if(t>=50 && t<86){
+      const ma = Math.min(act[a], act[b]);
+      tv = ma > EDGE_THRESH ? (ma-EDGE_THRESH)/(1-EDGE_THRESH) : 0;
+    } else if(t>=86){
+      tv = Math.min(cellTarget(a,t), cellTarget(b,t));
+    }
+    edgeStr[e] += (tv-edgeStr[e])*Math.min(1,dt*3.5);
+  }
+}
+// =====================================================================
+// Render
+// =====================================================================
+function updateCamera(dt){
+  if(renderer.xr.isPresenting) return;
+  const az = AZ0 + (Math.PI*2/CYCLE)*t;
+  let r;
+  if(t<40) r = 5.6 + easeInOutCubic(t/40)*3.0;
+  else if(t<86) r = 8.6;
+  else r = 8.6 - easeInOutCubic(clamp01((t-86)/4))*3.0;
+  const h = 1.0 + 0.28*Math.sin((Math.PI*2/CYCLE)*t*2);
+  camera.position.set(Math.sin(az)*r, h, Math.cos(az)*r);
+  camera.lookAt(0,0,0);
+}
+const _m = new THREE.Matrix4();
+const _q = new THREE.Quaternion();
+const _s = new THREE.Vector3();
+const _p = new THREE.Vector3();
+function render(){
+  for(let i=0;i<CELL;i++){
+    const sc = nodeScale[i];
+    const pulse = nodePulse[i];
+    if(sc>0.001 || pulse>0.001){
+      const sz = 0.13*(0.55 + 0.65*sc + pulse*0.9);
+      _p.copy(CELL_POS[i]);
+      if(t>=30 && t<40){
+        const e = easeOutCubic(clamp01((t-30)/10));
+        _p.lerpVectors(CELL_OCT[i], CELL_POS[i], e);
+      }
+      _m.compose(_p, _q.identity(), _s.setScalar(Math.max(0.0001,sz)));
+      nodeMesh.setMatrixAt(i,_m);
+      const br = clamp(Math.pow(sc,1.35)*0.95 + pulse*1.5, 0, 1.5);
+      tmpColor.setRGB(
+        clamp(COL.r*br + pulse*0.3,0,1),
+        clamp(COL.g*br + pulse*0.3,0,1),
+        clamp(COL.b*br + pulse*0.3,0,1));
+      nodeMesh.setColorAt(i,tmpColor);
+    } else {
+      _m.compose(_p.set(0,-999,0), _q.identity(), _s.setScalar(0.0001));
+      nodeMesh.setMatrixAt(i,_m);
+    }
+  }
+  nodeMesh.instanceMatrix.needsUpdate = true;
+  nodeMesh.instanceColor.needsUpdate = true;
+  for(let i=0;i<CELL;i++){
+    const tr = trace[i];
+    if(tr>0.02){
+      _m.compose(CELL_POS[i], _q.identity(), _s.setScalar(0.085));
+      traceMesh.setMatrixAt(i,_m);
+      tmpColor.setScalar(clamp(tr,0,1));
+      traceMesh.setColorAt(i,tmpColor);
+    } else {
+      _m.compose(_p.set(0,-999,0), _q.identity(), _s.setScalar(0.0001));
+      traceMesh.setMatrixAt(i,_m);
+    }
+  }
+  traceMesh.instanceMatrix.needsUpdate = true;
+  traceMesh.instanceColor.needsUpdate = true;
+  for(let i=0;i<SCOUNT;i++){
+    const a = splitAlpha[i];
+    if(a>0.01){
+      const sz = 0.13*(i===0 ? (1 + 0.12*Math.sin(t*1.8))*splitScale[i] : splitScale[i]);
+      _m.compose(splitPos[i], _q.identity(), _s.setScalar(Math.max(0.0001,sz)));
+      splitMesh.setMatrixAt(i,_m);
+      tmpColor.setScalar(clamp(a,0,1));
+      splitMesh.setColorAt(i,tmpColor);
+    } else {
+      _m.compose(_p.set(0,-999,0), _q.identity(), _s.setScalar(0.0001));
+      splitMesh.setMatrixAt(i,_m);
+    }
+  }
+  splitMesh.instanceMatrix.needsUpdate = true;
+  splitMesh.instanceColor.needsUpdate = true;
+  let ec=0;
+  for(let e=0;e<ECOUNT;e++){
+    const str = edgeStr[e];
+    if(str>0.02){
+      const [a,b] = EDGES[e];
+      const pa = CELL_POS[a], pb = CELL_POS[b];
+      edgePos[ec*6+0]=pa.x; edgePos[ec*6+1]=pa.y; edgePos[ec*6+2]=pa.z;
+      edgePos[ec*6+3]=pb.x; edgePos[ec*6+4]=pb.y; edgePos[ec*6+5]=pb.z;
+      const c = clamp(str,0,1);
+      edgeCol[ec*6+0]=COL.r*c; edgeCol[ec*6+1]=COL.g*c; edgeCol[ec*6+2]=COL.b*c;
+      edgeCol[ec*6+3]=COL.r*c; edgeCol[ec*6+4]=COL.g*c; edgeCol[ec*6+5]=COL.b*c;
+      ec++;
+    }
+  }
+  edgeGeo.setDrawRange(0, ec*2);
+  edgeGeo.attributes.position.needsUpdate = true;
+  edgeGeo.attributes.color.needsUpdate = true;
+  let sc=0;
+  for(let e=0;e<TREE_EDGES.length;e++){
+    const a = treeEdgeAlpha[e];
+    if(a>0.01){
+      const [pi,ci] = TREE_EDGES[e];
+      const pa=splitPos[pi], pb=splitPos[ci];
+      sEdgePos[sc*6+0]=pa.x; sEdgePos[sc*6+1]=pa.y; sEdgePos[sc*6+2]=pa.z;
+      sEdgePos[sc*6+3]=pb.x; sEdgePos[sc*6+4]=pb.y; sEdgePos[sc*6+5]=pb.z;
+      const c = clamp(a,0,1);
+      sEdgeCol[sc*6+0]=COL.r*c; sEdgeCol[sc*6+1]=COL.g*c; sEdgeCol[sc*6+2]=COL.b*c;
+      sEdgeCol[sc*6+3]=COL.r*c; sEdgeCol[sc*6+4]=COL.g*c; sEdgeCol[sc*6+5]=COL.b*c;
+      sc++;
+    }
+  }
+  for(let e=0;e<CUBE_EDGES.length;e++){
+    const a = cubeEdgeAlpha[e];
+    if(a>0.01){
+      const [ai,bi] = CUBE_EDGES[e];
+      const pa=splitPos[ai], pb=splitPos[bi];
+      sEdgePos[sc*6+0]=pa.x; sEdgePos[sc*6+1]=pa.y; sEdgePos[sc*6+2]=pa.z;
+      sEdgePos[sc*6+3]=pb.x; sEdgePos[sc*6+4]=pb.y; sEdgePos[sc*6+5]=pb.z;
+      const c = clamp(a,0,1);
+      sEdgeCol[sc*6+0]=COL.r*c; sEdgeCol[sc*6+1]=COL.g*c; sEdgeCol[sc*6+2]=COL.b*c;
+      sEdgeCol[sc*6+3]=COL.r*c; sEdgeCol[sc*6+4]=COL.g*c; sEdgeCol[sc*6+5]=COL.b*c;
+      sc++;
+    }
+  }
+  sEdgeGeo.setDrawRange(0, sc*2);
+  sEdgeGeo.attributes.position.needsUpdate = true;
+  sEdgeGeo.attributes.color.needsUpdate = true;
+  renderer.render(scene, camera);
+}
+// =====================================================================
+// Loop
+// =====================================================================
+renderer.setAnimationLoop(()=>{
+  const dt = Math.min(clock.getDelta(), 0.05);
+  if(!FREEZE){
+    t += dt;
+    if(t >= CYCLE){ t -= CYCLE; resetCycle(); firedSeeds=0; firedRules=0; }
+    update(dt);
+  } else {
+    update(0.016);
+  }
+  updateCamera(dt);
+  render();
+});
+</script>
+</body>
+</html>
