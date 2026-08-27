@@ -38,6 +38,16 @@ if (fs.existsSync(worksFrom)) {
   console.warn(`Static works folder not found: ${worksFrom}`)
 }
 
+const latticeFrom = path.join(root, 'works', 'no-further-input-required-lattice')
+const latticeTo = path.join(root, 'dist', 'works', 'no-further-input-required-lattice')
+const latticeCount = copyDirRecursive(latticeFrom, latticeTo)
+console.log(`Copied ${latticeCount} NFI lattice file(s) → dist/works/no-further-input-required-lattice/`)
+
+const latticeSourceFrom = path.join(root, 'projects', 'no-further-input-required', 'NFI_Lattice_Three')
+const latticeSourceTo = path.join(root, 'dist', 'projects', 'no-further-input-required', 'NFI_Lattice_Three')
+const latticeSourceCount = copyDirRecursive(latticeSourceFrom, latticeSourceTo)
+console.log(`Copied ${latticeSourceCount} NFI lattice source file(s) → dist/projects/no-further-input-required/NFI_Lattice_Three/`)
+
 // Personal A/V Instrument demos stay next to their workshop source, then are
 // copied into dist so the canonical editable version remains under workshops/.
 const demoFrom = path.join(root, 'workshops', 'personal-av-instrument', 'demos')
