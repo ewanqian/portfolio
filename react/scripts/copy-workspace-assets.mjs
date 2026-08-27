@@ -72,13 +72,23 @@ if (fs.existsSync(sourceWorksDir)) {
   fs.mkdirSync(portfolioWorksDir, { recursive: true })
   const copied = []
   for (const name of fs.readdirSync(sourceWorksDir)) {
-    if (!name.endsWith('.html')) continue
     const sourcePath = path.join(sourceWorksDir, name)
-    fs.copyFileSync(sourcePath, path.join(targetWorksDir, name))
-    fs.copyFileSync(sourcePath, path.join(portfolioWorksDir, name))
-    copied.push(name)
+    const stats = fs.statSync(sourcePath)
+
+    if (stats.isDirectory()) {
+      copyWithCloudflareLimit(sourcePath, path.join(targetWorksDir, name))
+      copyWithCloudflareLimit(sourcePath, path.join(portfolioWorksDir, name))
+      copied.push(`${name}/`)
+      continue
+    }
+
+    if (name.endsWith('.html')) {
+      fs.copyFileSync(sourcePath, path.join(targetWorksDir, name))
+      fs.copyFileSync(sourcePath, path.join(portfolioWorksDir, name))
+      copied.push(name)
+    }
   }
-  console.log(`Copied ${copied.length} works HTML file(s) → dist/works/ + dist/portfolio/works/: ${copied.join(', ')}`)
+  console.log(`Copied ${copied.length} standalone work entry(s) → dist/works/ + dist/portfolio/works/: ${copied.join(', ')}`)
 }
 
 // Workshop demos remain canonical under workshops/personal-av-instrument/demos.
