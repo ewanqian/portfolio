@@ -1,8 +1,9 @@
 # 《无需进一步输入 / No Further Input Required》 2026
 
-> Work in Progress / Generative Audiovisual System / Single-channel Moving Image / Live System
+> Work in Progress / Autonomous Generative System / Single-channel Moving Image / Live System
 
-- [专题页面 / Work Page](../works/no-further-input-required.html)
+- [全屏 WebGL WIP / Fullscreen WebGL WIP](../works/no-further-input-required-autonomous/)
+- [专题入口 / Canonical Work Entry](../works/no-further-input-required.html)
 
 ---
 
@@ -11,13 +12,24 @@
 | 项目 | 内容 |
 |------|------|
 | **时间** | 2026 |
-| **当前版本** | Work in Progress |
+| **当前版本** | Autonomous WebGL WIP |
 | **展览交付方向** | 单通道影像 / Single-channel moving image |
 | **计划时长** | 约 8–10 分钟，可循环 |
 | **长期形态** | 生成式音画系统 / 影像版本 / Live performance system |
 | **2026-08-15 更新** | 将作品从“关于自动化的影像”进一步明确为“能够实际运行并保存先前判断痕迹的音画系统” |
+| **2026-08-27 更新** | 完成 Three.js 90 秒可循环 WIP：1→2→4→8→64；70 秒后停止外部规则种子，由 density / symmetry / stability / entropy 选择 EXPAND / CONNECT / PRUNE / MUTATE；下一轮继承上一轮末态 |
 
 > 当前作品影像仍在制作中。专题页暂不使用替代性概念图冒充最终画面；系统图、研究结构与 WIP 信息可以公开，最终作品截图、声音与展览现场待完成后补录。
+
+## 当前可执行版本 / Current Executable WIP — 2026-08-27
+
+当前浏览器版本已经把标题落实为实际运行机制，而不只是一条预先写完的时间线。
+
+前 50 秒建立一套观众可直接理解的结构：一个初始条件依次分化为 2、4、8 个祖先状态，再展开为固定的 4×4×4 / 64 节点空间。50–70 秒，节点总数不再作为主要变化，系统转向局部状态、连接与代际关系。第 70 秒后，外部 rule sequence 停止；系统每一代读取上一代，计算 density、symmetry、stability 与 entropy，并据此在 EXPAND、CONNECT、PRUNE、MUTATE 四条固定规则中选择下一步。
+
+每一代只由紧邻的上一代计算，不逐帧重新 random。1→2→4→8 的分裂树与最近三代 cellular state 都以逐级降低的强度保留在空间中。90 秒末，系统依据末态的 active centroid 收束出下一轮 origin，下一轮继承上一轮末态，不重新注入新的外部种子。
+
+实现与测试记录：[`works/no-further-input-required-autonomous/README.md`](../works/no-further-input-required-autonomous/README.md)
 
 ---
 

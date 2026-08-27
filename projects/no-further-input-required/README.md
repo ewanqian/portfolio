@@ -2,9 +2,21 @@
 
 This directory contains reusable implementation and design records for **No Further Input Required / 无需进一步输入**.
 
-## Current exhibition master — 2026-08-25
+## Current browser WIP — 2026-08-27
 
-The current exhibition direction is now the Processing 4 / P2D **Unicode Pictographic Computation System**:
+The current executable direction is the Three.js **Autonomous Lattice System**:
+
+- [`../../works/no-further-input-required-autonomous/`](../../works/no-further-input-required-autonomous/)
+- runtime: [`../../works/no-further-input-required-autonomous/index.html`](../../works/no-further-input-required-autonomous/index.html)
+- mechanism: [`../../works/no-further-input-required-autonomous/simulation.js`](../../works/no-further-input-required-autonomous/simulation.js)
+- implementation record and tests: [`../../works/no-further-input-required-autonomous/README.md`](../../works/no-further-input-required-autonomous/README.md)
+- canonical public entry: `https://ewanqian.site/works/no-further-input-required`
+
+This direction was explicitly established on 2026-08-27. It replaces quantity-growth as the core mechanism with a real self-input loop: the current generation measures density, symmetry, stability and entropy, chooses among EXPAND / CONNECT / PRUNE / MUTATE, and computes the next generation only from the previous one. Earlier visual systems remain available as historical records.
+
+## Previous exhibition direction — 2026-08-25
+
+The previous exhibition direction was the Processing 4 / P2D **Unicode Pictographic Computation System**:
 
 - [`NFI_Unicode_Pictographic_Master/`](./NFI_Unicode_Pictographic_Master/)
 - entry point: [`NFI_Unicode_Pictographic_Master/NFI_Unicode_Pictographic_Master.pde`](./NFI_Unicode_Pictographic_Master/NFI_Unicode_Pictographic_Master.pde)
@@ -12,7 +24,7 @@ The current exhibition direction is now the Processing 4 / P2D **Unicode Pictogr
 
 It implements one unified visual language: symbolic code rows, Unicode pictographic grammar, ordered pattern fields, deterministic memory / residue, and logical connection history inside a 30-second recurrent score.
 
-Only five visual systems are allowed in this master:
+Its five visual systems were:
 
 1. Row Engine
 2. Glyph Grammar
@@ -20,7 +32,7 @@ Only five visual systems are allowed in this master:
 4. Connection Engine
 5. Memory / Score Engine
 
-Do not reintroduce the discarded six-structure WebGL ontology into this branch.
+This Processing branch remains intact as a dated version rather than being overwritten by the new browser runtime.
 
 ## Start here for agents
 
@@ -31,13 +43,13 @@ Do not reintroduce the discarded six-structure WebGL ontology into this branch.
 ## Canonical project files
 
 - Main project document: [`../no-further-input-required-2026.md`](../no-further-input-required-2026.md)
-- Historical playable source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
-- Historical public playable URL: `https://ewanqian.site/works/no-further-input-required.html`
+- Canonical playable source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
+- Canonical public playable URL: `https://ewanqian.site/works/no-further-input-required`
 
 
-## Lattice study — 2026-08-27
+## Parallel lattice study — 2026-08-27
 
-A new Three.js / WebGL 3D lattice study lives in its own folder. It does not replace the Unicode Pictographic exhibition master and it does not reintroduce the discarded six-structure WebGL ontology into that branch.
+An earlier Three.js / WebGL 3D lattice study from the same day remains in its own folder for direct A/B comparison. It predates the stricter 70-second input cutoff, full-state cycle inheritance and locally vendored runtime used by the current Autonomous Lattice System, so it remains a study rather than the canonical entry.
 
 - source: [`NFI_Lattice_Three/`](./NFI_Lattice_Three/)
 - public: https://ewanqian.site/works/no-further-input-required-lattice/
@@ -51,4 +63,4 @@ It is **not the current exhibition visual direction**. The six-structure / grid 
 
 ## Rule
 
-Keep earlier versions available as historical references. Develop the current gallery work only through the five-system Unicode Pictographic Processing master unless a later explicitly approved preset replaces it.
+Keep earlier versions available as historical references. The 2026-08-27 Autonomous Lattice System is the current approved browser WIP; later changes must preserve its parent-dependent generations, visible ancestry and self-input boundary unless Ewan explicitly replaces that mechanism.
