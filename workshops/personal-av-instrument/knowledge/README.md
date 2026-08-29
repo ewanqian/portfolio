@@ -30,6 +30,7 @@ FEEDBACK / NEXT DECISION
 6. `skills/06-release-memory.md` — Release、Residue、Memory 决定系统有没有连续性
 7. `skills/07-audio-voice-design.md` — 一个网页乐器如何避免“默认 synth 味”
 8. `skills/08-blind-playtest.md` — 用陌生人试玩检验系统，而不是作者自己解释
+9. `skills/09-music-structure-spellbook.md` — BPM、音序器、鼓机、琶音器、ADSR、录音与一键音画乐器提示词
 
 ## 从现有 Demo 学什么
 
