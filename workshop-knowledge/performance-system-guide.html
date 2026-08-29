@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050607">
+<title>Final Guide｜从网页视觉到可演出的音画控制系统</title>
+<style>
+:root{--bg:#050607;--panel:#0c0f12;--panel2:#101419;--fg:#f5f5f7;--muted:#9ba3ad;--line:#242930;--accent:#b8ff2c;--blue:#63dcff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}.top{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;background:rgba(5,6,7,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}.top a{color:var(--fg);text-decoration:none;font-size:12px}.top .nav{display:flex;gap:12px;flex-wrap:wrap}.page{width:min(1100px,calc(100% - 32px));margin:auto;padding:68px 0 110px}.eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.14em}h1{font-size:clamp(48px,8vw,94px);line-height:.92;letter-spacing:-.06em;margin:14px 0 22px;max-width:980px}.lead{font-size:20px;line-height:1.6;color:var(--muted);max-width:820px;margin:0 0 42px}.flow{white-space:pre-wrap;font:700 14px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--line);background:#080a0d;border-radius:20px;padding:22px;color:#dce3e9;margin-bottom:52px}.section{margin-top:64px}.section h2{font-size:clamp(32px,5vw,58px);letter-spacing:-.05em;line-height:1;margin:0 0 24px}.section>p{color:var(--muted);font-size:16px;line-height:1.7;max-width:820px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:20px}.card h3{margin:0 0 9px;font-size:21px;letter-spacing:-.03em}.card p,.card li{color:var(--muted);font-size:14px;line-height:1.65}.card ul{padding-left:18px;margin:10px 0 0}.tag{display:inline-block;font:700 10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.1em;margin-bottom:11px}.code{white-space:pre-wrap;background:#07090b;border:1px solid #1e2329;border-radius:15px;padding:15px;font:500 12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d3dae1;overflow:auto}.prompt{border:1px solid #2b333c;background:#080b0e;border-radius:20px;overflow:hidden;margin-top:16px}.prompthead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid #20252b}.prompthead b{font-size:13px}.copy{border:0;border-radius:9px;background:var(--fg);color:#050607;padding:8px 11px;font-weight:700;font-size:11px;cursor:pointer}.prompt pre{margin:0;padding:18px;white-space:pre-wrap;overflow:auto;font:500 12px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d4dbe2}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check div{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:14px 15px;color:#d9dfe5;font-size:14px;line-height:1.55}.check b{color:var(--accent)}.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;padding:10px 13px;border-radius:11px;background:var(--fg);color:#050607;text-decoration:none;font-size:12px;font-weight:700}.btn.alt{background:#14181d;border:1px solid #30363d;color:var(--fg)}.blue{color:var(--blue)}.foot{margin-top:72px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;line-height:1.6}@media(max-width:760px){.page{padding-top:44px}.grid,.check{grid-template-columns:1fr}.top .nav{display:none}h1{font-size:clamp(46px,16vw,74px)}}
+</style>
+</head>
+<body>
+<header class="top"><a href="../0829.html">8.29 Workshop</a><nav class="nav"><a href="#structure">结构</a><a href="#html">已有 HTML</a><a href="#input">控制</a><a href="#visual">视觉</a><a href="#prompt">终极 Prompt</a><a href="#check">检查</a></nav></header>
+<main class="page">
+<div class="eyebrow">FINAL GUIDE · BROWSER PERFORMANCE SYSTEM</div>
+<h1>从网页视觉，到可以直接上台演出的控制系统。</h1>
+<p class="lead">把已有 HTML、WebGL 视觉、音乐结构和参考图整理到同一个 Stage。系统负责保持时间、状态和稳定性；表演者负责改变 Phrase、Scene、Energy 与连续参数。</p>
+<div class="flow">INPUT
+  ↓
+FILTER / QUANTIZE
+  ↓
+SHARED CLOCK + PERFORMANCE STATE
+  ↓
+AUDIO ENGINE      VISUAL ENGINE
+  ↓                    ↓
+MUSIC PHRASE      VISUAL SCENE
+  ↘                    ↙
+       PERFORMANCE</div>
+
+<section class="section" id="structure"><h2>01. 先固定骨架</h2><div class="grid"><article class="card"><span class="tag">KEEP STABLE</span><h3>基础设施</h3><ul><li>AudioContext / Transport / Scheduler</li><li>Shared State</li><li>Quantize / Cooldown / Voice Limit</li><li>Master Gain / Compressor / Limiter</li><li>Fullscreen / Panic / Reset</li><li>Scene Cleanup / Asset Preload</li></ul></article><article class="card"><span class="tag">FREE TO CHANGE</span><h3>创作层</h3><ul><li>Scene 数量与顺序</li><li>视觉语言与参考图</li><li>音色、Scale、Pattern</li><li>Keyboard Mapping</li><li>Mouse XY 的意义</li><li>Transition、Density、Line Width、FX</li></ul></article></div><div class="code">state = {
+  bpm, beat, bar, step,
+  scene, energy, density,
+  mouseX, mouseY,
+  holdDuration, fxAmount,
+  lineWidth, patternVariant
+}</div></section>
+
+<section class="section" id="html"><h2>02. 已经有很多 HTML？直接接进 Stage。</h2><p>最快的方法是让主页面负责音乐、时钟、输入和场景切换；已有视觉 HTML 继续只负责画面。先保留，再统一控制。</p><div class="grid"><article class="card"><span class="tag">QUICK ROUTE</span><h3>Stage Shell + iframe</h3><p>把视觉放到 <code>/visuals/scene-01.html</code> 等路径。Stage 使用 same-origin iframe 加载，并通过 <code>postMessage</code> 发送共享状态。</p><div class="code">frame.contentWindow.postMessage({
+  type: 'AV_STATE',
+  state
+}, '*')</div></article><article class="card"><span class="tag">LATER</span><h3>性能要求更高再模块化</h3><p>当多个 WebGL Scene 需要共享 renderer、camera、GPU 资源或精确 dispose，再改成模块接口。</p><div class="code">scene.mount(container)
+scene.update(state, dt)
+scene.trigger(event)
+scene.dispose()</div></article></div></section>
+
+<section class="section" id="input"><h2>03. 控制维度不需要很多。</h2><div class="grid"><article class="card"><span class="tag">KEYBOARD</span><h3>离散决定</h3><p>A/S/D/F、J/K/L/; 可以负责 Phrase / Scene；1–4 负责 OPEN / BUILD / PEAK / BREAK；Space 负责 NEXT / ROUTE / ACCENT。</p></article><article class="card"><span class="tag">MOUSE XY</span><h3>连续变化</h3><p>Mouse X 可以控制 cutoff / width / orbit radius；Mouse Y 可以控制 density / reverb / line width / depth。按住 A + Mouse XY 时，可以进入 A Scene 的第二层控制。</p></article></div><p>人的输入可以表达“现在想发生”，系统再把正式事件安排到正确的音乐边界。</p><div class="code">human input
+→ acknowledgement now
+→ pending intent
+→ next 1/8 note / beat / bar
+→ audio + visual phrase</div></section>
+
+<section class="section"><h2>04. Scene 是演出角色，不只是 Preset。</h2><div class="grid"><article class="card"><h3>OPEN / GRID / WAVE / OBJECT</h3><p>分别承担建立空间、明确节奏、连续运动、3D 空间推进。</p></article><article class="card"><h3>SCAN / MATRIX / IMPACT / RELEASE</h3><p>分别承担高频过渡、字符与数据密度、强重音、尾声与残影。</p></article></div><p>4–8 幕已经足够完成一段短演出。每幕至少要在声音角色、视觉行为、进入方式和退出方式上有区别。</p></section>
+
+<section class="section" id="visual"><h2>05. 视觉可以写得更具体。</h2><p>如果画面不够丰富，不必只说“再酷一点”。为每幕写 6 个字段：<span class="blue">Scene / Composition / Motion / Density / Material / Response</span>。</p><div class="code">SCENE: MATRIX SCAN
+
+COMPOSITION:
+中央 40×24 数据网格，两侧留黑。
+
+MOTION:
+每个 beat 横向扫描；每 4 beats 一次结构错位。
+
+DENSITY:
+OPEN 20%，PEAK 80%。
+
+MATERIAL:
+细白线、少量高亮 Glyph、无渐变背景。
+
+RESPONSE:
+Mouse X 控制扫描方向；Mouse Y 控制线宽；A 触发局部坍缩。</div><p>参考图可以放入 <code>/references/</code>。告诉 Agent 借鉴 composition、line language、density、depth、motion、material，而不是让它“照着做”。</p></section>
+
+<section class="section"><h2>06. 音乐可以自己运行，但变化要受约束。</h2><div class="code">Shared BPM
+→ 8/16-step pattern
+→ 3–4 pattern variants
+→ 每 1–2 bars 只改变 1–2 个参数
+→ 每 4–8 bars 才允许较大 Scene / Energy 变化</div><div class="grid"><article class="card"><span class="tag">SONIC ROLES</span><h3>LOW / MID / HIGH / AMBIENT / FX</h3><p>统一 Scale / Key。Low 放结构，Mid 放主体，High 放时间颗粒，Ambient 放空间，FX 放过渡。比不断增加随机声音更容易形成演出身份。</p></article><article class="card"><span class="tag">SAFETY</span><h3>Gain Staging</h3><p>保留 Voice Limit、Master Volume、Compressor、Limiter。高密度时自动降低单事件 Gain，避免“越按越响”。</p></article></div></section>
+
+<section class="section" id="prompt"><h2>07. 直接复制给 Agent。</h2>
+<div class="prompt"><div class="prompthead"><b>终极版 · Browser Performance System</b><button class="copy">复制</button></div><pre>请把当前网页项目整理成一个可以直接用于现场演出的浏览器音画系统。
+
+先完整读取当前项目，不要从零重写已经能运行的视觉文件。优先复用现有 HTML / Canvas / WebGL 内容。
+
+目标：打开 index.html 后，我可以使用键盘和鼠标完成一段连续实时音画表演。系统自己维持音乐结构，同时允许我的输入改变 Phrase、Scene、Energy 与连续参数。
+
+技术：Visual 保留现有 Canvas / WebGL / Three.js；Audio 使用 Web Audio API 或 Tone.js；建立唯一 BPM / Transport / Scheduler；Audio 与 Visual 使用同一个 shared state；第一次用户操作后启动 AudioContext。
+
+Shared State 至少包含：BPM / beat / bar / step / scene / energy / density / mouseX / mouseY / holdDuration / fxAmount / lineWidth / patternVariant。
+
+输入：Keyboard 负责离散决定；Mouse XY 负责连续控制。A/S/D/F、J/K/L/; 可作为主要 Scene / Phrase；1/2/3/4 = OPEN / BUILD / PEAK / BREAK；Space = NEXT / ROUTE / ACCENT。按住 Scene Key + Mouse XY 时可进入该 Scene 的第二层控制。
+
+加入 input filter：Quantize / Debounce / Cooldown / Max Active / Priority。按键立即给轻量 acknowledgement，正式音乐事件进入下一 1/8 note、beat 或 bar。人工输入优先于 Auto。
+
+音乐：建立可持续运行的实验电子结构，约 128–150 BPM；统一 scale / key；Low / Mid / High / Ambient / FX 分工；3–4 个 pattern variants；每 1–2 bars 只改变 1–2 个参数；每 4–8 bars 才进行较大 Scene / Energy 变化；加入 master volume、compressor、limiter、voice limit。
+
+Visual：整理 4–8 个主要状态，可从 waveform / data grid / chart / node graph / wireframe geometry / 3D abstract object / scan / flash / glyph / matrix / release residue 中选择。每幕定义 Composition / Motion / Density / Material / Response。不要只用 frequency analyser 驱动画面，beat、bar、step、energy、scene、patternVariant、mouseX/Y 都可以直接驱动画面。
+
+已有 HTML Visual：先使用 Stage Shell + same-origin iframe / postMessage 接入，主 Stage 负责 Audio、Clock、Input、Router、Fullscreen、Panic。Visual 只负责渲染并接收 AV_STATE。需要更高性能时再改成 mount / update / dispose 模块。
+
+参考图：如果 references/ 存在图片，只提取 composition、line language、density、depth、motion、material 等视觉属性，并转译成当前 WebGL / Canvas 行为。
+
+演出控制必须提供：F Fullscreen；Esc Panic；Master Volume；FX Amount；至少一个视觉连续参数，例如 Line Width / Density；可隐藏 Guide；Stage Mode 中隐藏大部分文字。
+
+稳定性：资源 preload；演出过程中不依赖临时网络资源；限制 audio voices；Scene 切换正确 cleanup；快速连续按键不会爆音或无限创建对象；resize / fullscreen 正确；提供 Reset / Panic。
+
+先完成稳定 V1，不继续堆功能。完成后给我：CONTROLS / SCENES / SAFE TO MODIFY / CORE KEEP STABLE / HOW TO ADD A VISUAL / HOW TO ADD A REFERENCE IMAGE / PERFORMANCE CHECK。
+
+如果当前系统已经能运行，优先局部改造，不要重新生成整个项目。</pre></div>
+
+<div class="prompt"><div class="prompthead"><b>视觉不够丰富时</b><button class="copy">复制</button></div><pre>保持现有控制系统、Audio、Transport、Keyboard Mapping 完全不变，只扩展 Visual Scene。
+
+请先列出当前 Scene，并为它们建立视觉差异。每一幕只增加一个主要视觉语言。
+
+希望包含：DATA / INFOGRAPHIC、WAVEFORM / SIGNAL、WIREFRAME GEOMETRY、3D ABSTRACT OBJECT、GLYPH / MATRIX、SCAN / FLASH、RELEASE / RESIDUE。
+
+每幕说明 Composition / Motion / Density / Material / Response。所有 Scene 继续读取现有 shared state。</pre></div>
+
+<div class="prompt"><div class="prompthead"><b>音乐太单调时</b><button class="copy">复制</button></div><pre>保持视觉与演出控制不变，只重新整理音乐结构。
+
+建立统一 scale / key；Low / Mid / High / Ambient / FX 分工；3–4 个 pattern variants；OPEN / BUILD / PEAK / BREAK 四个 energy state；每 1–2 bars 小变化；每 4–8 bars 结构变化；用户输入优先；Quantize；Compressor / Limiter / Voice Limit。
+
+重点改善 groove、层次、release、空间和动态，不增加大量随机声音。</pre></div>
+</section>
+
+<section class="section" id="check"><h2>08. 演出前检查</h2><div class="check"><div><b>Audio</b><br>首次点击可启动；Master 不削波；Limiter 工作；连续操作 30 秒不失控。</div><div><b>Visual</b><br>F 全屏；resize 正常；Guide 可隐藏；1920×1080 稳定；闪烁强度可控。</div><div><b>Input</b><br>焦点稳定；key repeat 不失控；Mouse XY clamp；Esc 永远保留给 Panic。</div><div><b>System</b><br>资源已 preload；相对路径正确；核心系统断网仍可运行；至少一个低能状态。</div></div></section>
+
+<section class="section"><h2>09. 网页到这里已经足够。</h2><p>当你需要多屏、严格音频延迟、MIDI / OSC / DMX、传感器、大量 Shader / 点云、多机同步或长时间稳定运行时，可以把同一套控制模型迁移到 Processing、TouchDesigner、Max、openFrameworks、Unity / Unreal 等本地实时工具。</p><div class="flow">INPUT → FILTER → CLOCK → STATE → ROUTER → AUDIO + VISUAL → FEEDBACK</div><p>执行环境可以变化，这条控制链不需要重新发明。</p></section>
+
+<div class="links"><a class="btn" href="./performance-system-guide.md" target="_blank">Markdown 原文</a><a class="btn alt" href="./exercise-01.html">练习 01</a><a class="btn alt" href="../workshop-demos/">Demo</a><a class="btn alt" href="./">知识库</a></div>
+<p class="foot">最终目标很简单：系统自己可以持续；人的输入可以改变它；输入不会轻易打散音乐；声音与画面共享同一套时间和状态；任何时候都可以恢复。打开这个网页，就可以开始演出。</p>
+</main>
+<script>document.querySelectorAll('.prompt').forEach(p=>{const b=p.querySelector('.copy'),t=p.querySelector('pre').innerText;b.onclick=async()=>{await navigator.clipboard.writeText(t);const old=b.textContent;b.textContent='已复制';setTimeout(()=>b.textContent=old,1200)}})</script>
+</body></html>
