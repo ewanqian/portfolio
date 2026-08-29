@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>极简输入 / 音画同源知识库</title>
+<style>
+:root{--bg:#050607;--fg:#f5f5f7;--muted:#9ea5ad;--line:#24272b;--panel:#0d0f12;--accent:#b8ff2c}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}.page{width:min(1080px,calc(100% - 32px));margin:auto;padding:64px 0 100px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent)}h1{font-size:clamp(48px,8vw,92px);line-height:.93;letter-spacing:-.06em;margin:14px 0 20px}.lead{max-width:780px;font-size:19px;line-height:1.65;color:var(--muted);margin-bottom:34px}.map{white-space:pre-wrap;font:600 14px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--line);background:#08090b;border-radius:18px;padding:20px;margin:22px 0 48px;color:#dce2e7}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:22px;display:flex;flex-direction:column;min-height:280px}.id{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.1em}.card h2{font-size:25px;letter-spacing:-.035em;margin:11px 0 8px}.card p{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 14px}.prompt{font:500 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:#cbd2d8;background:#07080a;border:1px solid #1d2024;border-radius:13px;padding:13px;white-space:pre-wrap;overflow:auto;margin-top:auto}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:0;border-radius:10px;padding:9px 12px;background:var(--fg);color:#050607;font-weight:700;font-size:12px;text-decoration:none;cursor:pointer}.btn.alt{background:#171a1f;color:var(--fg);border:1px solid #30343a}.section{margin-top:60px}.section h3{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}.links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.link{border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--fg);text-decoration:none;background:#0b0d10}.link b{display:block;font-size:15px;margin-bottom:6px}.link span{font-size:12px;line-height:1.5;color:var(--muted)}.foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.65}@media(max-width:760px){.grid,.links{grid-template-columns:1fr}.page{padding-top:42px}.card{min-height:unset}}
+</style>
+</head>
+<body><main class="page"><div class="eyebrow">WORKSHOP REFERENCE LIBRARY · 2026</div><h1>极简输入<br>音画同源知识库</h1><p class="lead">把我们在实时音画、控制系统和网页乐器中的研究整理成可以直接拿去做东西的知识。每张卡都包含一个概念、一种实现思路，以及可以复制给 AI Agent 的提示词。</p><div class="map">INPUT / GESTURE
+      ↓
+MAPPING / RULE
+      ↓
+STATE / CLOCK / MEMORY
+   ↙              ↘
+SOUND            VISUAL
+      ↓
+FEEDBACK / NEXT DECISION</div><section class="grid" id="cards"></section><section class="section"><h3>试玩与对照</h3><div class="links"><a class="link" href="../workshop-demos/"><b>五个基础 Demo</b><span>D0–D4：从直接触发到 Shared State 与空间输入。</span></a><a class="link" href="../workshop-demos/vl6-glyph-matrix-live.html"><b>vL6 — Glyph Matrix Live</b><span>Graph / Matrix / Variant / Shared Clock 的完整可玩版本。</span></a><a class="link" href="../0829.html"><b>8.29 Workshop Deck</b><span>环境准备、试玩、制作与发布入口。</span></a></div></section><p class="foot">使用方法：选一张卡，把提示词复制给你正在使用的 ChatGPT、Codex、Claude Code、Kimi、豆包或其他 Agent，再补充你自己的项目路径和目标。先让它读取现有项目，再做一个小改动；运行、比较、保留或删除。</p></main>
+<script>
+const cards=[
+['01','Beat Clock / Quantized Intent','让 BPM、beat、bar 成为声音和视觉共享的时间坐标。人的输入表达意图，系统负责把事件落到稳定位置。',`为现有系统加入共享 transport。\nBPM 可配置；Audio 与 Visual 读取同一个 clock；输入立即给轻微反馈，正式事件 quantize 到下一 1/8 note 或 bar；保留 pending state 与 Panic。`,'01-beat-clock.md'],
+['02','Graph / Node / Route','当按钮越来越多时，用“演出角色”和路径代替 effect list。系统开始拥有“现在在哪里、接下来能去哪里”。',`把当前 effects 重新组织成 5–7 个 performance roles。\n建立 graph edges；Space 前进到下一 route node；点击节点直接进入；不要先增加新效果。`,'02-graph-routing.md'],
+['03','Shared-State A/V','声音不驱动画面，画面也不依附声音。它们读取同一个 energy / density / space，再分别解释。',`建立 shared state object：energy / density / space。\n同一次输入只修改 shared state；Audio 与 Visual 各自读取并解释，不做完全 1:1 数值复制。`,'03-shared-state-av.md'],
+['04','Variant Design','一个 Variant 应该改变时间、声音或视觉行为，而不是只换颜色、seed 或位置。',`为当前 node 设计 5 个 variants。\n禁止只换颜色或 seed。每个 variant 至少改变 temporal pattern、audio behaviour、visual behaviour 中的两项。`,'04-variant-design.md'],
+['05','Density / Safety Guard','真正可演奏的系统必须能在高速操作后继续稳定：声音数量、视觉密度、冷却、优先级和 Panic 都是设计。',`增加 safety layer：max voices、max active phrases、group cap、cooldown、priority、compressor/limiter、Esc Panic。不要改变主要美术与交互。`,'05-density-safety.md'],
+['06','Release / Residue / Memory','一次输入不应该在松手时消失。Release 和 Residue 让动作进入时间，并让过去影响下一次决定。',`不要增加新 trigger。给 phrase 增加 ENTER → DEVELOP → RELEASE → RESIDUE。\nHold 改变 sustain；Release 进入 decay；2–4 秒无输入仍然成立。`,'06-release-memory.md'],
+['07','Audio Voice Design','避免每个键都是一个随机 oscillator。用统一 scale、频段分工、send FX、saturation、compressor 和 limiter 建立声音身份。',`重新整理 Web Audio gain staging 和音色。\nFIELD=pad，PULSE=kick/bass，ROUTE=pluck，ORBIT=bright voice，PARTITION=chord，RELEASE=tail/noise；默认 master 提高约 4–6 dB，同时 limiter-safe。`,'07-audio-voice-design.md'],
+['08','Blind Playtest','作者先不解释。观察陌生人怎样开始、哪里卡住、什么时候无聊，再只改一个最大问题。',`根据试玩记录，只找一个最大问题。\n在 Input 不可发现 / Feedback 太弱 / Mapping 太直接 / State 不可观察 / Depth 不足 / Density 失控 / Recovery 不清楚 中分类，然后提出一个最小 V2。`,'08-blind-playtest.md']
+];
+const root='https://github.com/ewanqian/portfolio/blob/main/workshops/personal-av-instrument/knowledge/skills/';
+const el=document.querySelector('#cards');cards.forEach(c=>{const a=document.createElement('article');a.className='card';a.innerHTML=`<div class="id">SKILL ${c[0]}</div><h2>${c[1]}</h2><p>${c[2]}</p><div class="prompt">${c[3]}</div><div class="actions"><button class="btn">复制提示词</button><a class="btn alt" target="_blank" rel="noopener" href="${root+c[4]}">完整卡片</a></div>`;a.querySelector('button').onclick=async()=>{await navigator.clipboard.writeText(c[3]);const b=a.querySelector('button');b.textContent='已复制';setTimeout(()=>b.textContent='复制提示词',1200)};el.appendChild(a)});
+</script></body></html>
