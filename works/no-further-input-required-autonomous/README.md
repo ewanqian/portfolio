@@ -51,6 +51,7 @@ The 1 → 2 → 4 → 8 split tree remains as a faint wireframe inside the 64-no
 
 - `index.html` — fullscreen, interface-free surface.
 - `main.js` — Three.js scene, instancing, lineage, graph rendering, cycle handoff and WebXR session entry point.
+- `fallback.js` — interface-free Canvas 2D compatibility renderer used only when the browser cannot create a WebGL context; it preserves the same 90-second hierarchy and deterministic state inheritance instead of leaving a black page.
 - `simulation.js` — deterministic lattice, measurements, rule selection and generation history.
 - `simulation.test.mjs` — mechanism tests proving parent dependency, input cutoff, deterministic output and cycle inheritance.
 - `vendor/three.module.min.js` and `vendor/three.core.min.js` — locally vendored Three.js 0.185.1 runtime.
