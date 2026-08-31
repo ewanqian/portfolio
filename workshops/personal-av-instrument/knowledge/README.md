@@ -31,6 +31,8 @@ FEEDBACK / NEXT DECISION
 7. `skills/07-audio-voice-design.md` — 一个网页乐器如何避免“默认 synth 味”
 8. `skills/08-blind-playtest.md` — 用陌生人试玩检验系统，而不是作者自己解释
 9. `skills/09-music-structure-spellbook.md` — BPM、音序器、鼓机、琶音器、ADSR、录音与一键音画乐器提示词
+10. `skills/10-state-instrument.md` — 把 Tap / Hold / Release、音乐 Scene 与 Visual State 组合成可演奏系统
+11. `skills/11-video-reference-analysis.md` — 用 ffmpeg / ffprobe / Python 将参考视频拆成帧、音频与时间结构
 
 ## 从现有 Demo 学什么
 
@@ -61,6 +63,18 @@ FIELD → PULSE → ROUTE → ORBIT → PARTITION → RELEASE
 
 它们不是六个“效果”，而是六种演出功能。每个功能可以拥有多个 Variant，Variant 再影响声音、视觉、节奏与空间。
 
+### State Instrument Exercise
+把前面的 Toy 合并成一个更完整的练习：
+
+```text
+INPUT STATE   IDLE / TAP / HOLD / RELEASE
+MUSIC STATE   OPEN / BUILD / PEAK / BREAK
+VISUAL STATE  GRID / ORBIT / GLYPH / FIELD
+SHARED        BPM / BEAT / BAR / ENERGY
+```
+
+键盘负责调 BPM、切换 Music State 与 Visual State，同时保留一个主输入。
+
 ## 给 Agent 的基本规则
 
 当你把本知识库交给 ChatGPT、Codex、Claude Code、Kimi、豆包或其他 Agent 时，可以先附上：
@@ -78,6 +92,8 @@ FIELD → PULSE → ROUTE → ORBIT → PARTITION → RELEASE
 
 - Workshop Deck: `/0829.html`
 - Demo Index: `/workshop-demos/`
+- Toybox: `/workshop-toys/`
+- State Instrument Exercise: `/workshop-state-instrument/`
 - Knowledge Reader: `/workshop-knowledge/`
 - vL6 Glyph Matrix Live: `/workshop-demos/vl6-glyph-matrix-live.html`
 
