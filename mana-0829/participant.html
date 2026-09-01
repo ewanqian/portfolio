@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>8.29 工作坊｜参与者课后延伸</title>
+<style>
+:root{--bg:#0b0c0f;--fg:#f5f5f7;--muted:#9da4ad;--line:#282c32;--panel:#12151a;--accent:#b8ff2c;--blue:#65ddff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}.page{width:min(1080px,calc(100% - 30px));margin:auto;padding:46px 0 96px}.top{padding:28px 0 50px;border-bottom:1px solid var(--line)}.eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;color:var(--accent)}h1{font-size:clamp(48px,8vw,96px);letter-spacing:-.065em;line-height:.9;margin:14px 0 20px}.lead{font-size:18px;line-height:1.65;color:var(--muted);max-width:780px}.section{padding:48px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(30px,4.7vw,52px);letter-spacing:-.05em;margin:0 0 18px}.section>p{max-width:820px;color:var(--muted);line-height:1.7}.flow,.prompt{white-space:pre-wrap;font:600 12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;background:#060709;border:1px solid #20242a;border-radius:16px;padding:16px;color:#d6dce2;overflow:auto}.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}.step{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:18px}.step b{display:block;color:var(--accent);font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;margin-bottom:8px}.step h3{font-size:20px;margin:0 0 7px}.step p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;text-decoration:none;border-radius:999px;background:var(--fg);color:#08090b;padding:10px 14px;font-size:12px;font-weight:800}.btn.alt{background:#171a20;color:var(--fg);border:1px solid #333840}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:18px}.check div{border:1px solid var(--line);border-radius:14px;padding:13px;color:#d8dde4;font-size:13px;line-height:1.55}.small{font-size:12px;color:#7f8791;line-height:1.65}.callout{border-left:3px solid var(--blue);background:#0b1418;border-radius:0 16px 16px 0;padding:15px 16px;color:#b8dbe7;line-height:1.65;margin-top:18px}.footer{padding-top:34px;color:#747b84;font-size:12px;line-height:1.65}@media(max-width:720px){.steps,.check{grid-template-columns:1fr}.section{padding:38px 0}.page{padding-top:28px}}
+</style></head>
+<body><main class="page">
+<section class="top"><div class="eyebrow">8.29 WORKSHOP · PARTICIPANT FOLLOW-UP</div><h1>把这次练习<br>继续做下去。</h1><p class="lead">不需要重新学一套软件，也不需要马上做完整 Live Set。每次只选一个关系继续修改，保存下来，再让别人试玩。</p><div class="actions"><a class="btn" href="./">查看公开总结</a><a class="btn alt" href="../workshop-knowledge/">知识库</a><a class="btn alt" href="../workshop-toys/">Control Toybox</a></div></section>
+
+<section class="section"><div class="eyebrow">01 · REMEMBER THIS</div><h2>课后只需要记住这条主线。</h2><div class="flow">INPUT
+↓
+MAPPING
+↓
+STATE / CLOCK / MEMORY
+↙             ↘
+SOUND         VISUAL
+↓
+FEEDBACK
+↓
+NEXT DECISION</div></section>
+
+<section class="section"><div class="eyebrow">02 · SIX SMALL EXERCISES</div><h2>一次只改一件事。</h2><div class="steps">
+<article class="step"><b>EXERCISE 01</b><h3>一个按钮</h3><p>继续研究 Tap / Hold / Release / Idle。先把一个输入做出时间结构。</p></article>
+<article class="step"><b>EXERCISE 02</b><h3>放进节拍</h3><p>加入 BPM / Transport / Quantize，让输入进入稳定 beat 或 1/8 note。</p></article>
+<article class="step"><b>EXERCISE 03</b><h3>增加 State</h3><p>OPEN / BUILD / PEAK / BREAK。让同一个 Trigger 在不同状态中有不同意义。</p></article>
+<article class="step"><b>EXERCISE 04</b><h3>增加视觉结构</h3><p>GRID / ORBIT / GLYPH / FIELD / GRAPH / TRAIL。优先改变空间与行为，不只换颜色。</p></article>
+<article class="step"><b>EXERCISE 05</b><h3>把键盘做成控制器</h3><p>Space 做主输入，方向键改 BPM / Scene，数字键切 Visual Variant，F 全屏，Esc Reset。</p></article>
+<article class="step"><b>EXERCISE 06</b><h3>加入外部输入</h3><p>鼠标速度、摄像头亮度、手机陀螺仪、MIDI Fader 都可以先转成 0–1 参数，再进入 Mapping。</p></article>
+</div></section>
+
+<section class="section"><div class="eyebrow">03 · COPY TO YOUR AGENT</div><h2>一个按钮的继续练习。</h2><div class="prompt">先读取当前项目，不要重写框架。
+保持一个主要输入键。
+
+加入四个状态：
+- TAP：短促的声音与视觉事件；
+- HOLD：按住后进入持续状态；
+- RELEASE：松开后进入 1–3 秒衰减；
+- IDLE：没有输入时仍保留轻微 ambience / residue。
+
+加入唯一的 BPM / Transport。
+Audio 与 Visual 都读取同一组 state、beat 和 bar。
+保留 Reset / Panic。
+完成后告诉我：改了什么、怎么测试、还有什么限制。</div></section>
+
+<section class="section"><div class="eyebrow">04 · CONTROL MAP</div><h2>最小键盘可以这样开始。</h2><div class="flow">SPACE     Main Trigger
+↑ / ↓     BPM ±5
+← / →     Scene
+1 / 2 / 3 / 4   Visual Variant
+A         Auto / Assist
+F         Fullscreen
+ESC       Panic / Reset</div><p>以后继续增加按键时，先给它们定义角色。尽量避免 Effect 1 / Effect 2 / Effect 3 这种没有结构的堆叠。</p></section>
+
+<section class="section"><div class="eyebrow">05 · SAVE + SHARE</div><h2>让练习变成一个真正可以分享的链接。</h2><div class="check"><div><b>01</b><br>创建 GitHub Repository。</div><div><b>02</b><br>保证 <code>index.html</code> 是入口。</div><div><b>03</b><br>图片、声音、CSS、JS 全部使用相对路径。</div><div><b>04</b><br>Settings → Pages，选择发布分支。</div><div><b>05</b><br>等 Pages URL 出现后，用无痕窗口重新打开。</div><div><b>06</b><br>测试声音、键盘输入、全屏和移动端是否正常。</div></div><div class="prompt" style="margin-top:18px">请把当前静态网页项目整理成适合 GitHub Pages 发布的版本。
+
+要求：
+1. index.html 是入口；
+2. 所有资源使用相对路径；
+3. 不把 token、密码、内网地址写入仓库；
+4. 添加简短 README，写清楚操作方式；
+5. 提交到我指定的 GitHub 仓库；
+6. 告诉我如何开启 GitHub Pages；
+7. 发布后重新检查最终 URL 是否可以正常打开、播放声音和进入全屏。</div></section>
+
+<section class="section"><div class="eyebrow">06 · ADVANCED ROUTE</div><h2>网页之外，可以继续接到现场系统。</h2><div class="flow">Phone / Sensor
+↓
+OSC
+↓
+Processing / TouchDesigner / Other Runtime
+↓
+Syphon (macOS) / Spout (Windows)
+↓
+Resolume / Stage Output</div><div class="callout">浏览器仍然很适合快速测试和分享。只有当你开始需要更稳定的现场链路、更多外部设备或多软件协同时，再进入这一层。</div></section>
+
+<section class="section"><div class="eyebrow">07 · SHARE BACK</div><h2>回群里不用写长总结。</h2><p>如果继续做了一个版本，发三样就够：</p><div class="check"><div>一个可以直接打开的 URL</div><div>10–20 秒操作录屏</div><div>一句话：这次只改了什么关系</div><div>如果卡住，直接发截图 + 当前链接</div></div><div class="callout">例：我这版只研究 Hold Duration。按住越久，声音密度和视觉残影越强；松开后会留下 2 秒 residue。</div></section>
+
+<section class="section"><div class="eyebrow">QUICK LINKS</div><div class="actions"><a class="btn" href="../workshop-knowledge/exercise-01.html">一个按钮练习</a><a class="btn alt" href="../workshop-state-instrument/">State Instrument</a><a class="btn alt" href="../workshop-demos/vl6-glyph-matrix-live.html">Glyph Matrix</a><a class="btn alt" href="../workshop-demos/">全部 Demo</a></div></section>
+<footer class="footer">2026.08.29 · Minimal Input / Audiovisual System · Participant Follow-up</footer>
+</main></body></html>
