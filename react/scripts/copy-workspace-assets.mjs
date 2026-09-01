@@ -5,23 +5,43 @@ import { fileURLToPath } from 'node:url'
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 const reactRoot = path.resolve(dirname, '..')
 const repoRoot = path.resolve(reactRoot, '..')
+const distRoot = path.join(reactRoot, 'dist')
+const portfolioDistRoot = path.join(distRoot, 'portfolio')
+
 const sourceAssetsDir = path.join(repoRoot, 'assets')
-const targetAssetsDir = path.join(reactRoot, 'dist', 'assets')
-const portfolioAssetsDir = path.join(reactRoot, 'dist', 'portfolio', 'assets')
+const targetAssetsDir = path.join(distRoot, 'assets')
+const portfolioAssetsDir = path.join(portfolioDistRoot, 'assets')
 const sourceWorksDir = path.join(repoRoot, 'works')
-const targetWorksDir = path.join(reactRoot, 'dist', 'works')
-const portfolioWorksDir = path.join(reactRoot, 'dist', 'portfolio', 'works')
+const targetWorksDir = path.join(distRoot, 'works')
+const portfolioWorksDir = path.join(portfolioDistRoot, 'works')
 const sourcePersonalAvDemosDir = path.join(repoRoot, 'workshops', 'personal-av-instrument', 'demos')
-const targetPersonalAvDemosDir = path.join(reactRoot, 'dist', 'lab', 'personal-av-instrument')
-const portfolioPersonalAvDemosDir = path.join(reactRoot, 'dist', 'portfolio', 'lab', 'personal-av-instrument')
-const targetCanonicalPersonalAvDemosDir = path.join(reactRoot, 'dist', 'workshops', 'personal-av-instrument', 'demos')
-const portfolioCanonicalPersonalAvDemosDir = path.join(reactRoot, 'dist', 'portfolio', 'workshops', 'personal-av-instrument', 'demos')
+const targetPersonalAvDemosDir = path.join(distRoot, 'lab', 'personal-av-instrument')
+const portfolioPersonalAvDemosDir = path.join(portfolioDistRoot, 'lab', 'personal-av-instrument')
+const targetCanonicalPersonalAvDemosDir = path.join(distRoot, 'workshops', 'personal-av-instrument', 'demos')
+const portfolioCanonicalPersonalAvDemosDir = path.join(portfolioDistRoot, 'workshops', 'personal-av-instrument', 'demos')
 const sourceManaGuide = path.join(repoRoot, 'workshops', 'gamified-ai-new-media-art-engineer-101', 'runbook-20260829.html')
-const targetManaGuideDir = path.join(reactRoot, 'dist', 'workshops', 'gamified-ai-new-media-art-engineer-101')
-const portfolioManaGuideDir = path.join(reactRoot, 'dist', 'portfolio', 'workshops', 'gamified-ai-new-media-art-engineer-101')
+const targetManaGuideDir = path.join(distRoot, 'workshops', 'gamified-ai-new-media-art-engineer-101')
+const portfolioManaGuideDir = path.join(portfolioDistRoot, 'workshops', 'gamified-ai-new-media-art-engineer-101')
 const sourceControlModel = path.join(repoRoot, 'research', 'performance-control-model', 'index.html')
-const targetControlModelDir = path.join(reactRoot, 'dist', 'research', 'performance-control-model')
-const portfolioControlModelDir = path.join(reactRoot, 'dist', 'portfolio', 'research', 'performance-control-model')
+const targetControlModelDir = path.join(distRoot, 'research', 'performance-control-model')
+const portfolioControlModelDir = path.join(portfolioDistRoot, 'research', 'performance-control-model')
+
+// Post-workshop public archive and participant resources live at repository root.
+// The production site is built from react/dist, so these paths must be copied
+// explicitly after Vite finishes. Mirror them under /portfolio as well because
+// older generated links still use that compatibility prefix.
+const workshopPublicDirs = [
+  'mana-0829',
+  'workshop-knowledge',
+  'workshop-toys',
+  'workshop-state-instrument',
+  'workshop-demos'
+]
+const workshopPublicFiles = [
+  '0829.html',
+  'workshop-reader.html'
+]
+
 const maxCloudflarePagesFileBytes = 25 * 1024 * 1024
 const skippedLargeFiles = []
 
@@ -52,6 +72,34 @@ function copyStandalonePage(sourcePath, targetDir, portfolioTargetDir, filename 
   fs.mkdirSync(portfolioTargetDir, { recursive: true })
   fs.copyFileSync(sourcePath, path.join(targetDir, filename))
   fs.copyFileSync(sourcePath, path.join(portfolioTargetDir, filename))
+}
+
+function publishWorkshopDirectory(name) {
+  const sourceDir = path.join(repoRoot, name)
+  if (!fs.existsSync(sourceDir)) {
+    console.warn(`Workshop public directory not found: ${sourceDir}`)
+    return
+  }
+
+  const targetDir = path.join(distRoot, name)
+  const portfolioTargetDir = path.join(portfolioDistRoot, name)
+  copyWithCloudflareLimit(sourceDir, targetDir)
+  copyWithCloudflareLimit(sourceDir, portfolioTargetDir)
+  console.log(`Published workshop directory → /${name}/ + /portfolio/${name}/`)
+}
+
+function publishWorkshopFile(name) {
+  const sourcePath = path.join(repoRoot, name)
+  if (!fs.existsSync(sourcePath)) {
+    console.warn(`Workshop public file not found: ${sourcePath}`)
+    return
+  }
+
+  fs.mkdirSync(distRoot, { recursive: true })
+  fs.mkdirSync(portfolioDistRoot, { recursive: true })
+  fs.copyFileSync(sourcePath, path.join(distRoot, name))
+  fs.copyFileSync(sourcePath, path.join(portfolioDistRoot, name))
+  console.log(`Published workshop file → /${name} + /portfolio/${name}`)
 }
 
 if (fs.existsSync(sourceAssetsDir)) {
@@ -126,6 +174,12 @@ copyStandalonePage(sourceControlModel, targetControlModelDir, portfolioControlMo
 if (fs.existsSync(sourceControlModel)) {
   console.log('Published control model → /research/performance-control-model/')
 }
+
+// Publish the actual post-workshop archive/resources into the same production
+// output as the portfolio app. This closes the gap between a successful root
+// GitHub Pages artifact and the React/Cloudflare production build.
+for (const name of workshopPublicDirs) publishWorkshopDirectory(name)
+for (const name of workshopPublicFiles) publishWorkshopFile(name)
 
 if (skippedLargeFiles.length > 0) {
   console.warn(
