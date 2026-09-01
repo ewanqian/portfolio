@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>极简输入：构建视听系统｜2026.08.29</title>
+<style>
+:root{--bg:#f5f5f7;--fg:#101114;--muted:#70757d;--line:#d9dce1;--card:#fff;--accent:#111;--green:#b8ff2c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}.page{width:min(1120px,calc(100% - 32px));margin:auto;padding:58px 0 100px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.13em;color:#61656b}.hero{padding:40px 0 62px;border-bottom:1px solid var(--line)}h1{font-size:clamp(52px,9vw,112px);line-height:.88;letter-spacing:-.07em;margin:14px 0 24px;max-width:980px}.lead{font-size:clamp(18px,2.1vw,27px);line-height:1.55;color:#555b63;max-width:850px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.pill{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px}.section{padding:62px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(34px,5vw,62px);letter-spacing:-.055em;line-height:.95;margin:0 0 22px}.section>p{max-width:820px;color:var(--muted);font-size:16px;line-height:1.75}.flow{font:700 14px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;background:#111316;color:#f5f5f7;border-radius:22px;padding:24px;margin-top:24px;overflow:auto}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;min-height:210px}.id{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;color:#777}.card h3{font-size:22px;letter-spacing:-.035em;margin:10px 0 8px}.card p{font-size:14px;line-height:1.65;color:var(--muted);margin:0}.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}.resource{background:#111316;color:#fff;text-decoration:none;border-radius:18px;padding:20px;min-height:150px;display:flex;flex-direction:column}.resource b{font-size:18px;letter-spacing:-.025em}.resource span{font-size:12px;color:#aeb4bc;line-height:1.55;margin-top:7px}.resource em{margin-top:auto;font-style:normal;font-size:12px;color:var(--green)}.quote{font-size:clamp(28px,4.5vw,56px);letter-spacing:-.05em;line-height:1.08;max-width:940px;margin:0}.note{padding:20px;border-left:3px solid #111;background:#fff;border-radius:0 16px 16px 0;color:#666;line-height:1.7;margin-top:24px}.footer{padding-top:40px;color:#7a7f86;font-size:13px;line-height:1.7}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;text-decoration:none;color:#fff;background:#111;border-radius:999px;padding:11px 15px;font-size:13px;font-weight:700}.btn.alt{background:#fff;color:#111;border:1px solid var(--line)}@media(max-width:760px){.page{padding-top:34px}.grid,.resources{grid-template-columns:1fr}.hero{padding-top:20px}.section{padding:44px 0}.card{min-height:unset}}
+</style></head>
+<body><main class="page">
+<section class="hero"><div class="eyebrow">MANA WORKSHOP ARCHIVE · 2026.08.29</div><h1>极简输入：<br>构建视听系统</h1><p class="lead">从一个按键开始，把输入、节拍、状态、声音与视觉逐层组织成可以练习、分享和继续发展的网页音画系统。</p><div class="meta"><span class="pill">Ewan Qian × yiyisogreen</span><span class="pill">3-hour workshop</span><span class="pill">Browser / Creative Coding / A/V</span></div><div class="actions"><a class="btn" href="./participant.html">参与者课后延伸</a><a class="btn alt" href="../workshop-knowledge/">知识库</a><a class="btn alt" href="../workshop-demos/">Demo</a></div></section>
+
+<section class="section"><div class="eyebrow">01 · WHAT WE BUILT</div><h2>不是从软件开始，<br>而是从关系开始。</h2><p>这次工作坊把一个很小的输入逐步扩展为一套可演奏系统。重点不在某个软件，而在输入如何进入时间、状态与反馈，并同时作用于声音和视觉。</p><div class="flow">INPUT
+↓
+TAP / HOLD / RELEASE
+↓
+BPM / BEAT / QUANTIZE
+↓
+MAPPING / SHARED STATE
+↙                 ↘
+SOUND             VISUAL
+↓
+SCENE / MEMORY / FEEDBACK
+↓
+PERFORMANCE / SHARE</div></section>
+
+<section class="section"><div class="eyebrow">02 · SIX CONCLUSIONS</div><h2>这次真正留下来的六件事。</h2><div class="grid">
+<article class="card"><div class="id">01</div><h3>极简输入不等于极简行为</h3><p>一个按钮还可以读取按下、按住、松开、重复频率、间隔和当前 State。输入很少，行为可以很深。</p></article>
+<article class="card"><div class="id">02</div><h3>节拍是共享坐标</h3><p>BPM 不只是一个显示数字。人的输入可以先被确认，再被放进 beat、1/8 note 或 bar，让声音与视觉共同进入稳定时间结构。</p></article>
+<article class="card"><div class="id">03</div><h3>声音与视觉共享 State</h3><p>声音不必先产生、画面再去跟随。更值得研究的是让二者共同读取 energy、density、scene、memory 等高层状态。</p></article>
+<article class="card"><div class="id">04</div><h3>演奏性来自关系</h3><p>观众需要看见动作与结果的关联，但不必在几秒内完全看穿。Trigger、Intensity、State 与身体动作可以形成简单但成立的演奏关系。</p></article>
+<article class="card"><div class="id">05</div><h3>小练习可以累积成 Live Set</h3><p>先让一个状态单独运行也成立，再保存、比较和继续修改。长期积累的 Scene、Role 与 Variant 最终比一次生成完整系统更可靠。</p></article>
+<article class="card"><div class="id">06</div><h3>AI 更适合快速产生候选</h3><p>描述一个小问题，让 Agent 实现，运行、比较、删除、保留。生成更多不是终点，判断哪些值得留下才是创作。</p></article>
+</div></section>
+
+<section class="section"><div class="eyebrow">03 · FROM BROWSER TO STAGE</div><h2>网页是入口，<br>不是边界。</h2><p>浏览器适合快速原型与分享。需要更长期的现场系统时，可以继续把同一套 Input / Mapping / State / Feedback 逻辑带进 Processing、OSC、Syphon / Spout、TouchDesigner 或 Resolume 等环境。</p><div class="flow">Keyboard / Mouse / Phone / Sensor
+↓
+Mapping / State / Clock
+↓
+WebGL + Web Audio
+        or
+Processing / p5.js
+↓
+OSC / Syphon / Spout
+↓
+Stage Software / Live Output</div></section>
+
+<section class="section"><div class="eyebrow">04 · CONTINUE PLAYING</div><h2>所有可继续访问的材料。</h2><div class="resources">
+<a class="resource" href="../workshop-toys/"><b>Control Toybox</b><span>Tempo、Quantize、Density、Graph、Memory、State 的最小控制练习。</span><em>OPEN →</em></a>
+<a class="resource" href="../workshop-state-instrument/"><b>State Instrument</b><span>键盘控制 BPM、Scene、Visual Variant 与 Tap / Hold / Release。</span><em>OPEN →</em></a>
+<a class="resource" href="../workshop-knowledge/"><b>Knowledge Library</b><span>可以直接复制给 Agent 的 Mapping、Beat Clock、Music Structure 与 Playtest Skill。</span><em>OPEN →</em></a>
+<a class="resource" href="../workshop-demos/"><b>Demo Ladder</b><span>D0–D5：从直接触发到 Shared State、Spatial Input 与 Performance System。</span><em>OPEN →</em></a>
+<a class="resource" href="../workshop-demos/vl6-glyph-matrix-live.html"><b>Glyph Matrix Live</b><span>Graph / Matrix / Variant / Shared Clock 的完整演奏研究版本。</span><em>PLAY →</em></a>
+<a class="resource" href="../0829.html"><b>Workshop Deck</b><span>工作坊当天使用的入口、工具与参考链接。</span><em>OPEN →</em></a>
+</div></section>
+
+<section class="section"><div class="eyebrow">05 · ARCHIVE EDIT</div><p class="quote">公开档案不需要保存现场发生的每一句话。<br>它只需要留下下一次仍然能继续使用的东西。</p><div class="note">本页已从原始录音与现场材料中做编辑性筛选：不公开参与者身份、微信群聊天、完整逐字稿、私人项目细节、账号与内网信息；转写中涉及艺术史、论文与作品的具体事实如需进入正式文章，会另行核验。</div></section>
+
+<footer class="footer">Minimal Input / Audiovisual System · Workshop Archive · 2026<br>Public archive edited from the workshop process. <a href="https://ewanqian.site" style="color:inherit">ewanqian.site</a></footer>
+</main></body></html>
