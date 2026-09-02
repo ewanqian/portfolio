@@ -1,26 +1,59 @@
 [
   {
     "id": "quick-16x9",
-    "name": "Quick 16:9 Stage",
+    "name": "快速测试 · 16:9",
     "modelUrl": null,
-    "screen": { "widthM": 3.2, "heightM": 1.8, "resolution": [1920, 1080], "position": [0, 1.75, 0.05] },
-    "camera": [0, 1.65, 5.2],
-    "stage": { "widthM": 5.4, "depthM": 2.4, "type": "blackbox" }
+    "screen": {
+      "widthM": 3.2,
+      "heightM": 1.8,
+      "resolution": [1920, 1080],
+      "position": [0, 1.75, 0.05]
+    },
+    "stage": { "widthM": 5.4, "depthM": 2.4, "type": "blackbox" },
+    "viewpoints": [
+      { "id": "audience", "label": "观众位", "position": [0, 1.65, 5.8], "target": [0, 1.65, 0.05] },
+      { "id": "foh", "label": "FOH", "position": [0, 1.65, 8.2], "target": [0, 1.65, 0.05] },
+      { "id": "stage-left", "label": "舞台左", "position": [-3.7, 1.65, 1.8], "target": [0, 1.65, 0.05] },
+      { "id": "stage-right", "label": "舞台右", "position": [3.7, 1.65, 1.8], "target": [0, 1.65, 0.05] },
+      { "id": "screen-front", "label": "屏前", "position": [0, 1.65, 2.4], "target": [0, 1.65, 0.05] }
+    ]
   },
   {
     "id": "wide-led-32x9",
-    "name": "Wide LED 32:9",
+    "name": "宽屏舞台 · 32:9",
     "modelUrl": null,
-    "screen": { "widthM": 6.4, "heightM": 1.8, "resolution": [3840, 1080], "position": [0, 1.85, 0.05] },
-    "camera": [0, 1.7, 7.8],
-    "stage": { "widthM": 8.6, "depthM": 3.2, "type": "wide" }
+    "screen": {
+      "widthM": 6.4,
+      "heightM": 1.8,
+      "resolution": [3840, 1080],
+      "position": [0, 1.85, 0.05]
+    },
+    "stage": { "widthM": 8.6, "depthM": 3.2, "type": "wide" },
+    "viewpoints": [
+      { "id": "audience", "label": "观众位", "position": [0, 1.65, 8.8], "target": [0, 1.75, 0.05] },
+      { "id": "foh", "label": "FOH", "position": [0, 1.65, 12.0], "target": [0, 1.75, 0.05] },
+      { "id": "stage-left", "label": "舞台左", "position": [-5.3, 1.65, 2.4], "target": [0, 1.75, 0.05] },
+      { "id": "stage-right", "label": "舞台右", "position": [5.3, 1.65, 2.4], "target": [0, 1.75, 0.05] },
+      { "id": "screen-front", "label": "屏前", "position": [0, 1.65, 3.0], "target": [0, 1.75, 0.05] }
+    ]
   },
   {
     "id": "gallery-4k",
-    "name": "Gallery Wall 4K",
+    "name": "展厅墙面 · 4K",
     "modelUrl": null,
-    "screen": { "widthM": 4.8, "heightM": 2.7, "resolution": [3840, 2160], "position": [0, 2.05, -0.05] },
-    "camera": [0, 1.65, 7.2],
-    "stage": { "widthM": 7.2, "depthM": 4.2, "type": "gallery" }
+    "screen": {
+      "widthM": 4.8,
+      "heightM": 2.7,
+      "resolution": [3840, 2160],
+      "position": [0, 2.05, -0.05]
+    },
+    "stage": { "widthM": 7.2, "depthM": 4.2, "type": "gallery" },
+    "viewpoints": [
+      { "id": "audience", "label": "观众位", "position": [0, 1.65, 7.4], "target": [0, 1.95, -0.05] },
+      { "id": "foh", "label": "远观", "position": [0, 1.65, 10.2], "target": [0, 1.95, -0.05] },
+      { "id": "stage-left", "label": "左侧", "position": [-4.2, 1.65, 3.4], "target": [0, 1.95, -0.05] },
+      { "id": "stage-right", "label": "右侧", "position": [4.2, 1.65, 3.4], "target": [0, 1.95, -0.05] },
+      { "id": "screen-front", "label": "屏前", "position": [0, 1.65, 2.8], "target": [0, 1.95, -0.05] }
+    ]
   }
 ]
