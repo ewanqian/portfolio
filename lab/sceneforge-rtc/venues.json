@@ -1,0 +1,26 @@
+[
+  {
+    "id": "quick-16x9",
+    "name": "Quick 16:9 Stage",
+    "modelUrl": null,
+    "screen": { "widthM": 3.2, "heightM": 1.8, "resolution": [1920, 1080], "position": [0, 1.75, 0.05] },
+    "camera": [0, 1.65, 5.2],
+    "stage": { "widthM": 5.4, "depthM": 2.4, "type": "blackbox" }
+  },
+  {
+    "id": "wide-led-32x9",
+    "name": "Wide LED 32:9",
+    "modelUrl": null,
+    "screen": { "widthM": 6.4, "heightM": 1.8, "resolution": [3840, 1080], "position": [0, 1.85, 0.05] },
+    "camera": [0, 1.7, 7.8],
+    "stage": { "widthM": 8.6, "depthM": 3.2, "type": "wide" }
+  },
+  {
+    "id": "gallery-4k",
+    "name": "Gallery Wall 4K",
+    "modelUrl": null,
+    "screen": { "widthM": 4.8, "heightM": 2.7, "resolution": [3840, 2160], "position": [0, 2.05, -0.05] },
+    "camera": [0, 1.65, 7.2],
+    "stage": { "widthM": 7.2, "depthM": 4.2, "type": "gallery" }
+  }
+]
