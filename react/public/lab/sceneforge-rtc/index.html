@@ -4,49 +4,110 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#050608" />
-  <title>SceneForge RTC Test</title>
+  <title>SceneForge 场地查看器</title>
   <style>
     :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    *{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050608;color:#f5f5f2}
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050608;color:#f5f5f2}
+    button,input,select{font:inherit}
     #stage{position:fixed;inset:0;width:100%;height:100%;display:block}
-    .panel{position:fixed;z-index:20;left:max(14px,env(safe-area-inset-left));top:max(14px,env(safe-area-inset-top));width:min(420px,calc(100vw - 28px));padding:14px;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(5,7,10,.82);backdrop-filter:blur(16px);box-shadow:0 20px 60px rgba(0,0,0,.36)}
-    h1{font-size:15px;margin:0 0 4px;font-weight:650} p{font-size:12px;line-height:1.45;color:#aab1ba;margin:0 0 10px}.row{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}.row>*{flex:1 1 auto}
-    button,textarea{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.07);color:#f5f5f2;border-radius:9px;font:inherit}button{min-height:38px;padding:8px 10px;cursor:pointer}button.primary{background:#f4f4ef;color:#07080a;border-color:transparent;font-weight:650}button:hover{background:rgba(255,255,255,.12)}
-    textarea{width:100%;min-height:74px;padding:9px;resize:vertical;font-size:10px;line-height:1.35}.status{font-size:11px;color:#aeb6c1;border-top:1px solid rgba(255,255,255,.1);margin-top:10px;padding-top:9px}.status[data-level="warn"]{color:#f2c575}.status[data-level="error"]{color:#ff8b8b}
-    details{margin-top:9px}summary{font-size:11px;color:#cbd1d8;cursor:pointer}.pill{display:inline-flex;padding:2px 7px;border-radius:999px;background:rgba(255,255,255,.08);font-size:10px;color:#bcc4cd;margin-left:5px}
-    .hide{display:none!important}@media(max-width:640px){.panel{padding:11px}.compact-on-xr{opacity:.92}}
+    .ui{position:fixed;z-index:20;inset:0;pointer-events:none}
+    .panel{pointer-events:auto;position:absolute;left:max(14px,env(safe-area-inset-left));top:max(14px,env(safe-area-inset-top));width:min(440px,calc(100vw - 28px));max-height:calc(100vh - 28px);overflow:auto;padding:14px;border:1px solid rgba(255,255,255,.13);border-radius:16px;background:rgba(5,7,10,.86);backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(0,0,0,.38)}
+    h1{font-size:15px;margin:0 0 4px;font-weight:680}
+    .sub{font-size:11px;line-height:1.45;color:#a8b0bb;margin:0 0 12px}
+    .tabs,.row,.views{display:flex;gap:7px;flex-wrap:wrap}
+    .tabs{margin-bottom:10px}.tabs button{flex:1}
+    .row{margin-top:7px}.row>*{flex:1 1 0;min-width:0}
+    .stack{display:grid;gap:7px}
+    .field{display:grid;gap:5px}
+    .field label,.label{font-size:10px;color:#89939f;letter-spacing:.08em}
+    .meta{font-size:10px;color:#9ea8b4;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .tip{font-size:10px;line-height:1.55;color:#9ea8b4;margin-top:9px;padding:8px 9px;border-radius:9px;background:rgba(255,255,255,.045)}
+    button,input,select{min-height:38px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.07);color:#f5f5f2;border-radius:9px;padding:8px 10px}
+    button{cursor:pointer}button.primary{background:#f4f4ef;color:#07080a;border-color:transparent;font-weight:650}
+    button.active{background:rgba(255,255,255,.17)}button:disabled{opacity:.42;cursor:not-allowed}
+    input{text-transform:uppercase;letter-spacing:.12em}select{appearance:none}
+    .views{margin-top:6px}.views button{min-height:31px;padding:6px 8px;font-size:10px}
+    .status{font-size:11px;color:#aeb6c1;border-top:1px solid rgba(255,255,255,.1);margin-top:10px;padding-top:9px}
+    .status[data-level="warn"]{color:#f2c575}.status[data-level="error"]{color:#ff8b8b}
+    .recent{display:flex;gap:6px;overflow-x:auto;padding-top:7px}.recent button{white-space:nowrap;min-height:31px;padding:6px 8px;font-size:10px}
+    .hide{display:none!important}
+    .hud{pointer-events:none;position:absolute;right:max(14px,env(safe-area-inset-right));top:max(14px,env(safe-area-inset-top));text-align:right;font-size:10px;color:#9ba4af;line-height:1.5}
+    .hud b{color:#eef1f4;font-weight:600}
+    @media(max-width:640px){.panel{padding:11px;width:min(400px,calc(100vw - 20px));left:10px;top:10px;max-height:calc(100vh - 20px)}.hud{display:none}}
   </style>
   <script type="importmap">
-  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.185.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.185.0/examples/jsm/"}}
+  {"imports":{
+    "three":"https://cdn.jsdelivr.net/npm/three@0.185.0/build/three.module.js",
+    "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.185.0/examples/jsm/",
+    "peerjs":"https://cdn.jsdelivr.net/npm/peerjs@1.5.5/+esm"
+  }}
   </script>
 </head>
 <body>
   <canvas id="stage"></canvas>
-  <section class="panel compact-on-xr">
-    <h1>SceneForge RTC Test <span class="pill">direct WebRTC</span></h1>
-    <p>16:9 共享屏幕空间。无 Needle。Desktop → WebRTC → Vision Pro / browser → Three.js VideoTexture → WebXR。</p>
-    <div class="row">
-      <button id="host" class="primary" type="button">1 · Host Screen</button>
-      <button id="join" type="button">2 · Join Offer</button>
-      <button id="enter-xr" type="button">Enter XR</button>
-    </div>
-    <div class="row">
-      <button id="screen-ahead" type="button">Screen Ahead</button>
-      <button id="reset" type="button">Reset Scene</button>
-      <button id="stop" type="button">Stop</button>
-    </div>
-    <details id="signal-box" open>
-      <summary>Manual P2P signaling</summary>
-      <p style="margin-top:7px">Host 生成 Offer Link → 在 Vision Pro 打开 → Join Offer → 生成 Answer → 把 Answer Link 发回 Host 并打开/粘贴。</p>
-      <textarea id="signal" placeholder="Offer / Answer JSON or URL"></textarea>
-      <div class="row">
-        <button id="make-answer" type="button">Create Answer</button>
-        <button id="apply-answer" type="button">Apply Answer</button>
-        <button id="copy-link" type="button">Copy Signal Link</button>
+  <div class="ui">
+    <section class="panel">
+      <h1>SceneForge 场地查看器</h1>
+      <p class="sub">共享画面、选择场地、检查观看位置。桌面与 XR 使用同一场景。</p>
+
+      <div class="tabs">
+        <button id="tab-quick" class="active" type="button">快速测试</button>
+        <button id="tab-venue" type="button">场地测试</button>
       </div>
-    </details>
-    <div id="status" class="status" role="status" aria-live="polite">Ready.</div>
-  </section>
+
+      <div id="venue-tools" class="stack hide">
+        <div class="field">
+          <label for="venue">场地</label>
+          <select id="venue"></select>
+        </div>
+        <div id="venue-meta" class="meta">—</div>
+      </div>
+
+      <div class="field" style="margin-top:10px">
+        <span class="label">观看位置</span>
+        <div id="viewpoints" class="views"></div>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <button id="host" class="primary" type="button">共享并开房</button>
+        <button id="preview" type="button">本机预览</button>
+        <button id="stop" type="button">停止</button>
+      </div>
+
+      <div class="field" style="margin-top:10px">
+        <label for="room">临时房间</label>
+        <div class="row" style="margin-top:0">
+          <input id="room" maxlength="8" placeholder="房间码" />
+          <button id="new-room" type="button">新建</button>
+        </div>
+      </div>
+      <div class="row">
+        <button id="join" type="button">加入房间</button>
+        <button id="copy-room" type="button">复制链接</button>
+      </div>
+
+      <div id="recent-wrap" class="hide">
+        <div class="meta">最近房间</div>
+        <div id="recent" class="recent"></div>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <button id="enter-xr" type="button">进入 XR</button>
+        <button id="screen-ahead" type="button">屏幕到前方</button>
+        <button id="reset" type="button">回到观众位</button>
+      </div>
+
+      <div class="tip">桌面：拖动旋转 · 滚轮缩放　｜　XR：注视地面并捏合，移动到目标位置</div>
+      <div id="status" class="status" role="status" aria-live="polite">场景已就绪。</div>
+    </section>
+
+    <div class="hud">
+      <b id="hud-venue">快速测试</b><br>
+      <span id="hud-view">观众位</span><br>
+      <span id="hud-screen">3.20 × 1.80 m · 1920 × 1080</span><br>
+      <span id="hud-peer">房间未连接</span>
+    </div>
+  </div>
   <script type="module" src="./main.js"></script>
 </body>
 </html>
