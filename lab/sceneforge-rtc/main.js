@@ -642,26 +642,25 @@ function teleportToFloorPoint(point) {
 const xrRaycaster = new THREE.Raycaster();
 const xrOrigin = new THREE.Vector3();
 const xrDirection = new THREE.Vector3();
-const xrRotation = new THREE.Matrix4();
+const xrQuaternion = new THREE.Quaternion();
+let activeXrSession = null;
 
-function handleXrSelect(event) {
-  if (!renderer.xr.isPresenting) return;
+function handleXrSessionSelect(event) {
+  if (!renderer.xr.isPresenting || !event.frame || !event.inputSource?.targetRaySpace) return;
 
-  const controller = event.target;
-  xrOrigin.setFromMatrixPosition(controller.matrixWorld);
-  xrRotation.extractRotation(controller.matrixWorld);
-  xrDirection.set(0, 0, -1).applyMatrix4(xrRotation).normalize();
+  const referenceSpace = renderer.xr.getReferenceSpace();
+  const pose = event.frame.getPose(event.inputSource.targetRaySpace, referenceSpace);
+  if (!pose) return;
+
+  const { position, orientation } = pose.transform;
+  xrOrigin.set(position.x, position.y, position.z);
+  xrQuaternion.set(orientation.x, orientation.y, orientation.z, orientation.w);
+  xrDirection.set(0, 0, -1).applyQuaternion(xrQuaternion).normalize();
 
   xrRaycaster.set(xrOrigin, xrDirection);
   const hit = xrRaycaster.intersectObject(floor, false)[0];
   if (hit) teleportToFloorPoint(hit.point);
 }
-
-const controller0 = renderer.xr.getController(0);
-const controller1 = renderer.xr.getController(1);
-controller0.addEventListener("select", handleXrSelect);
-controller1.addEventListener("select", handleXrSelect);
-cameraRig.add(controller0, controller1);
 
 $("#host").addEventListener("click", hostRoom);
 $("#preview").addEventListener("click", localPreview);
@@ -712,10 +711,25 @@ const externalXrButton = $("#enter-xr");
 externalXrButton.addEventListener("click", () => vrButton.click());
 
 renderer.xr.addEventListener("sessionstart", () => {
+  activeXrSession = renderer.xr.getSession();
+  activeXrSession?.addEventListener("select", handleXrSessionSelect);
+
+  const viewpoint =
+    currentVenue.viewpoints?.find((view) => view.id === currentViewId) ||
+    defaultViewpoint();
+
+  cameraRig.position.set(viewpoint.position[0], 0, viewpoint.position[2]);
+  cameraRig.rotation.set(0, 0, 0);
+  hudViewEl.textContent = viewpoint.label;
   status("XR 已进入。注视地面并捏合即可移动。");
 });
 
 renderer.xr.addEventListener("sessionend", () => {
+  activeXrSession?.removeEventListener("select", handleXrSessionSelect);
+  activeXrSession = null;
+
+  cameraRig.position.set(0, 0, 0);
+  cameraRig.rotation.set(0, 0, 0);
   moveToViewpoint(currentViewId === "free" ? "audience" : currentViewId);
   status("已返回桌面查看。");
 });
