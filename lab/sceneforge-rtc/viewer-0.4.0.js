@@ -1,0 +1,11 @@
+import { $,ui,renderer,scene,camera,controls,venues,currentView,loadVenues,applyVenue,moveView,setMode,screenAhead,tickVideo } from "./core-0.4.0.js";
+import { roomCode,newRoom,rememberRoom,renderRooms,renderDevices,startPresence,joinRoom,host,preview,stop,updateUrl } from "./rtc-0.4.0.js";
+import { initXR,tickXR } from "./xr-0.4.0.js";
+await loadVenues();renderRooms();renderDevices();await startPresence();
+const p=new URL(location.href).searchParams,initialRoom=roomCode(p.get("room")),initialVenue=p.get("venue");ui.room.value=initialRoom||newRoom();if(initialVenue&&venues.some(v=>v.id===initialVenue)){setMode("venue");applyVenue(initialVenue)}else setMode("quick");
+$("#host").onclick=host;$("#preview").onclick=preview;$("#join").onclick=joinRoom;$("#stop").onclick=stop;$("#new-room").onclick=()=>{ui.room.value=newRoom();updateUrl(ui.room.value)};
+$("#share-room").onclick=async()=>{const c=roomCode(ui.room.value)||newRoom();ui.room.value=c;const url=updateUrl(c);rememberRoom(c);try{if(navigator.share){await navigator.share({title:"SceneForge 临时房间",text:`加入临时房间 ${c}`,url});return}}catch(e){if(e?.name==="AbortError")return}try{await navigator.clipboard.writeText(url)}catch{}};
+$("#screen-ahead").onclick=screenAhead;$("#reset").onclick=()=>moveView("audience");$("#tab-quick").onclick=()=>setMode("quick");$("#tab-venue").onclick=()=>setMode("venue");ui.venue.onchange=()=>{applyVenue(ui.venue.value);updateUrl(ui.room.value)};ui.room.oninput=()=>ui.room.value=roomCode(ui.room.value);
+initXR();if(initialRoom)setTimeout(joinRoom,120);
+renderer.setAnimationLoop(()=>{controls.enabled=!renderer.xr.isPresenting;controls.update();tickVideo();tickXR();renderer.render(scene,camera)});
+addEventListener("resize",()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
