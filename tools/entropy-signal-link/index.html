@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENTROPY SIGNAL LINK</title>
+<style>
+:root{--bg:#050505;--fg:#eee;--muted:#777;--line:#262626;--panel:#0b0b0b}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body{padding:16px;max-width:1400px;margin:auto}.top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:12px}
+h1{font-size:14px;margin:0 0 5px;letter-spacing:.08em}small,.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+.card{border:1px solid var(--line);background:var(--panel);padding:12px}.s4{grid-column:span 4}.s6{grid-column:span 6}.s8{grid-column:span 8}.s12{grid-column:span 12}
+h2{font-size:10px;font-weight:500;color:#aaa;letter-spacing:.1em;margin:0 0 10px}.row{display:flex;gap:7px;align-items:center;margin:7px 0;flex-wrap:wrap}
+button,input,select,textarea{font:inherit;color:var(--fg);background:#111;border:1px solid #333;padding:7px 8px}button:hover{border-color:#777}input,select{min-width:0}
+button.primary{background:#eee;color:#050505}.status{width:8px;height:8px;border-radius:50%;background:#444;display:inline-block}.status.on{background:#fff;box-shadow:0 0 12px #fff}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.metric{border-top:1px solid var(--line);padding-top:7px}.k{font-size:8px;color:#666}.v{font-size:20px;margin-top:3px}
+canvas{display:block;width:100%;height:170px;background:#000;border:1px solid #171717}.log{height:170px;overflow:auto;background:#000;border:1px solid #171717;padding:8px;font-size:9px;line-height:1.5;color:#999}
+.help{font-size:10px;line-height:1.55;color:#aaa}.help b{color:#ddd}.pill{border:1px solid #333;padding:3px 6px;font-size:9px;color:#aaa}
+textarea{width:100%;height:80px;font-size:9px}
+@media(max-width:900px){.s4,.s6,.s8{grid-column:span 12}.metrics{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="top">
+<div><h1>ENTROPY SIGNAL LINK / WEB v0.2</h1><small>PAIR · AUDIO · MIDI · DATA · WEBRTC</small></div>
+<div><span class="status" id="peerLed"></span> <span id="peerText" class="muted">NOT CONNECTED</span></div>
+</div>
+
+<div class="grid">
+<section class="card s4">
+<h2>01 / ROLE</h2>
+<div class="row"><button id="sender" class="primary">SEND / 发送</button><button id="receiver">RECEIVE / 接收</button></div>
+<div class="row"><input id="room" value="ENTROPY-01" style="flex:1"><button id="join">JOIN ROOM</button></div>
+<div class="help">
+<b>Sender / 发送端</b><br>音乐电脑：选择 Audio / MIDI，然后发送。<br>Music computer: choose Audio / MIDI and send.<br><br>
+<b>Receiver / 接收端</b><br>视觉电脑：加入同一 Room，接收分析数据或音频。<br>Visual computer: join the same Room.
+</div>
+</section>
+
+<section class="card s8">
+<h2>02 / QUICK PAIR</h2>
+<div class="row"><input id="signalUrl" placeholder="Signaling URL (optional)" style="flex:1"><button id="autoPair">AUTO PAIR</button></div>
+<div class="help">
+如果配置了 signaling server，两边输入同一个 Room 即可自动匹配。<br>
+With a signaling server, both devices only need the same Room code.<br><br>
+没有 server 时也能用：Sender 点 CREATE OFFER → 发给 Receiver → Receiver 粘贴并 CREATE ANSWER → 再发回 Sender。<br>
+Without a server: Sender creates an offer, Receiver creates an answer, then sends it back.
+</div>
+<div class="row"><button id="createOffer">CREATE OFFER</button><button id="createAnswer">CREATE ANSWER</button><button id="applyRemote">APPLY REMOTE</button></div>
+<textarea id="sdp" placeholder="Offer / Answer JSON"></textarea>
+</section>
+
+<section class="card s6">
+<h2>03 / AUDIO</h2>
+<div class="row"><select id="audioDevice" style="flex:1"><option>Audio input</option></select><button id="audioStart">CAPTURE AUDIO</button></div>
+<div class="row"><label><input type="checkbox" id="sendAudio" checked> send audio stream / 发送音频</label></div>
+<canvas id="spec" width="1000" height="220"></canvas>
+<div class="metrics" style="margin-top:8px">
+<div class="metric"><div class="k">LOW</div><div class="v" id="low">0.00</div></div>
+<div class="metric"><div class="k">MID</div><div class="v" id="mid">0.00</div></div>
+<div class="metric"><div class="k">HIGH</div><div class="v" id="high">0.00</div></div>
+<div class="metric"><div class="k">RMS</div><div class="v" id="rms">0.000</div></div>
+</div>
+<audio id="remoteAudio" autoplay controls style="width:100%;margin-top:8px"></audio>
+</section>
+
+<section class="card s6">
+<h2>04 / MIDI + CONTROL DATA</h2>
+<div class="row"><button id="midiStart">ENABLE WEB MIDI</button><select id="midiDevice" style="flex:1"><option>No MIDI</option></select></div>
+<div class="row"><button data-val="energy">SEND ENERGY TEST</button><button data-val="scene">SEND SCENE TEST</button></div>
+<div class="metrics">
+<div class="metric"><div class="k">ENERGY</div><div class="v" id="energy">0.00</div></div>
+<div class="metric"><div class="k">TEXTURE</div><div class="v" id="texture">0.00</div></div>
+<div class="metric"><div class="k">CC</div><div class="v" id="cc">--</div></div>
+<div class="metric"><div class="k">VALUE</div><div class="v" id="ccv">--</div></div>
+</div>
+<div class="help" style="margin-top:12px">
+Web MIDI only sees MIDI ports exposed by the operating system. It does not scan the LAN for arbitrary devices.<br>
+Web MIDI 只会读取系统已经暴露出来的 MIDI Port，不会直接扫描整个局域网。
+</div>
+</section>
+
+<section class="card s12">
+<h2>05 / EVENT LOG</h2>
+<div class="log" id="log"></div>
+</section>
+</div>
+
+<script>
+const $=x=>document.getElementById(x), log=s=>{$('log').textContent=new Date().toLocaleTimeString()+'  '+s+'\n'+$('log').textContent.slice(0,12000)};
+let role='sender', pc=null, dc=null, localStream=null, analyser=null, actx=null, freq=null, timeData=null, midiAccess=null;
+let signalPoll=null, lastSignalId=null;
+const cfg={iceServers:[{urls:'stun:stun.l.google.com:19302'}]};
+
+function setRole(r){role=r;$('sender').classList.toggle('primary',r==='sender');$('receiver').classList.toggle('primary',r==='receiver');log('role '+r)}
+$('sender').onclick=()=>setRole('sender');$('receiver').onclick=()=>setRole('receiver');
+
+function makePC(){
+ if(pc) pc.close();
+ pc=new RTCPeerConnection(cfg);
+ pc.onconnectionstatechange=()=>{
+  const on=pc.connectionState==='connected';$('peerLed').classList.toggle('on',on);$('peerText').textContent=pc.connectionState.toUpperCase();
+  log('peer '+pc.connectionState);
+ };
+ pc.onicecandidate=e=>{ if(!e.candidate) $('sdp').value=JSON.stringify(pc.localDescription); };
+ pc.ontrack=e=>{ $('remoteAudio').srcObject=e.streams[0]; log('remote audio received'); };
+ pc.ondatachannel=e=>{dc=e.channel;wireDC()};
+ if(role==='sender'){dc=pc.createDataChannel('entropy',{ordered:false,maxRetransmits:0});wireDC()}
+ if(localStream && $('sendAudio').checked) localStream.getTracks().forEach(tr=>pc.addTrack(tr,localStream));
+ return pc;
+}
+function wireDC(){if(!dc)return;dc.onopen=()=>log('data channel open');dc.onclose=()=>log('data channel closed');dc.onmessage=e=>{try{handleData(JSON.parse(e.data))}catch{log('data '+e.data)}}}
+function sendData(o){if(dc&&dc.readyState==='open')dc.send(JSON.stringify(o))}
+function handleData(o){
+ if(o.type==='analysis'){for(const k of ['low','mid','high','rms','energy','texture'])if(o[k]!=null&&$(k))$(k).textContent=Number(o[k]).toFixed(k==='rms'?3:2)}
+ if(o.type==='midi'){$('cc').textContent=o.d1;$('ccv').textContent=o.d2}
+ if(o.type==='scene')log('SCENE '+o.value);
+}
+async function waitIce(){
+ if(pc.iceGatheringState==='complete')return;
+ await new Promise(res=>{const f=()=>{if(pc.iceGatheringState==='complete'){pc.removeEventListener('icegatheringstatechange',f);res()}};pc.addEventListener('icegatheringstatechange',f)});
+}
+$('createOffer').onclick=async()=>{setRole('sender');makePC();await pc.setLocalDescription(await pc.createOffer());await waitIce();$('sdp').value=JSON.stringify(pc.localDescription);log('offer ready')};
+$('createAnswer').onclick=async()=>{
+ setRole('receiver');makePC();
+ const offer=JSON.parse($('sdp').value);await pc.setRemoteDescription(offer);await pc.setLocalDescription(await pc.createAnswer());await waitIce();$('sdp').value=JSON.stringify(pc.localDescription);log('answer ready')
+};
+$('applyRemote').onclick=async()=>{if(!pc)makePC();await pc.setRemoteDescription(JSON.parse($('sdp').value));log('remote description applied')};
+
+async function autoPair(){
+ const url=$('signalUrl').value.trim(),room=$('room').value.trim(); if(!url)return log('set signaling URL first');
+ makePC();
+ if(role==='sender'){
+  await pc.setLocalDescription(await pc.createOffer());await waitIce();
+  await fetch(url+'/signal',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({room,role:'sender',type:'offer',sdp:pc.localDescription})});
+  log('offer posted; waiting answer');
+ }else{log('receiver waiting offer')}
+ clearInterval(signalPoll);signalPoll=setInterval(async()=>{
+  try{
+   const r=await fetch(url+'/signal?room='+encodeURIComponent(room)+'&role='+role,{cache:'no-store'});if(!r.ok)return;
+   const j=await r.json(); if(!j||!j.id||j.id===lastSignalId)return;lastSignalId=j.id;
+   if(role==='receiver'&&j.type==='offer'){
+    await pc.setRemoteDescription(j.sdp);await pc.setLocalDescription(await pc.createAnswer());await waitIce();
+    await fetch(url+'/signal',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({room,role:'receiver',type:'answer',sdp:pc.localDescription})});log('answer posted');
+   }else if(role==='sender'&&j.type==='answer'){await pc.setRemoteDescription(j.sdp);log('answer applied')}
+  }catch(e){log('signal '+e.message)}
+ },700);
+}
+$('autoPair').onclick=autoPair;$('join').onclick=autoPair;
+
+async function listAudio(){
+ try{
+  const ds=await navigator.mediaDevices.enumerateDevices();$('audioDevice').innerHTML='';
+  ds.filter(d=>d.kind==='audioinput').forEach(d=>{let o=document.createElement('option');o.value=d.deviceId;o.textContent=d.label||'Audio input';$('audioDevice').appendChild(o)})
+ }catch(e){log('audio device '+e.message)}
+}
+$('audioStart').onclick=async()=>{
+ try{
+  localStream=await navigator.mediaDevices.getUserMedia({audio:{deviceId:$('audioDevice').value?{exact:$('audioDevice').value}:undefined,echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+  await listAudio();actx=new (window.AudioContext||window.webkitAudioContext)();analyser=actx.createAnalyser();analyser.fftSize=4096;analyser.smoothingTimeConstant=.74;
+  freq=new Uint8Array(analyser.frequencyBinCount);timeData=new Float32Array(analyser.fftSize);actx.createMediaStreamSource(localStream).connect(analyser);log('audio capture ready');
+  if(pc&&$('sendAudio').checked)localStream.getTracks().forEach(tr=>pc.addTrack(tr,localStream));
+ }catch(e){log('audio '+e.message)}
+};
+function band(lo,hi){if(!analyser)return 0;const ny=actx.sampleRate/2,n=freq.length,a=Math.floor(lo/ny*n),b=Math.min(n-1,Math.ceil(hi/ny*n));let s=0,c=0;for(let i=a;i<=b;i++){s+=freq[i]/255;c++}return c?s/c:0}
+let lastSend=0;
+function anim(ts){
+ requestAnimationFrame(anim);if(!analyser)return;analyser.getByteFrequencyData(freq);analyser.getFloatTimeDomainData(timeData);
+ let ss=0;for(const v of timeData)ss+=v*v;let rms=Math.sqrt(ss/timeData.length),low=band(20,160),mid=band(160,2000),high=band(2000,12000),energy=Math.min(1,rms*3+low*.4+mid*.3),texture=Math.min(1,mid*.65+high*.9);
+ for(const [k,v] of Object.entries({low,mid,high,rms,energy,texture}))$(k).textContent=v.toFixed(k==='rms'?3:2);
+ const c=$('spec'),x=c.getContext('2d'),W=c.width,H=c.height;x.fillStyle='#000';x.fillRect(0,0,W,H);x.strokeStyle='#ddd';x.beginPath();
+ for(let px=0;px<W;px++){let hz=(px/(W-1))**2*12000,idx=Math.floor(hz/(actx.sampleRate/2)*freq.length),y=H-(freq[idx]||0)/255*H*.9;if(px===0)x.moveTo(px,y);else x.lineTo(px,y)}x.stroke();
+ if(role==='sender'&&ts-lastSend>33){lastSend=ts;sendData({type:'analysis',low,mid,high,rms,energy,texture,t:performance.now()})}
+}
+requestAnimationFrame(anim);listAudio();
+
+$('midiStart').onclick=async()=>{
+ if(!navigator.requestMIDIAccess)return log('Web MIDI unavailable');
+ try{midiAccess=await navigator.requestMIDIAccess();$('midiDevice').innerHTML='';for(const i of midiAccess.inputs.values()){let o=document.createElement('option');o.value=i.id;o.textContent=i.name;$('midiDevice').appendChild(o);i.onmidimessage=e=>{let [st,d1,d2]=e.data;sendData({type:'midi',status:st,d1,d2,t:performance.now()});$('cc').textContent=d1;$('ccv').textContent=d2}}log('MIDI ready')}
+ catch(e){log('MIDI '+e.message)}
+};
+document.querySelectorAll('[data-val]').forEach(b=>b.onclick=()=>{if(b.dataset.val==='energy')sendData({type:'analysis',energy:Math.random(),texture:Math.random()});else sendData({type:'scene',value:1+Math.floor(Math.random()*10)})});
+</script>
+</body>
+</html>
