@@ -1,0 +1,17 @@
+{
+  "project": "entropy-0905-performance",
+  "schemaVersion": 1,
+  "canonicalAsset": "../assets/baked/network-rich-v001.js",
+  "states": [
+    {"id":"01-network-core","asset":"network-rich-v001","camera":"network_core","layers":["points","edges","micro-pulses"]},
+    {"id":"02-signal-globe","asset":"network-rich-v001","camera":"signal_globe","layers":["points","edges","globe-routes","packets","analysis"]},
+    {"id":"03-nerve-field","asset":"network-rich-v001","camera":"nerve_field","layers":["points","edges","nerves","packets"]},
+    {"id":"04-circular-array","asset":"network-rich-v001","camera":"circular_array","layers":["points","rings","radial-analysis"]},
+    {"id":"05-data-wall","asset":"network-rich-v001","camera":"data_wall","layers":["points","channels","packets","analysis"]},
+    {"id":"06-depth-puncture","asset":"network-rich-v001","camera":"depth_puncture","layers":["points","depth-rings","volume-scan"]},
+    {"id":"07-neural-bloom","asset":"network-rich-v001","camera":"neural_bloom","layers":["points","nerves","packets"]},
+    {"id":"08-luoshu-field","asset":"network-rich-v001","camera":"luoshu_field","layers":["points","luoshu","analysis"]},
+    {"id":"09-celestial-lock","asset":"network-rich-v001","camera":"celestial_lock","layers":["points","anchors","routes"]},
+    {"id":"10-collapse-residual","asset":"network-rich-v001","camera":"collapse_residual","layers":["points","edges","collapse"]}
+  ]
+}
