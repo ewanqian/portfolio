@@ -35,7 +35,8 @@ const workshopPublicDirs = [
   'workshop-knowledge',
   'workshop-toys',
   'workshop-state-instrument',
-  'workshop-demos'
+  'workshop-demos',
+  'av-system-0905'
 ]
 const workshopPublicFiles = [
   '0829.html',
