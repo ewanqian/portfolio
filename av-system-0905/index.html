@@ -64,7 +64,8 @@ a{color:inherit;text-decoration:none}.app{display:grid;grid-template-columns:246
     <a href="#human"><span>09</span><span>人和系统怎么分工</span></a>
     <a href="#demo"><span>10</span><span>打开真实工程</span></a>
     <a href="#build"><span>11</span><span>AV System 0.1</span></a>
-    <a href="#resources"><span>12</span><span>资料</span></a>
+    <a href="#recap"><span>12</span><span>9.5 课后回顾</span></a>
+    <a href="#resources"><span>13</span><span>资料</span></a>
   </nav>
   <footer>Leon Krykhtin × After Loop<br>2026.09.05 · Shanghai</footer>
 </aside>
@@ -342,8 +343,86 @@ CALM / ACTIVE
   </div>
 </div></section>
 
+
+<section class="screen" id="recap"><div class="inner">
+  <div class="eyebrow">12 / AFTER WORKSHOP · 09.05</div>
+  <h2>9 月 5 日这次工作坊，最后落在两件事：先做出能演奏的内容，再想办法把它们组织起来。</h2>
+  <div class="copy">
+    <p>前面的工作坊已经碰过一个很基础的问题：一个按键不只触发一次效果，它还可以有 Tap、Hold、Release、Repeat、BPM 和 State。9 月 5 日这次，我把重点放到下一层——当手里已经有很多可以演奏的内容以后，怎么把它们整理成一套现场系统。</p>
+    <p>课堂里既有手动演奏，也讲了自动时间。按键可以直接触发状态；共享 BPM / Beat / Bar 可以让视觉自动落到音乐边界；MIDI 或其他信号可以继续改变参数。进入 Resolume Arena 以后，这些实时工程、视觉 Clips、Layer 和特效还需要被分类，才能在现场被正确调用。</p>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="tag">MAKE A VISUAL</div>
+      <h3>先从一张自己喜欢的平面图开始</h3>
+      <p>参与者先找一张喜欢的图，想象它如果开始运动会发生什么，再把视觉风格、运动方式和演奏规则描述给 GPT / Agent，快速得到第一版。</p>
+    </div>
+    <div class="card">
+      <div class="tag">MAKE IT PLAYABLE</div>
+      <h3>按下、持续、松开，都可以有不同结果</h3>
+      <p>一个键可以有 Press / Hold / Release，也可以继续加入 Repeat、Residue 和 Sequence。声音同样可以按“乐器”去设计，让一次操作启动一段会继续发展的声音与画面行为。</p>
+    </div>
+    <div class="card">
+      <div class="tag">MAKE A SYSTEM</div>
+      <h3>把多个可玩的单元放进同一套时间和状态里</h3>
+      <p>当这种逻辑扩展到更多按键、更多视觉模块以后，系统负责 BPM、状态、Layer、路由和安全边界，人负责选择、切换和现场判断。</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <div class="diagram">MANUAL
+KEY / MIDI / CONTROLLER
+      ↓
+TRIGGER / HOLD / RELEASE
+      ↓
+STATE / EFFECT / VISUAL
+
+AUTO
+BPM / BEAT / BAR
+      ↓
+QUANTIZE / TIMING
+      ↓
+PULSE / CHANGE / TRANSITION
+
+BOTH
+      ↓
+LIVE PERFORMANCE</div>
+    </div>
+    <div class="copy" style="margin-top:0">
+      <p><b style="color:var(--fg)">按键控制和 BPM 自动控制可以同时存在。</b>有些变化适合由人明确触发，有些节奏性动作可以交给共享时钟。这样表演者不需要手动制造每一个 beat，也不会失去现场选择。</p>
+      <p>在 Arena 里，可以继续把视觉 Clips、实时 Processing 输出和效果按照角色整理，例如 Base / Rhythm / Accent / Transition，再让不同 State 决定哪些 Layer 和效果当前可用。</p>
+      <p>如果没有外部音乐人，也可以把声音和画面放在同一个工程里自己配合：共享 BPM、共享 State，让系统在 AUTO 状态下自己形成一段小型演出，再切到 PERFORM 由人接管。</p>
+    </div>
+  </div>
+
+  <div class="quote">后续练习不需要一次做完整场。每天留下一个能单独成立的小状态，慢慢积累成 Visual Module、Scene、Live Set，最后再进入 Arena 或自己的实时演出系统。</div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="tag">WHAT YOU CAN CONTINUE</div>
+      <h3>可以继续做的几条路</h3>
+      <p>准备更多 Visual Clips；给现有工程增加 BPM / Quantize；整理 2–4 个清楚的 State；把按键扩展成一组可演奏控制；把自己的声音和画面做成一段 AUTO + PERFORM 的短演出。</p>
+    </div>
+    <div class="card">
+      <div class="tag">WHAT TO SHARE</div>
+      <h3>如果做了新的版本，发一个很小的记录就够</h3>
+      <p>一个可以打开的链接 + 一段十几秒录屏 + 一句话说明这次改了什么。这样下一次再看时，可以知道系统是怎样一步一步长出来的。</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn primary" href="https://ewanqian.site/av-system-0905/" target="_blank" rel="noopener">9.5 Workshop Reader</a>
+    <a class="btn" href="../workshop-state-instrument/">State Instrument</a>
+    <a class="btn" href="../workshop-knowledge/">Workshop Knowledge</a>
+    <a class="btn" href="../mana-0829/participant.html">版本管理 / 后续练习</a>
+  </div>
+  <div class="note">9.5 页面保留了本次课程的系统结构、Freeman 参考、BPM / Link、Time / Event / Value、BPM Link Experiment、State / Layer / Routing、真实工程观察方法和后续练习入口。以后可以从这里回顾。</div>
+</div></section>
+
 <section class="screen" id="resources"><div class="inner">
-  <div class="eyebrow">12 / CONTINUE</div>
+  <div class="eyebrow">13 / CONTINUE</div>
   <h2>资料都放在这里，课堂没讲完也可以自己继续。</h2>
   <div class="grid2">
     <a class="linkcard" href="../mana-0829/participant.html"><b>8.29 课后延伸</b><span>Git、Diff、Rollback、Agent Skill。</span></a>
@@ -384,7 +463,7 @@ CALM / ACTIVE
       <a class="linkcard" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dOlLuM1A1VQ"><b>YouTube</b><span>能访问时再看</span></a>
     </div>
   </div>
-  <a class="biglink" href="#intro">从头开始 →</a>
+  <div class="rblock"><h3>课后回顾</h3><div class="resources"><a class="linkcard" href="#recap"><b>9.5 Workshop Recap</b><span>课堂做了什么、怎样继续练习、如何整理成系统</span></a></div></div><a class="biglink" href="#recap">查看 9.5 回顾 →</a>
 </aside>
 
 </div>
