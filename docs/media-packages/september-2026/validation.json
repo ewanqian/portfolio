@@ -1,0 +1,371 @@
+{
+  "assets": 45,
+  "total_bytes": 82216372,
+  "source_files_unchanged": 50,
+  "decode_errors": [],
+  "checks": [
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-panorama-photo-arcky-hero.avif",
+      "width": 2400,
+      "height": 1350,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-panorama-photo-arcky-preview.avif",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-panorama-photo-arcky-thumb.avif",
+      "width": 640,
+      "height": 360,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-audience-orbit-photo-hejian-z-hero.avif",
+      "width": 2400,
+      "height": 1800,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-audience-orbit-photo-hejian-z-preview.avif",
+      "width": 1600,
+      "height": 1200,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-audience-orbit-photo-hejian-z-thumb.avif",
+      "width": 640,
+      "height": 480,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-portrait-hero.avif",
+      "width": 1800,
+      "height": 2400,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-portrait-preview.avif",
+      "width": 1200,
+      "height": 1600,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-portrait-thumb.avif",
+      "width": 480,
+      "height": 640,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-panorama-hero.avif",
+      "width": 2400,
+      "height": 1800,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-panorama-preview.avif",
+      "width": 1600,
+      "height": 1200,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-panorama-thumb.avif",
+      "width": 640,
+      "height": 480,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/entropy-2026-09-05/entropy-live-performers-photo-hejian-z-hero.avif",
+      "width": 1800,
+      "height": 2400,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/entropy-2026-09-05/entropy-live-performers-photo-hejian-z-preview.avif",
+      "width": 1200,
+      "height": 1600,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/entropy-2026-09-05/entropy-live-performers-photo-hejian-z-thumb.avif",
+      "width": 480,
+      "height": 640,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-panorama-photo-hejian-z-hero.avif",
+      "width": 2400,
+      "height": 1800,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-panorama-photo-hejian-z-preview.avif",
+      "width": 1600,
+      "height": 1200,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-panorama-photo-hejian-z-thumb.avif",
+      "width": 640,
+      "height": 480,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-hall-depth-photo-hejian-z-hero.avif",
+      "width": 2400,
+      "height": 1800,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-hall-depth-photo-hejian-z-preview.avif",
+      "width": 1600,
+      "height": 1200,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-hall-depth-photo-hejian-z-thumb.avif",
+      "width": 640,
+      "height": 480,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/no-further-input-required/no-further-input-required-exhibition-photo-longlonglong-hero.avif",
+      "width": 1440,
+      "height": 1920,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/no-further-input-required/no-further-input-required-exhibition-photo-longlonglong-preview.avif",
+      "width": 1200,
+      "height": 1600,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/no-further-input-required/no-further-input-required-exhibition-photo-longlonglong-thumb.avif",
+      "width": 480,
+      "height": 640,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/no-further-input-required/no-further-input-required-entangled-exhibition-poster-hero.avif",
+      "width": 1280,
+      "height": 1828,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/no-further-input-required/no-further-input-required-entangled-exhibition-poster-preview.avif",
+      "width": 1120,
+      "height": 1600,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/no-further-input-required/no-further-input-required-entangled-exhibition-poster-thumb.avif",
+      "width": 448,
+      "height": 640,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-highlight-16x9.mp4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 329,
+      "duration": "10.966667",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-highlight-poster.avif",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-performers-highlight-16x9.mp4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 159,
+      "duration": "5.300000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-performers-highlight-poster.avif",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-highlight-16x9.mp4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 131,
+      "duration": "4.366667",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-highlight-poster.avif",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-highlight-16x9.mp4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 222,
+      "duration": "7.400000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-highlight-poster.avif",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-highlight-16x9.mp4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 183,
+      "duration": "6.100000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-highlight-poster.avif",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-geometric-highlight-16x9.mp4",
+      "width": 1280,
+      "height": 720,
+      "frames": 300,
+      "duration": "10.000000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-geometric-highlight-poster.avif",
+      "width": 1280,
+      "height": 720,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-rectilinear-highlight-16x9.mp4",
+      "width": 1280,
+      "height": 720,
+      "frames": 480,
+      "duration": "16.000000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-rectilinear-highlight-poster.avif",
+      "width": 1280,
+      "height": 720,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    },
+    {
+      "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-selected-live-16x9.mp4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 619,
+      "duration": "20.633333",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-motion.avif",
+      "width": 960,
+      "height": 540,
+      "frames": 36,
+      "duration": "3.000000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-reactor-2026-09-05-pointcloud-highlight-9x16.mp4",
+      "width": 720,
+      "height": 1280,
+      "frames": 300,
+      "duration": "10.000000",
+      "decode": "pass"
+    },
+    {
+      "path": "assets/library/scans/factory/memory-factory/memory-factory-reactor-2026-09-05-pointcloud-highlight-poster.avif",
+      "width": 720,
+      "height": 1280,
+      "frames": 1,
+      "duration": null,
+      "decode": "pass"
+    }
+  ],
+  "public_copy_manual_check": "passed bounded wording and source review; not official gate",
+  "official_quality_gate": "unavailable: required macOS path absent on Windows",
+  "browser_animation_playback": "not tested; no webpage built"
+}

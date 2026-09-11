@@ -1,0 +1,1167 @@
+[
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-panorama-photo-arcky-hero.avif",
+    "source_ids": [
+      "M0001"
+    ],
+    "source_sha256": [
+      "6c3bdec5686803d900d081bd7c356f65d50770d68f6fd7744af9999b16730274"
+    ],
+    "role": "hero",
+    "caption_zh": "环绕屏幕中的轨道图形与现场表演者。",
+    "caption_en": "Orbital graphics and performers within the wraparound screen.",
+    "photographer": "arcky",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 2400,
+    "height": 1350,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 155232,
+    "sha256": "65e2ed040ee55f74d302554472593a11f0737b0c0d815400deaf23eaae18018d",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-panorama-photo-arcky-preview.avif",
+    "source_ids": [
+      "M0001"
+    ],
+    "source_sha256": [
+      "6c3bdec5686803d900d081bd7c356f65d50770d68f6fd7744af9999b16730274"
+    ],
+    "role": "preview",
+    "caption_zh": "环绕屏幕中的轨道图形与现场表演者。",
+    "caption_en": "Orbital graphics and performers within the wraparound screen.",
+    "photographer": "arcky",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 900,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 90994,
+    "sha256": "d5adcbb1a5ed53bcf4a06fb21647b1bc910f8ff42e112cadb755b68c170bff51",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-panorama-photo-arcky-thumb.avif",
+    "source_ids": [
+      "M0001"
+    ],
+    "source_sha256": [
+      "6c3bdec5686803d900d081bd7c356f65d50770d68f6fd7744af9999b16730274"
+    ],
+    "role": "thumb",
+    "caption_zh": "环绕屏幕中的轨道图形与现场表演者。",
+    "caption_en": "Orbital graphics and performers within the wraparound screen.",
+    "photographer": "arcky",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 640,
+    "height": 360,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 27165,
+    "sha256": "593cec410ee73ed74b72aafde42643735dab55e65c642c58ddf6db8b80204725",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-audience-orbit-photo-hejian-z-hero.avif",
+    "source_ids": [
+      "M0002"
+    ],
+    "source_sha256": [
+      "86ff092ce0e2f9f8b42c3c399106c4f90ecebf342be83393f80610e0f838f658"
+    ],
+    "role": "hero",
+    "caption_zh": "观众视角下的轨道图形与顶部屏幕。",
+    "caption_en": "Orbital graphics and overhead screen seen from the audience.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 2400,
+    "height": 1800,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 146701,
+    "sha256": "6c477bca1281fb5f2b9bfe7d09c4b50d12786f3fd50735acddf339fedcecdebd",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-audience-orbit-photo-hejian-z-preview.avif",
+    "source_ids": [
+      "M0002"
+    ],
+    "source_sha256": [
+      "86ff092ce0e2f9f8b42c3c399106c4f90ecebf342be83393f80610e0f838f658"
+    ],
+    "role": "preview",
+    "caption_zh": "观众视角下的轨道图形与顶部屏幕。",
+    "caption_en": "Orbital graphics and overhead screen seen from the audience.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 1200,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 89047,
+    "sha256": "3f4babccb5101e27f9e7be2e8bd9886ba3116d88f6e52b4496dda7206f76a611",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-audience-orbit-photo-hejian-z-thumb.avif",
+    "source_ids": [
+      "M0002"
+    ],
+    "source_sha256": [
+      "86ff092ce0e2f9f8b42c3c399106c4f90ecebf342be83393f80610e0f838f658"
+    ],
+    "role": "thumb",
+    "caption_zh": "观众视角下的轨道图形与顶部屏幕。",
+    "caption_en": "Orbital graphics and overhead screen seen from the audience.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 640,
+    "height": 480,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 25112,
+    "sha256": "489b90168abbbc10b6518b43e124bcc1afdbe92dcdb359bd2f17fed68edf763f",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-portrait-hero.avif",
+    "source_ids": [
+      "M0024"
+    ],
+    "source_sha256": [
+      "79eec45e2d380c4d0147542b0514534752cca36855f2c582404562197bf327f3"
+    ],
+    "role": "hero",
+    "caption_zh": "竖向构图中的航天器结构与表演者。",
+    "caption_en": "Spacecraft structures and performers in a portrait composition.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1800,
+    "height": 2400,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 158182,
+    "sha256": "ed4791ca0fadf1f6ff276419632c2a88ae4b8b21cfc384749063653a9ab92317",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-portrait-preview.avif",
+    "source_ids": [
+      "M0024"
+    ],
+    "source_sha256": [
+      "79eec45e2d380c4d0147542b0514534752cca36855f2c582404562197bf327f3"
+    ],
+    "role": "preview",
+    "caption_zh": "竖向构图中的航天器结构与表演者。",
+    "caption_en": "Spacecraft structures and performers in a portrait composition.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1200,
+    "height": 1600,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 74050,
+    "sha256": "893953d93184dc88a5a8aa59157bbcc299733cd97a2d715816b2c4a7e9d4bac1",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-portrait-thumb.avif",
+    "source_ids": [
+      "M0024"
+    ],
+    "source_sha256": [
+      "79eec45e2d380c4d0147542b0514534752cca36855f2c582404562197bf327f3"
+    ],
+    "role": "thumb",
+    "caption_zh": "竖向构图中的航天器结构与表演者。",
+    "caption_en": "Spacecraft structures and performers in a portrait composition.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 480,
+    "height": 640,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 15641,
+    "sha256": "8519a9093fc05827670e994c7dee5ef08e6cd13f1a3278be8586bf9519edbc0c",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-panorama-hero.avif",
+    "source_ids": [
+      "M0027"
+    ],
+    "source_sha256": [
+      "7a4bd16d8c0d6ff80066b34f4b3145d3e8c3b656bd1bf92c039b25ec66a3c921"
+    ],
+    "role": "hero",
+    "caption_zh": "粒子形态延伸至正面与顶部屏幕。",
+    "caption_en": "Particle forms extend across the front and overhead screens.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 2400,
+    "height": 1800,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 86666,
+    "sha256": "ec52b98042e699c7bf739a3b99363bcdabf91b7251e8d65f4c25494747d926ac",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-panorama-preview.avif",
+    "source_ids": [
+      "M0027"
+    ],
+    "source_sha256": [
+      "7a4bd16d8c0d6ff80066b34f4b3145d3e8c3b656bd1bf92c039b25ec66a3c921"
+    ],
+    "role": "preview",
+    "caption_zh": "粒子形态延伸至正面与顶部屏幕。",
+    "caption_en": "Particle forms extend across the front and overhead screens.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 1200,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 51788,
+    "sha256": "f4c3a4b10480ab4153d172f7f8fd30ecb2003d42d3308d7bcb6971e8601977fd",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-panorama-thumb.avif",
+    "source_ids": [
+      "M0027"
+    ],
+    "source_sha256": [
+      "7a4bd16d8c0d6ff80066b34f4b3145d3e8c3b656bd1bf92c039b25ec66a3c921"
+    ],
+    "role": "thumb",
+    "caption_zh": "粒子形态延伸至正面与顶部屏幕。",
+    "caption_en": "Particle forms extend across the front and overhead screens.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 640,
+    "height": 480,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 13414,
+    "sha256": "6af30d73e313553770b9c16142e4880443c40bb8b0690cc06f97831767f3f9b8",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/events/entropy-2026-09-05/entropy-live-performers-photo-hejian-z-hero.avif",
+    "source_ids": [
+      "M0012"
+    ],
+    "source_sha256": [
+      "17b667c676a1a6c0ef2471eabafb042268083b7400c2a4c164565d6ceff0953b"
+    ],
+    "role": "hero",
+    "caption_zh": "ENTROPY 现场的双人操作。",
+    "caption_en": "Two performers operating their setups at ENTROPY.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1800,
+    "height": 2400,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 335454,
+    "sha256": "e1aa9da9f4bfd0ee1f88664e6bd043d10f4e6d34fb64c38e45e3ddd7645b6a02",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/events/entropy-2026-09-05/entropy-live-performers-photo-hejian-z-preview.avif",
+    "source_ids": [
+      "M0012"
+    ],
+    "source_sha256": [
+      "17b667c676a1a6c0ef2471eabafb042268083b7400c2a4c164565d6ceff0953b"
+    ],
+    "role": "preview",
+    "caption_zh": "ENTROPY 现场的双人操作。",
+    "caption_en": "Two performers operating their setups at ENTROPY.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1200,
+    "height": 1600,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 149082,
+    "sha256": "e8abbb0e548418d65f68aa09aada03819fa4f3d5fc524fff0c6676bdf944faf8",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/events/entropy-2026-09-05/entropy-live-performers-photo-hejian-z-thumb.avif",
+    "source_ids": [
+      "M0012"
+    ],
+    "source_sha256": [
+      "17b667c676a1a6c0ef2471eabafb042268083b7400c2a4c164565d6ceff0953b"
+    ],
+    "role": "thumb",
+    "caption_zh": "ENTROPY 现场的双人操作。",
+    "caption_en": "Two performers operating their setups at ENTROPY.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 480,
+    "height": 640,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 30415,
+    "sha256": "bbafcc2ab474891df87e6106f2fce4b6b69ac6f991f3b8151b7b9ce375dd3319",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-panorama-photo-hejian-z-hero.avif",
+    "source_ids": [
+      "M0010"
+    ],
+    "source_sha256": [
+      "87468a0da0d5225fbf44609b13c4717300ba00e9267d131070f6b653af8ac302"
+    ],
+    "role": "hero",
+    "caption_zh": "工厂点云在 ENTROPY 现场环绕屏幕中的呈现。",
+    "caption_en": "Factory point-cloud imagery across the wraparound screens at ENTROPY.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 2400,
+    "height": 1800,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 316811,
+    "sha256": "1fc04bb807d15ae2f628ea1bad0b55e029b192fea62b0ec0c9ed15c0f0ababd7",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-panorama-photo-hejian-z-preview.avif",
+    "source_ids": [
+      "M0010"
+    ],
+    "source_sha256": [
+      "87468a0da0d5225fbf44609b13c4717300ba00e9267d131070f6b653af8ac302"
+    ],
+    "role": "preview",
+    "caption_zh": "工厂点云在 ENTROPY 现场环绕屏幕中的呈现。",
+    "caption_en": "Factory point-cloud imagery across the wraparound screens at ENTROPY.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 1200,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 188745,
+    "sha256": "beb11416a520cec0c890bd154de4d3022a343f31da7538eab5cae3b0327c4103",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-panorama-photo-hejian-z-thumb.avif",
+    "source_ids": [
+      "M0010"
+    ],
+    "source_sha256": [
+      "87468a0da0d5225fbf44609b13c4717300ba00e9267d131070f6b653af8ac302"
+    ],
+    "role": "thumb",
+    "caption_zh": "工厂点云在 ENTROPY 现场环绕屏幕中的呈现。",
+    "caption_en": "Factory point-cloud imagery across the wraparound screens at ENTROPY.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 640,
+    "height": 480,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 54077,
+    "sha256": "e38e81a562b11f52d3c67601ba23319ed1b236eb36c2440526b757120352f881",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-hall-depth-photo-hejian-z-hero.avif",
+    "source_ids": [
+      "M0014"
+    ],
+    "source_sha256": [
+      "e9c2ac927ad969fd4d0010685b14b0d65c0537a6f47284422f6fded5defd6726"
+    ],
+    "role": "hero",
+    "caption_zh": "厂房点云的纵深结构与现场表演者。",
+    "caption_en": "The depth of the factory point cloud alongside live performers.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 2400,
+    "height": 1800,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 117827,
+    "sha256": "457429ffd067a846d79b42f4c0b89763887b5d59b02b340fe60e44d062d65e05",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-hall-depth-photo-hejian-z-preview.avif",
+    "source_ids": [
+      "M0014"
+    ],
+    "source_sha256": [
+      "e9c2ac927ad969fd4d0010685b14b0d65c0537a6f47284422f6fded5defd6726"
+    ],
+    "role": "preview",
+    "caption_zh": "厂房点云的纵深结构与现场表演者。",
+    "caption_en": "The depth of the factory point cloud alongside live performers.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 1200,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 80328,
+    "sha256": "7d9b46fa78c5d89d28ec964a401eac043540b90031ce3039601abcc5053f625d",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-hall-depth-photo-hejian-z-thumb.avif",
+    "source_ids": [
+      "M0014"
+    ],
+    "source_sha256": [
+      "e9c2ac927ad969fd4d0010685b14b0d65c0537a6f47284422f6fded5defd6726"
+    ],
+    "role": "thumb",
+    "caption_zh": "厂房点云的纵深结构与现场表演者。",
+    "caption_en": "The depth of the factory point cloud alongside live performers.",
+    "photographer": "Hejian_z",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 640,
+    "height": 480,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 27940,
+    "sha256": "bd416bb30dd5ae8c9f37b9d1fd7e587972e83fca2a886653a6522d90a760eaba",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/no-further-input-required/no-further-input-required-exhibition-photo-longlonglong-hero.avif",
+    "source_ids": [
+      "M0046"
+    ],
+    "source_sha256": [
+      "a2ed11de4a68c0acdb1b690b14b21a65f7cdd48f3aef53de18617f33a07e2d49"
+    ],
+    "role": "hero",
+    "caption_zh": "《无需进一步输入》的展陈与作品标签。",
+    "caption_en": "No Further Input Required on display with its artwork label.",
+    "photographer": "longlonglong",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1440,
+    "height": 1920,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 159598,
+    "sha256": "59d58a98faa82a68fe60fc00e3f0b3812f9de95e314507c1fd0edab30296b0b7",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "No Further Input Required",
+    "event": "Entangled: Day for Night / Inclusion Conference 2026"
+  },
+  {
+    "path": "assets/works/no-further-input-required/no-further-input-required-exhibition-photo-longlonglong-preview.avif",
+    "source_ids": [
+      "M0046"
+    ],
+    "source_sha256": [
+      "a2ed11de4a68c0acdb1b690b14b21a65f7cdd48f3aef53de18617f33a07e2d49"
+    ],
+    "role": "preview",
+    "caption_zh": "《无需进一步输入》的展陈与作品标签。",
+    "caption_en": "No Further Input Required on display with its artwork label.",
+    "photographer": "longlonglong",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 1200,
+    "height": 1600,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 124877,
+    "sha256": "99c1c73400c23fbf8c1668c202246d7e859f5d4dd549c7f7ad062d67b88af7a7",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "No Further Input Required",
+    "event": "Entangled: Day for Night / Inclusion Conference 2026"
+  },
+  {
+    "path": "assets/works/no-further-input-required/no-further-input-required-exhibition-photo-longlonglong-thumb.avif",
+    "source_ids": [
+      "M0046"
+    ],
+    "source_sha256": [
+      "a2ed11de4a68c0acdb1b690b14b21a65f7cdd48f3aef53de18617f33a07e2d49"
+    ],
+    "role": "thumb",
+    "caption_zh": "《无需进一步输入》的展陈与作品标签。",
+    "caption_en": "No Further Input Required on display with its artwork label.",
+    "photographer": "longlonglong",
+    "rights_status": "photographer-credit-required",
+    "publication_ready": false,
+    "width": 480,
+    "height": 640,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 33212,
+    "sha256": "fc02773b23a18d70469d30857eb6603be2ae1fda615a456a90d33cc0a9e6b7e0",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "No Further Input Required",
+    "event": "Entangled: Day for Night / Inclusion Conference 2026"
+  },
+  {
+    "path": "assets/works/no-further-input-required/no-further-input-required-entangled-exhibition-poster-hero.avif",
+    "source_ids": [
+      "M0047"
+    ],
+    "source_sha256": [
+      "93363cf7e77376cb07dbeac5f17caefcee70f47c059e02080d869f042654f1f7"
+    ],
+    "role": "hero",
+    "caption_zh": "采用《无需进一步输入》图像的展览海报。",
+    "caption_en": "Exhibition poster featuring imagery from No Further Input Required.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1280,
+    "height": 1828,
+    "upscaled": false,
+    "requested_long_edge": 2400,
+    "size_bytes": 175356,
+    "sha256": "6d33a5d8be024be091685b2ca97035112b399e401e2c6213400c5be68ddffa0e",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "No Further Input Required",
+    "event": "Entangled: Day for Night / Inclusion Conference 2026"
+  },
+  {
+    "path": "assets/works/no-further-input-required/no-further-input-required-entangled-exhibition-poster-preview.avif",
+    "source_ids": [
+      "M0047"
+    ],
+    "source_sha256": [
+      "93363cf7e77376cb07dbeac5f17caefcee70f47c059e02080d869f042654f1f7"
+    ],
+    "role": "preview",
+    "caption_zh": "采用《无需进一步输入》图像的展览海报。",
+    "caption_en": "Exhibition poster featuring imagery from No Further Input Required.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1120,
+    "height": 1600,
+    "upscaled": false,
+    "requested_long_edge": 1600,
+    "size_bytes": 143219,
+    "sha256": "73fc107a50ecc8464fc18e8f929fb322c4abb06a1c940255071a02b81ca91c4a",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "No Further Input Required",
+    "event": "Entangled: Day for Night / Inclusion Conference 2026"
+  },
+  {
+    "path": "assets/works/no-further-input-required/no-further-input-required-entangled-exhibition-poster-thumb.avif",
+    "source_ids": [
+      "M0047"
+    ],
+    "source_sha256": [
+      "93363cf7e77376cb07dbeac5f17caefcee70f47c059e02080d869f042654f1f7"
+    ],
+    "role": "thumb",
+    "caption_zh": "采用《无需进一步输入》图像的展览海报。",
+    "caption_en": "Exhibition poster featuring imagery from No Further Input Required.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 448,
+    "height": 640,
+    "upscaled": false,
+    "requested_long_edge": 640,
+    "size_bytes": 41695,
+    "sha256": "b4c4b9fd115fbad42a5791b4aced91fae8dfc15fe330faf604604922ec1afdd0",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "No Further Input Required",
+    "event": "Entangled: Day for Night / Inclusion Conference 2026"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-highlight-16x9.mp4",
+    "source_ids": [
+      "M0033"
+    ],
+    "source_sha256": [
+      "c8da22bc65d21ec4927cfea3e0f08446909d6d21f28099f00c41f8fcd47362b8"
+    ],
+    "role": "highlight",
+    "caption_zh": "轨道图形与上下屏幕的空间呼应。",
+    "caption_en": "Orbital graphics connect the front and overhead screens.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 7.8,
+    "source_out": 18.8,
+    "duration": 10.966667,
+    "width": 1920,
+    "height": 1080,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 12372678,
+    "sha256": "f6654e92de65bc42ebd18336d33af4abede3ebb9a140f0c45951ba077b697b71",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-highlight-poster.avif",
+    "source_ids": [
+      "M0033"
+    ],
+    "source_sha256": [
+      "c8da22bc65d21ec4927cfea3e0f08446909d6d21f28099f00c41f8fcd47362b8"
+    ],
+    "role": "poster",
+    "caption_zh": "轨道图形与上下屏幕的空间呼应。",
+    "caption_en": "Orbital graphics connect the front and overhead screens.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 900,
+    "source_time": 13.3,
+    "size_bytes": 44308,
+    "sha256": "846dae12b605d126ce959ae0198369363c0f2b8e9e3a1bef46535a05866f7d8a",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-performers-highlight-16x9.mp4",
+    "source_ids": [
+      "M0035"
+    ],
+    "source_sha256": [
+      "73a5eb561e0467d0f04814f76037adc32619142b90ea1e914d869235b74ab385"
+    ],
+    "role": "highlight",
+    "caption_zh": "轨道图形前的现场表演者。",
+    "caption_en": "Performers in front of the orbital graphics.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 1.5,
+    "source_out": 6.8,
+    "duration": 5.3,
+    "width": 1920,
+    "height": 1080,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 8288772,
+    "sha256": "4bc84ef147a85fb14e4cd1e7748fe084fd7e47f4dd40e55d0da619c8a520232c",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-performers-highlight-poster.avif",
+    "source_ids": [
+      "M0035"
+    ],
+    "source_sha256": [
+      "73a5eb561e0467d0f04814f76037adc32619142b90ea1e914d869235b74ab385"
+    ],
+    "role": "poster",
+    "caption_zh": "轨道图形前的现场表演者。",
+    "caption_en": "Performers in front of the orbital graphics.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 900,
+    "source_time": 4.15,
+    "size_bytes": 56079,
+    "sha256": "0a8fcb35d82a523d76a4f0e910563373a1089091d8787c700fcdebdcd80f8731",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-highlight-16x9.mp4",
+    "source_ids": [
+      "M0037"
+    ],
+    "source_sha256": [
+      "2bc2defe6792c57993fa70960dd502b788068c9caf60f228ea5c40646c94ba9f"
+    ],
+    "role": "highlight",
+    "caption_zh": "粒子形态在双屏空间中展开。",
+    "caption_en": "Particle forms unfold across the two-screen space.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 0.35,
+    "source_out": 4.75,
+    "duration": 4.366667,
+    "width": 1920,
+    "height": 1080,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 4925338,
+    "sha256": "95eb026c9f69ee0feab291ce0bf49049f1130d9a554fde15a3ef4acf17664e30",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-highlight-poster.avif",
+    "source_ids": [
+      "M0037"
+    ],
+    "source_sha256": [
+      "2bc2defe6792c57993fa70960dd502b788068c9caf60f228ea5c40646c94ba9f"
+    ],
+    "role": "poster",
+    "caption_zh": "粒子形态在双屏空间中展开。",
+    "caption_en": "Particle forms unfold across the two-screen space.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 900,
+    "source_time": 2.5500000000000003,
+    "size_bytes": 27637,
+    "sha256": "f53677c5463b1c32f730e2eeec00352098e8c1071ccb089da6662c11bfd7d58a",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-highlight-16x9.mp4",
+    "source_ids": [
+      "M0041"
+    ],
+    "source_sha256": [
+      "7fa25964292b6fe31fd1f7d941aecf2d185f2f45b65eca0ccff29015a6f5b9af"
+    ],
+    "role": "highlight",
+    "caption_zh": "航天器结构在环绕屏幕中变化。",
+    "caption_en": "Spacecraft structures change across the wraparound screen.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 0.4,
+    "source_out": 7.8,
+    "duration": 7.4,
+    "width": 1920,
+    "height": 1080,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 5688810,
+    "sha256": "7da61a467e4fc883db34887adf54ffd38b741d22d5fab45448bdbc540ae65dfb",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-spacecraft-highlight-poster.avif",
+    "source_ids": [
+      "M0041"
+    ],
+    "source_sha256": [
+      "7fa25964292b6fe31fd1f7d941aecf2d185f2f45b65eca0ccff29015a6f5b9af"
+    ],
+    "role": "poster",
+    "caption_zh": "航天器结构在环绕屏幕中变化。",
+    "caption_en": "Spacecraft structures change across the wraparound screen.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 900,
+    "source_time": 0.9,
+    "size_bytes": 23288,
+    "sha256": "e4e20d768dcd36d725a7eeb4662209540796be325828cd9a9ae2116f4cb70909",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-highlight-16x9.mp4",
+    "source_ids": [
+      "M0043"
+    ],
+    "source_sha256": [
+      "8892dd703509da08aa58fca20234b221c6781950347b3422cb97d0ccba0640ec"
+    ],
+    "role": "highlight",
+    "caption_zh": "工厂点云的现场动态呈现。",
+    "caption_en": "Factory point-cloud imagery in a live setting.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 0.4,
+    "source_out": 6.5,
+    "duration": 6.1,
+    "width": 1920,
+    "height": 1080,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 9950054,
+    "sha256": "272d1e9eddd742d9e1cc25ca1e11d0e958d29c129bcbc21b8a09087861f57b1a",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-highlight-poster.avif",
+    "source_ids": [
+      "M0043"
+    ],
+    "source_sha256": [
+      "8892dd703509da08aa58fca20234b221c6781950347b3422cb97d0ccba0640ec"
+    ],
+    "role": "poster",
+    "caption_zh": "工厂点云的现场动态呈现。",
+    "caption_en": "Factory point-cloud imagery in a live setting.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1600,
+    "height": 900,
+    "source_time": 3.4499999999999997,
+    "size_bytes": 59138,
+    "sha256": "acf40a544c7c9132d3df6511587101bbf4831c801d4388797a3679d61696febc",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-geometric-highlight-16x9.mp4",
+    "source_ids": [
+      "M0048"
+    ],
+    "source_sha256": [
+      "4d3d030b5bba4d556a024a8b902a5f2b1ffb302fb0b8177d6357827b0c25d45b"
+    ],
+    "role": "highlight",
+    "caption_zh": "REACTOR 现场的红色几何图形。",
+    "caption_en": "Red geometric imagery at REACTOR.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 14.5,
+    "source_out": 24.5,
+    "duration": 10.0,
+    "width": 1280,
+    "height": 720,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 3633106,
+    "sha256": "226c4dd7b290102868c1d62241791bc9ff41a9974b6b9a30ebfc37cac3b9948e",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "REACTOR 2026.09.05"
+  },
+  {
+    "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-geometric-highlight-poster.avif",
+    "source_ids": [
+      "M0048"
+    ],
+    "source_sha256": [
+      "4d3d030b5bba4d556a024a8b902a5f2b1ffb302fb0b8177d6357827b0c25d45b"
+    ],
+    "role": "poster",
+    "caption_zh": "REACTOR 现场的红色几何图形。",
+    "caption_en": "Red geometric imagery at REACTOR.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1280,
+    "height": 720,
+    "source_time": 19.5,
+    "size_bytes": 6418,
+    "sha256": "47cd9f05ef9f119368af28dd85ef817a6c9d14a246f22bd7a0a9068360870061",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "REACTOR 2026.09.05"
+  },
+  {
+    "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-rectilinear-highlight-16x9.mp4",
+    "source_ids": [
+      "M0048"
+    ],
+    "source_sha256": [
+      "4d3d030b5bba4d556a024a8b902a5f2b1ffb302fb0b8177d6357827b0c25d45b"
+    ],
+    "role": "highlight",
+    "caption_zh": "REACTOR 现场的矩形结构变化。",
+    "caption_en": "Changing rectilinear structures at REACTOR.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 39.5,
+    "source_out": 55.5,
+    "duration": 16.0,
+    "width": 1280,
+    "height": 720,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 7066581,
+    "sha256": "072cd3b847d94cadf834762437ef0e2bb04e488c8776cbbe5f5b1121343e94ce",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "REACTOR 2026.09.05"
+  },
+  {
+    "path": "assets/events/reactor-2026-09-05/reactor-2026-09-05-rectilinear-highlight-poster.avif",
+    "source_ids": [
+      "M0048"
+    ],
+    "source_sha256": [
+      "4d3d030b5bba4d556a024a8b902a5f2b1ffb302fb0b8177d6357827b0c25d45b"
+    ],
+    "role": "poster",
+    "caption_zh": "REACTOR 现场的矩形结构变化。",
+    "caption_en": "Changing rectilinear structures at REACTOR.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 1280,
+    "height": 720,
+    "source_time": 47.5,
+    "size_bytes": 12094,
+    "sha256": "fd9a4c482d90880cd5361bef02c79eebd6ad969e209841cda07c1112075edd45",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "unknown",
+    "event": "REACTOR 2026.09.05"
+  },
+  {
+    "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-selected-live-16x9.mp4",
+    "source_ids": [
+      "M0033",
+      "M0035",
+      "M0037"
+    ],
+    "source_sha256": [
+      "c8da22bc65d21ec4927cfea3e0f08446909d6d21f28099f00c41f8fcd47362b8",
+      "73a5eb561e0467d0f04814f76037adc32619142b90ea1e914d869235b74ab385",
+      "2bc2defe6792c57993fa70960dd502b788068c9caf60f228ea5c40646c94ba9f"
+    ],
+    "role": "selected-reel",
+    "caption_zh": "ATMOSPHERIC ESCAPE · ENTROPY 现场节选",
+    "caption_en": "ATMOSPHERIC ESCAPE · Selected moments at ENTROPY",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "audio": "silent",
+    "edits": [
+      {
+        "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-orbit-highlight-16x9.mp4",
+        "source_in": 7.8,
+        "source_out": 18.8
+      },
+      {
+        "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-performers-highlight-16x9.mp4",
+        "source_in": 1.5,
+        "source_out": 6.8
+      },
+      {
+        "path": "assets/works/atmospheric-escape/atmospheric-escape-entropy-particle-highlight-16x9.mp4",
+        "source_in": 0.35,
+        "source_out": 4.75
+      }
+    ],
+    "size_bytes": 23680624,
+    "sha256": "659a9fb9fdfd13d7d13327b609fec1e4ee5bb58dbbbc5479a9d25cd7a1f64a33",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "ATMOSPHERIC ESCAPE",
+    "event": "ENTROPY 2026.09.05 Shanghai",
+    "width": 1920,
+    "height": 1080,
+    "duration": 20.633333
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-motion.avif",
+    "source_ids": [
+      "M0043"
+    ],
+    "source_sha256": [
+      "8892dd703509da08aa58fca20234b221c6781950347b3422cb97d0ccba0640ec"
+    ],
+    "role": "animated-image",
+    "caption_zh": "工厂点云现场片段，3 秒循环。",
+    "caption_en": "A three-second loop of factory point-cloud imagery in performance.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 0.5,
+    "source_out": 3.5,
+    "width": 960,
+    "height": 540,
+    "fps": 12,
+    "frames": 36,
+    "fallback": "assets/library/scans/factory/memory-factory/memory-factory-entropy-pointcloud-highlight-16x9.mp4",
+    "size_bytes": 373374,
+    "sha256": "5c6d07893f1a8830538f5be23257b04ae990daa299cebb071d49562eda4f5d52",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "ENTROPY 2026.09.05 Shanghai"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-reactor-2026-09-05-pointcloud-highlight-9x16.mp4",
+    "source_ids": [
+      "M0050"
+    ],
+    "source_sha256": [
+      "636d0043b7107622027277beba111fe5dd7caa1d1dccd52351c5ff38649b0ff5"
+    ],
+    "role": "highlight",
+    "caption_zh": "REACTOR 现场的工厂点云，竖版记录。",
+    "caption_en": "Factory point-cloud imagery at REACTOR, recorded in portrait orientation.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "source_in": 0.5,
+    "source_out": 10.5,
+    "width": 720,
+    "height": 1280,
+    "duration": 10,
+    "audio": "silent",
+    "upscaled": false,
+    "size_bytes": 3086856,
+    "sha256": "042f8660157d839e90547acd248ebd9c06de4b5edc1caae45b97b62634956853",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "REACTOR 2026.09.05"
+  },
+  {
+    "path": "assets/library/scans/factory/memory-factory/memory-factory-reactor-2026-09-05-pointcloud-highlight-poster.avif",
+    "source_ids": [
+      "M0050"
+    ],
+    "source_sha256": [
+      "636d0043b7107622027277beba111fe5dd7caa1d1dccd52351c5ff38649b0ff5"
+    ],
+    "role": "poster",
+    "caption_zh": "REACTOR 现场的工厂点云。",
+    "caption_en": "Factory point-cloud imagery at REACTOR.",
+    "photographer": "unknown",
+    "rights_status": "unknown",
+    "publication_ready": false,
+    "width": 720,
+    "height": 1280,
+    "source_time": 4.5,
+    "size_bytes": 8589,
+    "sha256": "74df2dcac59fcdf46bea7762e28579cbe104afffc477507484ed967b880c82ba",
+    "creator": "unknown",
+    "sequence": "unknown",
+    "project": "Personal Scan Library / Factory Scans / Memory Factory",
+    "event": "REACTOR 2026.09.05"
+  }
+]
