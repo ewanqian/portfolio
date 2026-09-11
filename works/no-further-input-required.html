@@ -1,16 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#000000">
-  <title>No Further Input Required</title>
-  <meta name="description" content="No Further Input Required — an autonomous Three.js generative artwork by Ewan Qian.">
-  <meta http-equiv="refresh" content="0;url=./no-further-input-required-autonomous/">
+  <meta name="theme-color" content="#050505">
+  <title>无需进一步输入 / No Further Input Required — Ewan Qian</title>
+  <meta name="description" content="《无需进一步输入 / No Further Input Required》是钱誉文（Ewan Qian）2026年的单通道影像作品，由AI辅助编程与生成视觉实验发展而来。">
   <style>
-    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#050505;color:#f2f2ee;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{min-height:100vh}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+    a:hover{border-color:#fff}
+    main{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .top{min-height:78vh;display:flex;flex-direction:column;justify-content:space-between;padding:28px 0 54px;border-bottom:1px solid #292929}
+    .nav{display:flex;justify-content:space-between;gap:24px;font-size:12px;letter-spacing:.04em;color:#9d9d98}
+    h1{font-size:clamp(48px,9vw,138px);line-height:.88;letter-spacing:-.055em;font-weight:500;margin:0;max-width:1120px}
+    h1 span{display:block;color:#858580;font-size:.36em;line-height:1.1;letter-spacing:-.02em;margin-top:22px}
+    .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:#b4b4ae}
+    .content{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.55fr);gap:8vw;padding:72px 0 96px}
+    .copy{font-size:clamp(19px,2vw,28px);line-height:1.55;letter-spacing:-.015em}
+    .copy p{margin:0 0 1.25em}
+    .copy .question{margin-top:2.4em;font-size:clamp(28px,3.8vw,50px);line-height:1.14}
+    .side{font-size:13px;line-height:1.65;color:#aaa9a3}
+    .side section{padding:0 0 28px;margin:0 0 28px;border-bottom:1px solid #292929}
+    .side h2{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:500;color:#6e6e69;margin:0 0 12px}
+    .side p{margin:0}
+    .archive a{display:block;width:max-content;max-width:100%;margin:8px 0}
+    footer{padding:22px 0 34px;border-top:1px solid #292929;display:flex;justify-content:space-between;gap:24px;font-size:11px;color:#6e6e69}
+    @media(max-width:760px){
+      main{width:min(100% - 28px,1180px)}
+      .top{min-height:68vh;padding-top:20px}
+      .nav{font-size:11px}
+      .content{grid-template-columns:1fr;gap:56px;padding:52px 0 72px}
+      .copy{font-size:19px}
+      footer{flex-direction:column}
+    }
   </style>
-  <script>window.location.replace('./no-further-input-required-autonomous/' + window.location.search + window.location.hash)</script>
 </head>
-<body></body>
+<body>
+<main>
+  <section class="top">
+    <div class="nav"><span>EWAN QIAN / 钱誉文</span><a href="/">PORTFOLIO</a></div>
+    <h1>无需进一步输入<span>No Further Input Required</span></h1>
+    <div class="meta">
+      <span>2026</span><span>Single-channel moving image</span><span>approx. 90 sec</span><span>16:9 / loop</span>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="copy">
+      <p>《无需进一步输入》由 AI 辅助编程与生成视觉实验发展而来。前期，钱誉文不断运行、预览、修改并筛选生成程序的结果；随着系统持续扩展，生成的增加并未自动带来作品的完整。</p>
+      <p>最终影像保留程序自身的运动逻辑，而构图、密度、变化幅度、时间结构与剪辑仍由艺术家决定。</p>
+      <p class="question">“无需进一步输入”不是对自主智能的确认，而是一个人为设下的停止点：当一个参与者停止继续输入，已经留下的代码、参数、文件与选择还能把作品带多远？</p>
+    </div>
+
+    <aside class="side">
+      <section>
+        <h2>Exhibition version</h2>
+        <p>约 90 秒单通道影像，有明确的开始与结束，现场循环播放。无现场 AI、观众交互或实时控制程序。</p>
+      </section>
+      <section>
+        <h2>Process</h2>
+        <p>AI-assisted coding / generative systems / repeated preview / selection / deletion / manual editing.</p>
+      </section>
+      <section class="archive">
+        <h2>Development archive</h2>
+        <a href="./no-further-input-required-autonomous/">Autonomous WebGL study</a>
+        <a href="./no-further-input-required-interactive-v0.6-archive.html">Interactive v0.6 archive</a>
+      </section>
+    </aside>
+  </section>
+
+  <footer><span>NO FURTHER INPUT REQUIRED · 2026</span><span>© Ewan Qian</span></footer>
+</main>
+</body>
 </html>
