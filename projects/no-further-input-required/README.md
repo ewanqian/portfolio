@@ -1,66 +1,68 @@
 # No Further Input Required — Working Index
 
-This directory contains reusable implementation and design records for **No Further Input Required / 无需进一步输入**.
+This directory contains the development archive for **《无需进一步输入 / No Further Input Required》**.
 
-## Current browser WIP — 2026-08-27
+## Current public / exhibition state — 2026-09-11
 
-The current executable direction is the Three.js **Autonomous Lattice System**:
+The current exhibition work is **not** the earlier six-state interactive browser system and **not** the autonomous WebGL study.
+
+- Artist: 钱誉文 / Ewan Qian
+- Year: 2026
+- Format: single-channel moving image
+- Duration: approx. 90 sec
+- Aspect ratio: 16:9
+- Exhibition mode: loop playback
+- Live AI / audience interaction / realtime control: none in the current exhibition version
+- Public portfolio page: `https://ewanqian.site/works/no-further-input-required`
+- Current approved public statement: [`PUBLIC-PORTFOLIO-2026-09-11.md`](./PUBLIC-PORTFOLIO-2026-09-11.md)
+
+The work developed through AI-assisted coding and generative visual experiments. During development, Ewan repeatedly ran, previewed, modified, selected and removed generated results. The final moving image retains programmatic motion, while composition, density, range of change, temporal structure and editing remain artistic decisions.
+
+The title is currently understood less as proof of autonomy than as a deliberately chosen stopping point: **when one participant stops providing further input, how far can the code, parameters, files and decisions already left behind continue to carry the work?**
+
+## Public presentation rule
+
+Keep the public page short and image-led. Do not use long theory text to compensate for the image. The preferred public structure is:
+
+1. final film / strongest stills;
+2. title + year + format + duration;
+3. one short work description;
+4. one core question;
+5. process material only as secondary evidence.
+
+Do not restore the obsolete `six states / NEXT / HOLD / AUTO` wording to the current exhibition description.
+
+## Development archive
+
+Earlier systems remain useful as records of the process, but they are not the current exhibition format.
+
+### Autonomous WebGL study — 2026-08-27
 
 - [`../../works/no-further-input-required-autonomous/`](../../works/no-further-input-required-autonomous/)
-- runtime: [`../../works/no-further-input-required-autonomous/index.html`](../../works/no-further-input-required-autonomous/index.html)
-- mechanism: [`../../works/no-further-input-required-autonomous/simulation.js`](../../works/no-further-input-required-autonomous/simulation.js)
-- implementation record and tests: [`../../works/no-further-input-required-autonomous/README.md`](../../works/no-further-input-required-autonomous/README.md)
-- canonical public entry: `https://ewanqian.site/works/no-further-input-required`
+- implementation record: [`../../works/no-further-input-required-autonomous/README.md`](../../works/no-further-input-required-autonomous/README.md)
 
-This direction was explicitly established on 2026-08-27. It replaces quantity-growth as the core mechanism with a real self-input loop: the current generation measures density, symmetry, stability and entropy, chooses among EXPAND / CONNECT / PRUNE / MUTATE, and computes the next generation only from the previous one. Earlier visual systems remain available as historical records.
-
-## Previous exhibition direction — 2026-08-25
-
-The previous exhibition direction was the Processing 4 / P2D **Unicode Pictographic Computation System**:
+### Processing / P2D exhibition branch — 2026-08-25
 
 - [`NFI_Unicode_Pictographic_Master/`](./NFI_Unicode_Pictographic_Master/)
-- entry point: [`NFI_Unicode_Pictographic_Master/NFI_Unicode_Pictographic_Master.pde`](./NFI_Unicode_Pictographic_Master/NFI_Unicode_Pictographic_Master.pde)
-- run / system boundary: [`NFI_Unicode_Pictographic_Master/README.md`](./NFI_Unicode_Pictographic_Master/README.md)
+- [`NFI_Artwork_P3D/`](./NFI_Artwork_P3D/)
 
-It implements one unified visual language: symbolic code rows, Unicode pictographic grammar, ordered pattern fields, deterministic memory / residue, and logical connection history inside a 30-second recurrent score.
+### Interactive browser archive
 
-Its five visual systems were:
+- `https://ewanqian.site/works/no-further-input-required-interactive-v0.6-archive.html`
+- [`v0.7-performance-reference.md`](./v0.7-performance-reference.md)
+- [`P01-P08-PERFORMANCE-BRIDGE.md`](./P01-P08-PERFORMANCE-BRIDGE.md)
 
-1. Row Engine
-2. Glyph Grammar
-3. Spring Motion
-4. Connection Engine
-5. Memory / Score Engine
+### Parallel studies
 
-This Processing branch remains intact as a dated version rather than being overwritten by the new browser runtime.
+- [`NFI_Lattice_Three/`](./NFI_Lattice_Three/)
+- archived WebGL experiments remain under `works/no-further-input-required-*`
 
-## Start here for agents
+## Canonical project records
 
-- [`AGENT-REFERENCE.md`](./AGENT-REFERENCE.md) — implementation rules, v0.7 reuse policy, touch-performance architecture, and P01–P08 process prototypes.
-- [`v0.7-performance-reference.md`](./v0.7-performance-reference.md) — human-readable record of what is valuable in Interactive v0.7 and what should not be inherited.
-- [`P01-P08-PERFORMANCE-BRIDGE.md`](./P01-P08-PERFORMANCE-BRIDGE.md) — converts the eight process modules into a reusable Live Set grammar with BPM, gesture semantics, phrase envelopes, residue, novice safety and audience tests.
+- Public portfolio copy: [`PUBLIC-PORTFOLIO-2026-09-11.md`](./PUBLIC-PORTFOLIO-2026-09-11.md)
+- Historical long-form project document: [`../no-further-input-required-2026.md`](../no-further-input-required-2026.md)
+- Public page source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
 
-## Canonical project files
+## Rule for future updates
 
-- Main project document: [`../no-further-input-required-2026.md`](../no-further-input-required-2026.md)
-- Canonical playable source: [`../../works/no-further-input-required.html`](../../works/no-further-input-required.html)
-- Canonical public playable URL: `https://ewanqian.site/works/no-further-input-required`
-
-
-## Parallel lattice study — 2026-08-27
-
-An earlier Three.js / WebGL 3D lattice study from the same day remains in its own folder for direct A/B comparison. It predates the stricter 70-second input cutoff, full-state cycle inheritance and locally vendored runtime used by the current Autonomous Lattice System, so it remains a study rather than the canonical entry.
-
-- source: [`NFI_Lattice_Three/`](./NFI_Lattice_Three/)
-- public: https://ewanqian.site/works/no-further-input-required-lattice/
-- short: https://ewanqian.site/nfi-lattice.html
-
-## Archived WebGL experiment
-
-The browser-native WebGL build is preserved for reference at [`../../works/no-further-input-required-webgl/`](../../works/no-further-input-required-webgl/) and `https://ewanqian.site/works/no-further-input-required-webgl.html`.
-
-It is **not the current exhibition visual direction**. The six-structure / grid ontology from that experiment should not be treated as the master preset for new work.
-
-## Rule
-
-Keep earlier versions available as historical references. The 2026-08-27 Autonomous Lattice System is the current approved browser WIP; later changes must preserve its parent-dependent generations, visible ancestry and self-input boundary unless Ewan explicitly replaces that mechanism.
+New public descriptions should follow the current exhibition state first. Older autonomous, live-control and six-state descriptions are development history unless Ewan explicitly reactivates them as a new version.
