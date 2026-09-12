@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 REPO = Path(__file__).resolve().parents[1]
-REPORT = REPO / 'docs/media-packages/september-2026'
+REPORT = REPO / 'docs/media-packages/260912-01-live-performance'
 SOURCE = Path(r'E:\wip\media-inventory-20260911-155919\quality-review-v1\media-manifest.json')
 AE='assets/works/atmospheric-escape'
 NFI='assets/works/no-further-input-required'

@@ -2,7 +2,7 @@
 
 Scope: user requested asset preparation, meaningful filenames, highlight clips, animated point-cloud AVIF, bilingual copy, and handoff to an online agent. Latest instruction explicitly cancelled webpage implementation and authorized a local commit. No push or publication authorized.
 
-Entry: `docs/media-packages/september-2026/README.md` and `HANDOFF.md`.
+Entry: `docs/media-packages/260912-01-live-performance/README.md` and `HANDOFF.md`.
 
 Added: 45 derived media files, three bilingual editorial documents, provenance/quality manifests, verification results, and two reproducible Python scripts. No routes, UI components, existing content database, or generated website code changed.
 

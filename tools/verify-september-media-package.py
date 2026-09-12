@@ -1,7 +1,7 @@
 """Decode and validate the derived package; compare source files with initial hashes."""
 import csv,json,subprocess,hashlib,re
 from pathlib import Path
-repo=Path(__file__).resolve().parents[1];folder=repo/'docs/media-packages/september-2026'
+repo=Path(__file__).resolve().parents[1];folder=repo/'docs/media-packages/260912-01-live-performance'
 assets=json.loads((folder/'asset-manifest.json').read_text(encoding='utf-8'))
 sources=json.loads((folder/'source-manifest.json').read_text(encoding='utf-8'))
 errors=[];checks=[]
