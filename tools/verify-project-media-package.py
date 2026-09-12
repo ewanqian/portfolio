@@ -31,7 +31,7 @@ for a in assets:
  elif p.suffix=='.avif':assert int(v['nb_read_frames'])==1
  checks.append(dict(path=a['path'],width=v['width'],height=v['height'],frames=int(v['nb_read_frames']),duration=m['format'].get('duration'),decode='pass' if result.returncode==0 else 'fail'))
 for s in sources:assert sha(Path(s['original_path']))==s['sha256']
-copyfiles=['projects/atmospheric-escape-2026.md','projects/no-further-input-required-2026.md','projects/reactor-2026-09-05.md']
+copyfiles=['projects/atmospheric-escape-2026.md','docs/media-packages/260912-01-live-performance/copy/no-further-input-required.md','projects/reactor-2026-09-05.md']
 for rel in copyfiles:
  t=(repo/rel).read_text(encoding='utf-8')
  assert not re.search(r'\b(TODO|NEEDS_REVIEW|draft|verify|approval|source.path)\b|待确认|待审核|证据|源路径',t,re.I)

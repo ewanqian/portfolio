@@ -94,4 +94,8 @@ assets/library/scans/factory/memory-factory/
 
 ## 可复现
 
-`python tools/build-september-media-package.py` 从本地来源生成媒体。来源索引默认指向本次 E 盘盘点；线上无需重跑，直接消费已交付资产。原图／原视频没有移动、覆盖、删除。未推送。
+`python tools/build-project-media-package.py` 从本地来源生成媒体。来源索引默认指向本次 E 盘盘点；线上无需重跑，直接消费已交付资产。原图／原视频没有移动、覆盖、删除。未推送。
+
+## 上传整合说明
+
+上传前同步了最新 main，发现已有更新的《无需进一步输入》主文稿。完整保留 projects/no-further-input-required-2026.md；本次展陈补充文案在 [copy/no-further-input-required.md](copy/no-further-input-required.md)。主文稿优先，补充文字按现有作品机制整合，不替换概念。此前程序截图搜索仅针对旧本地快照，接手时应重新检查最新仓库。
