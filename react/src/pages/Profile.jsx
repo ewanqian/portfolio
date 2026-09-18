@@ -118,6 +118,12 @@ const copy = {
         meta: '3DGS / 空间保存 / 网页档案',
         body:
           '围绕高斯重建、空间保存、网页浏览和个人场景档案展开。它连接影像制作、空间扫描和作品集系统，也为 VIRTURA Spaceport 提供更长期的公共档案方向。'
+      },
+      {
+        title: 'MECHANIC BATTLE / 机械格斗',
+        meta: '机器人格斗 / Synthetic Combat Anatomy / 实时视觉系统',
+        body:
+          '由机器人城市巡回挑战赛的现场视觉需求触发的研究线。项目不把比赛机器人简单包装成“赛博机甲”，而是建立一套介于真实机器人、合成人体、机械解剖与运动分析之间的可演奏视觉系统：以机器外壳、结构骨架、合成肌束、信号网络和动作/受力分析为核心，将模型拆解、线框、扫描、爆炸图、运动残影和实时 HUD 组织成可复用的现场视觉语法。'
       }
     ],
     methodTitle: '方法与工具',
@@ -251,6 +257,12 @@ const copy = {
         meta: '3DGS / spatial preservation / web archive',
         body:
           'A spatial-preservation and web-archive line connecting Gaussian reconstruction, scene viewing, image production, and VIRTURA Spaceport’s longer-term public archive direction.'
+      },
+      {
+        title: 'MECHANIC BATTLE',
+        meta: 'Robot combat / Synthetic Combat Anatomy / real-time visual system',
+        body:
+          'A research line initiated through live-visual development for a robot city-tour combat event. Rather than treating competition robots as generic cyber-mecha, the project builds a playable visual system between real machines, synthetic anatomy, mechanical dissection, and motion analysis. Machine shells, structural frames, synthetic muscle bundles, signal networks, exploded assemblies, wireframes, scans, motion traces, force analysis, and live HUD states become a reusable performance grammar.'
       }
     ],
     methodTitle: 'Method and Tools',
