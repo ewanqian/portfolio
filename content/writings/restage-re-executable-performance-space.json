@@ -1,0 +1,16 @@
+{
+  "id": "restage-re-executable-performance-space",
+  "slug": "restage-re-executable-performance-space",
+  "title": "ReStage：可再执行的演出空间",
+  "titleEn": "ReStage: Re-executable Performance Space",
+  "type": "Research / Long-term Project",
+  "category": "research",
+  "date": "2026-09-18",
+  "summary": "研究如何把一次现场视听演出保存为可测量、可重建、可编辑、可再次执行的空间状态，并以开放的 OPS 数据层连接 Web、Unity、Apple Vision Pro 与 AI Agent。",
+  "summaryEn": "A long-term research project on preserving live audiovisual performance as a measurable, reconstructable and re-executable spatial state shared across Web, Unity, Apple Vision Pro and AI agents.",
+  "articlePath": "research/restage-re-executable-performance-space/README.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/research/restage-re-executable-performance-space/README.md",
+  "status": "published",
+  "featured": true,
+  "order": 1
+}
