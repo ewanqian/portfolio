@@ -7,33 +7,36 @@
     "en": "Audiovisual Engineer Simulator"
   },
   "short": {
-    "zh": "承接《极简输入》，通过“一键控场”和“舞台预演”两门科目，分别训练现场控制与视觉工程 / 空间预演。",
-    "en": "A workshop series extending Minimal Input through One-Button Show Control for live performance control and Stage Previsualization for visual engineering and spatial previs."
+    "zh": "承接《极简输入》，通过“现场副驾”和“舞台复刻”两门科目，分别处理 AI 辅助现场控制与数字舞台复刻 / 预演。",
+    "en": "A workshop series extending Minimal Input through Live Show Copilot for AI-assisted show control and Stage Replica for rebuilding, remixing and previsualizing digital stages."
   },
   "premise": {
-    "zh": "把视听内容组织成能够进入时间、空间和真实现场的工程，并通过模拟、预演和重复练习持续改进。",
-    "en": "Organize audiovisual content into systems that can operate across time, space and live performance, then improve them through simulation, previs and repeated practice."
+    "zh": "AI 先帮助整理控制与空间，人继续负责现场判断、创意改造与最终演出。",
+    "en": "AI helps organize control and spatial systems while the participant remains responsible for live judgment, creative transformation and performance."
   },
   "tags": [
     "Audiovisual",
     "Live Performance",
-    "Show Control",
-    "Stage Previsualization",
-    "Visual Engineering",
-    "Mapping"
+    "AI-Assisted Show Control",
+    "Live Show Copilot",
+    "Stage Replica",
+    "Mapping",
+    "MCP",
+    "Visual Audio"
   ],
   "readmePath": "workshops/audiovisual-engineer-simulator/README.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/audiovisual-engineer-simulator/README.md",
   "editions": [
     {
       "date": "2026-09-29",
-      "status": "confirmed",
-      "context": "MANA follow-up workshop proposal and editorial package"
+      "status": "final",
+      "context": "MANA follow-up workshop editorial package"
     }
   ],
   "resources": [
     "workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md",
     "workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md",
-    "workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md"
+    "workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md",
+    "research/visual-audio/README.md"
   ]
 }
