@@ -1,6 +1,20 @@
 # 长期工作坊项目内容介绍
 ## Ewan Qian / 钱誉文｜2026
 
+# 最新项目｜视听工程师模拟器
+## Audiovisual Engineer Simulator
+
+**状态：** 2026-09-29 课程体系确认，MANA 推文与现场执行准备中。
+
+这条课程线延续《极简输入：构建视听系统》，继续把参与者从“做出一个系统”带到真正的演出现场：
+
+- **科目一｜一键控场 / One-Button Show Control**：现场控制系统，重点是 BPM、状态、能量、留白、恢复与 DJ 场景模拟。
+- **科目二｜舞台预演 / Stage Previsualization**：视觉工程、空间组织与现场预演，重点是读场、屏幕角色、Mapping、时间结构、预演与交付。
+
+[查看《视听工程师模拟器》完整项目归档](../../workshops/audiovisual-engineer-simulator/README.md)
+
+---
+
 当前工作坊项目分成三个层级：
 
 1. **《游戏化 AI 新媒体艺术工程师 101》｜MANA 8 月 29 日先导课**：13:30–16:30，3 小时工作坊，结尾进行快速 Showcase。
