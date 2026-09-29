@@ -8,8 +8,8 @@
 
 这条课程线延续《极简输入：构建视听系统》，继续把参与者从“做出一个系统”带到真正的演出现场：
 
-- **科目一｜一键控场 / One-Button Show Control**：现场控制系统，重点是 BPM、状态、能量、留白、恢复与 DJ 场景模拟。
-- **科目二｜舞台预演 / Stage Previsualization**：视觉工程、空间组织与现场预演，重点是读场、屏幕角色、Mapping、时间结构、预演与交付。
+- **科目一｜现场副驾 / Live Show Copilot**：现场控制系统，重点是 BPM、状态、能量、留白、恢复与 DJ 场景模拟。
+- **科目二｜舞台复刻 / Stage Replica**：视觉工程、空间组织与现场预演，重点是读场、屏幕角色、Mapping、时间结构、预演与交付。
 
 [查看《视听工程师模拟器》完整项目归档](../../workshops/audiovisual-engineer-simulator/README.md)
 
