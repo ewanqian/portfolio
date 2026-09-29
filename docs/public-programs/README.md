@@ -4,14 +4,15 @@
 # 最新项目｜视听工程师模拟器
 ## Audiovisual Engineer Simulator
 
-**状态：** 2026-09-29 课程体系确认，MANA 推文与现场执行准备中。
+《视听工程师模拟器》从《极简输入》继续往真实现场推进。科目一解决“我能演了”，科目二解决“我能搭了”。
 
-这条课程线延续《极简输入：构建视听系统》，继续把参与者从“做出一个系统”带到真正的演出现场：
+《现场副驾》打开 Ewan 自己演出时使用的 Resolume Arena 工程，学习怎样组织爆闪、节拍与控制层，准备时间参考，再进入 DJ 现场模拟。
 
-- **科目一｜现场副驾 / Live Show Copilot**：现场控制系统，重点是 BPM、状态、能量、留白、恢复与 DJ 场景模拟。
-- **科目二｜舞台复刻 / Stage Replica**：视觉工程、空间组织与现场预演，重点是读场、屏幕角色、Mapping、时间结构、预演与交付。
+《舞台复刻》从参考图、现场视频、虚拟世界或自己的视觉作品开始，学习观察、解构、组织和重构，让同一个舞台拥有不同状态，最后通过网页预演和分享。
 
-[查看《视听工程师模拟器》完整项目归档](../../workshops/audiovisual-engineer-simulator/README.md)
+AI / MCP 辅助整理控制与空间；参与者练习现场判断和创作编排。
+
+[系列课程](../../workshops/audiovisual-engineer-simulator/README.md) · [MANA 编辑稿](../../workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md)
 
 ---
 

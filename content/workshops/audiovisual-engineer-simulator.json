@@ -7,12 +7,12 @@
     "en": "Audiovisual Engineer Simulator"
   },
   "short": {
-    "zh": "承接《极简输入》，通过“现场副驾”和“舞台复刻”两门科目，分别处理 AI 辅助现场控制与数字舞台复刻 / 预演。",
-    "en": "A workshop series extending Minimal Input through Live Show Copilot for AI-assisted show control and Stage Replica for rebuilding, remixing and previsualizing digital stages."
+    "zh": "承接《极简输入》：现场副驾学习组织节拍与控制，进入 DJ 现场模拟；舞台复刻学习解构与重组场景，用四种状态完成网页预演和分享。",
+    "en": "Extending Minimal Input: Live Show Copilot organizes rhythm and controls for a live DJ simulation; Stage Replica deconstructs and remixes a scene into four states for browser preview and sharing."
   },
   "premise": {
-    "zh": "AI 先帮助整理控制与空间，人继续负责现场判断、创意改造与最终演出。",
-    "en": "AI helps organize control and spatial systems while the participant remains responsible for live judgment, creative transformation and performance."
+    "zh": "科目一“我能演了”，科目二“我能搭了”。从真实工程与喜欢的现场开始，AI / MCP 辅助整理控制与空间。",
+    "en": "Learn to perform and build a stage, starting from a real show project and scenes you love. AI / MCP assists with control and spatial organization."
   },
   "tags": [
     "Audiovisual",
@@ -37,6 +37,7 @@
     "workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md",
     "workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md",
     "workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md",
-    "research/visual-audio/README.md"
+    "research/visual-audio/README.md",
+    "workshops/audiovisual-engineer-simulator/视听工程师模拟器_两场课程最终文案_MANA编辑版_2026-09-29.docx"
   ]
 }

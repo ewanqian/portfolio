@@ -81,6 +81,7 @@
 - [视听工程师模拟器 / Audiovisual Engineer Simulator](./workshops/audiovisual-engineer-simulator/README.md)
 - [科目一｜现场副驾 / Live Show Copilot](./workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md)
 - [科目二｜舞台复刻 / Stage Replica](./workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md)
+- [两场课程长短版与 MANA 编辑稿](./workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md)
 
 ### 当前第一期
 
