@@ -79,8 +79,8 @@
 ### 当前最新
 
 - [视听工程师模拟器 / Audiovisual Engineer Simulator](./workshops/audiovisual-engineer-simulator/README.md)
-- [科目一｜一键控场 / One-Button Show Control](./workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md)
-- [科目二｜舞台预演 / Stage Previsualization](./workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md)
+- [科目一｜现场副驾 / Live Show Copilot](./workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md)
+- [科目二｜舞台复刻 / Stage Replica](./workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md)
 
 ### 当前第一期
 
