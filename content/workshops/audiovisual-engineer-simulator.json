@@ -1,0 +1,39 @@
+{
+  "slug": "audiovisual-engineer-simulator",
+  "kind": "series",
+  "order": 30,
+  "title": {
+    "zh": "视听工程师模拟器",
+    "en": "Audiovisual Engineer Simulator"
+  },
+  "short": {
+    "zh": "承接《极简输入》，通过“一键控场”和“舞台预演”两门科目，分别训练现场控制与视觉工程 / 空间预演。",
+    "en": "A workshop series extending Minimal Input through One-Button Show Control for live performance control and Stage Previsualization for visual engineering and spatial previs."
+  },
+  "premise": {
+    "zh": "把视听内容组织成能够进入时间、空间和真实现场的工程，并通过模拟、预演和重复练习持续改进。",
+    "en": "Organize audiovisual content into systems that can operate across time, space and live performance, then improve them through simulation, previs and repeated practice."
+  },
+  "tags": [
+    "Audiovisual",
+    "Live Performance",
+    "Show Control",
+    "Stage Previsualization",
+    "Visual Engineering",
+    "Mapping"
+  ],
+  "readmePath": "workshops/audiovisual-engineer-simulator/README.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/audiovisual-engineer-simulator/README.md",
+  "editions": [
+    {
+      "date": "2026-09-29",
+      "status": "confirmed",
+      "context": "MANA follow-up workshop proposal and editorial package"
+    }
+  ],
+  "resources": [
+    "workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md",
+    "workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md",
+    "workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md"
+  ]
+}

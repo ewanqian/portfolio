@@ -76,6 +76,12 @@
 
 ## Workshops / Public Programs
 
+### 当前最新
+
+- [视听工程师模拟器 / Audiovisual Engineer Simulator](./workshops/audiovisual-engineer-simulator/README.md)
+- [科目一｜一键控场 / One-Button Show Control](./workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md)
+- [科目二｜舞台预演 / Stage Previsualization](./workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md)
+
 ### 当前第一期
 
 - [游戏化 AI 新媒体艺术工程师 101｜MANA｜2026-08-29 13:30–16:30｜3 小时 + 快速 Showcase](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
