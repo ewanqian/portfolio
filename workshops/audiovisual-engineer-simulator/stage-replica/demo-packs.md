@@ -109,6 +109,7 @@ Primary test: **两块屏幕如何从独立状态变成一个整体。**
 # B｜Stadium / 360° Concert
 
 **Issue:** #79  
+**Role:** 技术型第 4 Demo / Camera + Director 验证  
 **Reference:** STUFISH — Anna Vissi / Live at OAKA
 
 公开参考可确认：95,000 人环绕观看；30m circular stage；20m cylindrical blow-through LED screen。
@@ -203,16 +204,19 @@ Primary test: **同一视觉从“前方屏幕”扩展到“包裹整个观众�
 
 ---
 
-# Demo Production Order
+# Demo Production Priority
 
-如果时间紧，优先级：
+## 对外主 3
 
-1. **Festival** — 最快看懂，适合宣传第一条
-2. **Stadium** — 把摄像机 / 导播功能做出来
-3. **Sphere** — 最有规模感，适合主视觉
-4. **Installation** — 用来证明 Stage Replica 不是只做大型演唱会
+1. **Sphere** — 演唱会 / 超大型沉浸式 Demo；先拿出最能吸引人的主视觉
+2. **Festival** — 最容易在几秒内看懂课程怎么玩
+3. **Installation** — 让课程不被理解成“只做演唱会模板”
 
-## 每个 Demo 的最低交付
+## 技术第 4 Demo
+
+4. **Stadium / 360° Concert** — Camera / Director / Program Out 验证；如果时间紧可以后补，但 issue 与技术设定保留。
+
+## 每个主 Demo 的最低交付
 
 - 1 张参考图 / 官方案例页面
 - 1 张灰模结构图
