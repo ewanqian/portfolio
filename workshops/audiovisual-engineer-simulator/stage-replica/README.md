@@ -65,17 +65,17 @@
 
 ## 当前 Demo Sprint
 
-31 号以前优先准备 4 个低保真但一眼能看懂的 Demo。它们不追求完整高保真成片，而是证明 Stage Replica 可以处理不同的现场类型。
+对外宣传优先完成 **3 个主 Demo**：
 
-1. **Festival / Coachella Quasar-inspired** — 两块巨型 LED + 中央 DJ + 实时画面  
-   Issue #78
-2. **Stadium / 360° Concert** — 圆形舞台 + 环形 LED + 人物 + 多机位导播  
-   Issue #79
-3. **Installation / data-verse-inspired** — 大画面 + 声音 + 观看距离 + 慢变化  
-   Issue #80
-4. **Sphere / Immersive Dome** — 包裹式曲面 + 1:1 media proxy + 观众视角  
-   Issue #81
+1. **Sphere / Immersive Dome** — 演唱会 / 超大型沉浸式视觉；负责最强的规模感与主视觉
+2. **Festival / Coachella Quasar-inspired** — 两块巨型 LED + 中央 DJ + 实时画面；负责最快看懂的音乐节案例
+3. **Installation / data-verse-inspired** — 大画面 + 声音 + 观看距离 + 慢变化；负责证明 Stage Replica 不只做大型演唱会
 
+同时保留一个 **技术型第 4 Demo**：
+
+4. **Stadium / 360° Concert** — 圆形舞台 + 环形 LED + 人物 + 多机位导播；重点测试 Camera / Director / Program Out，可作为课堂技术展示或宣传补充。
+
+对应 Issues：#78 / #79 / #80 / #81。  
 详细规格见 [`demo-packs.md`](./demo-packs.md)。
 
 ## Web / Realtime 主线
@@ -105,14 +105,14 @@ WebRTC 第一版只解决一个问题：**把另一块网页 / 另一台电脑�
 - Cut 切换
 - 数字键 1–4 切机位
 
-体育馆 Demo 重点展示导播；Installation / Sphere 则更重视观看位置而不是快速切镜头。
+Stadium Demo 重点展示导播；Installation / Sphere 则更重视观看位置而不是快速切镜头。
 
 ## 当前宣传需要补齐的资料
 
 - 上一期学员作品录屏：小翅膀、裂解
 - 上一期现场拍摄视频
 - 1 个完成度最高的 Stage Replica 主 Demo
-- 2–3 个较短的类型 Demo
+- 2 个不同类型的短 Demo
 - `reference → structure → own content` 对照图
 - 网页预演 / 摄像机切换录屏
 
