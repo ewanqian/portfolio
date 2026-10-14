@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Stage Replica｜Sphere Graybox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #05070b; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+  .hud {
+    position: fixed; inset: 0; pointer-events: none;
+    font: 12px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color: #c9d3e0; letter-spacing: .02em;
+  }
+  .hud > * { position: absolute; }
+  #title { top: 16px; left: 16px; }
+  #title b { display: block; font-size: 15px; letter-spacing: .06em; color: #eef3f9; }
+  #title span { color: #7d8b9e; }
+  #proxy {
+    top: 16px; right: 16px; max-width: 380px; text-align: right;
+    padding: 8px 10px; border: 1px solid #2b3546; background: rgba(8,11,16,.82);
+    color: #ffcf8a;
+  }
+  #readout {
+    bottom: 16px; left: 16px; padding: 8px 10px;
+    border: 1px solid #223047; background: rgba(8,11,16,.82); min-width: 300px;
+  }
+  #readout dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; }
+  #readout dt { color: #7d8b9e; }
+  #readout dd { margin: 0; color: #e6edf6; }
+  #hint { bottom: 16px; right: 16px; color: #6c7a8d; text-align: right; }
+  .sw { display: inline-block; width: 8px; height: 8px; margin-right: 6px; vertical-align: 1px; }
+</style>
+</head>
+<body>
+<div class="hud">
+  <div id="title">
+    <b>STAGE REPLICA — SPHERE / IMMERSIVE DOME</b>
+    <span>灰盒 / GRAYBOX · Issue #81 · 结构步：仅几何与尺度</span>
+  </div>
+  <div id="proxy">
+    <b>教学预演 PROXY</b><br>
+    dome r=25m · 观众地面 ⌀34m · 舞台 14×8m · 4096²/2048²<br>
+    <span style="color:#8c7a5e">非 Sphere 真实场馆尺寸 / 非 16K 母版规格</span>
+  </div>
+  <div id="readout">
+    <dl>
+      <dt>VIEW</dt><dd id="r-view">—</dd>
+      <dt>CAMERA</dt><dd id="r-cam">—</dd>
+      <dt>EYE</dt><dd id="r-eye">—</dd>
+      <dt>SCALE</dt><dd id="r-scale">—</dd>
+    </dl>
+  </div>
+  <div id="hint">
+    <div><span class="sw" style="background:#ffb86b"></span>performer 1.7m</div>
+    <div><span class="sw" style="background:#6ea8ff"></span>观众地面 ⌀34m</div>
+    <div><span class="sw" style="background:#3a4759"></span>dome 网格</div>
+    <div>?view=AUDIENCE_CENTER | AUDIENCE_LEFT | STAGE_LOOKBACK | DEBUG_ORBIT</div>
+  </div>
+</div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.185.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="./graybox.js"></script>
+</body>
+</html>

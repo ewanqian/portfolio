@@ -1,0 +1,82 @@
+{
+  "sceneId": "sphere-dome-a",
+  "units": "meters",
+  "note": "教学预演 proxy。所有几何与分辨率均不代表 Sphere 真实场馆尺寸或 16K x 16K 母版规格。",
+  "structure": {
+    "domeRadiusM": 25,
+    "audienceFloorDiameterM": 34,
+    "stagePlatform": {
+      "widthM": 14,
+      "depthM": 8,
+      "heightM": 0.9
+    },
+    "performerHeightM": 1.7,
+    "eyeHeightM": 1.6,
+    "gridRingM": 5,
+    "gridRadials": 12,
+    "scaleBarM": 5
+  },
+  "screens": [
+    {
+      "id": "DOME_MAIN",
+      "shape": "dome",
+      "physicalSize": {
+        "radiusM": 25,
+        "coverage": "hemisphere"
+      },
+      "raster": {
+        "master": "4096x4096",
+        "fast": "2048x2048"
+      },
+      "transform": {
+        "positionM": [0, 0, 0],
+        "rotationDeg": [0, 0, 0]
+      },
+      "source": {
+        "type": "procedural",
+        "id": "local-generative",
+        "state": "idle"
+      },
+      "fallback": {
+        "type": "local-loop",
+        "id": "dome-fallback-loop"
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "id": "AUDIENCE_CENTER",
+      "label": "观众正中",
+      "positionM": [0, 1.6, 12],
+      "targetM": [0, 3.0, 0],
+      "fovDeg": 62,
+      "eyeHeightM": 1.6
+    },
+    {
+      "id": "AUDIENCE_LEFT",
+      "label": "观众偏左",
+      "positionM": [-6.5, 1.6, 10.5],
+      "targetM": [0, 3.0, 0],
+      "fovDeg": 62,
+      "eyeHeightM": 1.6
+    },
+    {
+      "id": "STAGE_LOOKBACK",
+      "label": "舞台回看观众",
+      "positionM": [0, 1.9, 0],
+      "targetM": [0, 3.2, 12],
+      "fovDeg": 70,
+      "eyeHeightM": 1.9
+    },
+    {
+      "id": "DEBUG_ORBIT",
+      "label": "外部调试 / 剖切",
+      "positionM": [0, 30, 54],
+      "targetM": [0, 4, 0],
+      "fovDeg": 45,
+      "eyeHeightM": null
+    }
+  ],
+  "states": ["HORIZON", "ENCLOSE", "FULL_FIELD", "APERTURE"],
+  "programCamera": "AUDIENCE_CENTER"
+}

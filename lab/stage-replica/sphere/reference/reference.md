@@ -62,6 +62,8 @@
 | `proxy_master` | 4096 × 4096 | 浏览器 proxy（真实参考为 16k × 16k） |
 | `fast_proxy` | 2048 × 2048 | 浏览器 proxy |
 | `program_out` | 1920 × 1080 | 输出规格 |
+| `stage_platform_height_m` | 0.9 | **本 Demo 补充 proxy**（brief / demo-packs 只给了 14m × 8m 平面尺寸，未给高度） |
+| camera positions（4 个机位坐标与 FOV） | 见 `sphere/build/scene.json` | **本 Demo 自定**；brief 只指定机位名称与"观众视角为主"，未给坐标 |
 
 **公开产物的固定标注用语：**
 > 几何尺寸与 4096² / 2048² 分辨率为教学预演 proxy，不代表 Sphere 实际场馆尺寸与 16K × 16K 母版规格。

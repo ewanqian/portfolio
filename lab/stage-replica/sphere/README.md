@@ -47,8 +47,8 @@
 | 阶段 | 状态 | 备注 |
 |---|---|---|
 | REFERENCE LOCK | ✅ 完成 | [`reference/reference.md`](./reference/reference.md)：confirmed / proxy 已分离；修正 1 条断链与 2 处未获原文支持的措辞 |
-| GRAYBOX | ⬜ | 下一步 |
-| V1 RUN | ⬜ | |
+| GRAYBOX | ✅ 完成 | [`build/`](./build/)：结构 + 尺度可运行，含 3 张核验截图与已知不足记录（[`build/NOTES.md`](./build/NOTES.md)） |
+| V1 RUN | ⬜ | 需先完成 S3（mapping / 四状态 / source / 四机位） |
 | REVIEW | ⬜ | `review/review-v1.md` |
 | V2 RUN | ⬜ | `review/review-diff-v1-v2.md` |
 | DELIVERY | ⬜ | `delivery/` |
