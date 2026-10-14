@@ -20,6 +20,9 @@ _OUTPUT_作品集素材包/
 素材扫描清单.md
 react/public/assets/digital-garden/
 
+# Stage Replica: local-only reference captures (third-party pages, not re-published)
+lab/stage-replica/**/_local/
+
 # Private / local-only portfolio memory
 # The repository is public. Anything sensitive must stay outside Git history.
 .private/
