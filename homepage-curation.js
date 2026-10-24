@@ -53,10 +53,12 @@
       else card.remove()
     })
 
-    preferredOrder.forEach((key) => {
-      const card = selected.get(key)
-      if (card && card.parentElement !== primaryGrid) primaryGrid.appendChild(card)
-      else if (card) primaryGrid.appendChild(card)
+    const desiredCards = preferredOrder.map((key) => selected.get(key)).filter(Boolean)
+    desiredCards.forEach((card, index) => {
+      const currentCard = primaryGrid.children[index]
+      if (currentCard !== card) {
+        primaryGrid.insertBefore(card, currentCard || null)
+      }
     })
 
     sections.slice(1).forEach((section) => section.remove())
