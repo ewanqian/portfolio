@@ -21,6 +21,8 @@
 
 - `works.json`
   项目对象总表，也是当前最重要的入口。已经开始承载 `collaboratorIds`、`venueId`、`relatedNodeIds`、`awards`、`sourceDocs` 这类关系字段。
+- `canonical_names.json`
+  对外正式命名与 CV / Portfolio 展示名覆盖表。内部 id 保持稳定，公开标题、简历行、申请材料与网页显示优先读取这里确认的 canonical naming。
 - `nodes.json`
   公开节点、展览、演出、创作营、奖项语境。适合承接“这个项目为什么在公共层面重要”。
 - `people.json`
@@ -57,6 +59,7 @@
 ## Source of Truth / 真正的来源关系
 
 - 项目对象存在性：以 `database/works.json` 为准；如果 `projects/*.md` 文件名与对象 id 不一致，应在 `sourceDocs` 或 `mapping_files.json` 中建立映射，而不是直接视为缺对象。
+- 对外项目命名：以 `database/canonical_names.json` 与 `docs/bio/canonical-project-names.md` 为准；不要因为历史 `works.json` 名称或内部“节点”称呼重新创造公开标题。
 - 人工详细正文：以 `projects/*.md` 为准。
 - 前台精选内容：以 `content/` 为准。
 - 构建产物：以 `react/src/data/generated/` 为准，但不能当源头。
@@ -65,15 +68,17 @@
 
 1. 新项目或旧项目补录时，先写 `works.json`。
 2. 如果项目有清晰公开节点，再补 `nodes.json`。
-3. 如果出现稳定协作者、场地、屏幕条件、方法笔记，再补 `people / venues / screens / notes_index`。
-4. 如果项目进入首页或需要前台消费，再抽取到 `content/works`、`content/nodes`。
-5. React 前台只读取 `react/src/data/generated/`，不要把临时信息直接写进生成结果。
+3. 如果项目已形成稳定对外名称，同时补 `canonical_names.json`，CV、投稿、caption 与网站统一使用该名称。
+4. 如果出现稳定协作者、场地、屏幕条件、方法笔记，再补 `people / venues / screens / notes_index`。
+5. 如果项目进入首页或需要前台消费，再抽取到 `content/works`、`content/nodes`。
+6. React 前台只读取 `react/src/data/generated/`，不要把临时信息直接写进生成结果。
 
 ## What Changed / 这轮更新后有什么不同
 
 这层已经不再是“只有 `works.json` 能用，其余表都没展开”的状态。  
 第一批高价值对象已经开始落进：
 
+- `canonical_names.json`
 - `nodes.json`
 - `people.json`
 - `venues.json`
