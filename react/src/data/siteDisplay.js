@@ -1,7 +1,7 @@
 const imagePathOverrides = {
-  '/portfolio/assets/home/featured-dropflow-main.webp': '/portfolio/assets/home/featured-dropflow-hangzhou-biennale-scene.webp',
+  '/portfolio/assets/home/featured-dropflow-main.webp': './assets/pdf-media/dropflow-biennale-main.webp',
   '/portfolio/assets/home/featured-perceptual-environments.webp': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
-  '/portfolio/assets/home/featured-timer-main.webp': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  '/portfolio/assets/home/featured-timer-main.webp': './assets/pdf-media/timer-loading-access-2-main.webp',
   '/portfolio/assets/home/featured-timer-visionpro.webp': '/portfolio/assets/home/archive-timer-clean.webp'
 }
 
@@ -9,8 +9,8 @@ const imageIdOverrides = {
   'ar-shenzhen-resort-2022': '/portfolio/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp',
   'babel-bottle': '/portfolio/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp',
   'can-festival': '/portfolio/assets/public-nodes/can-festival.webp',
-  'drop-flow': '/portfolio/assets/raw-picks/dropflow-concept-250426.webp',
-  'drop-flow-hangzhou-biennale': '/portfolio/assets/public-nodes/dropflow-hangzhou.webp',
+  'drop-flow': './assets/pdf-media/dropflow-biennale-main.webp',
+  'drop-flow-hangzhou-biennale': './assets/pdf-media/dropflow-biennale-main.webp',
   'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp',
   'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.webp',
   'digital-garden-visual-2025': '/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp',
@@ -31,9 +31,9 @@ const imageIdOverrides = {
   'rain-singapore-visual-2026': '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
   'sre-realtime-liveset-2026': '/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp',
   'shanhaifusheng2-visual-2025': '/portfolio/assets/raw-library/floating-life-ii-performance.webp',
-  'timer': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
-  'timer-loading-access-2-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
-  'timer-series-visual-2024': '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+  'timer': './assets/pdf-media/timer-loading-access-2-main.webp',
+  'timer-loading-access-2-2024': './assets/pdf-media/timer-loading-access-2-main.webp',
+  'timer-series-visual-2024': './assets/pdf-media/timer-loading-access-2-main.webp',
   'xtep-xdna22aw-visual-2022': '/portfolio/assets/xtep-xdna/xtep-selected-01.webp',
   'zcool-hp-live-2021': '/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp',
   'vrplay-hackathon-visual-2025': '/portfolio/assets/raw-picks/vrplay-keynote-16x9.webp',

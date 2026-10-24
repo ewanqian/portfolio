@@ -1,6 +1,10 @@
 (function () {
   const preferredOrder = ['titan', 'drop-flow', 'timer', 'digital-garden']
   const hiddenMarkers = ['mke-terminal', 'sre-realtime-liveset']
+  const curatedImages = {
+    'drop-flow': './assets/pdf-media/dropflow-biennale-main.webp',
+    timer: './assets/pdf-media/timer-loading-access-2-main.webp'
+  }
   let scheduled = false
 
   function isHomeRoute() {
@@ -24,6 +28,12 @@
   function setText(element, value) {
     if (element && element.textContent !== value) {
       element.textContent = value
+    }
+  }
+
+  function setImage(element, value) {
+    if (element && element.getAttribute('src') !== value) {
+      element.setAttribute('src', value)
     }
   }
 
@@ -57,6 +67,14 @@
       }
       if (!selected.has(key)) selected.set(key, card)
       else card.remove()
+    })
+
+    Object.entries(curatedImages).forEach(([key, src]) => {
+      setImage(selected.get(key)?.querySelector('img'), src)
+    })
+
+    document.querySelectorAll('img[src*="timer-red-spatial-preview"], img[src*="featured-timer-main"]').forEach((image) => {
+      setImage(image, curatedImages.timer)
     })
 
     const desiredCards = preferredOrder.map((key) => selected.get(key)).filter(Boolean)

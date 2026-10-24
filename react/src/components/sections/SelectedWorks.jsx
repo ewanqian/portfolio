@@ -32,10 +32,6 @@ const projectNotes = {
   }
 }
 
-const projectImageOverrides = {
-  timer: '/portfolio/assets/raw-library/timer-red-spatial-preview.webp'
-}
-
 function ProjectGrid({ items, language }) {
   const isZh = language === 'zh'
 
@@ -52,7 +48,7 @@ function ProjectGrid({ items, language }) {
         return (
           <article key={work.id} className={`selected-project-card selected-project-card-${index + 1}`}>
             <a href={targetUrl} className="selected-project-thumb">
-              <img src={projectImageOverrides[work.id] || getDisplayImage(work)} alt={title} />
+              <img src={getDisplayImage(work)} alt={title} />
             </a>
             <div className="selected-project-content">
               <span className="selected-project-index">{String(index + 1).padStart(2, '0')}</span>
