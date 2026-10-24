@@ -1,10 +1,10 @@
 {
   "id": "drop-flow-visual-2025",
-  "title": "Drop Flow / 杭州双年展开幕节点",
-  "subtitle": "沉浸式大屏、VR 与身体表演的公共呈现",
+  "title": "Drop Flow / 滴流 — 杭州双年展开幕式",
+  "subtitle": "中国（杭州）艺术与科技国际双年展 / 余杭美术馆",
   "years": "2025",
   "type": "public-presentation",
-  "summary": "杭州双年展开幕式版本，把沉浸式大屏、VR 头显与身体/空间关系整合为 Drop Flow 的公共展陈节点。",
+  "summary": "杭州双年展开幕式版本，把沉浸式大屏、VR 头显与身体/空间关系整合为 Drop Flow 的公共展陈呈现。",
   "practiceLine": "spatial-generation",
   "tags": ["drop-flow", "biennale", "immersive", "vr"],
   "coverImage": "featured-dropflow-hangzhou-biennale-scene.webp",
@@ -17,7 +17,8 @@
   "sourceDocs": [
     "projects/drop-flow-visual-2025.md",
     "visual-arts/drop-flow-series/README.md",
-    "content/nodes/drop-flow-hangzhou-biennale.json"
+    "content/nodes/drop-flow-hangzhou-biennale.json",
+    "docs/bio/canonical-project-names.md"
   ],
   "repoLink": "https://github.com/ewanqian/portfolio/blob/main/projects/drop-flow-visual-2025.md",
   "links": [
