@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ewan Qian — Selected Practice</title>
+  <style>
+    :root {
+      --bg: #050506;
+      --ink: #f2efe8;
+      --muted: rgba(242, 239, 232, 0.58);
+      --line: rgba(242, 239, 232, 0.18);
+      --accent: #c84b34;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+    body {
+      color: var(--ink);
+      font-family: Inter, "Noto Sans SC", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .stage { position: relative; width: 100%; height: 100%; min-height: 100dvh; background: #050506; }
+    .media { position: absolute; inset: 0; overflow: hidden; background: #08080a; }
+    .slide {
+      position: absolute;
+      inset: -2%;
+      width: 104%;
+      height: 104%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.025);
+      transition: opacity 1.3s ease, transform 6.5s ease;
+      filter: saturate(.86) contrast(1.04) brightness(.78);
+    }
+    .slide.active { opacity: 1; transform: scale(1); }
+    .shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5,5,6,.94) 0%, rgba(5,5,6,.74) 30%, rgba(5,5,6,.18) 65%, rgba(5,5,6,.34) 100%),
+        linear-gradient(0deg, rgba(5,5,6,.76) 0%, transparent 38%, rgba(5,5,6,.18) 100%);
+      pointer-events: none;
+    }
+    .grain {
+      position: absolute;
+      inset: -12%;
+      opacity: .055;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+    }
+    .frame { position: absolute; inset: 20px; border: 1px solid var(--line); pointer-events: none; }
+    .topline {
+      position: absolute;
+      top: max(34px, env(safe-area-inset-top));
+      left: max(40px, env(safe-area-inset-left));
+      right: max(40px, env(safe-area-inset-right));
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      z-index: 3;
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .topline .muted { color: var(--muted); text-align: right; }
+    .copy {
+      position: absolute;
+      z-index: 3;
+      left: max(40px, env(safe-area-inset-left));
+      bottom: max(52px, env(safe-area-inset-bottom));
+      width: min(760px, calc(100% - 80px));
+    }
+    .kicker {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 720px;
+      font-size: clamp(48px, 7.5vw, 112px);
+      line-height: .88;
+      letter-spacing: -.055em;
+      font-weight: 650;
+    }
+    h1 span { display: block; }
+    .descriptor {
+      margin-top: 24px;
+      max-width: 620px;
+      color: rgba(242,239,232,.76);
+      font-size: clamp(14px, 1.55vw, 19px);
+      line-height: 1.55;
+    }
+    .bottomrow { display: flex; align-items: center; gap: 20px; margin-top: 30px; }
+    .enter {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid rgba(242,239,232,.42);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      background: rgba(5,5,6,.26);
+      backdrop-filter: blur(12px);
+    }
+    .enter:hover { border-color: var(--ink); background: rgba(242,239,232,.08); }
+    .enter::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      margin-right: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(200,75,52,.9);
+    }
+    .project-label { color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; transition: opacity .35s ease; }
+    .counter { position: absolute; right: max(40px, env(safe-area-inset-right)); bottom: max(52px, env(safe-area-inset-bottom)); z-index: 3; }
+    .dots { display: flex; gap: 7px; }
+    .dot { width: 18px; height: 1px; background: rgba(242,239,232,.24); transition: background .35s ease, width .35s ease; }
+    .dot.active { width: 34px; background: rgba(242,239,232,.82); }
+    @media (max-width: 720px) {
+      .frame { inset: 12px; }
+      .topline { top: 28px; left: 26px; right: 26px; }
+      .topline .muted { display: none; }
+      .copy { left: 26px; bottom: 42px; width: calc(100% - 52px); }
+      h1 { font-size: clamp(50px, 16vw, 78px); }
+      .descriptor { max-width: 92%; font-size: 14px; }
+      .project-label { display: none; }
+      .counter { right: 26px; bottom: 26px; }
+      .shade { background: linear-gradient(90deg, rgba(5,5,6,.9), rgba(5,5,6,.34)), linear-gradient(0deg, rgba(5,5,6,.84), transparent 55%); }
+    }
+    @media (prefers-reduced-motion: reduce) { .slide { transition: none; transform: none; } }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="media" aria-hidden="true">
+      <img class="slide active" src="./assets/raw-picks/titan-bolive-clean-16x9.webp" alt="" />
+      <img class="slide" src="./assets/home/featured-dropflow-hangzhou-biennale-scene.webp" alt="" />
+      <img class="slide" src="./assets/raw-library/timer-red-spatial-preview.webp" alt="" />
+      <img class="slide" src="./assets/digital-garden/digital-garden-xian-mixc-01.webp" alt="" />
+      <div class="shade"></div>
+      <div class="grain"></div>
+    </div>
+    <div class="frame"></div>
+    <div class="topline"><strong>Ewan Qian / 钱誉文</strong><span class="muted">Media Art · Live Audiovisual · Spatial Image</span></div>
+    <section class="copy">
+      <p class="kicker">Selected Practice / 2024—2026</p>
+      <h1><span>EWAN</span><span>QIAN</span></h1>
+      <p class="descriptor">现场音画、空间影像与实时系统。主页只保留已经形成清晰公开结果的项目；研究中与过程性内容进入档案层。</p>
+      <div class="bottomrow"><a class="enter" id="enter" href="#">Selected Works / 代表作品</a><span class="project-label" id="project-label">TITAN · BO LIVE Shenzhen</span></div>
+    </section>
+    <div class="counter" aria-hidden="true"><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+  </main>
+  <script>
+    const labels = ['TITAN · BO LIVE Shenzhen','Drop Flow · Hangzhou Biennale','TIMER · Audiovisual System','Digital Garden · Xi’an MixC']
+    const slides = Array.from(document.querySelectorAll('.slide'))
+    const dots = Array.from(document.querySelectorAll('.dot'))
+    const label = document.getElementById('project-label')
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let index = 0
+    function show(next) {
+      index = next
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index))
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index))
+      label.textContent = labels[index]
+    }
+    if (!reduceMotion) window.setInterval(() => show((index + 1) % slides.length), 5600)
+    document.getElementById('enter').addEventListener('click', (event) => {
+      event.preventDefault()
+      window.top.location.hash = '#/works'
+    })
+  </script>
+</body>
+</html>

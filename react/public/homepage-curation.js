@@ -30,6 +30,12 @@
   function curateHomepage() {
     if (!isHomeRoute()) return
 
+    const heroFrame = document.querySelector('.home-system-hero-frame')
+    if (heroFrame && !String(heroFrame.getAttribute('src') || '').includes('hero-curated.html')) {
+      heroFrame.setAttribute('src', './hero-curated.html')
+      heroFrame.setAttribute('title', 'Ewan Qian selected practice')
+    }
+
     const currentWork = document.getElementById('current-work')
     if (currentWork) currentWork.remove()
 

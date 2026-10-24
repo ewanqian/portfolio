@@ -3,8 +3,8 @@ function Hero() {
     <section className="home-system-hero" data-page-motion>
       <iframe
         className="home-system-hero-frame"
-        title="Ewan Qian media sphere"
-        src="./hero-sphere.html"
+        title="Ewan Qian selected practice"
+        src="./hero-curated.html"
       />
     </section>
   )
