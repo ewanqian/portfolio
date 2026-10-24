@@ -1,6 +1,6 @@
 {
   "id": "drop-flow",
-  "title": "Drop Flow",
+  "title": "Drop Flow / 滴流",
   "subtitle": "一种持续性的结构涌现",
   "years": "2024–2025",
   "type": "series",
@@ -18,7 +18,8 @@
   "sourceDocs": [
     "visual-arts/drop-flow-series/README.md",
     "projects/drop-flow-visual-2025.md",
-    "projects/dropflow3-live-2025.md"
+    "projects/dropflow3-live-2025.md",
+    "docs/bio/canonical-project-names.md"
   ],
   "repoLink": "/works/drop-flow.html",
   "links": [

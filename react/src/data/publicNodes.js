@@ -12,14 +12,14 @@ const publicNodes = [
   },
   {
     id: 'drop-flow-hangzhou-biennale',
-    title: 'Drop Flow / 杭州双年展开幕节点',
+    title: 'Drop Flow / 滴流 — 杭州双年展开幕式',
     year: '2025',
     category: 'Public Presentation / Immersive',
     image: '/assets/public-nodes/dropflow-hangzhou.webp',
     href: '#',
     externalHref: 'https://github.com/ewanqian/portfolio',
-    summary: 'Drop Flow 系列在公共语境中的重要呈现。',
-    tags: ['public', 'immersive', 'dropflow']
+    summary: '中国（杭州）艺术与科技国际双年展开幕式中的公共呈现。',
+    tags: ['public', 'immersive', 'dropflow', 'hangzhou-biennale']
   },
   {
     id: 'ufo-terminal',

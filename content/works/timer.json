@@ -1,10 +1,10 @@
 {
   "id": "timer",
-  "title": "TIMER 控时者",
+  "title": "TIMER / 控时者",
   "subtitle": "时间操纵者 / 控时者长期项目",
   "years": "2024–",
   "type": "ongoing-work",
-  "summary": "围绕时间、声音、影像结构和空间呈现展开的长期项目线；公开版本以「加载权限 2」展览单元中的影像环形版为当前代表节点。",
+  "summary": "围绕时间、声音、影像结构和空间呈现展开的长期项目线；公开版本以 UFO Terminal「加载…权限 2」中的环形屏幕版本为当前代表呈现。",
   "practiceLine": "temporal-structure",
   "tags": ["timer", "temporal", "ring-screen", "audiovisual", "ongoing"],
   "coverImage": "featured-timer-main.webp",
@@ -17,7 +17,8 @@
   "analysisIds": ["timer-core-series"],
   "sourceDocs": [
     "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
-    "works/timer.html"
+    "works/timer.html",
+    "docs/bio/canonical-project-names.md"
   ],
   "repoLink": "/works/timer.html",
   "links": [
