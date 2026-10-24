@@ -5,11 +5,25 @@
     'drop-flow': './assets/pdf-media/dropflow-biennale-main.webp',
     timer: './assets/pdf-media/timer-loading-access-2-main.webp'
   }
+  const canonicalCardTitles = {
+    'drop-flow': { zh: 'Drop Flow / 滴流', en: 'Drop Flow' },
+    timer: { zh: 'TIMER / 控时者', en: 'TIMER' }
+  }
+  const canonicalVisibleNames = {
+    'Drop Flow': { zh: 'Drop Flow / 滴流', en: 'Drop Flow' },
+    'Drop Flow / 杭州双年展开幕节点': { zh: 'Drop Flow / 滴流 — 杭州双年展开幕式', en: 'Drop Flow · Hangzhou Biennale' },
+    'TIMER 控时者': { zh: 'TIMER / 控时者', en: 'TIMER' },
+    'TIMER 控时者 影像环形版': { zh: 'TIMER / 控时者 —「加载…权限 2」', en: 'TIMER · Loading… Access 2' }
+  }
   let scheduled = false
 
   function isHomeRoute() {
     const hash = window.location.hash
     return !hash || hash === '#' || hash === '#/' || hash.startsWith('#/?')
+  }
+
+  function isZhLanguage() {
+    return (document.documentElement.lang || '').toLowerCase().startsWith('zh')
   }
 
   function cardKey(card) {
@@ -37,7 +51,19 @@
     }
   }
 
+  function canonicalizeVisibleNames() {
+    const language = isZhLanguage() ? 'zh' : 'en'
+    document.querySelectorAll('h1,h2,h3,h4,a,button,span,strong').forEach((element) => {
+      const current = (element.textContent || '').trim()
+      const replacement = canonicalVisibleNames[current]?.[language]
+      if (replacement && current !== replacement) {
+        element.textContent = replacement
+      }
+    })
+  }
+
   function curateHomepage() {
+    canonicalizeVisibleNames()
     if (!isHomeRoute()) return
 
     const heroFrame = document.querySelector('.home-system-hero-frame')
@@ -77,6 +103,12 @@
       setImage(image, curatedImages.timer)
     })
 
+    const language = isZhLanguage() ? 'zh' : 'en'
+    Object.entries(canonicalCardTitles).forEach(([key, titles]) => {
+      const titleElement = selected.get(key)?.querySelector('h3 a, h3')
+      setText(titleElement, titles[language])
+    })
+
     const desiredCards = preferredOrder.map((key) => selected.get(key)).filter(Boolean)
     desiredCards.forEach((card, index) => {
       const currentCard = primaryGrid.children[index]
@@ -92,7 +124,7 @@
       setText(indexEl, String(index + 1).padStart(2, '0'))
     })
 
-    const isZh = (document.documentElement.lang || '').toLowerCase().startsWith('zh')
+    const isZh = isZhLanguage()
     setText(primarySection.querySelector('.eyebrow'), isZh ? '代表作品 / Selected Works' : 'Selected Works')
     setText(
       primarySection.querySelector('.section-title'),
