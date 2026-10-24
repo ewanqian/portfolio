@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-24",
+  "purpose": "Canonical public/CV naming overrides for project series and presentation records. Internal ids remain stable.",
+  "projects": {
+    "drop-flow": {
+      "publicTitleZh": "Drop Flow / 滴流",
+      "publicTitleEn": "Drop Flow"
+    },
+    "drop-flow-visual-2025": {
+      "publicTitleZh": "Drop Flow / 滴流 — 杭州双年展开幕式",
+      "publicTitleEn": "Drop Flow · Hangzhou Biennale",
+      "cvLineZh": "《滴流》Drop Flow — 中国（杭州）艺术与科技国际双年展开幕式，余杭美术馆，2025",
+      "nodeId": "drop-flow-hangzhou-biennale"
+    },
+    "timer-series-visual-2024": {
+      "publicTitleZh": "TIMER / 控时者",
+      "publicTitleEn": "TIMER"
+    },
+    "timer-loading-access-2-2024": {
+      "publicTitleZh": "TIMER / 控时者 —「加载…权限 2」",
+      "publicTitleEn": "TIMER · Loading… Access 2",
+      "cvLineZh": "《控时者 TIMER》— UFO Terminal「加载…权限 2」，2024"
+    }
+  },
+  "rules": [
+    "Do not expose internal archive wording such as 节点 as the project title.",
+    "Keep the ellipsis in 加载…权限 2 in public-facing copy.",
+    "Use internal ids for database relations; use canonical public titles for CV, portfolio, applications and captions."
+  ]
+}
