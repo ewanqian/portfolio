@@ -32,7 +32,7 @@ const practiceLines = [
       en: 'Procedural image, realtime control, AI, and cross-software workflows become reusable personal creative infrastructure.'
     },
     tags: ['Realtime', 'Creative Coding', 'Toolmaking'],
-    image: '/portfolio/assets/raw-library/timer-red-spatial-preview.webp',
+    image: './assets/pdf-media/timer-loading-access-2-main.webp',
     to: '/production'
   },
   {
