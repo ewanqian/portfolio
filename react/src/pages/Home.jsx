@@ -4,7 +4,6 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Hero from '../components/sections/Hero'
 import PracticeLines from '../components/sections/PracticeLines'
-import CurrentWork from '../components/sections/CurrentWork'
 import SelectedWorks from '../components/sections/SelectedWorks'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
@@ -48,7 +47,6 @@ function Home() {
       <main>
         <Hero />
         <SelectedWorks />
-        <CurrentWork />
         <PracticeLines />
         <ProfileBlock />
       </main>

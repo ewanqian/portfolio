@@ -1,21 +1,17 @@
 export const homeMainlineWorkIds = [
-  'timer',
-  'drop-flow',
-  'sre-realtime-liveset-2026'
-]
-
-export const homeGalleryWorkIds = [
   'kashiwa',
-  'mke-terminal',
+  'drop-flow',
+  'timer',
   'digital-garden-visual-2025'
 ]
 
+export const homeGalleryWorkIds = []
+
 export const galleryWorkIds = [
-  'timer',
-  'drop-flow',
-  'sre-realtime-liveset-2026',
   'kashiwa',
-  'mke-terminal'
+  'drop-flow',
+  'timer',
+  'digital-garden-visual-2025'
 ]
 
 export const productionWorkIds = [
@@ -30,8 +26,7 @@ export const productionWorkIds = [
   'digital-garden-visual-2025',
   'ar-shenzhen-resort-2022',
   'hallu-resonance-live-2024',
-  'glance-thousand-install-2023',
-  'sre-realtime-liveset-2026'
+  'glance-thousand-install-2023'
 ]
 
 export function pickWorksByIds(works, ids) {
