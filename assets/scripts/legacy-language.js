@@ -55,6 +55,37 @@
     });
   }
 
+  function applyCanonicalProjectNames(language) {
+    const pathname = window.location.pathname.toLowerCase();
+    const isZh = language !== 'en';
+
+    if (pathname.endsWith('/works/timer.html')) {
+      const heading = document.querySelector('#project-title, .project-title, h1');
+      if (heading) {
+        heading.textContent = isZh ? 'TIMER / 控时者' : 'TIMER';
+      }
+      document.querySelectorAll('h2,h3,strong,span,a').forEach((element) => {
+        const text = (element.textContent || '').trim();
+        if (text === 'TIMER 控时者 影像环形版') {
+          element.textContent = isZh ? 'TIMER / 控时者 —「加载…权限 2」' : 'TIMER · Loading… Access 2';
+        }
+      });
+    }
+
+    if (pathname.endsWith('/works/drop-flow.html')) {
+      const heading = document.querySelector('.hero-title, h1');
+      if (heading) {
+        heading.textContent = isZh ? 'Drop Flow / 滴流' : 'Drop Flow';
+      }
+      document.querySelectorAll('h2,h3,strong,span,a').forEach((element) => {
+        const text = (element.textContent || '').trim();
+        if (text === '杭州双年展：开幕式展演') {
+          element.textContent = isZh ? 'Drop Flow / 滴流 — 杭州双年展开幕式' : 'Drop Flow · Hangzhou Biennale';
+        }
+      });
+    }
+  }
+
   function updateToggleState(language) {
     document.querySelectorAll('[data-set-language]').forEach((button) => {
       const active = button.getAttribute('data-set-language') === language;
@@ -85,6 +116,8 @@
         applyOperations(localized.ops);
       }
     }
+
+    applyCanonicalProjectNames(normalized);
   }
 
   function bindButtons() {
