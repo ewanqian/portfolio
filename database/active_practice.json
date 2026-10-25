@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-25",
+  "purpose": "Track active personal practice without automatically promoting unfinished work to public Selected Works.",
+  "lifecycle": [
+    "active-research",
+    "documented",
+    "public-safe",
+    "case-study-ready",
+    "selected-work"
+  ],
+  "items": [
+    {
+      "id": "stage-casting-04-spatial-performance-instrument",
+      "title": "Stage Casting 04 — Spatial Performance Instrument",
+      "type": "research",
+      "status": "active-research",
+      "publicVisibility": "research-repo",
+      "homepageEligible": false,
+      "targetDate": "2026-12-04",
+      "practiceLine": "Realtime Systems & Creative Tools",
+      "summary": "Apple Vision Pro / WebXR spatial input research connected to performance state, OSC, Ableton, Max/Jitter and realtime audiovisual output.",
+      "evidenceStatus": "research scaffold exists; real-device and stage-network verification incomplete",
+      "nextGate": "Document one verified end-to-end Vision Pro/WebXR → control → audio/visual performance path on real hardware.",
+      "sourceRefs": [
+        "research/performance-control-model/experiments/spatial-playground-webxr/README.md",
+        "research/performance-control-model/experiments/spatial-playground-webxr/TASKBOOK.md"
+      ]
+    },
+    {
+      "id": "spatial-media-systems",
+      "title": "Spatial Media Systems",
+      "type": "practice-framework",
+      "status": "active-research",
+      "publicVisibility": "research-repo",
+      "homepageEligible": false,
+      "practiceLine": "Spatial Image & Scanning",
+      "summary": "Long-term framework linking capture, world building, live control, spatial output, archive and reuse.",
+      "evidenceStatus": "mother issue exists; proof distributed across multiple projects",
+      "nextGate": "Show the same Capture → World → Live → Space → Archive pipeline surviving across at least three real case studies.",
+      "issue": 74
+    },
+    {
+      "id": "entropy-field-index-2026",
+      "title": "ENTROPY / FIELD INDEX",
+      "type": "live-performance-system",
+      "status": "documented",
+      "publicVisibility": "public-safe",
+      "homepageEligible": false,
+      "date": "2026-09-05",
+      "venue": "GWANTSI XR Studio, Shanghai",
+      "practiceLine": "Live Audiovisual",
+      "role": "Realtime visual / spatial image / live visual system",
+      "summary": "FIELD INDEX / SRE live visual production developed for the ENTROPY immersive audiovisual performance.",
+      "evidenceStatus": "production issue exists; post-show case-study packaging still needed",
+      "nextGate": "Add selected live documentation, system diagram, concise credits and post-show notes, then review for case-study-ready status.",
+      "issue": 70
+    },
+    {
+      "id": "reactor-2026-live-visual-systems",
+      "title": "REACTOR 2026 / Live Visual Systems",
+      "type": "live-practice-line",
+      "status": "documented",
+      "publicVisibility": "archive-until-packaged",
+      "homepageEligible": false,
+      "practiceLine": "Live Audiovisual",
+      "summary": "2026 live visual practice extending machine, infrastructure, signal and large-format spatial-screen language into reusable live-set systems.",
+      "evidenceStatus": "multiple live nodes are known; one canonical portfolio case-study record is still missing",
+      "nextGate": "Consolidate confirmed dates, events, credits, selected images/video and system lineage into one canonical case-study record.",
+      "sourceRefs": ["issues/35", "issues/36"]
+    },
+    {
+      "id": "performance-control-model",
+      "title": "Performance Control Model / Personal A/V Instrument",
+      "type": "research-workshop",
+      "status": "documented",
+      "publicVisibility": "research-and-workshop",
+      "homepageEligible": false,
+      "practiceLine": "Realtime Systems & Creative Tools",
+      "summary": "Long-term research into playable audiovisual systems based on state, phrase, shared structure, safe complexity and low-bandwidth performer input.",
+      "evidenceStatus": "research documents, browser experiments and 2026-08-29 workshop archive exist",
+      "nextGate": "Separate validated workshop evidence from future plans and promote only stable research outputs or completed sessions.",
+      "issues": [15, 59]
+    },
+    {
+      "id": "no-further-input-required",
+      "title": "No Further Input Required / 无需进一步输入",
+      "type": "artwork",
+      "status": "active-research",
+      "publicVisibility": "artwork-rd",
+      "homepageEligible": false,
+      "practiceLine": "Media Art",
+      "summary": "Single-channel audiovisual artwork research around input history, accumulation, residue, recall and continued system behaviour after direct input is reduced.",
+      "evidenceStatus": "artwork and native-runtime R&D issues exist; finished exhibition evidence remains the promotion gate",
+      "nextGate": "Lock and document a finished artwork runtime / exhibition outcome instead of expanding prototype count.",
+      "issues": [24, 56]
+    },
+    {
+      "id": "restage-open-performance-scene",
+      "title": "ReStage — Re-executable Performance Space / OPS",
+      "type": "research",
+      "status": "active-research",
+      "publicVisibility": "research-repo",
+      "homepageEligible": false,
+      "practiceLine": "Spatial Media Systems",
+      "summary": "Research into reconstructing and re-executing live audiovisual performance spaces across Web, Unity and spatial computing with explicit provenance.",
+      "evidenceStatus": "research brief and long-term issue exist",
+      "nextGate": "Complete one small OPS v0.1 end-to-end proof before platform expansion.",
+      "issue": 76
+    }
+  ]
+}
