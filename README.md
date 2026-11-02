@@ -76,21 +76,31 @@
 
 ## Workshops / Public Programs
 
-### 当前最新
+### 当前系列｜Minimal Input Lab / 极简输入实验室
+
+- [系列总览 / Series Overview](./workshops/minimal-input-lab/README.md)
+- [01｜一键输入 / One-Button Input Reader](./workshops/minimal-input-lab/reader-01-one-button-input.md)
+- [02｜场景铸造 / Scene Forge Reader](./workshops/minimal-input-lab/reader-02-scene-forge.md)
+- [统一 Reader / Workbook 出版规范](./workshops/minimal-input-lab/publication-template.md)
+- 03｜演出 Copilot / Show Copilot — 研发中，尚未作为完成课程发布
+
+这个系列把输入、状态、节拍、音画关系、空间预演与演出组织放在同一条长期训练线上。MANA、The Point 或其他机构可以作为具体场次的合作方 / 场地出现，但系列本身保持可跨场地复用。
+
+### 既有课程与研发
 
 - [视听工程师模拟器 / Audiovisual Engineer Simulator](./workshops/audiovisual-engineer-simulator/README.md)
 - [科目一｜现场副驾 / Live Show Copilot](./workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md)
 - [科目二｜舞台复刻 / Stage Replica](./workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md)
 - [两场课程长短版与 MANA 编辑稿](./workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md)
 
-### 当前第一期
+### 第一阶段公开实践
 
 - [游戏化 AI 新媒体艺术工程师 101｜MANA｜2026-08-29 13:30–16:30｜3 小时 + 快速 Showcase](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
 - [公开工作坊讲义｜从一个动作，到一场演出](./workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
 - [新媒体工程控制论｜公开讲义](./research/performance-control-model/index.html)
 - [Issue #18｜MANA 8.29 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
 
-### 长期系列
+### 长期系列 / 研究线
 
 - [长期工作坊项目总览](./docs/public-programs/README.md)
 - [游戏化 AI 新媒体艺术工程师 / Gamified AI New Media Art Engineer](./workshops/gamified-life-engineer/README.md)
@@ -100,6 +110,9 @@
 
 - [Issue #14 — 游戏化 AI 新媒体艺术工程师](https://github.com/ewanqian/portfolio/issues/14)
 - [Issue #15 — 音画同源乐器](https://github.com/ewanqian/portfolio/issues/15)
+- [Issue #97 — Minimal Input Lab 系列架构](https://github.com/ewanqian/portfolio/issues/97)
+- [Issue #98 — Reader / Workbook 出版规范](https://github.com/ewanqian/portfolio/issues/98)
+- [Issue #99 — 3 小时线下 Run of Show](https://github.com/ewanqian/portfolio/issues/99)
 
 ---
 
