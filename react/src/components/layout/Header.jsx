@@ -12,11 +12,15 @@ function Header() {
   }, [location.pathname, location.key])
 
   const routeNavItems = [
-    { id: 'works', label: language === 'en' ? 'Works' : '作品', to: '/works' },
-    { id: 'spatial', label: language === 'en' ? 'Spatial' : '空间', to: '/gaussian-scenes' },
+    { id: 'work', label: language === 'en' ? 'Work' : '项目', to: '/works' },
+    {
+      id: 'archive',
+      label: language === 'en' ? 'Archive' : '归档',
+      to: '/archive',
+      activeOn: ['/archive', '/gaussian-scenes', '/production', '/writing']
+    },
     { id: 'workshops', label: language === 'en' ? 'Workshops' : '工作坊', to: '/workshops', activeOn: ['/workshops'] },
-    { id: 'production', label: language === 'en' ? 'Production' : '制作', to: '/production' },
-    { id: 'profile', label: language === 'en' ? 'Profile' : '个人', to: '/profile' }
+    { id: 'about', label: language === 'en' ? 'About' : '关于', to: '/profile' }
   ]
 
   return (
