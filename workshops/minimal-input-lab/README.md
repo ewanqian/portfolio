@@ -124,8 +124,11 @@ SEE
 
 ## 当前 Reader
 
-- [`reader-01-one-button-input.md`](./reader-01-one-button-input.md)
-- [`reader-02-scene-forge.md`](./reader-02-scene-forge.md)
+- [`reader-01-one-button-input.md`](./reader-01-one-button-input.md) — 01 一键输入，课程骨架版 0.1
+- [`reader-02-scene-forge.md`](./reader-02-scene-forge.md) — 02 场景铸造，课程骨架版 0.1
+- [`reader-02-scene-forge-textbook-v0.2.md`](./reader-02-scene-forge-textbook-v0.2.md) — 02 场景铸造，正式教材文本版 0.2（21 页 PDF 对应源稿）
+
+后续 Reader 将以 02 的教材版密度为新的质量基线：正文以连续叙述、情境、案例与生产经验为主，清单与练习退到章节末或附录。
 
 ## 项目管理
 
