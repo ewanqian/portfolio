@@ -2,201 +2,190 @@ import React from 'react'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import works from '../data/generated/works'
-import { getDisplayImage, getWorkTargetUrl, sortWorksForArchive } from '../data/siteDisplay'
-import { galleryWorkIds, productionWorkIds, pickWorksByIds } from '../data/siteTaxonomy'
+import { getDisplayImage, getWorkTargetUrl } from '../data/siteDisplay'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeWork } from '../i18n/content.js'
 
-const pageCopy = {
-  zh: {
-    eyebrow: 'Gallery',
-    title: '画廊 / Gallery',
-    intro: '这里保留艺术作品、现场音画项目与空间影像研究。制作项目和完整时间线分别进入 Production 与 Archive。',
-    open: '查看',
-    featured: '精选作品',
-    index: '作品接触表',
-    indexIntro: '用更接近胶片接触印相的方式浏览作品：缩略图、年份、方向、角色和入口保持在同一行。',
-    productionLink: '制作项目',
-    archiveLink: '完整归档',
-    labels: {
-      personal_work: '个人作品',
-      team_work: '团队作品',
-      external_collaboration: '外部合作',
-      collaboration: '合作作品',
-      service_work: '项目制作'
-    }
+const selectedIds = ['kashiwa', 'drop-flow', 'timer', 'digital-garden-visual-2025']
+
+// Public Work is an editorial index, not a dump of every version/event object.
+// Alternate versions and historical nodes remain available through Archive and project pages.
+const workIndexIds = [
+  'kashiwa',
+  'drop-flow',
+  'timer',
+  'digital-garden-visual-2025',
+  'natgeo-crystal-2026',
+  'system-ersha-2026',
+  'transit',
+  'mke-terminal',
+  'sre-realtime-liveset-2026',
+  'new-media-artist-simulator-2025',
+  'observe-symbiosis-exhibit-2025',
+  'ether-fragment-exhibit-2023',
+  'derive-dual-city-2024',
+  'rain-singapore-visual-2026',
+  'yujiayun-45ping-visual-2025',
+  'shanhaifusheng2-visual-2025',
+  'xtep-xdna22aw-visual-2022',
+  'zcool-hp-live-2021',
+  'vrplay-hackathon-visual-2025',
+  'ar-shenzhen-resort-2022',
+  'hallu-resonance-live-2024'
+]
+
+// Compatibility bridge until the next content build regenerates works.js from content/works/.
+// Source-of-truth records live in content/works/*.json.
+const recoveredRecords = [
+  {
+    id: 'natgeo-crystal-2026',
+    title: '中国国家地理·矿晶空间影像 / National Geographic — Crystal Landscape',
+    subtitle: '酒店大堂与商业空间常设多屏影像',
+    years: '2026',
+    type: 'spatial-media-installation',
+    summary: '为酒店大堂与商业空间开发矿物与晶体主题的常设空间影像，通过横向主屏、竖向立柱与侧屏的多画幅编排，形成可长期循环和持续更新的内容系统。',
+    image: 'https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg',
+    repoLink: '/portfolio/#/projects/natgeo-crystal'
   },
-  en: {
-    eyebrow: 'Gallery',
-    title: 'Gallery',
-    intro: 'Selected artworks, live audiovisual projects, and spatial-image research. Production records and the full timeline sit in Production and Archive.',
-    open: 'Open',
-    featured: 'Selected Works',
-    index: 'Contact Sheet Index',
-    indexIntro: 'A compact contact-sheet view for works: image, year, direction, role, and entry point stay on one line.',
-    productionLink: 'Production',
-    archiveLink: 'Full Archive',
-    labels: {
-      personal_work: 'Personal Work',
-      team_work: 'Team Work',
-      external_collaboration: 'External Collaboration',
-      collaboration: 'Collaboration',
-      service_work: 'Production Work'
-    }
+  {
+    id: 'system-ersha-2026',
+    title: 'SYSTEM × ERSHA 建筑空间扫描 / SYSTEM × ERSHA — Spatial Capture',
+    subtitle: '空间扫描 / 点云影像 / 建筑空间观察',
+    years: '2026',
+    type: 'spatial-capture',
+    summary: '对郑州中国第二砂轮厂多层建筑空间进行扫描与点云重组，并将数据整理为可继续用于空间观察、镜头预演与影像制作的三维模型。',
+    image: 'https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp',
+    repoLink: '/portfolio/#/projects/system-ersha'
+  },
+  {
+    id: 'transit',
+    title: '箱中温室 / Greenhouse in Transit',
+    subtitle: '手提箱、网页与 Vision Pro 构成的空间叙事作品',
+    years: '2025–2026',
+    type: 'spatial-narrative-artwork',
+    summary: '以一只被错投到现实的便携温室箱为入口，把实体物件、手机网页、档案线索与 Vision Pro 中展开的点云温室串联成跨现实与数字空间的叙事作品。',
+    image: '/assets/home/greenhouse-in-transit-mg17.webp',
+    repoLink: 'https://ewanqian.github.io/Greenhouse-in-Transit/Archive/project-home-v2.html'
+  }
+]
+
+const recoveredEnglish = {
+  'natgeo-crystal-2026': {
+    title: 'National Geographic — Crystal Landscape',
+    subtitle: 'Permanent multi-screen media for hospitality and commercial interiors',
+    summary: 'A permanent mineral-and-crystal moving-image system coordinated across a horizontal main screen, vertical columns, and side displays for long-duration playback and future updates.'
+  },
+  'system-ersha-2026': {
+    title: 'SYSTEM × ERSHA — Spatial Capture',
+    subtitle: 'Spatial scanning / point-cloud media / architectural study',
+    summary: 'A spatial capture of the China Second Grinding Wheel Factory in Zhengzhou, reorganising scan data into a working 3D model for spatial study, camera previsualisation, and moving-image production.'
+  },
+  transit: {
+    title: 'Greenhouse in Transit',
+    subtitle: 'A spatial narrative across a suitcase, web archive, and Vision Pro',
+    summary: 'A portable greenhouse misdelivered into reality becomes the entry point to a narrative spanning a physical object, mobile web archive, and a point-cloud greenhouse unfolding in Vision Pro.'
   }
 }
 
-const authorshipById = {
-  'drop-flow': 'team_work',
-  'drop-flow-visual-2025': 'team_work',
-  'drop-flow-ufo-2025': 'team_work',
-  'timer-series-visual-2024': 'team_work',
-  'kashiwa-titan-visual-2025': 'external_collaboration',
-  'kashiwa-band-visual-2025': 'external_collaboration',
-  'observe-symbiosis-exhibit-2025': 'collaboration',
-  'observe-symbiosis-workshop-2026': 'collaboration'
+function buildWorkMap() {
+  const map = new Map(works.map((work) => [work.id, work]))
+  recoveredRecords.forEach((record) => map.set(record.id, { ...map.get(record.id), ...record }))
+  return map
 }
 
-function resolveAuthorshipType(work) {
-  if (authorshipById[work.id]) {
-    return authorshipById[work.id]
+function localizeEditorial(work, language) {
+  if (language === 'en' && recoveredEnglish[work.id]) {
+    return { ...work, ...recoveredEnglish[work.id] }
   }
-
-  if (work.type === 'stage-visual') {
-    return 'service_work'
-  }
-
-  if (work.practiceLine === 'collaborative-performance') {
-    return 'collaboration'
-  }
-
-  return 'personal_work'
+  return localizeWork(work, language)
 }
 
-function resolveTarget(work) {
+function targetFor(work) {
   const target = getWorkTargetUrl(work)
-
-  if (!target || target === '/archive') {
-    return ''
-  }
-
-  return target
+  return target && target !== '/archive' ? target : ''
 }
 
-function WorkCard({ work, language, ctaLabel }) {
-  const localizedWork = localizeWork(work, language)
-  const target = resolveTarget(work)
-  const label = pageCopy[language].labels[resolveAuthorshipType(work)]
-  const Wrapper = target ? 'a' : 'article'
-  const wrapperProps = target ? { href: target } : {}
-
+function SelectedCard({ work, language, index }) {
+  const item = localizeEditorial(work, language)
+  const target = targetFor(work)
   return (
-    <Wrapper className="works-rail-card" {...wrapperProps}>
-      <span className="works-rail-thumb">
-        <img src={getDisplayImage(work)} alt={localizedWork.title} loading="lazy" />
-      </span>
-      <span className="works-rail-copy">
-        <span className="works-rail-label">{label}</span>
-        <span className="works-rail-meta">{localizedWork.years} · {localizedWork.subtitle}</span>
-        <strong>{localizedWork.title}</strong>
-        <span>{localizedWork.summary}</span>
-        {target ? <em>{ctaLabel}</em> : null}
-      </span>
-    </Wrapper>
+    <article className="editorial-work-card">
+      {target ? (
+        <a className="editorial-work-image" href={target}><img src={getDisplayImage(work)} alt={item.title} /></a>
+      ) : (
+        <div className="editorial-work-image"><img src={getDisplayImage(work)} alt={item.title} /></div>
+      )}
+      <div className="editorial-work-copy">
+        <div className="editorial-work-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{item.years}</span></div>
+        <h3>{target ? <a href={target}>{item.title}</a> : item.title}</h3>
+        <p className="editorial-work-summary">{item.summary}</p>
+        <div className="editorial-work-role">{item.subtitle}</div>
+      </div>
+    </article>
   )
 }
 
-function FeaturedWorksSection({ title, items, language, ctaLabel }) {
-  if (!items.length) {
-    return null
-  }
-
+function IndexRow({ work, language }) {
+  const item = localizeEditorial(work, language)
+  const target = targetFor(work)
   return (
-    <section className="section works-feature-section">
-      <div className="container">
-        <h2 className="section-title">{title}</h2>
-        <div className="works-feature-grid">
-          {items.map((work) => (
-            <WorkCard key={work.id} work={work} language={language} ctaLabel={ctaLabel} />
-          ))}
-        </div>
+    <article className="work-index-row">
+      {target ? (
+        <a className="work-index-thumb" href={target}><img src={getDisplayImage(work)} alt="" loading="lazy" /></a>
+      ) : (
+        <div className="work-index-thumb"><img src={getDisplayImage(work)} alt="" loading="lazy" /></div>
+      )}
+      <div className="work-index-year">{item.years}</div>
+      <div className="work-index-copy">
+        <h3>{target ? <a href={target}>{item.title}</a> : item.title}</h3>
+        <p>{item.summary}</p>
       </div>
-    </section>
-  )
-}
-
-function ContactSheetRow({ work, language, ctaLabel }) {
-  const localizedWork = localizeWork(work, language)
-  const target = resolveTarget(work)
-  const label = pageCopy[language].labels[resolveAuthorshipType(work)]
-
-  return (
-    <article className="contact-sheet-row">
-      <a href={target || '#'} className={`contact-sheet-thumb ${target ? '' : 'disabled'}`.trim()} aria-label={localizedWork.title}>
-        <img src={getDisplayImage(work)} alt="" loading="lazy" />
-      </a>
-      <div className="contact-sheet-year">{localizedWork.years}</div>
-      <div className="contact-sheet-title">
-        <h3>{localizedWork.title}</h3>
-        <p>{localizedWork.subtitle}</p>
-      </div>
-      <div className="contact-sheet-role">{label}</div>
-      <p className="contact-sheet-summary">{localizedWork.summary}</p>
-      {target ? <a href={target} className="contact-sheet-open">{ctaLabel}</a> : <span />}
+      <div className="work-index-role">{item.subtitle}</div>
+      {target ? <a className="work-index-open" href={target}>↗</a> : <span />}
     </article>
   )
 }
 
 function Works() {
   const { language } = useLanguage()
-  const copy = pageCopy[language]
-  const orderedWorks = sortWorksForArchive(works)
-  const galleryWorks = pickWorksByIds(works, galleryWorkIds)
-  const productionIdSet = new Set(productionWorkIds)
-  const indexWorks = orderedWorks.filter((work) => (
-    galleryWorkIds.includes(work.id) ||
-    (!productionIdSet.has(work.id) && work.practiceLine !== 'content-infrastructure')
-  ))
+  const isZh = language === 'zh'
+  const workMap = buildWorkMap()
+  const selected = selectedIds.map((id) => workMap.get(id)).filter(Boolean)
+  const index = workIndexIds.map((id) => workMap.get(id)).filter(Boolean)
 
   return (
     <>
       <Header />
-      <main className="page-works">
-        <section className="section works-index-hero">
-          <div className="container works-hero">
+      <main className="page-works editorial-index-page">
+        <section className="editorial-index-intro">
+          <div className="container editorial-index-intro-grid">
             <div>
-              <div className="eyebrow">{copy.eyebrow}</div>
-            <h1 className="section-title">{copy.title}</h1>
-            <p className="section-intro">{copy.intro}</p>
-              <div className="hero-cta">
-                <a className="button primary" href="#contact-sheet">{copy.open}</a>
-                <a className="button" href="/portfolio/#/production">{copy.productionLink}</a>
-                <a className="button" href="/portfolio/#/archive">{copy.archiveLink}</a>
-              </div>
+              <div className="eyebrow">{isZh ? '项目 / Work' : 'Work'}</div>
+              <h1>{isZh ? '作品按项目阅读。' : 'Read the work as projects.'}</h1>
             </div>
-            <div className="works-stat-grid">
-              <div className="works-stat-card">
-                <strong>{galleryWorks.length}</strong>
-                <span>{language === 'en' ? 'selected gallery entries' : '精选画廊条目'}</span>
-              </div>
-              <div className="works-stat-card">
-                <strong>{indexWorks.length}</strong>
-                <span>{language === 'en' ? 'artwork and research records' : '艺术与研究记录'}</span>
-              </div>
+            <div>
+              <p>{isZh
+                ? '这里不再把“空间”“制作”“实时系统”“研究”拆成互相竞争的一级栏目。它们只是项目的媒介、角色或方法。一个项目只出现一次；展览版本、演出节点、过程与技术记录留在项目内部或归档。'
+                : 'Spatial, production, realtime systems, and research are no longer competing top-level sections. They are media, roles, or methods attached to projects. Each project appears once; versions, event nodes, process, and technical records stay inside the project or archive.'}</p>
+              <a className="text-link" href="/portfolio/#/archive">{isZh ? '查看完整归档 ↗' : 'Full archive ↗'}</a>
             </div>
           </div>
         </section>
 
-        <FeaturedWorksSection title={copy.featured} items={galleryWorks} language={language} ctaLabel={copy.open} />
-
-        <section id="contact-sheet" className="section">
+        <section className="editorial-work-section">
           <div className="container">
-            <h2 className="section-title">{copy.index}</h2>
-            <p className="section-intro">{copy.indexIntro}</p>
-            <div className="contact-sheet-list">
-              {indexWorks.map((work) => (
-                <ContactSheetRow key={work.id} work={work} language={language} ctaLabel={copy.open} />
-              ))}
+            <div className="editorial-work-heading"><span>{isZh ? '代表作品' : 'Selected work'}</span><span>04</span></div>
+            <div className="editorial-work-grid">
+              {selected.map((work, index) => <SelectedCard key={work.id} work={work} language={language} index={index} />)}
+            </div>
+          </div>
+        </section>
+
+        <section className="work-index-section">
+          <div className="container">
+            <div className="editorial-work-heading"><span>{isZh ? '项目索引' : 'Project index'}</span><span>{String(index.length).padStart(2, '0')}</span></div>
+            <div className="work-index-list">
+              {index.map((work) => <IndexRow key={work.id} work={work} language={language} />)}
             </div>
           </div>
         </section>
