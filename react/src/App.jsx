@@ -20,6 +20,7 @@ import MotionSystem from './motion/MotionSystem.jsx'
 import './styles/global.css'
 import './styles/home-system.css'
 import './styles/navigation-adjustments.css'
+import './styles/editorial-home.css'
 
 const STATIC_WORK_SLUGS = {
   'drop-flow': true,
