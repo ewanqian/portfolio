@@ -1,0 +1,247 @@
+.editorial-home {
+  padding: 0;
+}
+
+.editorial-intro {
+  padding: 148px 0 68px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editorial-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.editorial-intro-name {
+  grid-column: 1 / 7;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-body);
+  font-size: clamp(30px, 3.3vw, 44px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.editorial-intro-copy {
+  grid-column: 8 / 13;
+  padding-top: 3px;
+}
+
+.editorial-intro-copy p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.editorial-intro-meta,
+.editorial-intro-links,
+.editorial-work-heading,
+.editorial-work-meta,
+.editorial-work-role,
+.home-info-label,
+.home-info-links {
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+}
+
+.editorial-intro-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 22px;
+  color: var(--muted);
+}
+
+.editorial-intro-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.editorial-intro-links a,
+.home-info-links a {
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+}
+
+.editorial-intro-links a:hover,
+.home-info-links a:hover {
+  border-color: var(--text);
+}
+
+.editorial-work-section {
+  padding: 24px 0 76px;
+}
+
+.editorial-work-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.editorial-work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 44px 20px;
+  margin-top: 20px;
+}
+
+.editorial-work-grid .editorial-work-card {
+  grid-column: span 6;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+}
+
+.editorial-work-image {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  aspect-ratio: auto !important;
+  background: transparent !important;
+}
+
+.editorial-work-image img {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center;
+  background: transparent;
+}
+
+.editorial-work-copy {
+  padding: 11px 0 0 !important;
+}
+
+.editorial-work-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--muted);
+}
+
+.editorial-work-copy h3 {
+  margin: 9px 0 7px !important;
+  font-family: var(--font-body) !important;
+  font-size: 17px !important;
+  line-height: 1.2 !important;
+  font-weight: 600;
+  letter-spacing: -0.015em !important;
+}
+
+.editorial-work-summary {
+  max-width: 62ch;
+  margin: 0 !important;
+  color: var(--text) !important;
+  font-size: 12.5px !important;
+  line-height: 1.58 !important;
+}
+
+.editorial-work-role {
+  margin-top: 9px;
+  color: var(--muted);
+}
+
+.home-info-section {
+  padding: 36px 0 60px;
+  border-top: 1px solid var(--line);
+}
+
+.home-info-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.home-info-label {
+  grid-column: 1 / 4;
+  color: var(--muted);
+}
+
+.home-info-copy {
+  grid-column: 5 / 11;
+}
+
+.home-info-copy p {
+  max-width: 680px;
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.home-info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .editorial-intro-name {
+    grid-column: 1 / 6;
+  }
+
+  .editorial-intro-copy {
+    grid-column: 7 / 13;
+  }
+
+  .home-info-copy {
+    grid-column: 4 / 13;
+  }
+}
+
+@media (max-width: 720px) {
+  .editorial-intro {
+    padding: 108px 0 46px;
+  }
+
+  .editorial-intro-grid,
+  .home-info-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .editorial-intro-name,
+  .editorial-intro-copy,
+  .home-info-label,
+  .home-info-copy {
+    grid-column: auto;
+  }
+
+  .editorial-intro-name {
+    font-size: 32px;
+  }
+
+  .editorial-work-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .editorial-work-grid .editorial-work-card {
+    grid-column: auto;
+  }
+
+  .editorial-work-section {
+    padding-bottom: 56px;
+  }
+
+  .editorial-work-summary,
+  .home-info-copy p,
+  .editorial-intro-copy p {
+    font-size: 12px !important;
+  }
+}
