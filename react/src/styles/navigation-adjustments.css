@@ -1,6 +1,90 @@
+.topbar {
+  top: 0;
+  bottom: auto;
+  width: 100%;
+  padding: 0 20px;
+  background: rgba(5, 5, 5, 0.9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.topbar .container {
+  width: min(var(--max), 100%);
+}
+
+.topbar-inner {
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.brand {
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.nav {
+  gap: 12px;
+}
+
+.nav-link {
+  padding: 4px 0;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-link[aria-current='page'] {
+  background: transparent;
+  border-radius: 0;
+  color: var(--text);
+  border-bottom: 1px solid var(--text);
+}
+
+.language-toggle,
+.theme-toggle,
+.menu-toggle {
+  border-radius: 0;
+  background: transparent;
+}
+
+.language-toggle-option.active {
+  border-radius: 0;
+}
+
+main {
+  padding-bottom: 0;
+}
+
 @media (max-width: 760px) {
-  .topbar .nav {
-    top: calc(100% + 8px);
+  .topbar {
+    top: 0;
     bottom: auto;
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 0 14px;
+    background: rgba(5, 5, 5, 0.94);
+  }
+
+  .topbar .nav {
+    top: calc(100% + 1px);
+    bottom: auto;
+    right: 0;
+    border-radius: 0;
   }
 }
