@@ -67,6 +67,33 @@ function Workshops() {
           </div>
         </section>
 
+        <section className="section" aria-labelledby="stage-replica-workshop">
+          <div className="container">
+            <div className="eyebrow">{isZh ? '2026.10.31 / 已举办工作坊' : '31 Oct 2026 / Completed Workshop'}</div>
+            <h2 id="stage-replica-workshop" className="section-title">
+              {isZh ? '舞台复刻 / Stage Replica' : 'Stage Replica / 舞台复刻'}
+            </h2>
+            <p className="section-intro">
+              {isZh
+                ? '从场地参考与灰盒空间出发，结合屏幕、灯光与表演关系，在浏览器中预演一段 30 秒开场。钱誉文主讲；MANA 宣传支持，The Point 上海提供场地支持。'
+                : 'A workshop on spatial drafting, screen, lighting and performance relationships, developing a 30-second opening through browser previsualisation. Led by Ewan Qian; promotional support from MANA and venue support from The Point Shanghai.'}
+            </p>
+            <p className="section-intro">
+              {isZh
+                ? '场景铸造 / Scene Forge 是从这次课程延伸出来的空间预演方法与读本，不是另一场已举办活动。'
+                : 'Scene Forge is the continuing previsualisation method and reader developed from the workshop, not a separate completed event.'}
+            </p>
+            <div className="workshop-event-meta">
+              <a className="text-link" href="https://ewanqian.github.io/SceneForge/workshop/20261031/web/" target="_blank" rel="noopener noreferrer">
+                {isZh ? '课程内容与示例 ↗' : 'Course and demos ↗'}
+              </a>
+              <a className="text-link" href="https://ewanqian.github.io/SceneForge/workshop/20261031/web/after-workshop.html" target="_blank" rel="noopener noreferrer">
+                {isZh ? '课后记录 ↗' : 'After Workshop ↗'}
+              </a>
+            </div>
+          </div>
+        </section>
+
         {currentEditions.length > 0 && (
           <section className="section">
             <div className="container">
