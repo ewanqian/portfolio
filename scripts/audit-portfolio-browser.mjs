@@ -85,7 +85,18 @@ const routes=[
   ['timer-static','/portfolio/works/timer.html'],
   ['mke-static','/portfolio/works/mke-terminal.html'],
   ['rain-project','/#/projects/rain-singapore'],
-  ['yujiayun-project','/#/projects/yujiayun-45m2']
+  ['yujiayun-project','/#/projects/yujiayun-45m2'],
+  ['ai-gala-project','/#/projects/china-ai-gala'],
+  ['xtep-project','/#/projects/xtep-xdna'],
+  ['zcool-project','/#/projects/zcool-hp-g8'],
+  ['writing','/#/writing'],
+  ['production','/#/production'],
+  ['gaussian-scenes','/#/gaussian-scenes'],
+  ['playground','/#/playground'],
+  ['workshop-av','/#/workshops/audiovisual-engineer-simulator'],
+  ['workshop-101','/#/workshops/gamified-ai-new-media-art-engineer-101'],
+  ['workshop-series','/#/workshops/gamified-ai-new-media-art-engineer'],
+  ['workshop-instrument','/#/workshops/personal-av-instrument']
 ]
 async function motionCheck(){
   await navigate(base+'/#/projects/digital-garden')
