@@ -1,0 +1,16 @@
+{
+  "id": "reactor-bpm-system-2026",
+  "slug": "reactor-bpm-system-2026",
+  "title": "REACTOR — 在 BPM 之上演奏",
+  "titleEn": "REACTOR — Performing with BPM",
+  "type": "Field Note / Live Visual System",
+  "category": "field-note",
+  "date": "2026-11-04",
+  "summary": "一套从实际演出发展出的 Resolume Arena 控制方法：持续影像、BPM 动画与 Piano 式手动重音分层，使节拍、强弱和停顿都保留现场判断。",
+  "summaryEn": "A live visual control method developed through REACTOR: continuous image, beat-synchronised animation and manual accents layered into a playable Resolume Arena system.",
+  "articlePath": "writing/reactor-bpm-system-2026.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/portfolio-nov2026-editorial-release/writing/reactor-bpm-system-2026.md",
+  "status": "draft",
+  "featured": true,
+  "order": 1
+}
