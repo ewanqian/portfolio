@@ -4,6 +4,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 const assets=[
 ['Drop Flow — current collage','/portfolio/assets/home/featured-dropflow-main.webp'],
+['Drop Flow — UFO hero','/portfolio/assets/home/hero-dropflow-ufo-2025.webp'],
+['Drop Flow — concept','/portfolio/assets/raw-picks/dropflow-concept-250426.webp'],
 ['Drop Flow — UFO stage 01','/portfolio/assets/drop-flow/optimized/ufo-stage-01.webp'],
 ['Drop Flow — UFO stage 02','/portfolio/assets/drop-flow/optimized/ufo-stage-02.webp'],
 ['Drop Flow — UFO stage 03','/portfolio/assets/drop-flow/optimized/ufo-stage-03.webp'],
