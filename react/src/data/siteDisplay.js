@@ -87,15 +87,15 @@ export function getWorkTargetUrl(work) {
   }
 
   if (work?.id === 'yujiayun-45ping-visual-2025') {
-    return '/portfolio/projects/yujiayun-45m2'
+    return '/portfolio/#/projects/yujiayun-45m2'
   }
 
   if (work?.id === 'rain-singapore-visual-2026') {
-    return '/portfolio/projects/rain-singapore'
+    return '/portfolio/#/projects/rain-singapore'
   }
 
   if (work?.id === 'digital-garden-visual-2025') {
-    return '/portfolio/projects/digital-garden'
+    return '/portfolio/#/projects/digital-garden'
   }
 
   const detailLink = work.links?.find((link) => link.url?.includes('/works/') || link.url?.startsWith('./works/'))
