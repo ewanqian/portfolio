@@ -178,7 +178,7 @@ function parseMarkdown(markdown, sourcePath) {
   return blocks
 }
 
-export default function MarkdownReader({ markdown, sourcePath }) {
+export default function MarkdownReader({ markdown, sourcePath, renderAfterHeading }) {
   const blocks = useMemo(() => parseMarkdown(markdown, sourcePath), [markdown, sourcePath])
   const headingCounts = new Map()
 
@@ -193,7 +193,7 @@ export default function MarkdownReader({ markdown, sourcePath }) {
           const count = headingCounts.get(baseId) || 0
           headingCounts.set(baseId, count + 1)
           const id = count ? `${baseId}-${count + 1}` : baseId
-          return <Tag id={id} className="markdown-heading-anchor" key={key}>{renderInline(block.text, sourcePath, key)}</Tag>
+          return <Fragment key={key}><Tag id={id} className="markdown-heading-anchor">{renderInline(block.text, sourcePath, key)}</Tag>{renderAfterHeading ? renderAfterHeading(block.text) : null}</Fragment>
         }
 
         if (block.type === 'paragraph') {
