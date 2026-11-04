@@ -141,10 +141,6 @@ try{
     }
     console.log('zh '+name,JSON.stringify({h1:details.h1,badImages:details.images.filter(i=>!i.width||i.error).length,workCards:details.workCards,workIndexRows:details.workIndexRows}))
   }
-  const output=path.resolve('docs/media-intake/browser-qa-2026-11.json')
-  fs.mkdirSync(path.dirname(output),{recursive:true})
-  fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n')
-  console.log('QA saved:',output)
   const failures=[...report.routes,...(report.chineseRoutes||[])].flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
   console.log('Broken image decode:',JSON.stringify(failures.slice(0,60)))
   if(failures.length)process.exitCode=2
@@ -155,5 +151,15 @@ try{
   if(home?.workCards!==4||work?.workCards!==4||work?.workIndexRows<5||!report.releaseGate.workshopEntry)process.exitCode=2
   if(report.mp4Playback.status!=='PASS')process.exitCode=2
   if(!report.reducedMotion?.videoHidden||!report.reducedMotion?.stillVisible)process.exitCode=2
+  const output=path.resolve('docs/media-intake/browser-qa-2026-11.json')
+  fs.mkdirSync(path.dirname(output),{recursive:true})
+  fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n')
+  console.log('QA saved:',output,'releaseGate:',JSON.stringify(report.releaseGate),'exitCode:',process.exitCode||0)
 }catch(e){console.error('Browser QA FAIL:',e);process.exitCode=2}
-finally{ws?.close();processChrome.kill('SIGKILL');fs.rmSync(tmp,{force:true,recursive:true})}
+finally{
+  ws?.close()
+  processChrome.kill('SIGKILL')
+  await Promise.race([new Promise(resolve=>processChrome.once('exit',resolve)),sleep(2500)])
+  try {fs.rmSync(tmp,{force:true,recursive:true,maxRetries:10,retryDelay:250})}
+  catch(e){console.warn('Chrome temporary profile cleanup warning:',String(e))}
+}
