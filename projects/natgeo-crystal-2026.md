@@ -4,9 +4,12 @@
 - **Context:** 酒店大堂与商业空间常设影像 / permanent media content for hospitality and commercial interiors
 - **Portfolio status:** personal project record; not automatically a homepage Selected Work
 - **Team context:** VIRTURA
-- **Individual credit boundary:** Ewan 将该项目纳入个人 Portfolio；现有仓库与公开页能核实 VIRTURA 的团队职责，但尚未找到一份独立文本把全部团队职责逐项映射为 Ewan 的个人 credit，因此公开个人角色文案保持保守，不把团队 scope 直接改写为个人独立完成。
+- **Ewan role (author-confirmed, 2026-11-04):** 矿晶主题空间影像设计；酒店及体验中心三维扫描与空间采集。VIRTURA 团队范围与其他参与者的 credits 单独保留。
 
 ## What the project is
+
+Ewan 本人确认同时参与矿晶影像设计，以及酒店和体验中心的三维扫描。两项工作组成一个空间影像项目：屏幕内容处理矿物的运动与材质，空间漫游记录实际建筑和公共区域的观看关系。
+
 
 项目以矿物与晶体为视觉母题，为酒店大堂与商业空间制作常设多屏影像。横向主屏、竖向立柱和侧屏使用不同画幅；内容通过统一的三维资产、材质、运动与节奏系统进行编排，以支持长时间循环、分屏输出和后续版本更新。
 
@@ -27,7 +30,7 @@
 Supporting repositories are evidence layers, not separate works:
 
 - `ewanqian/cng-design-archive` — 中国国家地理酒店空间数字档案；
-- `ewanqian/cng-spatial-tour` — 8 个区域 / 27 个全景视点的空间漫游与标注工具。
+- `ewanqian/cng-spatial-tour` — 8 个区域 / 27 个全景视点的空间漫游与标注工具（公开仓库已存在，线上部署地址待验证；局部大厅 Mesh 不是整栋酒店的数字孪生）。
 
 ## Public media set
 
@@ -54,7 +57,7 @@ Personal-site copy should answer only:
 1. this is a permanent multi-screen media project for a hospitality/commercial interior;
 2. the image system is built around mineral/crystal 3D material;
 3. multiple screen formats were coordinated as one content system;
-4. Ewan participated through the VIRTURA production context; exact individual credit remains deliberately narrower than the team scope until a direct credit source is attached.
+4. Ewan is credited for crystal spatial-image design and 3D capture of the hotel and experience centre (author-confirmed); full team credits are maintained separately.
 
 Do not create separate cards for the design archive, spatial tour, screen-format study or material study.
 
