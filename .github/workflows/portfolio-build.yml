@@ -1,0 +1,52 @@
+name: Portfolio build and archive smoke test
+
+on:
+  push:
+    branches:
+      - homepage-editorial-rescue-20261102
+      - portfolio-ai-gala-case-20261104
+      - portfolio-entropy-runtime-media-20261104
+      - main
+  pull_request:
+    branches:
+      - main
+      - homepage-editorial-rescue-20261102
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            react/package-lock.json
+      - name: Install workspace tools
+        run: npm ci
+      - name: Check public content boundaries
+        run: |
+          npm run audit:public
+          npm run audit:portfolio-os
+      - name: Install React site dependencies
+        working-directory: react
+        run: npm ci
+      - name: Build content and site
+        working-directory: react
+        run: npm run build
+      - name: Verify published paths
+        run: |
+          test -s react/dist/index.html
+          test -s react/dist/portfolio/index.html || echo "compatibility index not published"
+          test -d react/dist/assets
+          test -d react/dist/works
+          node -e "const fs=require('fs');const d=fs.readFileSync('react/src/data/generated/writings.js','utf8');for(const x of ['reactor-bpm-system-2026','entropy-two-screen-2026','performable-music'])if(!d.includes(x))throw Error('missing writing '+x);"
+      - name: Report large asset copies
+        run: npm run media:report
