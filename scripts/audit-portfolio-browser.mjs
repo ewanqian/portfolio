@@ -50,10 +50,27 @@ const auditExpression=`(async()=>{
   const checks=await Promise.all(imgs.map(async im=>{
     let error='';
     try{await Promise.race([im.decode(),new Promise((_,reject)=>setTimeout(()=>reject(Error('decode timeout')),8000))])}catch(e){error=String(e?.message||e)}
-    return {src:im.currentSrc||im.src,complete:im.complete,width:im.naturalWidth,height:im.naturalHeight,error}
+    return {src:im.currentSrc||im.src,complete:im.complete,width:im.naturalWidth,height:im.naturalHeight,error,
+      renderedWidth:Math.round(im.getBoundingClientRect().width),renderedHeight:Math.round(im.getBoundingClientRect().height),
+      objectFit:getComputedStyle(im).objectFit,
+      naturalRatio:im.naturalHeight?Number((im.naturalWidth/im.naturalHeight).toFixed(4)):null,
+      renderedRatio:im.getBoundingClientRect().height?Number((im.getBoundingClientRect().width/im.getBoundingClientRect().height).toFixed(4)):null}
   }));
-  const anchors=[...document.querySelectorAll('a[href]')].map(a=>({href:a.href,text:a.textContent.trim().slice(0,80)}));
-  return {title:document.title,h1:[...document.querySelectorAll('h1')].map(n=>n.textContent.trim()),images:checks,links:anchors,
+  const anchors=[...document.querySelectorAll('a[href]')].map((a,index)=>{
+    const rect=a.getBoundingClientRect(),style=getComputedStyle(a)
+    return {index,href:a.href,rawHref:a.getAttribute('href'),text:a.textContent.trim().slice(0,120),
+      target:a.target,visible:rect.width>0&&rect.height>0&&style.visibility!=='hidden'&&style.display!=='none',
+      width:Math.round(rect.width),height:Math.round(rect.height),
+      ariaLabel:a.getAttribute('aria-label')||'',withinViewport:rect.x>=-2&&rect.right<=innerWidth+2}
+  });
+  const clickables=[...document.querySelectorAll('button,[role="button"],[onclick]')].map((b,index)=>({
+    index,tag:b.tagName,text:b.textContent.trim().slice(0,120),label:b.getAttribute('aria-label')||'',
+    disabled:!!b.disabled,width:Math.round(b.getBoundingClientRect().width),height:Math.round(b.getBoundingClientRect().height)
+  }));
+  const doc=document.documentElement;
+  const layout={innerWidth,innerHeight,documentWidth:doc.scrollWidth,overflowX:doc.scrollWidth>innerWidth+2,
+    noH1:!document.querySelector('h1'),multipleH1:document.querySelectorAll('h1').length>1};
+  return {title:document.title,h1:[...document.querySelectorAll('h1')].map(n=>n.textContent.trim()),images:checks,links:anchors,clickables,layout,
     workCards:document.querySelectorAll('.editorial-work-card').length,workIndexRows:document.querySelectorAll('.work-index-row').length,
     workshopCards:document.querySelectorAll('.workshop-series-card').length,
     reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches}
@@ -141,7 +158,7 @@ try{
     }
     console.log('zh '+name,JSON.stringify({h1:details.h1,badImages:details.images.filter(i=>!i.width||i.error).length,workCards:details.workCards,workIndexRows:details.workIndexRows}))
   }
-  const failures=[...report.routes,...(report.chineseRoutes||[])].flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
+  const failures=[...report.routes,...(report.chineseRoutes||[]),...(report.mobileRoutes||[])].flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
   console.log('Broken image decode:',JSON.stringify(failures.slice(0,60)))
   if(failures.length)process.exitCode=2
   const home=report.routes.find(r=>r.name==='home')
@@ -151,6 +168,14 @@ try{
   if(home?.workCards!==4||work?.workCards!==4||work?.workIndexRows<5||!report.releaseGate.workshopEntry)process.exitCode=2
   if(report.mp4Playback.status!=='PASS')process.exitCode=2
   if(!report.reducedMotion?.videoHidden||!report.reducedMotion?.stillVisible)process.exitCode=2
+  report.mobileRoutes=[]
+  for(const [name,route] of routes){
+    await command('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:2,mobile:true})
+    await navigate(base+route)
+    const details=await evalJs(auditExpression)
+    report.mobileRoutes.push({name,path:route,...details,badImages:details.images.filter(i=>!i.width||i.error)})
+    console.log('mobile '+name,JSON.stringify({images:details.images.length,badImages:details.images.filter(i=>!i.width||i.error).length,overflowX:details.layout.overflowX,links:details.links.length}))
+  }
   const output=path.resolve('docs/media-intake/browser-qa-2026-11.json')
   fs.mkdirSync(path.dirname(output),{recursive:true})
   fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n')
