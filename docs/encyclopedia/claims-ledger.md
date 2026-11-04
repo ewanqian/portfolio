@@ -1,6 +1,6 @@
 # Ewan Qian 事实与证据账本
 
-**更新时间：2026-08-10**  
+**更新时间：2026-11-04**  
 **用途：** 人类审阅层。完整字段、关联 ID 与媒体引用见 `public/data/ewan-encyclopedia.json`。
 
 ## 核心原则
@@ -121,8 +121,16 @@ Ewan 已确认与 RÖ 的现场合作；现有演讲档案记录“同济现场�
 **音画同源乐器 / Personal A/V Instrument** — `proposal`  
 核心为 Personal Material → Gesture → Mapping → Sound + Visual → State → Performance。公开页：`workshops/personal-av-instrument/README.md`；研发 Issue #15。
 
-**MANA Ground Zeroes / 2026-08-29** — `proposal`  
-两条长期工作坊的三小时速通先导版，计划接当日晚间 After Party / Micro Showcase。目标是让参与者在三小时内形成一个可运行、可操作并可准备 30–60 秒 Micro Set 的 A/V 原型。公开页：`workshops/mana-ground-zeroes-20260829/README.md`；执行 Issue #18。
+**MANA / 2026-08-29 —《极简输入：构建视听系统》** — `presented`
+已完成公开工作坊。钱誉文 Ewan Qian × yiyisogreen；以单一输入、Mapping、State、BPM/Shared Clock、音画同源与网页作品展示为主，公开记录：`mana-0829/index.html`、`mana-0829/NOTES.md`。历史先导课程标签“Game 101 / MANA Ground Zeroes”不能取代该场对外正式名称。
+
+**2026-10-31 —《舞台复刻 / Stage Replica》** — `presented`
+已完成现场空间预演工作坊，由钱誉文主讲；MANA 宣传支持，The Point 上海场地支持。教学涵盖空间草稿、Gray Box、Stage Plot、Storyboard、Cue Sheet、30 秒 Opening、浏览器预演与 V1/V2 修改。原始项目：`workshops/audiovisual-engineer-simulator/stage-replica/README.md`；2026-11-02 出版的 `Scene Forge Reader` 是课后的方法及读本，不是另一场名为“场景铸造”的已完成 MANA 工作坊。
+
+**Minimal Input Lab / 极简输入实验室** — `ongoing`
+长期课程与研究体系，不等同于额外举办一场公开活动。后续 `Live Show Copilot / 现场副驾` 为开发中的课程模块，不计入已完成教学履历。
+
+完整公开履历命名见 `docs/bio/education-and-public-workshops-2026.md`。
 
 ---
 

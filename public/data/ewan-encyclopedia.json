@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.2",
-  "updated": "2026-08-11",
+  "updated": "2026-11-04",
   "canonical_person_id": "person-ewan-qian",
   "status_policy": {
     "public_default": ["verified-public", "ongoing", "presented"],
@@ -15,7 +15,7 @@
     "practice_lines": ["live-av", "spatial-image-scanning", "realtime-systems-tools", "workshops-shared-methods"],
     "education": [
       {"institution": "河南工程学院", "program": "数字媒体艺术", "period": "2017-2021", "status": "verified-public"},
-      {"institution": "Aalto University", "program": "Introduction to VR summer-school / short program", "period": "2024", "status": "verified-public", "boundary": "not a degree"}
+      {"institution": "Aalto University", "program": "Aalto University Summer School — Introduction to VR", "period": "2024", "status": "verified-public", "boundary": "short course / not a degree"}
     ],
     "organization_ids": ["org-virtura"],
     "featured_record_ids": [
@@ -78,7 +78,8 @@
     {"id": "event-observation-shenzhen-2025", "type": "exhibition", "title_zh": "深圳坪山数字群岛 / 数字水族馆相关群展《观察与共生》", "year": 2025, "status": "presented", "related_record_ids": ["work-observation-and-symbiosis"]},
     {"id": "event-hangzhou-center-babel-bottle-2025", "type": "exhibition", "title_zh": "杭州中心美术馆「巴别瓶」— 新媒体艺术家模拟器", "year": 2025, "status": "presented", "tags": ["art", "ai", "public-program"], "people": ["person-ewan-qian"], "related_record_ids": ["workshop-gamified-ai-life-2025"]},
     {"id": "workshop-gamified-ai-life-2025", "type": "workshop", "title_zh": "游戏化 AI 生活解构师", "date": "2025-07-12", "status": "presented", "venue_zh": "杭州中心美术馆", "people": ["person-ewan-qian"], "next_iteration_id": "workshop-gamified-ai-new-media-art-engineer"},
-    {"id": "workshop-gamified-ai-new-media-art-engineer-101-20260829", "type": "workshop", "title_zh": "游戏化 AI 新媒体艺术工程师 101", "date": "2026-08-29", "time": "13:30–17:30", "status": "proposal", "schedule_status": "confirmed", "format_zh": "4 小时工作坊 + 结课 Showcase", "venue_context": "MANA", "people": ["person-ewan-qian"], "repo_path": "workshops/gamified-ai-new-media-art-engineer-101/README.md", "note": "Venue confirmed the date/time and four-hour format. First edition has no After Party; final Showcase is included in class."},
+    {"id": "workshop-gamified-ai-new-media-art-engineer-101-20260829", "type": "workshop", "title_zh": "极简输入：构建视听系统", "title_en": "Minimal Input — Building an Audiovisual System", "date": "2026-08-29", "status": "presented", "schedule_status": "completed", "format_zh": "实时视听 / Mapping / 最小输入 / 网页音画乐器工作坊", "venue_context": "MANA", "people": ["person-ewan-qian"], "collaborators": ["yiyisogreen"], "repo_path": "mana-0829/NOTES.md", "note": "Published public title supersedes the historical draft title of this event."},
+    {"id": "workshop-stage-replica-20261031", "type": "workshop", "title_zh": "舞台复刻 / Stage Replica", "title_en": "Stage Replica", "date": "2026-10-31", "status": "presented", "venue_context": "The Point 上海", "support": [{"name": "MANA", "role": "publicity"}, {"name": "The Point 上海", "role": "venue"}], "people": ["person-ewan-qian"], "role_zh": "主讲", "summary_zh": "舞台预演、Gray Box、Stage Plot、Storyboard、Cue Sheet、30 秒 Opening、V1 / V2 修改。", "repo_path": "workshops/audiovisual-engineer-simulator/stage-replica/README.md", "reader_path": "workshops/minimal-input-lab/reader-02-scene-forge.md", "boundary": "Scene Forge is a follow-on method and reader, not the official name of this completed workshop."},
     {"id": "workshop-gamified-ai-new-media-art-engineer", "type": "workshop", "title_zh": "游戏化 AI 新媒体艺术工程师", "title_en": "Gamified AI New Media Art Engineer", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/gamified-life-engineer/README.md"},
     {"id": "workshop-personal-av-instrument", "type": "workshop", "title_zh": "音画同源乐器", "title_en": "Personal A/V Instrument", "period": "2026-", "status": "proposal", "people": ["person-ewan-qian"], "repo_path": "workshops/personal-av-instrument/README.md"},
     {"id": "performance-found-vj-battle-2026", "type": "performance", "title_zh": "Found Video VJ Battle Royale — Round 8 / Found VJ Deck", "date": "2026-04-26", "status": "presented", "venue_zh": "UFO Terminal 未知终端 / 上海油罐艺术公园 1 号罐", "tags": ["live-av", "web-tool", "midi", "mapping"], "people": ["person-ewan-qian"], "repo_path": "workshops/personal-av-instrument/cases/202604-found-vj-battle-round8.md"},
