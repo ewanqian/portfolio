@@ -143,6 +143,22 @@ async function contentLane(){
    notRun:records.filter(v=>v.status==='NOT RUN').length,
    findings:records.filter(v=>v.status==='FAIL').map(v=>({severity:'P0',category:'content',page:v.item,detail:'editorial acceptance gate failed'}))}
 }
+const pageRows=list.map(page=>{
+ const totalLinks=(page.links||[]).length
+ const broken=(page.images||[]).filter(im=>im.error||!im.width).length
+ const failedLinks=(page.links||[]).filter(link=>classify(link.rawHref||link.href,page).status==='FAIL').length
+ const widths=page.layout||{}
+ return {page_id:page.name,pathname:page.path||'',lang:page.language,viewport:page.viewport,
+    tested_at:browser.runDate||'',browser:'Chromium CDP',title:page.title,
+    h1:(page.h1||[]).join(' | '),link_count:totalLinks,bad_link_count:failedLinks,
+    image_count:(page.images||[]).length,bad_image_count:broken,buttons:(page.clickables||[]).length,
+    viewport_width:widths.innerWidth,document_width:widths.documentWidth,
+    horizontal_overflow:!!widths.overflowX,
+    status:broken||failedLinks||widths.overflowX?'REVIEW':'PASS IN CHROMIUM SAMPLE',
+    screenshot:'CI artifact (desktop/mobile for Home Work Workshops)',source_commit:process.env.PR_HEAD_SHA||'NOT PROVIDED'}
+})
+csv('page-status',['page_id','pathname','lang','viewport','tested_at','browser','title','h1','link_count','bad_link_count',
+  'image_count','bad_image_count','buttons','viewport_width','document_width','horizontal_overflow','status','screenshot','source_commit'],pageRows)
 const audits=await Promise.allSettled([linksLane(),mediaLane(),layoutLane(),contentLane()])
 const lanes=audits.map((v,i)=>v.status==='fulfilled'?v.value:{lane:['links','media','layout','content'][i],status:'ERROR',error:String(v.reason),findings:[]})
 const findings=lanes.flatMap(v=>v.findings||[])
