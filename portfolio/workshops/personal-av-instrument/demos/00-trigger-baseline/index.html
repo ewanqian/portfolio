@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Starter 00 — Trigger Baseline</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f4f1e8;background:#050505}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050505;color:#f4f1e8}button{font:inherit;color:inherit}.app{position:relative;width:100%;height:100%;display:grid;place-items:center}.stage{position:absolute;inset:0;overflow:hidden}.ring{position:absolute;left:50%;top:50%;width:18vmin;height:18vmin;border:2px solid #f4f1e8;border-radius:50%;transform:translate(-50%,-50%) scale(.2);opacity:0}.ring.fire{animation:fire .62s cubic-bezier(.15,.8,.2,1)}@keyframes fire{0%{opacity:.95;transform:translate(-50%,-50%) scale(.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(4.2)}}.flash{position:absolute;inset:0;background:#f4f1e8;opacity:0}.flash.fire{animation:flash .22s ease-out}@keyframes flash{0%{opacity:.16}100%{opacity:0}}.hud{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}.top,.bottom{display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,232,.5)}h1{margin:6px 0 0;font-size:clamp(24px,4vw,54px);letter-spacing:-.04em;line-height:1}.center{position:relative;z-index:2;text-align:center;display:grid;gap:14px;justify-items:center}.tap{appearance:none;border:1px solid rgba(244,241,232,.5);background:transparent;border-radius:999px;padding:16px 24px;cursor:pointer;letter-spacing:.08em;text-transform:uppercase}.tap:hover,.tap:focus-visible{background:#f4f1e8;color:#050505;outline:none}.note{max-width:420px;color:rgba(244,241,232,.55);font-size:13px;line-height:1.55}.count{font-variant-numeric:tabular-nums}.start{position:absolute;inset:0;z-index:5;background:#050505;display:grid;place-items:center}.start.hidden{display:none}.start button{appearance:none;border:1px solid #f4f1e8;background:#f4f1e8;color:#050505;padding:14px 18px;cursor:pointer;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="stage"><div class="flash" id="flash"></div><div class="ring" id="ring"></div></div>
+  <div class="hud">
+    <div class="top"><div><div>PERSONAL A/V INSTRUMENT · STARTER 00</div><h1>TRIGGER BASELINE</h1></div><div>Every hit resets</div></div>
+    <div class="bottom"><div>SPACE / CLICK</div><div class="count" id="count">000 HITS</div></div>
+  </div>
+  <div class="center">
+    <button class="tap" id="tap">Trigger the same event</button>
+    <div class="note">同一个输入，每次得到同一个结果。这个版本故意简单：先亲手玩 20–30 秒，再讨论为什么它很快被看穿。</div>
+  </div>
+  <div class="start" id="start"><button id="startBtn">Start / Enable Audio</button></div>
+</div>
+<script>
+(()=>{
+const ring=document.querySelector('#ring'),flash=document.querySelector('#flash'),tap=document.querySelector('#tap'),countEl=document.querySelector('#count'),start=document.querySelector('#start'),startBtn=document.querySelector('#startBtn');
+let audio=null,master=null,hits=0;
+function ensureAudio(){if(!audio){audio=new(window.AudioContext||window.webkitAudioContext)();master=audio.createGain();master.gain.value=.36;master.connect(audio.destination)}if(audio.state==='suspended')audio.resume()}
+function sound(){ensureAudio();const t=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(82,t+.13);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.28,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.22);o.connect(g);g.connect(master);o.start(t);o.stop(t+.24)}
+function restart(el,cls){el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls)}
+function fire(){sound();hits++;countEl.textContent=String(hits).padStart(3,'0')+' HITS';restart(ring,'fire');restart(flash,'fire')}
+startBtn.addEventListener('click',()=>{ensureAudio();start.classList.add('hidden');tap.focus()});tap.addEventListener('click',fire);addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();if(!start.classList.contains('hidden')){ensureAudio();start.classList.add('hidden')}fire()}});
+window.__AV_STARTER__={name:'00-trigger-baseline',version:'0.1',fire};
+})();
+</script>
+</body>
+</html>

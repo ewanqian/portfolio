@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070704">
+<title>无需进一步输入 / No Further Input Required — WebGL Exhibition</title>
+<meta name="description" content="《无需进一步输入》WebGL autonomous exhibition runtime by Ewan Qian.">
+<style>
+  :root{color-scheme:dark}
+  *{box-sizing:border-box}
+  html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#070704}
+  body{overscroll-behavior:none;touch-action:none}
+  canvas{position:fixed;inset:0;width:100%;height:100%;display:block;background:#070704}
+  #gate{position:fixed;inset:0;display:grid;place-items:center;pointer-events:auto;cursor:pointer;background:transparent;transition:opacity .8s ease;color:rgba(232,234,223,.24);font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.18em;text-transform:uppercase}
+  #gate span{transform:translateY(44vh)}
+  #gate.hide{opacity:0;pointer-events:none}
+  body.running{cursor:none}
+</style>
+</head>
+<body>
+<canvas id="stage" aria-label="No Further Input Required WebGL exhibition runtime"></canvas>
+<div id="gate" role="button" aria-label="Start sound and fullscreen"><span>enter / sound</span></div>
+<script src="./app.js"></script>
+</body>
+</html>

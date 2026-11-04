@@ -1,0 +1,86 @@
+{
+  "version": "0.1",
+  "status": "example-only-no-audio-attached",
+  "bpm": 124,
+  "notes": "Do not replace null file values with invented assets. Attach only auditioned material with explicit provenance and rights status.",
+  "slots": {
+    "openBed": {
+      "file": null,
+      "role": "OPEN BED",
+      "source": null,
+      "author": null,
+      "rightsStatus": "unknown",
+      "bpm": null,
+      "pitchCenter": null,
+      "bars": 8,
+      "gainTrimDb": 0,
+      "loopable": false,
+      "notes": "Sparse atmosphere / room / sustained source. Must leave headroom."
+    },
+    "buildPulse": {
+      "file": null,
+      "role": "BUILD PULSE",
+      "source": null,
+      "author": null,
+      "rightsStatus": "unknown",
+      "bpm": 124,
+      "pitchCenter": null,
+      "bars": 4,
+      "gainTrimDb": 0,
+      "loopable": true,
+      "notes": "Rhythmic motion without becoming a generic stock drum loop."
+    },
+    "peakBody": {
+      "file": null,
+      "role": "PEAK BODY",
+      "source": null,
+      "author": null,
+      "rightsStatus": "unknown",
+      "bpm": 124,
+      "pitchCenter": null,
+      "bars": 4,
+      "gainTrimDb": 0,
+      "loopable": true,
+      "notes": "Actual bodily weight / foreground identity for the peak."
+    },
+    "breakTexture": {
+      "file": null,
+      "role": "BREAK TEXTURE",
+      "source": null,
+      "author": null,
+      "rightsStatus": "unknown",
+      "bpm": null,
+      "pitchCenter": null,
+      "bars": 4,
+      "gainTrimDb": 0,
+      "loopable": false,
+      "notes": "Tail / suspended texture that makes subtraction and release audible."
+    },
+    "accent": {
+      "file": null,
+      "role": "ACCENT",
+      "source": null,
+      "author": null,
+      "rightsStatus": "unknown",
+      "bpm": null,
+      "pitchCenter": null,
+      "bars": null,
+      "gainTrimDb": 0,
+      "loopable": false,
+      "notes": "Optional. Only attach if it solves a real performance need."
+    },
+    "transition": {
+      "file": null,
+      "role": "TRANSITION",
+      "source": null,
+      "author": null,
+      "rightsStatus": "unknown",
+      "bpm": null,
+      "pitchCenter": null,
+      "bars": null,
+      "gainTrimDb": 0,
+      "loopable": false,
+      "notes": "Optional. A transition is a formal action, not automatically a whoosh."
+    }
+  }
+}

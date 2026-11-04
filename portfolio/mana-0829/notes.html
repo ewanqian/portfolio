@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>8.29 工作坊笔记｜极简输入：构建视听系统</title>
+<meta name="description" content="MANA 8.29 工作坊整理笔记：极简输入、Mapping、State、BPM、音画同源、表演界面与网页发布。">
+<style>
+:root{--bg:#f5f5f2;--fg:#161716;--muted:#666b66;--line:#d8dad5;--paper:#fff;--accent:#253d2e;--soft:#e9eee9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","PingFang SC",Arial,sans-serif;line-height:1.78}.page{width:min(880px,calc(100% - 34px));margin:auto;padding:58px 0 96px}.top{padding-bottom:48px;border-bottom:1px solid var(--line)}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:#6d736d}.title{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:clamp(42px,7vw,72px);line-height:1.08;letter-spacing:-.035em;margin:14px 0 18px}.lead{font-size:20px;line-height:1.65;color:#4f544f;max-width:760px}.meta{display:flex;gap:8px 18px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:13px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.nav a{color:var(--fg);text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font-size:12px}.section{padding:48px 0;border-bottom:1px solid var(--line)}h2{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:34px;line-height:1.25;letter-spacing:-.02em;margin:0 0 18px}h3{font-size:19px;margin:28px 0 9px}.section p{margin:0 0 16px;color:#3f443f}.section ul{margin:10px 0 20px;padding-left:1.25em;color:#3f443f}.section li{margin:6px 0}.speaker{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:24px 0;border-top:1px solid var(--line)}.speaker:first-of-type{border-top:0}.speaker-name{font-weight:750;font-size:16px}.speaker-role{font-size:12px;color:var(--muted);margin-top:5px}.speaker-body p:last-child{margin-bottom:0}.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}.term{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}.term b{display:block;font-size:15px;margin-bottom:6px}.term span{display:block;color:var(--muted);font-size:13px;line-height:1.6}.flow{white-space:pre-wrap;font:650 13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;background:#171a18;color:#f4f6f4;border-radius:16px;padding:20px;margin:22px 0}.callout{background:var(--soft);border-radius:16px;padding:19px 20px;margin:22px 0;color:#314137}.links{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}.links a{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;text-decoration:none;color:var(--fg)}.links b{display:block;margin-bottom:5px}.links span{display:block;color:var(--muted);font-size:12px;line-height:1.55}.foot{padding-top:32px;color:#7a7f7a;font-size:12px;line-height:1.7}@media(max-width:720px){.speaker{grid-template-columns:1fr;gap:10px}.terms,.links{grid-template-columns:1fr}.page{padding-top:34px}.section{padding:38px 0}}
+</style></head>
+<body><main class="page">
+<header class="top"><div class="eyebrow">MANA · 2026.08.29 · 课程笔记</div><h1 class="title">极简输入：<br>构建视听系统</h1><p class="lead">这份笔记整理了工作坊中使用的核心概念、两位讲者的关注点、课堂练习与后续工具。它可以独立阅读，也可以作为继续制作网页音画乐器的参考。</p><div class="meta"><span>钱誉文 Ewan Qian</span><span>yiyisogreen</span><span>Browser / Creative Coding / Audio Visual</span></div><div class="nav"><a href="./">工作坊档案</a><a href="./participant.html">参与者延伸</a><a href="../workshop-knowledge/">知识库</a><a href="../workshop-demos/">Demo</a></div></header>
+
+<section class="section"><div class="eyebrow">01 · 课程从哪里开始</div><h2>先确定输入，再搭系统。</h2><p>工作坊把“一个按键、一段鼠标移动、一次触摸”当作最小输入。先观察它怎样改变声音、视觉和系统状态，再逐步加入节拍、记忆、场景和更多控制。</p><div class="flow">输入 Input
+↓
+映射 Mapping
+↓
+状态 State / 时间 Clock / 记忆 Memory
+↙                         ↘
+声音 Sound                视觉 Visual
+↓
+反馈 Feedback
+↓
+下一次操作</div><p>这个顺序的好处是，每次修改都能回答一个具体问题：输入是什么、系统如何解释它、结果是否清楚、下一次操作为什么还值得发生。</p></section>
+
+<section class="section"><div class="eyebrow">02 · 两位讲者的关注点</div><h2>同一套系统，从两个方向进入。</h2>
+<div class="speaker"><div><div class="speaker-name">钱誉文 Ewan Qian</div><div class="speaker-role">系统搭建 / AI 辅助开发 / 实时视觉</div></div><div class="speaker-body"><p>课程中主要负责把一个想法压缩成可运行的网页原型，并讨论怎样用较少的输入建立完整的控制关系。开发顺序强调先完成框架，再补充内容，最后测试与整理。</p><p>具体内容包括：一个按钮的 Tap / Hold / Release、BPM 与 Quantize、Shared State、键盘控制、网页发布，以及如何把小练习长期保存为 Scene、Variant 或可复用模块。</p></div></div>
+<div class="speaker"><div><div class="speaker-name">yiyisogreen</div><div class="speaker-role">Audio Visual / Mapping / 表演界面</div></div><div class="speaker-body"><p>分享主要围绕 Mapping、限制和表演界面展开。一个鼠标或一个按键本身很简单，但它可以通过时间、速度、间隔、规则和当前状态转化为更连续的表现。</p><p>另一个重点是表演的可读性：观众需要感受到“操作正在改变系统”。控制关系过于直接会很快被看穿，完全不可读又会失去演奏感，因此需要在因果关系、限制和不完全控制之间寻找合适的深度。</p></div></div>
+</section>
+
+<section class="section"><div class="eyebrow">03 · 共同讨论的几个问题</div><h2>音画关系、控制深度和表演结构。</h2>
+<h3>音画同源</h3><p>课堂里的“音画同源”是一种工作方法：声音和视觉尽量从同一个输入、参数或状态中产生，而不是等声音完成之后再让画面追随。</p>
+<h3>一对一 Mapping 与更深的 Mapping</h3><p>“按一下就响一下、闪一下”适合建立最初的因果关系。继续往下做时，可以让同一个输入同时影响多个变量，也可以让多个输入共同决定一个结果。Hold Duration、速度、重复频率、当前 Scene 都可以成为新的条件。</p>
+<h3>产品界面与表演界面</h3><p>给别人使用的界面通常追求清楚和稳定；用于现场表演的界面还需要考虑身体动作、节奏、反馈速度以及观众能否看见控制正在发生。两者可以使用相同技术，但设计目标并不完全相同。</p>
+<h3>限制</h3><p>限制输入数量、音色范围、可切换的状态和同时出现的元素，可以让系统更容易被演奏。控制的重点不是把所有参数都放在手上，而是决定哪些变化值得被保留。</p></section>
+
+<section class="section"><div class="eyebrow">04 · 课堂里的基本结构</div><h2>从 Trigger 到可以持续演奏。</h2><div class="terms">
+<div class="term"><b>Tap / 短按</b><span>一次明确的短事件。适合 transient、短视觉触发和节拍中的离散动作。</span></div>
+<div class="term"><b>Hold / 按住</b><span>把持续时间变成参数。可以进入 drone、loop、density 或 accumulation。</span></div>
+<div class="term"><b>Release / 松开</b><span>不是简单停止。可以进入 decay、reverb tail、residue 或新的 phrase。</span></div>
+<div class="term"><b>Idle / 空闲</b><span>系统没有输入时的状态。可以保留轻微 ambience、memory 或自动变化。</span></div>
+<div class="term"><b>BPM / Clock</b><span>声音和视觉共用的时间坐标。输入可以被放到 beat、1/8 note 或 bar。</span></div>
+<div class="term"><b>Quantize / 量化</b><span>人先表达意图，系统把正式事件放到稳定的时间位置。</span></div>
+<div class="term"><b>State / 状态</b><span>OPEN、BUILD、PEAK、BREAK 等状态让同一个 Trigger 在不同阶段拥有不同意义。</span></div>
+<div class="term"><b>Memory / 记忆</b><span>让前一次操作影响后一次结果，例如残影、能量累积、延迟或历史路径。</span></div>
+</div></section>
+
+<section class="section"><div class="eyebrow">05 · 一套最小的演出结构</div><h2>状态比效果列表更容易组织。</h2><p>当视觉和声音逐渐增多，可以先把它们按功能组织成几个 Scene，而不是继续增加无编号的 Effect。</p><div class="flow">OPEN    少、慢、留白
+BUILD   增加重复、方向和密度
+PEAK    最明确的能量与层级
+BRIDGE  改变路径，保留连接
+RELEASE 回收材料，留下残余或结束</div><p>声音、视觉和灯光不需要复制同一件事。它们只需要共同解释当前状态。例如 BUILD 可以让声音增加 subdivision，让视觉提高 density，而空间仍然保持收窄。</p></section>
+
+<section class="section"><div class="eyebrow">06 · 课堂制作流程</div><h2>做出 V1，再通过试玩修改。</h2><div class="flow">试玩 Demo
+↓
+选一个输入
+↓
+做出 Sound + Visual + State
+↓
+得到 V1
+↓
+换自己的声音 / 图片 / 图形
+↓
+交给别人直接试玩
+↓
+只找一个最明显的问题
+↓
+修改为 V2</div><p>这里的测试很简单：作者先不解释，让另一位参与者直接操作。观察对方第一步会做什么、什么时候发现第二层行为、哪里完全没有反馈，以及什么时候开始觉得重复。</p></section>
+
+<section class="section"><div class="eyebrow">07 · 工具与延伸</div><h2>网页、声音、现场和分享。</h2><div class="terms">
+<div class="term"><b>Web Audio API</b><span>浏览器原生声音系统。适合 oscillator、sample、filter、delay、sequencer 和精确调度。</span></div>
+<div class="term"><b>Tone.js</b><span>基于 Web Audio 的音乐框架。Transport、Sequence、Loop、Synth、Sampler 更适合快速搭音乐结构。</span></div>
+<div class="term"><b>Strudel</b><span>浏览器里的 pattern / live coding 环境。适合继续研究节奏、pattern 与算法音乐。</span></div>
+<div class="term"><b>WebGL / Canvas</b><span>用于实时视觉。关键仍然是让视觉读取同一个 State / Clock，而不是单独堆效果。</span></div>
+<div class="term"><b>Processing / OSC</b><span>当项目需要外部控制器、手机传感器或多软件协同时，可以把同一套 Mapping 继续带到现场系统。</span></div>
+<div class="term"><b>GitHub Pages</b><span>把一个静态网页发布成可分享 URL。仓库同时保留源码、版本与说明。</span></div>
+</div></section>
+
+<section class="section"><div class="eyebrow">08 · 继续练习</div><h2>从小组件继续往前。</h2><div class="links">
+<a href="../workshop-toys/"><b>Control Toybox</b><span>节拍器、Quantize、Density、Graph、Memory、State 的小组件。</span></a>
+<a href="../workshop-state-instrument/"><b>State Instrument</b><span>用键盘控制 BPM、Scene、Visual Variant 与 Tap / Hold / Release。</span></a>
+<a href="../workshop-demos/vl6-glyph-matrix-live.html"><b>Glyph Matrix Live</b><span>Graph、Route、Variant 和 Shared Clock 的完整演奏实验。</span></a>
+<a href="../workshop-knowledge/"><b>知识库</b><span>概念、练习和可以直接复制给 Agent 的开发提示。</span></a>
+</div></section>
+
+<footer class="foot">本页根据 8.29 工作坊课程材料与课后整理编写，用于课程归档和后续学习；不包含参与者个人信息与现场私聊内容。</footer>
+</main></body></html>

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "coordinateSystem": "right-handed / normalized scene",
+  "presets": {
+    "network_core": {"yaw":0.18,"pitch":-0.10,"zoom":2.05,"fovHint":45,"target":[0,0,0]},
+    "signal_globe": {"yaw":0.10,"pitch":0.00,"zoom":2.25,"fovHint":42,"target":[0,0,0]},
+    "nerve_field": {"yaw":0.02,"pitch":0.00,"zoom":2.00,"fovHint":48,"target":[0,0,0]},
+    "circular_array": {"yaw":0.00,"pitch":0.00,"zoom":1.85,"fovHint":44,"target":[0,0,0]},
+    "data_wall": {"yaw":0.00,"pitch":0.00,"zoom":2.35,"fovHint":38,"target":[0,0,0]},
+    "depth_puncture": {"yaw":0.00,"pitch":0.00,"zoom":1.35,"fovHint":58,"target":[0,0,0]},
+    "neural_bloom": {"yaw":0.00,"pitch":0.00,"zoom":2.10,"fovHint":46,"target":[0,0,0]},
+    "luoshu_field": {"yaw":0.00,"pitch":0.00,"zoom":2.30,"fovHint":40,"target":[0,0,0]},
+    "celestial_lock": {"yaw":0.00,"pitch":0.00,"zoom":2.15,"fovHint":44,"target":[0,0,0]},
+    "collapse_residual": {"yaw":0.28,"pitch":-0.12,"zoom":1.80,"fovHint":52,"target":[0,0,0]}
+  }
+}

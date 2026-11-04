@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ea">
+<title>新媒体工程控制论｜New Media Engineering Control Model</title>
+<meta name="description" content="一份面向新媒体创作者的独立公开讲义：用 State、Feedback、Stability、Controllability、Observability 与 Robustness 理解实时作品、互动装置和现场演出。">
+<style>
+:root{--paper:#f4f1ea;--paper2:#ebe7dd;--ink:#171713;--muted:#66635c;--line:#c8c2b6;--accent:#294f3b;--accent2:#dce7df;--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif;--sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Noto Sans SC",Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.82}.wrap{width:min(920px,calc(100% - 36px));margin:auto}header{border-bottom:1px solid var(--line)}.hero{padding:72px 0 54px}.kicker{font:700 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}h1{font-family:var(--serif);font-size:clamp(42px,8vw,84px);line-height:1.04;letter-spacing:-.045em;margin:16px 0 20px}.lead{font-size:clamp(20px,2.5vw,29px);line-height:1.55;max-width:830px;color:#35332e}.notice{margin-top:30px;padding:20px 22px;background:var(--accent2);border-radius:14px;font-size:15px}.notice b{color:var(--accent)}nav{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:18px;overflow:auto;padding:11px 0;scrollbar-width:none}nav a{white-space:nowrap;text-decoration:none;font:650 12px/1.2 var(--mono);color:var(--muted)}main{padding-bottom:90px}section{padding:62px 0;border-bottom:1px solid var(--line);scroll-margin-top:48px}h2{font-family:var(--serif);font-size:clamp(30px,5vw,48px);line-height:1.2;letter-spacing:-.025em;margin:0 0 20px}h3{font-size:21px;margin:32px 0 10px}p{margin:0 0 18px}.num{font:700 12px var(--mono);color:var(--accent);letter-spacing:.1em;margin-bottom:10px}.statement{font-family:var(--serif);font-size:clamp(25px,4vw,38px);line-height:1.45;margin:30px 0;padding-left:22px;border-left:4px solid var(--accent)}.diagram{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--paper2);border-radius:14px;font:650 clamp(14px,2vw,18px)/1.7 var(--mono);white-space:pre-wrap;overflow:auto}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0}.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:rgba(255,255,255,.24)}.card b{display:block;font-size:18px;margin-bottom:8px}.card p{margin:0;color:#49463f;font-size:16px}.table{margin:26px 0;border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}.row b{font-size:15px}.row div{color:#44423c}.callout{margin:28px 0;padding:22px 24px;background:var(--accent2);border-radius:14px}.hierarchy{font:700 16px/1.9 var(--mono);padding:24px;background:var(--paper2);border-radius:14px;border:1px solid var(--line);white-space:pre-wrap}.demo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0}.demo{border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}.demo b{font-size:18px}.demo p{margin:0;color:#4d4a43;font-size:15px}.btn{display:inline-flex;align-items:center;align-self:flex-start;margin-top:auto;border:1px solid var(--ink);border-radius:999px;padding:10px 14px;text-decoration:none;color:var(--ink);font:700 11px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase}.btn:hover{background:var(--ink);color:var(--paper)}a{color:var(--accent);text-underline-offset:3px}footer{padding:40px 0 70px;color:var(--muted);font-size:14px}@media(max-width:720px){body{font-size:17px}.cards,.demo-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:4px}.hero{padding:52px 0 40px}}@media print{nav{display:none}body{background:white}.wrap{width:100%;max-width:none}.card,.diagram,.hierarchy,.callout{background:white}}
+</style>
+</head>
+<body>
+<header><div class="wrap hero"><div class="kicker">New Media Engineering Control Model</div><h1>新媒体工程控制论</h1><p class="lead">如何把“按一下出一个效果”的 Demo，变成一个可以被观看、被演奏、被维护、被带进真实现场的新媒体系统？这份讲义从状态、反馈、稳定性与结构开始回答这个问题。</p><div class="notice"><b>说明：</b>“新媒体工程控制论”是一个面向创作实践的工作框架。它借用经典控制论、交互系统和工程设计中的概念，但不是一个已经被学术界确立的独立理论名称，也不试图替代控制论本身。</div></div></header>
+<nav><div class="wrap"><a href="#loop">核心回路</a><a href="#state">State</a><a href="#six">六个判断</a><a href="#media">Shared State</a><a href="#hierarchy">层级控制</a><a href="#hybrid">人机分工</a><a href="#workflow">工作流</a><a href="#test">验收</a><a href="#play">试玩</a></div></nav>
+<main class="wrap">
+<section id="loop"><div class="num">01 / LOOP</div><h2>从“按钮触发什么”换成“系统下一步去哪”</h2><p>最简单的新媒体原型通常把输入直接映射到结果：一个按键对应一个声音、一段动画或一个灯光变化。这种方式非常适合快速验证，但如果每次结果只取决于当前输入，它很快就会耗尽。</p><div class="diagram">Result = Input
+
+↓ 更深一层 ↓
+
+Result = Input + State + History</div><p>实时作品真正开始变成“系统”，是因为它开始记住自己现在在哪里、之前发生过什么，以及新的输入应该如何改变下一步。</p><div class="diagram">x(t+1) = F( x(t), u(t), d(t) )</div><p>这里不需要先学数学。把它直接读成：<b>下一刻的系统 = 当前状态 + 人的操作 + 外部条件经过规则处理后的结果。</b></p><p class="statement">不要只问“这个按钮触发什么？”<br>先问“系统现在在哪里，我这个动作准备把它带到哪里？”</p></section>
+<section id="state"><div class="num">02 / STATE</div><h2>State：系统必须知道“现在是什么时候”</h2><p>State 不只是“换一个颜色主题”。它应该真正改变接下来发生的事情。一个实时系统可以只保存少量但关键的状态，例如：</p><div class="diagram">SECTION · ENERGY · TENSION · DENSITY · SPACE · MEMORY
+ACTIVE AUDIO LAYERS · ACTIVE VISUAL LAYERS
+TIME / BAR / PHRASE</div><p>例如同一个 `HOLD` 在不同作品里可以代表“暂时不释放”“保持当前密度”“冻结结构变化”或“延长一个空间状态”。重要的不是按钮名称，而是它如何改变后续系统行为。</p><div class="callout"><p><b>State 的价值：</b>按钮没有变多，但同一个动作开始具有上下文。</p></div></section>
+<section id="six"><div class="num">03 / SIX QUESTIONS</div><h2>一个可用系统至少要回答六类问题</h2><div class="cards"><div class="card"><b>State / 状态</b><p>系统现在在哪里？当前段落、能量、密度、历史是什么？</p></div><div class="card"><b>Feedback / 反馈</b><p>人的操作产生了什么结果？操作者能不能根据结果继续判断？</p></div><div class="card"><b>Stability / 稳定性</b><p>系统能不能避免无限变响、变满、变亮？失控以后还能不能回来？</p></div><div class="card"><b>Controllability / 可控性</b><p>不仅能不能增加，还能不能减少、退出、释放、召回、结束？</p></div><div class="card"><b>Observability / 可观察性</b><p>操作者是否知道当前 Section、Layer、Pending Transition 和 Reset 状态？</p></div><div class="card"><b>Robustness / 鲁棒性</b><p>早一点按、晚一点按、换个人操作、素材变化，系统是否仍然能工作？</p></div></div><p>这六个词不是为了让作品听起来更“工程”。它们只是帮你快速找到问题究竟发生在哪一层。</p><h3>稳定不是“不变化”</h3><p>稳定更接近：<b>无论系统怎么变化，它仍然能回到可继续工作的范围。</b></p><div class="diagram">MAX AUDIO VOICES
+MAX VISUAL DENSITY
+MAX LIGHT INTENSITY
+LIMITER · AUTO DECAY · PRIORITY · RESET / PANIC</div><h3>可控不是“控制参数多”</h3><div class="diagram">ENTER / EXIT
+ADD / REMOVE
+BUILD / RELEASE
+ACCUMULATE / CLEAR
+RECALL / FORGET</div></section>
+<section id="media"><div class="num">04 / SHARED STATE</div><h2>声音、视觉和灯光不必做同一件事</h2><p>“同源”不等于每一个 kick 都必须对应一次闪光，也不等于视觉必须逐拍跟随音乐。更成熟的做法，是让不同媒介共享一个更高层的状态或意图。</p><div class="diagram">STATE = PRE-RELEASE / 还不能释放
+
+MUSIC  → 减少完整鼓组，保留紧张感
+VISUAL → 减少新对象，让已有结构继续积累
+LIGHT  → 保持空间狭窄，不完全打开</div><p>三种媒介没有复制彼此，却共同解释“还不能释放”这个状态。</p><div class="table"><div class="row"><b>Music</b><div>适合处理 rhythm、anticipation、build、drop、release，可以快速变化。</div></div><div class="row"><b>Visual</b><div>适合处理 persistence、accumulation、transformation、memory、return，可以跨越多个段落持续存在。</div></div><div class="row"><b>Light / Space</b><div>适合 reveal、hide、isolate、expand、blackout，直接改变真实空间经验。</div></div></div></section>
+<section id="hierarchy"><div class="num">05 / HIERARCHY</div><h2>从一个事件到一整场 Show</h2><p>很多作品的问题不是没有内容，而是所有内容都挤在同一个时间尺度。大型演出需要层级。</p><div class="hierarchy">SHOW
+↓
+SET
+↓
+TRACK / PIECE
+↓
+SECTION
+↓
+PHRASE
+↓
+CELL / CAPSULE
+↓
+EVENT</div><div class="table"><div class="row"><b>EVENT</b><div>一个 kick、一次 flash、一个音符。</div></div><div class="row"><b>CELL</b><div>一个能自己成立 1–8 秒的小行为。</div></div><div class="row"><b>PHRASE</b><div>几个 Cell 的时间关系。</div></div><div class="row"><b>SECTION</b><div>OPEN、BUILD、PEAK、BREAK 这一类较长的状态。</div></div><div class="row"><b>TRACK / SET / SHOW</b><div>把多个局部结构组织成完整作品、整套演出与空间事件。</div></div></div><p class="statement">网页小乐器与大型现场并不是两个世界。<br>差别首先是<b>控制层级、内容完成度和制作尺度。</b></p></section>
+<section id="hybrid"><div class="num">06 / HYBRID CONTROL</div><h2>人不需要负责所有精确细节</h2><p>完全写死的时间轴可靠，但现场判断空间有限；完全开放的随机系统自由，却容易失控。很多实时作品更适合混合控制：</p><div class="diagram">预先设计并试听过的可靠材料
++
+系统自动维持时间与安全边界
++
+人在少数关键位置做结构决定</div><div class="cards"><div class="card"><b>系统负责</b><p>BPM、Clock、Quantization、音量、最大声部、密度预算、Transition Scheduling、Reset。</p></div><div class="card"><b>人负责</b><p>现在进入吗？还要等吗？应该加还是减？什么留下？什么时候释放？</p></div></div><p>机器处理精确、重复和风险；人处理意义、方向和判断。</p></section>
+<section id="workflow"><div class="num">07 / WORKFLOW</div><h2>创作流程本身也是一个反馈系统</h2><div class="diagram">FRAME
+确定作品怎样工作
+↓
+FILL
+加入声音、图像、文字、空间材料
+↓
+FINISH
+测试、删减、修正
+↓
+FEEDBACK
+让别人使用 / 观看
+↓
+NEXT VERSION</div><p>AI Coding、Creative Coding、Three.js、Tone.js、MIDI、OSC、游戏引擎都属于实现层。真正决定项目能不能推进的，是当前版本解决什么问题、失败以后能不能回退、测试结果是否真正改变下一版。</p><p class="statement">一个好的创作工作流，本身也应该有状态、有反馈、有边界。</p></section>
+<section id="test"><div class="num">08 / TEST</div><h2>四个问题，四个测试</h2><div class="callout"><p><b>先问四句话：</b><br>现在是什么状态？<br>我这个动作改变了什么？<br>我停手以后会发生什么？<br>我怎么把它收回来？</p></div><div class="cards"><div class="card"><b>30 秒无输入</b><p>停手以后，系统是不是马上死掉？</p></div><div class="card"><b>返回测试</b><p>已经很满时，能不能主动回到更空？</p></div><div class="card"><b>新手测试</b><p>只解释 2 分钟，一个新操作者能不能完成一次 build → release？</p></div><div class="card"><b>观众测试</b><p>只看 Screen + Sound，别人看到的是作品，还是有人在测试网页？</p></div></div></section>
+<section id="play"><div class="num">09 / PLAY</div><h2>用几个小 Demo 直接验证这些概念</h2><p>下面的 Demo 按顺序展示：过薄、过载、状态、连续控制与完整小型演出。它们不是参考作品的复制，而是为课堂比较而写的最小实验。</p><div class="demo-grid"><article class="demo"><b>00 · Trigger Baseline</b><p>Result = Input。连续玩 20 秒，感受为什么一对一很快耗尽。</p><a class="btn" target="_blank" rel="noopener" href="../../workshops/personal-av-instrument/demos/00-trigger-baseline/index.html">打开 ↗</a></article><article class="demo"><b>00B · Overload Trap</b><p>每次输入只会继续增加。观察“越来越满”为什么不等于可控。</p><a class="btn" target="_blank" rel="noopener" href="../../workshops/personal-av-instrument/demos/00b-overload-trap/index.html">打开 ↗</a></article><article class="demo"><b>01 · State Instrument</b><p>同一个输入因为 State 不同而改变意义。</p><a class="btn" target="_blank" rel="noopener" href="../../workshops/personal-av-instrument/demos/01-state-instrument/index.html">打开 ↗</a></article><article class="demo"><b>02 · Safe Loop</b><p>系统维持 BPM 与安全，人只处理 ADD / REMOVE / HOLD / RELEASE。</p><a class="btn" target="_blank" rel="noopener" href="../../workshops/personal-av-instrument/demos/02-safe-loop/index.html">打开 ↗</a></article><article class="demo"><b>Golden Mini Live System</b><p>先看 AUTO 的 OPEN → BUILD → PEAK → BREAK → RETURN，再切 PERFORM 接管结构。</p><a class="btn" target="_blank" rel="noopener" href="../../workshops/personal-av-instrument/demos/common-source-liveset/index.html">打开 ↗</a></article><article class="demo"><b>MANA 8.29 工作坊讲义</b><p>回到更适合第一次接触者的可玩入门版本。</p><a class="btn" href="../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html">打开讲义 →</a></article></div></section>
+<section><div class="num">10 / SUMMARY</div><h2>一句话总结</h2><p class="statement">新媒体工程控制论不是教你控制更多参数，而是帮助你设计：<b>什么应该自动，什么应该由人判断；什么可以变化，什么必须被保护；一个动作怎样进入时间、状态和反馈，最后形成可以持续工作的作品。</b></p><p>这套框架最适合在真正的原型、排练、展览和现场测试中继续修正，而不是停留在概念层。</p></section>
+</main><footer><div class="wrap">New Media Engineering Control Model · Public Working Lecture · 2026</div></footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Exercise 01 — 一个按钮，三种状态</title><style>:root{--bg:#f5f5f7;--fg:#111113;--muted:#6e6e73;--line:#d9d9df;--card:#fff;--accent:#111}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}.page{width:min(980px,calc(100% - 32px));margin:auto;padding:56px 0 100px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:#6e6e73}.hero{font-size:clamp(44px,8vw,88px);line-height:.95;letter-spacing:-.055em;margin:14px 0 20px}.lead{font-size:20px;line-height:1.6;color:var(--muted);max-width:760px}.flow{margin:34px 0 46px;padding:22px;border:1px solid var(--line);border-radius:22px;background:#fff;font:600 14px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}.section{margin-top:52px}.section h2{font-size:32px;letter-spacing:-.035em;margin:0 0 10px}.section>p{color:var(--muted);line-height:1.65}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;min-height:430px}.tag{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:#777}.card h3{font-size:26px;letter-spacing:-.035em;margin:11px 0 8px}.desc{font-size:14px;color:var(--muted);line-height:1.55;margin:0 0 14px}.prompt{font:500 12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;background:#f5f5f7;border:1px solid #e2e2e7;border-radius:14px;padding:15px;white-space:pre-wrap;overflow:auto;flex:1}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.btn{border:0;border-radius:999px;background:#111;color:#fff;padding:10px 14px;font-weight:700;font-size:12px;cursor:pointer;text-decoration:none}.btn.alt{background:#e9e9ed;color:#111}.small{font-size:13px;line-height:1.65;color:var(--muted)}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;line-height:1.55;font-size:14px}.topnav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}.topnav a{font-size:12px;color:#111;text-decoration:none;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fff}.foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.6}@media(max-width:760px){.grid,.check{grid-template-columns:1fr}.page{padding-top:30px}.card{min-height:unset}.hero{font-size:52px}}</style></head><body><main class="page"><nav class="topnav"><a href="../0829.html">Workshop Deck</a><a href="./">知识库</a><a href="https://github.com/ewanqian/portfolio/blob/main/workshop-knowledge/exercise-01-one-button-three-states.md" target="_blank" rel="noopener">Markdown Source</a></nav><div class="eyebrow">EXERCISE 01 · MINIMAL INPUT</div><h1 class="hero">一个按钮，<br>三种状态。</h1><p class="lead">第一个练习只做一件事：让同一个输入在 Press、Hold、Release 三个时间阶段产生清楚而不同的声音与视觉行为。</p><div class="flow">PRESS
+→ 约 0.12 秒的短促声音 + 明确视觉反馈
+
+HOLD &gt; 350ms
+→ 进入与 BPM 同步的持续状态
+→ 每 1–2 小节只发生少量受约束变化
+
+RELEASE
+→ 停止新事件
+→ 声音尾巴 + 视觉 residue 在 1–3 秒内衰减</div><section class="section"><h2>先记住这一点</h2><p>整个练习只需要一个主按钮或 Space 键。声音和视觉共享同一个 BPM、beat、step、energy、holdDuration、releaseAmount。先把这条关系做清楚，再进入后面的 Sequencer、Graph、State 和更多输入。</p></section><section class="section"><h2>四个可直接复制的方向</h2><p>任选一个。第一次生成不要同时混合多个风格。</p><div class="grid" id="cards"></div></section><section class="section"><h2>如果生成得太复杂</h2><div class="prompt" id="reduce">请缩减当前版本：
+- 只保留一个主按钮 / Space；
+- 只保留 Press / Hold / Release 三个状态；
+- 只使用一个共享 BPM / clock；
+- 最多 3 个同时发声 voice；
+- 删除说明文字、复杂控制面板和多余特效；
+- 保留 Reset；
+- 让我在 10 秒内看懂怎么操作。</div><div class="actions"><button class="btn" onclick="copyText('reduce',this)">复制这段</button></div></section><section class="section"><h2>如果声音不好听</h2><div class="prompt" id="soundfix">不要增加更多声音。先统一 key / scale，减少高频，降低同时发声数量，重新做 gain staging；给 master 加 compressor + limiter。Press 要短，Hold 要稳定，Release 要有尾巴，而且三个状态听起来必须明显不同。</div><div class="actions"><button class="btn" onclick="copyText('soundfix',this)">复制这段</button></div></section><section class="section"><h2>完成标准</h2><div class="check"><div>Press / Hold / Release 三个状态都能被听见和看见。</div><div>Hold 可以持续至少 20 秒，不会马上听腻。</div><div>持续事件都共享同一个 BPM / clock。</div><div>Release 后仍有 1–3 秒的尾音或残影。</div><div>整个系统只有一个主要输入。</div><div>陌生人 10 秒内知道怎么操作。</div></div></section><p class="foot">建议工作方式：先复制一个 Prompt → 生成最小版本 → 运行 → 只改一个问题 → 再运行。不要在第一轮同时加入更多按钮、复杂 UI 和额外功能。</p></main><script>const items=[{tag:'A / AMBIENT',title:'Monochrome Field',desc:'慢一点、空间感、黑白线框与粒子。',prompt:`做一个只有一个按钮 / Space 的浏览器音画乐器，使用 Web Audio API + Canvas 或 WebGL，BPM 124。
+
+Press：0.12 秒柔和 pluck / transient，同时出现一个黑白圆环或线框扩散。
+Hold >350ms：进入低音 drone + 1/8 note arpeggiator，限定在同一个五声音阶，每 2 小节只改变一次 note order 或 filter；视觉变成缓慢呼吸的粒子 / field。
+Release：停止新音符，保留 2 秒 delay / reverb tail，视觉残影慢慢消失。
+
+声音偏 ambient electronic，干净、克制、有空间感。Audio 和 Visual 共用 BPM、beat、energy、holdDuration、releaseAmount。页面保持极简，不加复杂 UI。`},{tag:'B / CLUB',title:'High Energy Grid',desc:'高速、节拍清楚、网格和扫描线。',prompt:`做一个只有一个按钮 / Space 的实时音画乐器，使用 Web Audio API + Canvas/WebGL，BPM 146。
+
+Press：0.12 秒短促 kick + metallic hit，同时触发一个高对比黑白网格冲击。
+Hold >350ms：进入 16-step rhythm loop，使用 kick / hat / short synth pulse；每 2 小节从 3 个固定 pattern variant 中切换一次，不能完全随机。视觉跟随同一个 step 形成扫描线、格点和快速位移。
+Release：停止新的节奏事件，进入 1–2 秒 stutter / delay tail，网格留下衰减轨迹。
+
+音乐偏实验 club / audiovisual performance，速度快但不要刺耳。加入 voice limit、compressor、limiter。只保留一个主按钮和必要的 Play / Reset。`},{tag:'C / ORGANIC',title:'Liquid Topology',desc:'液体、连接、扩散、颗粒与呼吸。',prompt:`做一个只有一个按钮 / Space 的网页音画乐器，使用 Web Audio API + Canvas/WebGL，BPM 132。
+
+Press：触发约 0.12 秒 filtered pluck + soft noise，同时生成一个液体结点 / 波纹。
+Hold >350ms：进入持续 pulse + granular-like texture；holdDuration 控制密度，beat 控制脉冲，系统每 2 小节只轻微改变 density、filter cutoff 或 octave。视觉形成会连接、分裂、扩散的拓扑节点。
+Release：停止生成新节点，声音进入长一点的 filter / reverb tail，已有视觉连接继续衰减 2–3 秒。
+
+声音偏实验电子、organic、略带颗粒感。随机只能发生在限定范围内。Audio 与 Visual 读取同一个 clock 和 state。`},{tag:'D / GLYPH',title:'Matrix / Minimal Tech',desc:'符号、节点、路径、状态变化。',prompt:`做一个只有一个按钮 / Space 的实验电子音画乐器，使用 Web Audio API + Canvas/WebGL，BPM 138。
+
+视觉只使用少量 Unicode glyph、点、线和 matrix 网格，黑底高对比。
+Press：0.12 秒 pulse / click，同时点亮一个 glyph 节点。
+Hold >350ms：启动与 BPM 同步的短 arpeggiator / pulse sequence；系统沿 FIELD → PULSE → ROUTE → RELEASE 的小型 graph 缓慢前进，每 2 小节最多改变一个节点状态。
+Release：停止新的 pulse，进入 reverse / delay tail；glyph、route 和 matrix residue 在 1–2 秒内退场。
+
+不要堆效果。重点是节点、路径、状态变化和非常清楚的动作反馈。`}];const root=document.querySelector('#cards');items.forEach((x,i)=>{const el=document.createElement('article');el.className='card';el.innerHTML=`<div class="tag">${x.tag}</div><h3>${x.title}</h3><p class="desc">${x.desc}</p><div class="prompt" id="p${i}"></div><div class="actions"><button class="btn" onclick="copyText('p${i}',this)">复制提示词</button></div>`;root.appendChild(el);document.querySelector('#p'+i).textContent=x.prompt});async function copyText(id,btn){const t=document.getElementById(id).textContent;try{await navigator.clipboard.writeText(t);const old=btn.textContent;btn.textContent='已复制';setTimeout(()=>btn.textContent=old,1200)}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById(id));const s=getSelection();s.removeAllRanges();s.addRange(r)}};</script></body></html>
