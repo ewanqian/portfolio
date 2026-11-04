@@ -18,12 +18,26 @@ Entries graduate only after title, date, role, authorship and public evidence ar
 - **Evidence:** Portfolio Issue #70
 - **CV status:** ready for wording / placement review
 
-### 2026-08-29 — MANA workshop
+### 2026-08-29 — MANA｜《极简输入：构建视听系统》
 
-- **Format:** Audio Visual / Mapping / realtime control / browser audiovisual instrument workshop
-- **Speakers:** Ewan Qian / 钱誉文 + yiyisogreen
-- **Evidence:** `mana-0829/`, `workshops/personal-av-instrument/2026-08-29-participant-followup.md`
-- **CV status:** ready for workshop / education CV layer; not a Selected Work
+- **Public title:** 极简输入：构建视听系统 / Minimal Input — Building an Audiovisual System
+- **Date:** 2026-08-29
+- **Instructors:** Ewan Qian × yiyisogreen
+- **Content:** minimal input, Mapping, shared BPM/Clock, State/Feedback, playable audiovisual browser systems, AI-assisted prototyping, public demos and GitHub versioning
+- **Evidence:** `mana-0829/index.html`, `mana-0829/NOTES.md`, `docs/bio/education-and-public-workshops-2026.md`
+- **CV status:** completed / public workshop, ready for education CV; **not** a Selected Work
+- **Naming rule:** internal 101/Minimal Input Lab curriculum title does not replace this public-event title
+
+### 2026-10-31 —《舞台复刻 / Stage Replica》
+
+- **Public title:** 舞台复刻 / Stage Replica
+- **Date:** 2026-10-31
+- **Lead instructor:** Ewan Qian / 钱誉文
+- **Support:** MANA publicity; The Point Shanghai venue support
+- **Content:** venue/spatial drafting, Gray Box, Stage Plot, Storyboard, Cue Sheet, 30-second Opening, browser previsualisation, V1→V2 review, multichannel stage relations
+- **Evidence:** `workshops/audiovisual-engineer-simulator/stage-replica/README.md`, 2026-10-31 workshop archive, `workshops/minimal-input-lab/reader-02-scene-forge-textbook-v0.2.md`, 2026-11-02 Scene Forge Reader SOP v0.4.3
+- **CV status:** completed / public workshop, ready for education CV; **not** a Selected Work
+- **Naming rule:** “场景铸造 / Scene Forge” is an extension/reader and method, not this session's canonical public event name
 
 ## B. User-confirmed / repository evidence still to consolidate
 
