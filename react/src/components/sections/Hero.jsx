@@ -25,7 +25,7 @@ function Hero() {
             <span>Spatial Image</span>
           </div>
           <div className="editorial-intro-links">
-            <a href="#works">{isZh ? '代表作品' : 'Selected work'}</a>
+            <Link to="/works">{isZh ? '代表作品' : 'Selected work'}</Link>
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
           </div>
         </div>
