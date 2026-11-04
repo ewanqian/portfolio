@@ -285,6 +285,15 @@ const ENTROPY_RUNTIME_CAPTURES = [
   }
 ]
 
+function reactorFigureForHeading(heading) {
+  const number = /^([0-9]{2})\s*\//.exec(heading)?.[1]
+  if (number === '00') return <ReactorBpmFigures section="times" />
+  if (number === '04') return <ReactorBpmFigures section="arena" />
+  if (number === '05') return <ReactorBpmFigures section="beatlink" />
+  if (number === '11') return <ReactorBpmFigures section="gallery" />
+  return null
+}
+
 function WritingDetail() {
   const { slug } = useParams()
   const writing = useMemo(() => writings.find((item) => (item.slug || item.id) === slug), [slug])
@@ -385,8 +394,8 @@ function WritingDetail() {
         <section className="section">
           <div className="container writing-reader-layout">
             <div>
-              {writing.id === 'reactor-bpm-system-2026' ? <ReactorBpmFigures /> : null}
-              {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
+              {writing.id === 'reactor-bpm-system-2026' ? <ReactorBpmFigures section="opening" /> : null}
+              {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} renderAfterHeading={writing.id === 'reactor-bpm-system-2026' ? reactorFigureForHeading : undefined} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
             </div>
             <aside className="writing-reader-aside">
               <strong>Reader notes</strong>
