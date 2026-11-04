@@ -70,6 +70,20 @@ function parseMarkdown(markdown, sourcePath) {
   let quote = []
   let code = []
   let inCode = false
+  let table = null
+  let tableDelimiterIndex = -1
+
+  const tableCells = (line) => line.trim().replace(/^[|]/, '').replace(/[|]$/, '').split('|').map((cell) => cell.trim())
+  const isTableDivider = (line, count) => {
+    const cells = tableCells(line)
+    return cells.length === count && cells.every((cell) => /^:?-{3,}:?$/.test(cell))
+  }
+
+  const flushTable = () => {
+    if (!table) return
+    blocks.push({ type: 'table', head: table.head, rows: table.rows })
+    table = null
+  }
 
   const flushParagraph = () => {
     if (!paragraph.length) return
@@ -97,8 +111,28 @@ function parseMarkdown(markdown, sourcePath) {
     code = []
   }
 
-  lines.forEach((line) => {
+  lines.forEach((line, index) => {
     const trimmed = line.trim()
+
+    if (index === tableDelimiterIndex) return
+
+    if (table) {
+      if (trimmed.startsWith('|')) {
+        table.rows.push(tableCells(trimmed))
+        return
+      }
+      flushTable()
+    }
+
+    const next = lines[index + 1]?.trim() || ''
+    if (!inCode && trimmed.startsWith('|') && next.startsWith('|') && isTableDivider(next, tableCells(trimmed).length)) {
+      flushParagraph()
+      flushList()
+      flushQuote()
+      table = { head: tableCells(trimmed), rows: [] }
+      tableDelimiterIndex = index + 1
+      return
+    }
 
     if (trimmed.startsWith('```')) {
       flushParagraph()
@@ -173,6 +207,7 @@ function parseMarkdown(markdown, sourcePath) {
   flushParagraph()
   flushList()
   flushQuote()
+  flushTable()
   if (inCode) flushCode()
 
   return blocks
@@ -210,6 +245,21 @@ export default function MarkdownReader({ markdown, sourcePath, renderAfterHeadin
 
         if (block.type === 'hr') {
           return <hr key={key} />
+        }
+
+        if (block.type === 'table') {
+          return (
+            <div className="markdown-table-scroll" key={key}>
+              <table>
+                <thead><tr>{block.head.map((cell, column) => <th scope="col" key={column}>{renderInline(cell, sourcePath, `${key}-head-${column}`)}</th>)}</tr></thead>
+                <tbody>{block.rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>{block.head.map((_, column) => (
+                    <td key={column}>{renderInline(row[column] || '', sourcePath, `${key}-row-${rowIndex}-${column}`)}</td>
+                  ))}</tr>
+                ))}</tbody>
+              </table>
+            </div>
+          )
         }
 
         const ListTag = block.type === 'ol' ? 'ol' : 'ul'

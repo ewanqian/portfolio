@@ -3,14 +3,14 @@
   "slug": "performance-control-model",
   "title": "音画同源控制模型：从极简输入到可靠现场系统",
   "titleEn": "Performance Control Model: From Minimal Input to Reliable Live Systems",
-  "type": "Research / Working Text",
+  "type": "Working Model / Research Notes",
   "category": "research",
   "date": "2026-08-23",
-  "summary": "借用控制论、数字乐器与现场编排的基本问题，把 State、Feedback、Stability、Controllability、Quantization 与 Shared State 翻译成一套可以直接试玩、验证并用于 Live A/V 系统的工作模型。",
-  "summaryEn": "A working model that translates state, feedback, stability, controllability, quantization and shared-state thinking into practical live audiovisual system design.",
+  "summary": "关于实时演出系统中状态、反馈、稳定性与控制权的工作模型；作为后续验证和修订的研究笔记。",
+  "summaryEn": "A working research model exploring state, feedback and controllability in realtime audiovisual performance.",
   "articlePath": "research/performance-control-model/README.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/research/performance-control-model/README.md",
   "status": "draft",
-  "featured": true,
-  "order": 0
+  "featured": false,
+  "order": 2
 }

@@ -3,14 +3,14 @@
   "slug": "performable-music",
   "title": "Performable Music / 可表演音乐",
   "titleEn": "Performable Music — Agent Music Performance",
-  "type": "Current Research / 2026–",
+  "type": "Research Proposal / In Development",
   "category": "research",
   "date": "2026-11-04",
-  "summary": "连接创作意图、Ableton 编曲与实时演出的音乐研究。Agent 协助生成草稿、管理结构与排练，人的选择和演奏保留在系统中心。",
-  "summaryEn": "A research programme joining authored score intentions, Ableton-based composition and realtime performance. Agents support drafts, mapping and documentation rather than replacing the performer.",
+  "summary": "可表演音乐的长期研究提案：连接创作意图、Ableton 编曲与实时演奏；目前处于方法与原型规划阶段。",
+  "summaryEn": "An evolving research proposal linking score intention, Ableton composition and realtime performance.",
   "articlePath": "research/performable-music/README.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/research/performable-music/README.md",
-  "status": "published",
-  "featured": true,
-  "order": 4
+  "status": "draft",
+  "featured": false,
+  "order": 1
 }

@@ -184,3 +184,11 @@
     font-size: 16px;
   }
 }
+
+/* Reader 02 / Scene Forge contains cue sheets and stage plots in Markdown tables. */
+.markdown-table-scroll { max-width: 100%; margin: 24px 0 32px; overflow-x: auto; border-top: 1px solid var(--line-strong); }
+.markdown-reader table { width: 100%; min-width: 510px; border-collapse: collapse; font-size: .84em; line-height: 1.6; }
+.markdown-reader thead th { text-align: left; font-weight: 650; white-space: nowrap; color: var(--text); }
+.markdown-reader th,.markdown-reader td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.markdown-reader tbody tr:last-child td { border-bottom: 1px solid var(--line-strong); }
+@media (max-width: 640px) { .markdown-reader table { font-size: .82em; } .markdown-reader th,.markdown-reader td { padding: 9px 10px; } }
