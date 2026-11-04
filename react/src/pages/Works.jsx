@@ -157,7 +157,10 @@ function Works() {
   const isZh = language === 'zh'
   const workMap = buildWorkMap()
   const selected = selectedIds.map((id) => workMap.get(id)).filter(Boolean)
-  const index = workIndexIds\n    .filter((id) => !selectedIds.includes(id))\n    .map((id) => workMap.get(id))\n    .filter(Boolean)
+  const index = workIndexIds
+    .filter((id) => !selectedIds.includes(id))
+    .map((id) => workMap.get(id))
+    .filter(Boolean)
 
   return (
     <>
