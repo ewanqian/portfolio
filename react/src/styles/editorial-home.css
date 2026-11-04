@@ -460,3 +460,12 @@
   .home-current-research-content { grid-column: 1 / -1; }
   .home-current-research-content { margin-top: 12px; }
 }
+
+/* Small research index, kept subordinate to the original four work cards. */
+.home-research-notes { display: grid; grid-template-columns: 1fr; }
+.home-research-note { padding: 0 0 16px; margin: 0 0 16px; border-bottom: 1px solid var(--line); }
+.home-research-note:last-child { border-bottom: 0; margin-bottom: 0; }
+.home-research-note a { display: inline-block; font-size: 15px; line-height: 1.45; border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; }
+.home-research-note a span { font-weight: 400; color: var(--muted); }
+.home-research-note p { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.home-research-index-link { display: inline-block; border-bottom: 1px solid var(--line-strong); margin-top: 7px; font-size: 11px; padding-bottom: 2px; }
