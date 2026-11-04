@@ -3,7 +3,7 @@
 }
 
 .editorial-intro {
-  padding: 148px 0 68px;
+  padding: 92px 0 36px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .editorial-work-section {
-  padding: 24px 0 76px;
+  padding: 16px 0 64px;
 }
 
 .editorial-work-heading {
@@ -93,7 +93,7 @@
 .editorial-work-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 44px 20px;
+  gap: 32px 20px;
   margin-top: 20px;
 }
 
@@ -118,6 +118,21 @@
   aspect-ratio: auto !important;
   object-fit: contain !important;
   object-position: center;
+  background: transparent;
+}
+
+.editorial-work-image img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center;
+  background: transparent;
+}
+
+.editorial-work-card .editorial-work-image {
+  border: 0;
   background: transparent;
 }
 
