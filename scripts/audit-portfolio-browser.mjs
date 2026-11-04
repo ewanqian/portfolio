@@ -62,7 +62,13 @@ const routes=[
   ['home','/'],['work','/#/works'],['workshops','/#/workshops'],['archive','/#/archive'],
   ['about','/#/profile'],['digital-garden','/#/projects/digital-garden'],
   ['natgeo-crystal','/#/projects/natgeo-crystal'],['system-ersha','/#/projects/system-ersha'],
-  ['work-compat','/portfolio/#/works']
+  ['work-compat','/portfolio/#/works'],
+  ['titan-static','/portfolio/works/titan.html'],
+  ['drop-flow-static','/portfolio/works/drop-flow.html'],
+  ['timer-static','/portfolio/works/timer.html'],
+  ['mke-static','/portfolio/works/mke-terminal.html'],
+  ['rain-project','/#/projects/rain-singapore'],
+  ['yujiayun-project','/#/projects/yujiayun-45m2']
 ]
 async function motionCheck(){
   await navigate(base+'/#/projects/digital-garden')
@@ -142,6 +148,11 @@ try{
   const failures=[...report.routes,...(report.chineseRoutes||[])].flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
   console.log('Broken image decode:',JSON.stringify(failures.slice(0,60)))
   if(failures.length)process.exitCode=2
+  const home=report.routes.find(r=>r.name==='home')
+  const work=report.routes.find(r=>r.name==='work')
+  const workshop=report.routes.find(r=>r.name==='workshops')
+  report.releaseGate={homeSelected:home?.workCards,workSelected:work?.workCards,additionalWork:work?.workIndexRows,workshopEntry:workshop?.links?.some(a=>a.href.includes('/20261031/web/'))}
+  if(home?.workCards!==4||work?.workCards!==4||work?.workIndexRows<5||!report.releaseGate.workshopEntry)process.exitCode=2
   if(report.mp4Playback.status!=='PASS')process.exitCode=2
   if(!report.reducedMotion?.videoHidden||!report.reducedMotion?.stillVisible)process.exitCode=2
 }catch(e){console.error('Browser QA FAIL:',e);process.exitCode=2}
