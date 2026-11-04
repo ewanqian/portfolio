@@ -93,7 +93,11 @@ function NatGeoCrystal() {
               <p>{isZh
                 ? '空间漫游整理了两层公共区域的 8 个区域和 27 个全景视点。可按地点查看酒店与体验空间的实际尺度、陈设与观看路径；当前提供项目仓库入口，公开浏览器地址将在部署验收后接入。'
                 : 'The spatial tour organises 27 panoramic viewpoints across eight areas on two public levels. Explore the captured architecture, interior circulation and viewing relationships through the project source; a verified live browser link will be added after deployment QA.'}</p>
-              <p><a className="text-link" href="https://github.com/ewanqian/cng-design-archive" target="_blank" rel="noreferrer">Design Archive ↗</a> · <a className="text-link" href="https://github.com/ewanqian/cng-spatial-tour" target="_blank" rel="noreferrer">Spatial Tour ↗</a></p>
+              <p>
+                <a className="text-link" href="https://ewanqian.github.io/cng-design-archive/" target="_blank" rel="noreferrer">{isZh ? '在线浏览空间档案 ↗' : 'Explore spatial archive online ↗'}</a>
+                {' · '}
+                <a className="text-link" href="https://github.com/ewanqian/cng-design-archive" target="_blank" rel="noreferrer">{isZh ? '公开档案源' : 'Public archive source'} ↗</a>
+              </p>
             </div>
           </div>
         </section>
