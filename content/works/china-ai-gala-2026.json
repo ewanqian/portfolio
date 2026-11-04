@@ -22,10 +22,14 @@
     "projects/china-ai-gala-2026.md",
     "https://virtura.space/work/ai-gala.html"
   ],
-  "repoLink": "https://virtura.space/work/ai-gala.html",
+  "repoLink": "/portfolio/#/projects/china-ai-gala",
   "links": [
     {
-      "text": "VIRTURA 项目页",
+      "text": "个人项目页",
+      "url": "/portfolio/#/projects/china-ai-gala"
+    },
+    {
+      "text": "VIRTURA 项目源",
       "url": "https://virtura.space/work/ai-gala.html"
     }
   ],
