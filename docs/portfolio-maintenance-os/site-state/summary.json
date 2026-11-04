@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-04T13:32:48.544Z",
+  "generatedAt": "2026-11-04T13:41:54.929Z",
   "source": "actual Chromium rendered browser QA + local dist files",
-  "headSha": "fdc84b44daf3508f9e87a330ade70ef71d8b8fdf",
+  "headSha": "90c72a347905d42820588ef4b0776a1fe5f32502",
   "pages": 56,
   "lanes": [
     {
       "lane": "links",
       "pages": 56,
-      "instances": 1054,
-      "unique": 128,
+      "instances": 1046,
+      "unique": 131,
       "internalSourceVerified": 55,
-      "externalNotRun": 71,
-      "errors": 16
+      "externalNotRun": 76,
+      "errors": 0
     },
     {
       "lane": "media",
@@ -19,7 +19,7 @@
       "unique": 124,
       "failed": 0,
       "distortion": 0,
-      "cropReview": 209
+      "cropReview": 199
     },
     {
       "lane": "layout",
@@ -35,9 +35,9 @@
     }
   ],
   "severityCounts": {
-    "P0": 16,
+    "P0": 0,
     "P1": 0,
-    "P2": 420
+    "P2": 414
   },
   "limitations": [
     "External URLs not tested (NOT RUN)",

@@ -1,11 +1,11 @@
-# Portfolio site-state registry — 2026-11-04T13:32:48.544Z
+# Portfolio site-state registry — 2026-11-04T13:41:54.929Z
 
 Evidence: `docs/media-intake/browser-qa-2026-11.json` from real Chromium CDP. `npm run build` output checked for static paths. Not a production deployment test.
 
 | Lane | Status summary |
 | --- | --- |
-| links | pages: 56; instances: 1054; unique: 128; internalSourceVerified: 55; externalNotRun: 71; errors: 16 |
-| media | images: 498; unique: 124; failed: 0; distortion: 0; cropReview: 209 |
+| links | pages: 56; instances: 1046; unique: 131; internalSourceVerified: 55; externalNotRun: 76; errors: 0 |
+| media | images: 498; unique: 124; failed: 0; distortion: 0; cropReview: 199 |
 | layout | pages: 56; overflow: 0; missingH1: 5 |
 | content | checks: 11; passed: 6; notRun: 4 |
 
@@ -32,12 +32,6 @@ Evidence: `docs/media-intake/browser-qa-2026-11.json` from real Chromium CDP. `n
 - **P2** target-size — work — http://127.0.0.1:4173/portfolio/#/projects/yujiayun-45m2: 10x15px clickable region
 - **P2** target-size — workshops — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — archive — http://127.0.0.1:4173/#/: 97x19px clickable region
-- **P0** link — archive — http://127.0.0.1:4173/archive: file missing in build output (no route proof)
-- **P0** link — archive — http://127.0.0.1:4173/archive: file missing in build output (no route proof)
-- **P0** link — archive — http://127.0.0.1:4173/archive: file missing in build output (no route proof)
-- **P0** link — archive — http://127.0.0.1:4173/archive: file missing in build output (no route proof)
-- **P0** link — archive — http://127.0.0.1:4173/archive: file missing in build output (no route proof)
-- **P0** link — archive — http://127.0.0.1:4173/archive: file missing in build output (no route proof)
 - **P2** target-size — about — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — digital-garden — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — natgeo-crystal — http://127.0.0.1:4173/#/: 97x19px clickable region
@@ -61,8 +55,6 @@ Evidence: `docs/media-intake/browser-qa-2026-11.json` from real Chromium CDP. `n
 - **P2** target-size — drop-flow-static — http://127.0.0.1:4173/portfolio/works/drop-flow.html#media: 42x14px clickable region
 - **P2** target-size — drop-flow-static — http://127.0.0.1:4173/portfolio/index.html#/works: 110x14px clickable region
 - **P2** target-size — drop-flow-static — http://127.0.0.1:4173/portfolio/index.html#/works: 110x14px clickable region
-- **P0** link — mke-static — http://127.0.0.1:4173/portfolio/assets/mke-terminal/MKE.pdf: file missing in build output (no route proof)
-- **P0** link — mke-static — http://127.0.0.1:4173/portfolio/assets/mke-terminal/MKE.pdf: file missing in build output (no route proof)
 - **P2** target-size — rain-project — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — yujiayun-project — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — yujiayun-project — https://www.bilibili.com/video/BV1pZyRBMEML/: 113x14px clickable region
@@ -97,11 +89,13 @@ Evidence: `docs/media-intake/browser-qa-2026-11.json` from real Chromium CDP. `n
 - **P2** target-size — workshop-av — https://github.com/ewanqian/portfolio/blob/main/workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md: 184x18px clickable region
 - **P2** target-size — workshop-101 — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — workshop-101 — http://127.0.0.1:4173/#/workshops: 90x19px clickable region
-- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshops/gamified-life-engineer/README.md: 128x18px clickable region
-- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshops/personal-av-instrument/README.md: 128x18px clickable region
-- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshops/gamified-ai-new-media-art-engineer-101/dashboard/README.md: 154x18px clickable region
-- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/docs/public-programs/README.md: 112x18px clickable region
-- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/docs/encyclopedia/KNOWLEDGE-MAP.md: 96x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/mana-0829/index.html: 64x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/mana-0829/participant.html: 112x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshop-knowledge: 112x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshop-toys: 106x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshop-state-instrument: 117x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshop-demos: 43x18px clickable region
+- **P2** target-size — workshop-101 — https://github.com/ewanqian/portfolio/blob/main/workshop-demos/vl6-glyph-matrix-live.html: 124x18px clickable region
 - **P2** target-size — workshop-series — http://127.0.0.1:4173/#/: 97x19px clickable region
 - **P2** target-size — workshop-series — http://127.0.0.1:4173/#/workshops: 90x19px clickable region
 - **P2** target-size — workshop-series — https://github.com/ewanqian/portfolio/blob/main/workshops/202507-%E6%9D%AD%E5%B7%9E%E4%B8%AD%E5%BF%83-AI-Agent%E5%B7%A5%E4%BD%9C%E5%9D%8A.md: 276x18px clickable region
@@ -130,6 +124,12 @@ Evidence: `docs/media-intake/browser-qa-2026-11.json` from real Chromium CDP. `n
 - **P2** target-size — work — http://127.0.0.1:4173/portfolio/#/projects/natgeo-crystal: 10x15px clickable region
 - **P2** target-size — work — http://127.0.0.1:4173/portfolio/#/projects/china-ai-gala: 10x15px clickable region
 - **P2** target-size — work — http://127.0.0.1:4173/portfolio/#/projects/system-ersha: 10x15px clickable region
+- **P2** target-size — work — http://127.0.0.1:4173/portfolio/works/mke-terminal.html: 10x15px clickable region
+- **P2** target-size — work — http://127.0.0.1:4173/portfolio/#/projects/rain-singapore: 10x15px clickable region
+- **P2** target-size — work — http://127.0.0.1:4173/portfolio/#/projects/yujiayun-45m2: 10x15px clickable region
+- **P2** target-size — workshops — http://127.0.0.1:4173/#/: 99x19px clickable region
+- **P2** target-size — workshops — http://127.0.0.1:4173/#/works: 20x21px clickable region
+- **P2** target-size — workshops — http://127.0.0.1:4173/#/archive: 20x20px clickable region
 
 ## Coverage limits
 - External URLs not tested (NOT RUN)
