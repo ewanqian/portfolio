@@ -179,6 +179,8 @@ try{
   if(home?.workCards!==4||work?.workCards!==4||work?.workIndexRows<5||!report.releaseGate.workshopEntry)process.exitCode=2
   if(report.mp4Playback.status!=='PASS')process.exitCode=2
   if(!report.reducedMotion?.videoHidden||!report.reducedMotion?.stillVisible)process.exitCode=2
+  await navigate(base+'/')
+  await evalJs("localStorage.setItem('portfolio-lang','en')")
   report.mobileRoutes=[]
   for(const [name,route] of routes){
     await command('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:2,mobile:true})
