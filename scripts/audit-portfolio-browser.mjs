@@ -112,11 +112,34 @@ try{
   await command('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]})
   await navigate(base+'/#/projects/digital-garden')
   report.reducedMotion=await evalJs(`({reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,videoHidden:getComputedStyle(document.querySelector('.project-motion-video')).display==='none',stillVisible:getComputedStyle(document.querySelector('.project-motion-reduced')).display!=='none'})`)
+  // Verify both language branches without relying on the runner's English locale.
+  await navigate(base+'/')
+  await evalJs("localStorage.setItem('portfolio-lang','zh')")
+  report.chineseRoutes=[]
+  for(const [name,route] of [['home','/'],['work','/#/works'],['workshops','/#/workshops'],['digital-garden','/#/projects/digital-garden']]){
+    await command('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false})
+    await navigate(base+route)
+    await command('Page.reload',{ignoreCache:true})
+    await sleep(1200)
+    const details=await evalJs(auditExpression)
+    report.chineseRoutes.push({name,...details,badImages:details.images.filter(i=>!i.width||i.error)})
+    if(['home','work','workshops'].includes(name)){
+      for(const [label,width,height] of [['desktop',1440,900],['mobile',390,844]]){
+        await command('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:label==='mobile'})
+        await sleep(350)
+        const screenshot=await command('Page.captureScreenshot',{format:'png',fromSurface:true})
+        const destination=path.resolve('docs/media-intake/qa-screenshots/'+name+'-zh-'+label+'.png')
+        fs.mkdirSync(path.dirname(destination),{recursive:true})
+        fs.writeFileSync(destination,Buffer.from(screenshot.data,'base64'))
+      }
+    }
+    console.log('zh '+name,JSON.stringify({h1:details.h1,badImages:details.images.filter(i=>!i.width||i.error).length,workCards:details.workCards,workIndexRows:details.workIndexRows}))
+  }
   const output=path.resolve('docs/media-intake/browser-qa-2026-11.json')
   fs.mkdirSync(path.dirname(output),{recursive:true})
   fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n')
   console.log('QA saved:',output)
-  const failures=report.routes.flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
+  const failures=[...report.routes,...(report.chineseRoutes||[])].flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
   console.log('Broken image decode:',JSON.stringify(failures.slice(0,60)))
   if(failures.length)process.exitCode=2
   if(report.mp4Playback.status!=='PASS')process.exitCode=2
