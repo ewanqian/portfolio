@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Starter 01 — State Instrument</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--fg:#f2efe7;--muted:rgba(242,239,231,.5);--line:rgba(242,239,231,.2)}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050608;color:var(--fg)}button{font:inherit;color:inherit}.app{position:relative;width:100%;height:100%;transition:background .9s ease}.app.quiet{background:#050608}.app.active{background:#100909}.field{position:absolute;inset:0;overflow:hidden}.quietField,.activeField{position:absolute;inset:0;transition:opacity .7s ease}.quietField{opacity:1;background:radial-gradient(circle at 50% 50%,rgba(143,190,255,.08),transparent 42%)}.activeField{opacity:0;background:repeating-linear-gradient(90deg,transparent 0 8vw,rgba(255,255,255,.035) 8vw calc(8vw + 1px))}.app.active .quietField{opacity:0}.app.active .activeField{opacity:1}.event{position:absolute;left:50%;top:50%;pointer-events:none}.event.quiet{width:18vmin;height:18vmin;border:1px solid rgba(178,210,255,.9);border-radius:50%;animation:qevent 2.8s ease-out forwards}.event.active{width:16vmin;height:3px;background:#ffda62;box-shadow:0 0 40px rgba(255,218,98,.6);animation:aevent .72s cubic-bezier(.15,.8,.2,1) forwards}@keyframes qevent{0%{opacity:.9;transform:translate(-50%,-50%) scale(.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(5)}}@keyframes aevent{0%{opacity:1;transform:translate(-50%,-50%) scaleX(.15) rotate(-8deg)}55%{opacity:.9;transform:translate(-50%,-50%) scaleX(4.6) rotate(4deg)}100%{opacity:0;transform:translate(-50%,-50%) scaleX(7) rotate(10deg)}}.hud{position:absolute;inset:0;padding:22px;display:grid;grid-template-rows:auto 1fr auto;pointer-events:none}.top,.bottom{display:flex;justify-content:space-between;gap:20px}.kicker,.meta{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}h1{margin:5px 0 0;font-size:clamp(23px,4vw,52px);letter-spacing:-.045em;line-height:1}.stateWord{align-self:center;justify-self:center;font-size:clamp(60px,14vw,190px);font-weight:750;letter-spacing:-.075em;opacity:.12;transition:opacity .4s ease}.bottom{font-size:10px;letter-spacing:.1em;color:var(--muted);align-items:end}.controls{position:absolute;z-index:3;left:50%;bottom:52px;transform:translateX(-50%);display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.controls button{appearance:none;border:1px solid var(--line);background:rgba(5,6,8,.72);border-radius:999px;padding:10px 14px;cursor:pointer}.controls button.active,.controls button:hover{background:var(--fg);color:#050608}.tap{min-width:180px}.start{position:absolute;inset:0;z-index:5;background:#050608;display:grid;place-items:center}.start.hidden{display:none}.start button{appearance:none;border:1px solid var(--fg);background:var(--fg);color:#050608;padding:14px 18px;cursor:pointer;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+</style>
+</head>
+<body>
+<div class="app quiet" id="app">
+  <div class="field" id="field"><div class="quietField"></div><div class="activeField"></div></div>
+  <div class="hud"><div class="top"><div><div class="kicker">PERSONAL A/V INSTRUMENT · STARTER 01</div><h1>STATE INSTRUMENT</h1></div><div class="meta" id="stateMeta">1 · QUIET</div></div><div class="stateWord" id="stateWord">QUIET</div><div class="bottom"><div>SAME INPUT · DIFFERENT STATE</div><div>1 QUIET · 2 ACTIVE · SPACE TRIGGER</div></div></div>
+  <div class="controls"><button id="quietBtn" class="active">1 · QUIET</button><button id="activeBtn">2 · ACTIVE</button><button id="tap" class="tap">SPACE · SAME INPUT</button></div>
+  <div class="start" id="start"><button id="startBtn">Start / Enable Audio</button></div>
+</div>
+<script>
+(()=>{
+const app=document.querySelector('#app'),field=document.querySelector('#field'),stateWord=document.querySelector('#stateWord'),stateMeta=document.querySelector('#stateMeta'),quietBtn=document.querySelector('#quietBtn'),activeBtn=document.querySelector('#activeBtn'),tap=document.querySelector('#tap'),start=document.querySelector('#start'),startBtn=document.querySelector('#startBtn');
+let state='QUIET',audio=null,master=null;
+function ensureAudio(){if(!audio){audio=new(window.AudioContext||window.webkitAudioContext)();master=audio.createGain();master.gain.value=.38;master.connect(audio.destination)}if(audio.state==='suspended')audio.resume()}
+function setState(next){state=next;const quiet=state==='QUIET';app.classList.toggle('quiet',quiet);app.classList.toggle('active',!quiet);quietBtn.classList.toggle('active',quiet);activeBtn.classList.toggle('active',!quiet);stateWord.textContent=state;stateMeta.textContent=(quiet?'1':'2')+' · '+state}
+function tone(freq,t,dur,gain,type='sine'){const o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(gain,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+.03)}
+function sound(){ensureAudio();const t=audio.currentTime;if(state==='QUIET'){tone(110,t,1.7,.08,'sine');tone(165,t+.05,2.2,.025,'triangle')}else{tone(92,t,.16,.18,'sine');tone(276,t+.08,.12,.07,'square');tone(414,t+.21,.1,.05,'triangle')}}
+function visual(){const el=document.createElement('div');el.className='event '+state.toLowerCase();field.appendChild(el);setTimeout(()=>el.remove(),state==='QUIET'?3000:900)}
+function fire(){sound();visual()}
+quietBtn.addEventListener('click',()=>setState('QUIET'));activeBtn.addEventListener('click',()=>setState('ACTIVE'));tap.addEventListener('click',fire);startBtn.addEventListener('click',()=>{ensureAudio();start.classList.add('hidden')});addEventListener('keydown',e=>{if(e.key==='1')setState('QUIET');if(e.key==='2')setState('ACTIVE');if(e.code==='Space'){e.preventDefault();if(!start.classList.contains('hidden')){ensureAudio();start.classList.add('hidden')}fire()}});
+window.__AV_STARTER__={name:'01-state-instrument',version:'0.1',setState,fire};
+})();
+</script>
+</body>
+</html>

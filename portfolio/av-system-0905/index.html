@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08090b">
+<title>创造你的实时音画系统｜Ewan Qian Workshop</title>
+<meta name="description" content="实时音画系统工作坊：音乐时间、信号、State、Layer、Routing 与现场控制。">
+<style>
+:root{
+  --bg:#07080a;--panel:#0d0f12;--panel2:#111419;--line:#2a2e34;--line2:#3b4048;
+  --fg:#f3f4f5;--muted:#9ba2ab;--soft:#c8cdd3;--red:#ef4b3e;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",Arial,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.65}
+a{color:inherit;text-decoration:none}.app{display:grid;grid-template-columns:246px minmax(0,1fr) 286px;min-height:100vh}
+.left,.right{position:sticky;top:0;height:100vh;overflow:auto;background:linear-gradient(180deg,#090a0c,#07080a)}
+.left{border-right:1px solid var(--line);padding:26px 18px 24px}.right{border-left:1px solid var(--line);padding:24px 18px}
+.main{min-width:0;padding:0 22px 70px}.topline{height:54px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font:700 11px var(--mono);letter-spacing:.12em;color:var(--muted);position:sticky;top:0;background:rgba(7,8,10,.92);backdrop-filter:blur(10px);z-index:20}
+.brand{display:flex;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line)}.brand .k{font:700 11px var(--mono);letter-spacing:.14em;color:var(--muted)}.brand .n{font:700 15px var(--mono);color:var(--red)}
+.left h1{font-size:24px;line-height:1.04;letter-spacing:-.025em;margin:26px 0 8px}.left .cn{font-size:15px;color:var(--soft)}.left .intro{font-size:13px;color:var(--muted);margin:22px 0 18px;line-height:1.7}
+.nav{display:grid;gap:4px;margin-top:12px}.nav a{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:10px 10px;border-radius:10px;color:var(--muted);font-size:13px}.nav a span:first-child{font-family:var(--mono);color:#6f7680}.nav a:hover,.nav a.active{background:#13161a;color:var(--fg)}.nav a.active{box-shadow:inset 2px 0 0 var(--fg)}
+.left footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font:600 11px/1.8 var(--mono);color:#747b85}
+.screen{min-height:calc(100vh - 54px);display:flex;align-items:center;padding:46px 0;border-bottom:1px solid var(--line);scroll-margin-top:54px}.screen:last-child{border-bottom:0}.screen>.inner{width:100%;max-width:1040px;margin:auto}
+.eyebrow{font:700 11px var(--mono);letter-spacing:.13em;color:var(--red);margin-bottom:12px}.screen h2{font-size:clamp(34px,4.5vw,58px);line-height:1.08;letter-spacing:-.035em;margin:0;max-width:940px}.lead{font-size:clamp(17px,2vw,22px);color:var(--soft);max-width:820px;margin:18px 0 0;line-height:1.65}.copy{max-width:820px;color:var(--muted);font-size:16px;margin-top:18px}.copy p{margin:0 0 14px}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:26px}.box,.card,.linkcard,.statebox,.clockbox{border:1px solid var(--line);background:linear-gradient(180deg,#0d0f12,#0a0c0f);border-radius:14px}.box{padding:20px}.box h3,.card h3{margin:0 0 8px;font-size:18px}.box p,.card p{margin:0;color:var(--muted);font-size:14px}
+.diagram{white-space:pre-wrap;font:650 13px/1.75 var(--mono);color:#d6dae0;overflow:auto}.diagram strong{color:#fff}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
+.card{padding:17px}.card .tag{font:700 10px var(--mono);letter-spacing:.1em;color:var(--red);margin-bottom:9px}.card h3{font-size:17px}.card p{line-height:1.6}
+.quote{font-size:24px;line-height:1.5;letter-spacing:-.02em;color:#f0f1f2;border-left:3px solid var(--red);padding-left:18px;margin-top:22px;max-width:850px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line2);border-radius:999px;padding:9px 12px;font:700 11px var(--mono);color:var(--soft);background:#0b0d10}.btn:hover{border-color:#6b727c;color:#fff}.btn.primary{background:#f1f2f3;color:#0a0b0c;border-color:#f1f2f3}
+.freeman{display:grid;grid-template-columns:1fr .9fr;gap:14px;margin-top:24px}.poster{min-height:310px;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 65% 60%,#13244d 0 12%,transparent 13%),linear-gradient(135deg,#0f1115,#151921 55%,#090a0c);position:relative;overflow:hidden}.poster:before,.poster:after{content:"";position:absolute;border:1px solid #55606f;transform:rotate(-18deg)}.poster:before{width:70%;height:36%;right:-10%;top:24%}.poster:after{width:54%;height:26%;left:12%;bottom:18%}.poster .label{position:absolute;left:22px;top:20px;font:700 12px/1.6 var(--mono);letter-spacing:.08em;color:#d7dce2}.poster .title{position:absolute;left:22px;bottom:22px;right:22px;font-size:25px;font-weight:700;line-height:1.15}
+.note{border-top:1px solid var(--line);margin-top:18px;padding-top:15px;color:#7f8791;font-size:13px;line-height:1.65}
+.clockbox{padding:18px;margin-top:20px}.clocktop{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.clockbox button{border:1px solid var(--line2);background:#111419;color:#fff;border-radius:999px;padding:8px 11px;font:700 11px var(--mono);cursor:pointer}.clockbox input{width:210px}.clockmeta{font:650 11px var(--mono);color:#8e96a1}.beats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}.beat{height:64px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;font:700 16px var(--mono);color:#606772}.beat.on{background:#f4f4f2;color:#0b0c0d;border-color:#f4f4f2}
+.statebox{padding:18px;margin-top:20px}.statebuttons{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.statebuttons button{border:1px solid var(--line2);background:#0b0d10;color:#ccd1d7;border-radius:999px;padding:8px 11px;font:700 10px var(--mono);cursor:pointer}.statebuttons button.active{background:#f2f2f0;color:#111}.stategrid{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line)}.stategrid div{padding:9px 5px;border-bottom:1px solid var(--line);font-size:13px}.stategrid .key{font:700 10px var(--mono);color:#747c86}
+.right h3{font-size:18px;margin:0 0 12px}.rblock{padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--line)}.rblock:last-child{border-bottom:0}.questions{display:grid;gap:11px}.question{display:grid;grid-template-columns:24px 1fr;gap:8px;color:var(--muted);font-size:13px}.question span{font:700 10px var(--mono);color:#777f88}
+.schedule{display:grid;gap:11px}.row{display:grid;grid-template-columns:62px 1fr;gap:9px}.row time{font:700 10px var(--mono);color:#848b94}.row b{font-size:13px;font-weight:600}.row p{font-size:12px;color:#747b84;margin:2px 0 0}
+.resources{display:grid;gap:8px}.linkcard{padding:12px}.linkcard b{display:block;font-size:13px;margin-bottom:3px}.linkcard span{font-size:12px;color:#777f88}.linkcard:hover{border-color:#4a5058}
+.biglink{display:block;text-align:center;background:#f1f2f3;color:#0a0b0c;padding:14px;border-radius:11px;font-weight:700;margin-top:12px}
+.code{font:650 12px/1.75 var(--mono);white-space:pre-wrap;color:#d6dae0}
+@media(max-width:1180px){.app{grid-template-columns:220px minmax(0,1fr)}.right{display:none}.left{position:sticky}.main{padding-right:18px}}
+@media(max-width:760px){.app{display:block}.left{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}.nav{grid-template-columns:1fr 1fr}.main{padding:0 16px 50px}.topline{position:relative}.screen{min-height:auto;padding:44px 0}.split,.freeman,.grid4,.grid3,.grid2{grid-template-columns:1fr}.nav a{font-size:12px}.screen h2{font-size:38px}.stategrid{grid-template-columns:120px 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+
+<aside class="left">
+  <div class="brand"><div><div class="k">EN_TROPY</div><div class="k" style="margin-top:4px">ARTIST WORKSHOP</div></div><div class="n">02</div></div>
+  <h1>Create Your Own<br>Real-Time<br>Audiovisual System</h1>
+  <div class="cn">创造你的实时音画系统</div>
+  <div class="intro">从我自己的现场工作出发，讨论音乐时间、视觉状态、系统控制，以及一场演出怎样被组织起来。</div>
+  <nav class="nav">
+    <a class="active" href="#intro"><span>00</span><span>从哪里开始</span></a>
+    <a href="#freeman"><span>01</span><span>Freeman 的系统</span></a>
+    <a href="#why"><span>02</span><span>为什么要做系统</span></a>
+    <a href="#music"><span>03</span><span>音乐怎么进入视觉</span></a>
+    <a href="#signal"><span>04</span><span>Time / Event / Value</span></a>
+    <a href="#clock"><span>05</span><span>BPM / Link</span></a>
+    <a href="#case"><span>06</span><span>BPM Link Experiment</span></a>
+    <a href="#architecture"><span>07</span><span>从素材到系统</span></a>
+    <a href="#state"><span>08</span><span>State 保存什么</span></a>
+    <a href="#human"><span>09</span><span>人和系统怎么分工</span></a>
+    <a href="#demo"><span>10</span><span>打开真实工程</span></a>
+    <a href="#build"><span>11</span><span>AV System 0.1</span></a>
+    <a href="#recap"><span>12</span><span>9.5 课后回顾</span></a>
+    <a href="#resources"><span>13</span><span>资料</span></a>
+  </nav>
+  <footer>Leon Krykhtin × After Loop<br>2026.09.05 · Shanghai</footer>
+</aside>
+
+<main class="main">
+<div class="topline"><span>EWAN QIAN / REALTIME A/V SYSTEM</span><span>WORKSHOP READER</span></div>
+
+<section class="screen" id="intro"><div class="inner">
+  <div class="eyebrow">00 / INTRO</div>
+  <h2>这次我想把问题讲大一点：一场实时音画演出，到底怎么被组织起来？</h2>
+  <p class="lead">我做现场视觉以后，慢慢发现“画面本身”只占工作的一部分。真正到了现场，还要处理音乐时间、状态、Layer、控制器、切换、恢复，以及自己什么时候介入。</p>
+  <div class="copy">
+    <p>8.29 的工作坊里，我从一个很小的控制练习出发，讨论 Tap / Hold / Release、BPM、State 和 Mapping。那一轮更接近“一个动作怎么变成可以演奏的东西”。</p>
+    <p>这次把镜头往后拉。我们看整套演出：音乐端给了什么，视觉端能读到什么，系统怎么记住当前状态，多个视觉怎么被组织，人又在什么时候做判断。</p>
+  </div>
+  <div class="quote">如果只剩下一张图，我会把这堂课画成：Music → Signal → System → Visual → Performance。</div>
+</div></section>
+
+<section class="screen" id="freeman"><div class="inner">
+  <div class="eyebrow">01 / PAURIC FREEMAN</div>
+  <h2>先看一套真的被拿去演出的系统。</h2>
+  <div class="freeman">
+    <div class="poster"><div class="label">TOUCHDESIGNER DUBLIN · 2025<br>PAURIC FREEMAN</div><div class="title">System Design for<br>Audiovisual Performance</div></div>
+    <div>
+      <div class="copy" style="margin-top:0">
+        <p>Freeman 的分享很适合作为入口，因为他讲的重点不是某个视觉效果，而是怎样让一套东西在现场被反复调用、切换、组合。</p>
+        <p>我从里面主要取四件事：数据怎么整理、Scene 怎么存和叫回来、已有内容怎么重新组合、切换时怎么保持稳定。</p>
+        <p>这页已经把这堂课需要的部分写出来。视频只是补充材料。</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.xiaohongshu.com/discovery/item/6968e5cf0000000021030708?source=webshare&xhsshare=pc_web&xsec_token=ABabowgcLmDn4R6BqpJjKl4NIFcj64sqr-4nkTwdcuIfQ=&xsec_source=pc_share">中文笔记</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://derivative.ca/event/touchdesigner-event-dublin-summer-2025/71918">Derivative 官方介绍</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dOlLuM1A1VQ">YouTube 原视频</a>
+      </div>
+      <div class="note">网络环境打不开 YouTube 时，直接看中文笔记和这一页即可，课程内容不会断。</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="screen" id="why"><div class="inner">
+  <div class="eyebrow">02 / WHY SYSTEM</div>
+  <h2>为什么几条视频很好演，十套实时工程就开始难管理？</h2>
+  <div class="split">
+    <div class="copy" style="margin-top:0">
+      <p>素材少的时候，我可以记住“哪条适合重拍、哪条适合 Break”。内容一多，记忆就开始不够用。</p>
+      <p>比如十套 Processing，每套又有几个状态，再加 Arena Layer、MIDI、BPM、不同参数和恢复方式。这时候需要管理的已经不是文件数量，而是它们之间的关系。</p>
+      <p>系统最先解决的几个问题其实很朴素：我现在在哪里？什么正在运行？下一步能去哪里？如果切错了怎么回来？</p>
+    </div>
+    <div class="box"><div class="diagram">CURRENT STATE
+现在处于什么状态？
+
+ACTIVE LAYERS
+什么还在运行？
+
+MUSIC TIME
+现在是第几拍 / 第几小节？
+
+ROUTING
+这个控制现在管谁？
+
+NEXT
+下一步可以去哪里？
+
+RECOVERY
+怎么回到安全状态？</div></div>
+  </div>
+</div></section>
+
+<section class="screen" id="music"><div class="inner">
+  <div class="eyebrow">03 / MUSIC → VISUAL</div>
+  <h2>现场音乐开始以后，视觉到底靠什么知道“现在发生了什么”？</h2>
+  <p class="lead">这件事没有唯一答案。最常见的几种方法可以同时存在。</p>
+  <div class="grid4">
+    <div class="card"><div class="tag">HUMAN</div><h3>我自己听</h3><p>陌生 DJ set 里最常见。听到 Break、Drop、停顿、能量变化，再手动决定画面。</p></div>
+    <div class="card"><div class="tag">CLOCK</div><h3>拿音乐时间</h3><p>只知道 BPM、Beat、Bar、Phase。程序知道什么时候发生，不知道声音内容是什么。</p></div>
+    <div class="card"><div class="tag">MIDI / DATA</div><h3>拿控制信号</h3><p>鼓机、DAW、控制器发送 Note、CC、Trigger。视觉端得到明确事件或数值。</p></div>
+    <div class="card"><div class="tag">AUDIO</div><h3>直接听波形</h3><p>分析音量、低中高频、瞬态或 FFT。适合获得声音此刻的物理特征。</p></div>
+  </div>
+  <div class="box" style="margin-top:18px"><div class="diagram">DJ / LIVE ELECTRONICS / AUDIO
+                ↓
+              MUSIC
+        ┌───────┼────────┬────────┐
+        ↓       ↓        ↓        ↓
+      HUMAN    CLOCK    MIDI     AUDIO
+        └───────┴────────┴────────┘
+                ↓
+          VISUAL SYSTEM</div></div>
+</div></section>
+
+<section class="screen" id="signal"><div class="inner">
+  <div class="eyebrow">04 / TIME · EVENT · VALUE</div>
+  <h2>程序里先把音乐信息分成三类，会省掉很多麻烦。</h2>
+  <div class="grid3">
+    <div class="card"><div class="tag">TIME</div><h3>现在走到哪里？</h3><p>BPM、Beat、Bar、Phase、Phrase。它们给整个系统共同时间。</p></div>
+    <div class="card"><div class="tag">EVENT</div><h3>刚才发生了什么？</h3><p>Kick、MIDI Note、Cue、Trigger。通常是一瞬间发生的事件。</p></div>
+    <div class="card"><div class="tag">VALUE</div><h3>现在有多少？</h3><p>Volume、Bass Energy、MIDI CC、Envelope。通常整理成 0 到 1。</p></div>
+  </div>
+  <div class="split">
+    <div class="box"><div class="diagram">EVENT
+
+kick
+0 0 0 1 0 0 0 1
+
+note
+0 → 1 → 0
+
+它回答：
+“发生了吗？”</div></div>
+    <div class="box"><div class="diagram">VALUE
+
+MIDI CC
+0 ─────── 127
+      ↓
+0.0 ───── 1.0
+
+density = 0.72
+
+它回答：
+“现在有多少？”</div></div>
+  </div>
+  <p class="copy">0–1 不是某种视觉风格，它只是一个方便交换的数值范围。今天的 0.72 可以来自 Fader，明天也可以来自 Bass Energy，视觉模块照样能读。</p>
+</div></section>
+
+<section class="screen" id="clock"><div class="inner">
+  <div class="eyebrow">05 / SHARED CLOCK</div>
+  <h2>BPM 最实用的地方，是让音乐和视觉共用一把时间尺子。</h2>
+  <div class="split">
+    <div>
+      <div class="copy" style="margin-top:0">
+        <p>120 BPM 大约每 0.5 秒一拍。Beat 组成 Bar，更长的 Bar 再形成 Phrase。视觉共享这套时间以后，切换就可以放在下一拍、下一小节或者下一段落。</p>
+        <p>Ableton Link 处理的正是这类共同时间：tempo、beat、phase。Resolume 也可以加入同一个 Link Session。</p>
+        <p>没有 Link 也能演。最简单的方法就是听音乐 Tap BPM，再在新的 Phrase 第一拍 Resync。</p>
+      </div>
+      <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.ableton.com/en/link/">Ableton Link</a><a class="btn" target="_blank" rel="noopener" href="https://resolume.com/support/en/bpm">Resolume BPM</a></div>
+    </div>
+    <div class="clockbox">
+      <div class="clocktop"><button id="clockToggle">START</button><label class="clockmeta">BPM <input id="bpmSlider" type="range" min="60" max="180" value="120"> <span id="bpmValue">120</span></label><span class="clockmeta" id="clockStatus">BAR 1 · BEAT 1</span></div>
+      <div class="beats"><div class="beat">1</div><div class="beat">2</div><div class="beat">3</div><div class="beat">4</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="screen" id="case"><div class="inner">
+  <div class="eyebrow">06 / BPM LINK EXPERIMENT</div>
+  <h2>我自己的一个例子：声音端已经有结构化信号，视觉端就可以直接接进来。</h2>
+  <div class="split">
+    <div>
+      <div class="copy" style="margin-top:0">
+        <p>Mark 用 CDJ 和人声采样建立 Loop；RÖ 继续处理声音，同时向视觉端发送 MIDI / BPM；我在 Processing 里接收这些信息，控制视觉状态。</p>
+        <p>演出前一晚，我用 Codex + Processing MCP 快速做出约十套能运行的视觉。真正排起来以后，只留下约四组。</p>
+        <p>这里最值得讲的不是“十套做得很快”，而是后面那一步：看、比较、删掉、留下，再把留下的内容接进同一套时间和控制里。</p>
+      </div>
+      <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.manamana.net/video/detail?id=3001136#!zh视听&演出">MANA 视频</a><a class="btn" target="_blank" rel="noopener" href="https://github.com/ewanqian/portfolio/blob/main/projects/bpm-link-experiment-2026.md">项目记录</a></div>
+    </div>
+    <div class="box"><div class="diagram">MARK
+CDJ / VOICE LOOP
+      ↓
+     RÖ
+FX / BIT MACHINE
+      │
+      ├─ MIDI
+      └─ BPM
+           ↓
+EWAN / PROCESSING
+           ↓
+STATE / VISUAL
+           ↓
+RESOLUME / STAGE</div></div>
+  </div>
+  <div class="quote">有了四组好用的视觉以后，下一步的问题变成：怎么让它们属于同一套演出系统？</div>
+</div></section>
+
+<section class="screen" id="architecture"><div class="inner">
+  <div class="eyebrow">07 / FROM MATERIAL TO SYSTEM</div>
+  <h2>我现在会先把内容分成四层：Material、Layer、State、Show。</h2>
+  <div class="grid4">
+    <div class="card"><div class="tag">MATERIAL</div><h3>手上的材料</h3><p>一条 Clip、一个 Processing Visual、一个 Shader、一个短行为。</p></div>
+    <div class="card"><div class="tag">LAYER</div><h3>长期存在的通道</h3><p>例如 Base、Rhythm、Accent、Transition。它们可以同时存在。</p></div>
+    <div class="card"><div class="tag">STATE</div><h3>当前的一组关系</h3><p>哪些 Layer 开着、参数是多少、哪些控制有效、释放怎么处理。</p></div>
+    <div class="card"><div class="tag">SHOW</div><h3>整场怎么走</h3><p>State 怎么切、什么时候自动、什么时候由人决定。</p></div>
+  </div>
+  <div class="box" style="margin-top:18px"><div class="diagram">MATERIAL
+   ↓
+LAYER
+   ↓
+STATE
+   ↓
+SHOW</div></div>
+  <p class="copy">这四层够我在课上把问题讲清。更细的 Capsule、Sequence、Graph 可以留到以后继续研究。</p>
+</div></section>
+
+<section class="screen" id="state"><div class="inner">
+  <div class="eyebrow">08 / STATE</div>
+  <h2>State 保存的不是一个画面名字，它保存的是“当前这套演出关系”。</h2>
+  <div class="split">
+    <div class="statebox">
+      <div class="statebuttons"><button class="active" data-state="heavy">HEAVY</button><button data-state="break">BREAK</button></div>
+      <div class="stategrid">
+        <div class="key">VISUAL BANK</div><div id="s-bank">METAL / PULSE</div>
+        <div class="key">BASE LAYER</div><div id="s-base">ON</div>
+        <div class="key">RHYTHM</div><div id="s-rhythm">ON</div>
+        <div class="key">DENSITY</div><div id="s-density">0.85</div>
+        <div class="key">FLASH</div><div id="s-flash">0.60</div>
+        <div class="key">RELEASE</div><div id="s-release">SHORT</div>
+        <div class="key">CLOCK DIV.</div><div id="s-clock">1/4</div>
+      </div>
+    </div>
+    <div class="copy" style="margin-top:0">
+      <p>比如进入 HEAVY，我可以同时打开节奏层、提高 Density、允许 Flash、把 Clock Division 变细。</p>
+      <p>切到 BREAK，基础层还在，节奏层降低，画面空下来，Release 拉长，变化速度也慢一点。</p>
+      <p>现场只做一次 State 切换，内部很多关系一起跟着变。这就是它真正帮我的地方。</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="screen" id="human"><div class="inner">
+  <div class="eyebrow">09 / HUMAN + SYSTEM</div>
+  <h2>系统负责精确和重复，我负责判断这一刻应该发生什么。</h2>
+  <div class="split">
+    <div class="box"><div class="diagram">SYSTEM
+BPM
+CLOCK
+QUANTIZE
+DENSITY LIMIT
+TRANSITION
+RESET / PANIC</div></div>
+    <div class="box"><div class="diagram">HUMAN
+FOLLOW?
+WAIT?
+ADD?
+REMOVE?
+KEEP IT EMPTY?
+CHANGE STATE?</div></div>
+  </div>
+  <p class="copy">面对没排练过的 DJ，我会更多依赖耳朵和现场判断。面对信号完整、排练充分的合作演出，系统可以接管更多精确工作。两种方法本来就可以放在同一套工具里。</p>
+</div></section>
+
+<section class="screen" id="demo"><div class="inner">
+  <div class="eyebrow">10 / LIVE PROJECT</div>
+  <h2>最后打开真实工程。我只带大家追三条线。</h2>
+  <div class="grid3">
+    <div class="card"><div class="tag">TIME</div><h3>音乐时间怎么进来</h3><p>BPM → Transport → Beat / Bar → Visual Timing。</p></div>
+    <div class="card"><div class="tag">CONTROL</div><h3>控制信号去哪</h3><p>MIDI / Keyboard → Router → Parameter / Action。</p></div>
+    <div class="card"><div class="tag">STATE</div><h3>状态怎么改变输出</h3><p>State → Layers / Parameters → Visual Output。</p></div>
+  </div>
+  <p class="copy">我不会从第一行代码开始讲。先找到这三条线，再看一次 Reset / Panic。面对陌生工程时，有了这几个观察点，就不会一下被文件数量淹没。</p>
+</div></section>
+
+<section class="screen" id="build"><div class="inner">
+  <div class="eyebrow">11 / AV SYSTEM 0.1</div>
+  <h2>最后 10 分钟，先把一个最小系统骨架跑起来。</h2>
+  <div class="split">
+    <div class="box"><div class="code">1 × SHARED CLOCK
+BPM / BEAT / BAR
+
+1 × EVENT
+Space / MIDI Note / Kick
+
+1 × VALUE
+Mouse X / MIDI CC / Audio Energy
+
+2 × STATES
+CALM / ACTIVE
+
+2 × VISUAL MODULES
+
+1 × RESET / PANIC</div></div>
+    <div>
+      <div class="copy" style="margin-top:0">
+        <p>这个 0.1 不需要做成作品。只要时间、事件、连续参数、两个 State 和两个 Visual Module 能在同一个 Processing 工程里跑通，就已经足够。</p>
+        <p>我会用 Harness 现场生成第一版。之后再决定它应该长成什么样。</p>
+      </div>
+      <div class="actions"><a class="btn" href="../mana-0829/participant.html">8.29 版本管理 / Agent Skill</a></div>
+    </div>
+  </div>
+</div></section>
+
+
+<section class="screen" id="recap"><div class="inner">
+  <div class="eyebrow">12 / AFTER WORKSHOP · 09.05</div>
+  <h2>9 月 5 日这次工作坊，最后落在两件事：先做出能演奏的内容，再想办法把它们组织起来。</h2>
+  <div class="copy">
+    <p>前面的工作坊已经碰过一个很基础的问题：一个按键不只触发一次效果，它还可以有 Tap、Hold、Release、Repeat、BPM 和 State。9 月 5 日这次，我把重点放到下一层——当手里已经有很多可以演奏的内容以后，怎么把它们整理成一套现场系统。</p>
+    <p>课堂里既有手动演奏，也讲了自动时间。按键可以直接触发状态；共享 BPM / Beat / Bar 可以让视觉自动落到音乐边界；MIDI 或其他信号可以继续改变参数。进入 Resolume Arena 以后，这些实时工程、视觉 Clips、Layer 和特效还需要被分类，才能在现场被正确调用。</p>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="tag">MAKE A VISUAL</div>
+      <h3>先从一张自己喜欢的平面图开始</h3>
+      <p>参与者先找一张喜欢的图，想象它如果开始运动会发生什么，再把视觉风格、运动方式和演奏规则描述给 GPT / Agent，快速得到第一版。</p>
+    </div>
+    <div class="card">
+      <div class="tag">MAKE IT PLAYABLE</div>
+      <h3>按下、持续、松开，都可以有不同结果</h3>
+      <p>一个键可以有 Press / Hold / Release，也可以继续加入 Repeat、Residue 和 Sequence。声音同样可以按“乐器”去设计，让一次操作启动一段会继续发展的声音与画面行为。</p>
+    </div>
+    <div class="card">
+      <div class="tag">MAKE A SYSTEM</div>
+      <h3>把多个可玩的单元放进同一套时间和状态里</h3>
+      <p>当这种逻辑扩展到更多按键、更多视觉模块以后，系统负责 BPM、状态、Layer、路由和安全边界，人负责选择、切换和现场判断。</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <div class="diagram">MANUAL
+KEY / MIDI / CONTROLLER
+      ↓
+TRIGGER / HOLD / RELEASE
+      ↓
+STATE / EFFECT / VISUAL
+
+AUTO
+BPM / BEAT / BAR
+      ↓
+QUANTIZE / TIMING
+      ↓
+PULSE / CHANGE / TRANSITION
+
+BOTH
+      ↓
+LIVE PERFORMANCE</div>
+    </div>
+    <div class="copy" style="margin-top:0">
+      <p><b style="color:var(--fg)">按键控制和 BPM 自动控制可以同时存在。</b>有些变化适合由人明确触发，有些节奏性动作可以交给共享时钟。这样表演者不需要手动制造每一个 beat，也不会失去现场选择。</p>
+      <p>在 Arena 里，可以继续把视觉 Clips、实时 Processing 输出和效果按照角色整理，例如 Base / Rhythm / Accent / Transition，再让不同 State 决定哪些 Layer 和效果当前可用。</p>
+      <p>如果没有外部音乐人，也可以把声音和画面放在同一个工程里自己配合：共享 BPM、共享 State，让系统在 AUTO 状态下自己形成一段小型演出，再切到 PERFORM 由人接管。</p>
+    </div>
+  </div>
+
+  <div class="quote">后续练习不需要一次做完整场。每天留下一个能单独成立的小状态，慢慢积累成 Visual Module、Scene、Live Set，最后再进入 Arena 或自己的实时演出系统。</div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="tag">WHAT YOU CAN CONTINUE</div>
+      <h3>可以继续做的几条路</h3>
+      <p>准备更多 Visual Clips；给现有工程增加 BPM / Quantize；整理 2–4 个清楚的 State；把按键扩展成一组可演奏控制；把自己的声音和画面做成一段 AUTO + PERFORM 的短演出。</p>
+    </div>
+    <div class="card">
+      <div class="tag">WHAT TO SHARE</div>
+      <h3>如果做了新的版本，发一个很小的记录就够</h3>
+      <p>一个可以打开的链接 + 一段十几秒录屏 + 一句话说明这次改了什么。这样下一次再看时，可以知道系统是怎样一步一步长出来的。</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn primary" href="https://ewanqian.site/av-system-0905/" target="_blank" rel="noopener">9.5 Workshop Reader</a>
+    <a class="btn" href="../workshop-state-instrument/">State Instrument</a>
+    <a class="btn" href="../workshop-knowledge/">Workshop Knowledge</a>
+    <a class="btn" href="../mana-0829/participant.html">版本管理 / 后续练习</a>
+  </div>
+  <div class="note">9.5 页面保留了本次课程的系统结构、Freeman 参考、BPM / Link、Time / Event / Value、BPM Link Experiment、State / Layer / Routing、真实工程观察方法和后续练习入口。以后可以从这里回顾。</div>
+</div></section>
+
+<section class="screen" id="resources"><div class="inner">
+  <div class="eyebrow">13 / CONTINUE</div>
+  <h2>资料都放在这里，课堂没讲完也可以自己继续。</h2>
+  <div class="grid2">
+    <a class="linkcard" href="../mana-0829/participant.html"><b>8.29 课后延伸</b><span>Git、Diff、Rollback、Agent Skill。</span></a>
+    <a class="linkcard" href="../mana-0829/notes.html"><b>8.29 完整笔记</b><span>Tap / Hold / Release、BPM、State、Mapping。</span></a>
+    <a class="linkcard" href="../workshop-knowledge/"><b>音画同源知识库</b><span>Beat Clock、Graph Routing、Shared State 等方法卡。</span></a>
+    <a class="linkcard" href="../research/performance-control-model/"><b>Performance Control Model</b><span>继续看状态、反馈、稳定性、可控性和人机分工。</span></a>
+  </div>
+</div></section>
+</main>
+
+<aside class="right">
+  <div class="rblock">
+    <h3>这节课会回答</h3>
+    <div class="questions">
+      <div class="question"><span>01</span><div>一场 AV 演出为什么需要“系统”？</div></div>
+      <div class="question"><span>02</span><div>音乐怎样把时间或信号交给视觉？</div></div>
+      <div class="question"><span>03</span><div>State、Layer、Routing 分别解决什么？</div></div>
+      <div class="question"><span>04</span><div>哪些事情应该自动，哪些留给人？</div></div>
+      <div class="question"><span>05</span><div>怎么从几套视觉走到一个可演出的工程？</div></div>
+    </div>
+  </div>
+  <div class="rblock">
+    <h3>两小时</h3>
+    <div class="schedule">
+      <div class="row"><time>00–08</time><div><b>Freeman</b><p>先看一套真的系统</p></div></div>
+      <div class="row"><time>08–38</time><div><b>音乐进入视觉</b><p>Human / Clock / MIDI / Audio</p></div></div>
+      <div class="row"><time>38–65</time><div><b>BPM / Link</b><p>Shared Clock 与现场时间</p></div></div>
+      <div class="row"><time>65–95</time><div><b>BPM Link + State</b><p>从案例进入系统结构</p></div></div>
+      <div class="row"><time>95–113</time><div><b>真实工程</b><p>Processing / Arena</p></div></div>
+      <div class="row"><time>113–120</time><div><b>AV System 0.1</b><p>Harness 第一版</p></div></div>
+    </div>
+  </div>
+  <div class="rblock">
+    <h3>Freeman</h3>
+    <div class="resources">
+      <a class="linkcard" target="_blank" rel="noopener" href="https://www.xiaohongshu.com/discovery/item/6968e5cf0000000021030708?source=webshare&xhsshare=pc_web&xsec_token=ABabowgcLmDn4R6BqpJjKl4NIFcj64sqr-4nkTwdcuIfQ=&xsec_source=pc_share"><b>中文笔记</b><span>推荐先看</span></a>
+      <a class="linkcard" target="_blank" rel="noopener" href="https://derivative.ca/event/touchdesigner-event-dublin-summer-2025/71918"><b>Derivative</b><span>官方活动介绍</span></a>
+      <a class="linkcard" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dOlLuM1A1VQ"><b>YouTube</b><span>能访问时再看</span></a>
+    </div>
+  </div>
+  <div class="rblock"><h3>课后回顾</h3><div class="resources"><a class="linkcard" href="#recap"><b>9.5 Workshop Recap</b><span>课堂做了什么、怎样继续练习、如何整理成系统</span></a></div></div><a class="biglink" href="#recap">查看 9.5 回顾 →</a>
+</aside>
+
+</div>
+<script>
+(function(){
+  const links=[...document.querySelectorAll('.nav a')];
+  const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-42% 0px -52% 0px',threshold:.01});
+  sections.forEach(s=>obs.observe(s));
+
+  let running=false,timer=null,beat=0,bar=1;
+  const toggle=document.getElementById('clockToggle'),slider=document.getElementById('bpmSlider'),bpmText=document.getElementById('bpmValue'),status=document.getElementById('clockStatus'),beatEls=[...document.querySelectorAll('.beat')];
+  function interval(){return 60000/Number(slider.value)}
+  function paint(){beatEls.forEach((el,i)=>el.classList.toggle('on',i===beat));status.textContent='BAR '+bar+' · BEAT '+(beat+1)}
+  function tick(){paint();beat++;if(beat>3){beat=0;bar++}}
+  function restart(){if(timer)clearInterval(timer);if(running)timer=setInterval(tick,interval())}
+  if(toggle){toggle.onclick=()=>{running=!running;toggle.textContent=running?'STOP':'START';if(running){beat=0;bar=1;tick();restart()}else{clearInterval(timer);timer=null;beatEls.forEach(el=>el.classList.remove('on'))}}}
+  if(slider){slider.oninput=()=>{bpmText.textContent=slider.value;restart()}}
+
+  const states={heavy:{bank:'METAL / PULSE',base:'ON',rhythm:'ON',density:'0.85',flash:'0.60',release:'SHORT',clock:'1/4'},break:{bank:'FIELD / ATMOS',base:'ON',rhythm:'LOW / OFF',density:'0.12',flash:'OFF',release:'LONG',clock:'1 BAR'}};
+  const ids={bank:'s-bank',base:'s-base',rhythm:'s-rhythm',density:'s-density',flash:'s-flash',release:'s-release',clock:'s-clock'};
+  document.querySelectorAll('.statebuttons button').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.statebuttons button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const s=states[btn.dataset.state];Object.keys(ids).forEach(k=>document.getElementById(ids[k]).textContent=s[k])});
+})();
+</script>
+</body>
+</html>
