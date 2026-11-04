@@ -1,0 +1,16 @@
+{
+  "id": "timer-volumetric-desert-2026",
+  "slug": "timer-volumetric-desert-2026",
+  "title": "TIMER — Volumetric Desert / 体积化沙漠",
+  "titleEn": "TIMER — Volumetric Desert",
+  "type": "Work in Development",
+  "category": "research",
+  "date": "2026-11-04",
+  "summary": "以大规模沙粒和体积化动态模拟重新呈现时间，研究 Apple Vision Pro 全景观看以及未来穹顶、多屏和大尺度沉浸场馆的适配。",
+  "summaryEn": "A proposed volumetric particle study of time, beginning with Apple Vision Pro and exploring future panoramic, dome and large-scale display adaptations.",
+  "articlePath": "projects/timer-volumetric-desert-2026.md",
+  "status": "published",
+  "featured": false,
+  "order": 13,
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/projects/timer-volumetric-desert-2026.md"
+}
