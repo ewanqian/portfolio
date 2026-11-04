@@ -164,3 +164,32 @@
   .bpm-reading-page .bpm-visual-sidebar { grid-template-columns: 1fr; }
   .bpm-reading-page .bpm-history, .bpm-reading-page .bpm-coordination, .bpm-reading-page .bpm-vocabulary, .bpm-reading-page .bpm-mini-mixer { grid-column: auto; }
 }
+
+/* BPM Sync reading: waveforms and musical timeline before optional controllers. */
+.bpm-beatlink-notes { border-top: 1px solid var(--line-strong); }
+.bpm-beatlink-notes .bpm-side-photo img { width: min(100%, 335px); max-height: 335px; object-fit: contain; object-position: left; }
+.bpm-beatlink-notes .bpm-side-photo figcaption { margin-bottom: 8px; }
+.bpm-beatlink-notes ol { padding: 0; margin: 8px 0 12px; list-style: none; display: grid; border-top: 1px solid var(--line); }
+.bpm-beatlink-notes li { display: grid; grid-template-columns: 108px 1fr; gap: 8px; border-bottom: 1px solid var(--line); padding: 7px 0; }
+.bpm-beatlink-notes li strong { font: 10px/1.55 var(--font-mono); color: var(--text); font-weight: 600; }
+.bpm-beatlink-notes li span { font-size: 11px; line-height: 1.55; color: var(--muted); }
+.bpm-beatlink-notes > a { display: inline-block; text-decoration: underline; text-underline-offset: 3px; font-size: 11px; }
+.bpm-sync-reading .bpm-sync-track { display: flex; align-items: center; gap: 5px; min-height: 28px; }
+.bpm-sync-reading .bpm-sync-track > span { flex: 0 0 90px; font: 10px/1.5 var(--font-mono); color: var(--muted); }
+.bpm-sync-reading .bpm-sync-track > i { flex: 1; height: 7px; display: block; background: rgba(243,241,235,.58); }
+.bpm-sync-reading .bpm-sync-track > i:first-of-type { background: rgba(211,122,109,.8); }
+.bpm-sync-reading .bpm-sync-travel b { display: block; width: 100%; border-bottom: 1px solid var(--line-strong); text-align: center; font: 11px/1.6 var(--font-mono); font-weight: 500; }
+.bpm-sync-reading p { padding-top: 8px; margin: 0; }
+.bpm-side-quick-note .bpm-side-group { border: 0; padding: 0; }
+.bpm-side-quick-note .bpm-time-tracks > div { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 4px; }
+.bpm-side-quick-note .bpm-time-tracks span { font-size: 9px; }
+.bpm-side-quick-note .bpm-time-tracks i { height: 11px; }
+.bpm-side-quick-note .bpm-track-sustain::after { top: 3px; height: 3px; }
+.bpm-side-quick-note .bpm-track-ticks::after { top: 1px; bottom: 1px; }
+.bpm-side-quick-note .bpm-track-human::after { top: 0; height: 10px; }
+.bpm-side-quick-note .bpm-side-group > p { margin-top: 8px; font-size: 10px; }
+.bpm-sidebar-pair .bpm-side-photo img { max-height: 188px; }
+@media (max-width: 540px) {
+  .bpm-beatlink-notes li { grid-template-columns: 112px minmax(0,1fr); }
+  .bpm-side-quick-note .bpm-time-tracks > div { grid-template-columns: 100px minmax(0,1fr); gap: 8px; }
+}

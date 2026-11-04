@@ -94,16 +94,14 @@ function LayerMixer() {
 
 function HistoricalContext() {
   const references = [
-    {year: '2010', name: '1024 Architecture / MadMapper', kind: '工具成为演出语言', detail: '艺术家与开发者共同解决实时空间映射，使舞台几何可以直接参与创作。', url: 'https://madmapper.com/aboutus'},
-    {year: '2016', name: 'Nosaj Thing × Daito Manabe', kind: '实时影像与移动灯光', detail: '实时 3D 扫描进入音乐现场，视觉程序、技术支持与创意导演明确分工。', url: 'https://research.rhizomatiks.com/en/works/nosaj_thing_coachella.html'},
-    {year: '2020', name: 'DJ KRUSH × Daito Manabe', kind: '读取演奏动作', detail: '通过分析转盘及混音台动作，让搓碟行为本身成为视觉数据。', url: 'https://rhizomatiks.com/en/work/connected-world/'},
-    {year: '2022', name: 'Rhizomatiks / Light Sync', kind: '节拍与事件的两种控制', detail: '预先存储的灯光图案与实时命令响应协同工作，延伸到整个空间。', url: 'https://www.daito.ws/en/archive/nosaj-thing/'},
-    {year: '2026', name: 'Comix / Notch', kind: '可操作的巡演内容', detail: '将实时场景参数、摄像机、灯光与 Timecode 整合为演出操作系统。', url: 'https://www.thisiscomix.com/real-time'}
+    {year: '2016', name: 'Nosaj Thing × Daito Manabe', kind: '实时扫描 / 现场分工', detail: '扫描输入、实时图像程序、技术导演与现场支持彼此配合。学习如何把实时效果组织成可以运行的舞台系统。', url: 'https://research.rhizomatiks.com/en/works/nosaj_thing_coachella.html'},
+    {year: '2020', name: 'DJ KRUSH × Daito Manabe', kind: '从音乐家动作得到信息', detail: '分析转盘与混音台的演奏动作，令图像回应真实操作，而不只是对着音量变化。', url: 'https://rhizomatiks.com/en/work/connected-world/'},
+    {year: 'LIVE', name: 'Comix / Notch', kind: '现场参数与内容交付', detail: '将实时内容的可调参数、摄像机、灯光和时间信息纳入可演出的工作流。', url: 'https://www.thisiscomix.com/real-time'}
   ]
   return (
-    <section className="bpm-side-group bpm-history" aria-label="实时视觉演出发展案例">
-      <div className="bpm-side-kicker">LIVE SYSTEMS / 2010—2026</div>
-      <p className="bpm-history-intro">从空间映射到实时舞台：五种实践，各自回答一种演出工程问题。</p>
+    <section className="bpm-side-group bpm-history" aria-label="现场视觉控制的专业案例">
+      <div className="bpm-side-kicker">READING / LIVE VISUAL PRACTICE</div>
+      <p className="bpm-history-intro">作品与方法：音乐信息如何进入视觉；实时图像如何被操作、如何交付。</p>
       <div className="bpm-history-rows">
         {references.map(({year,name,kind,detail,url}) => <article className="bpm-history-item" key={name}>
           <time>{year}</time><div><a href={url} target="_blank" rel="noreferrer"><strong>{name}</strong> ↗</a><em>{kind}</em><p>{detail}</p></div>
@@ -144,23 +142,45 @@ function Vocabulary() {
   )
 }
 
+function BeatLinkReading() {
+  return (
+    <section className="bpm-side-group bpm-beatlink-notes" aria-label="Beat Link 播放器截图阅读说明">
+      <div className="bpm-side-kicker">FIG. 01 / BEAT LINK TRIGGER</div>
+      <CaptionedPhoto src="reactor-beatlink-waveform-square.jpg" title="DJ PLAYER / TRACK OVERVIEW" caption="从 REACTOR 操作视频提取。先看播放位置，再看 BPM、节拍网格、接下来可能变化的段落。" />
+      <ol>
+        <li><strong>POSITION</strong><span>当前播到哪里，下一段还有多远</span></li>
+        <li><strong>BPM / BEAT GRID</strong><span>现在的速度、拍子和小节位置</span></li>
+        <li><strong>WAVEFORM</strong><span>音乐的能量起伏；颜色取决于显示模式</span></li>
+        <li><strong>UPCOMING</strong><span>准备进入还是准备撤除视觉层</span></li>
+      </ol>
+      <a href="https://blt-guide.deepsymmetry.org/beat-link-trigger/8.0.0/Players.html" target="_blank" rel="noreferrer">Beat Link Trigger · Player Status ↗</a>
+    </section>
+  )
+}
+
 function Sidebar() {
   return (
     <div className="bpm-visual-sidebar">
-      <CaptionedPhoto src="reactor-2026-06.webp" title="REACTOR / SPACE" caption="舞池、观众、激光与远端舞台。" className="bpm-sidebar-lead" />
+      <CaptionedPhoto src="reactor-2026-06.webp" title="REACTOR / CLUB SPACE" caption="现场舞池、屏幕与光束之间的关系。" className="bpm-sidebar-lead" />
+      <BeatLinkReading />
+      <section className="bpm-side-group bpm-sync-reading">
+        <div className="bpm-side-kicker">FIG. 02 / HOW BPM SYNC WORKS</div>
+        <div className="bpm-sync-track"><span>120 BPM</span><i /><i /><i /><i /></div>
+        <div className="bpm-sync-track bpm-sync-travel"><span>16 BEATS</span><b>4 BARS / 8 SEC</b></div>
+        <p>设定 120 BPM、四小节循环为 16 Beats：同步的不仅是速度，还要检查画面在哪一拍开始。</p>
+      </section>
       <div className="bpm-sidebar-pair">
-        <CaptionedPhoto src="reactor-2026-08.webp" title="STAGE / STRUCTURE" caption="机械构成与舞台纵深。" />
-        <CaptionedPhoto src="reactor-beatlink-waveform-square.jpg" title="OPERATOR / BEAT LINK" caption="从作者录制的现场操作视频提取。" />
+        <CaptionedPhoto src="reactor-2026-08.webp" title="STAGE / STRUCTURE" caption="用于理解现场内容如何落入真实屏幕。" />
+        <div className="bpm-side-quick-note"><div className="bpm-side-kicker">THREE TIMES</div><TimeDiagram /></div>
       </div>
-      <TimeDiagram />
+      <RouteDiagram />
+      <details className="bpm-mini-mixer">
+        <summary>尝试 Layer Opacity <span>INTERACTIVE</span></summary>
+        <LayerMixer />
+      </details>
       <HistoricalContext />
       <StageCoordination />
       <Vocabulary />
-      <RouteDiagram />
-      <details className="bpm-mini-mixer">
-        <summary>尝试三轨透明度混合 <span>INTERACTIVE</span></summary>
-        <LayerMixer />
-      </details>
       <p className="bpm-sidebar-archive"><a href={ARCHIVE} target="_blank" rel="noreferrer">REACTOR 摄影与操作图像档案 ↗</a></p>
     </div>
   )
@@ -168,50 +188,57 @@ function Sidebar() {
 
 function Appendix() {
   return (
-    <section className="bpm-appendix" id="bpm-appendix" aria-label="BPM System SOP 附录">
-      <div className="bpm-appendix-top"><span>APPENDIX / PLAYBOOK</span><h2>搭建与排练</h2><p>正文解释方法；以下步骤用于直接复现。按需要展开对应的软件流程。</p></div>
+    <section className="bpm-appendix" id="bpm-appendix" aria-label="BPM Sync 实操与训练">
+      <div className="bpm-appendix-top"><span>APPENDIX / PRACTICE</span><h2>从一段素材到 Club Live Set</h2><p>按照需要展开练习。正文先讲听音乐、看波形、使用 BPM Sync 的方法；这里集中放菜单步骤、外设映射和排练。</p></div>
       <details>
-        <summary><strong>A / Resolume 三轨与 MIDI 推子</strong><span>10 分钟基础搭建</span></summary>
+        <summary><strong>A / 第一次使用 BPM Sync</strong><span>Resolume Arena · 10 分钟</span></summary>
         <ol>
-          <li>新建 Composition；依次放入三条独立的 Layer：BASE、CLOCK、HIT。L1 放连续视频，L2 放四拍循环，L3 放短促事件。</li>
-          <li>检查每条 Layer 都有独立的 Opacity；用鼠标把 L2、L3 从 0 推到 100%，确认叠加关系。</li>
-          <li>接入 USB MIDI 控制器，在 Arena 的 MIDI Shortcuts 编辑模式中选择 L1 Opacity，移动第一个硬件推子；对 L2、L3 重复。推荐对 Layer 使用按位置绑定。</li>
-          <li>L2 的 Clip Transport 设为 BPM Sync，并将四小节循环设为 16 beats；确认素材头尾衔接与小节起点。</li>
-          <li>为 L3 的短促 Clip 使用 Piano Trigger 或相应即时触发模式；测试按下、松开和其他 Layer 的退出状态。</li>
-          <li>保存一份 BASE、CLOCK、HIT、BLACK 的可靠初始工程，并记录各推子的映射。</li>
+          <li>新建 Composition，放入两段视频：一段不跟拍的背景，一段长度适合循环的动画。</li>
+          <li>打开节奏动画的 Clip 面板，在 Transport 中把 Timeline 改为 BPM Sync。先设定 16 Beats（四小节，按 4/4 计算）。</li>
+          <li>把全局 BPM 设为 120。四小节对应 8 秒；改成 100 BPM，则对应 9.6 秒。观察循环速度是否随 BPM 变化。</li>
+          <li>在一个效果参数旁找到小齿轮／参数动画菜单，选择 BPM Sync；设置 4、8 或 16 Beats，并选择想要的 Envelope。观察效果参数的变化，不要与整段 Clip 的播放速度混淆。</li>
+          <li>用 Tap 敲击音乐速度。在新的乐句第一拍使用 Resync；检查重复动作是否落在想要的拍点。</li>
+          <li>让背景继续运行，关闭或降低节奏层，验证这两个时间体系能独立工作。</li>
         </ol>
-        <p><a href="https://resolume.com/support/en/midi-shortcuts" target="_blank" rel="noreferrer">Resolume MIDI / Shortcut 官方手册 ↗</a></p>
+        <p><a href="https://resolume.com/support/en/video" target="_blank" rel="noreferrer">Clip Transport ↗</a> · <a href="https://resolume.com/support/en/parameter-animation" target="_blank" rel="noreferrer">Parameter Animation ↗</a> · <a href="https://resolume.com/support/en/bpm" target="_blank" rel="noreferrer">BPM / Tap / Resync ↗</a></p>
       </details>
       <details>
-        <summary><strong>B / Ableton Live 时间训练</strong><span>附录练习，不是现场必需软件</span></summary>
+        <summary><strong>B / 键盘、MIDI、推子与脚踏</strong><span>按习惯选择，不是必备采购单</span></summary>
         <ol>
-          <li>新建 Session View，设定 4/4、100 BPM。此时一拍 0.6 秒，四小节为 9.6 秒。</li>
-          <li>建立 Atmosphere、Pulse、Accent 三个 Track：分别播放持续音、每拍脉冲与人工 One-shot。</li>
-          <li>尝试保持 Atmosphere，依次播放 Pulse、手动 Accent，再停止 Pulse。观察“叠加／撤除”与音乐结构的关系。</li>
-          <li>把 100 BPM 调到 110 BPM，比较持续层、节拍层与人工重音的不同变化。若需要对接 Arena，再在双方启用 Ableton Link 并测试同步。</li>
+          <li>先用 Arena 鼠标完成：触发 Clip、停止、控制 Layer Opacity，以及手动 Tap。</li>
+          <li>打开 Keyboard Shortcuts 编辑，为常用触发与操作分配按键。把脚踏的四个按键（若可映射成键盘）设置为与常用键盘按键相同的功能。</li>
+          <li>有 MIDI 控制器时进入 Shortcuts → Edit MIDI，选中 Layer 的 Opacity，再滑动硬件推子。换另一条 Layer 后重复。旋钮也可以映射到效果强度、速度或其他数值参数。</li>
+          <li>先记住 3–5 个真正会用到的操作，不必把控制器上所有按钮都绑定满。完成后保存 Composition 与控制器映射。</li>
         </ol>
-        <p><a href="https://resolume.com/support/en/link" target="_blank" rel="noreferrer">Resolume Ableton Link 官方说明 ↗</a></p>
+        <p><a href="https://resolume.com/support/en/keyboard-shortcuts" target="_blank" rel="noreferrer">Keyboard Shortcuts ↗</a> · <a href="https://resolume.com/support/en/midi-shortcuts" target="_blank" rel="noreferrer">MIDI Shortcuts ↗</a></p>
       </details>
       <details>
-        <summary><strong>C / TouchDesigner、OSC 与外部系统</strong><span>自定义输入</span></summary>
+        <summary><strong>C / DJ 网络与外部时间源</strong><span>观察、同步、失联恢复分别测试</span></summary>
         <ol>
-          <li>在 Arena Preferences 的 OSC 页面启用 OSC；确认接收端口与发送设备在可访问的网络内。</li>
-          <li>在 TouchDesigner 或网页桥接系统里输出范围 0–1 的参数。以 <code>/composition/layers/1/video/opacity</code> 为例发送 0.25，第一层透明度即为 25%。</li>
-          <li>将不同的手势、脚踏或传感器映射到 Layer Opacity、Clip Trigger 或 Tap BPM；每种输入都应有停止与恢复方法。</li>
-          <li>故意断开外部连接，检查手动控制、BASE 与安全黑场是否仍然可用。</li>
+          <li>确认 DJ 播放器、网络与现场授权情况，检查能否在 Beat Link Trigger 中读取波形、播放位置、Tempo 与 Master 状态。</li>
+          <li>明确这只是播放器信息观察，仍需另外验证 Arena 是否实际收到 BPM 和相位同步信息。</li>
+          <li>如果使用 Ableton Link，确认所有参加的设备／软件确实支持 Link，并在同一网络中完成同步设置；不要把 Player Status 当成 Link 连接成功的证明。</li>
+          <li>断开网络演练：回到手动输入 BPM、Tap、Resync，保证一个基础视觉层仍然稳定运行。</li>
         </ol>
-        <p><a href="https://resolume.com/support/en/osc" target="_blank" rel="noreferrer">Resolume OSC 地址与设置 ↗</a></p>
+        <p><a href="https://blt-guide.deepsymmetry.org/beat-link-trigger/8.0.0/Players.html" target="_blank" rel="noreferrer">Beat Link Player Status ↗</a> · <a href="https://resolume.com/support/en/link" target="_blank" rel="noreferrer">Ableton Link ↗</a></p>
       </details>
       <details>
-        <summary><strong>D / 一段 90 秒的演出测试</strong><span>记录结果与故障恢复</span></summary>
+        <summary><strong>D / Ableton Live：节拍感训练</strong><span>可选练习，非 Arena 使用前提</span></summary>
         <ol>
-          <li>00:00–00:20：OPEN，只开 BASE。</li>
-          <li>00:20–00:55：BUILD，把 CLOCK 从 0 缓慢推到约 50%；中途留一段 HOLD，不增加动作。</li>
-          <li>00:55–01:05：PEAK，触发少量 HIT，避免持续叠满。</li>
-          <li>01:05–01:20：BREAK，把 CLOCK 和 HIT 拉回 0，留下 BASE 或黑场。</li>
-          <li>01:20–01:30：RETURN，重新进入低密度循环；录屏检查时间、图层、输入与输出是否符合预期。</li>
+          <li>在 Session View 选择 4/4 与 100 BPM，准备持续环境、每拍脉冲和人工 One-shot 三个音轨。</li>
+          <li>让环境声保持，脉冲跟随小节运行；人工 One-shot 不必每次打在同一拍。</li>
+          <li>练习在四小节处进入，在下一段减少声音层。将 100 BPM 改为 110 BPM，比较自动重复与人工判断。</li>
+          <li>若需要让支持 Link 的音乐软件与 Resolume 共同运行，再单独检查同步设置。</li>
         </ol>
-        <p>排练时还要验证素材格式、机器负载、Mapping、输出分辨率与黑场恢复；脚踏只是 Tap 与 Trigger 的可选扩展。</p>
+      </details>
+      <details>
+        <summary><strong>E / TouchDesigner、OSC 和 90 秒测试</strong><span>可选扩展与演出前检查</span></summary>
+        <ol>
+          <li>若已有 TouchDesigner 或自制网页，使用 OSC 向 Resolume 的参数发送归一化数值。例如 <code>/composition/layers/1/video/opacity</code>，发送 0.25 即 25% 透明度。</li>
+          <li>0–20 秒：保持背景，不操作节拍层；20–45 秒：逐步推入节奏；45–55 秒：人工短促触发；55–70 秒：撤除节奏层；70–90 秒：重新进入。</li>
+          <li>录屏检查四件事：画面是否跟拍、是否知道下一个变化何时来、是否能快速撤除强光、失去外设后能否继续演出。</li>
+        </ol>
+        <p><a href="https://resolume.com/support/en/osc" target="_blank" rel="noreferrer">Resolume OSC ↗</a></p>
       </details>
     </section>
   )
