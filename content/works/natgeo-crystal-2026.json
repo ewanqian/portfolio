@@ -1,18 +1,32 @@
 {
   "id": "natgeo-crystal-2026",
   "title": "中国国家地理·矿晶空间影像 / National Geographic — Crystal Landscape",
-  "subtitle": "酒店大堂与商业空间常设多屏影像",
+  "subtitle": "矿晶影像设计 / 酒店与体验中心空间扫描",
   "years": "2026",
   "type": "spatial-media-installation",
-  "summary": "为酒店大堂与商业空间开发矿物与晶体主题的常设空间影像，通过横向主屏、竖向立柱与侧屏的多画幅编排，形成可长期循环和持续更新的内容系统。",
+  "summary": "为中国国家地理酒店的主屏、立柱与侧屏设计矿晶主题动态影像，同时进行酒店与体验中心的三维扫描和空间采集，形成多画幅内容与可浏览的数字空间资料。",
   "practiceLine": "spatial-generation",
-  "tags": ["spatial media", "hospitality", "multi-screen", "3d content", "permanent installation"],
+  "tags": [
+    "spatial media",
+    "hospitality",
+    "multi-screen",
+    "3d content",
+    "permanent installation",
+    "architectural scanning",
+    "experience centre",
+    "browser spatial archive"
+  ],
   "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg",
   "showOnHome": false,
   "lifecycle": "completed",
   "relatedNodes": [],
   "relatedWritings": [],
-  "displayModes": ["horizontal main screen", "vertical columns", "side displays", "long-duration loop"],
+  "displayModes": [
+    "horizontal main screen",
+    "vertical columns",
+    "side displays",
+    "long-duration loop"
+  ],
   "analysisIds": [],
   "sourceDocs": [
     "projects/natgeo-crystal-2026.md",
@@ -22,8 +36,14 @@
   ],
   "repoLink": "/portfolio/#/projects/natgeo-crystal",
   "links": [
-    { "text": "个人项目页", "url": "/portfolio/#/projects/natgeo-crystal" },
-    { "text": "VIRTURA 项目源", "url": "https://virtura.space/work/natgeo-crystal.html" }
+    {
+      "text": "个人项目页",
+      "url": "/portfolio/#/projects/natgeo-crystal"
+    },
+    {
+      "text": "VIRTURA 项目源",
+      "url": "https://virtura.space/work/natgeo-crystal.html"
+    }
   ],
   "priority": 11
 }
