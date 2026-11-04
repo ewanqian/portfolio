@@ -18,7 +18,7 @@ const facts = {
     ['形式', '常设多屏空间影像'],
     ['画布', '横向主屏 / 竖向立柱 / 侧屏'],
     ['团队语境', 'VIRTURA'],
-    ['个人记录', '参与空间影像制作；具体个人 credit 以已确认资料为准']
+    ['个人工作', '矿晶影像设计、多屏视觉制作、酒店及体验中心三维采集']
   ],
   en: [
     ['Year', '2026'],
@@ -26,7 +26,7 @@ const facts = {
     ['Format', 'Permanent multi-screen spatial media'],
     ['Canvases', 'Horizontal main screen / vertical columns / side displays'],
     ['Team context', 'VIRTURA'],
-    ['Personal record', 'Spatial-media production participation; individual credit remains evidence-bounded']
+    ['Ewan role', 'Crystal-image design, multi-screen visual production, 3D site capture']
   ]
 }
 
@@ -48,8 +48,8 @@ function NatGeoCrystal() {
               <div className="eyebrow">{isZh ? '常设空间影像 · 2026' : 'Permanent Spatial Media · 2026'}</div>
               <h1>{isZh ? '中国国家地理·矿晶空间影像' : 'National Geographic — Crystal Landscape'}</h1>
               <p>{isZh
-                ? '为酒店大堂与商业空间开发的矿物与晶体主题常设影像。横向主屏、竖向立柱与侧屏采用不同画幅，同一套三维资产、材质与运动系统被重新构图，用于长时间循环播放和后续版本更新。'
-                : 'A permanent mineral-and-crystal moving-image system for hospitality and commercial interiors. Horizontal, vertical, and side displays are recomposed from one shared 3D material and motion system for long-duration playback and future updates.'}</p>
+                ? '为中国国家地理酒店制作矿晶主题空间影像。我负责影像设计与多屏视觉制作，并参与酒店及体验中心的三维扫描采集。影像以晶体材质和动态构成为基础，分别适配主屏、立柱与侧屏。'
+                : 'Crystal-themed spatial media for a National Geographic hospitality environment. My work includes moving-image design and multi-screen visual production, alongside 3D capture of the hotel and experience-centre spaces. The moving images are recomposed for the main, column and side displays.'}</p>
             </div>
             <div className="project-hero-media">
               <img src="https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg" alt={isZh ? '酒店大堂矿晶空间影像现场' : 'Crystal Landscape installed in a hospitality lobby'} />
@@ -66,8 +66,8 @@ function NatGeoCrystal() {
             <div>
               <div className="eyebrow">{isZh ? '内容系统' : 'Content system'}</div>
               <p className="section-intro">{isZh
-                ? '公开项目资料确认的 VIRTURA 团队范围包括矿晶三维内容研发、多画幅编排、非标准屏幕适配、分屏输出与版本管理。个人 Portfolio 保留团队语境，不把团队 scope 自动改写为单人独立完成。'
-                : 'Public project material confirms VIRTURA’s team scope across 3D crystal-content development, multi-format composition, custom-screen adaptation, multi-output delivery, and version management. This personal record preserves that team context rather than rewriting the full team scope as solo authorship.'}</p>
+                ? '矿晶三维内容以材质、光线、运动与画面节奏为基础，在横向主屏、立柱屏与侧屏之间形成统一的空间体验。另一条制作线记录酒店与体验中心的公共区域，通过全景图像、局部模型及区域索引提供可浏览的数字空间档案。'
+                : 'Crystal materials, light, motion and pacing are developed as one system across the main, column and side displays. A parallel capture workflow records the hotel and experience-centre public areas through panoramic views, a partial 3D model and a navigable spatial archive.'}</p>
             </div>
           </div>
         </section>
@@ -91,9 +91,9 @@ function NatGeoCrystal() {
             <div className="eyebrow">{isZh ? '关联档案' : 'Related archive'}</div>
             <div>
               <p>{isZh
-                ? '中国国家地理酒店空间数字档案与 CNG 空间漫游是这一项目的记录、浏览与空间验证层，不作为新的独立作品重复出现。'
-                : 'The CNG design archive and spatial tour are documentation, browsing, and spatial-validation layers of this project rather than separate portfolio works.'}</p>
-              <p><a className="text-link" href="https://github.com/ewanqian/cng-design-archive" target="_blank" rel="noreferrer">Design Archive ↗</a> · <a className="text-link" href="https://github.com/ewanqian/cng-spatial-tour" target="_blank" rel="noreferrer">Spatial Tour ↗</a></p>
+                ? '空间数字档案保存了公共区域影像与展项索引；CNG 空间漫游另记录了八个区域、二十七个全景视点，并保留局部大堂模型。两种查看方式继续连接同一个空间项目。'
+                : 'The design archive holds selected public-space views and exhibition information. The CNG spatial tour records eight areas and 27 panoramic viewpoints, with a partial lobby model. Both remain connected to the same spatial-media project.'}</p>
+              <p><a className="text-link" href="https://github.com/ewanqian/cng-design-archive" target="_blank" rel="noreferrer">Design Archive ↗</a> · <a className="text-link" href="https://github.com/ewanqian/cng-spatial-tour" target="_blank" rel="noreferrer">Spatial Tour / Source ↗</a></p>
             </div>
           </div>
         </section>
