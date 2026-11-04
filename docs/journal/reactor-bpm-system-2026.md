@@ -1,138 +1,194 @@
-# REACTOR — BPM System
-## 三种时间，一套可以演奏的视觉工程
+**Ewan Qian / 钱誉文 · REACTOR 2026 · Live Performance Field Journal**
 
-**钱誉文 Ewan Qian · 2026 · Live Performance / Visual SOP**
+在俱乐部里，视觉和音乐可以处于同一个速度，却不必在每一下鼓点上做出相同的反应。持续播放的空间、按节拍起伏的动作、表演者临时打断的瞬间，各自拥有不同的时间。
 
-一场 Club 视觉演出不应该只有「放一条视频」和「让音频自动驱动画面」两种选择。REACTOR 的 BPM System 把时间分为三层：持续运行的空间影像、跟随共享节拍的动作，以及由表演者亲自触发的瞬间。系统负责稳定的重复，人负责密度、停顿、加重和释放。
+REACTOR 的 BPM System 是我整理现场视觉时采用的一种工作方法：**让系统承担可重复的时间，让人保留决定何时进入、加重、停顿和退出的权利。** 这篇文章从摄影与一次真实的操作视频出发，拆解它的原理，再给出能够自己搭建的 Ableton Live / Resolume Arena 最小工程。
 
-这篇图文既是现场方法记录，也是可以照着搭建的入门 SOP。**Ableton Live** 可以管理音乐时间，**Resolume Arena** 负责视觉合成、播放与触发，**Beat Link Trigger** 为 DJ 播放器提供一个可观察的波形与状态窗口。它们可以协作，但职责并不相同。
+如果你只准备做一次练习，读完「00—06」即可；后面的章节讨论工程规范、复盘与更完整的影像档案。
 
-### 00 / 一分钟理解三种时间
+# 00 / 三种时间，不是三套效果
 
-- **持续时间 / Continuous**：循环视频、低密度纹理或者实时场景。无人操作时画面仍可成立。
-- **节拍时间 / Clocked**：按 BPM、Beat、Bar、Subdivision 运行的明暗、运动与 Envelope；节拍变化时，动作速度可以跟着变化。
-- **瞬时时间 / Human**：按下、保持、松开或者直接撤除一层；处理碎拍、突发、停顿和人为重音。
+最底层是**持续时间（Continuous）**：一条环境影像、暗色空间、缓慢运动的模型，或者正在渲染的场景。即使手不碰控制器，这个世界仍然存在。
 
-记住：**底层让空间存在，中层让速度可感知，顶层允许人打断它。**
+中间是**节拍时间（Clocked）**：统一的 BPM 提供拍、节、小节与细分。画面里的明暗、轨迹、遮罩或短循环可以按照 1/4、1/8、1/16 等密度变化。它不是「识别音乐的感情」，只是一个可预测的运动参考。
 
-### 01 / 为什么要分开
+最高一层是**瞬时时间（Human）**：按下一次触发、保持某层、在不规则碎拍时插入一个事件，或者突然撤掉高亮层。它不必等待计算机推断下一个 Drop。
 
-**持续时间**是场景的呼吸。首先做一段足够耐看的暗部画面，不需要每次鼓点都切镜头。底层可以独立于 DJ 的每次节拍变化，甚至保持很久不变。
+**底层让空间存在；节拍层让速度可感知；人工层让表演者可以打断系统。**
 
-**节拍时间**是结构的重复。使用 1/1、1/2、1/4、1/8 等不同密度，以及 Attack、Decay、Sustain、Release 组织形态和明暗。速度被同步，并不代表软件理解音乐情绪。
+# 01 / 为什么不能只靠音频反应
 
-**瞬时时间**是人的演奏。Resolume Arena 的 Piano Trigger Style 可以让 Clip 在按下时出现、在松开时退出。它与底层 Loop 相互独立，因此一次临时爆闪不需要摧毁基础画面。
+一个常见做法是把低频振幅映射到亮度，把高频映射到颗粒数量。它能快速获得反馈，但通常无法知道：这一段是在铺垫、推进、转折，还是已经准备结束。
 
-### 02 / 最少准备四类素材
+例如低频持续很强时，画面未必需要越来越亮。你可能想保持一段压抑、低密度的空间；或者反过来，在声音突然消失时直接切到纯黑。两种决定都可以非常准确，却不取决于音频电平。
 
-1. **BASE**：一段能连续运行 60 秒也不觉得急躁的影像或实时场景。
-2. **CLOCK**：能看清重复周期的脉冲素材，先做最简单的每拍一次。
-3. **HIT**：只有短暂出现才有力度的重音或透明叠加。
-4. **BLACK**：真正的安全黑画面；失去同步或视觉过载时，可以立即退回。
+我更愿意让自动层做稳定的重复，把**段落方向**留给自己判断。这不是否定音频分析，而是明确自动化能够负责的边界。
 
-先确保四项彼此独立，不要第一天就导入几百条效果。记录每个 Clip 的名称、层、Transport、BPM Beats、Trigger Style、快捷键和退出方法。
+# 02 / 先做出最少四类素材
 
-### 03 / 用一套 Ableton Live 教学工程认识三种时间
+不要从几百个 Clip 开始。只要四个角色就能演奏：
 
-以下是面向初学者的**复现练习**，不是对当日私人 Ableton 工程文件的无依据复刻。
+1. **BASE / 持续影像**：能独立播放 60 秒，色彩和密度不急于达到顶点。
+2. **CLOCK / 节拍影像**：明显受节拍控制的脉冲、明暗包络或循环。让人看得到它在数拍。
+3. **HIT / 人工重音**：一记短暂高亮、局部扫描、运动断裂，只有临时出现才有力量。
+4. **BLACK / 安全状态**：没有纹理、没有附加效果、可以立即回到的黑场。
 
-打开 Ableton Live Session View，新建一个 **4/4、100 BPM** 工程。100 BPM 时一拍是 0.6 秒，四小节是 16 拍，即 9.6 秒。REACTOR Opening Live Set 的工程说明同样采用 100 BPM / 四小节作为制作基线，但它不意味着当晚所有 DJ 曲目都使用这一速度。
+先检查它们能否**单独开始、单独停止、叠加、撤除，并且恢复**。无论你制作的是视频、TouchDesigner 场景还是 WebGL 页面，这四种角色都适用。
 
-- **Track 1 / BASE**：长 Pad、环境音或连续声场。让它运行，感受没有强拍的持续时间。
-- **Track 2 / PULSE**：用 Drum Rack 建立四分音符 Pulse；再复制为八分、十六分，比较密度。
-- **Track 3 / ACCENT**：One-shot，保留足够空白，不要让它自动每拍循环。
-- **Track 4 / CUE**：建立 OPEN / BUILD / PEAK / BREAK 四个 Scene，供排练标记使用。
+# 03 / 用 Ableton Live 建立一套三时间练习
 
-启动 BASE；加入 PULSE；在你觉得需要加重时手动触发 ACCENT；最后**停掉 PULSE**，只保留 BASE。观察「撤掉一层」为什么比继续增加效果更有张力。
+下面是一份**可复现的教学 Session**，用于说明时间关系，并非对现场私人 Ableton 工程文件的复制。
 
-如需和 Arena 一起练习，先把 Ableton Link 设置为启用，并检查 Arena 是否加入同一 Link 会话。Link 同步 tempo、beat 和 phase；并不会传送 DJ 波形、曲目信息或音乐段落分析。Link 中其他参与者也可能修改 Tempo，正式演出前必须商定修改权限和风险。
+## 第一步：把所有人放在同一张时间表上
 
-### 04 / Resolume Arena：从三层入门，到六层生产结构
+在 Ableton Live 的 Session View 新建 4/4、100 BPM 的工程。100 BPM 每拍 0.6 秒；四小节共 16 拍，等于 9.6 秒。REACTOR 的 Opening Live Set 制作资料也以 100 BPM / 四小节为一个循环规格，但这**不是**所有现场 DJ 曲目的速度。
 
-REACTOR 的 Opening Live Set 工程描述采用以下六层功能分组：
+准备四个 Track：
 
-1. **L1 / BASE · BLACK · TEXTURE**：安全黑场与持续背景。
-2. **L2 / HERO MACHINE**：机器主体、Reactor、ACQUIRE。
-3. **L3 / STRUCTURE · ANALYSIS**：剖切、爆炸分解、线框和分析。
-4. **L4 / SIGNAL · ENERGY**：信号轨迹、局部照明与脉冲。
-5. **L5 / UI · LABEL**：有实际信息意义的文字与标记。
-6. **L6 / EVENT · FLASH · SCAN**：短促人工重音、闪烁和扫描。
+- **01 / BASE — Atmosphere**：一个长 Pad 或环境声场，持续运行。它不必每拍重新开始。
+- **02 / CLOCK — Pulse**：简单的四分音符鼓点。复制为八分、十六分版本，比较运动密度。
+- **03 / HUMAN — Accent**：一个短促的 One-shot，手动触发，不跟随每个节拍自动重复。
+- **04 / CUE — Scene Markers**：用 OPEN、BUILD、PEAK、BREAK 标记练习的段落与动作意图。
 
-这不是「六个层从头到尾一起放」。初学者只需 **L1、L4、L6**：底层保持、脉冲重复、人工触发。能够可靠地打开和撤除这些层后，再增加其他内容。
+## 第二步：只改变一个条件
 
-在 Clip 的 **Transport** 中选 BPM Sync，并检查 Beats 参数。一个四小节循环对应 16 beats；不能只看全局 BPM 数字正确就认为已经对拍。若是一次性的人工事件，可把 **Trigger Style → Piano**，测试按下与松开是否得到不同状态。
+先播放 BASE；加上 CLOCK；在你觉得需要加重的位置手动触发 ACCENT；最后停掉 CLOCK，只留下 BASE。听与看的共同变化，尤其注意**减掉一层**为何可以让空间重新打开。
 
-REACTOR 工程文档将 100 BPM、4 bars 的基础循环计算为 **9.6 秒**。25 fps 时一段 240 帧的循环可以从第 1 帧走到第 240 帧，并让第 241 帧回到第一帧的状态以实现无缝衔接；实际导出要避免多一帧重复带来的顿挫。
+然后把速度从 100 BPM 改到 110 BPM。CLOCK 会变快，BASE 应继续保持自身的空间逻辑，人工 ACCENT 仍由你决定何时出现。
 
-### 05 / Beat Link Trigger：用它观察，不要把它误认为 Link
+## 第三步：理解 Link 的职责
 
-随附的视频从操作台拍到了 Beat Link Trigger 的 DJ 播放器视图，其中可以观察到波形、节拍和播放状态。对于 VJ，波形可能帮助预判音乐的空白和转换，但不能代替听觉判断。
+如果需要让 Ableton Live 与 Resolume 同步，在双方支持并启用 Ableton Link 的前提下，它们可以共享 tempo、beat 和 phase。Link 不能把 DJ 的彩色波形或曲目段落直接传给 Arena，也不能替代人工判断。
 
-- **Beat Link / PRO DJ LINK 生态**：可从兼容 DJ 设备获取播放与曲目元数据、Beat Grid 和波形等信息，具体取决于设备及网络条件。
-- **Ableton Link**：为支持 Link 的软件共享 Tempo、Beat、Phase。
-- **Arena BPM Sync**：让特定 Clip 使用 Arena 的 BPM 时钟来控制其播放速度。
-- **人的判断**：从听觉、DJ 的操作与空间实际效果中决定下一次 BUILD、HIT 或 BREAK。
+这份练习不是要求每场 DJ / VJ 演出都必须运行 Ableton；**Ableton 在这里首先是一张可观察、可修改的时间实验台**。
 
-这四件事是不同的。录到波形窗口，不等于已经打通 Beat Link Trigger → Ableton Link → Arena 的自动控制路径。
+# 04 / 在 Resolume Arena 里，把素材组织成乐器
 
-### 06 / 90 秒可重复搭建 SOP
+REACTOR 的 Opening Live Set 工程文档将 Arena 按功能划为六层：
 
-1. **建立 BASE**：放在 L1，测试连续播放 60 秒；保留随时可触发的 BLACK。
-2. **设置 CLOCK**：Arena 设定 100 BPM；将循环 Clip 设置为 BPM Sync、16 beats，检查每四小节是否正确回环。
-3. **设置 HIT**：放在 L6，Trigger Style 设为 Piano，分配一个键并测试按下、松开。
-4. **OPEN → BUILD**：先只开底层，再缓慢引入 CLOCK，而不是全层一起亮。
-5. **PEAK → BREAK**：用一两次 HIT 加重，随后主动撤掉 CLOCK，让空间重新露出来。
-6. **改变 BPM**：测试 100→110；确认 CLOCK 跟速、BASE 不丢失、HIT 仍可人工插入。
-7. **模拟故障**：拔掉测试网络或退出 Link，观察行为；验证 BLACK、BASE 和人工输入仍可可靠使用。
-8. **连续录屏 90 秒**：标注哪些变化是自动的、哪些是人工的、哪些是意外；不要只记录一帧漂亮画面。
+1. **L1 / BASE · BLACK · TEXTURE**：持续背景与安全黑场。
+2. **L2 / HERO MACHINE**：REACTOR 主体、机械结构与主要场景。
+3. **L3 / STRUCTURE · ANALYSIS**：剖切、分解、线框、分析。
+4. **L4 / SIGNAL · ENERGY**：局部光、信号轨迹、周期性动作。
+5. **L5 / UI · LABEL**：真正提供信息的文字与指示，而不是随意装饰。
+6. **L6 / EVENT · FLASH · SCAN**：人工重音、瞬时闪光、扫描事件。
 
-可用作练习的时段：00:00 OPEN、00:20 BUILD、00:40 HOLD、00:55 PEAK、01:05 BREAK、01:20 RETURN。这只是教学剧本，不能替代真正听 DJ 演出的现场判断。
+这是**功能分工**，不是要求把六层同时开到最大。初学者可以只保留 L1、L4、L6，做出完整的 BASE / CLOCK / HIT。
 
-### 07 / 工程化检查：国际 VJ 工作流值得借鉴什么
+## 给 CLOCK 正确设置 BPM Sync
 
-**以功能命名，不以「最终版」命名。** `L1_black_fallback`、`L4_signal_pulse`、`L6_flash_white` 比 `final_3.mp4` 更容易在黑暗演出现场找到。
+选择需要跟速的 Clip，打开 Transport，将模式改成 **BPM Sync**，并设置 Beats。例如素材代表四小节，应该是 16 beats。检查它实际循环的起点和终点，而不是只看屏幕上的 BPM 数字。
 
-**媒体编码是演出工程的一部分。** Resolume 官方建议用 Alley/DXV 制作适合 Arena 播放的文件，DXV Normal 是常用默认；Alpha 只有在源文件确实带有透明通道时才有效。网页上的 H.264 预览能播放，不等于大型输出工程不会掉帧。
+如果希望 Clip 在下一拍或下一小节才进入，查看 **Beat Snap**。它控制触发时机，与 BPM Sync 控制播放速度是两回事。
 
-**每个状态都要有出口。** PEAK 要能回到 BREAK，失控画面要能回到 BLACK。做减法和故障恢复同样属于现场表演控制。
+## 给 HIT 设置 Piano Trigger
 
-**在真实链路上排练。** 实际分辨率、屏幕输出、网卡、接口、素材数量、存储负载和延迟，都要单独检查。只在笔记本预览窗口正常，不算现场链路通过。
+选择事件 Clip，设置 **Trigger Style → Piano** 并映射一个键盘或 MIDI 输入。按下时启动，松开时退出。如果无法退出，先检查 Trigger Style、Clip Target 与其他仍在亮着的 Layer。
 
-### 08 / 常见失败及排查
+最重要的检验是：当你不再按这个键，能否准确回到之前的空间？如果不能，就不算是一条真正可以演奏的控制路径。
 
-- **BPM 对了但画面错位**：检查 Beats 数量、Beat Snap、循环边界及 Phase/Quantization；相同速度不等于同一个拍位。
-- **按下事件后无法退出**：检查 Piano / Toggle / Normal Style、Clip Target、是否存在其他亮着的叠加层。
-- **强度一路增长**：限制高亮事件的并发数，写出主动 REMOVE/BREAK 的手势，不依赖效果自行衰减。
-- **DJ 改速后全部软件跟着乱**：检查谁拥有共享 Link 会话的 Tempo 修改权限。
-- **Beat Link 有波形但 Arena 不动**：播放器信息可见不意味着 MIDI/OSC/Link 的控制链路已经配置完毕。
-- **现场卡顿**：检查编码与输出分辨率、媒体磁盘、显卡负载、实时输入和实际同时运行的层数。
+# 05 / Beat Link Trigger：看见 DJ 的时间，但不要混淆系统
 
-### 09 / 可选拓展：踏板与 Live Copilot
+随附的操作视频里，我拍到了 Beat Link Trigger 的播放器信息窗口：播放器编号、波形、当前进度、剩余时间和 BPM。画面中可见的 128 BPM 是当时播放器信息；它与前面 100 BPM 教学 Session 是不同记录。
 
-脚踏可以接管 Tap、瞬时 Trigger、保持和释放，使双手专注于 Arena。但完整的 REACTOR 四踏板实际逐键映射仍需要结合最终工程整理，因此不在主 SOP 中虚构一个固定接线表。
+这张视图最大的价值，是让演出者**看见即将到来的时间结构**：密集段落、可能的空白、当前播放位置和转换线索。它不是替代耳朵的装置；波形颜色也不能被当作普遍适用的音乐语义。
 
-Live Copilot 属于后续研究：可用于 Cue 整理、排练日志、参数备份与错误恢复，而不直接替代人的音乐判断。先把三层时间做稳定，再继续增加智能辅助。
+需要区分四件事：
 
-### 10 / 视频论文怎么剪
+- **Beat Link / PRO DJ LINK 相关工具**：在兼容的 DJ 设备和网络条件下，读取播放器、节拍网格和曲目等信息。
+- **Beat Link Trigger**：为这些信息提供观察窗口，也具备可配置的触发机制；能否向外发消息，需要另外配置和测试。
+- **Ableton Link**：在加入同一会话的兼容应用间同步速度与节拍相位。
+- **Resolume BPM Sync / Piano Trigger**：分别决定某个 Clip 如何跟随时钟，以及人工输入如何触发它。
 
-- **00:00–00:20 / 场所**：现场摄影和环境，交代人如何站在舞池与机器之间。
-- **00:20–01:05 / 原理**：用三层时间图解说明 BASE、CLOCK 和 HUMAN。
-- **01:05–02:10 / 工程**：Ableton 教学工程和 Arena 六层功能示意。
-- **02:10–02:55 / 视角**：使用作者拍摄的实际操作视频，解释波形、节拍和人工判断。
-- **02:55–03:40 / 演奏**：OPEN → BUILD → HOLD → PEAK → BREAK 的加法与减法。
-- **03:40–04:00 / 收束**：撤掉 CLOCK 与 HIT，只留下 BASE，回到「谁决定何时停」的问题。
+因此，**屏幕里能看见波形，不代表 Beat Link Trigger、Ableton Live 和 Arena 已经自动接通**。连接应以你实际搭过、录过屏并能重复测试的链路为准。
 
-上面是可重复制作的剪辑结构，不表示四分钟完整成片已经存在。
+# 06 / 一段 90 秒的最小表演
 
----
+给自己一个练习：不用多做素材，就用 BASE、CLOCK、HIT、BLACK 走完一段有结构的 90 秒。
 
-### 官方参考与进一步阅读
+1. **00:00 / OPEN**：只让 BASE 出现。确认屏幕里有空间，而不是急于炫耀效果。
+2. **00:20 / BUILD**：让 CLOCK 进入；先用低密度，让观众能感知到速度。
+3. **00:40 / HOLD**：保持当前状态，不继续增加新元素。训练自己忍住不断操作的冲动。
+4. **00:55 / PEAK**：手动触发一次或两次 HIT，而不是自动刷屏。
+5. **01:05 / BREAK**：撤掉 HIT 和 CLOCK，恢复 BASE，必要时直接黑场。
+6. **01:20 / RETURN**：用最少的动作重新进入稳定循环。
 
-- [Resolume Clips / Piano Trigger](https://resolume.com/support/en/clips)
-- [Resolume Video / BPM Sync](https://resolume.com/support/en/video)
-- [Resolume Ableton Link](https://resolume.com/support/en/link)
-- [Resolume Alley / DXV](https://resolume.com/support/en/conversion-with-alley)
-- [Ableton Link FAQ](https://help.ableton.com/hc/en-us/articles/209776125-Link-features-and-functions-FAQ)
-- [Deep Symmetry — Beat Link](https://github.com/Deep-Symmetry/beat-link)
-- [REACTOR GRAND OPENING DAY1 official event archive](https://ra.co/events/2534022)
-- [Minimal Input Lab](../../workshops/minimal-input-lab/README.md)
+这段结构是排练脚本，不是预言 DJ 什么时候 Drop。真实表演中，**耳朵与眼睛仍然负责选择时机**。
+
+完成之后，反向检查：如果突然拔掉控制器或网络连接，你能不能让舞台停在一个安全而可接受的状态？
+
+# 07 / 面向真实演出的 VJ 工程习惯
+
+国际上的现场视觉工具虽然不同，但它们的成熟工作流往往有几个共同点：
+
+## 按舞台功能命名
+
+使用 `L1_black_fallback`、`L4_signal_pulse`、`L6_flash_white` 这样的名字，让人在暗场里也能快速寻找。不要让 `final_final_08.mp4` 成为演出时的记忆负担。
+
+## 区分预览格式和现场格式
+
+H.264 视频适合交付预览，但复杂的 Resolume 同时播放工程应评估 Resolume Alley / DXV 等针对实时播放的格式。Alpha、解码负载、同时播放层数和磁盘速度需要单独测试。一个文件在笔记本上能播放，不等于它一定能在现场的分辨率和输出数量下稳定运行。
+
+## 避免只有加法，没有撤除
+
+每个重音层都必须能停止。每个高强度状态都应有通往 BREAK、BASE 或 BLACK 的退路。一个具备恢复能力的 Live Set，比每个效果都很壮观却无法回退的工程更有用。
+
+## 排练真实输出
+
+检查实际 Mapping、屏幕比例、GPU / 解码负载、音频 / 视频分机、网络变化和紧急黑场。独立运行一分钟、十分钟、完整时长得到的结果可能不同。最好保留一次可复现的输出录屏和工程版本。
+
+# 08 / 六个常见问题的快速诊断
+
+- **BPM 一致，画面却错拍**：检查 Beats、Beat Snap、循环边界及相位。速度一样不代表拍位一样。
+- **人工重音松开后不消失**：检查 Piano / Toggle / Normal 的差异，以及仍在显示的其他 Layer。
+- **画面越来越满**：优先做 REMOVE 或 BREAK，而不是继续加新的 Effect。
+- **DJ 改速后其他软件突然变化**：检查 Link 会话中的速度控制关系，确认谁可以修改共享 Tempo。
+- **Beat Link 窗口有波形，Arena 没有反应**：观察窗口本身并不构成自动映射；检查实际使用的 MIDI / OSC / Link 路由。
+- **预览流畅，现场掉帧**：对照实际分辨率、素材编码、素材盘吞吐、显存与同时运行的层数。
+
+# 09 / 把练习保存成可以交接的 SOP
+
+完成这套工程后，留下的文件不应只有一个 Arena 工程。建议连同一页说明一起保存：
+
+1. **Setup**：软件版本、100 BPM 教学设置、参与同步的软件、输出分辨率和实际接线。
+2. **Asset Map**：每条 Clip 属于 BASE / CLOCK / HIT / BLACK 哪一个角色。
+3. **Input Map**：键盘或 MIDI 控制分别负责进入、保持、撤除和紧急恢复。
+4. **Rehearsal Capture**：90 秒录屏，标出自动发生和人工触发的时刻。
+5. **Recovery**：断开同步、按错键、意外过曝之后怎样恢复。
+6. **Version**：把稳定版本存档，再开始下一轮实验。
+
+这六项可以帮助另一位 VJ 在不知道你所有创作细节的情况下打开工程、照着操作、并理解它为什么这样组织。
+
+# 10 / 视频论文：从摄影到四分钟讲解
+
+这组素材也适合剪成一支以现场摄影为开头、以操作视频为证据的短篇视频论文。建议沿用图文的论证顺序，而不是简单混剪闪光和现场片段：
+
+- **00:00–00:25 / 场所**：REACTOR 摄影、开幕海报和观众，交代系统面对的真实空间。
+- **00:25–01:00 / 问题**：为什么波形反应不等于完整的视觉表演？
+- **01:00–01:45 / 三种时间**：BASE 持续、CLOCK 重复、HUMAN 打断；使用文章里的示意图。
+- **01:45–02:35 / 工程**：Ableton 教学 Session 与 Arena 分层、BPM Sync 和 Piano Trigger。
+- **02:35–03:20 / 现场视角**：插入作者的 Beat Link Trigger 录屏，解释播放器信息与人工判断的关系。
+- **03:20–04:00 / 结论**：回到舞台摄影，撤除视觉重音，只保留可以呼吸的空间。
+
+现有作者上传的视频约 35 秒，足以作为这一段的真实操作资料，但不是已经剪好的四分钟影片；教程工程画面应单独录制，避免以动画假装完成过实际操作。
+
+# 11 / REACTOR 现场影像档案
+
+与其用不确定来源的舞台照片填满文章，不如把已有 REACTOR 摄影完整保留：同一场所的舞台几何、机器结构、观众、低照度与不同强度的空间状态。它们既是技术方法的情境，也是一种影像创作记录。
+
+# 12 / 补充阅读与参考来源
+
+脚踏输入可以把 Tap、瞬时重音、保持和释放交给脚下，但四踏板最终逐键映射属于另一份硬件说明。Live Copilot 也是下一阶段研究：用于排练记录、Cue 整理、状态提示和恢复，而不应取代当场的音乐判断。先让三种时间能被稳定演奏，再讨论更多自动化。
+
+## 官方资料与工程参考
+
+- [Resolume — Clips：Beat Snap / Clip Target / Piano Trigger](https://resolume.com/support/en/clips)
+- [Resolume — Video：Transport 与 BPM Sync](https://resolume.com/support/en/video)
+- [Resolume — Ableton Link](https://resolume.com/support/en/link)
+- [Resolume — Alley / DXV 媒体转换](https://resolume.com/support/en/conversion-with-alley)
+- [Ableton — Link 功能与限制](https://help.ableton.com/hc/en-us/articles/209776125-Link-features-and-functions-FAQ)
+- [Deep Symmetry — Beat Link Trigger：Player Status Window（含官方截图）](https://blt-guide.deepsymmetry.org/beat-link-trigger/8.0.0/Players.html)
+- [Deep Symmetry — Beat Link Trigger：Raw Triggers / MIDI / OSC 示例](https://blt-guide.deepsymmetry.org/beat-link-trigger/8.0.0/Shows_RawTriggers.html)
+- [REACTOR GRAND OPENING DAY1 · 2026-09-24 活动档案](https://ra.co/events/2534022)
+
+本文图像：REACTOR 系列摄影来自作者作品集，操作视频截帧来自作者提供的录制；活动海报与摄影作为不同来源分别标注。图解为本文制作的原理示意，不代表演出当晚每个设备连接都已通过验证。
