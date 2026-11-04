@@ -138,16 +138,15 @@ function DigitalGarden() {
 
         <section className="section">
           <div className="container project-caption-band">
-            <div className="eyebrow">{isZh ? '动态视觉' : 'Motion Sample'}</div>
+            <div className="eyebrow">{isZh ? '视觉选帧' : 'Selected Visual Frame'}</div>
             <div>
-              <picture className="project-motion-sample">
-                <source srcSet="/portfolio/assets/digital-garden/digital-garden-loop.avif" type="image/avif" />
-                <img src="/portfolio/assets/digital-garden/digital-garden-xian-mixc-03.webp" alt={isZh ? '数字游园动态视觉样本' : 'Digital Garden motion sample'} loading="lazy" />
-              </picture>
+              <div className="project-motion-sample">
+                <img src="/portfolio/assets/digital-garden/digital-garden-frame-01.webp" alt={isZh ? '数字游园绿色点云与粒子影像静态帧' : 'Digital Garden green point-cloud and particle visual frame'} loading="lazy" />
+              </div>
               <p>
                 {isZh
-                  ? '横向动态样本保留屏幕视觉的流动状态：绿色粒子、点云碎片和光线在数字花园中持续漂移。'
-                  : 'The horizontal motion sample keeps the screen visual in motion: green particles, point-cloud fragments, and light drift through the digital garden.'}
+                  ? '这里先展示原始动态视觉中的高清静态选帧，以确保不同设备均可可靠显示；后续可在跨浏览器验证完成后重新提供动态版。'
+                  : 'A selected still from the original motion work is shown here for reliable viewing across devices. Animated playback may return after cross-browser verification.'}
               </p>
             </div>
           </div>
