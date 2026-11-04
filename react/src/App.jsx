@@ -19,6 +19,7 @@ import SystemErsha from './pages/SystemErsha.jsx'
 import ChinaAIGala from './pages/ChinaAIGala.jsx'
 import CommissionedVisualProject from './pages/CommissionedVisualProject.jsx'
 import TopologicalPlayground from './pages/TopologicalPlayground.jsx'
+import Applications from './pages/Applications.jsx'
 import MotionSystem from './motion/MotionSystem.jsx'
 import './styles/global.css'
 import './styles/home-system.css'
@@ -87,6 +88,7 @@ function App() {
         <Route path="/archive" element={<Archive />} />
         <Route path="/gaussian-scenes" element={<GaussianScenes />} />
         <Route path="/playground" element={<TopologicalPlayground />} />
+        <Route path="/apps" element={<Applications />} />
         <Route path="/projects/titan" element={<KashiwaTitan />} />
         <Route path="/projects/kashiwa-titan" element={<KashiwaTitan />} />
         <Route path="/projects/yujiayun-45m2" element={<YuJiayun45m2 />} />
