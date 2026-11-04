@@ -92,6 +92,40 @@ function LayerMixer() {
   )
 }
 
+function HistoricalContext() {
+  const references = [
+    ['1926', 'Oskar Fischinger', '多屏抽象影像与音乐在同一空间演出', 'https://whitney.org/exhibitions/oskar-fischinger'],
+    ['1961', 'John Whitney', '模拟计算机、周期运动与视觉音乐', 'https://whitney.org/essays/histories-of-the-digital-now'],
+    ['1969', 'Paik–Abe', '可操纵的电子视频合成与现场图像处理', 'https://americanart.si.edu/research/paik/highlights'],
+    ['TODAY', 'OSC / MIDI / Timecode', '实时参数、现场操作与跨部门同步', 'https://resolume.com/support/en/osc']
+  ]
+  return (
+    <section className="bpm-side-group bpm-history" aria-label="视觉演奏技术历史线索">
+      <div className="bpm-side-kicker">LINEAGE / 历史坐标</div>
+      <div className="bpm-history-rows">
+        {references.map(([year, name, detail, url]) => <div key={name}>
+          <time>{year}</time><div><a href={url} target="_blank" rel="noreferrer">{name} ↗</a><p>{detail}</p></div>
+        </div>)}
+      </div>
+    </section>
+  )
+}
+
+function StageCoordination() {
+  return (
+    <section className="bpm-side-group bpm-coordination" aria-label="VJ 与灯光系统的协作">
+      <div className="bpm-side-kicker">PRODUCTION / 灯光协作</div>
+      <div className="bpm-coordination-signal"><span>DJ / MUSIC</span><i /> <span>VJ / IMAGE</span><i /> <span>LD / LIGHT</span></div>
+      <p>协调的核心不是所有设备都使用同一个控制器，而是共同确认 <strong>OPEN、BUILD、HOLD、PEAK、BREAK、BLACKOUT</strong> 六类 Cue 的含义。</p>
+      <p>排练前对齐色调、亮度上限、空间主次、进入与退出的权限；固定段落可使用 Timecode，同步并非即兴段落的必要条件。</p>
+      <div className="bpm-side-linkset">
+        <a href="https://www.resolume.com/support/en/smpte" target="_blank" rel="noreferrer">Resolume · SMPTE ↗</a>
+        <a href="https://help.malighting.com/grandMA3/2.5/HTML/timecode.html" target="_blank" rel="noreferrer">grandMA3 · Timecode ↗</a>
+      </div>
+    </section>
+  )
+}
+
 function Sidebar() {
   return (
     <div className="bpm-visual-sidebar">
@@ -103,6 +137,8 @@ function Sidebar() {
       <TimeDiagram />
       <LayerMixer />
       <RouteDiagram />
+      <StageCoordination />
+      <HistoricalContext />
       <p className="bpm-sidebar-archive"><a href={ARCHIVE} target="_blank" rel="noreferrer">查看 REACTOR 摄影与操作图像档案 ↗</a></p>
     </div>
   )
