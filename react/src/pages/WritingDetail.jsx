@@ -285,15 +285,6 @@ const ENTROPY_RUNTIME_CAPTURES = [
   }
 ]
 
-function reactorFigureForHeading(heading) {
-  const number = /^([0-9]{2})\s*\//.exec(heading)?.[1]
-  if (number === '00') return <ReactorBpmFigures section="times" />
-  if (number === '04') return <ReactorBpmFigures section="arena" />
-  if (number === '05') return <ReactorBpmFigures section="beatlink" />
-  if (number === '11') return <ReactorBpmFigures section="gallery" />
-  return null
-}
-
 function WritingDetail() {
   const { slug } = useParams()
   const writing = useMemo(() => writings.find((item) => (item.slug || item.id) === slug), [slug])
@@ -337,7 +328,7 @@ function WritingDetail() {
     <>
       <Header />
       <div className="writing-progress" aria-hidden="true"><span style={{ width: `${progress * 100}%` }} /></div>
-      <main className="writing-detail-page">
+      <main className={`writing-detail-page ${writing.id === 'reactor-bpm-system-2026' ? 'bpm-reading-page' : ''}`}>
         <section className="section writing-detail-hero">
           <div className="container writing-detail-hero-grid">
             <div>
@@ -392,18 +383,24 @@ function WritingDetail() {
         ) : null}
 
         <section className="section">
-          <div className="container writing-reader-layout">
-            <div>
-              {writing.id === 'reactor-bpm-system-2026' ? <ReactorBpmFigures section="opening" /> : null}
-              {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} renderAfterHeading={writing.id === 'reactor-bpm-system-2026' ? reactorFigureForHeading : undefined} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
+          <div className={`container writing-reader-layout ${writing.id === 'reactor-bpm-system-2026' ? 'bpm-reader-layout' : ''}`}>
+            <div className="bpm-reader-main">
+              {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
             </div>
-            <aside className="writing-reader-aside">
-              <strong>Reader notes</strong>
-              {special ? <p>先理解状态、反馈、稳定与控制，再决定是否阅读数学描述。</p> : null}
-              {special ? <><a href="/workshops/personal-av-instrument">Personal A/V Instrument ↗</a><a href="https://github.com/ewanqian/portfolio/issues/59" target="_blank" rel="noreferrer">Current R&D Issue #59 ↗</a></> : null}
-            </aside>
+            {writing.id === 'reactor-bpm-system-2026'
+              ? <aside className="bpm-reader-aside"><ReactorBpmFigures section="sidebar" /></aside>
+              : <aside className="writing-reader-aside">
+                  <strong>Reader notes</strong>
+                  {special ? <p>先理解状态、反馈、稳定与控制，再决定是否阅读数学描述。</p> : null}
+                  {special ? <><a href="/workshops/personal-av-instrument">Personal A/V Instrument ↗</a><a href="https://github.com/ewanqian/portfolio/issues/59" target="_blank" rel="noreferrer">Current R&D Issue #59 ↗</a></> : null}
+                </aside>}
           </div>
         </section>
+        {writing.id === 'reactor-bpm-system-2026' ? (
+          <section className="section bpm-appendix-section">
+            <div className="container"><ReactorBpmFigures section="appendix" /></div>
+          </section>
+        ) : null}
       </main>
       <Footer />
     </>
