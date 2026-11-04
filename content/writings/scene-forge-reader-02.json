@@ -1,0 +1,16 @@
+{
+  "id": "scene-forge-reader-02",
+  "slug": "scene-forge-reader-02",
+  "title": "场景铸造：从空间草稿到演出预演",
+  "titleEn": "Scene Forge — From Spatial Draft to Performance Previsualization",
+  "type": "Workshop Reader / Scene Forge",
+  "category": "note",
+  "date": "2026-11-02",
+  "summary": "第二期「极简输入」工作坊教材：场地、Stage Plot、Cue、跨媒介时间结构与 30 秒 Opening，从第一次预演推进到可复现的 V2。",
+  "summaryEn": "The second Minimal Input Lab reader: venue constraints, stage plots, cue sheets and a reproducible 30-second performance previsualization exercise.",
+  "articlePath": "workshops/minimal-input-lab/reader-02-scene-forge-textbook-v0.2.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/minimal-input-lab/reader-02-scene-forge-textbook-v0.2.md",
+  "status": "published",
+  "featured": true,
+  "order": 2
+}
