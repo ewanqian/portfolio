@@ -106,3 +106,45 @@ jobs:
             docs/media-intake/browser-qa-2026-11.json
             docs/media-intake/qa-screenshots/*.png
             assets/digital-garden/digital-garden-loop.avif
+
+  encode-digital-garden:
+    name: Preserve AVIF and add interoperable MP4 derivative
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.head_ref == 'audit/portfolio-oct2026-round1-20261104' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Encode non-destructive MP4 derivative
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          src=assets/digital-garden/digital-garden-loop.avif
+          dst=assets/digital-garden/digital-garden-loop.mp4
+          if [ -f "$dst" ]; then
+            echo "Derivative exists; original source remains untouched"
+          else
+            ffmpeg -hide_banner -loglevel error -i "$src" -an -c:v libx264 -pix_fmt yuv420p -crf 23 -preset medium -movflags +faststart "$dst"
+          fi
+          test -s "$src"
+          test -s "$dst"
+          ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=width,height,nb_read_frames,duration -of default=noprint_wrappers=1 "$dst"
+          ls -l "$src" "$dst"
+      - name: Commit derivative only to audit branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/digital-garden/digital-garden-loop.mp4
+          if git diff --cached --quiet; then echo 'No binary changes'; exit 0; fi
+          git commit -m 'media(digital-garden): preserve AVIF and add H264 playback fallback'
+          git push origin "HEAD:${{ github.head_ref }}"
