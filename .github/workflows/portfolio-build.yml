@@ -56,7 +56,10 @@ jobs:
       - name: Motion audit (non-destructive, audit PR only)
         if: github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
         continue-on-error: true
-        run: node scripts/audit-portfolio-motion.mjs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          node scripts/audit-portfolio-motion.mjs
       - name: Browser screenshots (desktop and narrow viewport, audit PR only)
         if: github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
         continue-on-error: true
@@ -72,6 +75,12 @@ jobs:
             sleep 1
           done
           curl --fail --silent --show-error http://127.0.0.1:4173/ > /dev/null
+          for asset in \
+            /portfolio/assets/pdf-media/dropflow-biennale-main.webp \
+            /portfolio/assets/pdf-media/timer-loading-access-2-main.webp \
+            /portfolio/assets/digital-garden/digital-garden-loop.avif; do
+            curl --fail --silent --show-error -o /dev/null -w "asset %{http_code} %{size_download} $asset\\n" "http://127.0.0.1:4173$asset"
+          done
           CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
           if [ -z "$CHROME" ]; then echo 'CHROME NOT RUN: browser missing'; exit 1; fi
           for route in home works workshops; do
