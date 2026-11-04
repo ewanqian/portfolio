@@ -4,7 +4,7 @@
 - **Site:** 郑州中国第二砂轮厂 / Zhengzhou China Second Grinding Wheel Factory
 - **Format:** spatial scanning / point-cloud media / architectural study
 - **Portfolio status:** personal project record; Work / Archive candidate, not automatic homepage promotion
-- **Collaboration context:** related to a SYSTEM-directed documentary / production context
+- **Collaboration context:** SYSTEM documentary / advertising-film context; Ewan's point-cloud capture and visual-effects imagery role confirmed by Ewan on 2026-11-04.
 
 ## What the project is
 
@@ -19,6 +19,10 @@
 - moving-image output / 影像输出。
 
 Portfolio Issue #26 进一步确认：Ewan 参与了郑州二砂现场的空间扫描、点云与三维重建相关工作。完整纪录片片名、最终使用段落、全部合作 credits 与部分素材权限仍应继续保留核验记录。
+
+## Further image work
+
+Ewan 计划将自身可使用的扫描空间素材重新剪辑、重新配乐，制作一版独立的空间影像短片，以不同的节奏和空间视角呈现原场地。此版本尚未发布，不能与 SYSTEM 原纪录片混淆；只使用已有公开许可或另行授权的影像与数据。
 
 ## Why it belongs in the personal Portfolio
 
