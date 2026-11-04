@@ -6,19 +6,38 @@
   "type": "ongoing-work",
   "summary": "围绕时间、声音、影像结构和空间呈现展开的长期项目线；公开版本以 UFO Terminal「加载…权限 2」中的环形屏幕版本为当前代表呈现。",
   "practiceLine": "temporal-structure",
-  "tags": ["timer", "temporal", "ring-screen", "audiovisual", "ongoing"],
+  "tags": [
+    "timer",
+    "temporal",
+    "ring-screen",
+    "audiovisual",
+    "ongoing"
+  ],
   "coverImage": "featured-timer-main.webp",
   "image": "/assets/home/featured-timer-main.webp",
   "showOnHome": false,
   "lifecycle": "active",
-  "relatedNodes": ["ufo-terminal"],
-  "relatedWritings": ["timer-temporal", "timer-not-sync"],
-  "displayModes": ["audiovisual image", "ring screen", "spatial version planning"],
-  "analysisIds": ["timer-core-series"],
+  "relatedNodes": [
+    "ufo-terminal"
+  ],
+  "relatedWritings": [
+    "timer-temporal",
+    "timer-not-sync",
+    "timer-volumetric-desert-2026"
+  ],
+  "displayModes": [
+    "audiovisual image",
+    "ring screen",
+    "spatial version planning"
+  ],
+  "analysisIds": [
+    "timer-core-series"
+  ],
   "sourceDocs": [
     "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/README.md",
     "works/timer.html",
-    "docs/bio/canonical-project-names.md"
+    "docs/bio/canonical-project-names.md",
+    "projects/timer-volumetric-desert-2026.md"
   ],
   "repoLink": "/works/timer.html",
   "links": [
