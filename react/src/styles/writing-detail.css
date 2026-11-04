@@ -378,3 +378,50 @@
     flex: 1 1 auto;
   }
 }
+
+
+/* ENTROPY archive: runtime captures, never passed off as installation photography. */
+.entropy-runtime-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+  padding: 0.9rem 0 1.2rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.entropy-runtime-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.3vw, 2.6rem);
+}
+.entropy-runtime-gallery figure { margin: 0; min-width: 0; }
+.entropy-runtime-gallery figure:first-child { grid-column: 1 / -1; }
+.entropy-runtime-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #000;
+}
+.entropy-runtime-gallery figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  padding-top: 0.65rem;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+.entropy-runtime-gallery figcaption span { opacity: 0.66; }
+.entropy-runtime-note {
+  margin: 1.25rem 0 0;
+  font-size: 0.73rem;
+  line-height: 1.55;
+  opacity: 0.6;
+}
+@media (max-width: 680px) {
+  .entropy-runtime-gallery { grid-template-columns: 1fr; }
+  .entropy-runtime-gallery figure:first-child { grid-column: auto; }
+}
