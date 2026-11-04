@@ -6,6 +6,7 @@ import writings from '../data/generated/writings'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeWriting } from '../i18n/content.js'
 
+const editorialPriority = ['reactor-bpm-system-2026', 'entropy-two-screen-2026', 'performable-music']
 const categoryMeta = [
   { id: 'essay', title: '作品评论 / Essays' },
   { id: 'note', title: '方法笔记 / Notes' },
@@ -75,8 +76,11 @@ function WritingList({ items, title }) {
 
 function Writing() {
   const { language } = useLanguage()
-  const localizedWritings = writings.map((writing) => localizeWriting(writing, language))
-  const featuredWritings = sortWritings(localizedWritings.filter((writing) => writing.featured))
+  // Public writing is an actual reader, not a list of unlinked planned concepts.
+  const localizedWritings = writings
+    .filter((writing) => writing.status === 'published' && writing.articlePath)
+    .map((writing) => localizeWriting(writing, language))
+  const featuredWritings = editorialPriority.map((id) => localizedWritings.find((item) => item.id === id)).filter(Boolean)
   const allWritings = sortWritings(localizedWritings)
   const localizedCategoryMeta = language === 'en'
     ? [
@@ -100,15 +104,15 @@ function Writing() {
             <h1 className="section-title">{language === 'en' ? 'Writing and Notes' : '写作与笔记'}</h1>
             <p className="section-intro">
               {language === 'en'
-                ? 'This page collects ongoing writing around works, methods, field experience, delivery specs, and archive systems. The texts unfold how a work holds together, how it is organized, how it enters space, how it is delivered, and how it continues to be read.'
-                : '这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。写作本身也是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。'}
+                ? 'Research reports and field notes on how audiovisual works and real-time performance systems are built, controlled, tested and experienced.'
+                : '从现场演出中的控制系统出发，记录实时图像、舞台预演、时间结构与创作方法。优先呈现已有完整正文的研究报告，不把尚未撰写的选题当作文章。'}
             </p>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Featured Writings' : '重点写作 / Featured Writings'}</h2>
+            <h2 className="section-title">{language === 'en' ? 'Selected research reports' : '重点研究报告'}</h2>
             <div className="grid-2">
               {featuredWritings.map((writing) => (
                 <article key={writing.id} className="card writing-card">
@@ -125,9 +129,7 @@ function Writing() {
           </div>
         </section>
 
-        {localizedCategoryMeta.map((section) => (
-          <WritingList key={section.id} items={writingsByCategory[section.id]} title={section.title} />
-        ))}
+        {/* Published, readable articles are listed once below, not repeated in category silos. */}
 
         <section className="section">
           <div className="container">
