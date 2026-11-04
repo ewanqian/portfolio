@@ -3,6 +3,8 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import MarkdownReader from '../components/content/MarkdownReader.jsx'
+import ReactorBpmFigures from '../components/content/ReactorBpmFigures.jsx'
+import '../styles/reactor-bpm.css'
 import writings from '../data/generated/writings'
 import '../styles/writing-detail.css'
 
@@ -377,6 +379,12 @@ function WritingDetail() {
               </div>
               <p className="entropy-runtime-note">以上为保留的浏览器程序版本截图，展示视觉结构与主/顶屏预演关系，不作为演出现场摄影或最终设备路由的证明。</p>
             </div>
+          </section>
+        ) : null}
+
+        {writing.id === 'reactor-bpm-system-2026' ? (
+          <section className="section reactor-bpm-media-section">
+            <div className="container"><ReactorBpmFigures /></div>
           </section>
         ) : null}
 

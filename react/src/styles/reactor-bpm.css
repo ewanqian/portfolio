@@ -1,0 +1,20 @@
+.reactor-visual-essay { max-width:1200px; margin-inline:auto; }
+.reactor-media-header {display:flex;justify-content:space-between;gap:1rem;padding:.95rem 0;margin-bottom:1.25rem;border-top:1px solid currentColor;font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}
+.reactor-hero-media {display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(.75rem,2.2vw,2rem);align-items:start}
+.reactor-visual-essay figure {margin:0;min-width:0}
+.reactor-visual-essay img {display:block;width:100%;height:auto;max-height:650px;object-fit:contain;background:#080808}
+.reactor-visual-essay figcaption {display:grid;gap:.4rem;padding:.75rem 0 1.4rem;font-size:.75rem;line-height:1.5}
+.reactor-visual-essay figcaption strong {font-weight:650;letter-spacing:.04em}
+.reactor-visual-essay figcaption span {opacity:.65}
+.reactor-concept-head {border-top:1px solid currentColor;margin-top:clamp(1rem,3vw,3rem);padding-top:1.4rem}
+.reactor-concept-head>span {font-size:.7rem;letter-spacing:.12em;opacity:.56}
+.reactor-concept-head h2 {max-width:900px;margin:.85rem 0;font-size:clamp(1.6rem,3.2vw,3.2rem);line-height:1.16}
+.reactor-concept-head p {max-width:680px;font-size:.93rem;line-height:1.7;opacity:.68}
+.reactor-time-system {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:color-mix(in srgb,currentColor 25%,transparent);border:1px solid color-mix(in srgb,currentColor 25%,transparent);margin:1.7rem 0 clamp(2rem,4vw,3.4rem)}
+.reactor-time-system>div {min-width:0;padding:clamp(.9rem,2.5vw,1.8rem);background:var(--background,#0b0b0b)}
+.reactor-time-system span {font-size:.67rem;opacity:.58;letter-spacing:.08em}
+.reactor-time-system strong {display:block;margin:1.4rem 0 .5rem;font-size:clamp(1.2rem,2.5vw,2rem)}
+.reactor-time-system p {font-size:.72rem;letter-spacing:.04em;opacity:.62;line-height:1.5;overflow-wrap:anywhere}
+.reactor-technical-stills {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,3vw,2.5rem)}
+.reactor-media-footer {font-size:.75rem;opacity:.58;line-height:1.65;margin:1rem 0 2rem}
+@media(max-width:700px){.reactor-hero-media,.reactor-technical-stills{grid-template-columns:1fr}.reactor-visual-essay img{max-height:none}.reactor-time-system{grid-template-columns:1fr}.reactor-media-header{flex-direction:column}.reactor-time-system strong{margin:.7rem 0 .3rem}}
