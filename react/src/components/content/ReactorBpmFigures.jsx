@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const ROOT = '/portfolio/assets/reactor-2026/'
 const ARCHIVE = 'https://github.com/ewanqian/portfolio/tree/main/assets/reactor-2026'
@@ -174,7 +174,7 @@ function Appendix() {
         <summary><strong>C / TouchDesigner、OSC 与外部系统</strong><span>自定义输入</span></summary>
         <ol>
           <li>在 Arena Preferences 的 OSC 页面启用 OSC；确认接收端口与发送设备在可访问的网络内。</li>
-          <li>在 TouchDesigner 或网页桥接系统里输出范围 0–1 的参数。以 \`/composition/layers/1/video/opacity\` 为例发送 0.25，第一层透明度即为 25%。</li>
+          <li>在 TouchDesigner 或网页桥接系统里输出范围 0–1 的参数。以 <code>/composition/layers/1/video/opacity</code> 为例发送 0.25，第一层透明度即为 25%。</li>
           <li>将不同的手势、脚踏或传感器映射到 Layer Opacity、Clip Trigger 或 Tap BPM；每种输入都应有停止与恢复方法。</li>
           <li>故意断开外部连接，检查手动控制、BASE 与安全黑场是否仍然可用。</li>
         </ol>
