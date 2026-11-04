@@ -11,7 +11,7 @@ const selectedIds = ['kashiwa', 'drop-flow', 'timer', 'digital-garden-visual-202
 // Public Work is an editorial index, not a dump of every version/event object.
 // Alternate versions and historical nodes remain available through Archive and project pages.
 const workIndexIds = [
-  'kashiwa',
+  'titan',
   'drop-flow',
   'timer',
   'digital-garden-visual-2025',
