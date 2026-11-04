@@ -52,3 +52,45 @@ jobs:
           node -e "const fs=require('fs');const d=fs.readFileSync('react/src/data/generated/writings.js','utf8');for(const x of ['reactor-bpm-system-2026','entropy-two-screen-2026','performable-music'])if(!d.includes(x))throw Error('missing writing '+x);"
       - name: Report large asset copies
         run: npm run media:report
+
+      - name: Motion audit (non-destructive, audit PR only)
+        if: github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
+        continue-on-error: true
+        run: node scripts/audit-portfolio-motion.mjs
+      - name: Browser screenshots (desktop and narrow viewport, audit PR only)
+        if: github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/media-intake/qa-screenshots
+          (cd react && npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/portfolio-preview.log 2>&1) &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent --show-error http://127.0.0.1:4173/ > /dev/null
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then echo 'CHROME NOT RUN: browser missing'; exit 1; fi
+          for route in home works workshops; do
+            target="/"
+            if [ "$route" != home ]; then target="/#/$route"; fi
+            for spec in 'desktop 1440 900' 'mobile 390 844'; do
+              read -r label width height <<< "$spec"
+              "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --disable-dev-shm-usage \
+                --window-size="$width,$height" --virtual-time-budget=3500 \
+                --screenshot="docs/media-intake/qa-screenshots/${route}-${label}.png" \
+                "http://127.0.0.1:4173${target}"
+            done
+          done
+      - name: Upload round 1 motion inventory and screenshots
+        if: always() && github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-round1-motion-and-screenshots
+          if-no-files-found: warn
+          path: |
+            docs/media-intake/motion-audit-2026-10.csv
+            docs/media-intake/qa-screenshots/*.png
