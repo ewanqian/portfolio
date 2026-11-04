@@ -76,8 +76,8 @@ jobs:
           done
           curl --fail --silent --show-error http://127.0.0.1:4173/ > /dev/null
           for asset in \
-            /portfolio/assets/pdf-media/dropflow-biennale-main.webp \
-            /portfolio/assets/pdf-media/timer-loading-access-2-main.webp \
+            /portfolio/assets/home/featured-dropflow-main.webp \
+            /portfolio/assets/home/archive-timer-clean.webp \
             /portfolio/assets/digital-garden/digital-garden-loop.avif; do
             curl --fail --silent --show-error -o /dev/null -w "asset %{http_code} %{size_download} $asset\\n" "http://127.0.0.1:4173$asset"
           done
@@ -94,6 +94,7 @@ jobs:
                 "http://127.0.0.1:4173${target}"
             done
           done
+          CHROME_BIN="$CHROME" node scripts/audit-portfolio-browser.mjs
       - name: Upload round 1 motion inventory and screenshots
         if: always() && github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
         uses: actions/upload-artifact@v4
@@ -102,5 +103,6 @@ jobs:
           if-no-files-found: warn
           path: |
             docs/media-intake/motion-audit-2026-10.csv
+            docs/media-intake/browser-qa-2026-11.json
             docs/media-intake/qa-screenshots/*.png
             assets/digital-garden/digital-garden-loop.avif
