@@ -32,7 +32,8 @@
     "projects/natgeo-crystal-2026.md",
     "https://virtura.space/work/natgeo-crystal.html",
     "https://github.com/ewanqian/cng-design-archive",
-    "https://github.com/ewanqian/cng-spatial-tour"
+    "https://github.com/ewanqian/cng-spatial-tour",
+    "https://ewanqian.github.io/cng-design-archive/"
   ],
   "repoLink": "/portfolio/#/projects/natgeo-crystal",
   "links": [
@@ -47,6 +48,10 @@
     {
       "text": "CNG 空间漫游源码",
       "url": "https://github.com/ewanqian/cng-spatial-tour"
+    },
+    {
+      "text": "公共空间漫游 / Public spatial archive",
+      "url": "https://ewanqian.github.io/cng-design-archive/"
     }
   ],
   "priority": 11
