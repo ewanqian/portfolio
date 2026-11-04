@@ -128,6 +128,22 @@ function StageCoordination() {
   )
 }
 
+function Vocabulary() {
+  return (
+    <section className="bpm-side-group bpm-vocabulary" aria-label="现场演出词汇速查">
+      <div className="bpm-side-kicker">INDEX / 术语速查</div>
+      <dl>
+        <div><dt>VJ</dt><dd>现场视频操作与视觉表演者</dd></div>
+        <div><dt>LD</dt><dd>Lighting Designer，灯光设计师</dd></div>
+        <div><dt>Cue</dt><dd>演出某个时刻要执行的动作或状态</dd></div>
+        <div><dt>Timecode</dt><dd>用统一时间位置对齐不同设备的事件</dd></div>
+        <div><dt>Previs</dt><dd>在到达真实舞台前进行可视化预演</dd></div>
+        <div><dt>IMAG</dt><dd>现场摄像机画面，用于舞台大屏呈现</dd></div>
+      </dl>
+    </section>
+  )
+}
+
 function Sidebar() {
   return (
     <div className="bpm-visual-sidebar">
@@ -139,6 +155,7 @@ function Sidebar() {
       <TimeDiagram />
       <HistoricalContext />
       <StageCoordination />
+      <Vocabulary />
       <RouteDiagram />
       <details className="bpm-mini-mixer">
         <summary>尝试三轨透明度混合 <span>INTERACTIVE</span></summary>
