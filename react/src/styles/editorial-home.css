@@ -408,3 +408,40 @@
     overflow: hidden;
   }
 }
+
+/* One current-research note, not an additional Selected Works card. */
+.home-current-research {
+  border-top: 1px solid var(--line);
+  padding: 24px 0 26px;
+}
+.home-current-research-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 18px;
+}
+.home-current-research-label {
+  grid-column: 1 / 4;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.home-current-research-content { grid-column: 5 / 12; }
+.home-current-research-content a {
+  display: inline-block;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 4px;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+}
+.home-current-research-content a span { font-weight: 400; }
+.home-current-research-content p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .home-current-research-label,
+  .home-current-research-content { grid-column: 1 / -1; }
+  .home-current-research-content { margin-top: 12px; }
+}
