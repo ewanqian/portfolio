@@ -97,6 +97,11 @@ jobs:
             done
           done
           CHROME_BIN="$CHROME" node scripts/audit-portfolio-browser.mjs
+          node scripts/generate-cover-contact-sheet.mjs
+          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --disable-dev-shm-usage \
+            --window-size=1600,2600 --virtual-time-budget=2500 \
+            --screenshot="docs/media-intake/qa-screenshots/cover-candidates.png" \
+            "http://127.0.0.1:4173/qa-cover-contact-sheet.html"
       - name: Upload round 1 motion inventory and screenshots
         if: always() && github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
         uses: actions/upload-artifact@v4
