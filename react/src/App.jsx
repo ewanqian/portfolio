@@ -51,7 +51,7 @@ function App() {
     }
 
     const base = window.location.pathname.indexOf('/portfolio') === 0 ? '/portfolio' : ''
-    window.location.replace(`${base}/works/${slug}`)
+    window.location.replace(`${base}/works/${slug}.html`)
   }, [pathname])
 
   useEffect(() => {
