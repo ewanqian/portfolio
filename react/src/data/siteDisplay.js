@@ -1,7 +1,8 @@
 const imagePathOverrides = {
-  '/portfolio/assets/home/featured-dropflow-main.webp': './assets/pdf-media/dropflow-biennale-main.webp',
+  '/assets/home/featured-dropflow-hangzhou-biennale-scene.webp': '/portfolio/assets/home/featured-dropflow-main.webp',
+  '/portfolio/assets/home/featured-dropflow-main.webp': '/portfolio/assets/home/featured-dropflow-main.webp',
   '/portfolio/assets/home/featured-perceptual-environments.webp': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
-  '/portfolio/assets/home/featured-timer-main.webp': './assets/pdf-media/timer-loading-access-2-main.webp',
+  '/portfolio/assets/home/featured-timer-main.webp': '/portfolio/assets/home/archive-timer-clean.webp',
   '/portfolio/assets/home/featured-timer-visionpro.webp': '/portfolio/assets/home/archive-timer-clean.webp'
 }
 
@@ -9,8 +10,8 @@ const imageIdOverrides = {
   'ar-shenzhen-resort-2022': '/portfolio/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp',
   'babel-bottle': '/portfolio/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp',
   'can-festival': '/portfolio/assets/public-nodes/can-festival.webp',
-  'drop-flow': './assets/pdf-media/dropflow-biennale-main.webp',
-  'drop-flow-hangzhou-biennale': './assets/pdf-media/dropflow-biennale-main.webp',
+  'drop-flow': '/portfolio/assets/home/hero-dropflow-ufo-2025.webp',
+  'drop-flow-hangzhou-biennale': '/portfolio/assets/home/featured-dropflow-main.webp',
   'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp',
   'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.webp',
   'digital-garden-visual-2025': '/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp',
@@ -31,9 +32,9 @@ const imageIdOverrides = {
   'rain-singapore-visual-2026': '/portfolio/assets/rain-singapore/gallery/its-raining-wide-05.webp',
   'sre-realtime-liveset-2026': '/portfolio/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp',
   'shanhaifusheng2-visual-2025': '/portfolio/assets/raw-library/floating-life-ii-performance.webp',
-  'timer': './assets/pdf-media/timer-loading-access-2-main.webp',
-  'timer-loading-access-2-2024': './assets/pdf-media/timer-loading-access-2-main.webp',
-  'timer-series-visual-2024': './assets/pdf-media/timer-loading-access-2-main.webp',
+  'timer': '/portfolio/assets/home/archive-timer-clean.webp',
+  'timer-loading-access-2-2024': '/portfolio/assets/home/archive-timer-clean.webp',
+  'timer-series-visual-2024': '/portfolio/assets/home/archive-timer-clean.webp',
   'xtep-xdna22aw-visual-2022': '/portfolio/assets/xtep-xdna/xtep-selected-01.webp',
   'zcool-hp-live-2021': '/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp',
   'vrplay-hackathon-visual-2025': '/portfolio/assets/raw-picks/vrplay-keynote-16x9.webp',
@@ -58,11 +59,11 @@ export const homeNodeIds = [
 ]
 
 export const nodeLinks = {
-  'babel-bottle': '/archive',
-  'can-festival': '/works/titan',
-  'drop-flow-hangzhou-biennale': '/works/drop-flow.html',
-  'observation-and-symbiosis': '/archive',
-  'ufo-terminal': '/works/drop-flow.html'
+  'babel-bottle': '',
+  'can-festival': '/portfolio/works/titan.html',
+  'drop-flow-hangzhou-biennale': '/portfolio/works/drop-flow.html',
+  'observation-and-symbiosis': '',
+  'ufo-terminal': '/portfolio/works/drop-flow.html'
 }
 
 export function getDisplayImage(item) {
@@ -83,33 +84,35 @@ export function getWorkTargetUrl(work) {
   }
 
   if (work?.id === 'kashiwa' || work?.id === 'titan' || work?.id === 'kashiwa-bo-live-shenzhen') {
-    return '/works/titan'
+    return '/portfolio/works/titan.html'
   }
 
   if (work?.id === 'yujiayun-45ping-visual-2025') {
-    return '/portfolio/projects/yujiayun-45m2'
+    return '/portfolio/#/projects/yujiayun-45m2'
   }
 
   if (work?.id === 'rain-singapore-visual-2026') {
-    return '/portfolio/projects/rain-singapore'
+    return '/portfolio/#/projects/rain-singapore'
   }
 
   if (work?.id === 'digital-garden-visual-2025') {
-    return '/portfolio/projects/digital-garden'
+    return '/portfolio/#/projects/digital-garden'
   }
 
   const detailLink = work.links?.find((link) => link.url?.includes('/works/') || link.url?.startsWith('./works/'))
   const rawUrl = detailLink?.url || work.repoLink
 
   if (!rawUrl) {
-    return '/archive'
+    return ''
   }
 
+  if (rawUrl.startsWith('./works/')) return `/portfolio/${rawUrl.slice(2)}`
+  if (rawUrl.startsWith('/works/')) return `/portfolio${rawUrl}`
   return rawUrl.startsWith('./') ? `/${rawUrl.replace(/^\.\//, '')}` : rawUrl
 }
 
 export function getNodeTargetUrl(node) {
-  return node.externalLink || nodeLinks[node.id] || '/archive'
+  return node.externalLink || nodeLinks[node.id] || ''
 }
 
 export function sortWorksForArchive(items) {

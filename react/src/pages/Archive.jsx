@@ -125,9 +125,11 @@ const Archive = () => {
                       <p className="archive-item-years">{localizedWork.years}</p>
                       <p className="archive-item-category">{localizedWork.type}</p>
                       <p>{localizedWork.summary}</p>
-                      <div className="archive-item-actions">
-                        <a href={getWorkTargetUrl(work)} className="button">{language === 'en' ? 'Open Detail' : '查看详情'}</a>
-                      </div>
+                      {getWorkTargetUrl(work) ? (
+                        <div className="archive-item-actions">
+                          <a href={getWorkTargetUrl(work)} className="button">{language === 'en' ? 'Open Detail' : '查看详情'}</a>
+                        </div>
+                      ) : null}
                     </div>
                   </article>
                 )
@@ -167,9 +169,11 @@ const Archive = () => {
                       <h3>{localizedWork.title}</h3>
                       <p className="archive-item-years">{localizedWork.years}</p>
                       <p>{localizedWork.summary}</p>
-                      <div className="archive-item-actions">
-                        <a href={getWorkTargetUrl(work)} className="button">{language === 'en' ? 'Open Detail' : '查看详情'}</a>
-                      </div>
+                      {getWorkTargetUrl(work) ? (
+                        <div className="archive-item-actions">
+                          <a href={getWorkTargetUrl(work)} className="button">{language === 'en' ? 'Open Detail' : '查看详情'}</a>
+                        </div>
+                      ) : null}
                     </div>
                   </article>
                 )
@@ -196,11 +200,13 @@ const Archive = () => {
                       <p>{localizedNode.category}</p>
                     </div>
                     <p>{localizedNode.summary}</p>
-                    <div className="archive-item-actions">
-                      <a href={getNodeTargetUrl(node)} className="button" target={node.externalLink ? '_blank' : undefined} rel={node.externalLink ? 'noreferrer' : undefined}>
-                        {language === 'en' ? 'Open' : '查看'}
-                      </a>
-                    </div>
+                    {getNodeTargetUrl(node) ? (
+                      <div className="archive-item-actions">
+                        <a href={getNodeTargetUrl(node)} className="button" target={node.externalLink ? '_blank' : undefined} rel={node.externalLink ? 'noreferrer' : undefined}>
+                          {language === 'en' ? 'Open' : '查看'}
+                        </a>
+                      </div>
+                    ) : null}
                   </article>
                 )
               })}
