@@ -103,3 +103,4 @@ jobs:
           path: |
             docs/media-intake/motion-audit-2026-10.csv
             docs/media-intake/qa-screenshots/*.png
+            assets/digital-garden/digital-garden-loop.avif
