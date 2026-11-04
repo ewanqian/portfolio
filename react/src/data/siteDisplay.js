@@ -1,4 +1,5 @@
 const imagePathOverrides = {
+  '/assets/home/featured-dropflow-hangzhou-biennale-scene.webp': '/portfolio/assets/home/featured-dropflow-main.webp',
   '/portfolio/assets/home/featured-dropflow-main.webp': '/portfolio/assets/home/featured-dropflow-main.webp',
   '/portfolio/assets/home/featured-perceptual-environments.webp': '/portfolio/assets/raw-library/observation-symbiosis-large.webp',
   '/portfolio/assets/home/featured-timer-main.webp': '/portfolio/assets/home/archive-timer-clean.webp',
