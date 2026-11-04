@@ -59,11 +59,11 @@ export const homeNodeIds = [
 ]
 
 export const nodeLinks = {
-  'babel-bottle': '/archive',
+  'babel-bottle': '',
   'can-festival': '/portfolio/works/titan.html',
-  'drop-flow-hangzhou-biennale': '/works/drop-flow.html',
-  'observation-and-symbiosis': '/archive',
-  'ufo-terminal': '/works/drop-flow.html'
+  'drop-flow-hangzhou-biennale': '/portfolio/works/drop-flow.html',
+  'observation-and-symbiosis': '',
+  'ufo-terminal': '/portfolio/works/drop-flow.html'
 }
 
 export function getDisplayImage(item) {
@@ -103,7 +103,7 @@ export function getWorkTargetUrl(work) {
   const rawUrl = detailLink?.url || work.repoLink
 
   if (!rawUrl) {
-    return '/archive'
+    return ''
   }
 
   if (rawUrl.startsWith('./works/')) return `/portfolio/${rawUrl.slice(2)}`
@@ -112,7 +112,7 @@ export function getWorkTargetUrl(work) {
 }
 
 export function getNodeTargetUrl(node) {
-  return node.externalLink || nodeLinks[node.id] || '/archive'
+  return node.externalLink || nodeLinks[node.id] || ''
 }
 
 export function sortWorksForArchive(items) {
