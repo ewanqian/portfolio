@@ -140,14 +140,30 @@ function DigitalGarden() {
           <div className="container project-caption-band">
             <div className="eyebrow">{isZh ? '动态视觉' : 'Motion Sample'}</div>
             <div>
-              <picture className="project-motion-sample">
-                <source media="(prefers-reduced-motion: no-preference)" srcSet="/portfolio/assets/digital-garden/digital-garden-loop.avif" type="image/avif" />
-                <img src="/portfolio/assets/digital-garden/digital-garden-xian-mixc-03.webp" alt={isZh ? '数字游园动态视觉样本' : 'Digital Garden motion sample'} loading="lazy" />
-              </picture>
+              <div className="project-motion-sample">
+                <video
+                  className="project-motion-video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/portfolio/assets/digital-garden/digital-garden-xian-mixc-03.webp"
+                  aria-label={isZh ? '数字游园动态视觉样本' : 'Digital Garden motion sample'}
+                >
+                  <source src="/portfolio/assets/digital-garden/digital-garden-loop.mp4" type="video/mp4" />
+                </video>
+                <img
+                  className="project-motion-reduced"
+                  src="/portfolio/assets/digital-garden/digital-garden-xian-mixc-03.webp"
+                  alt={isZh ? '数字游园静态视觉预览' : 'Digital Garden still preview'}
+                  loading="lazy"
+                />
+              </div>
               <p>
                 {isZh
-                  ? '横向动态样本呈现绿色粒子、点云碎片和光线的漂移。若浏览器不支持动态 AVIF，或已启用减少动态效果，将显示静态预览。'
-                  : 'The motion sample shows green particles, point-cloud fragments, and drifting light. A still preview is shown if animated AVIF is unsupported or reduced motion is preferred.'}
+                  ? '横向动态样本呈现绿色粒子、点云碎片和光线的漂移。播放使用兼容性更好的 MP4；如启用减少动态效果，则显示静态预览。原始 AVIF 动态文件仍保留在项目归档中。'
+                  : 'The motion sample shows green particles, point-cloud fragments, and drifting light. An H.264 video derivative plays where supported; reduced-motion visitors see a still. The original animated AVIF remains archived.'}
               </p>
             </div>
           </div>
