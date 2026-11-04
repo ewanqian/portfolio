@@ -4,7 +4,7 @@
 - **Context:** 酒店大堂与商业空间常设影像 / permanent media content for hospitality and commercial interiors
 - **Portfolio status:** personal project record; not automatically a homepage Selected Work
 - **Team context:** VIRTURA
-- **Individual credit boundary:** Ewan 将该项目纳入个人 Portfolio；现有仓库与公开页能核实 VIRTURA 的团队职责，但尚未找到一份独立文本把全部团队职责逐项映射为 Ewan 的个人 credit，因此公开个人角色文案保持保守，不把团队 scope 直接改写为个人独立完成。
+- **Ewan individual role (confirmed by artist 2026-11-04):** 矿晶影像设计、多屏影像制作，以及酒店/体验中心的三维扫描与采集。VIRTURA 团队完整 scope 与个人职责分别保留；外部合同与最终制作署名仍可后续补证。
 
 ## What the project is
 
@@ -54,7 +54,7 @@ Personal-site copy should answer only:
 1. this is a permanent multi-screen media project for a hospitality/commercial interior;
 2. the image system is built around mineral/crystal 3D material;
 3. multiple screen formats were coordinated as one content system;
-4. Ewan participated through the VIRTURA production context; exact individual credit remains deliberately narrower than the team scope until a direct credit source is attached.
+4. Ewan's individual contribution includes crystal-image design and video production, multi-screen adaptation, and 3D hotel/experience-centre capture (artist-confirmed, 2026-11-04).
 
 Do not create separate cards for the design archive, spatial tour, screen-format study or material study.
 
@@ -62,7 +62,7 @@ Do not create separate cards for the design archive, spatial tour, screen-format
 
 Before considering homepage promotion:
 
-- confirm one concise individual-role line;
+- add direct external production credits where available; artist-confirmed role is recorded above;
 - copy approved public media into the personal Portfolio asset tree instead of relying permanently on remote URLs;
 - visually review `space-lobby.jpg` against current TITAN / Drop Flow / TIMER / Digital Garden hero images;
 - keep it in Work / Archive if it does not displace an existing Selected Work on image and authorship strength.
