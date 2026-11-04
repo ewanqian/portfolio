@@ -1,0 +1,16 @@
+{
+  "id": "performable-music-2026",
+  "slug": "performable-music-2026",
+  "title": "可表演音乐 / Performable Music",
+  "titleEn": "Performable Music / Agent Music Performance",
+  "type": "Research / In Progress",
+  "category": "research",
+  "date": "2026-11-04",
+  "summary": "音乐不仅被制作和播放，也能够被重新演奏。研究 Show Score、Ableton Live、实时音画与 Agent 协作如何形成可记录、可修改的现场作品。",
+  "summaryEn": "A research line into music as editable, repeatable live form, connecting Show Score, Ableton Live, real-time audiovisual instruments and agent-assisted production.",
+  "articlePath": "docs/articles/performable-music-2026.md",
+  "status": "draft",
+  "featured": true,
+  "order": 6,
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/articles/performable-music-2026.md"
+}
