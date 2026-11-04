@@ -16,6 +16,7 @@ const workIndexIds = [
   'timer',
   'digital-garden-visual-2025',
   'natgeo-crystal-2026',
+  'china-ai-gala-2026',
   'system-ersha-2026',
   'transit',
   'mke-terminal',
@@ -34,41 +35,6 @@ const workIndexIds = [
   'hallu-resonance-live-2024'
 ]
 
-// Compatibility bridge until the next content build regenerates works.js from content/works/.
-// Source-of-truth records live in content/works/*.json.
-const recoveredRecords = [
-  {
-    id: 'natgeo-crystal-2026',
-    title: '中国国家地理·矿晶空间影像 / National Geographic — Crystal Landscape',
-    subtitle: '酒店大堂与商业空间常设多屏影像',
-    years: '2026',
-    type: 'spatial-media-installation',
-    summary: '为酒店大堂与商业空间开发矿物与晶体主题的常设空间影像，通过横向主屏、竖向立柱与侧屏的多画幅编排，形成可长期循环和持续更新的内容系统。',
-    image: 'https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg',
-    repoLink: '/portfolio/#/projects/natgeo-crystal'
-  },
-  {
-    id: 'system-ersha-2026',
-    title: 'SYSTEM × ERSHA 建筑空间扫描 / SYSTEM × ERSHA — Spatial Capture',
-    subtitle: '空间扫描 / 点云影像 / 建筑空间观察',
-    years: '2026',
-    type: 'spatial-capture',
-    summary: '对郑州中国第二砂轮厂多层建筑空间进行扫描与点云重组，并将数据整理为可继续用于空间观察、镜头预演与影像制作的三维模型。',
-    image: 'https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp',
-    repoLink: '/portfolio/#/projects/system-ersha'
-  },
-  {
-    id: 'transit',
-    title: '箱中温室 / Greenhouse in Transit',
-    subtitle: '手提箱、网页与 Vision Pro 构成的空间叙事作品',
-    years: '2025–2026',
-    type: 'spatial-narrative-artwork',
-    summary: '以一只被错投到现实的便携温室箱为入口，把实体物件、手机网页、档案线索与 Vision Pro 中展开的点云温室串联成跨现实与数字空间的叙事作品。',
-    image: '/assets/home/greenhouse-in-transit-mg17.webp',
-    repoLink: 'https://ewanqian.github.io/Greenhouse-in-Transit/Archive/project-home-v2.html'
-  }
-]
-
 const recoveredEnglish = {
   'natgeo-crystal-2026': {
     title: 'National Geographic — Crystal Landscape',
@@ -80,6 +46,11 @@ const recoveredEnglish = {
     subtitle: 'Spatial scanning / point-cloud media / architectural study',
     summary: 'A spatial capture of the China Second Grinding Wheel Factory in Zhengzhou, reorganising scan data into a working 3D model for spatial study, camera previsualisation, and moving-image production.'
   },
+  'china-ai-gala-2026': {
+    title: 'China AI Gala — AI Together Opening Show',
+    subtitle: 'Stage image / robotics imagery / perspective mapping',
+    summary: 'Large-format opening visuals developed for a box-shaped LED stage, combining robotic imagery, three-dimensional scenes and perspective-mapped compositions.'
+  },
   transit: {
     title: 'Greenhouse in Transit',
     subtitle: 'A spatial narrative across a suitcase, web archive, and Vision Pro',
@@ -88,9 +59,7 @@ const recoveredEnglish = {
 }
 
 function buildWorkMap() {
-  const map = new Map(works.map((work) => [work.id, work]))
-  recoveredRecords.forEach((record) => map.set(record.id, { ...map.get(record.id), ...record }))
-  return map
+  return new Map(works.map((work) => [work.id, work]))
 }
 
 function localizeEditorial(work, language) {
@@ -165,8 +134,8 @@ function Works() {
             </div>
             <div>
               <p>{isZh
-                ? '这里不再把“空间”“制作”“实时系统”“研究”拆成互相竞争的一级栏目。它们只是项目的媒介、角色或方法。一个项目只出现一次；展览版本、演出节点、过程与技术记录留在项目内部或归档。'
-                : 'Spatial, production, realtime systems, and research are no longer competing top-level sections. They are media, roles, or methods attached to projects. Each project appears once; versions, event nodes, process, and technical records stay inside the project or archive.'}</p>
+                ? '从现场影像、空间采集到实时音画，精选项目按画面、现场与创作角色呈现。'
+                : 'Selected projects in live image, spatial capture and realtime audiovisual practice, presented through their images, contexts and creative roles.'}</p>
               <a className="text-link" href="/portfolio/#/archive">{isZh ? '查看完整归档 ↗' : 'Full archive ↗'}</a>
             </div>
           </div>
