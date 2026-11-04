@@ -6,7 +6,7 @@ import { getDisplayImage, getWorkTargetUrl } from '../data/siteDisplay'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeWork } from '../i18n/content.js'
 
-const selectedIds = ['kashiwa', 'drop-flow', 'timer', 'digital-garden-visual-2025']
+const selectedIds = ['titan', 'drop-flow', 'timer', 'digital-garden-visual-2025']
 
 // Public Work is an editorial index, not a dump of every version/event object.
 // Alternate versions and historical nodes remain available through Archive and project pages.
