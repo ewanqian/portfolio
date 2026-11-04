@@ -83,5 +83,8 @@ jobs:
             exit 0
           fi
           git commit -m "publish: sync canonical React homepage bundles to Pages root"
+          # build-content regenerates tracked source files; hide that unrelated
+          # dirty working tree before rebasing the intentionally narrow deploy commit.
+          git stash push --include-untracked -m "temporary postbuild generated files"
           git pull --rebase origin main
           git push origin HEAD:main
