@@ -261,6 +261,28 @@ function PerformanceControlExtras() {
   )
 }
 
+
+const ENTROPY_RUNTIME_CAPTURES = [
+  {
+    src: '/portfolio/assets/entropy/entropy-celestial-dual-screen-runtime.png',
+    title: 'Celestial Sphere / Editorial V07',
+    description: '浏览器实时程序截图：顶部视图与宽幅主画面在同一个星图世界中',
+    descriptionEn: 'Web runtime capture: upper view and ultra-wide canvas share one celestial world'
+  },
+  {
+    src: '/portfolio/assets/entropy/entropy-spacecraft-orthographic-runtime.png',
+    title: 'Spacecraft / Orthographic Profile V03',
+    description: '航天器线框剖面与状态界面的工作版本',
+    descriptionEn: 'Spacecraft wireframe profile and operator-state study'
+  },
+  {
+    src: '/portfolio/assets/entropy/entropy-energy-field-runtime.png',
+    title: 'Energy Field / Establish V05',
+    description: '相机与目标自动化的能量场程序实验',
+    descriptionEn: 'Energy field runtime study with camera and target automation'
+  }
+]
+
 function WritingDetail() {
   const { slug } = useParams()
   const writing = useMemo(() => writings.find((item) => (item.slug || item.id) === slug), [slug])
@@ -334,6 +356,30 @@ function WritingDetail() {
           </section>
         ) : null}
 
+
+        {writing.id === 'entropy-two-screen-2026' ? (
+          <section className="section entropy-runtime-section">
+            <div className="container">
+              <div className="entropy-runtime-heading">
+                <span>Runtime captures / 运行画面</span>
+                <span>01—03</span>
+              </div>
+              <div className="entropy-runtime-gallery">
+                {ENTROPY_RUNTIME_CAPTURES.map((item) => (
+                  <figure key={item.src}>
+                    <img src={item.src} alt={item.descriptionEn} loading="lazy" />
+                    <figcaption>
+                      <strong>{item.title}</strong>
+                      <span>{item.description}</span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              <p className="entropy-runtime-note">以上为保留的浏览器程序版本截图，展示视觉结构与主/顶屏预演关系，不作为演出现场摄影或最终设备路由的证明。</p>
+            </div>
+          </section>
+        ) : null}
+
         <section className="section">
           <div className="container writing-reader-layout">
             <div>
@@ -341,7 +387,7 @@ function WritingDetail() {
             </div>
             <aside className="writing-reader-aside">
               <strong>Reader notes</strong>
-              <p>公式不是阅读门槛。先理解状态、反馈、稳定与控制，再决定是否继续读数学表达。</p>
+              {special ? <p>先理解状态、反馈、稳定与控制，再决定是否阅读数学描述。</p> : null}
               {special ? <><a href="/workshops/personal-av-instrument">Personal A/V Instrument ↗</a><a href="https://github.com/ewanqian/portfolio/issues/59" target="_blank" rel="noreferrer">Current R&D Issue #59 ↗</a></> : null}
             </aside>
           </div>
