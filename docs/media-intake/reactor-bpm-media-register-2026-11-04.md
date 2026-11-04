@@ -1,9 +1,9 @@
 # REACTOR BPM — media provenance ledger / 2026-11-04
 
-- `portfolio/assets/reactor-bpm/reactor-venue-photo.jpg`: user-uploaded `19573.jpg`; EXIF date unavailable, specific opening-night capture unverified. Do not label this image as independently proven 2026-09-24 documentation.
-- `portfolio/assets/reactor-bpm/reactor-operator-view.jpg`: user-supplied `19572.mp4` still from approximately 00:00.
-- `portfolio/assets/reactor-bpm/reactor-beatlink-transport.jpg`: same user video, approximately 00:16.
-- `portfolio/assets/reactor-bpm/reactor-beatlink-waveform.jpg`: same user video, approximately 00:24.
+- `assets/reactor-bpm/reactor-venue-photo.jpg`: user-uploaded `19573.jpg`; EXIF date unavailable, specific opening-night capture unverified. Do not label this image as independently proven 2026-09-24 documentation.
+- `assets/reactor-bpm/reactor-operator-view.jpg`: user-supplied `19572.mp4` still from approximately 00:00.
+- `assets/reactor-bpm/reactor-beatlink-transport.jpg`: same user video, approximately 00:16.
+- `assets/reactor-bpm/reactor-beatlink-waveform.jpg`: same user video, approximately 00:24.
 - Source video: ~35.31 seconds, ~89 MB. Original uploads are preserved in the conversation; only separately compressed JPEG derivatives are proposed for the site.
 
 ## Grounding
