@@ -1,0 +1,60 @@
+name: Prepare published website from React build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-site-output
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: react/package-lock.json
+      - name: Install and build
+        working-directory: react
+        run: |
+          npm ci
+          npm run build
+      - name: Assert built media and compatibility entry
+        run: |
+          test -s react/dist/index.html
+          test -s react/dist/portfolio/index.html
+          test -s react/dist/assets/entropy/entropy-celestial-dual-screen-runtime.png
+      - name: Stage site output in a review branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          short_sha="${GITHUB_SHA:0:10}"
+          branch="portfolio-site-build-${short_sha}"
+          git switch -c "$branch"
+          cp react/dist/index.html ./index.html
+          mkdir -p assets portfolio
+          cp -a react/dist/assets/. assets/
+          cp -a react/dist/portfolio/. portfolio/
+          git add -A index.html assets portfolio
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "No generated changes needed"
+            exit 0
+          fi
+          git commit -m "build(site): prepare compiled site for ${short_sha}"
+          git push origin "HEAD:refs/heads/${branch}"
+          echo "Review branch: ${branch}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Compiled site is staged as a separate branch; no direct publication was performed." >> "$GITHUB_STEP_SUMMARY"

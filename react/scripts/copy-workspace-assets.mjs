@@ -189,3 +189,16 @@ if (skippedLargeFiles.length > 0) {
 }
 
 console.log('Workspace static copy completed.')
+
+
+// The custom-domain site lives at /, while older links still open /portfolio/#/...
+// The asset and standalone-page mirrors above are not enough: the HashRouter
+// needs an index file at /portfolio/ as well.
+const appIndexPath = path.join(distRoot, 'index.html')
+if (fs.existsSync(appIndexPath)) {
+  fs.mkdirSync(portfolioDistRoot, { recursive: true })
+  fs.copyFileSync(appIndexPath, path.join(portfolioDistRoot, 'index.html'))
+  console.log('Published compatibility application shell → /portfolio/index.html')
+} else {
+  throw new Error('Missing built application index.html')
+}
