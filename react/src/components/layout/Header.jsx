@@ -19,6 +19,7 @@ function Header() {
       to: '/archive',
       activeOn: ['/archive', '/gaussian-scenes', '/production', '/writing']
     },
+    { id: 'apps', label: language === 'en' ? 'Apps' : '应用', to: '/apps' },
     { id: 'workshops', label: language === 'en' ? 'Workshops' : '工作坊', to: '/workshops', activeOn: ['/workshops'] },
     { id: 'about', label: language === 'en' ? 'About' : '关于', to: '/profile' }
   ]
