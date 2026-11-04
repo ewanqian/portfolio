@@ -20,6 +20,11 @@ function HomeInfo() {
               ? '钱誉文 / Ewan Qian，新媒体视觉艺术家与现场视觉表演者。工作集中于现场音画、空间影像、实时图像系统，以及这些方法在舞台与数字空间中的迁移。'
               : 'Ewan Qian is a media artist and live visual performer working with audiovisual performance, spatial image, realtime image systems, and their movement across stages and digital environments.'}
           </p>
+          <p className="home-info-current">
+            {isZh ? '近期研究 · ' : 'Current research · '}
+            <Link to="/writing/performable-music-2026">Performable Music</Link>
+            {isZh ? ' — 可表演的音乐、实时音画与空间演出。' : ' — Playable music, realtime audiovisual systems and spatial performance.'}
+          </p>
           <div className="home-info-links">
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
             <Link to="/archive">{isZh ? '完整归档' : 'Archive'}</Link>
