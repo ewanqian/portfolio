@@ -40,20 +40,20 @@ const recoveredRecords = [
   {
     id: 'natgeo-crystal-2026',
     title: '中国国家地理·矿晶空间影像 / National Geographic — Crystal Landscape',
-    subtitle: '酒店大堂与商业空间常设多屏影像',
+    subtitle: '空间影像设计 / 酒店与体验中心三维扫描',
     years: '2026',
     type: 'spatial-media-installation',
-    summary: '为酒店大堂与商业空间开发矿物与晶体主题的常设空间影像，通过横向主屏、竖向立柱与侧屏的多画幅编排，形成可长期循环和持续更新的内容系统。',
+    summary: '设计矿晶主题多屏影像，统筹不同画幅的运动与材质，并对酒店及体验中心进行三维扫描与空间采集。',
     image: 'https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg',
     repoLink: '/portfolio/#/projects/natgeo-crystal'
   },
   {
     id: 'system-ersha-2026',
     title: 'SYSTEM × ERSHA 建筑空间扫描 / SYSTEM × ERSHA — Spatial Capture',
-    subtitle: '空间扫描 / 点云影像 / 建筑空间观察',
+    subtitle: 'SYSTEM 纪录片 / 点云扫描与特效影像',
     years: '2026',
     type: 'spatial-capture',
-    summary: '对郑州中国第二砂轮厂多层建筑空间进行扫描与点云重组，并将数据整理为可继续用于空间观察、镜头预演与影像制作的三维模型。',
+    summary: '围绕郑州二砂建筑场地进行点云扫描与影像特效制作，结合清理和三维重组的空间数据建立可再次编排的影像素材。',
     image: 'https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp',
     repoLink: '/portfolio/#/projects/system-ersha'
   },
@@ -72,13 +72,13 @@ const recoveredRecords = [
 const recoveredEnglish = {
   'natgeo-crystal-2026': {
     title: 'National Geographic — Crystal Landscape',
-    subtitle: 'Permanent multi-screen media for hospitality and commercial interiors',
-    summary: 'A permanent mineral-and-crystal moving-image system coordinated across a horizontal main screen, vertical columns, and side displays for long-duration playback and future updates.'
+    subtitle: 'Spatial image design / hotel and experience-centre scanning',
+    summary: 'Mineral-based multi-screen moving imagery together with 3D capture of the hotel and experience centre, coordinated across different formats and public interiors.'
   },
   'system-ersha-2026': {
     title: 'SYSTEM × ERSHA — Spatial Capture',
-    subtitle: 'Spatial scanning / point-cloud media / architectural study',
-    summary: 'A spatial capture of the China Second Grinding Wheel Factory in Zhengzhou, reorganising scan data into a working 3D model for spatial study, camera previsualisation, and moving-image production.'
+    subtitle: 'SYSTEM documentary / point-cloud capture and VFX imagery',
+    summary: 'Point-cloud scanning and visual-effects imagery for the SYSTEM documentary context, working with reconstructed architectural data from the China Second Grinding Wheel Factory in Zhengzhou.'
   },
   transit: {
     title: 'Greenhouse in Transit',
