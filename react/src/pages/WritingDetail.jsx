@@ -285,15 +285,6 @@ const ENTROPY_RUNTIME_CAPTURES = [
   }
 ]
 
-function reactorFigureForHeading(heading) {
-  const number = /^([0-9]{2})\s*\//.exec(heading)?.[1]
-  if (number === '00') return <ReactorBpmFigures section="times" />
-  if (number === '04') return <ReactorBpmFigures section="arena" />
-  if (number === '05') return <ReactorBpmFigures section="beatlink" />
-  if (number === '11') return <ReactorBpmFigures section="gallery" />
-  return null
-}
-
 function WritingDetail() {
   const { slug } = useParams()
   const writing = useMemo(() => writings.find((item) => (item.slug || item.id) === slug), [slug])
@@ -337,7 +328,7 @@ function WritingDetail() {
     <>
       <Header />
       <div className="writing-progress" aria-hidden="true"><span style={{ width: `${progress * 100}%` }} /></div>
-      <main className="writing-detail-page">
+      <main className={`writing-detail-page ${writing.id === 'reactor-bpm-system-2026' ? 'bpm-reading-page' : ''}`}>
         <section className="section writing-detail-hero">
           <div className="container writing-detail-hero-grid">
             <div>
