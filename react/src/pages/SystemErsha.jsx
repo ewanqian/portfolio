@@ -15,18 +15,18 @@ const facts = {
   zh: [
     ['年份', '2026'],
     ['地点', '郑州中国第二砂轮厂'],
-    ['形式', '空间扫描 / 点云影像 / 建筑空间观察'],
+    ['形式', '纪录片影像协作 / 空间扫描 / 点云特效'],
     ['流程', '采集 → 清理 → 分层 → 坐标整理 → 三维重组'],
-    ['个人参与', '空间扫描、点云与三维重建相关工作'],
-    ['合作边界', '与 SYSTEM 导演 / 制作语境相关，完整 credits 继续按证据维护']
+    ['个人工作', '空间点云扫描、三维重建与特效影像'],
+    ['合作', 'SYSTEM 影像项目']
   ],
   en: [
     ['Year', '2026'],
     ['Site', 'China Second Grinding Wheel Factory, Zhengzhou'],
-    ['Format', 'Spatial scanning / point-cloud media / architectural study'],
+    ['Format', 'Documentary media collaboration / spatial scanning / point-cloud VFX'],
     ['Workflow', 'Capture → cleanup → separation → alignment → 3D reconstruction'],
-    ['Ewan participation', 'Spatial scanning, point-cloud, and 3D reconstruction work'],
-    ['Collaboration boundary', 'Related to a SYSTEM-directed production context; full credits remain evidence-led']
+    ['Ewan role', 'Spatial scanning, point-cloud reconstruction and visual effects'],
+    ['Collaboration', 'SYSTEM moving-image production']
   ]
 }
 
@@ -48,8 +48,8 @@ function SystemErsha() {
               <div className="eyebrow">{isZh ? '空间采集 · 2026' : 'Spatial Capture · 2026'}</div>
               <h1>{isZh ? 'SYSTEM × ERSHA 建筑空间扫描' : 'SYSTEM × ERSHA — Spatial Capture'}</h1>
               <p>{isZh
-                ? '对郑州中国第二砂轮厂的多层建筑、立面与内部结构进行空间采集。扫描数据经过清理、分层、尺度与坐标整理后重组为三维模型，继续用于空间观察、镜头预演与点云影像制作。'
-                : 'A spatial capture of the multi-level architecture, façade, and interior structure of the China Second Grinding Wheel Factory in Zhengzhou. Scan data was cleaned, separated, scaled, and aligned into a working 3D model for spatial study, camera previsualisation, and point-cloud moving image.'}</p>
+                ? '在 SYSTEM 的影像项目中，我负责郑州二砂厂区的空间点云扫描、三维重建和特效影像。通过处理建筑立面、楼层与内部结构的扫描数据，将真实厂区转化为可以重新运镜和组织画面的数字场景。'
+                : 'For a moving-image project with SYSTEM, I worked on spatial point-cloud capture, 3D reconstruction and visual effects at the China Second Grinding Wheel Factory in Zhengzhou. The captured architecture becomes a navigable digital scene for renewed camera movement and moving-image composition.'}</p>
             </div>
             <div className="project-hero-media">
               <img src="https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp" alt={isZh ? '郑州二砂建筑空间扫描点云' : 'ERSHA architectural point-cloud capture'} />
@@ -64,10 +64,10 @@ function SystemErsha() {
               <FactTable rows={facts[language]} />
             </div>
             <div>
-              <div className="eyebrow">{isZh ? '为什么保留' : 'Why it matters'}</div>
+              <div className="eyebrow">{isZh ? '影像制作' : 'Moving-image production'}</div>
               <p className="section-intro">{isZh
-                ? '这个项目把扫描、点云与三维重建从工具测试推进到真实建筑与制作流程。它在个人站中作为一件具体项目出现；Spatial、Gaussian、Research 只作为属性，不再各自制造新的一级分类。'
-                : 'This project moves scanning, point clouds, and reconstruction from tool experiments into a real architectural production workflow. It appears as one concrete project; Spatial, Gaussian, and Research remain attributes rather than separate top-level categories.'}</p>
+                ? '扫描数据经过清理、分层与坐标整理后，建筑的真实比例和空间关系被保留在点云模型中。镜头可以穿过厂房、剖开楼层、重新安排观察路径，使记录性的现场空间转化为具有运动感的影像。'
+                : 'Captured data is cleaned, separated and aligned to preserve the site’s scale and spatial relationships. Camera movement can pass through the factory, reveal building sections and reorganise the viewing path, turning documentation into moving image.'}</p>
             </div>
           </div>
         </section>
@@ -88,11 +88,11 @@ function SystemErsha() {
 
         <section className="section">
           <div className="container project-caption-band">
-            <div className="eyebrow">{isZh ? '署名边界' : 'Credit boundary'}</div>
+            <div className="eyebrow">{isZh ? '后续影像' : 'Further moving-image study'}</div>
             <div>
               <p>{isZh
-                ? '个人 Portfolio 可以明确记录 Ewan 参与空间扫描、点云和三维重建相关工作；纪录片导演、整体项目作者、最终成片所有权及原始扫描数据公开权限，不在缺少直接证据时扩大表述。'
-                : 'The personal Portfolio can state Ewan’s participation in spatial scanning, point-cloud, and 3D reconstruction work. Documentary direction, total project authorship, final-film ownership, and raw-scan publication rights are not expanded without direct evidence.'}</p>
+                ? '我计划基于已有空间模型重新剪辑一段个人影像，并创作新的配乐。新版本将把注意力从纪录片叙述转向厂房本身的结构、尺度与运动，以原创镜头重新演绎这处工业空间。'
+                : 'I am developing a separately edited moving-image study with new music, using the reconstructed spatial model as a source for original camera movement. The study will focus on the factory’s structure, scale and motion rather than reproducing the documentary edit.'}</p>
               <a className="text-link" href="https://virtura.space/work/system-ersha.html" target="_blank" rel="noreferrer">{isZh ? '公开项目源 ↗' : 'Public project source ↗'}</a>
             </div>
           </div>
