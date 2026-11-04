@@ -1,18 +1,31 @@
 {
   "id": "system-ersha-2026",
   "title": "SYSTEM × ERSHA 建筑空间扫描 / SYSTEM × ERSHA — Spatial Capture",
-  "subtitle": "空间扫描 / 点云影像 / 建筑空间观察",
+  "subtitle": "SYSTEM 纪录片 / 建筑点云扫描与特效影像",
   "years": "2026",
   "type": "spatial-capture",
-  "summary": "对郑州中国第二砂轮厂多层建筑空间进行扫描与点云重组，记录立面、内部结构与空间关系，并将数据整理为可继续用于空间观察、镜头预演与影像制作的三维模型。",
+  "summary": "围绕郑州二砂建筑场地，为 SYSTEM 纪录片制作承担点云扫描与特效影像。现场采集数据经过清理、分层和三维重组，形成可用于镜头组织与空间影像的素材；独立重剪及原创配乐版本正在筹备。",
   "practiceLine": "spatial-generation",
-  "tags": ["spatial capture", "point cloud", "architecture", "3d reconstruction", "previsualisation"],
+  "tags": [
+    "spatial capture",
+    "point cloud",
+    "architecture",
+    "3d reconstruction",
+    "previsualisation",
+    "documentary",
+    "visual effects"
+  ],
   "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
   "showOnHome": false,
   "lifecycle": "completed",
   "relatedNodes": [],
   "relatedWritings": [],
-  "displayModes": ["point-cloud overview", "section study", "facade capture", "moving-image output"],
+  "displayModes": [
+    "point-cloud overview",
+    "section study",
+    "facade capture",
+    "moving-image output"
+  ],
   "analysisIds": [],
   "sourceDocs": [
     "projects/system-ersha-2026.md",
@@ -21,8 +34,14 @@
   ],
   "repoLink": "/portfolio/#/projects/system-ersha",
   "links": [
-    { "text": "个人项目页", "url": "/portfolio/#/projects/system-ersha" },
-    { "text": "VIRTURA 项目源", "url": "https://virtura.space/work/system-ersha.html" }
+    {
+      "text": "个人项目页",
+      "url": "/portfolio/#/projects/system-ersha"
+    },
+    {
+      "text": "VIRTURA 项目源",
+      "url": "https://virtura.space/work/system-ersha.html"
+    }
   ],
   "priority": 12
 }
