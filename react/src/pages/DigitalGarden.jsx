@@ -141,13 +141,13 @@ function DigitalGarden() {
             <div className="eyebrow">{isZh ? '动态视觉' : 'Motion Sample'}</div>
             <div>
               <picture className="project-motion-sample">
-                <source srcSet="/portfolio/assets/digital-garden/digital-garden-loop.avif" type="image/avif" />
+                <source media="(prefers-reduced-motion: no-preference)" srcSet="/portfolio/assets/digital-garden/digital-garden-loop.avif" type="image/avif" />
                 <img src="/portfolio/assets/digital-garden/digital-garden-xian-mixc-03.webp" alt={isZh ? '数字游园动态视觉样本' : 'Digital Garden motion sample'} loading="lazy" />
               </picture>
               <p>
                 {isZh
-                  ? '横向动态样本保留屏幕视觉的流动状态：绿色粒子、点云碎片和光线在数字花园中持续漂移。'
-                  : 'The horizontal motion sample keeps the screen visual in motion: green particles, point-cloud fragments, and light drift through the digital garden.'}
+                  ? '横向动态样本呈现绿色粒子、点云碎片和光线的漂移。若浏览器不支持动态 AVIF，或已启用减少动态效果，将显示静态预览。'
+                  : 'The motion sample shows green particles, point-cloud fragments, and drifting light. A still preview is shown if animated AVIF is unsupported or reduced motion is preferred.'}
               </p>
             </div>
           </div>
