@@ -10,7 +10,7 @@ const imageIdOverrides = {
   'ar-shenzhen-resort-2022': '/portfolio/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp',
   'babel-bottle': '/portfolio/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp',
   'can-festival': '/portfolio/assets/public-nodes/can-festival.webp',
-  'drop-flow': '/portfolio/assets/home/featured-dropflow-main.webp',
+  'drop-flow': '/portfolio/assets/home/hero-dropflow-ufo-2025.webp',
   'drop-flow-hangzhou-biennale': '/portfolio/assets/home/featured-dropflow-main.webp',
   'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp',
   'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.webp',
