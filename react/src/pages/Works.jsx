@@ -121,9 +121,9 @@ function IndexRow({ work, language }) {
   return (
     <article className="work-index-row">
       {target ? (
-        <a className="work-index-thumb" href={target}><img src={getDisplayImage(work)} alt="" loading="lazy" /></a>
+        <a className={`work-index-thumb ${['rain-singapore-visual-2026', 'yujiayun-45ping-visual-2025'].includes(work.id) ? 'work-index-thumb--ultrawide' : ''}`} href={target}><img src={getDisplayImage(work)} alt="" loading="lazy" /></a>
       ) : (
-        <div className="work-index-thumb"><img src={getDisplayImage(work)} alt="" loading="lazy" /></div>
+        <div className={`work-index-thumb ${['rain-singapore-visual-2026', 'yujiayun-45ping-visual-2025'].includes(work.id) ? 'work-index-thumb--ultrawide' : ''}`}><img src={getDisplayImage(work)} alt="" loading="lazy" /></div>
       )}
       <div className="work-index-year">{item.years}</div>
       <div className="work-index-copy">
