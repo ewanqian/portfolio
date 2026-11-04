@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import works from '../../data/generated/works'
 import { getDisplayImage, getWorkTargetUrl } from '../../data/siteDisplay'
 import { homeMainlineWorkIds, pickWorksByIds } from '../../data/siteTaxonomy'
@@ -40,6 +41,11 @@ const projectNotes = {
   }
 }
 
+const nextStudies = {
+  'drop-flow': { path: '/writing/drop-flow-motion-capture-2026', zh: '下一阶段：Motion Capture · 研发中', en: 'Next: Motion Capture · In development' },
+  timer: { path: '/writing/timer-volumetric-desert-2026', zh: '下一阶段：Volumetric Desert · 研发中', en: 'Next: Volumetric Desert · In development' }
+}
+
 function ProjectGrid({ items, language }) {
   const isZh = language === 'zh'
 
@@ -67,6 +73,11 @@ function ProjectGrid({ items, language }) {
               <h3><a href={targetUrl}>{title}</a></h3>
               <p className="editorial-work-summary">{summary}</p>
               <div className="editorial-work-role">{role}</div>
+              {nextStudies[work.id] ? (
+                <Link className="text-link" to={nextStudies[work.id].path}>
+                  {isZh ? nextStudies[work.id].zh : nextStudies[work.id].en} ↗
+                </Link>
+              ) : null}
             </div>
           </article>
         )
