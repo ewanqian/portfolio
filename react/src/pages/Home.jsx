@@ -23,6 +23,7 @@ function HomeInfo() {
           <div className="home-info-links">
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
             <Link to="/archive">{isZh ? '完整归档' : 'Archive'}</Link>
+            <Link to="/apps">{isZh ? '应用 / Playgrounds' : 'Applications / Playgrounds'}</Link>
             <Link to="/writing">{isZh ? '写作' : 'Writing'}</Link>
             <a href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub</a>
           </div>
