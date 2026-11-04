@@ -73,7 +73,7 @@ function parseMarkdown(markdown, sourcePath) {
   let table = null
   let tableDelimiterIndex = -1
 
-  const tableCells = (line) => line.trim().replace(/^\\|/, '').replace(/\\|$/, '').split('|').map((cell) => cell.trim())
+  const tableCells = (line) => line.trim().replace(/^[|]/, '').replace(/[|]$/, '').split('|').map((cell) => cell.trim())
   const isTableDivider = (line, count) => {
     const cells = tableCells(line)
     return cells.length === count && cells.every((cell) => /^:?-{3,}:?$/.test(cell))
