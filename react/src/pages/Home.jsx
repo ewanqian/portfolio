@@ -24,6 +24,7 @@ function HomeInfo() {
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
             <Link to="/archive">{isZh ? '完整归档' : 'Archive'}</Link>
             <Link to="/writing">{isZh ? '写作' : 'Writing'}</Link>
+            <Link to="/writing/performable-music-2026">{isZh ? '近期研究：可表演音乐' : 'Current research: Performable Music'}</Link>
             <a href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
