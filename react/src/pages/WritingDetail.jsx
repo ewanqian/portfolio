@@ -382,15 +382,10 @@ function WritingDetail() {
           </section>
         ) : null}
 
-        {writing.id === 'reactor-bpm-system-2026' ? (
-          <section className="section reactor-bpm-media-section">
-            <div className="container"><ReactorBpmFigures /></div>
-          </section>
-        ) : null}
-
         <section className="section">
           <div className="container writing-reader-layout">
             <div>
+              {writing.id === 'reactor-bpm-system-2026' ? <ReactorBpmFigures /> : null}
               {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
             </div>
             <aside className="writing-reader-aside">
