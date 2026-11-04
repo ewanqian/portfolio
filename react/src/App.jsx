@@ -16,6 +16,7 @@ import KashiwaTitan from './pages/KashiwaTitan.jsx'
 import DigitalGarden from './pages/DigitalGarden.jsx'
 import NatGeoCrystal from './pages/NatGeoCrystal.jsx'
 import SystemErsha from './pages/SystemErsha.jsx'
+import ChinaAIGala from './pages/ChinaAIGala.jsx'
 import CommissionedVisualProject from './pages/CommissionedVisualProject.jsx'
 import TopologicalPlayground from './pages/TopologicalPlayground.jsx'
 import MotionSystem from './motion/MotionSystem.jsx'
@@ -93,6 +94,7 @@ function App() {
         <Route path="/projects/digital-garden" element={<DigitalGarden />} />
         <Route path="/projects/natgeo-crystal" element={<NatGeoCrystal />} />
         <Route path="/projects/system-ersha" element={<SystemErsha />} />
+        <Route path="/projects/china-ai-gala" element={<ChinaAIGala />} />
         <Route path="/projects/xtep-xdna" element={<CommissionedVisualProject projectId="xtep" />} />
         <Route path="/projects/zcool-hp-g8" element={<CommissionedVisualProject projectId="zcool" />} />
       </Routes>
