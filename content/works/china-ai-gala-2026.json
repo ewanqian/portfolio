@@ -1,0 +1,33 @@
+{
+  "id": "china-ai-gala-2026",
+  "title": "中国·AI盛典「AI在一起」开场秀 / China AI Gala",
+  "subtitle": "盒体舞台影像 / 三维内容与机器人视觉",
+  "years": "2026",
+  "type": "stage-visual-production",
+  "summary": "为大型盒体舞台组织透视映射、三维空间和机器人影像的开场内容。视觉围绕主观看位建立，覆盖机械结构、角色画面与段落转场。",
+  "practiceLine": "live-audiovisual",
+  "tags": [
+    "stage visual",
+    "robotics",
+    "3d",
+    "perspective mapping",
+    "collaboration"
+  ],
+  "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/01_AI_GALA/detail_01_mapping.jpg",
+  "showOnHome": false,
+  "lifecycle": "completed",
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "sourceDocs": [
+    "projects/china-ai-gala-2026.md",
+    "https://virtura.space/work/ai-gala.html"
+  ],
+  "repoLink": "https://virtura.space/work/ai-gala.html",
+  "links": [
+    {
+      "text": "VIRTURA 项目页",
+      "url": "https://virtura.space/work/ai-gala.html"
+    }
+  ],
+  "priority": 13
+}
