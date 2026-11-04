@@ -52,3 +52,112 @@ jobs:
           node -e "const fs=require('fs');const d=fs.readFileSync('react/src/data/generated/writings.js','utf8');for(const x of ['reactor-bpm-system-2026','entropy-two-screen-2026','performable-music'])if(!d.includes(x))throw Error('missing writing '+x);"
       - name: Report large asset copies
         run: npm run media:report
+
+      - name: Motion audit (non-destructive, audit PR only)
+        if: github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          node scripts/audit-portfolio-motion.mjs
+      - name: Browser screenshots (desktop and narrow viewport, audit PR only)
+        if: github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get install -y -qq fonts-noto-cjk
+          fc-cache -f >/dev/null
+          mkdir -p docs/media-intake/qa-screenshots
+          (cd react && npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/portfolio-preview.log 2>&1) &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent --show-error http://127.0.0.1:4173/ > /dev/null
+          for asset in \
+            /portfolio/assets/home/featured-dropflow-main.webp \
+            /portfolio/assets/home/archive-timer-clean.webp \
+            /portfolio/assets/digital-garden/digital-garden-loop.avif; do
+            curl --fail --silent --show-error -o /dev/null -w "asset %{http_code} %{size_download} $asset\\n" "http://127.0.0.1:4173$asset"
+          done
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then echo 'CHROME NOT RUN: browser missing'; exit 1; fi
+          for route in home works workshops; do
+            target="/"
+            if [ "$route" != home ]; then target="/#/$route"; fi
+            for spec in 'desktop 1440 900' 'mobile 390 844'; do
+              read -r label width height <<< "$spec"
+              "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --disable-dev-shm-usage \
+                --window-size="$width,$height" --virtual-time-budget=3500 \
+                --screenshot="docs/media-intake/qa-screenshots/${route}-${label}.png" \
+                "http://127.0.0.1:4173${target}"
+            done
+          done
+          node scripts/generate-cover-contact-sheet.mjs
+          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --disable-dev-shm-usage \
+            --window-size=1600,2600 --virtual-time-budget=2500 \
+            --screenshot="docs/media-intake/qa-screenshots/cover-candidates.png" \
+            "http://127.0.0.1:4173/qa-cover-contact-sheet.html"
+          CHROME_BIN="$CHROME" node scripts/audit-portfolio-browser.mjs
+          node scripts/compile-portfolio-site-state.mjs
+      - name: Upload round 1 motion inventory and screenshots
+        if: always() && github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-round1-motion-and-screenshots
+          if-no-files-found: warn
+          path: |
+            docs/media-intake/motion-audit-2026-10.csv
+            docs/media-intake/browser-qa-2026-11.json
+            docs/portfolio-maintenance-os/site-state/*
+            docs/media-intake/qa-screenshots/*.png
+            assets/digital-garden/digital-garden-loop.avif
+
+
+  snapshot-site-state:
+    name: Freeze one verified site-state CSV baseline on audit branch
+    needs: build
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.head_ref == 'audit/portfolio-oct2026-round1-20261104' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Skip if audit snapshot already frozen
+        id: baseline
+        run: |
+          if test -f docs/portfolio-maintenance-os/site-state/.baseline-frozen && grep -q 'revision-2' docs/portfolio-maintenance-os/site-state/.baseline-frozen; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/download-artifact@v4
+        if: steps.baseline.outputs.exists == 'false'
+        with:
+          name: portfolio-round1-motion-and-screenshots
+          path: /tmp/portfolio-state-qa
+      - name: Commit generated site-state data without touching originals
+        if: steps.baseline.outputs.exists == 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=/tmp/portfolio-state-qa/docs/portfolio-maintenance-os/site-state
+          dest=docs/portfolio-maintenance-os/site-state
+          test -s "$src/summary.json"
+          test -s "$src/clickable-links.csv"
+          cp "$src"/*.csv "$dest/"
+          cp "$src/summary.json" "$dest/"
+          cp "$src/README.generated.md" "$dest/"
+          printf 'revision-2 frozen from GitHub Actions run %s, PR head %s; regenerate for later changes.\n' "$GITHUB_RUN_ID" "${{ github.event.pull_request.head.sha }}" > "$dest/.baseline-frozen"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dest"
+          git commit -m 'docs(site-state): refresh link and geometry registry after P0 fixes'
+          git push origin "HEAD:${{ github.head_ref }}"

@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-11-04T13:41:54.929Z",
+  "source": "actual Chromium rendered browser QA + local dist files",
+  "headSha": "90c72a347905d42820588ef4b0776a1fe5f32502",
+  "pages": 56,
+  "lanes": [
+    {
+      "lane": "links",
+      "pages": 56,
+      "instances": 1046,
+      "unique": 131,
+      "internalSourceVerified": 55,
+      "externalNotRun": 76,
+      "errors": 0
+    },
+    {
+      "lane": "media",
+      "images": 498,
+      "unique": 124,
+      "failed": 0,
+      "distortion": 0,
+      "cropReview": 199
+    },
+    {
+      "lane": "layout",
+      "pages": 56,
+      "overflow": 0,
+      "missingH1": 5
+    },
+    {
+      "lane": "content",
+      "checks": 11,
+      "passed": 6,
+      "notRun": 4
+    }
+  ],
+  "severityCounts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 414
+  },
+  "limitations": [
+    "External URLs not tested (NOT RUN)",
+    "Click targets were inspected, not physically clicked",
+    "Ratio detection flags possible distortion, not aesthetic quality",
+    "Firefox/Safari/iOS devices NOT RUN",
+    "Production/CDN not verified",
+    "Credit and rights require human review"
+  ]
+}

@@ -5,7 +5,7 @@ import { useLanguage } from '../../i18n/LanguageContext.jsx'
 import { localizeWork } from '../../i18n/content.js'
 
 const projectNotes = {
-  kashiwa: {
+  titan: {
     titleZh: '柏大辅《TITAN》',
     context: 'BO LIVE Shenzhen · 2025',
     contextZh: 'BO LIVE 深圳 · 2025',

@@ -264,6 +264,12 @@
   object-fit: cover;
 }
 
+.work-index-thumb--ultrawide img {
+  object-fit: contain;
+  object-position: center;
+  background: #050505;
+}
+
 .work-index-year,
 .work-index-role,
 .work-index-open {
