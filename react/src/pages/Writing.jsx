@@ -5,150 +5,116 @@ import Footer from '../components/layout/Footer'
 import writings from '../data/generated/writings'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeWriting } from '../i18n/content.js'
+import '../styles/writing-index.css'
 
-const categoryMeta = [
-  { id: 'essay', title: '作品评论 / Essays' },
-  { id: 'note', title: '方法笔记 / Notes' },
-  { id: 'field-note', title: '现场与过程记录 / Field Notes' },
-  { id: 'research', title: '研究条目 / Research' }
-]
+// Public Writing is a reading library, not a backlog of editorial placeholders.
+// An entry without a complete article is kept in content/writings for future work
+// but is not rendered as a published article.
+const EDITORIAL_FEATURES = ['reactor-bpm-system-2026', 'scene-forge-reader-02']
+const RESEARCH_NOTES = ['performable-music', 'performance-control-model']
 
-const statusLabels = {
-  draft: 'Working Draft',
-  planned: 'Coming Soon',
-  published: 'Published'
+function byOrder(items) {
+  return [...items].sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
 }
 
-const statusRank = {
-  published: 0,
-  draft: 1,
-  planned: 2
+function titleFor(item, language) {
+  return language === 'en' ? (item.titleEn || item.title) : item.title
 }
 
-function sortWritings(items) {
-  return [...items].sort((a, b) => {
-    const orderDelta = (a.order ?? 999) - (b.order ?? 999)
-    if (orderDelta !== 0) return orderDelta
-
-    const statusDelta = (statusRank[a.status] ?? 999) - (statusRank[b.status] ?? 999)
-    if (statusDelta !== 0) return statusDelta
-
-    return a.title.localeCompare(b.title, 'zh-Hans-CN')
-  })
+function summaryFor(item, language) {
+  return language === 'en' ? (item.summaryEn || item.summary) : item.summary
 }
 
-function WritingTitle({ writing }) {
-  if (!writing.articlePath) return <h3>{writing.title}</h3>
+function EditorialEntry({ item, language, featured = false, kind = '' }) {
   return (
-    <h3>
-      <Link to={`/writing/${writing.slug || writing.id}`}>{writing.title}</Link>
-    </h3>
-  )
-}
-
-function WritingList({ items, title }) {
-  if (!items.length) return null
-
-  return (
-    <section className="section">
-      <div className="container">
-        <h2 className="section-title">{title}</h2>
-        <div className="writing-list">
-          {items.map((writing) => (
-            <article key={writing.id} className="writing-list-item">
-              <div className="writing-list-type">{writing.type}</div>
-              <div className="writing-list-content">
-                <WritingTitle writing={writing} />
-                {writing.summary ? <p>{writing.summary}</p> : null}
-              </div>
-              <div className="writing-list-date">
-                {writing.date}
-                {writing.status !== 'published' ? <span className={`writing-status ${writing.status}`}>{statusLabels[writing.status]}</span> : null}
-              </div>
-            </article>
-          ))}
-        </div>
+    <article className={featured ? 'writing-editorial-entry featured' : 'writing-editorial-entry'}>
+      <div className="writing-editorial-index">{kind || item.type}</div>
+      <div className="writing-editorial-content">
+        <h3><Link to={`/writing/${item.slug || item.id}`}>{titleFor(item, language)}</Link></h3>
+        <p>{summaryFor(item, language)}</p>
+        {featured ? (
+          <Link className="writing-editorial-read" to={`/writing/${item.slug || item.id}`}>
+            {language === 'en' ? 'Read article' : '阅读全文'} <span aria-hidden="true">↗</span>
+          </Link>
+        ) : null}
       </div>
-    </section>
+      <div className="writing-editorial-date">{item.date}</div>
+    </article>
   )
 }
 
 function Writing() {
   const { language } = useLanguage()
-  const localizedWritings = writings.map((writing) => localizeWriting(writing, language))
-  const featuredWritings = sortWritings(localizedWritings.filter((writing) => writing.featured))
-  const allWritings = sortWritings(localizedWritings)
-  const localizedCategoryMeta = language === 'en'
-    ? [
-        { id: 'essay', title: 'Essays' },
-        { id: 'note', title: 'Method Notes' },
-        { id: 'field-note', title: 'Field Notes and Process Records' },
-        { id: 'research', title: 'Research Entries' }
-      ]
-    : categoryMeta
-  const writingsByCategory = Object.fromEntries(
-    localizedCategoryMeta.map((section) => [section.id, sortWritings(localizedWritings.filter((writing) => writing.category === section.id))])
-  )
+  const records = writings.map((writing) => localizeWriting(writing, language))
+  const byId = new Map(records.map((item) => [item.id, item]))
+  const featured = EDITORIAL_FEATURES.map((id) => byId.get(id))
+    .filter((item) => item?.articlePath && item.status === 'published')
+  const otherPublished = byOrder(records.filter((item) =>
+    item.articlePath && item.status === 'published' && !EDITORIAL_FEATURES.includes(item.id)
+  ))
+  const research = RESEARCH_NOTES.map((id) => byId.get(id)).filter((item) => item?.articlePath)
 
   return (
     <>
       <Header />
-      <main className="page-writing">
-        <section className="section">
+      <main className="page-writing writing-edition">
+        <header className="section writing-edition-intro">
           <div className="container">
-            <div className="eyebrow">Writing</div>
-            <h1 className="section-title">{language === 'en' ? 'Writing and Notes' : '写作与笔记'}</h1>
-            <p className="section-intro">
-              {language === 'en'
-                ? 'This page collects ongoing writing around works, methods, field experience, delivery specs, and archive systems. The texts unfold how a work holds together, how it is organized, how it enters space, how it is delivered, and how it continues to be read.'
-                : '这里记录围绕作品、方法、现场经验、交付规格与档案系统展开的持续写作。写作本身也是创作实践的一部分：作品如何成立、如何被组织、如何进入空间、如何被交付、如何被继续阅读，都会在这里被展开。'}
-            </p>
+            <div className="eyebrow">Writing / Field Notes / Readers</div>
+            <h1>{language === 'en' ? 'Writing & Research' : '写作与研究'}</h1>
+            <p>{language === 'en'
+              ? 'Selected accounts of performance systems, spatial practice and teaching methods. Each published text is a complete, readable document.'
+              : '这里收录能够独立阅读的现场研究、创作方法与工作坊教材。以具体问题和实践经验为起点，保留作品形成的过程、可验证的资料与能够重复使用的方法。'}</p>
           </div>
-        </section>
+        </header>
 
-        <section className="section">
+        <section className="section writing-edition-featured" aria-labelledby="writing-featured-heading">
           <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'Featured Writings' : '重点写作 / Featured Writings'}</h2>
-            <div className="grid-2">
-              {featuredWritings.map((writing) => (
-                <article key={writing.id} className="card writing-card">
-                  <div className="writing-type">{writing.type}</div>
-                  <WritingTitle writing={writing} />
-                  {writing.summary ? <p>{writing.summary}</p> : null}
-                  <div className="writing-meta">
-                    {writing.date}
-                    {writing.status !== 'published' ? <span className={`writing-status ${writing.status}`}>{statusLabels[writing.status]}</span> : null}
-                  </div>
-                </article>
+            <div className="writing-edition-section-heading">
+              <h2 id="writing-featured-heading">{language === 'en' ? 'Selected writing' : '重点写作'}</h2>
+              <span>01 / SELECTED</span>
+            </div>
+            <div className="writing-editorial-feature-grid">
+              {featured.map((item, index) => (
+                <EditorialEntry key={item.id} item={item} language={language} featured kind={index === 0 ? 'FIELD ESSAY / SYSTEM' : 'WORKSHOP / READER'} />
               ))}
             </div>
           </div>
         </section>
 
-        {localizedCategoryMeta.map((section) => (
-          <WritingList key={section.id} items={writingsByCategory[section.id]} title={section.title} />
-        ))}
-
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title">{language === 'en' ? 'All Writing' : '全部写作 / All Writing'}</h2>
-            <div className="writing-list">
-              {allWritings.map((writing) => (
-                <article key={writing.id} className="writing-list-item">
-                  <div className="writing-list-type">{writing.type}</div>
-                  <div className="writing-list-content">
-                    <WritingTitle writing={writing} />
-                    {writing.summary ? <p>{writing.summary}</p> : null}
-                  </div>
-                  <div className="writing-list-date">
-                    {writing.date}
-                    {writing.status !== 'published' ? <span className={`writing-status ${writing.status}`}>{statusLabels[writing.status]}</span> : null}
-                  </div>
-                </article>
-              ))}
+        {otherPublished.length ? (
+          <section className="section writing-edition-published" aria-labelledby="writing-published-heading">
+            <div className="container">
+              <div className="writing-edition-section-heading">
+                <h2 id="writing-published-heading">Published Writing</h2>
+                <span>02 / ARTICLES</span>
+              </div>
+              <div className="writing-editorial-list">
+                {otherPublished.map((item) => <EditorialEntry key={item.id} item={item} language={language} kind="FIELD NOTES" />)}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
+
+        {research.length ? (
+          <section className="section writing-edition-research" aria-labelledby="writing-research-heading">
+            <div className="container">
+              <div className="writing-edition-section-heading">
+                <h2 id="writing-research-heading">{language === 'en' ? 'Research in progress' : '研究草案'}</h2>
+                <span>03 / DEVELOPMENT</span>
+              </div>
+              <p className="writing-edition-category-note">{language === 'en'
+                ? 'Proposals and evolving research models, presented separately from completed articles.'
+                : '尚在发展的提案与方法模型，单独归档，不与已完成的文章混为一类。'}</p>
+              <div className="writing-editorial-list">
+                {research.map((item) => (
+                  <EditorialEntry key={item.id} item={item} language={language}
+                    kind={item.id === 'performable-music' ? 'PROPOSAL' : 'WORKING MODEL'} />
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
       </main>
       <Footer />
     </>
