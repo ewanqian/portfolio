@@ -1,0 +1,87 @@
+name: Publish React homepage to GitHub Pages root
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "react/**"
+      - "content/**"
+      - "scripts/build-content.js"
+      - "works/**"
+      - ".github/workflows/publish-portfolio-root.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-root-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    # Commits by GitHub Actions do not trigger a new workflow run; guard for safety.
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            react/package-lock.json
+      - name: Install workspace and React dependencies
+        run: |
+          npm ci
+          npm ci --prefix react
+      - name: Build canonical Vite site
+        run: npm run build --prefix react
+      - name: Publish only compiled entrypoints and hashed scripts/styles
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s react/dist/index.html
+          test -s react/dist/portfolio/index.html
+          mkdir -p assets portfolio/assets
+          cp react/dist/index.html index.html
+          cp react/dist/portfolio/index.html portfolio/index.html
+
+          shopt -s nullglob
+          bundles=(react/dist/assets/*.js react/dist/assets/*.css)
+          if (( ${#bundles[@]} == 0 )); then
+            echo "ERROR: Vite hashed JS/CSS bundles missing"
+            exit 1
+          fi
+          for bundle in "${bundles[@]}"; do
+            cp "$bundle" "assets/$(basename "$bundle")"
+            cp "$bundle" "portfolio/assets/$(basename "$bundle")"
+          done
+
+          if grep -q 'homepage-curation.js' index.html; then
+            echo 'ERROR: obsolete homepage-curation script still in published index'
+            exit 1
+          fi
+          grep -q 'assets/index-' index.html
+          test -s assets/home/hero-dropflow-ufo-2025.webp
+          test -s assets/home/archive-timer-clean.webp
+          test -s assets/raw-picks/titan-bolive-clean-16x9.webp
+          test -s assets/digital-garden/digital-garden-frame-01.webp
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- index.html portfolio/index.html
+          git add -- assets/*.js assets/*.css portfolio/assets/*.js portfolio/assets/*.css
+
+          if git diff --cached --quiet; then
+            echo "Published root already current"
+            exit 0
+          fi
+          git commit -m "publish: sync canonical React homepage bundles to Pages root"
+          git pull --rebase origin main
+          git push origin HEAD:main
