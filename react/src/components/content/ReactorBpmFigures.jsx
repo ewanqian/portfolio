@@ -94,16 +94,14 @@ function LayerMixer() {
 
 function HistoricalContext() {
   const references = [
-    {year: '2010', name: '1024 Architecture / MadMapper', kind: '工具成为演出语言', detail: '艺术家与开发者共同解决实时空间映射，使舞台几何可以直接参与创作。', url: 'https://madmapper.com/aboutus'},
-    {year: '2016', name: 'Nosaj Thing × Daito Manabe', kind: '实时影像与移动灯光', detail: '实时 3D 扫描进入音乐现场，视觉程序、技术支持与创意导演明确分工。', url: 'https://research.rhizomatiks.com/en/works/nosaj_thing_coachella.html'},
-    {year: '2020', name: 'DJ KRUSH × Daito Manabe', kind: '读取演奏动作', detail: '通过分析转盘及混音台动作，让搓碟行为本身成为视觉数据。', url: 'https://rhizomatiks.com/en/work/connected-world/'},
-    {year: '2022', name: 'Rhizomatiks / Light Sync', kind: '节拍与事件的两种控制', detail: '预先存储的灯光图案与实时命令响应协同工作，延伸到整个空间。', url: 'https://www.daito.ws/en/archive/nosaj-thing/'},
-    {year: '2026', name: 'Comix / Notch', kind: '可操作的巡演内容', detail: '将实时场景参数、摄像机、灯光与 Timecode 整合为演出操作系统。', url: 'https://www.thisiscomix.com/real-time'}
+    {year: '2016', name: 'Nosaj Thing × Daito Manabe', kind: '实时扫描 / 现场分工', detail: '扫描输入、实时图像程序、技术导演与现场支持彼此配合。学习如何把实时效果组织成可以运行的舞台系统。', url: 'https://research.rhizomatiks.com/en/works/nosaj_thing_coachella.html'},
+    {year: '2020', name: 'DJ KRUSH × Daito Manabe', kind: '从音乐家动作得到信息', detail: '分析转盘与混音台的演奏动作，令图像回应真实操作，而不只是对着音量变化。', url: 'https://rhizomatiks.com/en/work/connected-world/'},
+    {year: 'LIVE', name: 'Comix / Notch', kind: '现场参数与内容交付', detail: '将实时内容的可调参数、摄像机、灯光和时间信息纳入可演出的工作流。', url: 'https://www.thisiscomix.com/real-time'}
   ]
   return (
-    <section className="bpm-side-group bpm-history" aria-label="实时视觉演出发展案例">
-      <div className="bpm-side-kicker">LIVE SYSTEMS / 2010—2026</div>
-      <p className="bpm-history-intro">从空间映射到实时舞台：五种实践，各自回答一种演出工程问题。</p>
+    <section className="bpm-side-group bpm-history" aria-label="现场视觉控制的专业案例">
+      <div className="bpm-side-kicker">READING / LIVE VISUAL PRACTICE</div>
+      <p className="bpm-history-intro">作品与方法：音乐信息如何进入视觉；实时图像如何被操作、如何交付。</p>
       <div className="bpm-history-rows">
         {references.map(({year,name,kind,detail,url}) => <article className="bpm-history-item" key={name}>
           <time>{year}</time><div><a href={url} target="_blank" rel="noreferrer"><strong>{name}</strong> ↗</a><em>{kind}</em><p>{detail}</p></div>
@@ -144,23 +142,45 @@ function Vocabulary() {
   )
 }
 
+function BeatLinkReading() {
+  return (
+    <section className="bpm-side-group bpm-beatlink-notes" aria-label="Beat Link 播放器截图阅读说明">
+      <div className="bpm-side-kicker">FIG. 01 / BEAT LINK TRIGGER</div>
+      <CaptionedPhoto src="reactor-beatlink-waveform-square.jpg" title="DJ PLAYER / TRACK OVERVIEW" caption="从 REACTOR 操作视频提取。先看播放位置，再看 BPM、节拍网格、接下来可能变化的段落。" />
+      <ol>
+        <li><strong>POSITION</strong><span>当前播到哪里，下一段还有多远</span></li>
+        <li><strong>BPM / BEAT GRID</strong><span>现在的速度、拍子和小节位置</span></li>
+        <li><strong>WAVEFORM</strong><span>音乐的能量起伏；颜色取决于显示模式</span></li>
+        <li><strong>UPCOMING</strong><span>准备进入还是准备撤除视觉层</span></li>
+      </ol>
+      <a href="https://blt-guide.deepsymmetry.org/beat-link-trigger/8.0.0/Players.html" target="_blank" rel="noreferrer">Beat Link Trigger · Player Status ↗</a>
+    </section>
+  )
+}
+
 function Sidebar() {
   return (
     <div className="bpm-visual-sidebar">
-      <CaptionedPhoto src="reactor-2026-06.webp" title="REACTOR / SPACE" caption="舞池、观众、激光与远端舞台。" className="bpm-sidebar-lead" />
+      <CaptionedPhoto src="reactor-2026-06.webp" title="REACTOR / CLUB SPACE" caption="现场舞池、屏幕与光束之间的关系。" className="bpm-sidebar-lead" />
+      <BeatLinkReading />
+      <section className="bpm-side-group bpm-sync-reading">
+        <div className="bpm-side-kicker">FIG. 02 / HOW BPM SYNC WORKS</div>
+        <div className="bpm-sync-track"><span>120 BPM</span><i /><i /><i /><i /></div>
+        <div className="bpm-sync-track bpm-sync-travel"><span>16 BEATS</span><b>4 BARS / 8 SEC</b></div>
+        <p>设定 120 BPM、四小节循环为 16 Beats：同步的不仅是速度，还要检查画面在哪一拍开始。</p>
+      </section>
       <div className="bpm-sidebar-pair">
-        <CaptionedPhoto src="reactor-2026-08.webp" title="STAGE / STRUCTURE" caption="机械构成与舞台纵深。" />
-        <CaptionedPhoto src="reactor-beatlink-waveform-square.jpg" title="OPERATOR / BEAT LINK" caption="从作者录制的现场操作视频提取。" />
+        <CaptionedPhoto src="reactor-2026-08.webp" title="STAGE / STRUCTURE" caption="用于理解现场内容如何落入真实屏幕。" />
+        <div className="bpm-side-quick-note"><div className="bpm-side-kicker">THREE TIMES</div><TimeDiagram /></div>
       </div>
-      <TimeDiagram />
+      <RouteDiagram />
+      <details className="bpm-mini-mixer">
+        <summary>尝试 Layer Opacity <span>INTERACTIVE</span></summary>
+        <LayerMixer />
+      </details>
       <HistoricalContext />
       <StageCoordination />
       <Vocabulary />
-      <RouteDiagram />
-      <details className="bpm-mini-mixer">
-        <summary>尝试三轨透明度混合 <span>INTERACTIVE</span></summary>
-        <LayerMixer />
-      </details>
       <p className="bpm-sidebar-archive"><a href={ARCHIVE} target="_blank" rel="noreferrer">REACTOR 摄影与操作图像档案 ↗</a></p>
     </div>
   )
