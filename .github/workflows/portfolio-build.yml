@@ -115,3 +115,49 @@ jobs:
             docs/media-intake/qa-screenshots/*.png
             assets/digital-garden/digital-garden-loop.avif
 
+
+  snapshot-site-state:
+    name: Freeze one verified site-state CSV baseline on audit branch
+    needs: build
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.head_ref == 'audit/portfolio-oct2026-round1-20261104' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Skip if audit snapshot already frozen
+        id: baseline
+        run: |
+          if test -f docs/portfolio-maintenance-os/site-state/.baseline-frozen; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/download-artifact@v4
+        if: steps.baseline.outputs.exists == 'false'
+        with:
+          name: portfolio-round1-motion-and-screenshots
+          path: /tmp/portfolio-state-qa
+      - name: Commit generated site-state data without touching originals
+        if: steps.baseline.outputs.exists == 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=/tmp/portfolio-state-qa/docs/portfolio-maintenance-os/site-state
+          dest=docs/portfolio-maintenance-os/site-state
+          test -s "$src/summary.json"
+          test -s "$src/clickable-links.csv"
+          cp "$src"/*.csv "$dest/"
+          cp "$src/summary.json" "$dest/"
+          cp "$src/README.generated.md" "$dest/"
+          printf 'Frozen from GitHub Actions run %s, PR head %s; regenerate for later changes.\n' "$GITHUB_RUN_ID" "${{ github.event.pull_request.head.sha }}" > "$dest/.baseline-frozen"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dest"
+          git commit -m 'docs(site-state): freeze first verified browser audit CSV baseline'
+          git push origin "HEAD:${{ github.head_ref }}"
