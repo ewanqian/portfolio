@@ -6,25 +6,50 @@
   "type": "series",
   "summary": "围绕实时音画互动、空间迁移、数字自然叙事与公共呈现展开的长期系列。",
   "practiceLine": "spatial-generation",
-  "tags": ["immersive", "space", "flow"],
+  "tags": [
+    "immersive",
+    "space",
+    "flow"
+  ],
   "coverImage": "featured-dropflow-main.webp",
   "image": "/assets/home/featured-dropflow-main.webp",
   "showOnHome": false,
   "lifecycle": "active",
-  "relatedNodes": ["ufo-terminal", "drop-flow-hangzhou-biennale"],
-  "relatedWritings": ["drop-flow-note"],
-  "displayModes": ["immersive screen", "body performance", "VR headset", "live audiovisual"],
-  "analysisIds": ["drop-flow-core-series"],
+  "relatedNodes": [
+    "ufo-terminal",
+    "drop-flow-hangzhou-biennale"
+  ],
+  "relatedWritings": [
+    "drop-flow-note",
+    "drop-flow-motion-capture-2026"
+  ],
+  "displayModes": [
+    "immersive screen",
+    "body performance",
+    "VR headset",
+    "live audiovisual"
+  ],
+  "analysisIds": [
+    "drop-flow-core-series"
+  ],
   "sourceDocs": [
     "visual-arts/drop-flow-series/README.md",
     "projects/drop-flow-visual-2025.md",
     "projects/dropflow3-live-2025.md",
-    "docs/bio/canonical-project-names.md"
+    "docs/bio/canonical-project-names.md",
+    "projects/drop-flow-motion-capture-2026.md",
+    "https://github.com/ewanqian/dropflow-biennale-mocap"
   ],
   "repoLink": "/works/drop-flow.html",
   "links": [
-    { "text": "详情页", "url": "/works/drop-flow.html" },
-    { "text": "看录像", "url": "https://www.bilibili.com/video/BV1PREczgEzC/" }
+    {
+      "text": "详情页",
+      "url": "/works/drop-flow.html"
+    },
+    {
+      "text": "看录像",
+      "url": "https://www.bilibili.com/video/BV1PREczgEzC/"
+    }
   ],
   "priority": 5
 }
