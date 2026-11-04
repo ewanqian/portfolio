@@ -101,6 +101,7 @@ jobs:
             --screenshot="docs/media-intake/qa-screenshots/cover-candidates.png" \
             "http://127.0.0.1:4173/qa-cover-contact-sheet.html"
           CHROME_BIN="$CHROME" node scripts/audit-portfolio-browser.mjs
+          node scripts/compile-portfolio-site-state.mjs
       - name: Upload round 1 motion inventory and screenshots
         if: always() && github.event_name == 'pull_request' && github.head_ref == 'audit/portfolio-oct2026-round1-20261104'
         uses: actions/upload-artifact@v4
@@ -110,6 +111,7 @@ jobs:
           path: |
             docs/media-intake/motion-audit-2026-10.csv
             docs/media-intake/browser-qa-2026-11.json
+            docs/portfolio-maintenance-os/site-state/*
             docs/media-intake/qa-screenshots/*.png
             assets/digital-garden/digital-garden-loop.avif
 
