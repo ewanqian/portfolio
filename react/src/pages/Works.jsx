@@ -6,35 +6,19 @@ import { getDisplayImage, getWorkTargetUrl } from '../data/siteDisplay'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { localizeWork } from '../i18n/content.js'
 
-const selectedIds = ['kashiwa', 'drop-flow', 'timer', 'digital-garden-visual-2025']
+const selectedIds = ['titan', 'drop-flow', 'timer', 'digital-garden-visual-2025']
 
 // Public Work is an editorial index, not a dump of every version/event object.
 // Alternate versions and historical nodes remain available through Archive and project pages.
 const workIndexIds = [
-  'kashiwa',
-  'drop-flow',
-  'timer',
-  'digital-garden-visual-2025',
+  // Four selected works appear above; do not repeat them in this index.
   'natgeo-crystal-2026',
   'china-ai-gala-2026',
   'system-ersha-2026',
-  'transit',
   'mke-terminal',
-  'sre-realtime-liveset-2026',
-  'new-media-artist-simulator-2025',
-  'observe-symbiosis-exhibit-2025',
-  'ether-fragment-exhibit-2023',
-  'derive-dual-city-2024',
   'rain-singapore-visual-2026',
-  'yujiayun-45ping-visual-2025',
-  'shanhaifusheng2-visual-2025',
-  'xtep-xdna22aw-visual-2022',
-  'zcool-hp-live-2021',
-  'vrplay-hackathon-visual-2025',
-  'ar-shenzhen-resort-2022',
-  'hallu-resonance-live-2024'
+  'yujiayun-45ping-visual-2025'
 ]
-
 // Compatibility bridge until the next content build regenerates works.js from content/works/.
 // Source-of-truth records live in content/works/*.json.
 const recoveredRecords = [
@@ -137,9 +121,9 @@ function IndexRow({ work, language }) {
   return (
     <article className="work-index-row">
       {target ? (
-        <a className="work-index-thumb" href={target}><img src={getDisplayImage(work)} alt="" loading="lazy" /></a>
+        <a className={`work-index-thumb ${['rain-singapore-visual-2026', 'yujiayun-45ping-visual-2025'].includes(work.id) ? 'work-index-thumb--ultrawide' : ''}`} href={target}><img src={getDisplayImage(work)} alt="" loading="lazy" /></a>
       ) : (
-        <div className="work-index-thumb"><img src={getDisplayImage(work)} alt="" loading="lazy" /></div>
+        <div className={`work-index-thumb ${['rain-singapore-visual-2026', 'yujiayun-45ping-visual-2025'].includes(work.id) ? 'work-index-thumb--ultrawide' : ''}`}><img src={getDisplayImage(work)} alt="" loading="lazy" /></div>
       )}
       <div className="work-index-year">{item.years}</div>
       <div className="work-index-copy">
@@ -157,7 +141,10 @@ function Works() {
   const isZh = language === 'zh'
   const workMap = buildWorkMap()
   const selected = selectedIds.map((id) => workMap.get(id)).filter(Boolean)
-  const index = workIndexIds.map((id) => workMap.get(id)).filter(Boolean)
+  const index = workIndexIds
+    .filter((id) => !selectedIds.includes(id))
+    .map((id) => workMap.get(id))
+    .filter(Boolean)
 
   return (
     <>
@@ -171,8 +158,8 @@ function Works() {
             </div>
             <div>
               <p>{isZh
-                ? '这里不再把“空间”“制作”“实时系统”“研究”拆成互相竞争的一级栏目。它们只是项目的媒介、角色或方法。一个项目只出现一次；展览版本、演出节点、过程与技术记录留在项目内部或归档。'
-                : 'Spatial, production, realtime systems, and research are no longer competing top-level sections. They are media, roles, or methods attached to projects. Each project appears once; versions, event nodes, process, and technical records stay inside the project or archive.'}</p>
+                ? '这里集中呈现现场音画、空间影像与大型屏幕内容。每个项目只出现一次；更多合作、版本与过程记录保存在完整归档中。'
+                : 'A concise selection of live audiovisual, spatial image, and large-screen projects. More collaborations, versions, and process records remain accessible in the full archive.'}</p>
               <a className="text-link" href="/portfolio/#/archive">{isZh ? '查看完整归档 ↗' : 'Full archive ↗'}</a>
             </div>
           </div>
