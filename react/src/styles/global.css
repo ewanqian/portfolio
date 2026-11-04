@@ -3780,12 +3780,31 @@ textarea {
   background: #050505;
 }
 
-.project-motion-sample img {
+.project-motion-sample video {
   display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 3;
+  object-fit: contain;
+  background: #050505;
+}
+
+.project-motion-sample .project-motion-reduced {
+  display: none;
   width: 100%;
   aspect-ratio: 8 / 3;
   object-fit: contain;
   background: #050505;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-motion-sample video {
+    display: none;
+  }
+
+  .project-motion-sample .project-motion-reduced {
+    display: block;
+  }
 }
 
 .project-note-list article {
