@@ -60,7 +60,7 @@ export const homeNodeIds = [
 
 export const nodeLinks = {
   'babel-bottle': '/archive',
-  'can-festival': '/works/titan',
+  'can-festival': '/portfolio/works/titan.html',
   'drop-flow-hangzhou-biennale': '/works/drop-flow.html',
   'observation-and-symbiosis': '/archive',
   'ufo-terminal': '/works/drop-flow.html'
@@ -84,7 +84,7 @@ export function getWorkTargetUrl(work) {
   }
 
   if (work?.id === 'kashiwa' || work?.id === 'titan' || work?.id === 'kashiwa-bo-live-shenzhen') {
-    return '/works/titan'
+    return '/portfolio/works/titan.html'
   }
 
   if (work?.id === 'yujiayun-45ping-visual-2025') {
@@ -106,6 +106,8 @@ export function getWorkTargetUrl(work) {
     return '/archive'
   }
 
+  if (rawUrl.startsWith('./works/')) return `/portfolio/${rawUrl.slice(2)}`
+  if (rawUrl.startsWith('/works/')) return `/portfolio${rawUrl}`
   return rawUrl.startsWith('./') ? `/${rawUrl.replace(/^\.\//, '')}` : rawUrl
 }
 
