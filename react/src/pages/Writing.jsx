@@ -10,7 +10,7 @@ import '../styles/writing-index.css'
 // Public Writing is a reading library, not a backlog of editorial placeholders.
 // An entry without a complete article is kept in content/writings for future work
 // but is not rendered as a published article.
-const EDITORIAL_FEATURES = ['reactor-bpm-system-2026', 'scene-forge-reader-02']
+const EDITORIAL_FEATURES = ['reactor-bpm-system-2026', 'entropy-two-screen-2026', 'scene-forge-reader-02']
 const RESEARCH_NOTES = ['performable-music', 'performance-control-model']
 
 function byOrder(items) {
@@ -76,7 +76,7 @@ function Writing() {
             </div>
             <div className="writing-editorial-feature-grid">
               {featured.map((item, index) => (
-                <EditorialEntry key={item.id} item={item} language={language} featured kind={index === 0 ? 'FIELD ESSAY / SYSTEM' : 'WORKSHOP / READER'} />
+                <EditorialEntry key={item.id} item={item} language={language} featured kind={index === 0 ? 'LIVE SYSTEM / RESEARCH' : index === 1 ? 'PERFORMANCE / PROCESS' : 'WORKSHOP / READER'} />
               ))}
             </div>
           </div>
