@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { useTheme } from '../../hooks/useTheme'
 import { useLanguage } from '../../i18n/LanguageContext.jsx'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  const { isLight, toggleTheme } = useTheme()
   const { language, setLanguage } = useLanguage()
 
   useEffect(() => {
@@ -14,19 +12,22 @@ function Header() {
   }, [location.pathname, location.key])
 
   const routeNavItems = [
-    { id: 'home', label: language === 'en' ? 'Home' : '首页', to: '/' },
-    { id: 'works', label: language === 'en' ? 'Works' : '作品', to: '/works' },
-    { id: 'spatial', label: language === 'en' ? 'Spatial' : '空间', to: '/gaussian-scenes' },
+    { id: 'work', label: language === 'en' ? 'Work' : '项目', to: '/works', activeOn: ['/works', '/projects'] },
+    {
+      id: 'archive',
+      label: language === 'en' ? 'Archive' : '归档',
+      to: '/archive',
+      activeOn: ['/archive', '/gaussian-scenes', '/production', '/writing']
+    },
     { id: 'workshops', label: language === 'en' ? 'Workshops' : '工作坊', to: '/workshops', activeOn: ['/workshops'] },
-    { id: 'production', label: language === 'en' ? 'Production' : '制作', to: '/production' },
-    { id: 'profile', label: language === 'en' ? 'Profile' : '个人', to: '/profile' }
+    { id: 'about', label: language === 'en' ? 'About' : '关于', to: '/profile' }
   ]
 
   return (
     <header className="topbar">
       <div className="container topbar-inner">
         <NavLink to="/" end className="brand" onClick={() => setMenuOpen(false)}>
-          {language === 'en' ? 'Ewan Qian / Practice' : '钱誉文 / 个人实践'}
+          Ewan Qian / 钱誉文
         </NavLink>
         <div className="topbar-actions">
           <div className="language-toggle" role="group" aria-label={language === 'en' ? 'Language switcher' : '语言切换'}>
@@ -45,16 +46,6 @@ function Header() {
               EN
             </button>
           </div>
-          <button
-            type="button"
-            className="theme-toggle"
-            aria-label={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
-            aria-pressed={isLight}
-            onClick={toggleTheme}
-          >
-            <span className="icon-sun" aria-hidden="true">☀</span>
-            <span className="icon-moon" aria-hidden="true">☾</span>
-          </button>
           <button
             type="button"
             className={`menu-toggle ${menuOpen ? 'active' : ''}`}

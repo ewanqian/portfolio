@@ -1,0 +1,16 @@
+{
+  "id": "entropy-two-screen-2026",
+  "slug": "entropy-two-screen-2026",
+  "title": "ENTROPY — Atmospheric Escape：双屏幕的视觉世界",
+  "titleEn": "ENTROPY — Atmospheric Escape: A Two-Screen Visual World",
+  "type": "Performance / Process",
+  "category": "field-note",
+  "date": "2026-11-04",
+  "summary": "围绕航天器、星图和科学终端语言，为超宽主屏与顶部屏幕组织可演奏的视觉状态，并以浏览器预演和实时媒体缩短现场制作的反馈距离。",
+  "summaryEn": "A process note on building a coordinated visual world for an ultra-wide display and a ceiling screen, combining authored spacecraft imagery, controllable states and browser-based previsualisation.",
+  "articlePath": "docs/journal/entropy-two-screen-2026.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/journal/entropy-two-screen-2026.md",
+  "status": "published",
+  "featured": false,
+  "order": 3
+}

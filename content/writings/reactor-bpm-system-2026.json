@@ -1,0 +1,16 @@
+{
+  "id": "reactor-bpm-system-2026",
+  "slug": "reactor-bpm-system-2026",
+  "title": "REACTOR — BPM System：在自动节拍与人工即兴之间",
+  "titleEn": "REACTOR — BPM System: Between Clocked Motion and Human Interruption",
+  "type": "Live Performance / Field Notes",
+  "category": "field-note",
+  "date": "2026-11-04",
+  "summary": "一套由持续影像、BPM 同步层和 Piano Trigger 构成的 Arena 演出工程。节拍交给系统，密度、停顿和释放留给表演者。",
+  "summaryEn": "A layered Arena performance approach combining continuous images, BPM-synchronised motion and momentary piano triggers, with the performer retaining control of transitions, density and release.",
+  "articlePath": "docs/journal/reactor-bpm-system-2026.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/journal/reactor-bpm-system-2026.md",
+  "status": "published",
+  "featured": true,
+  "order": 2
+}

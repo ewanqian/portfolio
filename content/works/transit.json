@@ -1,21 +1,22 @@
 {
   "id": "transit",
   "title": "箱中温室 / Greenhouse in Transit",
-  "subtitle": "便携温室与空间叙事入口",
+  "subtitle": "手提箱、网页与 Vision Pro 构成的空间叙事作品",
   "years": "2025–2026",
-  "type": "tooling-research",
-  "summary": "以手提箱作为现实入口，把便携温室、错投行李、空间档案和手机端浏览串联成一个可进入的叙事项目。",
-  "practiceLine": "content-infrastructure",
-  "tags": ["external-repo", "content-system", "portable-greenhouse", "spatial-narrative", "spatial-experience"],
+  "type": "spatial-narrative-artwork",
+  "summary": "以一只被错投到现实的便携温室箱为入口，把实体物件、手机网页、档案线索与 Vision Pro 中展开的点云温室串联成一件跨现实与数字空间的叙事作品。",
+  "practiceLine": "spatial-generation",
+  "tags": ["spatial narrative", "Vision Pro", "physical object", "web archive", "point cloud"],
   "coverImage": "greenhouse-in-transit-mg17.webp",
   "image": "/assets/home/greenhouse-in-transit-mg17.webp",
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": ["nodal-organization", "graph-native-structure"],
-  "displayModes": ["portable greenhouse", "spatial narrative", "repository bridge", "spatial experience design"],
+  "displayModes": ["physical suitcase", "mobile web", "archive viewer", "Vision Pro spatial scene"],
   "analysisIds": [],
   "sourceDocs": [
-    "projects/flatland-mr-content-2025.md"
+    "https://github.com/ewanqian/Greenhouse-in-Transit",
+    "https://ewanqian.github.io/Greenhouse-in-Transit/Archive/project-home-v2.html"
   ],
   "repoLink": "https://ewanqian.github.io/Greenhouse-in-Transit/Archive/project-home-v2.html",
   "externalRepo": {
@@ -23,10 +24,10 @@
     "url": "https://github.com/ewanqian/Greenhouse-in-Transit",
     "status": "public"
   },
-  "portfolioTier": "external",
+  "portfolioTier": "personal",
+  "authorship": "personal-work",
   "lifecycle": "active",
-  "harborRole": "连接现实物件、空间叙事、网页入口与长期项目沉淀。",
-  "publicValue": "它把外部 GitHub 项目、网页入口、现场物件和前置空间体验研究接入同一个作品体系。",
+  "publicValue": "把实体物件、空间叙事、网页入口与 Vision Pro 空间内容连接为一个完整体验，而不是一个工具或内容基础设施项目。",
   "links": [
     {
       "label": "Project Page",
