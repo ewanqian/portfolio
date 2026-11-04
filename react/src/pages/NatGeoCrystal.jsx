@@ -18,7 +18,7 @@ const facts = {
     ['形式', '常设多屏空间影像'],
     ['画布', '横向主屏 / 竖向立柱 / 侧屏'],
     ['团队语境', 'VIRTURA'],
-    ['个人记录', '参与空间影像制作；具体个人 credit 以已确认资料为准']
+    ['钱誉文 / Ewan Qian', '矿晶影像设计；酒店及体验中心三维扫描与空间采集']
   ],
   en: [
     ['Year', '2026'],
@@ -26,7 +26,7 @@ const facts = {
     ['Format', 'Permanent multi-screen spatial media'],
     ['Canvases', 'Horizontal main screen / vertical columns / side displays'],
     ['Team context', 'VIRTURA'],
-    ['Personal record', 'Spatial-media production participation; individual credit remains evidence-bounded']
+    ['Ewan Qian', 'Crystal moving-image design; 3D scanning and spatial capture of the hotel and experience centre']
   ]
 }
 
@@ -66,8 +66,8 @@ function NatGeoCrystal() {
             <div>
               <div className="eyebrow">{isZh ? '内容系统' : 'Content system'}</div>
               <p className="section-intro">{isZh
-                ? '公开项目资料确认的 VIRTURA 团队范围包括矿晶三维内容研发、多画幅编排、非标准屏幕适配、分屏输出与版本管理。个人 Portfolio 保留团队语境，不把团队 scope 自动改写为单人独立完成。'
-                : 'Public project material confirms VIRTURA’s team scope across 3D crystal-content development, multi-format composition, custom-screen adaptation, multi-output delivery, and version management. This personal record preserves that team context rather than rewriting the full team scope as solo authorship.'}</p>
+                ? '矿晶三维影像根据主屏、立柱与侧屏分别编排；酒店与体验中心的空间扫描资料用于建筑观察、数字归档与线上浏览。不同画幅共享材质、运动和视觉节奏。'
+                : 'Crystal imagery is composed for the main screen, columns and side displays. Spatial captures of the hotel and experience centre also inform architectural study, digital documentation and browser-based exploration.'}</p>
             </div>
           </div>
         </section>
@@ -91,9 +91,9 @@ function NatGeoCrystal() {
             <div className="eyebrow">{isZh ? '关联档案' : 'Related archive'}</div>
             <div>
               <p>{isZh
-                ? '中国国家地理酒店空间数字档案与 CNG 空间漫游是这一项目的记录、浏览与空间验证层，不作为新的独立作品重复出现。'
-                : 'The CNG design archive and spatial tour are documentation, browsing, and spatial-validation layers of this project rather than separate portfolio works.'}</p>
-              <p><a className="text-link" href="https://github.com/ewanqian/cng-design-archive" target="_blank" rel="noreferrer">Design Archive ↗</a> · <a className="text-link" href="https://github.com/ewanqian/cng-spatial-tour" target="_blank" rel="noreferrer">Spatial Tour ↗</a></p>
+                ? '空间档案收录酒店公共区域的浏览视点、模型样本与项目资料。公开设计档案可查阅；交互漫游将在访问地址与素材权限核实后接入。'
+                : 'The spatial archive brings together public-area viewpoints, model samples and project documentation. The design archive is available; the interactive tour will be linked after its public access and media permissions are verified.'}</p>
+              <p><a className="text-link" href="https://github.com/ewanqian/cng-design-archive" target="_blank" rel="noreferrer">Design Archive ↗</a></p>
             </div>
           </div>
         </section>
