@@ -50,5 +50,25 @@ jobs:
           test -d react/dist/assets
           test -d react/dist/works
           node -e "const fs=require('fs');const d=fs.readFileSync('react/src/data/generated/writings.js','utf8');for(const x of ['reactor-bpm-system-2026','entropy-two-screen-2026','performable-music'])if(!d.includes(x))throw Error('missing writing '+x);"
+      - name: Verify release homepage in Chromium
+        if: github.event_name == 'pull_request' && github.head_ref == 'release/home-editorial-reactor-20261104'
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd react && npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/release-preview.log 2>&1) &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          CHROME_BIN="$(command -v google-chrome)" node scripts/verify-home-release.mjs
+      - name: Upload homepage QA evidence
+        if: always() && github.event_name == 'pull_request' && github.head_ref == 'release/home-editorial-reactor-20261104'
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-release-qa
+          path: docs/portfolio-maintenance-os/release-qa/home-release-check.json
+          if-no-files-found: warn
       - name: Report large asset copies
         run: npm run media:report
