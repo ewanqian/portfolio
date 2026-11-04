@@ -32,6 +32,24 @@ function HomeInfo() {
   )
 }
 
+function CurrentResearch() {
+  const { language } = useLanguage()
+  const isZh = language === 'zh'
+  return (
+    <section className="home-current-research" aria-label={isZh ? '近期研究' : 'Current research'}>
+      <div className="container home-current-research-grid">
+        <div className="home-current-research-label">{isZh ? '近期研究 / 2026—' : 'Current Research / 2026—'}</div>
+        <div className="home-current-research-content">
+          <Link to="/writing/performable-music"><strong>Performable Music</strong> <span>/ {isZh ? '可表演音乐' : 'Agent Music Performance'}</span></Link>
+          <p>{isZh
+            ? '音乐编排、Agent 协作与实时音画表演的持续研究。'
+            : 'An ongoing study in composed and playable music, agent-assisted workflows and live audiovisual performance.'}</p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Home() {
   return (
     <>
@@ -39,6 +57,7 @@ function Home() {
       <main className="editorial-home">
         <Hero />
         <SelectedWorks />
+        <CurrentResearch />
         <HomeInfo />
       </main>
       <Footer />
