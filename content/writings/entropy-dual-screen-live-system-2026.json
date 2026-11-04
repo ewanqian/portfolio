@@ -1,0 +1,16 @@
+{
+  "id": "entropy-dual-screen-live-system-2026",
+  "slug": "entropy-dual-screen-live-system-2026",
+  "title": "逃离大气层：一次双屏实时影像的制作记录",
+  "titleEn": "Atmospheric Escape: Building a Dual-Screen Live Visual System",
+  "type": "Field Note / Production",
+  "category": "field-note",
+  "date": "2026-11-04",
+  "summary": "从航天器线框、双屏空间关系、网页舞台预演到 WebRTC 实时查看，一次大型现场视觉系统的制作笔记。",
+  "summaryEn": "A production account of spacecraft wireframes, two-screen spatial composition, early browser stage previs and WebRTC experiments.",
+  "articlePath": "docs/articles/entropy-dual-screen-live-system-2026.md",
+  "status": "published",
+  "featured": false,
+  "order": 20,
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/articles/entropy-dual-screen-live-system-2026.md"
+}
