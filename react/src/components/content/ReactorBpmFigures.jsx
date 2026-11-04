@@ -94,18 +94,20 @@ function LayerMixer() {
 
 function HistoricalContext() {
   const references = [
-    ['1926', 'Oskar Fischinger', '多屏抽象影像与音乐在同一空间演出', 'https://whitney.org/exhibitions/oskar-fischinger'],
-    ['1961', 'John Whitney', '模拟计算机、周期运动与视觉音乐', 'https://whitney.org/essays/histories-of-the-digital-now'],
-    ['1969', 'Paik–Abe', '可操纵的电子视频合成与现场图像处理', 'https://americanart.si.edu/research/paik/highlights'],
-    ['TODAY', 'OSC / MIDI / Timecode', '实时参数、现场操作与跨部门同步', 'https://resolume.com/support/en/osc']
+    {year: '2010', name: '1024 Architecture / MadMapper', kind: '工具成为演出语言', detail: '艺术家与开发者共同解决实时空间映射，使舞台几何可以直接参与创作。', url: 'https://madmapper.com/aboutus'},
+    {year: '2016', name: 'Nosaj Thing × Daito Manabe', kind: '实时影像与移动灯光', detail: '实时 3D 扫描进入音乐现场，视觉程序、技术支持与创意导演明确分工。', url: 'https://research.rhizomatiks.com/en/works/nosaj_thing_coachella.html'},
+    {year: '2020', name: 'DJ KRUSH × Daito Manabe', kind: '读取演奏动作', detail: '通过分析转盘及混音台动作，让搓碟行为本身成为视觉数据。', url: 'https://rhizomatiks.com/en/work/connected-world/'},
+    {year: '2022', name: 'Rhizomatiks / Light Sync', kind: '节拍与事件的两种控制', detail: '预先存储的灯光图案与实时命令响应协同工作，延伸到整个空间。', url: 'https://www.daito.ws/en/archive/nosaj-thing/'},
+    {year: '2026', name: 'Comix / Notch', kind: '可操作的巡演内容', detail: '将实时场景参数、摄像机、灯光与 Timecode 整合为演出操作系统。', url: 'https://www.thisiscomix.com/real-time'}
   ]
   return (
-    <section className="bpm-side-group bpm-history" aria-label="视觉演奏技术历史线索">
-      <div className="bpm-side-kicker">LINEAGE / 历史坐标</div>
+    <section className="bpm-side-group bpm-history" aria-label="实时视觉演出发展案例">
+      <div className="bpm-side-kicker">LIVE SYSTEMS / 2010—2026</div>
+      <p className="bpm-history-intro">从空间映射到实时舞台：五种实践，各自回答一种演出工程问题。</p>
       <div className="bpm-history-rows">
-        {references.map(([year, name, detail, url]) => <div key={name}>
-          <time>{year}</time><div><a href={url} target="_blank" rel="noreferrer">{name} ↗</a><p>{detail}</p></div>
-        </div>)}
+        {references.map(({year,name,kind,detail,url}) => <article className="bpm-history-item" key={name}>
+          <time>{year}</time><div><a href={url} target="_blank" rel="noreferrer"><strong>{name}</strong> ↗</a><em>{kind}</em><p>{detail}</p></div>
+        </article>)}
       </div>
     </section>
   )
@@ -132,14 +134,17 @@ function Sidebar() {
       <CaptionedPhoto src="reactor-2026-06.webp" title="REACTOR / SPACE" caption="舞池、观众、激光与远端舞台。" className="bpm-sidebar-lead" />
       <div className="bpm-sidebar-pair">
         <CaptionedPhoto src="reactor-2026-08.webp" title="STAGE / STRUCTURE" caption="机械构成与舞台纵深。" />
-        <CaptionedPhoto src="reactor-beatlink-waveform-square.jpg" title="OPERATOR / BEAT LINK" caption="作者拍摄的播放器波形界面。" />
+        <CaptionedPhoto src="reactor-beatlink-waveform-square.jpg" title="OPERATOR / BEAT LINK" caption="从作者录制的现场操作视频提取。" />
       </div>
       <TimeDiagram />
-      <LayerMixer />
-      <RouteDiagram />
-      <StageCoordination />
       <HistoricalContext />
-      <p className="bpm-sidebar-archive"><a href={ARCHIVE} target="_blank" rel="noreferrer">查看 REACTOR 摄影与操作图像档案 ↗</a></p>
+      <StageCoordination />
+      <RouteDiagram />
+      <details className="bpm-mini-mixer">
+        <summary>尝试三轨透明度混合 <span>INTERACTIVE</span></summary>
+        <LayerMixer />
+      </details>
+      <p className="bpm-sidebar-archive"><a href={ARCHIVE} target="_blank" rel="noreferrer">REACTOR 摄影与操作图像档案 ↗</a></p>
     </div>
   )
 }
