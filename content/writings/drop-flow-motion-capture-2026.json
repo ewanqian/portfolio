@@ -1,0 +1,16 @@
+{
+  "id": "drop-flow-motion-capture-2026",
+  "slug": "drop-flow-motion-capture-2026",
+  "title": "Drop Flow — Capturing Movement",
+  "titleEn": "Drop Flow — Capturing Movement",
+  "type": "Project Preview / In Development",
+  "category": "research",
+  "date": "2026-11-04",
+  "summary": "以既有舞者动作捕捉数据重新编排身体运动、实时图像与剧场空间，并探索增强现实和数字场景中的下一版观看方式。",
+  "summaryEn": "Reworking motion-capture material into realtime image, choreography and spatial staging, with future studies across theatre and augmented reality.",
+  "articlePath": "projects/drop-flow-motion-capture-2026.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/projects/drop-flow-motion-capture-2026.md",
+  "status": "published",
+  "featured": false,
+  "order": 4
+}
