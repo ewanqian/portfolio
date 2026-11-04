@@ -52,6 +52,7 @@ function WorkshopSeries() {
   }
 
   const isCurrentEdition = series.kind === 'current-edition'
+  const isCompletedEdition = series.kind === 'completed-edition'
   const markdown = stripReadmeTitle(buildMarkdown || runtimeMarkdown)
 
   return (
@@ -64,9 +65,9 @@ function WorkshopSeries() {
               <Link className="eyebrow workshop-backlink" to="/workshops">
                 ← {isZh ? '工作坊计划' : 'Workshops'}
               </Link>
-              {isCurrentEdition && (
+              {(isCurrentEdition || isCompletedEdition) && (
                 <div className="workshop-current-badge">
-                  {isZh ? '当前期次 / Current Edition' : 'Current Edition'}
+                  {isCompletedEdition ? (isZh ? '已举办 / Completed Workshop' : 'Completed Workshop') : (isZh ? '当前期次 / Current Edition' : 'Current Edition')}
                 </div>
               )}
               <h1>{series.title[language]}</h1>
