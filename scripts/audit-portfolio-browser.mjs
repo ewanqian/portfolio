@@ -16,7 +16,7 @@ const processChrome = spawn(chrome,['--headless=new','--no-sandbox','--disable-g
 const sleep = ms=>new Promise(r=>setTimeout(r,ms))
 let ws, seq=0
 const pending = new Map()
-const report = {browser:'Chromium CDP',routes:[],digitalGardenMotion:{status:'NOT RUN'},viewport:{width:1440,height:900},runDate:new Date().toISOString()}
+const report = {browser:'Chromium CDP',routes:[],digitalGardenMotion:{status:'NOT RUN'},mp4Playback:{status:'NOT RUN'},viewport:{width:1440,height:900},runDate:new Date().toISOString()}
 async function connect() {
   let port
   for(let i=0;i<100;i++){const f=path.join(tmp,'DevToolsActivePort');if(fs.existsSync(f)){port=fs.readFileSync(f,'utf8').split('\n')[0];break}await sleep(100)}
@@ -94,10 +94,24 @@ try{
     console.log(name,JSON.stringify({h1:details.h1,images:details.images.length,badImages:badImages.length,workCards:details.workCards,workIndexRows:details.workIndexRows,workshopCards:details.workshopCards}))
   }
   report.digitalGardenMotion=await motionCheck()
+  await navigate(base+'/#/projects/digital-garden')
+  report.mp4Playback=await evalJs(`(async()=>{
+    const video=document.querySelector('video.project-motion-video')
+    if(!video)return {status:'FAIL',reason:'Video element missing'}
+    let playError=''
+    try{await Promise.race([video.play(),new Promise((_,reject)=>setTimeout(()=>reject(Error('play timeout')),6000))])}
+    catch(e){playError=String(e)}
+    const first=video.currentTime
+    await new Promise(r=>setTimeout(r,1500))
+    const second=video.currentTime
+    return {status:second>first+0.3?'PASS':'FAIL',first,second,readyState:video.readyState,paused:video.paused,
+      videoWidth:video.videoWidth,videoHeight:video.videoHeight,playError}
+  })()`)
+  console.log('Digital Garden MP4 browser playback:',JSON.stringify(report.mp4Playback))
   console.log('Digital Garden Chromium pixels:',JSON.stringify(report.digitalGardenMotion))
   await command('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]})
   await navigate(base+'/#/projects/digital-garden')
-  report.reducedMotion=await evalJs(`({reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,sourceMatches:document.querySelector('picture.project-motion-sample source')?.media,chosen:document.querySelector('picture.project-motion-sample img')?.currentSrc})`)
+  report.reducedMotion=await evalJs(`({reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,videoHidden:getComputedStyle(document.querySelector('.project-motion-video')).display==='none',stillVisible:getComputedStyle(document.querySelector('.project-motion-reduced')).display!=='none'})`)
   const output=path.resolve('docs/media-intake/browser-qa-2026-11.json')
   fs.mkdirSync(path.dirname(output),{recursive:true})
   fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n')
@@ -105,6 +119,7 @@ try{
   const failures=report.routes.flatMap(r=>r.badImages.map(i=>({route:r.name,src:i.src,error:i.error})))
   console.log('Broken image decode:',JSON.stringify(failures.slice(0,60)))
   if(failures.length)process.exitCode=2
-  if(report.digitalGardenMotion.status!=='PASS')process.exitCode=2
+  if(report.mp4Playback.status!=='PASS')process.exitCode=2
+  if(!report.reducedMotion?.videoHidden||!report.reducedMotion?.stillVisible)process.exitCode=2
 }catch(e){console.error('Browser QA FAIL:',e);process.exitCode=2}
 finally{ws?.close();processChrome.kill('SIGKILL');fs.rmSync(tmp,{force:true,recursive:true})}
