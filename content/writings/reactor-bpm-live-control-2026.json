@@ -1,0 +1,16 @@
+{
+  "id": "reactor-bpm-live-control-2026",
+  "slug": "reactor-bpm-live-control-2026",
+  "title": "REACTOR：BPM、闪烁与现场判断",
+  "titleEn": "REACTOR: BPM, Flash, and Live Judgment",
+  "type": "Field Note / Live Method",
+  "category": "field-note",
+  "date": "2026-11-04",
+  "summary": "把长循环素材、BPM 动画、Piano Trigger 与脚踏操作组织成一套能跟随 DJ、又能随时减法的 Resolume Arena 现场系统。",
+  "summaryEn": "Layering continuous loops, BPM animations, Piano triggers and foot controls into a responsive Resolume Arena performance method.",
+  "articlePath": "docs/articles/reactor-bpm-live-control-2026.md",
+  "status": "published",
+  "featured": true,
+  "order": 5,
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/articles/reactor-bpm-live-control-2026.md"
+}
