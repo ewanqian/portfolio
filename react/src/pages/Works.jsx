@@ -16,6 +16,7 @@ const workIndexIds = [
   'timer',
   'digital-garden-visual-2025',
   'natgeo-crystal-2026',
+  'china-ai-gala-2026',
   'system-ersha-2026',
   'transit',
   'mke-terminal',
@@ -70,6 +71,11 @@ const recoveredRecords = [
 ]
 
 const recoveredEnglish = {
+  'china-ai-gala-2026': {
+    title: 'China AI Gala — AI Together Opening Show',
+    subtitle: 'Stage visual / robotics imagery / perspective mapping',
+    summary: 'Opening visuals for a box-shaped LED stage, combining robotic imagery, three-dimensional scenes and perspective-mapped composition.'
+  },
   'natgeo-crystal-2026': {
     title: 'National Geographic — Crystal Landscape',
     subtitle: 'Spatial image design / hotel and experience-centre scanning',
