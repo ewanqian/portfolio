@@ -25,7 +25,7 @@
   letter-spacing: .08em; white-space: nowrap;
 }
 .writing-editorial-feature-grid {
-  display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+  display: grid; grid-template-columns: 1.3fr 1fr 1fr;
   gap: clamp(.75rem, 2.5vw, 2.5rem);
 }
 .writing-editorial-entry { min-width: 0; }
@@ -71,6 +71,9 @@
   color: var(--muted); font-size: .86rem; line-height: 1.75;
 }
 .writing-edition-research .writing-editorial-list .writing-editorial-entry { opacity: .84; }
+@media(max-width:1020px){
+  .writing-editorial-feature-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
 @media(max-width:820px){
   .writing-editorial-list .writing-editorial-entry {
     grid-template-columns: minmax(0,1fr) auto;
