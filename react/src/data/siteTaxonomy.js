@@ -1,5 +1,5 @@
 export const homeMainlineWorkIds = [
-  'kashiwa',
+  'titan',
   'drop-flow',
   'timer',
   'digital-garden-visual-2025'
@@ -8,7 +8,7 @@ export const homeMainlineWorkIds = [
 export const homeGalleryWorkIds = []
 
 export const galleryWorkIds = [
-  'kashiwa',
+  'titan',
   'drop-flow',
   'timer',
   'digital-garden-visual-2025'
@@ -17,7 +17,7 @@ export const galleryWorkIds = [
 export const productionWorkIds = [
   'xtep-xdna22aw-visual-2022',
   'zcool-hp-live-2021',
-  'kashiwa',
+  'titan',
   'kashiwa-band-visual-2025',
   'yujiayun-45ping-visual-2025',
   'rain-singapore-visual-2026',
