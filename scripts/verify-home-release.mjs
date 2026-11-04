@@ -77,7 +77,7 @@ try{
   const music=await check('music-report','/#/writing/performable-music','zh',1440,900)
   const expected=['/writing/reactor-bpm-system-2026','/writing/entropy-two-screen-2026','/writing/performable-music']
   if(en.projectCount!==4||zh.projectCount!==4)throw Error('Exactly four selected projects required')
-  if(JSON.stringify(en.researchLinks)!==JSON.stringify(expected))throw Error('Research hierarchy incorrect')
+  if(JSON.stringify(en.researchLinks.map(x=>x.replace(/^#/,'')))!==JSON.stringify(expected))throw Error('Research hierarchy incorrect')
   if(!writing.writingHeading.some(t=>/REACTOR/.test(t)))throw Error('REACTOR missing on Writing page')
   if(!reactor.text.includes('REACTOR')||!entropy.text.includes('ENTROPY')||!music.text.includes('Performable'))throw Error('Research article details missing')
   for(const p of report.checks){if(p.imageErrors.length||p.horizontalOverflow)throw Error(p.name+': decoded images or horizontal overflow')}
