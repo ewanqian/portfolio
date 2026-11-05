@@ -12,6 +12,7 @@ import '../styles/writing-index.css'
 // but is not rendered as a published article.
 const EDITORIAL_FEATURES = ['reactor-bpm-system-2026', 'entropy-two-screen-2026', 'scene-forge-reader-02']
 const RESEARCH_NOTES = ['performable-music', 'performance-control-model']
+const PERFORMABLE_MUSIC_SERIES = ['pm-history-of-programmable-music', 'pm-seven-audiovisual-lineages', 'pm-eight-instruments-sixteen-works', 'pm-human-agent-studio-reader']
 
 function byOrder(items) {
   return [...items].sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
@@ -49,8 +50,10 @@ function Writing() {
   const byId = new Map(records.map((item) => [item.id, item]))
   const featured = EDITORIAL_FEATURES.map((id) => byId.get(id))
     .filter((item) => item?.articlePath && item.status === 'published')
+  const musicSeries = PERFORMABLE_MUSIC_SERIES.map((id) => byId.get(id))
+    .filter((item) => item?.articlePath && item.status === 'published')
   const otherPublished = byOrder(records.filter((item) =>
-    item.articlePath && item.status === 'published' && !EDITORIAL_FEATURES.includes(item.id)
+    item.articlePath && item.status === 'published' && !EDITORIAL_FEATURES.includes(item.id) && !PERFORMABLE_MUSIC_SERIES.includes(item.id)
   ))
   const research = RESEARCH_NOTES.map((id) => byId.get(id)).filter((item) => item?.articlePath)
 
@@ -81,6 +84,23 @@ function Writing() {
             </div>
           </div>
         </section>
+
+        {musicSeries.length ? (
+          <section className="section writing-edition-published" aria-labelledby="writing-music-series-heading">
+            <div className="container">
+              <div className="writing-edition-section-heading">
+                <h2 id="writing-music-series-heading">{language === 'en' ? 'Performable Music / Research Series' : '可表演音乐 · 研究专题'}</h2>
+                <span>02 / MUSIC STUDIES</span>
+              </div>
+              <p className="writing-edition-category-note">{language === 'en'
+                ? 'Electronic music history, artist lineages, composition studies and a human–agent studio practice.'
+                : '从电子音乐的历史与方法，到艺术家谱系、16 首实验专辑和 Agent 协作制作练习。四篇可独立阅读的研究文章。'}</p>
+              <div className="writing-editorial-list">
+                {musicSeries.map((item) => <EditorialEntry key={item.id} item={item} language={language} kind="PERFORMABLE MUSIC" />)}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         {otherPublished.length ? (
           <section className="section writing-edition-published" aria-labelledby="writing-published-heading">
