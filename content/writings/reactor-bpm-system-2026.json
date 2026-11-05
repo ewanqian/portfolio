@@ -12,5 +12,25 @@
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/journal/reactor-bpm-system-2026.md",
   "status": "published",
   "featured": true,
-  "order": 1
+  "order": 1,
+  "sectionMedia": [
+    {
+      "afterHeading": "01｜先学会看音乐的时间线",
+      "src": "/portfolio/assets/reactor-2026/reactor-beatlink-waveform-square.jpg",
+      "repoPath": "assets/reactor-2026/reactor-beatlink-waveform-square.jpg",
+      "alt": "Beat Link Trigger 上显示的 DJ 播放器波形、播放位置与 BPM 信息",
+      "label": "FIG. 01",
+      "caption": "DJ 时间线：观察播放位置、BPM、节拍网格及前方的波形变化。",
+      "credit": "Ewan Qian · 现场操作视频截帧"
+    },
+    {
+      "afterHeading": "07｜从控制台回到整个空间",
+      "src": "/portfolio/assets/reactor-2026/reactor-2026-06.webp",
+      "repoPath": "assets/reactor-2026/reactor-2026-06.webp",
+      "alt": "REACTOR 现场的红色舞台灯光、观众剪影与舞池空间",
+      "label": "FIG. 02",
+      "caption": "从控制台回到现场：舞台屏幕、灯光和观众处于同一空间。",
+      "credit": "Ewan Qian · 现场摄影"
+    }
+  ]
 }
