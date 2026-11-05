@@ -30,7 +30,7 @@ async function evaluate(expression){
 const report={date:new Date().toISOString(),origin:home,samples:[],limitations:['Chromium only, not Safari/Firefox','External URLs may be unavailable independently of deployment','Image crop aesthetic requires human review']}
 try{
  let port
- for(let i=0;i<100;i++){const f=path.join(tmp,'DevToolsActivePort');if(fs.existsSync(f)){port=fs.readFileSync(f,'utf8').split('\\n')[0];break}await sleep(100)}
+ for(let i=0;i<100;i++){const f=path.join(tmp,'DevToolsActivePort');if(fs.existsSync(f)){port=fs.readFileSync(f,'utf8').split('\n')[0];break}await sleep(100)}
  if(!port)throw Error('Chrome did not start')
  const pages=await(await fetch(`http://127.0.0.1:${port}/json/list`)).json()
  ws=new WebSocket(pages.find(x=>x.type==='page').webSocketDebuggerUrl)
@@ -70,7 +70,7 @@ try{
  const bad=report.samples.flatMap(s=>s.images.filter(x=>x.error||!x.naturalWidth).map(x=>({mode:s.mode,...x})))
  report.failures=bad
  report.passed=report.samples.every(s=>s.cards===9&&s.columns===(s.mode==='desktop'?3:2)&&s.hasBpmReport&&!s.horizontalOverflow)&&bad.length===0
- fs.writeFileSync(path.join(dir,'report.json'),JSON.stringify(report,null,2)+'\\n')
+ fs.writeFileSync(path.join(dir,'report.json'),JSON.stringify(report,null,2)+'\n')
  if(!report.passed)process.exitCode=2
-}catch(e){console.error('QA ERROR',String(e));report.error=String(e);fs.writeFileSync(path.join(dir,'report.json'),JSON.stringify(report,null,2)+'\\n');process.exitCode=2}
+}catch(e){console.error('QA ERROR',String(e));report.error=String(e);fs.writeFileSync(path.join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');process.exitCode=2}
 finally{ws?.close();proc.kill('SIGKILL');await sleep(300);fs.rmSync(tmp,{recursive:true,force:true})}
