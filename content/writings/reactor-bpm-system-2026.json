@@ -1,16 +1,16 @@
 {
   "id": "reactor-bpm-system-2026",
   "slug": "reactor-bpm-system-2026",
-  "title": "BPM Sync 2026：把视频素材组织成 Club 实时演出",
-  "titleEn": "BPM Sync 2026 — From Video Clips to a Club Live Visual Set",
-  "type": "Club Live Visual / Field Guide",
-  "category": "field-note",
+  "title": "BPM System 2026｜从视频素材到实时演出控制系统",
+  "titleEn": "BPM System 2026 — From Video Clips to Realtime Performance Control",
+  "type": "Research Report / Live Visual System",
+  "category": "research",
   "date": "2026-11-04",
-  "summary": "以 REACTOR Opening 的 DJ 播放器波形为入口，介绍如何观察整首音乐的时间线、使用 Resolume BPM Sync 组织视频与特效，再按需要接入键盘、MIDI、脚踏和外部同步。",
-  "summaryEn": "A practical field guide to DJ waveforms, Resolume BPM Sync, layered video, manual control and optional external devices, illustrated by REACTOR Opening.",
+  "summary": "基于 REACTOR Opening 的实地经验，研究 DJ 波形、BPM 与相位、Resolume 视频层、Cue 与人工触发如何构成可现场演奏的实时视听系统；区分已验证的操作方法与进一步研究。",
+  "summaryEn": "A practice-based report from REACTOR Opening on DJ waveforms, BPM and phase, Resolume visual layers, cueing and human control as a performable live audiovisual system.",
   "articlePath": "docs/journal/reactor-bpm-system-2026.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/journal/reactor-bpm-system-2026.md",
   "status": "published",
   "featured": true,
-  "order": 2
+  "order": 1
 }

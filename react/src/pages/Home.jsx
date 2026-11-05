@@ -17,8 +17,8 @@ function HomeInfo() {
         <div className="home-info-copy">
           <p>
             {isZh
-              ? '钱誉文 / Ewan Qian，新媒体视觉艺术家与现场视觉表演者。工作集中于现场音画、空间影像、实时图像系统，以及这些方法在舞台与数字空间中的迁移。'
-              : 'Ewan Qian is a media artist and live visual performer working with audiovisual performance, spatial image, realtime image systems, and their movement across stages and digital environments.'}
+              ? '钱誉文 / Ewan Qian，上海的新媒体艺术家与实时视听系统创作者，VIRTURA 发起人。实践涵盖音乐现场、异形屏与大型空间影像、建筑点云扫描、XR 空间输入及 AI 辅助实时视觉系统；从作品设计到现场交付，并持续公开创作研究与方法。'
+              : 'Ewan Qian is a Shanghai-based media artist and realtime audiovisual systems creator, and founder of VIRTURA. His practice spans live performance, architectural screens, point-cloud spatial capture, XR input and AI-assisted realtime visual systems, connecting artistic research with production and on-site delivery.'}
           </p>
           <div className="home-info-links">
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
@@ -39,11 +39,11 @@ function CurrentResearch() {
   const notes = [
     {
       id: 'reactor-bpm-system-2026',
-      title: 'REACTOR — BPM System',
-      sub: isZh ? '实时演出控制系统' : 'Realtime performance control',
+      title: 'BPM System 2026 / REACTOR',
+      sub: isZh ? '重点研究报告 · 实时演出系统' : 'Featured research report · Realtime show systems',
       description: isZh
-        ? 'BPM 同步、持续视觉、触发器与人的现场判断。'
-        : 'BPM sync, continuous imagery, triggers and live performer decisions.'
+        ? '从音乐时间线、BPM 同步到视觉层、手动 Cue 与实时控制：一套从素材组织走向可演奏现场系统的实践研究。'
+        : 'A practice-based study of music timelines, BPM sync, visual layers, manual cues and realtime controls—from clips to a performable live system.'
     },
     {
       id: 'entropy-two-screen-2026',
@@ -66,7 +66,7 @@ function CurrentResearch() {
     <section className="home-current-research" aria-labelledby="home-research-heading">
       <div className="container home-current-research-grid">
         <div className="home-current-research-label" id="home-research-heading">
-          {isZh ? '近期研究 / 2026—' : 'Current Research / 2026—'}
+          {isZh ? '重点研究与写作 / 2026' : 'Research & Writing / 2026'}
         </div>
         <div className="home-current-research-content">
           <div className="home-research-notes">
@@ -77,7 +77,7 @@ function CurrentResearch() {
               </article>
             ))}
           </div>
-          <Link className="home-research-index-link" to="/writing">{isZh ? '全部写作' : 'All writing'} ↗</Link>
+          <Link className="home-research-index-link" to="/writing">{isZh ? '查看研究报告与全部文章' : 'Research reports and all writing'} ↗</Link>
         </div>
       </div>
     </section>

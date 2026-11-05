@@ -30,6 +30,51 @@ const projectNotes = {
     summary: 'An ongoing work about temporal structure across sound, image, and spatial display. The current representative public version is the circular-screen presentation at UFO Terminal’s Loading… Access 2.',
     summaryZh: '围绕时间、声音、影像结构与空间呈现展开的长期项目；目前最具代表性的公开版本，是 UFO Terminal「加载…权限 2」中的环形屏幕呈现。'
   },
+  'china-ai-gala-2026': {
+    titleZh: '中国 AI 盛典「AI 在一起」',
+    context: 'China AI Gala · 2026',
+    contextZh: '中国 AI 盛典 · 2026',
+    role: 'Stage visual / 3D spatial imagery',
+    roleZh: '开场舞台视觉 / 三维空间影像',
+    summary: 'Opening-show visual production for an architectural stage with perspective-mapped imagery.',
+    summaryZh: '围绕盒体舞台、透视映射与机器人视觉组织的开场影像制作。'
+  },
+  'natgeo-crystal-2026': {
+    titleZh: '中国国家地理 · 矿晶影像',
+    context: 'National Geographic · 2026',
+    contextZh: '中国国家地理 · 2026',
+    role: 'Multi-screen media / spatial capture',
+    roleZh: '多屏空间影像 / 三维扫描',
+    summary: 'Crystal-themed media across architectural displays, alongside spatial capture and documentation.',
+    summaryZh: '矿晶主题多屏影像，以及酒店与体验空间的三维扫描记录。'
+  },
+  'system-ersha-2026': {
+    titleZh: 'SYSTEM × 二砂 · 点云扫描',
+    context: 'SYSTEM / ERSHA · 2026',
+    contextZh: 'SYSTEM × 郑州二砂 · 2026',
+    role: 'Spatial capture / point-cloud imagery',
+    roleZh: '建筑扫描 / 点云影像',
+    summary: 'Architectural point-cloud capture and visual-effects material for the SYSTEM documentary.',
+    summaryZh: '面向 SYSTEM 纪录片制作的建筑空间扫描、点云重组与特效影像。'
+  },
+  'rain-singapore-visual-2026': {
+    titleZh: 'RAIN · 新加坡舞台视觉',
+    context: 'Singland Festival · 2026',
+    contextZh: '新加坡 Singland Festival · 2026',
+    role: 'Stage screen visual production',
+    roleZh: '舞台屏幕影像制作',
+    summary: 'Selected large-screen visuals for Rain’s It’s Raining remix performance.',
+    summaryZh: '为 Rain《It’s Raining》混音舞台版本制作的精选大屏幕影像。'
+  },
+  'yujiayun-45ping-visual-2025': {
+    titleZh: '余佳运《45㎡》舞台视觉',
+    context: '45㎡ Concert · 2025',
+    contextZh: '余佳运《45㎡》· 2025',
+    role: 'Concert opening / stage screens',
+    roleZh: '演唱会开场 / 大屏幕制作',
+    summary: 'Opening visual and selected screen materials for the 45㎡ concert.',
+    summaryZh: '《45㎡》演唱会开场与部分曲目屏幕视觉制作。'
+  },
   'digital-garden-visual-2025': {
     context: 'Xi’an MixC · 2025',
     contextZh: '西安万象城「数字游园」· 2025',
@@ -85,7 +130,7 @@ function SelectedWorks() {
       <div className="container">
         <div className="editorial-work-heading">
           <span>{isZh ? '代表作品' : 'Selected work'}</span>
-          <span>2024—2026</span>
+          <span>{selectedWorks.length} / 2024—2026</span>
         </div>
         <ProjectGrid items={selectedWorks} language={language} />
       </div>
