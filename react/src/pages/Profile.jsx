@@ -6,14 +6,14 @@ import { useLanguage } from '../i18n/LanguageContext.jsx'
 const copy = {
   zh: {
     name: '钱誉文 / Ewan Qian',
-    roles: '媒体艺术家 / 现场视觉创作者 / 独立制作人',
+    roles: '新媒体艺术家 / 现场视听系统 / 空间影像与 XR',
     intro:
-      '钱誉文 / Ewan Qian 是媒体艺术家、现场视觉创作者与独立制作人，Virtura Collective 与 Virtura Spaceport 方向发起人之一。他的工作围绕现场音画、空间影像、程序化图像系统与数字场景展开，关注声音、图像、材质与空间气氛如何在现场形成清晰的演出结构。',
+      '钱誉文 / Ewan Qian，常驻上海的新媒体艺术家、实时视听系统创作者，VIRTURA 发起人。以空间为画布、光影为材料，持续实践现场演出、异形屏与建筑空间影像、实时引擎、点云扫描、XR 空间输入及 AI 辅助创作。他的项目同时关注作品的观念、可被演奏的交互结构与现实场地中的技术交付；近期研究包括 BPM System 2026、ENTROPY 双屏演出及可表演音乐。',
     facts: [
       ['Base', '上海'],
-      ['Focus', '现场音画 / 空间影像 / 数字场景'],
-      ['Studio', 'Virtura Collective / Virtura Spaceport'],
-      ['Tools', 'Blender / Geometry Nodes / AI-assisted workflow']
+      ['Focus', '实时视听 / 空间影像 / 交互演出 / 空间计算'],
+      ['Practice', 'VIRTURA / 个人创作与合作项目'],
+      ['Tools', 'Blender / WebGL / Max/MSP / Ableton / XR / AI']
     ],
     nav: [
       ['概览', 'practice'],
@@ -145,14 +145,14 @@ const copy = {
   },
   en: {
     name: 'Ewan Qian / 钱誉文',
-    roles: 'Media Artist / Live Visual Creator / Independent Producer',
+    roles: 'Media Artist / Realtime Audiovisual Systems / Spatial Computing',
     intro:
-      'Ewan Qian’s practice begins with live audiovisual work and extends into spatial images, procedural image systems, digital scenes, production workflows, and long-term archives. He is less interested in whether an image is simply striking than in how sound, image, material, time, light, and bodily perception form a structure in a live environment.',
+      'Ewan Qian is a Shanghai-based media artist and founder of VIRTURA, developing realtime audiovisual systems, spatial imagery and interactive performance. His practice spans concerts, architectural screens, point-cloud spatial capture, XR inputs, creative coding and AI-assisted workflows. His current research includes BPM System 2026, the two-screen ENTROPY performance and performable music, connecting artistic inquiry with the practical conditions of live production.',
     facts: [
       ['Base', 'Shanghai'],
-      ['Focus', 'Live visuals / spatial image / digital scenes'],
-      ['Studio', 'Virtura Collective / Virtura Spaceport'],
-      ['Tools', 'Blender / Geometry Nodes / AI-assisted workflow']
+      ['Focus', 'Realtime A/V / spatial imagery / interactive performance / spatial computing'],
+      ['Practice', 'VIRTURA / independent and collaborative work'],
+      ['Tools', 'Blender / WebGL / Max/MSP / Ableton / XR / AI']
     ],
     nav: [
       ['Overview', 'practice'],
