@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import MarkdownReader from '../components/content/MarkdownReader.jsx'
+import SectionFigures from '../components/content/SectionFigures.jsx'
 import ReactorBpmFigures from '../components/content/ReactorBpmFigures.jsx'
 import '../styles/reactor-bpm.css'
 import writings from '../data/generated/writings'
@@ -323,6 +324,10 @@ function WritingDetail() {
 
   const markdown = buildMarkdown || runtimeMarkdown
   const special = writing.id === 'performance-control-model'
+  const renderSectionFigures = (heading) => {
+    const matched = (writing.sectionMedia || []).filter((media) => media.afterHeading === heading)
+    return matched.length ? <SectionFigures figures={matched} /> : null
+  }
 
   return (
     <>
@@ -385,7 +390,7 @@ function WritingDetail() {
         <section className="section">
           <div className={`container writing-reader-layout ${writing.id === 'reactor-bpm-system-2026' ? 'bpm-reader-layout' : ''}`}>
             <div className="bpm-reader-main">
-              {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
+              {markdown ? <MarkdownReader markdown={markdown} sourcePath={writing.articlePath} renderAfterHeading={writing.sectionMedia?.length ? renderSectionFigures : undefined} /> : <div className="markdown-reader"><h2>Loading canonical text</h2><p>如果 GitHub Raw 暂时不可访问，可以打开右侧 canonical Markdown。</p></div>}
             </div>
             {writing.id === 'reactor-bpm-system-2026'
               ? <aside className="bpm-reader-aside"><ReactorBpmFigures section="sidebar" /></aside>
