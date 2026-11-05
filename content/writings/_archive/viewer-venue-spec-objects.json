@@ -7,7 +7,12 @@
   "summary": "讨论为什么交付规格、场地适配和播放条件不该只存在于项目备注里，而要进入对象层。",
   "relatedWork": null,
   "relatedNode": null,
-  "status": "planned",
+  "status": "archived",
   "featured": false,
-  "order": 5
+  "order": 5,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

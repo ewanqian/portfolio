@@ -9,7 +9,8 @@
     "build": "vite build",
     "postbuild": "node scripts/copy-workspace-assets.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:writing": "node ../scripts/validate-writing-publications.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

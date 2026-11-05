@@ -9,5 +9,10 @@
   "relatedNode": null,
   "status": "planned",
   "featured": false,
-  "order": 4
+  "order": 4,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "rewrite-candidate"
+  }
 }

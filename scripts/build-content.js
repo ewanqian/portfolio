@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { validateWritingCatalog } from './validate-writing-publications.mjs'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(here, '..')
@@ -68,6 +69,8 @@ function attachWritingArticle(writing) {
 const works = readJsonFiles(path.join(contentDir, 'works'))
 const nodes = readJsonFiles(path.join(contentDir, 'nodes'))
 const assets = readJsonFiles(path.join(contentDir, 'assets'))
+validateWritingCatalog(repoRoot)
+
 const writings = readJsonFiles(path.join(contentDir, 'writings'))
   .map(attachWritingArticle)
 const relations = readJsonFiles(path.join(contentDir, 'relations'))

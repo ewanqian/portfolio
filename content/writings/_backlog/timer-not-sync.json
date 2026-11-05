@@ -7,7 +7,12 @@
   "summary": "讨论 TIMER 系列如何把节拍、频段与时间结构转成持续的图像组织。",
   "relatedWork": "timer",
   "relatedNode": null,
-  "status": "published",
-  "featured": true,
-  "order": 2
+  "status": "planned",
+  "featured": false,
+  "order": 2,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "rewrite-candidate"
+  }
 }

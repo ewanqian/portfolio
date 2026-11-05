@@ -7,7 +7,12 @@
   "summary": "解释交付规格、播放条件和版本管理为什么会反过来影响作品本体。",
   "relatedWork": null,
   "relatedNode": null,
-  "status": "draft",
+  "status": "archived",
   "featured": false,
-  "order": 3
+  "order": 3,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }
