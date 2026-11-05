@@ -38,6 +38,17 @@ REACTOR / BPM System 提供节拍同步与人工触发的现场证据；Stage Ca
 
 *Research in progress, not a released music library or completed performance.*
 
+### Writing / 公开研究专题
+
+四篇可独立阅读的文章现归档于 [Performable Music / Writing](../../writings/performable-music/README.md)：
+
+- [从声音物件到可编程音乐](../../writings/performable-music/01-from-tape-to-programmable-music.md)
+- [七条声音谱系：从微声到空间表演](../../writings/performable-music/02-seven-audiovisual-lineages.md)
+- [八件乐器，十六首作品](../../writings/performable-music/03-eight-instruments-sixteen-works.md)
+- [一间由 Agent 协助的电子音乐工作室](../../writings/performable-music/04-human-agent-studio-reader.md)
+
+这是研究与创作方法的公开文本，详细曲目规格、Agent 调度和可重建实验保存在 [performable-music](https://github.com/ewanqian/performable-music)；研究文章不意味着这些作品已经制作完成。
+
 ### Reading / systems
 - [REACTOR — BPM System](../../docs/journal/reactor-bpm-system-2026.md)
 - [Performance Control Model](../performance-control-model/README.md)
