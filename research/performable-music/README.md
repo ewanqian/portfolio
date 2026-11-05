@@ -53,3 +53,12 @@ REACTOR / BPM System 提供节拍同步与人工触发的现场证据；Stage Ca
 - [REACTOR — BPM System](../../docs/journal/reactor-bpm-system-2026.md)
 - [Performance Control Model](../performance-control-model/README.md)
 - [Minimal Input Lab](../../workshops/minimal-input-lab/README.md)
+
+### Composition grammar and expectation research (2026-11-05)
+
+- [音乐中的“期待”究竟是什么？](../../writings/performable-music/05-what-is-musical-expectation.md) — IDyOM、概率/信息量、五种作曲操作和 32 小节可证伪实验。
+- [Agent 化作曲需要什么语法？](../../writings/performable-music/06-agent-composition-grammar.md) — 动机、乐段、操作、音色与现场控制的中间表示。
+- [2026 年，Agent 化编曲到底能做什么？](../../writings/performable-music/07-2026-agent-music-systems.md) — Live MCP、Somax2、Magenta RealTime 2 等实际能力、成本和限制。
+- [Composition Plan v1 / 开源执行协议](https://github.com/ewanqian/performable-music/tree/main/protocols/composition-plan-v1)；[32 小节 A/B MIDI 实验](https://github.com/ewanqian/performable-music/tree/main/studies/011-musical-expectation)。
+
+这些文档说明可复用研究方法，不代表音乐质量或真实 Vision Pro 联调已经过关。
