@@ -1,0 +1,17 @@
+{
+  "id": "pm-history-of-programmable-music",
+  "slug": "pm-history-of-programmable-music",
+  "title": "从声音物件到可编程音乐",
+  "titleEn": "From Sound Objects to Programmable Music",
+  "type": "Research Essay / Electronic Music History",
+  "category": "research",
+  "date": "2026-11-05",
+  "summary": "理解从具体音乐、合成、MIDI、Max/MSP 到 Agent 的六次控制权转移，并区分可编程音乐与可表演音乐。",
+  "summaryEn": "From Sound Objects to Programmable Music — a practice-based Performable Music study.",
+  "articlePath": "writings/performable-music/01-from-tape-to-programmable-music.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/writings/performable-music/01-from-tape-to-programmable-music.md",
+  "status": "published",
+  "featured": false,
+  "order": 1,
+  "series": "Performable Music / 可表演音乐"
+}
