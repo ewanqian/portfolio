@@ -1,0 +1,48 @@
+name: Homepage nine-project visual QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/qa-home-nine.mjs"
+      - ".github/workflows/homepage-nine-qa.yml"
+      - "react/**"
+      - "content/**"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  homepage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install, build and prepare font
+        run: |
+          npm ci
+          npm ci --prefix react
+          npm run build --prefix react
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Render and inspect actual homepage
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd react && npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/home-preview.log 2>&1) &
+          PID=$!
+          trap 'kill "$PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:4173/ >/dev/null; then break; fi
+            sleep 1
+          done
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then echo "Chrome NOT RUN"; exit 2; fi
+          CHROME_BIN="$CHROME" node scripts/qa-home-nine.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: home-nine-review
+          path: docs/media-intake/home-nine-qa/*
+          if-no-files-found: warn
