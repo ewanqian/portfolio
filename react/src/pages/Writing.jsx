@@ -88,7 +88,7 @@ function Writing() {
               </div>
               <p className="writing-edition-category-note">{language === 'en'
                 ? 'Electronic music history, artist lineages, composition studies and a human–agent studio practice.'
-                : '从电子音乐的历史与方法，到艺术家谱系、16 首实验专辑和 Agent 协作制作练习。四篇可独立阅读的研究文章。'}</p>
+                : '从电子音乐的历史与方法，到艺术家谱系、16 首实验专辑和 Agent 协作制作练习。涵盖音乐认知、作曲语法与实际软件能力的研究文章。'}</p>
               <div className="writing-editorial-list">
                 {musicSeries.map((item) => <EditorialEntry key={item.id} item={item} language={language} kind="PERFORMABLE MUSIC" />)}
               </div>
