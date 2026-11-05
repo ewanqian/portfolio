@@ -96,17 +96,12 @@
 - [ ] 新用户无需了解作者先前的聊天记录也能理解。
 - [ ] 网站完成源码构建、发布构建及部署后再宣布上线。
 
-## 八、Writing 目录审计（2026-11-04）
+## 八、Writing 目录审计（2026-11-05）
 
-原始 `content/writings/` 共有 **28 条索引元数据**。其中 **4 条** 有可独立打开的 `articlePath`：BPM System、ENTROPY、Performable Music、Performance Control Model；其余 **24 条**只有摘要／项目指针或待写提纲，尚不具备 Published Writing 的正文条件。
+此次按实际条目而非发表标签重审：先审计原有 29 条（其中 7 条带 articlePath），再兼容同期新增的 4 篇可表演音乐专题正文。当前共 **33 条来源记录：7 篇 Published、2 项 Research in Progress、5 个内部待重写选题、19 个内部归档条目**。
 
-**本次执行：**
+所有历史题目保留在 _backlog 或 _archive 子目录供检索，不删除对应作品、研究工程或项目资料。完整逐项决策见 writing-catalog-audit-2026-11-05.md。
 
-- BPM System：保留为核心 Featured。
-- Scene Forge 第二期 Reader 0.2：新增完整教材条目，进入 Featured。
-- ENTROPY：保留在 Published / Field Notes，但从重点推荐中撤下。
-- Performable Music：归类 Research Proposal，状态为发展中，不再显示为 Published。
-- Performance Control Model：归类 Working Model，退出重点展示。
-- 24 条元数据占位项：保留于仓库以便后续写作和溯源，但从公开 Writing 目录隐藏，不删除原有内容。
+今后不能只凭 status=published 就宣称文章已完成：需要完整正文、真实素材、引用依据、人工审校及手机端实际验收；脚本提供最低限度的文件与结构准入检查。
 
-未来有新的完成稿时，只需配置有效 `articlePath`、验证正文与来源，再进入网站策展。保留先前 URL 的行为应独立审查，避免误删用户可能引用过的资源。
+出版组件和长期生产工作流见 writing-publication-system-v1.md。

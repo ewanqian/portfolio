@@ -7,7 +7,12 @@
   "summary": "从 Kashiwa / TITAN 等合作出发，讨论现场视觉如何进入音乐、空间、屏幕和观众经验之间的关系。",
   "relatedWork": "kashiwa",
   "relatedNode": "can-festival",
-  "status": "published",
-  "featured": true,
-  "order": 1
+  "status": "archived",
+  "featured": false,
+  "order": 1,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

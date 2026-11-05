@@ -7,7 +7,12 @@
   "summary": "记录一次播放测试如何暴露结构问题，并最终改变作品段落与交付逻辑。",
   "relatedWork": null,
   "relatedNode": null,
-  "status": "planned",
+  "status": "archived",
   "featured": false,
-  "order": 5
+  "order": 5,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }
