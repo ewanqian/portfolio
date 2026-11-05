@@ -73,6 +73,24 @@ export function validateWritingCatalog(repoRoot = defaultRoot) {
     if (entry.status === 'published' && entry.articlePath.startsWith('docs/portfolio-maintenance-os/')) {
       errors.push(name + ': internal project-management document cannot be a Published Writing article')
     }
+
+    for (const media of entry.sectionMedia || []) {
+      if (!media.afterHeading || !markdown.split('\n').some((line) => line.replace(/^#{1,4}\s+/, '').trim() === media.afterHeading)) {
+        errors.push(name + ': sectionMedia anchor must match an existing Markdown heading')
+      }
+      if (!media.alt || !media.caption || !media.credit) {
+        errors.push(name + ': sectionMedia needs accessible alt, caption and credit')
+      }
+      if (!media.repoPath || !media.src || !media.src.startsWith('/portfolio/')) {
+        errors.push(name + ': sectionMedia must include an existing public asset and repoPath')
+        continue
+      }
+      const figurePath = path.resolve(repoRoot, media.repoPath)
+      const figureRelative = path.relative(repoRoot, figurePath)
+      if (figureRelative.startsWith('..') || path.isAbsolute(figureRelative) || !fs.existsSync(figurePath)) {
+        errors.push(name + ': missing or unsafe sectionMedia asset: ' + media.repoPath)
+      }
+    }
   }
 
   if (errors.length) throw new Error('Writing publication gate failed:\n- ' + errors.join('\n- '))
