@@ -1,0 +1,17 @@
+{
+  "id": "pm-agent-composition-grammar",
+  "slug": "pm-agent-composition-grammar",
+  "title": "Agent 化作曲需要什么语法？",
+  "titleEn": "A Typed Grammar for Agent Composition",
+  "type": "Research Essay / Music Engineering",
+  "category": "research",
+  "date": "2026-11-05",
+  "summary": "提出 Composition Plan v1：曲式、动机、操作、音色与现场控制的分层协议，附可执行 Schema 与验证工具。",
+  "summaryEn": "A Typed Grammar for Agent Composition.",
+  "articlePath": "writings/performable-music/06-agent-composition-grammar.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/writings/performable-music/06-agent-composition-grammar.md",
+  "status": "published",
+  "featured": false,
+  "order": 6,
+  "series": "Performable Music / 可表演音乐"
+}
