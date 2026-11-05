@@ -10,7 +10,12 @@
   "summaryEn": "A working research model exploring state, feedback and controllability in realtime audiovisual performance.",
   "articlePath": "research/performance-control-model/README.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/research/performance-control-model/README.md",
-  "status": "draft",
+  "status": "archived",
   "featured": false,
-  "order": 2
+  "order": 2,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

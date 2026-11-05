@@ -7,7 +7,12 @@
   "summary": "讨论合作项目中的视觉角色、空间段落与现场氛围，以及合作中视觉如何真正进入演出结构。",
   "relatedWork": "kashiwa",
   "relatedNode": "can-festival",
-  "status": "published",
+  "status": "planned",
   "featured": false,
-  "order": 4
+  "order": 4,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "rewrite-candidate"
+  }
 }

@@ -7,7 +7,12 @@
   "summary": "关于 archive、viewer、内容协议与作品长期组织方式的一篇研究笔记。",
   "relatedWork": null,
   "relatedNode": null,
-  "status": "published",
-  "featured": true,
-  "order": 1
+  "status": "archived",
+  "featured": false,
+  "order": 1,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

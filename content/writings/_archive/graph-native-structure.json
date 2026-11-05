@@ -7,7 +7,12 @@
   "summary": "梳理 graph-native 网站在作品、节点、资产和写作之间的基本结构关系。",
   "relatedWork": null,
   "relatedNode": null,
-  "status": "planned",
+  "status": "archived",
   "featured": false,
-  "order": 3
+  "order": 3,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

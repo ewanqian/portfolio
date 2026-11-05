@@ -3,14 +3,19 @@
   "slug": "restage-re-executable-performance-space",
   "title": "ReStage：可再执行的演出空间",
   "titleEn": "ReStage: Re-executable Performance Space",
-  "type": "Research / Long-term Project",
+  "type": "Long-term Research / Proposal",
   "category": "research",
   "date": "2026-09-18",
-  "summary": "研究如何把一次现场视听演出保存为可测量、可重建、可编辑、可再次执行的空间状态，并以开放的 OPS 数据层连接 Web、Unity、Apple Vision Pro 与 AI Agent。",
-  "summaryEn": "A long-term research project on preserving live audiovisual performance as a measurable, reconstructable and re-executable spatial state shared across Web, Unity, Apple Vision Pro and AI agents.",
+  "summary": "ReStage 长期研究提案：以空间影像、声学测量、时间与状态数据，探索一次实时演出如何被保存、重建并再次执行；规范、验证和跨平台实现仍在研究中。",
+  "summaryEn": "A long-term research proposal for capturing and re-executing performance space through visual, acoustic, temporal, and state data. Implementation and cross-platform validation remain research goals.",
   "articlePath": "research/restage-re-executable-performance-space/README.md",
   "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/research/restage-re-executable-performance-space/README.md",
-  "status": "published",
-  "featured": true,
-  "order": 1
+  "status": "draft",
+  "featured": false,
+  "order": 2,
+  "editorial": {
+    "reviewedOn": "2026-11-05",
+    "decision": "research-in-progress",
+    "note": "A research specification and roadmap, not a completed reproducible publication."
+  }
 }

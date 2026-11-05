@@ -7,7 +7,12 @@
   "summary": "复盘 BO LIVE 专场中的视觉段落、现场气氛和合作结构如何一起成立。",
   "relatedWork": "kashiwa",
   "relatedNode": null,
-  "status": "planned",
+  "status": "archived",
   "featured": false,
-  "order": 3
+  "order": 3,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

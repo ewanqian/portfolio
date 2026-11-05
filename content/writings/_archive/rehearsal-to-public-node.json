@@ -7,7 +7,12 @@
   "summary": "追踪 rehearsal、场地测试和公开节点之间的连续关系，以及它们如何重塑作品判断。",
   "relatedWork": null,
   "relatedNode": null,
-  "status": "planned",
+  "status": "archived",
   "featured": false,
-  "order": 6
+  "order": 6,
+  "editorial": {
+    "visibility": "internal",
+    "reviewedOn": "2026-11-05",
+    "decision": "archived"
+  }
 }

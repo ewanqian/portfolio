@@ -10,9 +10,7 @@ import '../styles/writing-index.css'
 // Public Writing is a reading library, not a backlog of editorial placeholders.
 // An entry without a complete article is kept in content/writings for future work
 // but is not rendered as a published article.
-const EDITORIAL_FEATURES = ['reactor-bpm-system-2026', 'entropy-two-screen-2026', 'scene-forge-reader-02']
-const RESEARCH_NOTES = ['performable-music', 'performance-control-model']
-const PERFORMABLE_MUSIC_SERIES = ['pm-history-of-programmable-music', 'pm-seven-audiovisual-lineages', 'pm-eight-instruments-sixteen-works', 'pm-human-agent-studio-reader']
+const PERFORMABLE_MUSIC_SERIES_NAME = 'Performable Music / 可表演音乐'
 
 function byOrder(items) {
   return [...items].sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
@@ -47,15 +45,11 @@ function EditorialEntry({ item, language, featured = false, kind = '' }) {
 function Writing() {
   const { language } = useLanguage()
   const records = writings.map((writing) => localizeWriting(writing, language))
-  const byId = new Map(records.map((item) => [item.id, item]))
-  const featured = EDITORIAL_FEATURES.map((id) => byId.get(id))
-    .filter((item) => item?.articlePath && item.status === 'published')
-  const musicSeries = PERFORMABLE_MUSIC_SERIES.map((id) => byId.get(id))
-    .filter((item) => item?.articlePath && item.status === 'published')
-  const otherPublished = byOrder(records.filter((item) =>
-    item.articlePath && item.status === 'published' && !EDITORIAL_FEATURES.includes(item.id) && !PERFORMABLE_MUSIC_SERIES.includes(item.id)
-  ))
-  const research = RESEARCH_NOTES.map((id) => byId.get(id)).filter((item) => item?.articlePath)
+  const published = records.filter((item) => item.articlePath && item.status === 'published')
+  const featured = byOrder(published.filter((item) => item.featured === true))
+  const musicSeries = byOrder(published.filter((item) => item.series === PERFORMABLE_MUSIC_SERIES_NAME))
+  const otherPublished = byOrder(published.filter((item) => item.featured !== true && item.series !== PERFORMABLE_MUSIC_SERIES_NAME))
+  const research = byOrder(records.filter((item) => item.articlePath && item.status === 'draft' && item.category === 'research'))
 
   return (
     <>
@@ -78,8 +72,8 @@ function Writing() {
               <span>01 / SELECTED</span>
             </div>
             <div className="writing-editorial-feature-grid">
-              {featured.map((item, index) => (
-                <EditorialEntry key={item.id} item={item} language={language} featured kind={index === 0 ? 'LIVE SYSTEM / RESEARCH' : index === 1 ? 'PERFORMANCE / PROCESS' : 'WORKSHOP / READER'} />
+              {featured.map((item) => (
+                <EditorialEntry key={item.id} item={item} language={language} featured kind={item.id === 'scene-forge-reader-02' ? 'WORKSHOP / READER' : 'LIVE SYSTEM / RESEARCH'} />
               ))}
             </div>
           </div>
@@ -107,7 +101,7 @@ function Writing() {
             <div className="container">
               <div className="writing-edition-section-heading">
                 <h2 id="writing-published-heading">Published Writing</h2>
-                <span>02 / ARTICLES</span>
+                <span>03 / ARTICLES</span>
               </div>
               <div className="writing-editorial-list">
                 {otherPublished.map((item) => <EditorialEntry key={item.id} item={item} language={language} kind="FIELD NOTES" />)}
@@ -121,7 +115,7 @@ function Writing() {
             <div className="container">
               <div className="writing-edition-section-heading">
                 <h2 id="writing-research-heading">{language === 'en' ? 'Research in progress' : '研究草案'}</h2>
-                <span>03 / DEVELOPMENT</span>
+                <span>04 / DEVELOPMENT</span>
               </div>
               <p className="writing-edition-category-note">{language === 'en'
                 ? 'Proposals and evolving research models, presented separately from completed articles.'
@@ -129,7 +123,7 @@ function Writing() {
               <div className="writing-editorial-list">
                 {research.map((item) => (
                   <EditorialEntry key={item.id} item={item} language={language}
-                    kind={item.id === 'performable-music' ? 'PROPOSAL' : 'WORKING MODEL'} />
+                    kind={item.id === 'performable-music' ? 'PROPOSAL' : 'LONG-TERM RESEARCH'} />
                 ))}
               </div>
             </div>
