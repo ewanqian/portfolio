@@ -1,0 +1,17 @@
+{
+  "id": "pm-2026-agent-music-systems",
+  "slug": "pm-2026-agent-music-systems",
+  "title": "2026 年，Agent 化编曲到底能做什么？",
+  "titleEn": "What Agentic Music Systems Can Actually Do in 2026",
+  "type": "Research Report / Tool Evaluation",
+  "category": "research",
+  "date": "2026-11-05",
+  "summary": "实际比较 Live MCP、Extensions、Magenta Studio、Somax2、Magenta RealTime 2、ACE-Step 与 IDyOM 的边界。",
+  "summaryEn": "What Agentic Music Systems Can Actually Do in 2026.",
+  "articlePath": "writings/performable-music/07-2026-agent-music-systems.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/writings/performable-music/07-2026-agent-music-systems.md",
+  "status": "published",
+  "featured": false,
+  "order": 7,
+  "series": "Performable Music / 可表演音乐"
+}
