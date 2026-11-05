@@ -471,7 +471,27 @@
   .home-current-research-content { margin-top: 12px; }
 }
 
-/* Small research index, kept subordinate to the original four work cards. */
+/* Research reports are a distinct, substantial part of the practice. */
+.home-current-research { padding: 45px 0 52px; }
+.home-current-research-label { font-size: 12px; font-weight: 600; color: var(--text); }
+.home-current-research-content { grid-column: 4 / 13; }
+.home-research-notes { grid-template-columns: minmax(0, 1.45fr) repeat(2, minmax(0,1fr)); gap: 22px; }
+.home-research-note { padding: 15px 0 14px; margin: 0; border-top: 1px solid var(--line-strong); border-bottom: 0; }
+.home-research-note:first-child { border-top: 2px solid var(--text); }
+.home-research-note:first-child a { font-size: clamp(20px,2.3vw,31px); line-height: 1.16; }
+.home-research-note a { font-size: 16px; }
+.home-research-note a span { display: block; font-size: 11px; margin-top: 8px; }
+.home-research-note p { font-size: 12px; }
+@media (max-width: 900px) {
+  .home-current-research-content { grid-column: 1 / -1; margin-top: 16px; }
+  .home-research-notes { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-research-note:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .home-research-notes { grid-template-columns: 1fr; gap: 4px; }
+  .home-research-note:first-child { grid-column: auto; }
+}
+
 .home-research-notes { display: grid; grid-template-columns: 1fr; }
 .home-research-note { padding: 0 0 16px; margin: 0 0 16px; border-bottom: 1px solid var(--line); }
 .home-research-note:last-child { border-bottom: 0; margin-bottom: 0; }
