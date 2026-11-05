@@ -1,0 +1,17 @@
+{
+  "id": "pm-human-agent-studio-reader",
+  "slug": "pm-human-agent-studio-reader",
+  "title": "一间由 Agent 协助的电子音乐工作室",
+  "titleEn": "A Human–Agent Electronic Music Studio",
+  "type": "Workshop Reader / Music Production",
+  "category": "research",
+  "date": "2026-11-05",
+  "summary": "一套可重复练习的制作手册：声源选择、曲式发展、Delay 与混响、音画同源、试听评审和工程归档。",
+  "summaryEn": "A Human–Agent Electronic Music Studio — a practice-based Performable Music study.",
+  "articlePath": "writings/performable-music/04-human-agent-studio-reader.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/writings/performable-music/04-human-agent-studio-reader.md",
+  "status": "published",
+  "featured": false,
+  "order": 4,
+  "series": "Performable Music / 可表演音乐"
+}
