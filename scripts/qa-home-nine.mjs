@@ -56,7 +56,7 @@ try{
    }))
    const grid=document.querySelector('.editorial-work-grid')
    const research=document.querySelector('.home-current-research')?.innerText||''
-   return {title:document.title,cards:cards.length,columns:grid?getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length:0,
+   return {title:document.title,cards:cards.length,columns:grid?new Set(cards.map(c=>Math.round(c.getBoundingClientRect().left))).size:0,
      images,hasBpmReport:research.includes('BPM System 2026'),
      hasProfileLink:!!document.querySelector('a[href*="profile"]'),
      horizontalOverflow:document.documentElement.scrollWidth>innerWidth+2,
