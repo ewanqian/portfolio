@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "r1-source-published-pdfs-uploaded-live-hosting-unverified",
+  "status": "published-pdf-r1-baseline-with-post-release-web-data-corrections-awaiting-r1-1-pdf",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -38,7 +38,7 @@
     "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
     "live_links": "not independently verified: public crawler cannot access new site subpage, no confirmed 200 set",
-    "bilingual_cv": "R1 manual bilingual release seeded from previous approved linked CV PDFs; deterministic canonical-data generator still pending",
+    "bilingual_cv": "R1 PDF no longer mirrors all post-release corrections (VAOE, ERSHA, ChinaGraph); regenerate R1.1 once text/credits formally approved",
     "media_rights": "incomplete",
     "human_factual_review": "required",
     "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed"
@@ -54,5 +54,23 @@
     "pdf_links": "target original stable works/records/<id>.html",
     "site_assets": "portrait uses existing repository source; No Further Input Required cover not substituted with unrelated artwork",
     "publication_state": "GitHub source exists, Google Drive files verified. Live site URL, 60 HTTP routes, and mobile screenshots require subsequent independent browser/CI verification."
+  },
+  "post_release_reconciliation": {
+    "date": "2026-11-07",
+    "website_source_updated": true,
+    "existing_pdfs_updated": false,
+    "affected_entries": [
+      "exhibitions-018-2023 VAOE — four moving-image works + QR AR",
+      "production-042-2026 Ersha Bauhaus — shortened personal credit",
+      "award-chinagraph-2024-timer — award certificate verified second class, named Xu Hao and Ewan Qian",
+      "production-052-2024 and production-053-2023 Semicolon C external source references"
+    ],
+    "historical_media_restored": [
+      "TITAN MANA 2831761 2831703 2831826 2831892",
+      "CAN Festival MANA 2831944 2831960",
+      "No Further Input Required curator imagery/source"
+    ],
+    "qa": "7/7 preservation rules statically satisfied at source level; actual public playback and deployment not verified",
+    "next_publication_gate": "Generate R1.1 PDFs from current bilingual CV records, visually compare to prior reference, upload to Drive and replace published download links. Do not claim PDF and website synchronized beforehand."
   }
 }
