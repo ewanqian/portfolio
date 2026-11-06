@@ -32,11 +32,11 @@
       ],
       "existing_references": {
         "public_url": "https://ewanqian.site/works/no-further-input-required.html",
-        "cover_path": "/assets/home/featured-nfi-main.webp",
+        "cover_path": null,
         "legacy_ids": [],
         "source_docs": []
       },
-      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "media_review": "no approved local cover path; curatorial gallery is public, copying source media still requires credit/license review",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
       "next_action": "link approved official gallery images from curatorial source, preserve author/copyright and correct reported final length vs old drafts"
