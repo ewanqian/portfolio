@@ -62,12 +62,13 @@
       "id": "award-chinagraph-2024-timer",
       "section": "awards",
       "year": "2024",
-      "zh": "ChinaGraph 2024 电子剧场《控时者 / TIMER》相关奖项：准确奖项名称、等级及获奖主体待以官方名单最终复核，不在对外短版使用未经核实的奖项表述。",
+      "zh": "第十五届中国计算机图形学大会（ChinaGraph 2024）电子剧场，《控时者 / TIMER》，合作作品获优秀音乐奖二等奖（历史记录；官方2024名单或证书待核验）。",
       "en": null,
       "project_id": "timer",
       "project_url": "https://ewanqian.site/works/timer.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "pending"
+      "evidence_status": "user-confirmed; award tier pending official source",
+      "note": "CCF ChinaGraph 2024; distinguished from 2023 Hangzhou competition and 2022 ChinaGraph."
     },
     {
       "id": "exhibitions-007-2026",
