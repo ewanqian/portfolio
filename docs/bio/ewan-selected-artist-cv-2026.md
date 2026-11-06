@@ -24,6 +24,8 @@ Ewan Qian is a media artist and live audiovisual performer working with sound, m
 - **2024** *Dérive / 双城记*, FutureLab 2024, Shanghai West Bund Art Center — urban scan and spatial presentation.
 - **2023** *Ether Fragment / 以太碎片*, DREAM·video, 10th West Bund Art & Design Fair, Shanghai — moving-image presentation.
 - **2023** *Observation and Symbiosis / 观察与共生*, *Seeing Vitality*, K11, Shanghai — video installation.
+- **2022** *Matrix Navigation / 矩阵导航*, *虚实于众* New Media Art Exhibition, 8th Shanghai Young Art Fair, Shanghai Style Art Museum, Shanghai — exhibited interactive work.
+- **2022** *AR Shenzhen Plan / AR 深圳计划*, 2022 Glow Shenzhen, Xiangmi Park, Shenzhen — jointly credited with Chen Yingnan.
 
 ## SELECTED LIVE AUDIOVISUAL PERFORMANCES
 - **2026** REACTOR GRAND OPENING DAY1, REACTOR, Shanghai, 24 September — live visual performance (artist-confirmed).
