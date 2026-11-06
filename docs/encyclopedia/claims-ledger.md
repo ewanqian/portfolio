@@ -46,7 +46,7 @@ Ewan 创立并持续参与的团队 / 协作语境。团队项目不能自动写
 ### ChinaGraph 2024
 
 **状态：** `verified-public`  
-规范名称：**ChinaGraph 2024 电子剧场优秀音乐作品二等奖**。关联 TIMER，团队为钱誉文、徐昊、许思慧。以后 Profile / Timeline / TIMER 页面统一引用这一条。
+规范名称：**ChinaGraph 2024 电子剧场优秀音乐作品二等奖**。关联 TIMER，**获奖证书署名为徐昊、钱誉文**。许思慧参与 TIMER 其他合作版本，但不在该奖项获奖人名单中。以后 Profile / Timeline / TIMER 页面统一引用证书署名。
 
 ---
 
