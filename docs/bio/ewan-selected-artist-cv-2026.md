@@ -19,7 +19,7 @@ Ewan Qian is a media artist and live audiovisual performer working with sound, m
 ## SELECTED EXHIBITIONS & ARTWORK PRESENTATIONS
 - **2025** *Drop Flow / 滴流*, opening programme and exhibition, China (Hangzhou) Art and Technology International Biennale, Yuhang Art Museum, Hangzhou — collaborative audiovisual/spatial visual work.
 - **2025** *New Media Artist Simulator / 新媒体艺术家模拟器*, *Babel Bottle* exhibition, Hangzhou Center Art Museum, Hangzhou — interactive work.
-- **2025** *Observation and Symbiosis / 观察与共生*, *Digital Aquarium*, Pingshan Art Museum, Shenzhen — visual and data-visualisation contribution.
+- **2025** *Observation and Symbiosis / 观察与共生*, *Digital Aquarium*, Pingshan Exhibition Gallery (PSEG Digital Hall), Shenzhen — visual and data-visualisation contribution.
 - **2024** *TIMER / 控时者*, *Loading… Access 2 / 加载…权限 2*, UFO Terminal, Shanghai — collaborative ring-screen audiovisual installation.
 - **2024** *Dérive / 双城记*, FutureLab 2024, Shanghai West Bund Art Center — urban scan and spatial presentation.
 - **2023** *Ether Fragment / 以太碎片*, DREAM·video, 10th West Bund Art & Design Fair, Shanghai — moving-image presentation.
