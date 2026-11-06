@@ -584,10 +584,11 @@
       "year": "2024",
       "zh": "@onefive《ChocoLove》歌词视频；分号 C（Semicolon C）。",
       "en": null,
-      "project_id": null,
-      "project_url": null,
+      "project_id": "semicolon-c-onefive",
+      "project_url": "https://ewanqian.site/works/onefive-semicolonc.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "artist-reported personal participation; official event and collective credits supported; exact individual role not independently attributed by organizer",
+      "external_evidence": "https://onefive-web.jp/discography/detail.php?id=1020116"
     },
     {
       "id": "production-053-2023",
@@ -595,10 +596,11 @@
       "year": "2023",
       "zh": "@onefive《Underground》《Overground》演出视觉，日本；分号 C（Semicolon C）。",
       "en": null,
-      "project_id": null,
-      "project_url": null,
+      "project_id": "semicolon-c-onefive",
+      "project_url": "https://ewanqian.site/works/onefive-semicolonc.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "artist-reported personal participation; official event and collective credits supported; exact individual role not independently attributed by organizer",
+      "external_evidence": "https://onefive-web.jp/schedule/detail.php?id=1102588"
     },
     {
       "id": "production-054-2022",
@@ -609,7 +611,8 @@
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "official Semicolon C collective project listing; individual attribution artist-reported",
+      "external_evidence": "https://semicolonc.art/about"
     },
     {
       "id": "production-055-2022",
