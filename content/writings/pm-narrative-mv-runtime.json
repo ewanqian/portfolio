@@ -1,0 +1,17 @@
+{
+  "id": "pm-narrative-mv-runtime",
+  "slug": "pm-narrative-mv-runtime",
+  "title": "音乐可以构成一座城市吗？",
+  "titleEn": "Can Music Build a City? — Narrative Music Videos and a Performable Runtime",
+  "type": "Research Essay / Audiovisual Narrative",
+  "category": "research",
+  "date": "2026-11-06",
+  "summary": "研究 capsule × 百濑义行科幻三部曲、Gondry、Cunningham、Gantz Graf、Nosaj Thing 与实时 Geometry Nodes，提出 90 秒原创视听叙事和 Web Runtime 练习。",
+  "summaryEn": "From capsule's science-fiction trilogy to narrative music video directors, Geometry Nodes, and a performable JavaScript audiovisual world.",
+  "articlePath": "writings/performable-music/08-narrative-mv-and-live-runtime.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/writings/performable-music/08-narrative-mv-and-live-runtime.md",
+  "status": "published",
+  "featured": false,
+  "order": 8,
+  "series": "Performable Music / 可表演音乐"
+}
