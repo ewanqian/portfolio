@@ -100,9 +100,21 @@
       "en": "Ersha Bauhaus — Time Is the Eternal Observer of Space",
       "year": "2026",
       "category": "Production",
-      "url": "https://virtura.space/work/system-ersha.html",
+      "url": "https://ewanqian.site/works/system-ersha.html",
       "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
-      "note": "合作项目页；个人电影署名见履历"
+      "note": "二砂包豪斯 / SYSTEM：个人采集、三维重建及关联实验影像工作；团队空间扫描案例另行归档",
+      "related_public_case": "https://virtura.space/work/system-ersha.html",
+      "evidence": [
+        {
+          "type": "first_party_collective",
+          "url": "https://virtura.space/work/system-ersha.html",
+          "supports": "spatial scanning and point-cloud / not complete experimental-film credits"
+        },
+        {
+          "type": "artist_document",
+          "supports": "film and personal 3D role as recorded in CV; final credits need corroboration"
+        }
+      ]
     },
     {
       "id": "natgeo-crystal-2026",
