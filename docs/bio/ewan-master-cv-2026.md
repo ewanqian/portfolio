@@ -31,7 +31,7 @@
 | 2025 | Drop Flow / 滴流 — China (Hangzhou) Art and Technology Biennale | Collaborative installation and opening performance; visual / spatial system contribution, Yuhang Art Museum, Oct | REPOSITORY-SUPPORTED | visual-arts/drop-flow-series/README.md |
 | 2025 | Drop Flow — 流光绘影 Light and Shadow Technology Art Festival | Irregular-screen installation version, Chongqing; excellent work award attributed to team, Nov | REPOSITORY-SUPPORTED | visual-arts/drop-flow-series/README.md |
 | 2025 | Drop Flow — UFO Terminal × PRE / Rooooooom719 | Audiovisual live performance version, Shanghai, Jul; visual system contribution | REPOSITORY-SUPPORTED | visual-arts/drop-flow-series/README.md |
-| 2025 | 《观察与共生》 / Observation and Symbiosis — Digital Aquarium | Data visualisation / exhibition visuals, Pingshan Art Museum, Shenzhen, Jul; collaboration with Shen Xuan | REPOSITORY-SUPPORTED | projects/observe-symbiosis-exhibit-2025.md |
+| 2025 | 《观察与共生》 / Observation and Symbiosis — Digital Aquarium | Data visualisation / exhibition visuals, Pingshan Exhibition Gallery (PSEG Digital Hall), Shenzhen, Jul; collaboration with Shen Xuan | REPOSITORY-SUPPORTED | projects/observe-symbiosis-exhibit-2025.md |
 | 2025 | 《新媒体艺术家模拟器》 / New Media Artist Simulator — 巴别瓶 | Interactive hypertext artwork at Babel Bottle exhibition, Hangzhou Center Art Museum, 2025 | REPOSITORY-SUPPORTED | projects/new-media-artist-simulator-2025.md |
 | 2025 | West Bund / 漩心 | Environmental moving-image work, Shanghai, Aug; detailed official title to confirm | NEEDS-SOURCE | projects/projects-credits-full.md |
 | 2025 | 数字游园 / Digital Garden — Xi'an MixC | Unity VFX Graph content / visual production, Jul; exhibition versus commercial classification pending | REPOSITORY-SUPPORTED | projects/README.md |
