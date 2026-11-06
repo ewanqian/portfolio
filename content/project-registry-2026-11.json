@@ -193,9 +193,9 @@
       "en": "VAOE",
       "year": "2023",
       "category": "Exhibition",
-      "url": null,
+      "url": "https://ewanqian.site/works/vaoe.html",
       "image": null,
-      "note": "待补正式网页",
+      "note": "南昌路 312 号个人展，四组影像作品与扫码进入的 AR 增强现实项目",
       "variants": [
         {
           "legacy_id": "vaoe-exhibition-2023",
@@ -203,6 +203,17 @@
           "year": "2023",
           "source": "react/src/pages/Archive.jsx",
           "role": "historical archive record"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.why.com.cn/wx/article/2023/07/16/16893978431184597010.html",
+          "type": "independent_press",
+          "supports": "exhibition, artist, venue, 2023"
+        },
+        {
+          "type": "artist_statement",
+          "supports": "four moving-image groups and QR accessed AR; archival media pending"
         }
       ]
     },
