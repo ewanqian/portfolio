@@ -23,7 +23,7 @@ function HomeInfo() {
           <div className="home-info-links">
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
             <a href="/works/archive-2026.html">{isZh ? '完整项目档案' : 'Project archive'}</a> 
-            <a href="/works/cv-records.html">{isZh ? '完整履历 / CV' : 'CV records'}</a>
+            <a href="/works/cv.html">{isZh ? '个人作品与正式 CV' : 'Portfolio & CV'}</a>
             <a href="/works/no-further-input-required.html">{isZh ? '无需进一步输入' : 'No Further Input Required'}</a> 
             <Link to="/apps">{isZh ? '应用 / Playgrounds' : 'Applications / Playgrounds'}</Link>
             <Link to="/writing">{isZh ? '写作' : 'Writing'}</Link>
