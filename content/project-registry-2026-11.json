@@ -21,8 +21,16 @@
       "year": "2026",
       "category": "Exhibition",
       "url": "https://ewanqian.site/works/no-further-input-required.html",
-      "image": "/assets/home/featured-nfi-main.webp",
-      "note": "作品页"
+      "image": null,
+      "note": "作品页",
+      "image_status": "approved direct portfolio cover missing; organizer photo gallery linked instead; no substitution",
+      "external_media": [
+        {
+          "type": "curator_exhibition_gallery",
+          "url": "https://semicolonc.art/event/inclusion2026/no-further-input/",
+          "note": "Bilingual artwork description, installation photos and credits; do not copy/modify without media rights review"
+        }
+      ]
     },
     {
       "id": "drop-flow",
