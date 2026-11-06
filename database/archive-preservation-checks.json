@@ -1,0 +1,80 @@
+{
+  "schema": "portfolio-preservation-checks.v1",
+  "as_of": "2026-11-07",
+  "policy": "Preserve already documented facts and functional source links across redesigns; checks are technical regressions, not proof that a source is factually true.",
+  "checks": [
+    {
+      "id": "vaoe-four-moving-images-ar",
+      "file": "works/vaoe.html",
+      "required_literals": [
+        "四组影像",
+        "二维码",
+        "AR",
+        "why.com.cn/wx/article/2023/07/16/16893978431184597010.html"
+      ],
+      "source": "projects/vaoe-exhibition-2023.md"
+    },
+    {
+      "id": "vaoe-permanent-record",
+      "file": "content/cv-records-2026-11.json",
+      "required_literals": [
+        "exhibitions-018-2023",
+        "四组影像",
+        "vaoe-2023"
+      ]
+    },
+    {
+      "id": "titan-bo-live-mana-track-previews",
+      "file": "works/titan.html",
+      "required_literals": [
+        "2831761",
+        "2831703",
+        "2831826",
+        "2831892",
+        "kashiwadaisuke.com/2025/09/29",
+        "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
+      ],
+      "source": "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
+    },
+    {
+      "id": "titan-can-separate-event-links",
+      "file": "works/titan.html",
+      "required_literals": [
+        "CAN Festival",
+        "2831944",
+        "2831960"
+      ]
+    },
+    {
+      "id": "onefive-collective-role",
+      "file": "works/onefive-semicolonc.html",
+      "required_literals": [
+        "分号 C",
+        "semicolonc.art/about",
+        "onefive-web.jp/schedule/detail.php?id=1102588",
+        "onefive-web.jp/discography/detail.php?id=1020116"
+      ]
+    },
+    {
+      "id": "ersha-distinct-film-and-scan",
+      "file": "works/system-ersha.html",
+      "required_literals": [
+        "时间是空间恒久的观察者",
+        "二砂包豪斯",
+        "virtura.space/work/system-ersha.html",
+        "不能仅凭扫描页面"
+      ]
+    },
+    {
+      "id": "full-evidence-coverage",
+      "file": "database/evidence-reconciliation-2026-11.json",
+      "required_literals": [
+        "vaoe-2023",
+        "kashiwa-titan-2025",
+        "semicolon-c-onefive",
+        "system-ersha-2026",
+        "ether-fragment-2023"
+      ]
+    }
+  ]
+}
