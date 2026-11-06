@@ -358,6 +358,18 @@
       ],
       "people": [
         "person-ewan-qian"
+      ],
+      "media_structure": {
+        "moving_image_groups": 4,
+        "qr_accessed_ar": true
+      },
+      "description_zh": "个人展览包含四组影像与扫描二维码进入的 AR 增强现实体验；展览及地点有 2023 年独立媒体报道。",
+      "sources": [
+        {
+          "url": "https://www.why.com.cn/wx/article/2023/07/16/16893978431184597010.html",
+          "kind": "independent_press",
+          "scope": "exhibition and venue; details of 4 groups + QR AR artist-confirmed"
+        }
       ]
     },
     {
