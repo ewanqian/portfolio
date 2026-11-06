@@ -1,5 +1,19 @@
 # Portfolio Agent Rules
 
+## Portfolio OS v2 — mandatory preflight (2026-11-06)
+
+This policy supplements the existing rules below and applies to every Agent, including short one-off sessions.
+
+1. Read [PORTFOLIO-OS-v2-architecture.md](docs/portfolio-maintenance-os/PORTFOLIO-OS-v2-architecture.md) **before** making public biography, CV, project, image, or site-wide changes.
+2. Project identity still starts at `database/works.json`. Legacy identity relationships MUST be looked up in `database/identity-crosswalk-2026-11.json` and presentation variants; do not silently infer or rename a work. `database/canonical_names.json` governs public names.
+3. `content/project-registry-2026-11.json` and `content/cv-records-2026-11.json` are current **publication/route snapshot registers**, not rival original-fact databases. Their links must stay stable; don't silently delete or rewrite old records.
+4. `content/works/*.json` still builds the frontend through `scripts/build-content.js`. A change to the registry does NOT automatically propagate to the public React site or PDFs. Be explicit about what was and was not synchronized.
+5. **Before/after each public change:** run `npm run audit:graph`, inspect unresolved issues, check relevant pages (desktop/mobile), and confirm published GitHub Pages routes and their images. A GitHub file commit is not proof a URL works.
+6. Public records must NOT expose internal agent notes, speculative award names, unreviewed collaborator claims, private assets, or unverified media rights. External search discoveries enter evidence intake, never public CV automatically.
+7. When a new project or event is added, choose its correct entity: Work / Presentation / Claim-CV / Media / Source / Writing. One original artwork can have many presentations; a new performance or client commission may be distinct.
+8. Prioritize the reader's decision within 30 seconds and 3 minutes. Keep complete unselected history in the archive, rather than reclassifying every job as a selected art work.
+
+
 ## Scope
 
 This repo is the personal portfolio for Ewan Qian / 钱誉文.
