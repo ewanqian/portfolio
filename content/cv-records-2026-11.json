@@ -62,13 +62,14 @@
       "id": "award-chinagraph-2024-timer",
       "section": "awards",
       "year": "2024",
-      "zh": "第十五届中国计算机图形学大会（ChinaGraph 2024）电子剧场，《控时者 / TIMER》，合作作品获优秀音乐奖二等奖（历史记录；官方2024名单或证书待核验）。",
-      "en": null,
+      "zh": "《控时者 / TIMER》，ChinaGraph 2024 电子剧场优秀音乐作品（二等），徐昊、钱誉文共同署名。",
+      "en": "TIMER — Second Prize, Outstanding Musical Work, ChinaGraph 2024 Electronic Theater; co-credited to Xu Hao and Ewan Qian.",
       "project_id": "timer",
       "project_url": "https://ewanqian.site/works/timer.html",
-      "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "user-confirmed; award tier pending official source",
-      "note": "CCF ChinaGraph 2024; distinguished from 2023 Hangzhou competition and 2022 ChinaGraph."
+      "source": "ChinaGraph 2024 certificate image in VIRTURA-SpacePort historical archive",
+      "evidence_status": "source-backed; archived CCF certificate image visually inspected 2026-11-07",
+      "note": "CCF ChinaGraph 2024; distinguished from 2023 Hangzhou competition and 2022 ChinaGraph.",
+      "external_evidence": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer-series/assets/%E7%AC%AC15%E5%B1%8A%E4%B8%AD%E5%9B%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%A7%E4%BC%9Achinagraph%202024%20%E7%94%B5%E5%AD%90%E5%89%A7%E5%9C%BA%20%E4%BC%98%E7%A7%80%E9%9F%B3%E4%B9%90%E4%BD%9C%E5%93%81%20Timer%202024%20%E5%BE%90%E6%98%8A%20%E9%92%B1%E8%AA%89%E6%96%87.jpg"
     },
     {
       "id": "award-hangzhou-2024-timer-live",
