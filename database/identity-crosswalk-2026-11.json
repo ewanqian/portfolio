@@ -1,0 +1,140 @@
+{
+  "schema": "ewanqian.identity-crosswalk.v1",
+  "snapshot": "2026-11-06",
+  "policy": "No automatic merge; preserving legacy IDs and urls is mandatory. Only a human-approved migration may change canonical root ids. Provisional means relationship is grounded in source structure, not independently verified artistic authorship.",
+  "mappings": [
+    {
+      "legacy_id": "kashiwa-titan-visual-2025",
+      "root_project_id": "kashiwa-titan-2025",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical personal visual production identifier for the TITAN performance case; editorial verification remains required",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "onefive-chocolove-video-2024",
+      "root_project_id": "semicolon-c-onefive",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "hallu-resonance-live-2024",
+      "root_project_id": "illusion-resonance-2024",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "onefive-underground-visual-2023",
+      "root_project_id": "semicolon-c-onefive",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "onefive-overground-visual-2023",
+      "root_project_id": "semicolon-c-onefive",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "observe-symbiosis-workshop-2026",
+      "root_project_id": "obs-symbiosis-2025",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "drop-flow-visual-2025",
+      "root_project_id": "drop-flow",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "drop-flow-qingdao-2025",
+      "root_project_id": "drop-flow",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "derive-dual-city-2024",
+      "root_project_id": "derive-2024",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "drop-flow-ufo-2025",
+      "root_project_id": "drop-flow",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "flatland-mr-content-2025",
+      "root_project_id": "flatland-2025",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "vrplay-hackathon-visual-2025",
+      "root_project_id": "vrplay-2025",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "observe-symbiosis-exhibit-2025",
+      "root_project_id": "obs-symbiosis-2025",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "hallu-matrix-exhibit-2024",
+      "root_project_id": "illusion-matrix-2024",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "ether-fragment-exhibit-2023",
+      "root_project_id": "ether-fragment-2023",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "vaoe-exhibition-2023",
+      "root_project_id": "vaoe-2023",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "observe-symbiosis-k11-2023",
+      "root_project_id": "obs-symbiosis-2025",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "timer-series-visual-2024",
+      "root_project_id": "timer",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Legacy TIMER series identifier in database/canonical_names.json",
+      "state": "provisional_reviewed_by_structure"
+    },
+    {
+      "legacy_id": "ar-shenzhen-resort-2022",
+      "root_project_id": "ar-shenzhen-2022",
+      "type": "legacy_or_presentation_alias",
+      "mapping_basis": "Historical presentation/edition already registered as a variant in project registry",
+      "state": "provisional_reviewed_by_structure"
+    }
+  ]
+}
