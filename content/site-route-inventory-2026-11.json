@@ -1,0 +1,453 @@
+{
+  "schema": "ewanqian.site-inventory.v1",
+  "snapshot": "2026-11-06",
+  "canonical_host": "https://ewanqian.site",
+  "app_routes": [
+    {
+      "path": "/",
+      "public_url": "https://ewanqian.site/#/",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/works",
+      "public_url": "https://ewanqian.site/#/works",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/profile",
+      "public_url": "https://ewanqian.site/#/profile",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/workshops",
+      "public_url": "https://ewanqian.site/#/workshops",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/workshops/:slug",
+      "public_url": "https://ewanqian.site/#/workshops/:slug",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/writing",
+      "public_url": "https://ewanqian.site/#/writing",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/writing/:slug",
+      "public_url": "https://ewanqian.site/#/writing/:slug",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/production",
+      "public_url": "https://ewanqian.site/#/production",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/archive",
+      "public_url": "https://ewanqian.site/#/archive",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/gaussian-scenes",
+      "public_url": "https://ewanqian.site/#/gaussian-scenes",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/playground",
+      "public_url": "https://ewanqian.site/#/playground",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/apps",
+      "public_url": "https://ewanqian.site/#/apps",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/titan",
+      "public_url": "https://ewanqian.site/#/projects/titan",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/kashiwa-titan",
+      "public_url": "https://ewanqian.site/#/projects/kashiwa-titan",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/yujiayun-45m2",
+      "public_url": "https://ewanqian.site/#/projects/yujiayun-45m2",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/rain-singapore",
+      "public_url": "https://ewanqian.site/#/projects/rain-singapore",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/digital-garden",
+      "public_url": "https://ewanqian.site/#/projects/digital-garden",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/natgeo-crystal",
+      "public_url": "https://ewanqian.site/#/projects/natgeo-crystal",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/system-ersha",
+      "public_url": "https://ewanqian.site/#/projects/system-ersha",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/china-ai-gala",
+      "public_url": "https://ewanqian.site/#/projects/china-ai-gala",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/xtep-xdna",
+      "public_url": "https://ewanqian.site/#/projects/xtep-xdna",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    },
+    {
+      "path": "/projects/zcool-hp-g8",
+      "public_url": "https://ewanqian.site/#/projects/zcool-hp-g8",
+      "source": "react/src/App.jsx",
+      "kind": "hash-router",
+      "status": "source-present; live verification pending"
+    }
+  ],
+  "static_pages": [
+    {
+      "path": "/works/ar-shenzhen-2022.html",
+      "public_url": "https://ewanqian.site/works/ar-shenzhen-2022.html",
+      "source": "works/ar-shenzhen-2022.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/archive-2026.html",
+      "public_url": "https://ewanqian.site/works/archive-2026.html",
+      "source": "works/archive-2026.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/audiovisual-shared-source-live-set.html",
+      "public_url": "https://ewanqian.site/works/audiovisual-shared-source-live-set.html",
+      "source": "works/audiovisual-shared-source-live-set.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/common-source-liveset.html",
+      "public_url": "https://ewanqian.site/works/common-source-liveset.html",
+      "source": "works/common-source-liveset.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/cv-records.html",
+      "public_url": "https://ewanqian.site/works/cv-records.html",
+      "source": "works/cv-records.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/drop-flow.html",
+      "public_url": "https://ewanqian.site/works/drop-flow.html",
+      "source": "works/drop-flow.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/kashiwa.html",
+      "public_url": "https://ewanqian.site/works/kashiwa.html",
+      "source": "works/kashiwa.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/mke-terminal.html",
+      "public_url": "https://ewanqian.site/works/mke-terminal.html",
+      "source": "works/mke-terminal.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/nfi-keyboard-liveset.html",
+      "public_url": "https://ewanqian.site/works/nfi-keyboard-liveset.html",
+      "source": "works/nfi-keyboard-liveset.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/nfi-performance-playground-v0.1.html",
+      "public_url": "https://ewanqian.site/works/nfi-performance-playground-v0.1.html",
+      "source": "works/nfi-performance-playground-v0.1.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/niulai-tap-redirect.html",
+      "public_url": "https://ewanqian.site/works/niulai-tap-redirect.html",
+      "source": "works/niulai-tap-redirect.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/niulai-tap.html",
+      "public_url": "https://ewanqian.site/works/niulai-tap.html",
+      "source": "works/niulai-tap.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-3min.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-3min.html",
+      "source": "works/no-further-input-required-3min.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-aug16-state-study.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-aug16-state-study.html",
+      "source": "works/no-further-input-required-aug16-state-study.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-grid-loop.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-grid-loop.html",
+      "source": "works/no-further-input-required-grid-loop.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-interactive-v0.6-archive.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-interactive-v0.6-archive.html",
+      "source": "works/no-further-input-required-interactive-v0.6-archive.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-interactive-v0.7-archive.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-interactive-v0.7-archive.html",
+      "source": "works/no-further-input-required-interactive-v0.7-archive.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-lattice.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-lattice.html",
+      "source": "works/no-further-input-required-lattice.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-performance-v0.7.1.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-performance-v0.7.1.html",
+      "source": "works/no-further-input-required-performance-v0.7.1.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-pre-autonomous.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-pre-autonomous.html",
+      "source": "works/no-further-input-required-pre-autonomous.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-process-lab-v0.8.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-process-lab-v0.8.html",
+      "source": "works/no-further-input-required-process-lab-v0.8.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required-webgl.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required-webgl.html",
+      "source": "works/no-further-input-required-webgl.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/no-further-input-required.html",
+      "public_url": "https://ewanqian.site/works/no-further-input-required.html",
+      "source": "works/no-further-input-required.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/sre-realtime-liveset.html",
+      "public_url": "https://ewanqian.site/works/sre-realtime-liveset.html",
+      "source": "works/sre-realtime-liveset.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/timer.html",
+      "public_url": "https://ewanqian.site/works/timer.html",
+      "source": "works/timer.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/titan.html",
+      "public_url": "https://ewanqian.site/works/titan.html",
+      "source": "works/titan.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    },
+    {
+      "path": "/works/topological-playground.html",
+      "public_url": "https://ewanqian.site/works/topological-playground.html",
+      "source": "works/topological-playground.html",
+      "kind": "static",
+      "status": "repository-present; live verification pending"
+    }
+  ],
+  "cv_record_pages": {
+    "count": 61,
+    "pattern": "/works/records/{id}.html",
+    "index": "content/cv-records-2026-11.json"
+  },
+  "project_registry": {
+    "root_count": 49,
+    "index": "content/project-registry-2026-11.json",
+    "public_index": "/works/archive-2026.html"
+  },
+  "writing_sources": [
+    {
+      "id": "after-bpm-system-from-sync-to-work-2026",
+      "route": "/#/writing/after-bpm-system-from-sync-to-work-2026",
+      "source": "content/writings/after-bpm-system-from-sync-to-work-2026.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "entropy-two-screen-2026",
+      "route": "/#/writing/entropy-two-screen-2026",
+      "source": "content/writings/entropy-two-screen-2026.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "performable-music",
+      "route": "/#/writing/performable-music",
+      "source": "content/writings/performable-music.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-2026-agent-music-systems",
+      "route": "/#/writing/pm-2026-agent-music-systems",
+      "source": "content/writings/pm-2026-agent-music-systems.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-agent-composition-grammar",
+      "route": "/#/writing/pm-agent-composition-grammar",
+      "source": "content/writings/pm-agent-composition-grammar.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-eight-instruments-sixteen-works",
+      "route": "/#/writing/pm-eight-instruments-sixteen-works",
+      "source": "content/writings/pm-eight-instruments-sixteen-works.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-history-of-programmable-music",
+      "route": "/#/writing/pm-history-of-programmable-music",
+      "source": "content/writings/pm-history-of-programmable-music.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-human-agent-studio-reader",
+      "route": "/#/writing/pm-human-agent-studio-reader",
+      "source": "content/writings/pm-human-agent-studio-reader.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-musical-expectation",
+      "route": "/#/writing/pm-musical-expectation",
+      "source": "content/writings/pm-musical-expectation.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-narrative-mv-runtime",
+      "route": "/#/writing/pm-narrative-mv-runtime",
+      "source": "content/writings/pm-narrative-mv-runtime.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "pm-seven-audiovisual-lineages",
+      "route": "/#/writing/pm-seven-audiovisual-lineages",
+      "source": "content/writings/pm-seven-audiovisual-lineages.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "reactor-bpm-system-2026",
+      "route": "/#/writing/reactor-bpm-system-2026",
+      "source": "content/writings/reactor-bpm-system-2026.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "restage-re-executable-performance-space",
+      "route": "/#/writing/restage-re-executable-performance-space",
+      "source": "content/writings/restage-re-executable-performance-space.json",
+      "status": "content source, publication status not independently confirmed"
+    },
+    {
+      "id": "scene-forge-reader-02",
+      "route": "/#/writing/scene-forge-reader-02",
+      "source": "content/writings/scene-forge-reader-02.json",
+      "status": "content source, publication status not independently confirmed"
+    }
+  ],
+  "notes": [
+    "This is a full source-level crosswalk for the main website and CV, not proof of live 200 responses.",
+    "Static page versions and their project roots must retain redirects when migrated.",
+    "CV and project counts are separate grains, not summed as 110 independent artworks."
+  ]
+}
