@@ -87,6 +87,8 @@ Before treating HTML, Markdown, project pages, bios, or service pages as final, 
 
 `python3 /Users/ewanqian/.codex/skills/virtura-final-quality-gate/scripts/final_quality_gate.py <paths>`
 
+This is an **optional local extension path**, not a portable command: if unavailable on the agent's machine, report that limitation and run the repository-native gates (`npm run audit:graph`, `npm run audit:portfolio-os`, build checks, and actual browser checks). Never claim the local private skill ran when it did not.
+
 Final pages must not include:
 
 - draft / review / approval language
