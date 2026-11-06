@@ -75,6 +75,29 @@
         "system-ersha-2026",
         "ether-fragment-2023"
       ]
+    },
+    {
+      "id": "timer-original-certificate-and-performance",
+      "file": "works/timer.html",
+      "required_literals": [
+        "records/award-chinagraph-2024-timer.html",
+        "BV1sWNWeVEVB",
+        "superspl.at/scene/b9ec0173",
+        "VIRTURA-Collective/tree/main/works/timer"
+      ],
+      "source": "visual-arts/timer-series/README.md"
+    },
+    {
+      "id": "dropflow-biennale-exhibition-and-production-media",
+      "file": "works/drop-flow.html",
+      "required_literals": [
+        "luminous-award-certificate.webp",
+        "BV1PREczgEzC",
+        "BV1HZgBzWEre",
+        "xusihui.com/",
+        "superspl.at/scene/36db89a4"
+      ],
+      "source": "visual-arts/drop-flow-series/README.md"
     }
   ]
 }
