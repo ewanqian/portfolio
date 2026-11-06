@@ -38,7 +38,22 @@
       "category": "Live",
       "url": "https://ewanqian.github.io/portfolio/works/timer.html",
       "image": "/assets/home/featured-timer-main.webp",
-      "note": "作品页"
+      "note": "作品页",
+      "awards": [
+        {
+          "id": "chinagraph-2024-electronic-theater-timer",
+          "year": "2024",
+          "event": "第十五届中国计算机图形学大会（ChinaGraph 2024）",
+          "track": "电子剧场 / Electronic Theater",
+          "work": "控时者 / TIMER",
+          "credit": "合作作品；不作个人独立获奖陈述",
+          "level": "优秀音乐作品二等奖（项目历史记录，待核对2024年官方名单/证书）",
+          "status": "user-confirmed; award-tier-pending-official-documentation",
+          "evidence": [
+            "https://github.com/ewanqian/portfolio/blob/main/docs/bio/ewan-master-cv-2026.md"
+          ]
+        }
+      ]
     },
     {
       "id": "system-ersha-2026",
