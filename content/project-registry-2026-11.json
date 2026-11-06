@@ -131,7 +131,7 @@
       "year": "2025",
       "category": "Live",
       "url": "https://ewanqian.github.io/portfolio/works/titan.html",
-      "image": "",
+      "image": "/assets/raw-picks/titan-bolive-clean-16x9.webp",
       "note": "现场作品页",
       "variants": [
         {
@@ -142,7 +142,8 @@
           "source": "react/src/data/generated/works.js",
           "legacy_url": "/works/titan.html"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "ar-shenzhen-2022",
@@ -151,7 +152,7 @@
       "year": "2022",
       "category": "Exhibition",
       "url": "https://ewanqian.github.io/portfolio/works/ar-shenzhen-2022.html",
-      "image": "",
+      "image": "/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp",
       "note": "作品页",
       "variants": [
         {
@@ -162,7 +163,8 @@
           "source": "react/src/data/generated/works.js",
           "legacy_url": "https://glowshenzhen.com/index.php?c=show&id=52"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "ether-fragment-2023",
@@ -171,7 +173,7 @@
       "year": "2023",
       "category": "Exhibition",
       "url": null,
-      "image": null,
+      "image": "/assets/ether-fragment/ether-fragment-westbund-2023.webp",
       "note": "待核对正式网页",
       "variants": [
         {
@@ -182,7 +184,8 @@
           "source": "react/src/data/generated/works.js",
           "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/ether-fragment-exhibit-2023.md"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "vaoe-2023",
@@ -220,7 +223,7 @@
       "year": "2025–2026",
       "category": "Exhibition",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/observation-symbiosis-large.webp",
       "note": "多次展出；统一母项目页待建",
       "variants": [
         {
@@ -246,7 +249,8 @@
           "source": "react/src/pages/Archive.jsx",
           "role": "historical archive record"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "new-media-artist-simulator-2025",
@@ -285,7 +289,7 @@
       "year": "2024",
       "category": "Live",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/ewan-event-phantom-resonance.webp",
       "note": "独立现场演出",
       "variants": [
         {
@@ -296,7 +300,8 @@
           "source": "react/src/data/generated/works.js",
           "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/hallu-resonance-live-2024.md"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "derive-2024",
@@ -305,7 +310,7 @@
       "year": "2024",
       "category": "Exhibition",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/derive-dual-city-poster.webp",
       "note": "待补项目网页",
       "variants": [
         {
@@ -316,7 +321,8 @@
           "source": "react/src/data/generated/works.js",
           "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/derive-dual-city-2024.md"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "entropy-2026",
@@ -442,7 +448,7 @@
       "year": "2026–",
       "category": "Research",
       "url": "https://ewanqian.github.io/portfolio/works/sre-realtime-liveset.html",
-      "image": null,
+      "image": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
       "note": "研究原型",
       "variants": [
         {
@@ -453,7 +459,8 @@
           "source": "react/src/data/generated/works.js",
           "legacy_url": "/works/sre-realtime-liveset.html"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "digital-garden-visual-2025",
@@ -605,7 +612,7 @@
       "year": "2024",
       "category": "Production",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/onefive-classy-crush-signed.webp",
       "note": "归档中发现的历史项目；官方图像与职责详情待规范",
       "variants": [
         {
@@ -629,7 +636,8 @@
           "source": "react/src/pages/Archive.jsx",
           "role": "historical archive record"
         }
-      ]
+      ],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "lonely-av-live-2023",
@@ -638,9 +646,10 @@
       "year": "2023",
       "category": "Live",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp",
       "note": "归档中发现的历史项目；官方图像与职责详情待规范",
-      "variants": []
+      "variants": [],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "life-praise-install-2023",
@@ -671,9 +680,10 @@
       "year": "2022",
       "category": "Production",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/xiexin-sixiang-poster.webp",
       "note": "归档中发现的历史项目；官方图像与职责详情待规范",
-      "variants": []
+      "variants": [],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "watermusic-multi-visual-2022",
@@ -682,9 +692,10 @@
       "year": "2022",
       "category": "Production",
       "url": null,
-      "image": null,
+      "image": "/assets/raw-library/chinatime-water-music-visual.webp",
       "note": "归档中发现的历史项目；官方图像与职责详情待规范",
-      "variants": []
+      "variants": [],
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
     },
     {
       "id": "migu-olympic-vfx-2022",
