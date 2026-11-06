@@ -41,11 +41,12 @@
 | 2024 | Dérive / 双城记 — FutureLab 2024 | Urban scan / Apple Vision Pro spatial presentation, West Bund Art Center, Shanghai, Nov | REPOSITORY-SUPPORTED | projects/README.md |
 | 2024 | 幻觉共振 / Hallucination Resonance | Immersive audiovisual live performance visual execution, THE BOXX, Shanghai, Jun | REPOSITORY-SUPPORTED | projects/README.md |
 | 2023 | 以太碎片 / Ether Fragment — DREAM·video | Selected moving image, 10th West Bund Art & Design Fair, Shanghai, Nov | REPOSITORY-SUPPORTED | docs/encyclopedia/claims-ledger.md |
-| 2023 | 虚拟航线 / VAOE | Narrative virtual-space solo presentation, 312 Nanchang Road, Shanghai; installation and venue proof pending | NEEDS-SOURCE | docs/encyclopedia/claims-ledger.md |
+| 2023 | 虚拟航线 / VAOE | Solo exhibition; four display screens and QR-triggered interactive work, 312 Nanchang Road, Shanghai | VERIFIED-PUBLIC | 2023 青年报 interview; artist confirmation |
 | 2023 | 观察与共生 — 看见生命力 | Video installation, K11 Shanghai, Aug; presented artist; Bayer event attribution in project file | REPOSITORY-SUPPORTED | projects/observe-symbiosis-k11-2023.md |
 | 2023 | 安昌光影艺术季 / Anchang Light & Shadow Art Season | Bridge projection / light installation, Anchang, Jan | REPOSITORY-SUPPORTED | projects/projects-credits-full.md |
-| 2022 | 元语者·棱镜现实 / AI PLAZA | Digital floor artwork, Shanghai West Bund; solo / duo show characterization unresolved | CONFLICT-CHECK | docs/encyclopedia/claims-ledger.md |
-| 2022 | 深圳光影艺术季 / Shenzhen Light Art Season | AR work; individual artist/production credit and exact title to verify | NEEDS-SOURCE | projects/projects-credits-full.md |
+| 2022 | 元语者·棱镜现实 / AI PLAZA | Two-person exhibition (artist confirmed), digital media work, West Bund AI PLAZA, Shanghai | USER-CONFIRMED | artist correction; original programme pending |
+| 2022 | 矩阵导航 / Matrix Navigation — 8th Shanghai Young Art Fair | Artist's work in '虚实于众' New Media Art Exhibition, Shanghai Style Art Museum, Shanghai, 10–30 Nov | VERIFIED-PUBLIC | 2022 1626 / 新报 / Shanghai Culture Bureau coverage; projects/matrix-navi-2022.md |
+| 2022 | 深圳光影艺术季 — AR 深圳计划 / Glow Shenzhen — AR Shenzhen Plan | Jointly credited artists Chen Yingnan and Ewan Qian, Futian Xiangmi Park, Shenzhen; AR public art | VERIFIED-PUBLIC | 2022 Futian festival poster and D-arts venue guide; projects/ar-shenzhen-resort-2022.md |
 
 ## Live audiovisual performance and stage appearances
 | Year | Entry | Role / context | Evidence state | Primary record |
