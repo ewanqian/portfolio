@@ -7,7 +7,11 @@
     "public_destination": "works/archive-2026.html",
     "redirects": "do not delete old URLs; migrate to canonical pages",
     "image_rule": "one approved cover per project; preserve originals and attribution",
-    "cv_rule": "PDF title links to existing publicly verified page, otherwise to index entry"
+    "cv_rule": "PDF title links to existing publicly verified page, otherwise to index entry",
+    "version": "2026-11 comprehensive registry: historical presentations are linked as variants",
+    "cv_record_source": "content/cv-records-2026-11.json",
+    "canonical_public_domain": "ewanqian.site (CNAME; deployment pending verification)",
+    "full_site_scope": "covers 2026-11 CV records plus generated works; legacy archive backlog separately audited"
   },
   "projects": [
     {
@@ -28,7 +32,25 @@
       "category": "Exhibition",
       "url": "https://ewanqian.github.io/portfolio/works/drop-flow.html",
       "image": "/assets/home/featured-dropflow-main.webp",
-      "note": "作品页"
+      "note": "作品页",
+      "variants": [
+        {
+          "legacy_id": "drop-flow-ufo-2025",
+          "title": "Drop Flow 3.0 / UFO Terminal",
+          "year": "2025",
+          "image": "/assets/home/hero-dropflow-ufo-2025.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/dropflow3-live-2025.md"
+        },
+        {
+          "legacy_id": "drop-flow-visual-2025",
+          "title": "Drop Flow / 杭州双年展开幕节点",
+          "year": "2025",
+          "image": "/assets/home/featured-dropflow-hangzhou-biennale-scene.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/drop-flow-visual-2025.md"
+        }
+      ]
     },
     {
       "id": "timer",
@@ -52,6 +74,16 @@
           "evidence": [
             "https://github.com/ewanqian/portfolio/blob/main/docs/bio/ewan-master-cv-2026.md"
           ]
+        }
+      ],
+      "variants": [
+        {
+          "legacy_id": "timer-loading-access-2-2024",
+          "title": "TIMER 控时者 影像环形版",
+          "year": "2024.11–12",
+          "image": "/assets/home/timer-loading-access-2-poster.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "/works/timer.html"
         }
       ]
     },
@@ -93,7 +125,17 @@
       "category": "Live",
       "url": "https://ewanqian.github.io/portfolio/works/titan.html",
       "image": "",
-      "note": "现场作品页"
+      "note": "现场作品页",
+      "variants": [
+        {
+          "legacy_id": "titan",
+          "title": "《机械光合：TITAN 的全息声林》",
+          "year": "2025",
+          "image": "/assets/home/featured-kashiwa-bolive-shenzhen.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "/works/titan.html"
+        }
+      ]
     },
     {
       "id": "ar-shenzhen-2022",
@@ -103,7 +145,17 @@
       "category": "Exhibition",
       "url": "https://ewanqian.github.io/portfolio/works/ar-shenzhen-2022.html",
       "image": "",
-      "note": "作品页"
+      "note": "作品页",
+      "variants": [
+        {
+          "legacy_id": "ar-shenzhen-resort-2022",
+          "title": "AR 深圳计划",
+          "year": "2022",
+          "image": "/assets/home/archive-observation-clean.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://glowshenzhen.com/index.php?c=show&id=52"
+        }
+      ]
     },
     {
       "id": "ether-fragment-2023",
@@ -113,7 +165,17 @@
       "category": "Exhibition",
       "url": null,
       "image": null,
-      "note": "待核对正式网页"
+      "note": "待核对正式网页",
+      "variants": [
+        {
+          "legacy_id": "ether-fragment-exhibit-2023",
+          "title": "Ether Fragment / 西岸艺博会",
+          "year": "2023",
+          "image": "/portfolio/assets/ether-fragment/ether-fragment-westbund-2023.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/ether-fragment-exhibit-2023.md"
+        }
+      ]
     },
     {
       "id": "vaoe-2023",
@@ -143,7 +205,25 @@
       "category": "Exhibition",
       "url": null,
       "image": null,
-      "note": "多次展出；统一母项目页待建"
+      "note": "多次展出；统一母项目页待建",
+      "variants": [
+        {
+          "legacy_id": "observe-symbiosis-exhibit-2025",
+          "title": "Observation and Symbiosis / 深圳坪山",
+          "year": "2025",
+          "image": "/assets/home/featured-perceptual-environments.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-exhibit-2025.md"
+        },
+        {
+          "legacy_id": "observe-symbiosis-workshop-2026",
+          "title": "Observation and Symbiosis / Workshop",
+          "year": "2026",
+          "image": "/assets/home/featured-perceptual-environments.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-workshop-2026.md"
+        }
+      ]
     },
     {
       "id": "new-media-artist-simulator-2025",
@@ -152,8 +232,9 @@
       "year": "2025",
       "category": "Exhibition",
       "url": null,
-      "image": null,
-      "note": "待补展览记录"
+      "image": "/assets/home/featured-perceptual-environments.webp",
+      "note": "待补展览记录",
+      "variants": []
     },
     {
       "id": "illusion-matrix-2024",
@@ -173,7 +254,17 @@
       "category": "Live",
       "url": null,
       "image": null,
-      "note": "独立现场演出"
+      "note": "独立现场演出",
+      "variants": [
+        {
+          "legacy_id": "hallu-resonance-live-2024",
+          "title": "THE BOXX「幻觉共振」",
+          "year": "2024",
+          "image": "/assets/home/posterwall.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/hallu-resonance-live-2024.md"
+        }
+      ]
     },
     {
       "id": "derive-2024",
@@ -183,7 +274,17 @@
       "category": "Exhibition",
       "url": null,
       "image": null,
-      "note": "待补项目网页"
+      "note": "待补项目网页",
+      "variants": [
+        {
+          "legacy_id": "derive-dual-city-2024",
+          "title": "FutureLab 2024「Dérive 双城记」",
+          "year": "2024",
+          "image": "/portfolio/assets/raw-library/derive-dual-city-poster.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/derive-dual-city-2024.md"
+        }
+      ]
     },
     {
       "id": "entropy-2026",
@@ -253,7 +354,25 @@
       "category": "Production",
       "url": null,
       "image": "/assets/home/vrplay-world-remix-2025.webp",
-      "note": "待补正式作品页"
+      "note": "待补正式作品页",
+      "variants": [
+        {
+          "legacy_id": "vrplay-ai-xr-hackathon-2026",
+          "title": "VR Play Hackathon / WORLD REMIX 2026",
+          "year": "2026 — ongoing",
+          "image": null,
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://github.com/ewanqian/portfolio/blob/main/projects/vrplay-ai-xr-hackathon-2026.md"
+        },
+        {
+          "legacy_id": "vrplay-hackathon-visual-2025",
+          "title": "VR Play WORLD REMIX XR 黑客松",
+          "year": "2025",
+          "image": "/assets/home/vrplay-world-remix-2025.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "https://www.vr-play.cn/rules.html"
+        }
+      ]
     },
     {
       "id": "stage-casting-2026",
@@ -283,7 +402,127 @@
       "category": "Research",
       "url": "https://ewanqian.github.io/portfolio/works/sre-realtime-liveset.html",
       "image": null,
-      "note": "研究原型"
+      "note": "研究原型",
+      "variants": [
+        {
+          "legacy_id": "sre-realtime-liveset-2026",
+          "title": "SRE / UFO Terminal Realtime Liveset",
+          "year": "2026",
+          "image": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
+          "source": "react/src/data/generated/works.js",
+          "legacy_url": "/works/sre-realtime-liveset.html"
+        }
+      ]
+    },
+    {
+      "id": "digital-garden-visual-2025",
+      "zh": "Digital Garden / 西安万象城「数字游园」",
+      "en": "Digital Garden / 西安万象城「数字游园」",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "glance-thousand-install-2023",
+      "zh": "安昌光影艺术季「一眼万千」",
+      "en": "安昌光影艺术季「一眼万千」",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/home/archive-observation-clean.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "kashiwa-band-visual-2025",
+      "zh": "Kashiwa Daisuke / CAN Festival Zhoushan",
+      "en": "Kashiwa Daisuke / CAN Festival Zhoushan",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/home/glimpse-canfest-zhoushan.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "mke-terminal",
+      "zh": "Mikael Lind × KASHIWA Daisuke × Qian Yuwen",
+      "en": "Mikael Lind × KASHIWA Daisuke × Qian Yuwen",
+      "year": "2026",
+      "category": "Live",
+      "url": "https://ewanqian.site/works/mke-terminal.html",
+      "image": "/assets/mke-terminal/pdf-p02-01.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "rain-singapore-visual-2026",
+      "zh": "Rain 新加坡跨年专场",
+      "en": "Rain 新加坡跨年专场",
+      "year": "2026",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/home/posterwall.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "shanhaifusheng2-visual-2025",
+      "zh": "爱丁堡《山海浮生II》",
+      "en": "爱丁堡《山海浮生II》",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/home/posterwall.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "transit",
+      "zh": "箱中温室 / Greenhouse in Transit",
+      "en": "箱中温室 / Greenhouse in Transit",
+      "year": "2025–2026",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/home/greenhouse-in-transit-mg17.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "xtep-xdna22aw-visual-2022",
+      "zh": "XTEP XDNA / Shanghai Fashion Week",
+      "en": "XTEP XDNA / Shanghai Fashion Week",
+      "year": "2022",
+      "category": "Production",
+      "url": null,
+      "image": "/portfolio/assets/xtep-xdna/xtep-selected-01.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "yujiayun-45ping-visual-2025",
+      "zh": "余佳运「45㎡」演唱会 宁波站",
+      "en": "余佳运「45㎡」演唱会 宁波站",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
+    },
+    {
+      "id": "zcool-hp-live-2021",
+      "zh": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+      "en": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+      "year": "2021",
+      "category": "Live",
+      "url": null,
+      "image": "/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+      "note": "由现有网站生成数据合并；详细来源待清理",
+      "variants": []
     }
   ]
 }
