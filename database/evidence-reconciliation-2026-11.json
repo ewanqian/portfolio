@@ -88,12 +88,12 @@
       "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
       "sources": [
         {
-          "kind": "team_repository_certificate_index",
-          "url": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer-series/timer-chinagraph-2024.md",
-          "verified_scope": "Team archive identifies ChinaGraph 2024 Electronic Theater Outstanding Music Work second prize with Xu Hao and Ewan Qian named; links a certificate image. Actual image has not been visually rechecked in this pass.",
-          "credit_scope": "team_certificate_pointer",
+          "kind": "archived_certification_image",
+          "url": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer-series/assets/%E7%AC%AC15%E5%B1%8A%E4%B8%AD%E5%9B%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%A7%E4%BC%9Achinagraph%202024%20%E7%94%B5%E5%AD%90%E5%89%A7%E5%9C%BA%20%E4%BC%98%E7%A7%80%E9%9F%B3%E4%B9%90%E4%BD%9C%E5%93%81%20Timer%202024%20%E5%BE%90%E6%98%8A%20%E9%92%B1%E8%AA%89%E6%96%87.jpg",
+          "verified_scope": "Original stored ChinaGraph 2024 award certificate visually checked: Electronic Theater Outstanding Musical Work second class; Timer; named authors Xu Hao and Ewan Qian",
+          "credit_scope": "archived_certificate_image",
           "checked": "2026-11-07",
-          "state": "repository_document_read; certificate_image_pending_review"
+          "state": "image_visually_verified_in_git_repository"
         }
       ],
       "existing_references": {
@@ -110,7 +110,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "open original ChinaGraph certificate image, verify award text and named recipients, align personal/team award variants; keep 2023 Musicacoustica award separate"
+      "next_action": "Link original certificate to public TIMER and award pages; keep separate from 2024 Hangzhou festival performance and 2023 composition contest"
     },
     {
       "project_id": "system-ersha-2026",
