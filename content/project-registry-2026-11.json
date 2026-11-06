@@ -75,11 +75,12 @@
           "event": "第十五届中国计算机图形学大会（ChinaGraph 2024）",
           "track": "电子剧场 / Electronic Theater",
           "work": "控时者 / TIMER",
-          "credit": "合作作品；不作个人独立获奖陈述",
-          "level": "优秀音乐作品二等奖（项目历史记录，待核对2024年官方名单/证书）",
-          "status": "user-confirmed; award-tier-pending-official-documentation",
+          "credit": "徐昊、钱誉文共同署名（证书）",
+          "level": "电子剧场优秀音乐作品（二等）",
+          "status": "archived original CCF certificate image visually inspected 2026-11-07",
           "evidence": [
-            "https://github.com/ewanqian/portfolio/blob/main/docs/bio/ewan-master-cv-2026.md"
+            "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer-series/assets/%E7%AC%AC15%E5%B1%8A%E4%B8%AD%E5%9B%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%A7%E4%BC%9Achinagraph%202024%20%E7%94%B5%E5%AD%90%E5%89%A7%E5%9C%BA%20%E4%BC%98%E7%A7%80%E9%9F%B3%E4%B9%90%E4%BD%9C%E5%93%81%20Timer%202024%20%E5%BE%90%E6%98%8A%20%E9%92%B1%E8%AA%89%E6%96%87.jpg",
+            "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer-series/timer-chinagraph-2024.md"
           ]
         }
       ],
