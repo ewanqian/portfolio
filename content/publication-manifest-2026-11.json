@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "migration-not-yet-synchronized",
+  "status": "r1-source-published-pdfs-uploaded-live-hosting-unverified",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -13,35 +13,46 @@
   "web_destinations": {
     "project_index": "/works/archive-2026.html",
     "cv_index": "/works/cv-records.html",
-    "cv_record_pattern": "/works/records/{id}.html"
+    "cv_record_pattern": "/works/records/{id}.html",
+    "cv_release": "/works/cv.html"
   },
   "cv_pdf": {
     "zh": {
-      "file_name": "Ewan_Qian_Master_CV_2026-11_ZH_Linked_Final.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1_ZH.pdf",
       "pages": 3,
-      "size_bytes": 371094,
-      "storage": "Google Drive",
-      "not_publicly_hosted_in_repository": true,
-      "source_mode": "manually generated",
-      "note": "Do not assume subsequent GitHub changes are reflected in this PDF."
+      "size_bytes": 362985,
+      "sha256": "db6a571a5308b1875bd9bcf6b28a87ffadb40cb6e57bcd2734af5fbd758aa442",
+      "drive_url": "https://drive.google.com/file/d/1pbUox-4YrkhdvqZH7AGL6xV02_AzKQCt/view",
+      "record_links": 60
     },
     "en": {
-      "file_name": "Ewan_Qian_Master_CV_2026-11_EN_Linked_Final.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1_EN.pdf",
       "pages": 3,
-      "size_bytes": 208997,
-      "storage": "Google Drive",
-      "not_publicly_hosted_in_repository": true,
-      "source_mode": "manually generated",
-      "note": "English CV records still largely lack reviewed English source fields."
+      "size_bytes": 283312,
+      "sha256": "a1607179d7d9496b2aeb2b95d764e434e0129e98f29fedc33b942db04eadcd36",
+      "drive_url": "https://drive.google.com/file/d/1DS7y_f3gu3lhS-WdPtDuF7TgN-A7Yi7Y/view",
+      "record_links": 60
     }
   },
   "quality_gates": {
-    "identity": "npm run audit:graph",
+    "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
-    "live_links": "not yet comprehensively verified",
-    "bilingual_cv": "not yet reproducibly generated from the same canonical data",
+    "live_links": "not independently verified: public crawler cannot access new site subpage, no confirmed 200 set",
+    "bilingual_cv": "R1 manual bilingual release seeded from previous approved linked CV PDFs; deterministic canonical-data generator still pending",
     "media_rights": "incomplete",
-    "human_factual_review": "required"
+    "human_factual_review": "required",
+    "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed"
   },
-  "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing."
+  "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
+  "release": "CV / Portfolio Release 1.0",
+  "release_date": "2026-11-07",
+  "release_policy": {
+    "public_records": 60,
+    "total_persisted_records": 61,
+    "unverified_award_handling": "2024 ChinaGraph documented as collaborative Electronic Theater presentation without unverified rank; Hangzhou 2024 award-ranking record excluded from R1 CV because the performance already appears under live events",
+    "project_pages": "existing static project URLs retained",
+    "pdf_links": "target original stable works/records/<id>.html",
+    "site_assets": "portrait uses existing repository source; No Further Input Required cover not substituted with unrelated artwork",
+    "publication_state": "GitHub source exists, Google Drive files verified. Live site URL, 60 HTTP routes, and mobile screenshots require subsequent independent browser/CI verification."
+  }
 }
