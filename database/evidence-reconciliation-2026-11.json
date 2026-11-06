@@ -77,7 +77,16 @@
       "year": "2024–",
       "source_status": "internal_archive_only",
       "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
-      "sources": [],
+      "sources": [
+        {
+          "kind": "team_repository_certificate_index",
+          "url": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/timer-series/timer-chinagraph-2024.md",
+          "verified_scope": "Team archive identifies ChinaGraph 2024 Electronic Theater Outstanding Music Work second prize with Xu Hao and Ewan Qian named; links a certificate image. Actual image has not been visually rechecked in this pass.",
+          "credit_scope": "team_certificate_pointer",
+          "checked": "2026-11-07",
+          "state": "repository_document_read; certificate_image_pending_review"
+        }
+      ],
       "existing_references": {
         "public_url": "https://ewanqian.site/works/timer.html",
         "cover_path": "/assets/home/featured-timer-main.webp",
@@ -92,7 +101,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "audit exact media, external attribution and official venue records"
+      "next_action": "open original ChinaGraph certificate image, verify award text and named recipients, align personal/team award variants; keep 2023 Musicacoustica award separate"
     },
     {
       "project_id": "system-ersha-2026",
@@ -112,7 +121,7 @@
         }
       ],
       "existing_references": {
-        "public_url": "https://virtura.space/work/system-ersha.html",
+        "public_url": "https://ewanqian.site/works/system-ersha.html",
         "cover_path": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
         "legacy_ids": [],
         "source_docs": []
@@ -120,7 +129,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P1-verify-media-and-role",
-      "next_action": "documentary title and individual 3D reconstruction credit against final film credits"
+      "next_action": "find complete credits or official film release for '时间是空间恒久的观察者'; do not conflate with VIRTURA spatial capture case"
     },
     {
       "project_id": "natgeo-crystal-2026",
@@ -201,6 +210,14 @@
           "credit_scope": "team_claim",
           "checked": "2026-11-07",
           "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "historic_creator_archive",
+          "url": "https://github.com/ewanqian/portfolio/blob/main/visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md",
+          "verified_scope": "10 performance visual cue descriptions, original 4 MANA and production credits; not an external third-party source",
+          "credit_scope": "artist_archive",
+          "checked": "2026-11-07",
+          "state": "historical_source_read"
         }
       ],
       "existing_references": {
@@ -219,7 +236,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
       "priority": "P1-verify-media-and-role",
-      "next_action": "verify all six MANA dynamic video playback links and archivable authorized previews"
+      "next_action": "verify playback of MANA IDs 2831761 / 2831703 / 2831826 / 2831892 and CAN 2831944 / 2831960; preserve record-page links"
     },
     {
       "project_id": "ar-shenzhen-2022",
@@ -318,10 +335,10 @@
           "projects/vaoe-exhibition-2023.md"
         ]
       },
-      "media_review": "approved_public_cover_missing",
+      "media_review": "four originals and AR QR source currently missing from approved asset index",
       "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
       "priority": "P1-verify-media-and-role",
-      "next_action": "four original moving-image groups, QR/AR source or recording, exhibition documentation photos"
+      "next_action": "ingest four original exhibition videos, AR QR target/capture, onsite photographs without inventing titles"
     },
     {
       "project_id": "digital-tundra-2026",
@@ -417,7 +434,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
       "priority": "P1-verify-media-and-role",
-      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+      "next_action": "link actual interactive artwork and corresponding exhibition photo to authoritative Hangzhou Center exhibition record"
     },
     {
       "project_id": "illusion-matrix-2024",
@@ -1042,7 +1059,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P1-verify-media-and-role",
-      "next_action": "original visual deliverables and contemporaneous credit/contract; team site alone proves collective only"
+      "next_action": "locate original 2023/2024 deliveries to attribute individual roles; keep producer team Semicolon C and artist official programme separately"
     },
     {
       "project_id": "lonely-av-live-2023",
