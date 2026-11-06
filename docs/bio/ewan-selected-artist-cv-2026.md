@@ -37,6 +37,12 @@ Ewan Qian is a media artist and live audiovisual performer working with sound, m
 - **2024** *TIMER*, Hangzhou International Electronic Music Festival, Zhejiang Conservatory of Music, 26 September — collaborative audiovisual performance.
 - **2024** *Hallucination Resonance / 幻觉共振*, THE BOXX, Shanghai — live visual execution.
 
+## SELECTED CONCERT & THEATRE VISUAL CREDITS
+- **2025** Wang Chuting / 王楚婷, doctoral graduation concert, Central Conservatory of Music, Beijing (7 May) — audiovisual visual production for *Future String Poetry / 未来弦诗* and *Tianhua Liuguang / 天华流光*; musical authorship belongs to the performers/composers.
+- **2025** *The Floating Life / 山海浮生 — 在野与八荒祭*, Edinburgh Festival Fringe, *Focus China*, Edinburgh, United Kingdom — partial stage visuals and poster production for Cheng Yuyang / Spectator Concept Theatre; this entry does not imply involvement in every later Shanghai R.A.W.! staging.
+- **2025** Singland Festival, Singapore — festival opening-film imagery and separate RAIN concert visuals.
+- **2022** CHINATIME Hamburg, Tan Dun *Water Music* programme, Laeiszhalle, Hamburg, Germany — multimedia / concert visuals produced while working with Semicolon C.
+
 ## WORKSHOPS & PUBLIC PROGRAMMES
 - **2026** *Stage Replica / 舞台复刻*, workshop instructor, The Point, Shanghai (MANA publicity support), 31 October.
 - **2026** *Minimal Input — Building an Audiovisual System / 极简输入：构建视听系统*, MANA, 29 August — co-instructor with yiyisogreen.
