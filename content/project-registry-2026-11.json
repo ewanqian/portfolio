@@ -20,7 +20,7 @@
       "en": "No Further Input Required",
       "year": "2026",
       "category": "Exhibition",
-      "url": "https://ewanqian.github.io/portfolio/works/no-further-input-required.html",
+      "url": "https://ewanqian.site/works/no-further-input-required.html",
       "image": "/assets/home/featured-nfi-main.webp",
       "note": "作品页"
     },
@@ -30,7 +30,7 @@
       "en": "Drop Flow",
       "year": "2024–2026",
       "category": "Exhibition",
-      "url": "https://ewanqian.github.io/portfolio/works/drop-flow.html",
+      "url": "https://ewanqian.site/works/drop-flow.html",
       "image": "/assets/home/featured-dropflow-main.webp",
       "note": "作品页",
       "variants": [
@@ -65,7 +65,7 @@
       "en": "TIMER",
       "year": "2024–",
       "category": "Live",
-      "url": "https://ewanqian.github.io/portfolio/works/timer.html",
+      "url": "https://ewanqian.site/works/timer.html",
       "image": "/assets/home/featured-timer-main.webp",
       "note": "作品页",
       "awards": [
@@ -130,7 +130,7 @@
       "en": "TITAN — Holographic Sound Forest",
       "year": "2025",
       "category": "Live",
-      "url": "https://ewanqian.github.io/portfolio/works/titan.html",
+      "url": "https://ewanqian.site/works/titan.html",
       "image": "/assets/raw-picks/titan-bolive-clean-16x9.webp",
       "note": "现场作品页",
       "variants": [
@@ -151,7 +151,7 @@
       "en": "AR Shenzhen Project",
       "year": "2022",
       "category": "Exhibition",
-      "url": "https://ewanqian.github.io/portfolio/works/ar-shenzhen-2022.html",
+      "url": "https://ewanqian.site/works/ar-shenzhen-2022.html",
       "image": "/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp",
       "note": "作品页",
       "variants": [
@@ -447,7 +447,7 @@
       "en": "Real-time Audiovisual Systems",
       "year": "2026–",
       "category": "Research",
-      "url": "https://ewanqian.github.io/portfolio/works/sre-realtime-liveset.html",
+      "url": "https://ewanqian.site/works/sre-realtime-liveset.html",
       "image": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
       "note": "研究原型",
       "variants": [
@@ -469,7 +469,7 @@
       "year": "2025",
       "category": "Production",
       "url": null,
-      "image": "/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp",
+      "image": "/assets/digital-garden/digital-garden-xian-mixc-01.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
@@ -546,7 +546,7 @@
       "year": "2022",
       "category": "Production",
       "url": null,
-      "image": "/portfolio/assets/xtep-xdna/xtep-selected-01.webp",
+      "image": "/assets/xtep-xdna/xtep-selected-01.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
@@ -557,7 +557,7 @@
       "year": "2025",
       "category": "Production",
       "url": null,
-      "image": "/portfolio/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp",
+      "image": "/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
@@ -568,7 +568,7 @@
       "year": "2021",
       "category": "Live",
       "url": null,
-      "image": "/portfolio/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+      "image": "/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
