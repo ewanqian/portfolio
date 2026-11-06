@@ -18,9 +18,18 @@
       "display_name": "无需进一步输入",
       "category": "Exhibition",
       "year": "2026",
-      "source_status": "internal_archive_only",
-      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
-      "sources": [],
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "curatorial_organizer_project_page",
+          "url": "https://semicolonc.art/event/inclusion2026/no-further-input/",
+          "verified_scope": "named Ewan Qian, work description, 2026 Inclusion AI Concept Art exhibition and still-image documentation",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "public_artwork_page_read"
+        }
+      ],
       "existing_references": {
         "public_url": "https://ewanqian.site/works/no-further-input-required.html",
         "cover_path": "/assets/home/featured-nfi-main.webp",
@@ -30,7 +39,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "canonical cover path missing; upload original exhibition photo with permission"
+      "next_action": "link approved official gallery images from curatorial source, preserve author/copyright and correct reported final length vs old drafts"
     },
     {
       "project_id": "drop-flow",
@@ -375,7 +384,16 @@
       "year": "2025–2026",
       "source_status": "internal_archive_only",
       "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
-      "sources": [],
+      "sources": [
+        {
+          "kind": "collaboration_team_archive",
+          "url": "https://github.com/ewanqian/VIRTURA-SpacePort/blob/main/organization/works/%E8%A7%82%E5%AF%9F%E4%B8%8E%E5%85%B1%E7%94%9F%20Observation%20and%20Symbiosis.md",
+          "verified_scope": "collaborative versions Pingshan/Shanghain/Sanlitun team records; public organizer credits not independently established",
+          "credit_scope": "team_claim",
+          "checked": "2026-11-07",
+          "state": "team_archive_indexed"
+        }
+      ],
       "existing_references": {
         "public_url": null,
         "cover_path": "/assets/raw-library/observation-symbiosis-large.webp",
@@ -393,7 +411,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+      "next_action": "confirm museum/venue artist credit and actual exhibition documentation for Shenzhen Pingshan and 2026 Henan; distinguish continuous versions"
     },
     {
       "project_id": "new-media-artist-simulator-2025",
@@ -418,6 +436,14 @@
           "credit_scope": "event_only",
           "checked": "2026-11-07",
           "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "museum_curatorial_notice",
+          "url": "https://tidenews.com.cn/news.html?id=3167260&source=weixin",
+          "verified_scope": "official BABEL BOTTLE exhibition list names Ewan Qian among artists, not necessarily specific work title",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "official_venue_list_read"
         }
       ],
       "existing_references": {
@@ -434,7 +460,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
       "priority": "P1-verify-media-and-role",
-      "next_action": "link actual interactive artwork and corresponding exhibition photo to authoritative Hangzhou Center exhibition record"
+      "next_action": "link artwork title to dated museum label/exhibition photo; avoid treating artist list as specific artwork validation"
     },
     {
       "project_id": "illusion-matrix-2024",
@@ -603,9 +629,18 @@
       "display_name": "DigitalFUTURES 2026",
       "category": "Live",
       "year": "2026",
-      "source_status": "internal_archive_only",
+      "source_status": "event_verified_not_individual",
       "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
-      "sources": [],
+      "sources": [
+        {
+          "kind": "university_official",
+          "url": "https://caup.tongji.edu.cn/d6/02/c33362a382466/page.htm",
+          "verified_scope": "DigitalFUTURES 2026 program/event, not named Ewan audiovisual performance",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "program_only"
+        }
+      ],
       "existing_references": {
         "public_url": null,
         "cover_path": null,
@@ -700,7 +735,7 @@
       "media_review": "approved_public_cover_missing",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+      "next_action": "active research: no completed concert claim; preserve ongoing status"
     },
     {
       "project_id": "sre-realtime-2026",
@@ -840,7 +875,16 @@
       "year": "2025",
       "source_status": "internal_archive_only",
       "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
-      "sources": [],
+      "sources": [
+        {
+          "kind": "museum_background",
+          "url": "https://www.cafamuseum.org/en/exhibit/newsdetail/3389",
+          "verified_scope": "2024 earlier Floating Life stage production at CAFA, not 2025 'II' Edinburgh performance and not personal visual credit",
+          "credit_scope": "background_only",
+          "checked": "2026-11-07",
+          "state": "background_not_same_performance"
+        }
+      ],
       "existing_references": {
         "public_url": null,
         "cover_path": "/assets/home/posterwall.webp",
@@ -854,7 +898,7 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+      "next_action": "find specific 2025 Edinburgh Floating Life II performance publicity and contemporaneous production credit; do not reuse 2024 program as proof"
     },
     {
       "project_id": "transit",
