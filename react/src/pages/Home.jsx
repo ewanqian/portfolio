@@ -22,8 +22,8 @@ function HomeInfo() {
           </p>
           <div className="home-info-links">
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
-            <Link to="/archive">{isZh ? '完整归档' : 'Archive'}</Link>
-            <Link to="/apps">{isZh ? '应用 / Playgrounds' : 'Applications / Playgrounds'}</Link>
+            <a href="/works/archive-2026.html">{isZh ? '完整项目档案' : 'Project archive'}</a>\n            <a href="/works/cv-records.html">{isZh ? '完整履历 / CV' : 'CV records'}</a>
+            <a href="/works/no-further-input-required.html">{isZh ? '无需进一步输入' : 'No Further Input Required'}</a>\n            <Link to="/apps">{isZh ? '应用 / Playgrounds' : 'Applications / Playgrounds'}</Link>
             <Link to="/writing">{isZh ? '写作' : 'Writing'}</Link>
             <a href="https://github.com/ewanqian" target="_blank" rel="noreferrer">GitHub</a>
           </div>
