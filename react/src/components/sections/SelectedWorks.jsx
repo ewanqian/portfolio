@@ -49,9 +49,9 @@ const projectNotes = {
     summaryZh: '矿晶主题多屏影像，以及酒店与体验空间的三维扫描记录。'
   },
   'system-ersha-2026': {
-    titleZh: 'SYSTEM × 二砂 · 点云扫描',
+    titleZh: 'SYSTEM × 二砂包豪斯 · 空间影像',
     context: 'SYSTEM / ERSHA · 2026',
-    contextZh: 'SYSTEM × 郑州二砂 · 2026',
+    contextZh: 'SYSTEM × 二砂包豪斯 · 2026',
     role: 'Spatial capture / point-cloud imagery',
     roleZh: '建筑扫描 / 点云影像',
     summary: 'Architectural point-cloud capture and visual-effects material for the SYSTEM documentary.',
