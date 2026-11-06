@@ -1,0 +1,1265 @@
+{
+  "schema": "ewanqian.evidence-reconciliation.v1",
+  "as_of": "2026-11-07",
+  "policy": {
+    "purpose": "A claim-scoped audit crosswalk, not a substitute for original project facts or a web research claim for all 49 projects.",
+    "verification_levels": [
+      "artist_named_in_external_source",
+      "event_verified_not_individual",
+      "team_first_party_only",
+      "internal_archive_only"
+    ],
+    "rule": "Source existence is not evidence of personal specific role; team projects keep collective credits. No automatic publication or auto-award promotion.",
+    "assets": "A registered image path does not guarantee a valid file, license or authorship."
+  },
+  "projects": [
+    {
+      "project_id": "no-further-input-required",
+      "display_name": "无需进一步输入",
+      "category": "Exhibition",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/no-further-input-required.html",
+        "cover_path": "/assets/home/featured-nfi-main.webp",
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "canonical cover path missing; upload original exhibition photo with permission"
+    },
+    {
+      "project_id": "drop-flow",
+      "display_name": "滴流",
+      "category": "Exhibition",
+      "year": "2024–2026",
+      "source_status": "event_verified_not_individual",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "press",
+          "url": "https://art.china.cn/txt/2025-10/28/content_43260502.htm",
+          "verified_scope": "China Hangzhou Art & Technology Biennale venue and dates; not Drop Flow artist credit",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/drop-flow.html",
+        "cover_path": "/assets/home/featured-dropflow-main.webp",
+        "legacy_ids": [
+          "drop-flow-ufo-2025",
+          "drop-flow-visual-2025",
+          "drop-flow-qingdao-2025"
+        ],
+        "source_docs": [
+          "projects/drop-flow-visual-2025.md",
+          "projects/dropflow-expo-2025.md",
+          "content/nodes/drop-flow-hangzhou-biennale.json",
+          "projects/dropflow3-live-2025.md",
+          "content/nodes/ufo-terminal.json"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "timer",
+      "display_name": "控时者",
+      "category": "Live",
+      "year": "2024–",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/timer.html",
+        "cover_path": "/assets/home/featured-timer-main.webp",
+        "legacy_ids": [
+          "timer-loading-access-2-2024",
+          "timer-series-visual-2024"
+        ],
+        "source_docs": [
+          "projects/timer-series-visual-2024.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "system-ersha-2026",
+      "display_name": "二砂包豪斯：时间是空间恒久的观察者",
+      "category": "Production",
+      "year": "2026",
+      "source_status": "team_first_party_only",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "first_party_team",
+          "url": "https://virtura.space/work/system-ersha.html",
+          "verified_scope": "VIRTURA SYSTEM × ERSHA spatial capture case; film title/individual role separately documented",
+          "credit_scope": "team_claim",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://virtura.space/work/system-ersha.html",
+        "cover_path": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "documentary title and individual 3D reconstruction credit against final film credits"
+    },
+    {
+      "project_id": "natgeo-crystal-2026",
+      "display_name": "中国国家地理·矿晶空间影像",
+      "category": "Production",
+      "year": "2026",
+      "source_status": "team_first_party_only",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "first_party_team",
+          "url": "https://virtura.space/work/natgeo-crystal.html",
+          "verified_scope": "team case and subject; Ewan production role not independently verified",
+          "credit_scope": "team_claim",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://virtura.space/work/natgeo-crystal.html",
+        "cover_path": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg",
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "china-ai-gala-2026",
+      "display_name": "中国·AI 盛典开场秀",
+      "category": "Production",
+      "year": "2026",
+      "source_status": "event_verified_not_individual",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "state_broadcaster",
+          "url": "https://sh.cctv.cn/2026/08/08/ARTIjvdeF1dGMwEgA3ZTkPy3260808.shtml",
+          "verified_scope": "2026 China AI Gala scheduled and broadcast; not Ewan role",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://virtura.space/work/ai-gala.html",
+        "cover_path": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/01_AI_GALA/detail_01_mapping.jpg",
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "kashiwa-titan-2025",
+      "display_name": "机械光合：TITAN 的全息声林",
+      "category": "Live",
+      "year": "2025",
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "artist_official",
+          "url": "https://kashiwadaisuke.com/2025/09/29/mechanical-photosynthesis-titans-holographic-sound-forest-kashiwa-daisuke-x-yuki-murata-x-ewan-qian-audiovisual-performance-special/",
+          "verified_scope": "named three artists, performance date/location",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "first_party_team",
+          "url": "https://virtura.space/work/titan.html",
+          "verified_scope": "production system and credited visual scope",
+          "credit_scope": "team_claim",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/titan.html",
+        "cover_path": "/assets/raw-picks/titan-bolive-clean-16x9.webp",
+        "legacy_ids": [
+          "titan",
+          "kashiwa-titan-visual-2025"
+        ],
+        "source_docs": [
+          "projects/kashiwa-titan-visual-2025.md",
+          "works/kashiwa.html",
+          "visual-arts/kashiwa-daisuke/Shenzhen-BO-LIVE-2025-TITAN/README.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "verify all six MANA dynamic video playback links and archivable authorized previews"
+    },
+    {
+      "project_id": "ar-shenzhen-2022",
+      "display_name": "AR 深圳计划",
+      "category": "Exhibition",
+      "year": "2022",
+      "source_status": "event_verified_not_individual",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "government_document",
+          "url": "https://www.szft.gov.cn/attachment/1/1486/1486346/11155916.pdf",
+          "verified_scope": "2022 Shenzhen Light Festival AR 深圳计划 project listed; not Ewan individual credit",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/ar-shenzhen-2022.html",
+        "cover_path": "/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp",
+        "legacy_ids": [
+          "ar-shenzhen-resort-2022"
+        ],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "ether-fragment-2023",
+      "display_name": "以太碎片",
+      "category": "Exhibition",
+      "year": "2023",
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "independent_press",
+          "url": "https://www.thepaper.cn/newsDetail_forward_25053031",
+          "verified_scope": "artist Ewan Qian, Ether Fragment 2023, DREAM·video, 25 seconds",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "press_interview",
+          "url": "https://www.sohu.com/a/737169409_595008",
+          "verified_scope": "interview with Ewan about Ether Fragment and Matrix Navigation",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/ether-fragment/ether-fragment-westbund-2023.webp",
+        "legacy_ids": [
+          "ether-fragment-exhibit-2023"
+        ],
+        "source_docs": [
+          "projects/ether-fragment-exhibit-2023.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "vaoe-2023",
+      "display_name": "虚拟航线",
+      "category": "Exhibition",
+      "year": "2023",
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "independent_press",
+          "url": "https://www.why.com.cn/wx/article/2023/07/16/16893978431184597010.html",
+          "verified_scope": "artist, solo exhibition, Nanchang Road 312; not 4 videos/AR",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/vaoe.html",
+        "cover_path": null,
+        "legacy_ids": [
+          "vaoe-exhibition-2023"
+        ],
+        "source_docs": [
+          "projects/vaoe-exhibition-2023.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "four original moving-image groups, QR/AR source or recording, exhibition documentation photos"
+    },
+    {
+      "project_id": "digital-tundra-2026",
+      "display_name": "数字苔原：观察与共生、形态的对话",
+      "category": "Exhibition",
+      "year": "2026",
+      "source_status": "event_verified_not_individual",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "organizer_republished",
+          "url": "https://news.sohu.com/a/1038025598_121106991",
+          "verified_scope": "Henan Provincial Cultural Center 2026 digital tundra exhibition and curator; not individual artwork credits",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "artist and coauthor label plus documented artworks/certificates"
+    },
+    {
+      "project_id": "obs-symbiosis-2025",
+      "display_name": "观察与共生",
+      "category": "Exhibition",
+      "year": "2025–2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/raw-library/observation-symbiosis-large.webp",
+        "legacy_ids": [
+          "observe-symbiosis-exhibit-2025",
+          "observe-symbiosis-workshop-2026",
+          "observe-symbiosis-k11-2023"
+        ],
+        "source_docs": [
+          "projects/observe-symbiosis-workshop-2026.md",
+          "workshops/202601-愚见观池-情感容器工作坊.md",
+          "projects/observe-symbiosis-exhibit-2025.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "new-media-artist-simulator-2025",
+      "display_name": "新媒体艺术家模拟器",
+      "category": "Exhibition",
+      "year": "2025",
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "institution_event_notice",
+          "url": "https://tidenews.com.cn/news.html?id=3167260&source=weixin",
+          "verified_scope": "Babel Bottle 2025 official announcement names Ewan Qian among artists; not exact artwork",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "press",
+          "url": "https://hznews.hangzhou.com.cn/wenti/content/2025-07/06/content_9032880.htm",
+          "verified_scope": "museum exhibition occurrence",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/featured-perceptual-environments.webp",
+        "legacy_ids": [
+          "new-media-artist-simulator-2025"
+        ],
+        "source_docs": [
+          "projects/new-media-artist-simulator-2025.md",
+          "projects/babel-bottle-art-2025.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "named participant confirmed for described source; detailed creative responsibilities may still be artist-reported",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "illusion-matrix-2024",
+      "display_name": "幻觉矩阵",
+      "category": "Exhibition",
+      "year": "2024",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "hallu-matrix-exhibit-2024"
+        ],
+        "source_docs": [
+          "projects/hallu-matrix-exhibit-2024.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "illusion-resonance-2024",
+      "display_name": "幻觉共振",
+      "category": "Live",
+      "year": "2024",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/raw-library/ewan-event-phantom-resonance.webp",
+        "legacy_ids": [
+          "hallu-resonance-live-2024"
+        ],
+        "source_docs": [
+          "projects/hallu-resonance-live-2024.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "derive-2024",
+      "display_name": "Dérive / 双城记",
+      "category": "Exhibition",
+      "year": "2024",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/raw-library/derive-dual-city-poster.webp",
+        "legacy_ids": [
+          "derive-dual-city-2024"
+        ],
+        "source_docs": [
+          "projects/derive-dual-city-2024.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "entropy-2026",
+      "display_name": "ENTROPY — ATMOSPHERIC ESCAPE",
+      "category": "Live",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "waves-cross-2026",
+      "display_name": "WAVES CROSS VOL.3",
+      "category": "Live",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "urkl-2026",
+      "display_name": "URKL 机器人格斗赛 VJ",
+      "category": "Live",
+      "year": "2026",
+      "source_status": "event_verified_not_individual",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "government",
+          "url": "https://www.shanghai.gov.cn/nw15343/20260920/d09d676516ce49ee85fe30c6572f0536.html",
+          "verified_scope": "2026-09-19 URKL Shanghai at Baoshan Gymnasium; not Ewan VJ credit",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "press",
+          "url": "https://sh.people.com.cn/n2/2026/0919/c134768-41701493.html",
+          "verified_scope": "event and venue corroborated",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "reactor-2026",
+      "display_name": "REACTOR GRAND OPENING",
+      "category": "Live",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "digitalfutures-2026",
+      "display_name": "DigitalFUTURES 2026",
+      "category": "Live",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "flatland-2025",
+      "display_name": "Flatland: Mixed Reality Dreams",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "flatland-mr-content-2025"
+        ],
+        "source_docs": [
+          "projects/flatland-mr-content-2025.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "vrplay-2025",
+      "display_name": "WORLD REMIX XR 黑客松视觉",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/vrplay-world-remix-2025.webp",
+        "legacy_ids": [
+          "vrplay-ai-xr-hackathon-2026",
+          "vrplay-hackathon-visual-2025"
+        ],
+        "source_docs": [
+          "projects/vrplay-hackathon-visual-2025.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "stage-casting-2026",
+      "display_name": "场景铸造",
+      "category": "Research",
+      "year": "2026–",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "performable-music-2026",
+      "display_name": "可表演音乐研究",
+      "category": "Research",
+      "year": "2026–",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "sre-realtime-2026",
+      "display_name": "实时音画系统研究",
+      "category": "Research",
+      "year": "2026–",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/sre-realtime-liveset.html",
+        "cover_path": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
+        "legacy_ids": [
+          "sre-realtime-liveset-2026"
+        ],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "digital-garden-visual-2025",
+      "display_name": "Digital Garden / 西安万象城「数字游园」",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/digital-garden/digital-garden-xian-mixc-01.webp",
+        "legacy_ids": [
+          "digital-garden-visual-2025"
+        ],
+        "source_docs": [
+          "projects/digital-garden-visual-2025.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "glance-thousand-install-2023",
+      "display_name": "安昌光影艺术季「一眼万千」",
+      "category": "Exhibition",
+      "year": "2023",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/archive-observation-clean.webp",
+        "legacy_ids": [
+          "glance-thousand-install-2023"
+        ],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "kashiwa-band-visual-2025",
+      "display_name": "Kashiwa Daisuke / CAN Festival Zhoushan",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/glimpse-canfest-zhoushan.webp",
+        "legacy_ids": [
+          "kashiwa-band-visual-2025"
+        ],
+        "source_docs": [
+          "projects/kashiwa-band-visual-2025.md",
+          "visual-arts/kashiwa-daisuke/Zhoushan-CAN-Festival-2025/README.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "mke-terminal",
+      "display_name": "Mikael Lind × KASHIWA Daisuke × Qian Yuwen",
+      "category": "Live",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/mke-terminal.html",
+        "cover_path": "/assets/mke-terminal/pdf-p02-01.webp",
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "audit exact media, external attribution and official venue records"
+    },
+    {
+      "project_id": "rain-singapore-visual-2026",
+      "display_name": "Rain 新加坡跨年专场",
+      "category": "Production",
+      "year": "2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/posterwall.webp",
+        "legacy_ids": [
+          "rain-singapore-visual-2026"
+        ],
+        "source_docs": [
+          "projects/rain-singapore-visual-2026.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "shanhaifusheng2-visual-2025",
+      "display_name": "爱丁堡《山海浮生II》",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/posterwall.webp",
+        "legacy_ids": [
+          "shanhaifusheng2-visual-2025"
+        ],
+        "source_docs": [
+          "projects/shanhaifusheng2-visual-2025.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "transit",
+      "display_name": "箱中温室 / Greenhouse in Transit",
+      "category": "Exhibition",
+      "year": "2025–2026",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/home/greenhouse-in-transit-mg17.webp",
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "xtep-xdna22aw-visual-2022",
+      "display_name": "XTEP XDNA / Shanghai Fashion Week",
+      "category": "Production",
+      "year": "2022",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/xtep-xdna/xtep-selected-01.webp",
+        "legacy_ids": [
+          "xtep-xdna22aw-visual-2022"
+        ],
+        "source_docs": [
+          "projects/xtep-xdna22aw-visual-2022.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "yujiayun-45ping-visual-2025",
+      "display_name": "余佳运「45㎡」演唱会 宁波站",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp",
+        "legacy_ids": [
+          "yujiayun-45ping-visual-2025"
+        ],
+        "source_docs": [
+          "projects/yujiayun-45ping-visual-2025.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "zcool-hp-live-2021",
+      "display_name": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+      "category": "Live",
+      "year": "2021",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+        "legacy_ids": [
+          "zcool-hp-live-2021"
+        ],
+        "source_docs": [
+          "projects/zcool-hp-live-2021.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "future-string-tianhua-2025",
+      "display_name": "中央音乐学院王楚婷博士毕业音乐会",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "future-string-tianhua-2025"
+        ],
+        "source_docs": [
+          "projects/future-string-tianhua-2025.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "wavefilm-hackathon-staff-2025",
+      "display_name": "海浪电影周艺动 AI 电影黑客松",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "wavefilm-hackathon-staff-2025"
+        ],
+        "source_docs": [
+          "projects/wavefilm-hackathon-staff-2025.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "westbund-ambient-visual-2025",
+      "display_name": "上海西岸漩心",
+      "category": "Production",
+      "year": "2025",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "westbund-ambient-visual-2025"
+        ],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "semicolon-c-onefive",
+      "display_name": "@onefive — 分号 C 时期视觉制作",
+      "category": "Production",
+      "year": "2023–2024",
+      "source_status": "event_verified_not_individual",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "collective_official",
+          "url": "https://semicolonc.art/about",
+          "verified_scope": "2024 @onefive Tokyo/Osaka multimedia stage production by collective; no individual credit",
+          "credit_scope": "collective_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "artist_official",
+          "url": "https://onefive-web.jp/schedule/detail.php?id=1102588",
+          "verified_scope": "2023 two shows and venues; not contractor",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "artist_official",
+          "url": "https://onefive-web.jp/discography/detail.php?id=1020116",
+          "verified_scope": "ChocoLove release 2024; not lyric-video creator",
+          "credit_scope": "event_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/onefive-semicolonc.html",
+        "cover_path": "/assets/raw-library/onefive-classy-crush-signed.webp",
+        "legacy_ids": [
+          "onefive-chocolove-video-2024",
+          "onefive-underground-visual-2023",
+          "onefive-overground-visual-2023"
+        ],
+        "source_docs": [
+          "projects/onefive-chocolove-video-2024.md"
+        ]
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "original visual deliverables and contemporaneous credit/contract; team site alone proves collective only"
+    },
+    {
+      "project_id": "lonely-av-live-2023",
+      "display_name": "上海广播艺术中心「孤独？」",
+      "category": "Live",
+      "year": "2023",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp",
+        "legacy_ids": [
+          "lonely-av-live-2023"
+        ],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "life-praise-install-2023",
+      "display_name": "上海世纪汇广场《生命的礼赞》",
+      "category": "Exhibition",
+      "year": "2023",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "life-praise-install-2023"
+        ],
+        "source_docs": [
+          "projects/life-praise-install-2023.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "nature-numeral-install-2023",
+      "display_name": "龙湖上海奉贤天街「数字空间与自然共生」",
+      "category": "Exhibition",
+      "year": "2023",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "nature-numeral-install-2023"
+        ],
+        "source_docs": [
+          "projects/nature-numeral-install-2023.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "xiexindance-sixiang-gong-visual-2022",
+      "display_name": "谢欣舞蹈剧场《四相》《汞》",
+      "category": "Production",
+      "year": "2022",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/raw-library/xiexin-sixiang-poster.webp",
+        "legacy_ids": [
+          "xiexindance-sixiang-gong-visual-2022"
+        ],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "watermusic-multi-visual-2022",
+      "display_name": "CHINATIME Hamburg《Water Music》",
+      "category": "Production",
+      "year": "2022",
+      "source_status": "team_first_party_only",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "collective_official",
+          "url": "https://semicolonc.art/about",
+          "verified_scope": "Hamburg ChinaTime concert multimedia production on collective credits; not individual credit",
+          "credit_scope": "collective_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": "/assets/raw-library/chinatime-water-music-visual.webp",
+        "legacy_ids": [
+          "watermusic-multi-visual-2022"
+        ],
+        "source_docs": []
+      },
+      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "migu-olympic-vfx-2022",
+      "display_name": "中国移动咪咕冬奥宣传片",
+      "category": "Production",
+      "year": "2022",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "migu-olympic-vfx-2022"
+        ],
+        "source_docs": [
+          "projects/migu-olympic-vfx-2022.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "meta-speaker-install-2022",
+      "display_name": "西岸凤巢 AI PLAZA《元语者・棱镜现实》",
+      "category": "Exhibition",
+      "year": "2022",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "meta-speaker-install-2022"
+        ],
+        "source_docs": []
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "matrix-navi-2022",
+      "display_name": "上海青年艺术博览会「矩阵导航」",
+      "category": "Exhibition",
+      "year": "2022",
+      "source_status": "internal_archive_only",
+      "external_search_status": "priority_search_completed_for_listed_scope",
+      "sources": [
+        {
+          "kind": "press_interview",
+          "url": "https://www.sohu.com/a/737169409_595008",
+          "verified_scope": "artist interview references Matrix Navigation; 2022 event attribution needs event-specific source",
+          "credit_scope": "work_only",
+          "checked": "2026-11-07",
+          "state": "source_found; specific claims only"
+        }
+      ],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "matrix-navi-2022"
+        ],
+        "source_docs": [
+          "projects/matrix-navi-2022.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "rythem-newyear-live-2021",
+      "display_name": "上海新天地 Rythem 新年跨年演出",
+      "category": "Live",
+      "year": "2021",
+      "source_status": "internal_archive_only",
+      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "sources": [],
+      "existing_references": {
+        "public_url": null,
+        "cover_path": null,
+        "legacy_ids": [
+          "rythem-newyear-live-2021"
+        ],
+        "source_docs": [
+          "projects/rythem-newyear-live-2021.md"
+        ]
+      },
+      "media_review": "approved_public_cover_missing",
+      "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
+      "priority": "P2-source-discovery",
+      "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    }
+  ]
+}
