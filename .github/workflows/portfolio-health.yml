@@ -1,0 +1,51 @@
+name: Portfolio OS graph health
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "database/works.json"
+      - "database/canonical_names.json"
+      - "content/project-registry-2026-11.json"
+      - "content/cv-records-2026-11.json"
+      - "works/records/**"
+      - "scripts/audit-portfolio-graph.mjs"
+      - ".github/workflows/portfolio-health.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "database/**"
+      - "content/**"
+      - "works/records/**"
+      - "scripts/audit-portfolio-graph.mjs"
+      - ".github/workflows/portfolio-health.yml"
+  schedule:
+    - cron: "13 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-health-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  portfolio-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Audit ID, CV, project, evidence and media relations
+        run: node scripts/audit-portfolio-graph.mjs
+      - name: Save full findings (never auto-edit source)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-health-report
+          path: reports/portfolio-health.json
+          if-no-files-found: warn
+          retention-days: 30
