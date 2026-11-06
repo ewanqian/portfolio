@@ -19,7 +19,9 @@
     "media:report": "node scripts/media-size-report.mjs",
     "media:optimize": "node scripts/optimize-media-assets.mjs",
     "audit:graph": "node scripts/audit-portfolio-graph.mjs",
-    "audit:live": "node scripts/audit-portfolio-live.mjs"
+    "audit:live": "node scripts/audit-portfolio-live.mjs",
+    "audit:preservation": "node scripts/audit-archive-preservation.mjs",
+    "audit:sources": "node scripts/audit-external-evidence.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
