@@ -68,5 +68,23 @@
     "Ersha project personal role distinction",
     "2026-10-31 Stage Replica workshop name",
     "AI PLAZA remove unverified double-solo-exhibition claim"
-  ]
+  ],
+  "release_sources": {
+    "zh_html": {
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH_Source.html",
+      "drive_url": "https://drive.google.com/file/d/1Pz1bPvtVG0GWh6_29pOX90VH4D32-JOT/view",
+      "portable_self_contained": true
+    },
+    "en_html": {
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN_Source.html",
+      "drive_url": "https://drive.google.com/file/d/1d6ekfUnqEp0SI1HiUOYo-2f-4K_1HQrQ/view",
+      "portable_self_contained": true
+    },
+    "generator": {
+      "file_name": "regenerate_cv_r1_1.py",
+      "drive_url": "https://drive.google.com/file/d/1lIe1o6_RZxXgpkqOk9GbtJppeSs6tIVK/view",
+      "requirements": "weasyprint 68+, PyMuPDF"
+    },
+    "note": "These HTML files reproduce the archived R1.1 layout; they are not yet generated automatically from the canonical CV record database. Exact release PDF hashes are recorded above."
+  }
 }
