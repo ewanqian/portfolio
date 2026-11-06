@@ -1,30 +1,65 @@
 {
   "id": "ar-shenzhen-resort-2022",
   "title": "AR 深圳计划",
-  "subtitle": "深圳光影艺术季 AR 作品",
+  "subtitle": "2022 深圳光影艺术季 · 福田香蜜公园「AR 深圳计划」",
   "years": "2022",
   "type": "ar-exhibition",
-  "summary": "参与深圳光影艺术季的 AR 艺术作品，以数字网络度假村的方式把虚拟空间、城市光影和公共艺术入口连接起来。",
+  "summary": "2022 深圳光影艺术季福田展区「AR 深圳计划」特别策划，陈瑛楠与钱誉文联合署名。通过香蜜公园 AR 点位与手机小程序，呈现与深圳城市景观叠加的数字视觉内容。",
   "practiceLine": "perceptual-environments",
-  "tags": ["ar", "shenzhen", "light-art", "public-art"],
+  "tags": [
+    "ar",
+    "shenzhen",
+    "light-art",
+    "public-art"
+  ],
   "coverImage": "archive-observation-clean.webp",
   "image": "/assets/home/archive-observation-clean.webp",
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": [],
-  "displayModes": ["AR public art", "urban light festival", "digital resort"],
+  "displayModes": [
+    "AR public art",
+    "urban light festival",
+    "digital resort"
+  ],
   "analysisIds": [],
-  "sourceDocs": ["projects/ar-shenzhen-resort-2022.md"],
+  "sourceDocs": [
+    "projects/ar-shenzhen-resort-2022.md"
+  ],
   "repoLink": "https://glowshenzhen.com/index.php?c=show&id=52",
   "links": [
     {
-      "text": "公开活动信息",
-      "url": "https://glowshenzhen.com/index.php?c=show&id=52"
+      "text": "2022 福田展区艺术家名单与海报",
+      "url": "https://www.d-arts.cn/article/article_info/key/MTIwNDAxMTg2NzWD34WssIascw.html"
     },
     {
-      "text": "项目记录",
+      "text": "官网海报资料墙",
+      "url": "/poster-archive-2026.html"
+    },
+    {
+      "text": "项目档案",
       "url": "https://github.com/ewanqian/portfolio/blob/main/projects/ar-shenzhen-resort-2022.md"
     }
   ],
-  "priority": 19
+  "priority": 8,
+  "publicArtistCredits": [
+    "陈瑛楠",
+    "钱誉文"
+  ],
+  "publicPresentation": {
+    "year": 2022,
+    "program": "2022 深圳光影艺术季",
+    "section": "福田展区／香蜜公园 AR 深圳计划",
+    "venue": "香蜜公园",
+    "city": "深圳",
+    "country": "中国",
+    "role": "参展艺术家（联合署名）"
+  },
+  "posterSource": {
+    "kind": "public-event-poster",
+    "url": "https://p1.itc.cn/q_70/images03/20221213/57b4fba0eb024279a459055c27c13c2c.jpeg",
+    "hostedLocally": false,
+    "reference": "https://www.d-arts.cn/article/article_info/key/MTIwNDAxMTg2NzWD34WssIascw.html",
+    "notes": "福田展区传播海报右侧印有 CHEN YING NAN / QIAN YUWEN。链接为外部传播图源，原始图像尚未导入本仓库。"
+  }
 }
