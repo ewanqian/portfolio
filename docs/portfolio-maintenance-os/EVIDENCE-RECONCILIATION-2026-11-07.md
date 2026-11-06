@@ -1,6 +1,6 @@
 # 2026.11 全站作品证据、媒体与历史版本审计
 
-**更新：2026-11-07｜范围：49 个母项目｜状态：第一轮来源交叉核对，不代表49个项目已全部取得独立证明。**
+**更新：2026-11-07（证书图像核验及第二轮来源补充后）｜范围：49 个母项目｜状态：第一轮来源交叉核对，不代表49个项目已全部取得独立证明。**
 
 ## 审计目标
 
@@ -14,10 +14,10 @@
 
 | 情况 | 计数 | 应如何理解 |
 |---|---:|---|
-| A 外部来源直接点名艺术家/作品 | 4 | 不等于艺术家承担了所有制作职责 |
-| B 独立来源能证明活动存在，但未点名个人职责 | 6 | 需要原制作文件 / 署名 |
+| A 外部来源直接点名艺术家/作品 | 5 | 不等于艺术家承担了所有制作职责 |
+| B 独立来源能证明活动存在，但未点名个人职责 | 7 | 需要原制作文件 / 署名 |
 | C 只有个人所在团队的公开案例或成员记录 | 3 | 必须明确团队项目属性 |
-| D 本轮尚无足够匹配的独立外部证据 | 36 | 可以存档，不能冒充已核实 |
+| D 本轮尚无足够匹配的独立外部证据 | 34 | 可以存档，不能冒充已核实 |
 | 有独立项目页 / 公共网址的记录 | 12 | 尚需真实 HTTP 和移动端验收 |
 | 已登记封面媒体路径 | 29 | 不代表图片存在或有使用授权 |
 | 没有登记封面媒体路径 | 20 | 不用其他项目图片冒充 |
@@ -54,61 +54,61 @@
 ### ChinaGraph 2024 / TIMER（单独证据线）
 
 - VIRTURA-SpacePort 已有一条历史文档，明确登记“电子剧场优秀音乐作品二等奖”，获奖者“徐昊、钱誉文”，并链接原始证书照片。与 2023 杭州作曲比赛徐昊《Timer》个人奖 **不是同一条**。
-- 2026.11 的 CV Release 1.0 为避免未经图片复核的级别仍采用中性电子剧场记录。下一步应打开证书图像复核后更新，而不是重复互相矛盾的说法。
+- 2026.11 原 CV Release 1.0 初版曾暂用中性表述，以等待证书图片核验。已打开并目视复核源仓库的原始证书图像，确认《Timer》为电子剧场优秀音乐作品（二等），证书作者徐昊、钱誉文。已恢复到 CV 网页与奖项永久记录；已发布的 PDF 若仍用旧措辞，须在下次 CV 发行版中同步。
 
 ## 49 个项目逐条工作台
 
 | # | 项目 ID | 项目 | 证据级别 | 已索引来源数 | 详情链接 | 封面路径 | 下一次核对重点 |
 |---:|---|---|:---:|---:|:---:|:---:|---|
-| 1 | `no-further-input-required` | 无需进一步输入 | D | 0 | 有 | 已登记 | canonical cover path missing; upload original exhibition photo with permiss |
+| 1 | `no-further-input-required` | 无需进一步输入 | A | 1 | 有 | 已登记 | link approved official gallery images from curatorial source, preserve a |
 | 2 | `drop-flow` | 滴流 | B | 1 | 有 | 已登记 | audit exact media, external attribution and official venue records |
-| 3 | `timer` | 控时者 | D | 1 | 有 | 已登记 | open original ChinaGraph certificate image, verify award text and named rec |
-| 4 | `system-ersha-2026` | 二砂包豪斯：时间是空间恒久的观察者 | C | 1 | 有 | 已登记 | find complete credits or official film release for '时间是空间恒久的观察者'; do not co |
+| 3 | `timer` | 控时者 | D | 1 | 有 | 已登记 | Link original certificate to public TIMER and award pages; keep separate |
+| 4 | `system-ersha-2026` | 二砂包豪斯：时间是空间恒久的观察者 | C | 1 | 有 | 已登记 | find complete credits or official film release for '时间是空间恒久的观察者'; do not |
 | 5 | `natgeo-crystal-2026` | 中国国家地理·矿晶空间影像 | C | 1 | 有 | 已登记 | audit exact media, external attribution and official venue records |
 | 6 | `china-ai-gala-2026` | 中国·AI 盛典开场秀 | B | 1 | 有 | 已登记 | audit exact media, external attribution and official venue records |
-| 7 | `kashiwa-titan-2025` | 机械光合：TITAN 的全息声林 | A | 3 | 有 | 已登记 | verify playback of MANA IDs 2831761 / 2831703 / 2831826 / 2831892 and CAN 2 |
+| 7 | `kashiwa-titan-2025` | 机械光合：TITAN 的全息声林 | A | 3 | 有 | 已登记 | verify playback of MANA IDs 2831761 / 2831703 / 2831826 / 2831892 and CA |
 | 8 | `ar-shenzhen-2022` | AR 深圳计划 | B | 1 | 有 | 已登记 | audit exact media, external attribution and official venue records |
-| 9 | `ether-fragment-2023` | 以太碎片 | A | 2 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 10 | `vaoe-2023` | 虚拟航线 | A | 1 | 有 | 缺 | ingest four original exhibition videos, AR QR target/capture, onsite photog |
+| 9 | `ether-fragment-2023` | 以太碎片 | A | 2 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 10 | `vaoe-2023` | 虚拟航线 | A | 1 | 有 | 缺 | ingest four original exhibition videos, AR QR target/capture, onsite pho |
 | 11 | `digital-tundra-2026` | 数字苔原：观察与共生、形态的对话 | B | 1 | 缺 | 缺 | artist and coauthor label plus documented artworks/certificates |
-| 12 | `obs-symbiosis-2025` | 观察与共生 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 13 | `new-media-artist-simulator-2025` | 新媒体艺术家模拟器 | A | 2 | 缺 | 已登记 | link actual interactive artwork and corresponding exhibition photo to autho |
-| 14 | `illusion-matrix-2024` | 幻觉矩阵 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 15 | `illusion-resonance-2024` | 幻觉共振 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 16 | `derive-2024` | Dérive / 双城记 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 17 | `entropy-2026` | ENTROPY — ATMOSPHERIC ESCAPE | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 18 | `waves-cross-2026` | WAVES CROSS VOL.3 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 19 | `urkl-2026` | URKL 机器人格斗赛 VJ | B | 2 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 20 | `reactor-2026` | REACTOR GRAND OPENING | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 21 | `digitalfutures-2026` | DigitalFUTURES 2026 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 22 | `flatland-2025` | Flatland: Mixed Reality Dreams | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 23 | `vrplay-2025` | WORLD REMIX XR 黑客松视觉 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 24 | `stage-casting-2026` | 场景铸造 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 25 | `performable-music-2026` | 可表演音乐研究 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
+| 12 | `obs-symbiosis-2025` | 观察与共生 | D | 1 | 缺 | 已登记 | confirm museum/venue artist credit and actual exhibition documentation f |
+| 13 | `new-media-artist-simulator-2025` | 新媒体艺术家模拟器 | A | 3 | 缺 | 已登记 | link artwork title to dated museum label/exhibition photo; avoid treatin |
+| 14 | `illusion-matrix-2024` | 幻觉矩阵 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 15 | `illusion-resonance-2024` | 幻觉共振 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 16 | `derive-2024` | Dérive / 双城记 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 17 | `entropy-2026` | ENTROPY — ATMOSPHERIC ESCAPE | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 18 | `waves-cross-2026` | WAVES CROSS VOL.3 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 19 | `urkl-2026` | URKL 机器人格斗赛 VJ | B | 2 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 20 | `reactor-2026` | REACTOR GRAND OPENING | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 21 | `digitalfutures-2026` | DigitalFUTURES 2026 | B | 1 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 22 | `flatland-2025` | Flatland: Mixed Reality Dreams | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 23 | `vrplay-2025` | WORLD REMIX XR 黑客松视觉 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 24 | `stage-casting-2026` | 场景铸造 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 25 | `performable-music-2026` | 可表演音乐研究 | D | 0 | 缺 | 缺 | active research: no completed concert claim; preserve ongoing status |
 | 26 | `sre-realtime-2026` | 实时音画系统研究 | D | 0 | 有 | 已登记 | audit exact media, external attribution and official venue records |
-| 27 | `digital-garden-visual-2025` | Digital Garden / 西安万象城「数字游园」 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 28 | `glance-thousand-install-2023` | 安昌光影艺术季「一眼万千」 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 29 | `kashiwa-band-visual-2025` | Kashiwa Daisuke / CAN Festival Zhoushan | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
+| 27 | `digital-garden-visual-2025` | Digital Garden / 西安万象城「数字游园」 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 28 | `glance-thousand-install-2023` | 安昌光影艺术季「一眼万千」 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 29 | `kashiwa-band-visual-2025` | Kashiwa Daisuke / CAN Festival Zhoushan | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
 | 30 | `mke-terminal` | Mikael Lind × KASHIWA Daisuke × Qian Yuwen | D | 0 | 有 | 已登记 | audit exact media, external attribution and official venue records |
-| 31 | `rain-singapore-visual-2026` | Rain 新加坡跨年专场 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 32 | `shanhaifusheng2-visual-2025` | 爱丁堡《山海浮生II》 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 33 | `transit` | 箱中温室 / Greenhouse in Transit | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 34 | `xtep-xdna22aw-visual-2022` | XTEP XDNA / Shanghai Fashion Week | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 35 | `yujiayun-45ping-visual-2025` | 余佳运「45㎡」演唱会 宁波站 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 36 | `zcool-hp-live-2021` | ZCOOL CUBE 2021 / HP G8 Workstation Launch | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 37 | `future-string-tianhua-2025` | 中央音乐学院王楚婷博士毕业音乐会 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 38 | `wavefilm-hackathon-staff-2025` | 海浪电影周艺动 AI 电影黑客松 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 39 | `westbund-ambient-visual-2025` | 上海西岸漩心 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 40 | `semicolon-c-onefive` | @onefive — 分号 C 时期视觉制作 | B | 3 | 有 | 已登记 | locate original 2023/2024 deliveries to attribute individual roles; keep pr |
-| 41 | `lonely-av-live-2023` | 上海广播艺术中心「孤独？」 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 42 | `life-praise-install-2023` | 上海世纪汇广场《生命的礼赞》 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 43 | `nature-numeral-install-2023` | 龙湖上海奉贤天街「数字空间与自然共生」 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 44 | `xiexindance-sixiang-gong-visual-2022` | 谢欣舞蹈剧场《四相》《汞》 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 45 | `watermusic-multi-visual-2022` | CHINATIME Hamburg《Water Music》 | C | 1 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and an |
-| 46 | `migu-olympic-vfx-2022` | 中国移动咪咕冬奥宣传片 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 47 | `meta-speaker-install-2022` | 西岸凤巢 AI PLAZA《元语者・棱镜现实》 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 48 | `matrix-navi-2022` | 上海青年艺术博览会「矩阵导航」 | D | 1 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
-| 49 | `rythem-newyear-live-2021` | 上海新天地 Rythem 新年跨年演出 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and an |
+| 31 | `rain-singapore-visual-2026` | Rain 新加坡跨年专场 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 32 | `shanhaifusheng2-visual-2025` | 爱丁堡《山海浮生II》 | D | 1 | 缺 | 已登记 | find specific 2025 Edinburgh Floating Life II performance publicity and  |
+| 33 | `transit` | 箱中温室 / Greenhouse in Transit | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 34 | `xtep-xdna22aw-visual-2022` | XTEP XDNA / Shanghai Fashion Week | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 35 | `yujiayun-45ping-visual-2025` | 余佳运「45㎡」演唱会 宁波站 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 36 | `zcool-hp-live-2021` | ZCOOL CUBE 2021 / HP G8 Workstation Launch | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 37 | `future-string-tianhua-2025` | 中央音乐学院王楚婷博士毕业音乐会 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 38 | `wavefilm-hackathon-staff-2025` | 海浪电影周艺动 AI 电影黑客松 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 39 | `westbund-ambient-visual-2025` | 上海西岸漩心 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 40 | `semicolon-c-onefive` | @onefive — 分号 C 时期视觉制作 | B | 3 | 有 | 已登记 | locate original 2023/2024 deliveries to attribute individual roles; keep |
+| 41 | `lonely-av-live-2023` | 上海广播艺术中心「孤独？」 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 42 | `life-praise-install-2023` | 上海世纪汇广场《生命的礼赞》 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 43 | `nature-numeral-install-2023` | 龙湖上海奉贤天街「数字空间与自然共生」 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 44 | `xiexindance-sixiang-gong-visual-2022` | 谢欣舞蹈剧场《四相》《汞》 | D | 0 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 45 | `watermusic-multi-visual-2022` | CHINATIME Hamburg《Water Music》 | C | 1 | 缺 | 已登记 | locate reliable artwork/event source, then approve individual credit and |
+| 46 | `migu-olympic-vfx-2022` | 中国移动咪咕冬奥宣传片 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 47 | `meta-speaker-install-2022` | 西岸凤巢 AI PLAZA《元语者・棱镜现实》 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 48 | `matrix-navi-2022` | 上海青年艺术博览会「矩阵导航」 | D | 1 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
+| 49 | `rythem-newyear-live-2021` | 上海新天地 Rythem 新年跨年演出 | D | 0 | 缺 | 缺 | locate reliable artwork/event source, then approve individual credit and |
 
 **证据级别不是艺术价值排名。** 它只反映本轮外部可核对程度；资料没公开或尚未被搜索到，不等于作品没有价值。
 
