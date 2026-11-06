@@ -143,7 +143,27 @@
           "legacy_url": "/works/titan.html"
         }
       ],
-      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review",
+      "external_media": [
+        {
+          "type": "artist_official",
+          "url": "https://kashiwadaisuke.com/2025/09/29/mechanical-photosynthesis-titans-holographic-sound-forest-kashiwa-daisuke-x-yuki-murata-x-ewan-qian-audiovisual-performance-special/"
+        },
+        {
+          "type": "mana_artist_channel",
+          "url": "https://www.manamana.net/peopleCenter/432894/home#!zh"
+        },
+        {
+          "type": "historical_performance_track_previews",
+          "ids": [
+            "2831761",
+            "2831703",
+            "2831826",
+            "2831892"
+          ],
+          "platform": "manamana.net"
+        }
+      ]
     },
     {
       "id": "ar-shenzhen-2022",
@@ -618,13 +638,13 @@
     },
     {
       "id": "semicolon-c-onefive",
-      "zh": "@onefive「ChocoLove」/ Release Visual Record",
-      "en": "@onefive「ChocoLove」/ Release Visual Record",
-      "year": "2024",
+      "zh": "@onefive — 分号 C 时期视觉制作",
+      "en": "@onefive — Visual production, Semicolon C period",
+      "year": "2023–2024",
       "category": "Production",
-      "url": null,
+      "url": "https://ewanqian.site/works/onefive-semicolonc.html",
       "image": "/assets/raw-library/onefive-classy-crush-signed.webp",
-      "note": "归档中发现的历史项目；官方图像与职责详情待规范",
+      "note": "2023 Underground/Overground 演出视觉、2024 ChocoLove 歌词视频；制作署名为分号 C",
       "variants": [
         {
           "legacy_id": "onefive-chocolove-video-2024",
@@ -648,7 +668,28 @@
           "role": "historical archive record"
         }
       ],
-      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review",
+      "evidence": [
+        {
+          "type": "collective_official",
+          "url": "https://semicolonc.art/about",
+          "supports": "2024 @onefive group touring visual production; not individual credit"
+        },
+        {
+          "type": "artist_official",
+          "url": "https://onefive-web.jp/schedule/detail.php?id=1102588",
+          "supports": "2023 Underground / Overground performance dates and venues"
+        },
+        {
+          "type": "artist_official",
+          "url": "https://onefive-web.jp/discography/detail.php?id=1020116",
+          "supports": "ChocoLove song existence/release only"
+        },
+        {
+          "type": "artist_statement",
+          "supports": "Ewan personally contributed during Semicolon C; exact task docs pending"
+        }
+      ]
     },
     {
       "id": "lonely-av-live-2023",
