@@ -1,0 +1,274 @@
+{
+  "schema": "ewanqian.project-index.v1",
+  "as_of": "2026-11-06",
+  "policy": {
+    "canonical_key": "id",
+    "identity": "one root project record per series, exhibition or commission; variants stored as related presentations",
+    "public_destination": "works/archive-2026.html",
+    "redirects": "do not delete old URLs; migrate to canonical pages",
+    "image_rule": "one approved cover per project; preserve originals and attribution",
+    "cv_rule": "PDF title links to existing publicly verified page, otherwise to index entry"
+  },
+  "projects": [
+    {
+      "id": "no-further-input-required",
+      "zh": "无需进一步输入",
+      "en": "No Further Input Required",
+      "year": "2026",
+      "category": "Exhibition",
+      "url": "https://ewanqian.github.io/portfolio/works/no-further-input-required.html",
+      "image": "/assets/home/featured-nfi-main.webp",
+      "note": "作品页"
+    },
+    {
+      "id": "drop-flow",
+      "zh": "滴流",
+      "en": "Drop Flow",
+      "year": "2024–2026",
+      "category": "Exhibition",
+      "url": "https://ewanqian.github.io/portfolio/works/drop-flow.html",
+      "image": "/assets/home/featured-dropflow-main.webp",
+      "note": "作品页"
+    },
+    {
+      "id": "timer",
+      "zh": "控时者",
+      "en": "TIMER",
+      "year": "2024–",
+      "category": "Live",
+      "url": "https://ewanqian.github.io/portfolio/works/timer.html",
+      "image": "/assets/home/featured-timer-main.webp",
+      "note": "作品页"
+    },
+    {
+      "id": "system-ersha-2026",
+      "zh": "二砂包豪斯：时间是空间恒久的观察者",
+      "en": "Ersha Bauhaus — Time Is the Eternal Observer of Space",
+      "year": "2026",
+      "category": "Production",
+      "url": "https://virtura.space/work/system-ersha.html",
+      "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
+      "note": "合作项目页；个人电影署名见履历"
+    },
+    {
+      "id": "natgeo-crystal-2026",
+      "zh": "中国国家地理·矿晶空间影像",
+      "en": "National Geographic — Crystal Landscape",
+      "year": "2026",
+      "category": "Production",
+      "url": "https://virtura.space/work/natgeo-crystal.html",
+      "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg",
+      "note": "项目页"
+    },
+    {
+      "id": "china-ai-gala-2026",
+      "zh": "中国·AI 盛典开场秀",
+      "en": "China AI Gala",
+      "year": "2026",
+      "category": "Production",
+      "url": "https://virtura.space/work/ai-gala.html",
+      "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/01_AI_GALA/detail_01_mapping.jpg",
+      "note": "合作项目页"
+    },
+    {
+      "id": "kashiwa-titan-2025",
+      "zh": "机械光合：TITAN 的全息声林",
+      "en": "TITAN — Holographic Sound Forest",
+      "year": "2025",
+      "category": "Live",
+      "url": "https://ewanqian.github.io/portfolio/works/titan.html",
+      "image": "",
+      "note": "现场作品页"
+    },
+    {
+      "id": "ar-shenzhen-2022",
+      "zh": "AR 深圳计划",
+      "en": "AR Shenzhen Project",
+      "year": "2022",
+      "category": "Exhibition",
+      "url": "https://ewanqian.github.io/portfolio/works/ar-shenzhen-2022.html",
+      "image": "",
+      "note": "作品页"
+    },
+    {
+      "id": "ether-fragment-2023",
+      "zh": "以太碎片",
+      "en": "Ether Fragment",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "待核对正式网页"
+    },
+    {
+      "id": "vaoe-2023",
+      "zh": "虚拟航线",
+      "en": "VAOE",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "待补正式网页"
+    },
+    {
+      "id": "digital-tundra-2026",
+      "zh": "数字苔原：观察与共生、形态的对话",
+      "en": "Digital Tundra — Two Works",
+      "year": "2026",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "待补展览页与现场图"
+    },
+    {
+      "id": "obs-symbiosis-2025",
+      "zh": "观察与共生",
+      "en": "Observation and Symbiosis",
+      "year": "2025–2026",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "多次展出；统一母项目页待建"
+    },
+    {
+      "id": "new-media-artist-simulator-2025",
+      "zh": "新媒体艺术家模拟器",
+      "en": "New Media Artist Simulator",
+      "year": "2025",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "待补展览记录"
+    },
+    {
+      "id": "illusion-matrix-2024",
+      "zh": "幻觉矩阵",
+      "en": "Illusion Matrix",
+      "year": "2024",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "不与幻觉共振合并"
+    },
+    {
+      "id": "illusion-resonance-2024",
+      "zh": "幻觉共振",
+      "en": "Illusion Resonance",
+      "year": "2024",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "note": "独立现场演出"
+    },
+    {
+      "id": "derive-2024",
+      "zh": "Dérive / 双城记",
+      "en": "Dérive / Tale of Two Cities",
+      "year": "2024",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "note": "待补项目网页"
+    },
+    {
+      "id": "entropy-2026",
+      "zh": "ENTROPY — ATMOSPHERIC ESCAPE",
+      "en": "ENTROPY",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "note": "待补演出详情"
+    },
+    {
+      "id": "waves-cross-2026",
+      "zh": "WAVES CROSS VOL.3",
+      "en": "WAVES CROSS Vol.3",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "note": "待补演出照片与署名"
+    },
+    {
+      "id": "urkl-2026",
+      "zh": "URKL 机器人格斗赛 VJ",
+      "en": "URKL Robot Fighting — Live Visuals",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "note": "已有照片，待上传对应图集"
+    },
+    {
+      "id": "reactor-2026",
+      "zh": "REACTOR GRAND OPENING",
+      "en": "REACTOR",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "note": "待补官方演出信息"
+    },
+    {
+      "id": "digitalfutures-2026",
+      "zh": "DigitalFUTURES 2026",
+      "en": "DigitalFUTURES 2026",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "note": "待补官方演出信息"
+    },
+    {
+      "id": "flatland-2025",
+      "zh": "Flatland: Mixed Reality Dreams",
+      "en": "Flatland",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": null,
+      "note": "个人职责：360° 背景影像"
+    },
+    {
+      "id": "vrplay-2025",
+      "zh": "WORLD REMIX XR 黑客松视觉",
+      "en": "WORLD REMIX Visual Identity",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/home/vrplay-world-remix-2025.webp",
+      "note": "待补正式作品页"
+    },
+    {
+      "id": "stage-casting-2026",
+      "zh": "场景铸造",
+      "en": "Stage Casting",
+      "year": "2026–",
+      "category": "Research",
+      "url": null,
+      "image": null,
+      "note": "研究与工作坊系列"
+    },
+    {
+      "id": "performable-music-2026",
+      "zh": "可表演音乐研究",
+      "en": "Performable Music",
+      "year": "2026–",
+      "category": "Research",
+      "url": null,
+      "image": null,
+      "note": "研究中；不写作既成展览"
+    },
+    {
+      "id": "sre-realtime-2026",
+      "zh": "实时音画系统研究",
+      "en": "Real-time Audiovisual Systems",
+      "year": "2026–",
+      "category": "Research",
+      "url": "https://ewanqian.github.io/portfolio/works/sre-realtime-liveset.html",
+      "image": null,
+      "note": "研究原型"
+    }
+  ]
+}
