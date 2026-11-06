@@ -1,15 +1,11 @@
 export const homeMainlineWorkIds = [
-  'titan',
   'drop-flow',
-  'china-ai-gala-2026',
-  'natgeo-crystal-2026',
-  'system-ersha-2026',
   'timer',
+  'titan',
+  'system-ersha-2026',
   'digital-garden-visual-2025',
-  'rain-singapore-visual-2026',
-  'yujiayun-45ping-visual-2025'
+  'china-ai-gala-2026'
 ]
-
 export const homeGalleryWorkIds = []
 
 export const galleryWorkIds = [
