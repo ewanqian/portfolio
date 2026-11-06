@@ -11,6 +11,7 @@ const projects = read('content/project-registry-2026-11.json').projects;
 const records = read('content/cv-records-2026-11.json').records;
 const dbWorks = read('database/works.json');
 const legacyNames = read('database/canonical_names.json').projects || {};
+const crosswalk = read('database/identity-crosswalk-2026-11.json').mappings || [];
 const issues = [];
 const add = (severity, code, id, detail) => issues.push({severity,code,id,detail});
 const allIds = (items,label) => {
@@ -26,6 +27,13 @@ const projectIds = allIds(projects,'projects');
 allIds(records,'cv-records');
 const dbIds = allIds(dbWorks,'database/works.json');
 const variantToRoot = new Map();
+const aliasToRoot = new Map();
+for (const mapping of crosswalk) {
+  if (aliasToRoot.has(mapping.legacy_id)) add('error','CROSSWALK_COLLISION',mapping.legacy_id,'multiple alias targets');
+  if (!projectIds.has(mapping.root_project_id)) add('error','CROSSWALK_BAD_ROOT',mapping.legacy_id,mapping.root_project_id);
+  aliasToRoot.set(mapping.legacy_id,mapping.root_project_id);
+}
+
 for (const project of projects) {
   const variants = project.variants || [];
   for (const v of variants) {
@@ -34,6 +42,9 @@ for (const project of projects) {
       add('error','VARIANT_COLLISION',v.legacy_id,'multiple parent project IDs');
     }
     variantToRoot.set(v.legacy_id,project.id);
+    if (aliasToRoot.has(v.legacy_id) && aliasToRoot.get(v.legacy_id) !== project.id) {
+      add('error','CROSSWALK_VARIANT_DISAGREE',v.legacy_id,aliasToRoot.get(v.legacy_id)+' vs '+project.id);
+    }
   }
   if (!project.zh) add('warning','NO_ZH_TITLE',project.id,'missing canonical Chinese title');
   if (!project.en) add('warning','NO_EN_TITLE',project.id,'missing English title');
@@ -45,12 +56,12 @@ for (const project of projects) {
   if (project.url && project.url.includes('ewanqian.github.io/portfolio/')) add('warning','LEGACY_DOMAIN',project.id,project.url);
 }
 for (const work of dbWorks) {
-  if (!projectIds.has(work.id) && !variantToRoot.has(work.id)) {
+  if (!projectIds.has(work.id) && !variantToRoot.has(work.id) && !aliasToRoot.has(work.id)) {
     add('warning','UNMAPPED_DATABASE_WORK',work.id,'manual legacy-to-root mapping needed; do not delete');
   }
 }
 for (const [id] of Object.entries(legacyNames)) {
-  if (!dbIds.has(id) && !projectIds.has(id) && !variantToRoot.has(id)) {
+  if (!dbIds.has(id) && !projectIds.has(id) && !variantToRoot.has(id) && !aliasToRoot.has(id)) {
     add('warning','UNMAPPED_CANONICAL_NAME',id,'name override references an unrecognized work id');
   }
 }
@@ -78,6 +89,8 @@ const metrics = {
   legacy_database_works:dbWorks.length,
   exact_db_project_id_matches:dbWorks.filter(x=>projectIds.has(x.id)).length,
   mapped_variants:variantToRoot.size,
+  explicit_legacy_aliases:aliasToRoot.size,
+  database_works_with_root:dbWorks.filter(x=>projectIds.has(x.id)||variantToRoot.has(x.id)||aliasToRoot.has(x.id)).length,
   cv_missing_english:count('MISSING_ENGLISH_CV'),
   cv_without_project_ref:count('RECORD_WITHOUT_PROJECT'),
   projects_without_cover:count('NO_COVER'),
