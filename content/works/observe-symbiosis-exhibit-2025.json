@@ -1,19 +1,33 @@
 {
   "id": "observe-symbiosis-exhibit-2025",
   "title": "Observation and Symbiosis / 深圳坪山",
-  "subtitle": "扫描环境、数字生态与数据可视化展览节点",
+  "subtitle": "《数字群岛计划：数字水族馆》· 深圳坪山展览馆",
   "years": "2025",
   "type": "exhibition",
-  "summary": "《观察与共生》坪山展把扫描、数字环境与数据可视化合并为一条持续研究线。",
+  "summary": "2025 年深圳坪山展览馆 3F · PSEG 数字场《数字群岛计划：数字水族馆》参展作品《观察与共生》，钱誉文与沈轩联合署名；涉及数据可视化、扫描环境与数字生态影像。",
   "practiceLine": "perceptual-environments",
-  "tags": ["scan", "digital ecology", "exhibition", "data visualization"],
+  "tags": [
+    "scan",
+    "digital ecology",
+    "exhibition",
+    "data visualization"
+  ],
   "coverImage": "featured-perceptual-environments.webp",
   "image": "/assets/home/featured-perceptual-environments.webp",
   "showOnHome": false,
-  "relatedNodes": ["observation-and-symbiosis", "observe-symbiosis-pingshan"],
+  "relatedNodes": [
+    "observation-and-symbiosis",
+    "observe-symbiosis-pingshan"
+  ],
   "relatedWritings": [],
-  "displayModes": ["exhibition screen", "data visualization", "digital environment"],
-  "analysisIds": ["observation-digital-ecology"],
+  "displayModes": [
+    "exhibition screen",
+    "data visualization",
+    "digital environment"
+  ],
+  "analysisIds": [
+    "observation-digital-ecology"
+  ],
   "sourceDocs": [
     "projects/observe-symbiosis-exhibit-2025.md",
     "visual-arts/perceptual-environments/README.md",
@@ -25,7 +39,18 @@
     {
       "text": "项目文档",
       "url": "https://github.com/ewanqian/portfolio/blob/main/projects/observe-symbiosis-exhibit-2025.md"
+    },
+    {
+      "text": "坪山区政府：英文场馆与展览信息",
+      "url": "https://www.szpsq.gov.cn/english/News/WhatisOn/content/post_12276374.html"
     }
   ],
-  "priority": 13
+  "priority": 13,
+  "venue": {
+    "zh": "深圳坪山展览馆 3F · PSEG 数字场",
+    "en": "Pingshan Exhibition Gallery, PSEG Digital Hall",
+    "city": "深圳",
+    "country": "China"
+  },
+  "exhibitionDates": "2025-07-04/2025-11-03"
 }
