@@ -19,8 +19,8 @@
 | C 只有个人所在团队的公开案例或成员记录 | 3 | 必须明确团队项目属性 |
 | D 本轮尚无足够匹配的独立外部证据 | 34 | 可以存档，不能冒充已核实 |
 | 有独立项目页 / 公共网址的记录 | 12 | 尚需真实 HTTP 和移动端验收 |
-| 已登记封面媒体路径 | 29 | 不代表图片存在或有使用授权 |
-| 没有登记封面媒体路径 | 20 | 不用其他项目图片冒充 |
+| 已登记封面媒体路径 | 28 | 不代表图片存在或有使用授权 |
+| 没有登记封面媒体路径 | 21 | 不用其他项目图片冒充 |
 
 ## 最优先抢救与更正的项目
 
@@ -60,7 +60,7 @@
 
 | # | 项目 ID | 项目 | 证据级别 | 已索引来源数 | 详情链接 | 封面路径 | 下一次核对重点 |
 |---:|---|---|:---:|---:|:---:|:---:|---|
-| 1 | `no-further-input-required` | 无需进一步输入 | A | 1 | 有 | 已登记 | link approved official gallery images from curatorial source, preserve a |
+| 1 | `no-further-input-required` | 无需进一步输入 | A | 1 | 有 | 缺 | link approved official gallery images from curatorial source, preserve a |
 | 2 | `drop-flow` | 滴流 | B | 1 | 有 | 已登记 | audit exact media, external attribution and official venue records |
 | 3 | `timer` | 控时者 | D | 1 | 有 | 已登记 | Link original certificate to public TIMER and award pages; keep separate |
 | 4 | `system-ersha-2026` | 二砂包豪斯：时间是空间恒久的观察者 | C | 1 | 有 | 已登记 | find complete credits or official film release for '时间是空间恒久的观察者'; do not |
