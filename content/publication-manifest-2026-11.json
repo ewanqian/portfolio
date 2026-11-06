@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "published-pdf-r1-baseline-with-post-release-web-data-corrections-awaiting-r1-1-pdf",
+  "status": "r1-1-PDF-uploaded-site-source-updated-live-HTTP-not-verified",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -18,33 +18,33 @@
   },
   "cv_pdf": {
     "zh": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1_ZH.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH.pdf",
       "pages": 3,
-      "size_bytes": 362985,
-      "sha256": "db6a571a5308b1875bd9bcf6b28a87ffadb40cb6e57bcd2734af5fbd758aa442",
-      "drive_url": "https://drive.google.com/file/d/1pbUox-4YrkhdvqZH7AGL6xV02_AzKQCt/view",
-      "record_links": 60
+      "size_bytes": 364499,
+      "sha256": "c412c9e742cd0956daa99aa55ee9debfba98490af7fda2b8643f7bc1c16d0943",
+      "drive_url": "https://drive.google.com/file/d/1keAienWYQ3U0ZcHZDLFI_8r-Hn7el90l/view",
+      "distinct_record_links": 60
     },
     "en": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1_EN.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN.pdf",
       "pages": 3,
-      "size_bytes": 283312,
-      "sha256": "a1607179d7d9496b2aeb2b95d764e434e0129e98f29fedc33b942db04eadcd36",
-      "drive_url": "https://drive.google.com/file/d/1DS7y_f3gu3lhS-WdPtDuF7TgN-A7Yi7Y/view",
-      "record_links": 60
+      "size_bytes": 283558,
+      "sha256": "e2abe93df45a43f6c15fc45ce405f8ecf10390f938e4998de46fd4c1e855f2eb",
+      "drive_url": "https://drive.google.com/file/d/1a9P6iK5Sk0XDMcoaBy1hkdWnAPNdcmWQ/view",
+      "distinct_record_links": 60
     }
   },
   "quality_gates": {
     "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
     "live_links": "not independently verified: public crawler cannot access new site subpage, no confirmed 200 set",
-    "bilingual_cv": "R1 PDF no longer mirrors all post-release corrections (VAOE, ERSHA, ChinaGraph); regenerate R1.1 once text/credits formally approved",
+    "bilingual_cv": "R1.1 PDF and website content reconciled for five corrections; full database-to-PDF deterministic generator remains pending.",
     "media_rights": "incomplete",
     "human_factual_review": "required",
     "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed"
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
-  "release": "CV / Portfolio Release 1.0",
+  "release": "CV / Portfolio Release 1.1",
   "release_date": "2026-11-07",
   "release_policy": {
     "public_records": 60,
@@ -58,19 +58,15 @@
   "post_release_reconciliation": {
     "date": "2026-11-07",
     "website_source_updated": true,
-    "existing_pdfs_updated": false,
-    "affected_entries": [
-      "exhibitions-018-2023 VAOE — four moving-image works + QR AR",
-      "production-042-2026 Ersha Bauhaus — shortened personal credit",
-      "award-chinagraph-2024-timer — award certificate verified second class, named Xu Hao and Ewan Qian",
-      "production-052-2024 and production-053-2023 Semicolon C external source references"
-    ],
-    "historical_media_restored": [
-      "TITAN MANA 2831761 2831703 2831826 2831892",
-      "CAN Festival MANA 2831944 2831960",
-      "No Further Input Required curator imagery/source"
-    ],
-    "qa": "7/7 preservation rules statically satisfied at source level; actual public playback and deployment not verified",
-    "next_publication_gate": "Generate R1.1 PDFs from current bilingual CV records, visually compare to prior reference, upload to Drive and replace published download links. Do not claim PDF and website synchronized beforehand."
-  }
+    "existing_pdfs_updated": true,
+    "qa": "Both PDFs confirmed 3 pages, 60 linked permanent-record targets, portrait retained, Unicode text rendered. New live HTTP verification pending.",
+    "next_publication_gate": "Build one deterministic bilingual publication pipeline from approved CV lines and verify all outgoing public URLs"
+  },
+  "r1_1_changes": [
+    "ChinaGraph 2024 named authors and level from original certificate",
+    "VAOE four moving-image groups plus QR AR",
+    "Ersha project personal role distinction",
+    "2026-10-31 Stage Replica workshop name",
+    "AI PLAZA remove unverified double-solo-exhibition claim"
+  ]
 }
