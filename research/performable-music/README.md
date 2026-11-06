@@ -62,3 +62,11 @@ REACTOR / BPM System 提供节拍同步与人工触发的现场证据；Stage Ca
 - [Composition Plan v1 / 开源执行协议](https://github.com/ewanqian/performable-music/tree/main/protocols/composition-plan-v1)；[32 小节 A/B MIDI 实验](https://github.com/ewanqian/performable-music/tree/main/studies/011-musical-expectation)。
 
 这些文档说明可复用研究方法，不代表音乐质量或真实 Vision Pro 联调已经过关。
+
+### MV 叙事、信息可视化与实时视觉 Runtime（2026-11-06）
+
+- [音乐可以构成一座城市吗？](../../writings/performable-music/08-narrative-mv-and-live-runtime.md)：capsule / 百濑义行科幻动画三部曲、Gondry、Cunningham、Gantz Graf、Nosaj Thing 等的音乐影像叙事研究。
+- [NINE / TRANSIT SIGNAL 视觉原型](https://ewanqian.github.io/performable-music/visual-runtime-lab/)：原生 WebGL 三维交通网络 + Canvas2D 信息图形、叙事事件、JSON 录制重放。
+- [视觉 Runtime 工程任务书](https://github.com/ewanqian/performable-music/blob/main/visual-runtime-lab/AGENT_RUNTIME_BUILD_BRIEF.md)：从已有 Show Score/OSC 连接到音乐声部、几何节点资产和 WebXR 的分阶段实施计划。
+
+当前原型只证明视觉与叙事状态的结构可运行，**不代表已经连接 DAW、Vision Pro、实时扫描或完成空间音频**。
