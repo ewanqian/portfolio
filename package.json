@@ -17,7 +17,8 @@
     "audit:portfolio-os": "node scripts/audit-portfolio-os.js",
     "audit:memory": "node scripts/audit-memory-boundary.mjs",
     "media:report": "node scripts/media-size-report.mjs",
-    "media:optimize": "node scripts/optimize-media-assets.mjs"
+    "media:optimize": "node scripts/optimize-media-assets.mjs",
+    "audit:graph": "node scripts/audit-portfolio-graph.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
