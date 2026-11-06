@@ -1,0 +1,47 @@
+{
+  "schema": "ewanqian.publication-manifest.v1",
+  "snapshot": "2026-11-06",
+  "status": "migration-not-yet-synchronized",
+  "canonical_site": "https://ewanqian.site",
+  "internal_object_store": "database/works.json",
+  "canonical_name_overrides": "database/canonical_names.json",
+  "legacy_id_crosswalk": "database/identity-crosswalk-2026-11.json",
+  "public_project_snapshot": "content/project-registry-2026-11.json",
+  "public_cv_snapshot": "content/cv-records-2026-11.json",
+  "existing_react_input": "content/works/*.json",
+  "generated_frontend": "react/src/data/generated/works.js",
+  "web_destinations": {
+    "project_index": "/works/archive-2026.html",
+    "cv_index": "/works/cv-records.html",
+    "cv_record_pattern": "/works/records/{id}.html"
+  },
+  "cv_pdf": {
+    "zh": {
+      "file_name": "Ewan_Qian_Master_CV_2026-11_ZH_Linked_Final.pdf",
+      "pages": 3,
+      "size_bytes": 371094,
+      "storage": "Google Drive",
+      "not_publicly_hosted_in_repository": true,
+      "source_mode": "manually generated",
+      "note": "Do not assume subsequent GitHub changes are reflected in this PDF."
+    },
+    "en": {
+      "file_name": "Ewan_Qian_Master_CV_2026-11_EN_Linked_Final.pdf",
+      "pages": 3,
+      "size_bytes": 208997,
+      "storage": "Google Drive",
+      "not_publicly_hosted_in_repository": true,
+      "source_mode": "manually generated",
+      "note": "English CV records still largely lack reviewed English source fields."
+    }
+  },
+  "quality_gates": {
+    "identity": "npm run audit:graph",
+    "static_build": "npm run build",
+    "live_links": "not yet comprehensively verified",
+    "bilingual_cv": "not yet reproducibly generated from the same canonical data",
+    "media_rights": "incomplete",
+    "human_factual_review": "required"
+  },
+  "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing."
+}
