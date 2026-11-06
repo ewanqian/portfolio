@@ -14,6 +14,7 @@ on:
       - "scripts/audit-archive-preservation.mjs"
       - "scripts/audit-external-evidence.mjs"
       - "scripts/audit-portfolio-graph.mjs"
+      - "scripts/audit-cv-publication.mjs"
       - ".github/workflows/portfolio-health.yml"
   pull_request:
     branches: [main]
@@ -47,6 +48,16 @@ jobs:
           node-version: "22"
       - name: Audit ID, CV, project, evidence and media relations
         run: node scripts/audit-portfolio-graph.mjs
+      - name: Check public CV release and bilingual PDF links
+        run: node scripts/audit-cv-publication.mjs
+      - name: Save CV publication report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-publication-integrity
+          path: reports/cv-release-integrity.json
+          if-no-files-found: warn
+          retention-days: 30
       - name: Enforce no-loss legacy archive and video link requirements
         run: node scripts/audit-archive-preservation.mjs
       - name: Save archive preservation report
