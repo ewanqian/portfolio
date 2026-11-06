@@ -1,4 +1,7 @@
-# Portfolio Maintenance OS v1
+# Portfolio Maintenance OS v1 — historical pilot
+
+> **2026-11-06 update:** This README describes the original maintenance pilot. The current cross-site architecture is [Portfolio OS v2](PORTFOLIO-OS-v2-architecture.md), and the operational Agent entrypoint is [AGENT HANDOFF v2](AGENT-HANDOFF-v2.md). The November source/route inventory and CV publication manifest are migration snapshots, **not evidence that Google Docs, PDFs, React, and the public website already share one build process**. Use `npm run audit:graph` and read the latest release manifest before editing.
+
 
 This folder defines the working system for maintaining the portfolio as a long-term public archive.
 
