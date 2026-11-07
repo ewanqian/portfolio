@@ -49,9 +49,24 @@ const APPLICATIONS = [
     test:'滑动穿过器物区域 → 切换 Metal / Electro / Orchestra → 八字演奏'
   },
   {
+    id:'spatial-studies-05',name:'Spatial Instrument Studies · 05',
+    category:'AV Performance',kind:'Score / Tone.js / Six-Phalanx Sigil',
+    type:'Three Research Instruments',number:'04',
+    subtitleZh:'伴奏自动化、精细合成器与六指节音序',
+    subtitleEn:'Accompaniment, advanced web synthesis and a six-joint musical sigil',
+    summaryZh:'三项独立实验：四路编排与自有音频分轨导入、Tone.js FM/AM 效果链，以及拇指触碰六个指节组成 3345655643 的符号演奏。可选 WSS→OSC；Quest 实机待验收。',
+    summaryEn:'Three linked studies: four-lane score and user-owned audio stems, Tone.js FM/AM sound design, and a thumb-to-six-joint ritual-like sequence. Optional WSS/OSC; headset acceptance remains open.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/studies.html?lab=score',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'DESKTOP · IPAD · QUEST MR',
+    icon:'field',tone:'lime',
+    features:['SCORE / STEMS','TONE FX','6-DIGIT SIGIL'],
+    test:'Studio 伴奏 → Tone.js 音色 → 掐指触发序列'
+  },
+  {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'04',
+    type:'Performance Playground',number:'05',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
@@ -114,7 +129,7 @@ function Applications(){
         {!filtered.length&&<p className="applications-empty">{zh?'没有找到匹配的应用。':'No matching applications.'}</p>}
         <section className="applications-notes">
           <div><span className="applications-eyebrow">RESEARCH ARCHITECTURE</span><h2>{zh?'应用与研究归属':'Application ownership'}</h2></div>
-          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Organic Fields</strong> — Spatial Gesture Scores / Performable Music。{zh?'三种原创音色和图形空间演奏，不复用已停更 iPad App 的音色包；实机 Quest 延迟仍须验证。':'Three new sound worlds and gesture-based music maps, without reproducing the historic iPad app audio packs; headset latency remains unverified.'}</p><p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
+          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Organic Fields</strong> — Spatial Gesture Scores / Performable Music。{zh?'三种原创音色和图形空间演奏，不复用已停更 iPad App 的音色包；实机 Quest 延迟仍须验证。':'Three new sound worlds and gesture-based music maps, without reproducing the historic iPad app audio packs; headset latency remains unverified.'}</p><p><strong>Spatial Instrument Studies 05</strong> — Score / Studio / Tone.js / Sigil。{zh?'展示从原始手部输入到伴奏组织、声音塑形与指节序列的三个完整可测试方向；正式 Strudel 双向同步与硬件音频验收尚未完成。':'Three testable directions: arrangement, synthesis and phalanx-coded gestures. Bidirectional Strudel sync and real hardware audio QA are still open.'}</p><p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
         </section>
       </div>
     </main>
