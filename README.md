@@ -80,43 +80,21 @@
 
 ## Workshops / Public Programs
 
-### 当前系列｜Minimal Input Lab / 极简输入实验室
+### 2026｜已举办的公开工作坊
 
-- [系列总览 / Series Overview](./workshops/minimal-input-lab/README.md)
-- [01｜一键输入 / One-Button Input Reader](./workshops/minimal-input-lab/reader-01-one-button-input.md)
-- [02｜场景铸造 / Scene Forge Reader](./workshops/minimal-input-lab/reader-02-scene-forge.md)
-- [统一 Reader / Workbook 出版规范](./workshops/minimal-input-lab/publication-template.md)
-- 03｜演出 Copilot / Show Copilot — 研发中，尚未作为完成课程发布
+- **[极简输入：构建视听系统 / Minimal Input — Building an Audiovisual System](./workshops/minimal-input-lab/mana-20260829-public-record.md)** — 2026-08-29，MANA；钱誉文 × yiyisogreen 共同主讲。从极简输入、音画 Mapping 到可操作网页系统的 V1 / V2。
+- **[舞台复刻 / Stage Replica](./workshops/minimal-input-lab/stage-replica-20261031-public-record.md)** — 2026-10-31，钱誉文主讲；MANA 宣传支持，The Point 上海场地支持。空间草稿、灰盒、时间编排、预演与修改。
 
-这个系列把输入、状态、节拍、音画关系、空间预演与演出组织放在同一条长期训练线上。MANA、The Point 或其他机构可以作为具体场次的合作方 / 场地出现，但系列本身保持可跨场地复用。
+[网站工作坊页](https://ewanqian.site/portfolio/#/workshops) · [已举办课程与证据口径](./docs/bio/education-and-public-workshops-2026.md)
 
-### 既有课程与研发
+### 长期方法与早期策划档案
 
-- [视听工程师模拟器 / Audiovisual Engineer Simulator](./workshops/audiovisual-engineer-simulator/README.md)
-- [科目一｜现场副驾 / Live Show Copilot](./workshops/audiovisual-engineer-simulator/module-01-one-button-show-control.md)
-- [科目二｜舞台复刻 / Stage Replica](./workshops/audiovisual-engineer-simulator/module-02-stage-previsualization.md)
-- [两场课程长短版与 MANA 编辑稿](./workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md)
+- [极简输入实验室 / Minimal Input Lab](./workshops/minimal-input-lab/README.md) — 持续研究与教材，不是另一场独立举办的课程。
+- [一键输入 Reader](./workshops/minimal-input-lab/reader-01-one-button-input.md) · [场景铸造 Reader](./workshops/minimal-input-lab/reader-02-scene-forge.md)
+- [视听工程师模拟器 / 现场副驾（历史策划）](./workshops/audiovisual-engineer-simulator/README.md) — 旧提案和未单独举办的进阶模块。
+- [游戏化 AI 新媒体艺术工程师（研究）](./workshops/gamified-life-engineer/README.md) · [音画同源乐器（研究原型）](./workshops/personal-av-instrument/README.md)
 
-### 第一阶段公开实践
-
-- [游戏化 AI 新媒体艺术工程师 101｜MANA｜2026-08-29 13:30–16:30｜3 小时 + 快速 Showcase](./workshops/gamified-ai-new-media-art-engineer-101/README.md)
-- [公开工作坊讲义｜从一个动作，到一场演出](./workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
-- [新媒体工程控制论｜公开讲义](./research/performance-control-model/index.html)
-- [Issue #18｜MANA 8.29 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
-
-### 长期系列 / 研究线
-
-- [长期工作坊项目总览](./docs/public-programs/README.md)
-- [游戏化 AI 新媒体艺术工程师 / Gamified AI New Media Art Engineer](./workshops/gamified-life-engineer/README.md)
-- [音画同源乐器 / Personal A/V Instrument](./workshops/personal-av-instrument/README.md)
-
-长期研发：
-
-- [Issue #14 — 游戏化 AI 新媒体艺术工程师](https://github.com/ewanqian/portfolio/issues/14)
-- [Issue #15 — 音画同源乐器](https://github.com/ewanqian/portfolio/issues/15)
-- [Issue #97 — Minimal Input Lab 系列架构](https://github.com/ewanqian/portfolio/issues/97)
-- [Issue #98 — Reader / Workbook 出版规范](https://github.com/ewanqian/portfolio/issues/98)
-- [Issue #99 — 3 小时线下 Run of Show](https://github.com/ewanqian/portfolio/issues/99)
+旧课程名字、草案、Demo 与策划原文保留在 Git 历史和链接档案中，但不进入网站“已举办工作坊”列表。
 
 ---
 
