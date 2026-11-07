@@ -11,6 +11,8 @@ on:
       - "scripts/build-cv-project-links.mjs"
       - "scripts/build-portfolio-sitemap.mjs"
       - "database/evidence-reconciliation-2026-11.json"
+      - "database/media-publication-register-2026-11.json"
+      - "scripts/audit-media-publication.mjs"
       - "works/**"
       - ".github/workflows/publish-portfolio-root.yml"
   workflow_dispatch:
@@ -44,6 +46,8 @@ jobs:
         run: |
           npm ci
           npm ci --prefix react
+      - name: Guard against mismatched covers and missing media
+        run: node scripts/audit-media-publication.mjs
       - name: Build permanent project records and canonical sitemap
         run: |
           node scripts/build-project-record-pages.mjs

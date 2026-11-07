@@ -10,6 +10,9 @@ on:
       - "content/cv-records-2026-11.json"
       - "works/**"
       - "database/evidence-reconciliation-2026-11.json"
+      - "database/media-publication-register-2026-11.json"
+      - "scripts/audit-media-publication.mjs"
+      - "assets/**"
       - "database/archive-preservation-checks.json"
       - "scripts/audit-archive-preservation.mjs"
       - "scripts/audit-external-evidence.mjs"
@@ -56,6 +59,16 @@ jobs:
           node-version: "22"
       - name: Audit ID, CV, project, evidence and media relations
         run: node scripts/audit-portfolio-graph.mjs
+      - name: Check project image identity and media credits
+        run: node scripts/audit-media-publication.mjs
+      - name: Save media identity and rights report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-media-integrity
+          path: reports/portfolio-media-integrity.json
+          if-no-files-found: warn
+          retention-days: 60
       - name: Check public CV release and bilingual PDF links
         run: node scripts/audit-cv-publication.mjs
       - name: Save CV publication report
