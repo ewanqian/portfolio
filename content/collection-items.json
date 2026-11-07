@@ -1,0 +1,43 @@
+{
+  "schema": "ewanqian.personal-curiosities.v1",
+  "updated": "2026-11-07",
+  "policy": {
+    "publication": "Only deliberately curated public items, never direct dumps of WeChat Moments or Instagram; verify private messages, people in photos and reuse rights before publication.",
+    "relationship": "A physical gift or signed item can substantiate a personal connection or memory but is not proof of a specific production role.",
+    "dates": "Unknown dates remain unknown, never inferred from related releases."
+  },
+  "items": [
+    {
+      "id": "onefive-classy-crush-signed-sleeve",
+      "type": "signed-physical-media",
+      "title_zh": "@onefive《CLASSY CRUSH》签名唱片封套",
+      "title_en": "@onefive — Signed CLASSY CRUSH sleeve",
+      "date": null,
+      "date_precision": "unknown",
+      "summary_zh": "个人收藏的 @onefive《CLASSY CRUSH》唱片封套，留有给 Ewan 的手写文字和签名。照片来自个人存档。",
+      "summary_en": "A signed CLASSY CRUSH CD sleeve in a personal collection, bearing handwritten messages addressed to Ewan.",
+      "image": "/assets/raw-library/onefive-classy-crush-signed.webp",
+      "image_role": "personal_collection_photo",
+      "photographer": "not recorded",
+      "rights_review": "owner-provided photograph; record publication context and avoid claiming rights in album artwork",
+      "source_type": "own_physical_item",
+      "public_visibility": "curated",
+      "related_project_ids": [
+        "semicolon-c-onefive"
+      ],
+      "related_cv_record_ids": [
+        "production-052-2024",
+        "production-053-2023"
+      ],
+      "related_encyclopedia_ids": [],
+      "credit_boundary": "This collection image must not be used as proof of authorship of ChocoLove, Underground or Overground visuals.",
+      "tags": [
+        "@onefive",
+        "music",
+        "signed-media",
+        "collaboration",
+        "personal-archive"
+      ]
+    }
+  ]
+}
