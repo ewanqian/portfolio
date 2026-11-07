@@ -72,3 +72,27 @@ Version 0.1 · 2026-11-07
 
 ## 对阅读者的边界
 访客查看公开 Atlas 时看到的是作者主动选择的生活与研究片段，不是能窥探其联系人、私密对话或朋友动态的数据镜像。公开图像如有他人肖像、未发表作品和摄影版权，应逐条审阅。
+
+
+## Instagram Personal ZIP → 私人审核队列（2026-11-07 已补适配器）
+
+个人账号在 Meta 账户中心 → 你的信息和权限 → 导出你的信息，选择 **All time / JSON / High media quality / 帖子、Reels、Stories**。这是一次性历史导出，不等于增量 API。媒体文件可能保存在压缩包中；不同年份的导出目录、字段、缺失媒体并不完全一致。
+
+1. 在本地解压完整 ZIP（如果 Meta 分卷导出，先将各卷解压到同一个专用目录并保留原件）。不得将压缩包提交到公开 GitHub。
+2. 在项目根目录运行：`node scripts/import-instagram-export.mjs "/absolute/path/to/extracted-instagram"`。
+3. 工具在 gitignored 的 `inbox/private/` 创建 `instagram-normalized-YYYY-MM-DD.json`，输出已识别帖子数、媒体文件缺失数和解析警告。只扫描媒体相关 JSON，跳过私信、联系人和评论；不访问网络、不读取凭证、不自动公开。
+4. 确认媒体和日期后运行：`node scripts/triage-social-import.mjs "inbox/private/instagram-normalized-YYYY-MM-DD.json"`。
+5. 审核是否含第三者、人像、地理位置、受版权保护的封面、过去的非公开帖子，再选编进入 Atlas / Cabinet / Timeline。**任何媒体都不能因为导出成功而自动变成公开资产。**
+
+局限：本适配器按 Meta 常见的 `media[].uri` / `creation_timestamp` / `title` JSON 结构识别，若你的导出格式不同，可能输出零条或遗漏数据；需按真实样例增加兼容测试。部分 Story、Reel 或删除内容不一定保留在导出中。保留原始 ZIP 用于之后复核。不得以导出文件时间代替原发布时间，无法确定时日期为 null。
+
+平台资料参考：https://www.facebook.com/help/instagram/181231772500920/ ； https://www.facebook.com/help/230304858213063
+
+## 完成标准与下一批
+
+- [x] GitHub 中存在离线 Instagram 个人号 JSON 适配器
+- [x] 原有去重、关联、隐私审核流程保持独立
+- [ ] 对真实的本人 Instagram ZIP 进行输入测试与字段兼容校验
+- [ ] 人工确认首批 30–50 条候选；验证日期、原始媒体、项目/收藏物关联
+- [ ] 将被选中的记录逐条提交到公开词条数据中
+- [ ] 朋友圈只做自有素材的手动归档 / 受控转存；不开启未经允许的第三人数据同步
