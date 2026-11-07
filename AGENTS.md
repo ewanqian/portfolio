@@ -1,5 +1,8 @@
 # Portfolio Agent Rules
 
+## Session resume and checkpoint
+For “继续”, “有什么能做的”, progress/status requests or a fresh session, read [START-HERE.md](START-HERE.md) first. It is the maintenance checkpoint and task queue, not a factual database. Check newer commits and related open PRs before continuing. Follow its startup and save protocol, update task/checkpoint state after meaningful work, and verify the committed result by reading it back. Never leave the only record of unfinished work in chat. Existing factual, privacy and publication gates below still apply.
+
 ## Portfolio OS v2 — mandatory preflight (2026-11-06)
 
 This policy supplements the existing rules below and applies to every Agent, including short one-off sessions.
