@@ -6,15 +6,28 @@
   "type": "stage-visual",
   "summary": "为 Rain / 郑智薰新加坡跨年专场及 SINGLAND FESTIVAL 2026 参与 Opening 动画、曲目动画视觉与舞台影像工程交付。",
   "practiceLine": "collaborative-performance",
-  "tags": ["stage-visual", "concert", "singland-festival", "rain", "opening-animation"],
-  "coverImage": "posterwall.webp",
-  "image": "/assets/home/posterwall.webp",
+  "tags": [
+    "stage-visual",
+    "concert",
+    "singland-festival",
+    "rain",
+    "opening-animation"
+  ],
+  "coverImage": "its-raining-wide-05.webp",
+  "image": "/assets/rain-singapore/gallery/its-raining-wide-05.webp",
   "showOnHome": true,
   "relatedNodes": [],
   "relatedWritings": [],
-  "displayModes": ["opening animation", "concert screen", "show visual", "stage animation"],
+  "displayModes": [
+    "opening animation",
+    "concert screen",
+    "show visual",
+    "stage animation"
+  ],
   "analysisIds": [],
-  "sourceDocs": ["projects/rain-singapore-visual-2026.md"],
+  "sourceDocs": [
+    "projects/rain-singapore-visual-2026.md"
+  ],
   "repoLink": "https://hk.marinabaysands.com/entertainment/shows/singland-festival-rain.html",
   "links": [
     {

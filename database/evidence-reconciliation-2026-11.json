@@ -500,7 +500,7 @@
       ],
       "existing_references": {
         "public_url": null,
-        "cover_path": "/assets/home/featured-perceptual-environments.webp",
+        "cover_path": "/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp",
         "legacy_ids": [
           "new-media-artist-simulator-2025"
         ],
@@ -843,7 +843,7 @@
       "sources": [],
       "existing_references": {
         "public_url": null,
-        "cover_path": "/assets/home/archive-observation-clean.webp",
+        "cover_path": "/assets/raw-library/glance-thousand-anchang-bridge-projection.webp",
         "legacy_ids": [
           "glance-thousand-install-2023"
         ],
@@ -907,7 +907,7 @@
       "sources": [],
       "existing_references": {
         "public_url": null,
-        "cover_path": "/assets/home/posterwall.webp",
+        "cover_path": "/assets/rain-singapore/gallery/its-raining-wide-05.webp",
         "legacy_ids": [
           "rain-singapore-visual-2026"
         ],
@@ -939,7 +939,7 @@
       ],
       "existing_references": {
         "public_url": null,
-        "cover_path": "/assets/home/posterwall.webp",
+        "cover_path": "/assets/raw-library/floating-life-ii-performance.webp",
         "legacy_ids": [
           "shanhaifusheng2-visual-2025"
         ],
@@ -1142,7 +1142,7 @@
       ],
       "existing_references": {
         "public_url": "https://ewanqian.site/works/onefive-semicolonc.html",
-        "cover_path": "/assets/raw-library/onefive-classy-crush-signed.webp",
+        "cover_path": null,
         "legacy_ids": [
           "onefive-chocolove-video-2024",
           "onefive-underground-visual-2023",
@@ -1152,7 +1152,7 @@
           "projects/onefive-chocolove-video-2024.md"
         ]
       },
-      "media_review": "image_path_registered_rights_and_file_not_fully_audited",
+      "media_review": "No project-specific ChocoLove/Underground/Overground still verified; unrelated Classy Crush art removed.",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P1-verify-media-and-role",
       "next_action": "locate original 2023/2024 deliveries to attribute individual roles; keep producer team Semicolon C and artist official programme separately"

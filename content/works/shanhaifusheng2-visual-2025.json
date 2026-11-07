@@ -6,15 +6,26 @@
   "type": "stage-visual",
   "summary": "为爱丁堡艺术节 Focus China《山海浮生II：八荒祈》参与舞台视觉制作与工程交付，连接海外演出语境与舞台影像执行。",
   "practiceLine": "collaborative-performance",
-  "tags": ["edinburgh", "focus-china", "stage-visual", "shanhaifusheng"],
-  "coverImage": "posterwall.webp",
-  "image": "/assets/home/posterwall.webp",
+  "tags": [
+    "edinburgh",
+    "focus-china",
+    "stage-visual",
+    "shanhaifusheng"
+  ],
+  "coverImage": "floating-life-ii-performance.webp",
+  "image": "/assets/raw-library/floating-life-ii-performance.webp",
   "showOnHome": false,
   "relatedNodes": [],
   "relatedWritings": [],
-  "displayModes": ["stage screen", "touring performance", "visual delivery"],
+  "displayModes": [
+    "stage screen",
+    "touring performance",
+    "visual delivery"
+  ],
   "analysisIds": [],
-  "sourceDocs": ["projects/shanhaifusheng2-visual-2025.md"],
+  "sourceDocs": [
+    "projects/shanhaifusheng2-visual-2025.md"
+  ],
   "repoLink": "https://www.prnewswire.co.uk/news-releases/2025-china-focus-returns-to-edinburgh-festivals-showcasing-cutting-edge-chinese-performing-arts-302526851.html",
   "links": [
     {
