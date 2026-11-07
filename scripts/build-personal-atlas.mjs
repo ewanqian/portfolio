@@ -14,7 +14,7 @@ const index=read('content/project-registry-2026-11.json').projects;
 const cvRows=read('content/cv-records-2026-11.json').records;
 const crosswalk=read('database/identity-crosswalk-2026-11.json').mappings;
 const projectAlias=new Map(crosswalk.map(x=>[x.legacy_id,x.root_project_id]));
-const peopleById=new Map(enc.people.map(x=>[x.id,x.name_zh||x.name_en||x.artist_name||x.id]));
+const peopleById=new Map([[enc.person.id,enc.person.name_zh||enc.person.name_en],...enc.people.map(x=>[x.id,x.name_zh||x.name_en||x.artist_name||x.id])]);
 const categoryLabels={series:'系列作品',work:'艺术作品',performance:'现场演出',exhibition:'展览',award:'奖项',research_line:'研究脉络',research:'持续研究',workshop:'工作坊',production:'项目制作',collaboration:'艺术合作','field-note':'制作笔记','spatial-fragment':'空间影像片段'};
 const summaryOf=x=>x.summary_zh||x.description_zh||x.role_zh||[x.date||x.year||x.period,x.venue_zh||x.city_zh||x.format_zh].filter(Boolean).join(' · ')||(categoryLabels[x.type]||'历史档案')+' · '+(x.title_zh||x.title_en||x.id);
 const projectIdsOf=x=>[...(x.related_project_ids||[]),...(x.relatedWorks||[]).map(id=>projectAlias.get(id)||id)].filter((id,i,arr)=>arr.indexOf(id)===i&&projectById.has(id));
