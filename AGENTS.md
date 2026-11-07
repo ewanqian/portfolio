@@ -3,6 +3,10 @@
 ## Session resume and checkpoint
 For “继续”, “有什么能做的”, progress/status requests or a fresh session, read [START-HERE.md](START-HERE.md) first. It is the maintenance checkpoint and task queue, not a factual database. Check newer commits and related open PRs before continuing. Follow its startup and save protocol, update task/checkpoint state after meaningful work, and verify the committed result by reading it back. Never leave the only record of unfinished work in chat. Existing factual, privacy and publication gates below still apply.
 
+## Daily CV copyediting (2026-11-07)
+
+When the user asks to polish wording, grammar, names, punctuation, or brevity on the CV, edit `cv_zh` and `cv_en` for the stable record ID. Preserve `zh`/`en` detailed history, creator credits and evidence. The same selection must generate both print languages, PDF links, web rows and the searchable index. Read `docs/cv-publication/CV-COPY-STYLE-2026-11.md`. Factual corrections are different: update the canonical full record and sources as well. Never claim the latest site release passed HTTP based only on a previous version's test.
+
 ## Publication consistency amendment (2026-11-07)
 
 - For CV release status, **use the current `content/publication-manifest-2026-11.json` and actual generated `assets/cv` PDFs**, never outdated 1.1 URLs or an old handoff excerpt. The canonical R1.2 website PDFs have confirmed 160/160 production HTTP checks; earlier static-only status is historical.
