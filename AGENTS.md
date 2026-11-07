@@ -3,6 +3,12 @@
 ## Session resume and checkpoint
 For “继续”, “有什么能做的”, progress/status requests or a fresh session, read [START-HERE.md](START-HERE.md) first. It is the maintenance checkpoint and task queue, not a factual database. Check newer commits and related open PRs before continuing. Follow its startup and save protocol, update task/checkpoint state after meaningful work, and verify the committed result by reading it back. Never leave the only record of unfinished work in chat. Existing factual, privacy and publication gates below still apply.
 
+## Publication consistency amendment (2026-11-07)
+
+- For CV release status, **use the current `content/publication-manifest-2026-11.json` and actual generated `assets/cv` PDFs**, never outdated 1.1 URLs or an old handoff excerpt. The canonical R1.2 website PDFs have confirmed 160/160 production HTTP checks; earlier static-only status is historical.
+- Check `npm run audit:cv` plus `node scripts/audit-release-consistency.mjs` after updating CV data, selected IDs or any PDF link. **A Google Drive duplicate with a different SHA-256 is an alternate export, not the canonical website release**.
+- Read the [lessons and stop rules](docs/portfolio-maintenance-os/RETROSPECTIVE-AND-RELEASE-RULES-2026-11-07.md) before proposing another data store, duplicate PDF design or project rewrite. Verify that a missing feature is not already implemented.
+
 ## Portfolio OS v2 — mandatory preflight (2026-11-06)
 
 This policy supplements the existing rules below and applies to every Agent, including short one-off sessions.

@@ -40,14 +40,14 @@
     "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
     "live_links": "R1.2 production:160/160 passed on 2026-11-07, including new print pages, old/new JSON routes and exact published PDF SHA-256. Evidence:docs/portfolio-maintenance-os/releases/evidence/r1.2-live-http.json. Full responsive/video verification pending.",
-    "bilingual_cv": "61 records contain English; 60 selected IDs drive web rows, print templates and both three-page PDFs; selection, source and PDF hashes checked.",
+    "bilingual_cv": "61/61 records bilingual; 60 selected IDs generate screen CV, print HTML and both 3-page R1.2 PDFs via one builder. The previous R1.1 PDFs contained 043/044 ID inversion; official R1.2 does not.",
     "media_rights": "incomplete",
     "human_factual_review": "required",
     "pdf": "R1.2: 3 pages per language, 60 unique permanent record targets, six pages rendered and inspected.",
     "internal_workgraph": "50 unique project IDs, 50 evidence entries, 61 record IDs, 60 public CV links; no broken CV project IDs (repository-source static check).",
-    "preservation": "11 mandatory historic media/source presence rules passed by source string checks; real HTTP / video playback not verified.",
+    "preservation": "14/14 mandatory historic media/source presence rules pass in repository source; external media playback and ownership remain separate acceptance gates.",
     "permanent_archive": "50 committed generated project HTML files; all 50 project IDs in sitemap; 61 CV record URLs in sitemap; 24 CV-to-project related links; 25 local project cover paths present in repository.",
-    "generated_script_syntax": "CV generators, live auditor and React build passed; production workflow outcomes recorded in release report."
+    "generated_script_syntax": "R1.2 build/CI and HTTP QA passed per published Actions report; added release consistency gate prevents stale counts and mismatched repository PDF hashes."
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
   "release": "CV / Portfolio Release 1.2",
@@ -59,14 +59,14 @@
     "project_pages": "existing static project URLs retained",
     "pdf_links": "target original stable works/records/<id>.html",
     "site_assets": "portrait uses existing repository source; No Further Input Required cover not substituted with unrelated artwork",
-    "publication_state": "GitHub source exists, Google Drive files verified. Live site URL, 60 HTTP routes, and mobile screenshots require subsequent independent browser/CI verification."
+    "publication_state": "Canonical website CV R1.2 PDFs published and tested via 160/160 production HTTP checks including exact PDF SHA-256; six-template full responsive and external video/rights checks still pending."
   },
   "post_release_reconciliation": {
     "date": "2026-11-07",
     "website_source_updated": true,
     "existing_pdfs_updated": true,
-    "qa": "Both PDFs confirmed 3 pages, 60 linked permanent-record targets, portrait retained, Unicode text rendered. New live HTTP verification pending.",
-    "next_publication_gate": "Build one deterministic bilingual publication pipeline from approved CV lines and verify all outgoing public URLs"
+    "qa": "R1.2 website generator/renderer: both 3 pages, 60 unique record targets, source checks and 160/160 production HTTP verified; six-template responsive / hosted video checks not complete.",
+    "next_publication_gate": "Finish responsive 6-template visual acceptance, external video playback and priority media rights, without recreating the R1.2 CV system."
   },
   "r1_1_changes": [
     "ChinaGraph 2024 named authors and level from original certificate",
@@ -111,7 +111,7 @@
     "sitemap": "scripts/build-portfolio-sitemap.mjs",
     "trigger": ".github/workflows/publish-portfolio-root.yml",
     "policy": "Generated canonical project pages never overwrite hand-authored work pages; CV record generator only edits marked related-project sections.",
-    "caveat": "Files committed to GitHub and checked at source level; GitHub Pages HTTP and device UI have not been independently verified."
+    "caveat": "R1.2 production Pages HTTP verification passed 160/160. Full six-template responsive visual QA, third-party hosted videos and media rights remain unverified."
   },
   "public_archive_pipeline": {
     "generator": "scripts/build-public-archive.mjs",
@@ -170,5 +170,23 @@
       "requirements": "weasyprint 68+, PyMuPDF"
     },
     "note": "These HTML files reproduce the archived R1.1 layout; they are not yet generated automatically from the canonical CV record database. Exact release PDF hashes are recorded above."
+  },
+  "maintenance_metrics": {
+    "as_of": "2026-11-07",
+    "projects": 50,
+    "cv_records": 61,
+    "published_cv": 60,
+    "bilingual_records": 61,
+    "archive_preservation_rules": 14,
+    "public_cover_assignments": 27,
+    "photo_author_and_usage_rights_review_pending": 27,
+    "production_http": "160/160 source-confirmed by recorded production QA",
+    "release_integrity_check": "scripts/audit-release-consistency.mjs",
+    "interpretation": "Versioned status, not evidence for any unverified personal award, role or media license."
+  },
+  "alternate_pdf_copies": {
+    "note": "Additional corrected R1.2 PDFs were independently rendered and uploaded to Google Drive during cleanup. Their text/record links were checked, but they are NOT byte-identical with the canonical website generator outputs. The website-linked PDF and its manifest SHA-256 remain authoritative.",
+    "zh_url": "https://drive.google.com/file/d/17bvx_rx5UabN-urncE2T9spsSdRuAkrJ/view",
+    "en_url": "https://drive.google.com/file/d/1EkFQcvxqxYZUG4jpgyDid5u78gBrS4Pc/view"
   }
 }
