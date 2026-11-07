@@ -1,5 +1,8 @@
 # Agent Handoff / 场景：维护 Ewan Qian 的作品与 CV
 
+## 新会话与收尾（2026-11-07）
+先读根目录 [START-HERE.md](../../START-HERE.md)，核对最新提交、发行清单和当前任务，再执行下方 preflight。用户问“有什么能做的”时从现有队列回答；说“继续”时推进最高优先级可执行项。每轮完成或阻塞时更新 START-HERE.md；较大变更留下 handoffs/ 记录及测试/提交/下一步，重新读取确认保存成功。不要只在聊天中承诺稍后继续。START-HERE 是维护状态入口，作品事实及发行产物仍分别以 database 与 manifest 为准。
+
 这是给 Codex、ChatGPT、其他连接 GitHub 的 Agent 直接执行的操作规约。可在新对话中说：**“按照 `docs/portfolio-maintenance-os/AGENT-HANDOFF-v2.md` 维护我的网站，先执行 preflight，处理下面的新资料：……”**
 
 ## Preflight（每次执行，禁止跳过）
