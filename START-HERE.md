@@ -61,6 +61,7 @@ PORT-03 的选用履历→网页/React引用/打印HTML/中英PDF生成及生产
 2026-11-07：建立固定续接入口，将其连接到 README、AGENTS、既有 handoff 和 NOW；沿用已存档 R1.1 / permalink 基线。本轮已读取 Actions：部署成功，线上旧版154项中152通过、两份JSON落入SPA首页。新增公开字段导出、61个记录页清理、发布目录兼容JSON。React构建、CV/graph/preservation/portfolio-os检查、本地发布包154项HTTP检查通过；线上HTTP复验154/154通过；桌面项目搜索及手机履历搜索/详情抽查通过，六类页面完整视觉验收和视频仍待做。已恢复61条英文（缺失0），增加60条选用记录的统一生成器、React Profile荣誉引用、双语打印HTML及三页PDF R1.2；本地160/160发布包HTTP检查通过，正式域名160/160项HTTP检查通过，包括两份PDF的SHA-256。详见 handoffs/2026-11-07-public-output-pipeline.md。
 
 ## 详细依据
+- [本轮批量收尾交接：R1.2、英文补档、独立 Drive 备份及验收边界](docs/portfolio-maintenance-os/handoffs/2026-11-07-r12-batch-closeout.md)
 - [操作规约](docs/portfolio-maintenance-os/AGENT-HANDOFF-v2.md)
 - [架构](docs/portfolio-maintenance-os/PORTFOLIO-OS-v2-architecture.md)
 - [发行清单](content/publication-manifest-2026-11.json)
