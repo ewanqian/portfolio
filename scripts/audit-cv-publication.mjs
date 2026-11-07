@@ -10,6 +10,9 @@ const web=read('works/cv.html');
 const problems=[];
 const complain=(code,detail)=>problems.push({code,detail});
 const byId=new Map(records.map(x=>[x.id,x]));
+for(const r of records){if(typeof r.en!=='string'||!r.en.trim())complain('MISSING_ENGLISH',r.id)}
+if(!byId.get('production-043-2026')?.en?.includes('AI Together'))complain('AI_GALA_EN_MISMATCH','production-043-2026');
+if(!byId.get('production-044-2026')?.en?.includes('National Geographic'))complain('NATGEO_EN_MISMATCH','production-044-2026');
 const ids=[...web.matchAll(/href="records\/([a-z0-9-]+)\.html"/g)].map(m=>m[1]);
 const unique=[...new Set(ids)];
 if(unique.length!==60)complain('RECORD_COUNT','expected 60 distinct CV links, found '+unique.length);

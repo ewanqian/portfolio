@@ -31,6 +31,8 @@ for (const r of records) {
   const record = /(<section class="section"><h2>Record \/ 履历记录<\/h2>)<p>[\s\S]*?<\/p>/;
   if (!record.test(html)) throw Error('Unexpected record template: ' + r.id);
   html = html.replace(record, (_, prefix) => prefix + '<p>' + escape(r.zh) + '</p>');
+  html = html.replace(/<p class="record-english" lang="en">[\s\S]*?<\/p>/g, '');
+  if (r.en) html = html.replace('<h2>Record / 履历记录</h2><p>' + escape(r.zh) + '</p>', '<h2>Record / 履历记录</h2><p>' + escape(r.zh) + '</p><p class="record-english" lang="en">' + escape(r.en) + '</p>');
   html = html.replace(/<p class="sources">此条仍需要[\s\S]*?<\/p>/g, '')
     .replace(/<section class="section"><h2>Archive metadata \/ 档案信息<\/h2>[\s\S]*?<\/section>/g, '')
     .replace('This entry is an archival record, not a claim of independent organizer verification. ', '');
