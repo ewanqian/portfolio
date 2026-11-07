@@ -20,8 +20,8 @@
     "zh": {
       "file_name": "Ewan_Qian_CV_2026-11_R1.2.1_ZH.pdf",
       "pages": 3,
-      "size_bytes": 358790,
-      "sha256": "b442f0fd195a5f081775f94ab190aa2929839491e092a9122b893eef8851c58c",
+      "size_bytes": 359212,
+      "sha256": "a4cd5647e194ca739a5f12eda5988413ee3054cff3b9721288e83009319ba79f",
       "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2.1_ZH.pdf",
       "distinct_record_links": 60,
       "source_html": "works/cv-print-zh.html"
@@ -29,8 +29,8 @@
     "en": {
       "file_name": "Ewan_Qian_CV_2026-11_R1.2.1_EN.pdf",
       "pages": 3,
-      "size_bytes": 281991,
-      "sha256": "378d118074213602cfddc7bec82778000104f657c40f60898404178fce5f7b16",
+      "size_bytes": 282056,
+      "sha256": "2a5819325ba2666841761048d7c583e501fa01d6d9e9212a74500d6e47181673",
       "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2.1_EN.pdf",
       "distinct_record_links": 60,
       "source_html": "works/cv-print-en.html"
@@ -143,7 +143,7 @@
     }
   },
   "bilingual_publication": {
-    "generator_input_sha256": "7317bdfe39413bbb605f5cfad50e25c5e2e95e9ab91fb68f1b97469706dac731",
+    "generator_input_sha256": "1ef64fad77584ce227292c04929569d5ca7386852381416446e3d3e59f2e3097",
     "selection": "content/cv-selection.json",
     "records": "content/cv-records-2026-11.json",
     "generator": "scripts/build-cv-publication.mjs",
