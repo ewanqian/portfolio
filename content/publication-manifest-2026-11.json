@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "r1-2-generated-awaiting-production-verification",
+  "status": "r1.2.1-generated-awaiting-production-verification",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -20,8 +20,8 @@
     "zh": {
       "file_name": "Ewan_Qian_CV_2026-11_R1.2.1_ZH.pdf",
       "pages": 3,
-      "size_bytes": 367637,
-      "sha256": "3b82760fbef724740ee2d7bd832c6b75a874586609953786b852a65bf0f40a3d",
+      "size_bytes": 358790,
+      "sha256": "b442f0fd195a5f081775f94ab190aa2929839491e092a9122b893eef8851c58c",
       "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2.1_ZH.pdf",
       "distinct_record_links": 60,
       "source_html": "works/cv-print-zh.html"
@@ -29,8 +29,8 @@
     "en": {
       "file_name": "Ewan_Qian_CV_2026-11_R1.2.1_EN.pdf",
       "pages": 3,
-      "size_bytes": 283101,
-      "sha256": "3acf743814e4ca13f332794fb1d87609ab41f2ab8eab7fdcc9ccf0d2b8bd72ee",
+      "size_bytes": 281991,
+      "sha256": "378d118074213602cfddc7bec82778000104f657c40f60898404178fce5f7b16",
       "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2.1_EN.pdf",
       "distinct_record_links": 60,
       "source_html": "works/cv-print-en.html"
@@ -143,7 +143,7 @@
     }
   },
   "bilingual_publication": {
-    "generator_input_sha256": "fda91a498e8600b3b1620bbaa4b547ac43018ed24dd8cb7ad80f9ed7bf286ece",
+    "generator_input_sha256": "7317bdfe39413bbb605f5cfad50e25c5e2e95e9ab91fb68f1b97469706dac731",
     "selection": "content/cv-selection.json",
     "records": "content/cv-records-2026-11.json",
     "generator": "scripts/build-cv-publication.mjs",
