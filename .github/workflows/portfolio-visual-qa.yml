@@ -33,7 +33,9 @@ jobs:
       - name: Check live site in desktop and 390px Chromium
         env:
           PORTFOLIO_SITE_BASE: https://ewanqian.site
-        run: node scripts/audit-portfolio-browser.mjs
+        run: |
+          node scripts/audit-portfolio-browser.mjs
+          echo "12 desktop/mobile page checks passed. Screenshots and JSON are in the attached artifact." >> "$GITHUB_STEP_SUMMARY"
       - name: Save screenshots and DOM diagnostics
         if: always()
         uses: actions/upload-artifact@v4
