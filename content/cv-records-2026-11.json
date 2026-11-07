@@ -8,55 +8,60 @@
       "section": "education",
       "year": "2017–2021",
       "zh": "河南工程学院，数字媒体艺术专业，艺术学学士；毕业论文《基于扩展现实的虚拟舞台设计研究》，郑州，中国。",
-      "en": null,
+      "en": "B.A. in Digital Media Art, Henan University of Engineering, Zhengzhou; thesis on virtual stage design using extended reality.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "education-aalto-introduction-to-vr-2024",
       "section": "education",
       "year": "2024",
       "zh": "Aalto University Summer School｜Introduction to VR，芬兰（短期课程）。",
-      "en": null,
+      "en": "Introduction to VR, Aalto University Summer School, Finland (short course).",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "awards-003-2025",
       "section": "awards",
       "year": "2025",
       "zh": "《滴流 / Drop Flow》，中国（杭州）艺术与科技国际双年展入选，余杭美术馆，杭州；个人署名参展证书由展览方于 2025 年 12 月颁发，证书列有六位合作创作者。",
-      "en": null,
+      "en": "Drop Flow, selected for the China · Hangzhou Art and Technology Biennale, Yuhang Art Museum, Hangzhou; six collaborators named on the participation certificate.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "awards-004-2025",
       "section": "awards",
       "year": "2025",
       "zh": "杭州国际电子音乐作曲比赛 C 组一等奖，《滴流 / Drop Flow》；参与团队视觉创作。",
-      "en": null,
+      "en": "First Prize, Category C (Multimedia Electronic Music), Hangzhou International Electronic Music Composition Competition, for Drop Flow; team visual contributor.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "awards-005-2025",
       "section": "awards",
       "year": "2025",
       "zh": "“流光绘影”光影科技艺术节优秀作品奖，《滴流》异形屏幕版本，重庆。",
-      "en": null,
+      "en": "Outstanding Work Award, “Liuguang Huiying” Light and Technology Art Festival, Chongqing; Drop Flow, special-format screen version.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "award-chinagraph-2024-timer",
@@ -88,19 +93,20 @@
       "section": "exhibitions",
       "year": "2026",
       "zh": "《无需进一步输入 / No Further Input Required》，外滩大会 AI 概念艺术展，上海；生成影像作品（以实际参展资料为准）。",
-      "en": null,
+      "en": "No Further Input Required, Bund Summit AI Concept Art Exhibition, Shanghai; generative moving image.",
       "project_id": "no-further-input-required",
       "project_url": "https://ewanqian.site/works/no-further-input-required.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
       "evidence_status": "curatorial artwork page names Ewan and work, describes single-channel moving image and publication",
-      "external_evidence": "https://semicolonc.art/event/inclusion2026/no-further-input/"
+      "external_evidence": "https://semicolonc.art/event/inclusion2026/no-further-input/",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-008-2026",
       "section": "exhibitions",
       "year": "2026",
       "zh": "《观察与共生 / Observation and Symbiosis》与《形态的对话 / Dialogue of Forms》，「数字苔原」AI 群落影像展，河南省文化馆青年艺术展览招募计划第五期，河南省文化馆，郑州，6 月 13 日—7 月 19 日；与沈轩共同创作，两件作品均创作于 2025 年。",
-      "en": null,
+      "en": "Observation and Symbiosis and Dialogue of Forms, Digital Tundra: AI Community Moving Image Exhibition, Henan Provincial Cultural Center, Zhengzhou; with Shen Xuan.",
       "project_id": "digital-tundra-2026",
       "project_url": "https://ewanqian.site/works/digital-tundra.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
@@ -109,107 +115,117 @@
         "obs-symbiosis-2025",
         "dialogue-of-forms-2025"
       ],
-      "external_evidence": "https://www.sohu.com/a/1041385483_121106991"
+      "external_evidence": "https://www.sohu.com/a/1041385483_121106991",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-009-2026",
       "section": "exhibitions",
       "year": "2026",
       "zh": "《观察与共生》，「共生协议：算法公地」，愚见观池艺术空间，上海，1 月 9—11 日；与沈轩合作。",
-      "en": null,
+      "en": "Observation and Symbiosis, Symbiotic Protocol: Algorithmic Commons, Yujian Guanchi Art Space, Shanghai; with Shen Xuan.",
       "project_id": "obs-symbiosis-2025",
       "project_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
       "evidence_status": "TOPYS public event notice names Shen Xuan and Ewan Qian in Observation and Symbiosis, Shanghai Jan 9-11 2026",
-      "external_evidence": "https://www.topys.cn/activity/728"
+      "external_evidence": "https://www.topys.cn/activity/728",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-010-2025",
       "section": "exhibitions",
       "year": "2025",
       "zh": "《滴流 / Drop Flow》，中国（杭州）艺术与科技国际双年展开幕式及展览，余杭美术馆，杭州；团队合作空间视听作品。",
-      "en": null,
+      "en": "Drop Flow, China · Hangzhou Art and Technology Biennale, Yuhang Art Museum; collaborative spatial audiovisual work.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-011-2025",
       "section": "exhibitions",
       "year": "2025",
       "zh": "《滴流 / Drop Flow》异形屏幕版本，“流光绘影”光影科技艺术节，重庆。",
-      "en": null,
+      "en": "Drop Flow, special-format display version, “Liuguang Huiying” Light and Technology Art Festival, Chongqing.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-012-2025",
       "section": "exhibitions",
       "year": "2025",
       "zh": "《新媒体艺术家模拟器》，「巴别瓶：人工智能时代的语用、创造与生活形式」，杭州中心美术馆，杭州；互动超文本作品。",
-      "en": null,
+      "en": "New Media Artist Simulator, Babel Bottle exhibition, Hangzhou Center Art Museum; interactive hypertext.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-013-2025",
       "section": "exhibitions",
       "year": "2025",
       "zh": "《观察与共生》，「数字水族馆」，坪山展览馆 3F · PSEG 数字场，深圳；与沈轩合作。",
-      "en": null,
+      "en": "Observation and Symbiosis, Digital Aquarium, PSEG Digital Field, Pingshan Exhibition Hall, Shenzhen; with Shen Xuan.",
       "project_id": "obs-symbiosis-2025",
       "project_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "historic artist/team record for Pingshan edition; organizer named credit to be independently verified"
+      "evidence_status": "historic artist/team record for Pingshan edition; organizer named credit to be independently verified",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-014-2024",
       "section": "exhibitions",
       "year": "2024",
       "zh": "《幻觉矩阵》，THE BOXX 沉浸式多媒体 XR 展，上海，6 月 18 日—8 月 28 日；参展（与《幻觉共振》现场演出分列）。",
-      "en": null,
+      "en": "Illusion Matrix, immersive multimedia XR exhibition, THE BOXX, Shanghai.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-015-2024",
       "section": "exhibitions",
       "year": "2024",
       "zh": "《控时者 / TIMER》，UFO Terminal「加载…权限 2」，上海；合作环形沉浸影像。",
-      "en": null,
+      "en": "TIMER, Loading... Access 2, UFO Terminal, Shanghai; collaborative circular-screen installation.",
       "project_id": "timer",
       "project_url": "https://ewanqian.site/works/timer.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-016-2024",
       "section": "exhibitions",
       "year": "2024",
       "zh": "《Dérive / 双城记》，FutureLab，上海西岸艺术中心；空间采集与 Apple Vision Pro 展示。",
-      "en": null,
+      "en": "Dérive / Tale of Two Cities, FutureLab 2024, West Bund Art Center, Shanghai; spatial capture and Apple Vision Pro presentation.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-017-2023",
       "section": "exhibitions",
       "year": "2023",
       "zh": "《以太碎片 / Ether Fragment》，第十届上海西岸艺术与设计博览会 DREAM·video，上海；个人影像作品。",
-      "en": null,
+      "en": "Ether Fragment, DREAM·video, 10th West Bund Art & Design, Shanghai; individual moving-image work.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-018-2023",
@@ -228,55 +244,60 @@
       "section": "exhibitions",
       "year": "2023",
       "zh": "《观察与共生》，「看见生命力」艺术展，上海 K11；影像装置。",
-      "en": null,
+      "en": "Observation and Symbiosis, Seeing Vitality, K11, Shanghai; moving-image installation.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-020-2023",
       "section": "exhibitions",
       "year": "2023",
       "zh": "《生命的礼赞》，上海世纪汇广场；气膜装置视觉。",
-      "en": null,
+      "en": "Hymn to Life, Century Link, Shanghai; inflatable installation visuals.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-021-2023",
       "section": "exhibitions",
       "year": "2023",
       "zh": "《数字空间与自然共生》，龙湖上海奉贤天街；视频艺术装置。",
-      "en": null,
+      "en": "Digital Space and Natural Symbiosis, Longfor Fengxian Paradise Walk, Shanghai; video art installation.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-022-2022",
       "section": "exhibitions",
       "year": "2022",
       "zh": "《矩阵导航》，第八届上海青年艺术博览会「虚实于众」，海派艺术馆，上海。",
-      "en": null,
+      "en": "Matrix Navigation, 8th Shanghai Young Art Fair, Shanghai; new-media exhibition.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-023-2022",
       "section": "exhibitions",
       "year": "2022",
       "zh": "「AR 深圳计划」，深圳光影艺术季，香蜜公园，深圳；与陈瑛楠联合署名。",
-      "en": null,
+      "en": "AR Shenzhen Project, Shenzhen Light Art Festival, Xiangmi Park, Shenzhen; with Chen Yingnan.",
       "project_id": "ar-shenzhen-2022",
       "project_url": "https://ewanqian.site/works/ar-shenzhen-2022.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "exhibitions-024-2022",
@@ -294,401 +315,444 @@
       "section": "live",
       "year": "2026",
       "zh": "URKL 城市巡回赛·众擎机器人格斗比赛，宝山体育馆，上海，9 月 19 日；现场 VJ。",
-      "en": null,
+      "en": "URKL City Tour / ENGINEAI Robot Fighting Tournament, Baoshan Gymnasium, Shanghai; live VJ.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-026-2026",
       "section": "live",
       "year": "2026",
       "zh": "REACTOR GRAND OPENING DAY1，上海，9 月 24 日（以主办方演出单复核）；现场视觉表演。",
-      "en": null,
+      "en": "REACTOR Grand Opening Day 1, Shanghai; live visuals.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-027-2026",
       "section": "live",
       "year": "2026",
       "zh": "ENTROPY — ATMOSPHERIC ESCAPE，上海，9 月 5 日；与 Leon Krykhtin、RÖ 合作生成与实时视觉。",
-      "en": null,
+      "en": "ENTROPY — ATMOSPHERIC ESCAPE, Shanghai; real-time visuals with Leon Krykhtin and RÖ.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-028-2026",
       "section": "live",
       "year": "2026",
       "zh": "WAVES CROSS VOL.3，Cedar Land，上海；与 RÖ 合作现场视听演出。",
-      "en": null,
+      "en": "WAVES CROSS Vol. 3, Cedar Land, Shanghai; audiovisual performance with RÖ.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-029-2026",
       "section": "live",
       "year": "2026",
       "zh": "DigitalFUTURES 2026 闭幕音画演出，同济大学上海校区；与 RÖ 合作。",
-      "en": null,
+      "en": "DigitalFUTURES 2026, closing audiovisual performance, Tongji University, Shanghai; with RÖ.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-030-2026",
       "section": "live",
       "year": "2026",
       "zh": "Found Video VJ Battle Royale Round 8，UFO Terminal，上海，4 月 26 日；现场 VJ。",
-      "en": null,
+      "en": "Found Video VJ Battle Royale, Round 8, UFO Terminal, Shanghai; VJ performance.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-031-2025",
       "section": "live",
       "year": "2025",
       "zh": "《机械光合：TITAN 的全息声林》，KASHIWA Daisuke × Yuki Murata × Ewan Qian，BO LIVE，深圳；现场视觉与空间影像。",
-      "en": null,
+      "en": "TITAN — Holographic Sound Forest, KASHIWA Daisuke × Yuki Murata × Ewan Qian, BO LIVE, Shenzhen; live visuals.",
       "project_id": "kashiwa-titan-2025",
       "project_url": "https://ewanqian.site/works/titan.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-032-2025",
       "section": "live",
       "year": "2025",
       "zh": "CAN Festival，舟山；为 KASHIWA Daisuke 乐队演奏现场视觉。",
-      "en": null,
+      "en": "CAN Festival, Zhoushan; live visual performance for KASHIWA Daisuke.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-033-2025",
       "section": "live",
       "year": "2025",
       "zh": "《滴流 / Drop Flow》，UFO Terminal × PRE / Rooooooom719，上海；合作现场视听版本。",
-      "en": null,
+      "en": "Drop Flow, UFO Terminal × PRE / Rooooooom719, Shanghai; collaborative audiovisual set.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-034-2024",
       "section": "live",
       "year": "2024",
       "zh": "《控时者 / TIMER》，杭州国际电子音乐节，浙江音乐学院，杭州，9 月 26 日；合作现场音画。",
-      "en": null,
+      "en": "TIMER, Hangzhou International Electronic Music Festival, Zhejiang Conservatory of Music; collaborative audiovisual performance.",
       "project_id": "timer",
       "project_url": "https://ewanqian.site/works/timer.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-035-2024",
       "section": "live",
       "year": "2024",
       "zh": "《幻觉共振》，THE BOXX，上海；沉浸式现场视觉执行。",
-      "en": null,
+      "en": "Illusion Resonance, THE BOXX, Shanghai; immersive live visual production.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "live-036-2023",
       "section": "live",
       "year": "2023",
       "zh": "《孤独？》，上海广播艺术中心；舞台视觉制作。",
-      "en": null,
+      "en": "Lonely?, Shanghai Broadcasting Art Center; stage visual production.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "workshops-037-2026",
       "section": "workshops",
       "year": "2026",
       "zh": "《舞台复刻 / Stage Replica》，The Point，上海，10 月 31 日；主讲。",
-      "en": null,
+      "en": "Stage Replica, a Stage Casting workshop, The Point, Shanghai, October 31; lead instructor.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "workshops-038-2026",
       "section": "workshops",
       "year": "2026",
       "zh": "Create Your Own Real-Time Audiovisual System，上海，9 月 5 日；主讲。",
-      "en": null,
+      "en": "Create Your Own Real-Time Audiovisual System, Shanghai; instructor.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "workshops-039-2026",
       "section": "workshops",
       "year": "2026",
       "zh": "《极简输入：构建视听系统》，MANA，上海，8 月 29 日；与 yiyisogreen 合作。",
-      "en": null,
+      "en": "Minimal Input: Building Audiovisual Systems, MANA, Shanghai; co-instructor.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "workshops-040-2026",
       "section": "workshops",
       "year": "2026",
       "zh": "《情感容器构建：高斯扫描与数字记忆空间》，愚见观池艺术空间，上海，1 月 10 日；与沈轩合作。",
-      "en": null,
+      "en": "Emotional Containers: Gaussian Scanning and Digital Memory Spaces, Shanghai; with Shen Xuan.",
       "project_id": null,
       "project_url": null,
       "source": "MANA workshop schedule (2026-01-10)",
       "evidence_status": "MANA public event program explicitly names Johnny Shen and Ewan Qian, 2026-01-10 workshop, 17:00–18:00",
-      "external_evidence": "https://mana.art/article/1767451377418479044"
+      "external_evidence": "https://mana.art/article/1767451377418479044",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "workshops-041-2025",
       "section": "workshops",
       "year": "2025",
       "zh": "《游戏化 AI 生活解构师》，杭州中心美术馆，杭州，7 月 12 日；工作坊导师。",
-      "en": null,
+      "en": "Gamified AI Life Deconstruction, Hangzhou Center Art Museum; workshop instructor.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-042-2026",
       "section": "production",
       "year": "2026",
       "zh": "《时间是空间恒久的观察者》，二砂包豪斯 / SYSTEM 空间实验影像；空间采集、三维重建及部分三维视觉制作。",
-      "en": null,
+      "en": "Time Is the Eternal Observer of Space, SYSTEM / Ersha Bauhaus spatial film; spatial capture, 3D reconstruction and selected 3D visuals.",
       "project_id": "system-ersha-2026",
       "project_url": "https://ewanqian.site/works/system-ersha.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
       "evidence_status": "collective spatial capture project described on VIRTURA; film title and individual role artist-reported, full film credits need original source",
-      "external_evidence": "https://virtura.space/work/system-ersha.html"
+      "external_evidence": "https://virtura.space/work/system-ersha.html",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-043-2026",
       "section": "production",
       "year": "2026",
       "zh": "中国·AI 盛典「AI 在一起」开场秀影像；在放射能制作项目中参与视觉制作。",
-      "en": null,
+      "en": "China AI Gala, “AI Together” opening-show visuals; visual production with Fangshe Neng.",
       "project_id": "china-ai-gala-2026",
       "project_url": "https://virtura.space/work/ai-gala.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "R1.1 source text, corrected record-ID inversion against Chinese canonical record"
     },
     {
       "id": "production-044-2026",
       "section": "production",
       "year": "2026",
       "zh": "中国国家地理矿晶空间影像；在 T-ZONE 图域制作项目中参与视觉制作。",
-      "en": null,
+      "en": "National Geographic crystal-themed spatial visuals; produced with T-ZONE.",
       "project_id": "natgeo-crystal-2026",
       "project_url": "https://virtura.space/work/natgeo-crystal.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "R1.1 source text, corrected record-ID inversion against Chinese canonical record"
     },
     {
       "id": "production-045-2025",
       "section": "production",
       "year": "2025",
       "zh": "Flatland: Mixed Reality Dreams（Story 团队展览），Cupertino，WWDC 期间；负责背景 360° 全景影像制作（团队项目，非个人策展）。",
-      "en": null,
+      "en": "Flatland: Mixed Reality Dreams, Story exhibition, Cupertino; 360° panoramic background visuals.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-046-2025",
       "section": "production",
       "year": "2025",
       "zh": "WORLD REMIX 社区 XR 黑客松；参与活动视觉、动态及印刷物料制作（具体举办城市与日期待进一步复核）。",
-      "en": null,
+      "en": "WORLD REMIX XR Hackathon; event identity, motion graphics and print visuals.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "pending"
+      "evidence_status": "pending",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-047-2025",
       "section": "production",
       "year": "2025",
       "zh": "中央音乐学院王楚婷博士毕业音乐会，《未来弦诗》《天华流光》，北京，5 月 7 日；视觉制作。",
-      "en": null,
+      "en": "Wang Chuting doctoral graduation concert, Central Conservatory of Music, Beijing; visuals.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-048-2025",
       "section": "production",
       "year": "2025",
       "zh": "《山海浮生 II：八荒祭》，爱丁堡艺穗节「聚焦中国」；参与部分舞台视觉及海报制作。",
-      "en": null,
+      "en": "Shan Hai Fu Sheng II, Edinburgh Festival Fringe, China Focus; selected stage visuals and poster.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-049-2025",
       "section": "production",
       "year": "2025",
       "zh": "Singland Festival 开场短片及 RAIN 郑智薰演出视觉，新加坡；参与视觉制作。",
-      "en": null,
+      "en": "Singland Festival opening film and RAIN stage visuals, Singapore; visual production.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-050-2025",
       "section": "production",
       "year": "2025",
       "zh": "余佳运「45㎡」演唱会，宁波奥体中心体育馆；视觉制作。",
-      "en": null,
+      "en": "Yu Jiayun “45 m²” concert, Ningbo Olympic Sports Center; visual production.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-051-2025",
       "section": "production",
       "year": "2025",
       "zh": "西安万象城「数字游园」；Unity VFX Graph 视觉制作。",
-      "en": null,
+      "en": "Digital Garden, Xi’an MixC; Unity VFX Graph visuals.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-052-2024",
       "section": "production",
       "year": "2024",
       "zh": "@onefive《ChocoLove》歌词视频；分号 C（Semicolon C）。",
-      "en": null,
+      "en": "@onefive, ChocoLove lyric video; Semicolon C (分号 C).",
       "project_id": "semicolon-c-onefive",
       "project_url": "https://ewanqian.site/works/onefive-semicolonc.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
       "evidence_status": "artist-reported personal participation; official event and collective credits supported; exact individual role not independently attributed by organizer",
-      "external_evidence": "https://onefive-web.jp/discography/detail.php?id=1020116"
+      "external_evidence": "https://onefive-web.jp/discography/detail.php?id=1020116",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-053-2023",
       "section": "production",
       "year": "2023",
       "zh": "@onefive《Underground》《Overground》演出视觉，日本；分号 C（Semicolon C）。",
-      "en": null,
+      "en": "@onefive, Underground and Overground stage visuals, Japan; Semicolon C (分号 C).",
       "project_id": "semicolon-c-onefive",
       "project_url": "https://ewanqian.site/works/onefive-semicolonc.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
       "evidence_status": "artist-reported personal participation; official event and collective credits supported; exact individual role not independently attributed by organizer",
-      "external_evidence": "https://onefive-web.jp/schedule/detail.php?id=1102588"
+      "external_evidence": "https://onefive-web.jp/schedule/detail.php?id=1102588",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-054-2022",
       "section": "production",
       "year": "2022",
       "zh": "CHINATIME 汉堡音乐会，谭盾《Water Music》，Laeiszhalle，汉堡；分号 C（Semicolon C）。",
-      "en": null,
+      "en": "CHINATIME Hamburg concert, Tan Dun’s Water Music, Laeiszhalle; Semicolon C (分号 C).",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
       "evidence_status": "official Semicolon C collective project listing; individual attribution artist-reported",
-      "external_evidence": "https://semicolonc.art/about"
+      "external_evidence": "https://semicolonc.art/about",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-055-2022",
       "section": "production",
       "year": "2022",
       "zh": "北京冬奥会期间中国移动咪咕纪录片；部分 VFX 制作。",
-      "en": null,
+      "en": "China Mobile / Migu Winter Olympics documentary; selected VFX.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-056-2022",
       "section": "production",
       "year": "2022",
       "zh": "谢欣舞蹈剧场《四相》《汞》，上海国际舞蹈中心；部分舞台影像制作。",
-      "en": null,
+      "en": "Xie Xin Dance Theatre, Four Phases and Mercury, Shanghai; stage visual production.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "production-057-2022",
       "section": "production",
       "year": "2022",
       "zh": "XTEP XDnA，上海时装周；视觉影像制作。",
-      "en": null,
+      "en": "XTEP XDnA, Shanghai Fashion Week; visual production.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "research-058-2024",
       "section": "research",
       "year": "2024",
       "zh": "《控时者 / TIMER》：声音、时间结构与空间影像的长期合作作品。",
-      "en": null,
+      "en": "TIMER: sound, temporal structures and spatial moving images.",
       "project_id": "timer",
       "project_url": "https://ewanqian.site/works/timer.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "research-059-2025",
       "section": "research",
       "year": "2025",
       "zh": "《滴流 / Drop Flow》：现场音画、动作捕捉与空间影像的跨媒介版本。",
-      "en": null,
+      "en": "Drop Flow: live audiovisual performance, motion capture and multi-screen spatial formats.",
       "project_id": "drop-flow",
       "project_url": "https://ewanqian.site/works/drop-flow.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     },
     {
       "id": "research-060-2026",
       "section": "research",
       "year": "2026",
       "zh": "场景铸造 / Stage Casting、Spatial Performance Instrument、Performable Music：实时系统、空间输入、可表演音乐与开放研究。",
-      "en": null,
+      "en": "Stage Casting, Spatial Performance Instrument and Performable Music: spatial input and real-time audiovisual research.",
       "project_id": null,
       "project_url": null,
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "self-reported; requires supporting source for independent verification",
+      "en_provenance": "published English CV R1.1, line aligned by permanent record URL"
     }
-  ]
+  ],
+  "translation_policy": {
+    "source": "Previously published English CV R1.1 (Google Drive source HTML, 2026-11-07) matched by 60 stable hyperlinks; one archived non-public award retains its existing English wording.",
+    "source_url": "https://drive.google.com/file/d/1d6ekfUnqEp0SI1HiUOYo-2f-4K_1HQrQ/view",
+    "review_scope": "Restoration of already-published English lines; not proof of factual claims; individual phrasing may require fact review.",
+    "known_correction": "R1.1 PDF text accidentally inverted production-043-2026 (China AI Gala) and production-044-2026 (National Geographic); normalized data corrected; R1.1 PDF still contains the inversion until a revised bilingual release is published.",
+    "adoption_date": "2026-11-07"
+  }
 }
