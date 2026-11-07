@@ -36,12 +36,12 @@ for (const r of records) {
   const file = path.join(root, 'works/records', r.id + '.html');
   let html = fs.readFileSync(file, 'utf8');
   // A record headline is a title, not the entire raw archival paragraph.
-  html = html.replace(/<h1>[\\s\\S]*?<\\/h1>/, '<h1>'+escape(r.zh)+'</h1>');
-  html = html.replace(/<title>[\\s\\S]*?<\\/title>/, '<title>'+escape(r.zh)+' — Ewan Qian Archive</title>');
+  html = html.replace(new RegExp('<h1>[^<]*</h1>'), '<h1>'+escape(r.zh)+'</h1>');
+  html = html.replace(new RegExp('<title>[^<]*</title>'), '<title>'+escape(r.zh)+' — Ewan Qian Archive</title>');
   const ids = [...new Set([full.project_id,...(full.related_work_ids||[])].filter(Boolean))];
   const parent = ids.map(id=>projectById.get(id)).filter(Boolean);
-  const own = typeof full.external_evidence==='string'&&/^https:\\/\\//.test(full.external_evidence)?[full.external_evidence]:[];
-  const sourceUrls = [...new Set([...own,...ids.flatMap(id=>(sourcesByProject.get(id)||[]).map(s=>s.url).filter(u=>typeof u==='string'&&/^https:\\/\\//.test(u)))])].slice(0,8);
+  const own = typeof full.external_evidence==='string'&&full.external_evidence.startsWith('https://')?[full.external_evidence]:[];
+  const sourceUrls = [...new Set([...own,...ids.flatMap(id=>(sourcesByProject.get(id)||[]).map(s=>s.url).filter(u=>typeof u==='string'&&u.startsWith('https://')))])].slice(0,8);
   const sourceLinks=sourceUrls.map(u=>'<a href="'+escape(u)+'" rel="noopener" target="_blank">'+escape(new URL(u).hostname)+'</a>').join(' ');
   const projectLinks=parent.map(p=>'<a href="../projects/'+escape(p.id)+'.html">'+escape(p.zh)+'</a>').join(' ');
   const coverProject=parent.find(p=>p.image && mediaByProject.has(p.id));
@@ -51,7 +51,7 @@ for (const r of records) {
   if(a>=0&&b>a)html=html.slice(0,a)+html.slice(b+'<!-- PORTFOLIO_OS_ENRICHMENT_END -->'.length);
   html=html.replace('</main>',enrichment+'</main>');
   // Keep previous full details; a compact heading above helps quick comprehension.
-  html=html.replace('</head>','<style>.body>.record-extras{grid-column:2;min-width:0}.record-extras .linkline{align-items:start}.record-extras figure{margin:22px 0}.record-english{color:#58645e}h1{overflow-wrap:break-word;line-break:strict;word-break:normal}@media(max-width:700px){.body>.record-extras{grid-column:1}}</style></head>');
+  if(!html.includes('id="cv-record-enrichment-style"'))html=html.replace('</head>','<style id="cv-record-enrichment-style">.body>.record-extras{grid-column:2;min-width:0}.record-extras .linkline{align-items:start}.record-extras figure{margin:22px 0}.record-english{color:#58645e}h1{overflow-wrap:break-word;line-break:strict;word-break:normal}@media(max-width:700px){.body>.record-extras{grid-column:1}}</style></head>');
 
   const record = /(<section class="section"><h2>Record \/ 履历记录<\/h2>)<p>[\s\S]*?<\/p>/;
   if (!record.test(html)) throw Error('Unexpected record template: ' + r.id);
