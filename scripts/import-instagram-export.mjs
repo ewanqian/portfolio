@@ -16,7 +16,7 @@ const repo=process.cwd();
 const privateDir=path.join(repo,'inbox','private');
 fs.mkdirSync(privateDir,{recursive:true});
 const files=[];
-const allowed=/\b(posts?|stories|reels?|media)\b/i;
+const allowed=/(?:^|[\\/_-])(posts?|stories|reels?|media)(?=[\\/_.-]|$)/i;
 function walk(d,depth=0) {
  if(depth>8)return;
  for(const ent of fs.readdirSync(d,{withFileTypes:true})) {
