@@ -45,6 +45,13 @@ try{
     if(!response||!response.ok())entry.issues.push('HTTP '+(response?.status()??'no response'));
     await page.evaluate(()=>document.fonts.ready);
     await page.waitForTimeout(250);
+    // Native loading=lazy images may be reported as complete with zero naturalWidth
+    // before the browser has fetched them. Force their load before image integrity QA.
+    await page.evaluate(async()=>{
+      const images=Array.from(document.images);
+      for(const img of images)img.loading='eager';
+      await Promise.all(images.map(img=>img.decode().catch(()=>null)));
+    });
     const state=await page.evaluate(()=>{
      const imgs=Array.from(document.images);
      const overflow=document.documentElement.scrollWidth-window.innerWidth;
