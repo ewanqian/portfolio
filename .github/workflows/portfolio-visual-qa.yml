@@ -2,11 +2,9 @@ name: Portfolio visual QA — desktop and mobile
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/audit-portfolio-browser.mjs"
-      - ".github/workflows/portfolio-visual-qa.yml"
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -17,6 +15,7 @@ concurrency:
 
 jobs:
   visual:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
