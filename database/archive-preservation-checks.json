@@ -98,6 +98,29 @@
         "superspl.at/scene/36db89a4"
       ],
       "source": "visual-arts/drop-flow-series/README.md"
+    },
+    {
+      "id": "obs-symbiosis-separate-artist-credits",
+      "file": "works/observation-and-symbiosis.html",
+      "required_literals": [
+        "沈轩",
+        "钱誉文",
+        "www.topys.cn/activity/728",
+        "数字苔原",
+        "2025"
+      ],
+      "source": "content/project-registry-2026-11.json"
+    },
+    {
+      "id": "digital-tundra-separate-sibling-works",
+      "file": "works/digital-tundra.html",
+      "required_literals": [
+        "观察与共生",
+        "形态的对话",
+        "dialogue-of-forms.html",
+        "observation-and-symbiosis.html"
+      ],
+      "source": "database/evidence-reconciliation-2026-11.json"
     }
   ]
 }
