@@ -36,7 +36,7 @@ for(const x of nodes){
  fs.writeFileSync(path.join(outDir,x.id+'.html'),page);
 }
 const timelineGroups=new Map();
-for(const r of cvRows){const year=String(r.year||'').match(/(?:19|20)\\d{2}/)?.[0]||'Unknown';if(!timelineGroups.has(year))timelineGroups.set(year,[]);timelineGroups.get(year).push(r);}
+for(const r of cvRows){const year=String(r.year||'').match(new RegExp('(19|20)[0-9]{2}'))?.[0]||'Unknown';if(!timelineGroups.has(year))timelineGroups.set(year,[]);timelineGroups.get(year).push(r);}
 const years=[...timelineGroups.keys()].sort().reverse();
 const timelineBody='<header><div class="eyebrow">Chronology / Works and Occurrences</div><h1>Timeline<small>时间线 / 作品、现场与未来碎片</small></h1><p class="intro">现阶段按已有 CV 资料的年份编排；同一年内没有明确完整日期的不假装精确先后。未来经审核的朋友圈、Instagram 和个人记忆可以按原始发表时间插入。</p></header><div class="tabs"><a href="atlas.html">个人图谱</a><a href="cabinet.html">收藏室</a><a href="cv-records.html">所有 CV 节点</a></div>'+years.map(year=>'<section class="section"><h2>'+esc(year)+'</h2><div>'+timelineGroups.get(year).map(r=>'<div class="item"><span class="tag">'+esc(r.section)+' · '+esc(r.year)+'</span><h2><a href="records/'+esc(r.id)+'.html">'+esc(r.cv_zh||r.zh)+'</a></h2></div>').join('')+'</div></section>').join('')+'<section class="section"><h2>Undated Objects</h2><div>'+collection.filter(x=>!x.date).map(x=>'<p><a href="cabinet.html">'+esc(x.title_zh)+'</a> · 收藏日期待整理</p>').join('')+'</div></section>';
 const timeline=wrap('Timeline / 时间线',timelineBody);
