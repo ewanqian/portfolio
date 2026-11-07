@@ -16,9 +16,9 @@ const backlogRows = [
   ['2025', 'flatland-mr-content-2025', 'WWDC Flatland: Mixed Reality Dreams', '内容制作', 'Santa Clara / Mixed Reality'],
   ['2025', 'drop-flow-qingdao-2025', '重庆「流光绘影」光影科技艺术节「滴流」', '异形屏幕装置', '重庆 / 光影科技艺术节'],
   ['2024', 'hallu-matrix-exhibit-2024', 'THE BOXX「幻觉矩阵」沉浸式多媒体展', '参展艺术家', '上海 THE BOXX / 展览'],
-  ['2024', 'onefive-chocolove-video-2024', '@onefive「ChocoLove」/ Release Visual Record', '歌词视频制作记录', 'Official Release', '/portfolio/assets/raw-library/onefive-classy-crush-signed.webp'],
-  ['2023', 'onefive-underground-visual-2023', '@onefive「Underground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage', '/portfolio/assets/raw-library/onefive-classy-crush-signed.webp'],
-  ['2023', 'onefive-overground-visual-2023', '@onefive「Overground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage', '/portfolio/assets/raw-library/onefive-classy-crush-signed.webp'],
+  ['2024', 'onefive-chocolove-video-2024', '@onefive「ChocoLove」/ Release Visual Record', '歌词视频制作记录', 'Official Release'],
+  ['2023', 'onefive-underground-visual-2023', '@onefive「Underground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage'],
+  ['2023', 'onefive-overground-visual-2023', '@onefive「Overground」/ Live Visual Record', '舞台视觉制作记录', '日本 / Stage'],
   ['2023', 'lonely-av-live-2023', '上海广播艺术中心「孤独？」', '舞台视觉', '上海 / Stage', '/portfolio/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp'],
   ['2023', 'observe-symbiosis-k11-2023', '上海 K11「观察与共生」', '视频装置', '上海 K11 / 展览', '/portfolio/assets/raw-library/observation-symbiosis-large.webp'],
   ['2023', 'vaoe-exhibition-2023', '虚拟航线 VAOE', '策划与呈现', '上海 / 展览'],
@@ -101,6 +101,7 @@ const Archive = () => {
               <Link to="/gaussian-scenes" className="button primary">{language === 'en' ? 'Open Spatial Samples' : '查看空间样本'}</Link>
               <Link to="/production" className="button">{language === 'en' ? 'Open Production' : '查看制作'}</Link>
               <Link to="/writing" className="button">{language === 'en' ? 'Open Writing' : '查看写作与研究'}</Link>
+              <a href="/works/atlas.html" className="button">{language === 'en' ? 'Personal Atlas' : '个人图谱'}</a>
             </div>
           </div>
         </section>
