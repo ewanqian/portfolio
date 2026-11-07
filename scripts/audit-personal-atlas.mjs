@@ -35,7 +35,7 @@ for(const id of ids){
  if(!exists(p))continue;
  const page=html(p);
  if(!page.includes('href="../atlas.html"'))fail('NO_BACKLINK',id);
- if(!page.includes('Context / 语境'))fail('NO_CONTEXT',id);
+ if(!page.includes('<p class="intro">')||page.includes('<p class="intro"></p>'))fail('NO_SUMMARY',id);
  if(/<h1>\s*<\/h1>/.test(page))fail('BLANK_TITLE',id);
 }
 if(exists('works/cabinet.html')){
