@@ -30,10 +30,10 @@
     {
       "asset_id": "cover-timer",
       "project_id": "timer",
-      "url_or_path": "/assets/home/featured-timer-main.webp",
+      "url_or_path": "/assets/home/archive-timer-clean.webp",
       "origin": "public_repository_asset",
-      "bytes": 14998,
-      "git_blob_sha1": "12830007ea2f8cb221714014264dc2f66e4f54c4",
+      "bytes": 276830,
+      "git_blob_sha1": "e336564c8e52b19df4e26da15c911c95ff703aae",
       "credit_status": "not_confirmed",
       "photographer_or_media_author": null,
       "permission_status": "requires_review_before_external_redistribution",
