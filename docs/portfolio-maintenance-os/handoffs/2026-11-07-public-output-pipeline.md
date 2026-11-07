@@ -33,3 +33,12 @@ Scope: PORT-01 plus first public projection step of PORT-03. Existing IDs, factu
 2. Map the existing English R1.1 source lines onto the 57 missing record IDs with review; then connect an approved bilingual view to CV HTML/PDF. Do not invent translations from project titles or label all historical claims verified.
 
 No PDF or Google Doc regenerated. No claim of complete database→React→Docs→PDF synchronization. Rollback: revert this repair commit; old URLs and original factual data remain available.
+
+## Production verification after repair
+- Repair commit: 466b0742de914f2038067a36be21d237885509f8. Preserved concurrent editorial commit 91472aeda7bb80c6619917b29c9d94ebfba637c7 (four artwork pages) by using it as the parent.
+- Publisher, prepare, build/archive smoke, graph health and Pages jobs succeeded.
+- Public QA https://github.com/ewanqian/portfolio/actions/runs/42345740506, job 128322969262: 154/154, no HTTP/content/network failures. Independent production runner also 154/154.
+- Connected Chrome: archive displays 50/50; TITAN filter 1/50; CV index search 南昌路 1/61; record link opens corrected VAOE record and retains press and project links.
+- Mobile viewport requested 390×844; rendered document width/scrollWidth both 354, no horizontal overflow on VAOE record. Screenshots inspected for desktop filtered archive and mobile CV search. Temporary viewport reset.
+- Browser revealed two remaining index-footer verification disclaimers; removed those in the follow-up. No underlying historical evidence/claims removed.
+- PORT-01 remains active because the planned six-template complete visual pass and media playback are incomplete. Next: finish those checks; begin bilingual record mapping from approved R1.1 sources.

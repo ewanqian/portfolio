@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "r1-1-PDF-uploaded-site-source-updated-live-HTTP-not-verified",
+  "status": "r1-1-public-archive-http-verified-partial-visual-qa",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -37,7 +37,7 @@
   "quality_gates": {
     "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
-    "live_links": "not independently verified: public crawler cannot access new site subpage, no confirmed 200 set",
+    "live_links": "154/154 checks passed in https://github.com/ewanqian/portfolio/actions/runs/42345740506 and independent local runner against production; validates route/content/JSON IDs/images, not video playback or ownership.",
     "bilingual_cv": "R1.1 PDF and website content reconciled for five corrections; full database-to-PDF deterministic generator remains pending.",
     "media_rights": "incomplete",
     "human_factual_review": "required",
@@ -121,7 +121,7 @@
     "outputs": "assets/data/{cv-records,project-registry}-2026-11.json",
     "compatibility": "dist/content/ and dist/portfolio/content/ contain public projections only",
     "local_validation": "React build; CV publication; graph (0 errors,115 warnings); preservation (11/11); portfolio-os; deterministic generation; built artifact HTTP 154/154 passed",
-    "live_validation": "Prior run 42344542429: 152/154, two source JSON URLs returned SPA HTML. Fixed deployment copy awaiting new live validation.",
+    "live_validation": "2026-11-07: production QA run 42345740506 passed 154/154; independent runner repeated 154/154. Desktop archive loads 50 records and TITAN filter returns 1; CV loads 61 and 南昌路 filter returns 1; mobile CV detail navigation verified without horizontal overflow. Full six-template visual QA and playback remain pending.",
     "remaining": "57 CV records missing English; React project catalog and R1.1 PDF are not yet generated from the same CV publication dataset; Google Docs unchanged",
     "pdf_regenerated": false
   }
