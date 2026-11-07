@@ -26,6 +26,9 @@ on:
       - "scripts/build-project-record-pages.mjs"
       - "scripts/build-cv-project-links.mjs"
       - "scripts/build-portfolio-sitemap.mjs"
+      - "scripts/build-personal-atlas.mjs"
+      - "content/collection-items.json"
+      - "public/data/ewan-encyclopedia.json"
       - "sitemap.xml"
       - ".github/workflows/portfolio-health.yml"
   pull_request:
@@ -62,6 +65,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Verify published Atlas and Cabinet entrypoints
+        run: |
+          test -s works/atlas.html
+          test -s works/cabinet.html
+          test -s works/atlas/series-timer.html
+          grep -q "CLASSY CRUSH" works/cabinet.html
       - name: Audit ID, CV, project, evidence and media relations
         run: node scripts/audit-portfolio-graph.mjs
       - name: Check release metrics, bilingual coverage and canonical PDF checksums
