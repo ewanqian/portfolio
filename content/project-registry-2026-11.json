@@ -11,7 +11,7 @@
     "version": "2026-11 comprehensive registry: historical presentations are linked as variants",
     "cv_record_source": "content/cv-records-2026-11.json",
     "canonical_public_domain": "ewanqian.site (CNAME; deployment pending verification)",
-    "full_site_scope": "2026-11 snapshot: React generated works, legacy Archive backlog, 61 CV rows and static work pages"
+    "full_site_scope": "2026-11 living registry: 49-root baseline plus 2025 Dialogue of Forms, previously merged into a 2026 event; published CV route IDs remain stable"
   },
   "projects": [
     {
@@ -264,9 +264,26 @@
       "en": "Digital Tundra — Two Works",
       "year": "2026",
       "category": "Exhibition",
-      "url": null,
+      "url": "https://ewanqian.site/works/digital-tundra.html",
       "image": null,
-      "note": "待补展览页与现场图"
+      "note": "河南省文化馆 2026 展览呈现记录；包含两件独立作品《观察与共生》与《形态的对话》",
+      "kind": "presentation",
+      "linked_work_ids": [
+        "obs-symbiosis-2025",
+        "dialogue-of-forms-2025"
+      ],
+      "evidence": [
+        {
+          "type": "organizer_republished",
+          "url": "https://www.sohu.com/a/1041385483_121106991",
+          "supports": "two named collaborative works and 2025 creation year"
+        },
+        {
+          "type": "institution_event",
+          "url": "https://www.sohu.com/a/1038025598_121106991",
+          "supports": "2026-06-13 exhibition opening and venue"
+        }
+      ]
     },
     {
       "id": "obs-symbiosis-2025",
@@ -274,9 +291,9 @@
       "en": "Observation and Symbiosis",
       "year": "2025–2026",
       "category": "Exhibition",
-      "url": null,
+      "url": "https://ewanqian.site/works/observation-and-symbiosis.html",
       "image": "/assets/raw-library/observation-symbiosis-large.webp",
-      "note": "多次展出；统一母项目页待建",
+      "note": "钱誉文×沈轩，青海地貌数据与生成影像；2025 创作，2026 上海《共生协议》及郑州《数字苔原》展出",
       "variants": [
         {
           "legacy_id": "observe-symbiosis-exhibit-2025",
@@ -302,7 +319,49 @@
           "role": "historical archive record"
         }
       ],
-      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review"
+      "image_provenance": "legacy siteDisplay image mapping; requires copyright and rendition review",
+      "authors": [
+        "沈轩 / Johnny Shen",
+        "钱誉文 / Ewan Qian"
+      ],
+      "external_evidence": [
+        {
+          "url": "https://www.topys.cn/activity/728",
+          "scope": "2026 Shanghai presentation, work text and two artist names",
+          "type": "public_event_listing"
+        },
+        {
+          "url": "https://www.sohu.com/a/1041385483_121106991",
+          "scope": "2026 Henan presentation, two works and joint artists",
+          "type": "organizer_republished"
+        }
+      ],
+      "identity_note": "The 2023 K11 namesake archive has not been merged automatically with this 2025 artwork; edition relationship remains to be verified."
+    },
+    {
+      "id": "dialogue-of-forms-2025",
+      "zh": "形态的对话",
+      "en": "Dialogue of Forms",
+      "year": "2025",
+      "category": "Exhibition",
+      "kind": "artwork",
+      "url": "https://ewanqian.site/works/dialogue-of-forms.html",
+      "image": null,
+      "note": "钱誉文×沈轩；植物、温室、点云与空间重建的生成影像作品，2026 河南省文化馆「数字苔原」展出",
+      "authors": [
+        "沈轩 / Johnny Shen",
+        "钱誉文 / Ewan Qian"
+      ],
+      "presentations": [
+        "digital-tundra-2026"
+      ],
+      "evidence": [
+        {
+          "type": "organizer_republished",
+          "url": "https://www.sohu.com/a/1041385483_121106991",
+          "supports": "work name, two artists, year, medium and exhibition"
+        }
+      ]
     },
     {
       "id": "new-media-artist-simulator-2025",
