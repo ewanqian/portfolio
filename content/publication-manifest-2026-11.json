@@ -43,7 +43,9 @@
     "human_factual_review": "required",
     "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed",
     "internal_workgraph": "50 unique project IDs, 50 evidence entries, 61 record IDs, 60 public CV links; no broken CV project IDs (repository-source static check).",
-    "preservation": "11 mandatory historic media/source presence rules passed by source string checks; real HTTP / video playback not verified."
+    "preservation": "11 mandatory historic media/source presence rules passed by source string checks; real HTTP / video playback not verified.",
+    "permanent_archive": "50 committed generated project HTML files; all 50 project IDs in sitemap; 61 CV record URLs in sitemap; 24 CV-to-project related links; 25 local project cover paths present in repository.",
+    "generated_script_syntax": "Five build/audit JavaScript scripts parsed successfully during source checks; full CI workflow and live host QA unverified."
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
   "release": "CV / Portfolio Release 1.1",
@@ -99,6 +101,19 @@
       "/works/observation-and-symbiosis.html",
       "/works/dialogue-of-forms.html"
     ],
-    "exhibition_page": "/works/digital-tundra.html"
+    "exhibition_page": "/works/digital-tundra.html",
+    "permanent_record_pages": 50,
+    "cv_record_pages": 61,
+    "cv_parent_backlinks": 24,
+    "sitemap_public_urls": 128,
+    "as_of": "2026-11-07"
+  },
+  "publication_pipeline": {
+    "archive": "scripts/build-project-record-pages.mjs",
+    "cv_backlinks": "scripts/build-cv-project-links.mjs",
+    "sitemap": "scripts/build-portfolio-sitemap.mjs",
+    "trigger": ".github/workflows/publish-portfolio-root.yml",
+    "policy": "Generated canonical project pages never overwrite hand-authored work pages; CV record generator only edits marked related-project sections.",
+    "caveat": "Files committed to GitHub and checked at source level; GitHub Pages HTTP and device UI have not been independently verified."
   }
 }
