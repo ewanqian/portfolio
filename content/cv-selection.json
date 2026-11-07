@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.cv-selection.v1",
-  "release": "1.2",
-  "based_on": "R1.1 approved print sources; preserve ID/order and wording",
+  "release": "1.2.1",
+  "based_on": "R1.2 60-record bilingual CV: concise editorial display overrides; full archived text unchanged",
   "sections": [
     {
       "id": "education",
