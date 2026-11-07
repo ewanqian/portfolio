@@ -1,0 +1,1298 @@
+{
+  "schema": "portfolio-live-health.v2",
+  "checked_at": "2026-11-07T06:59:00.821Z",
+  "site": "https://ewanqian.site",
+  "stats": {
+    "total": 160,
+    "verified": 160,
+    "http_failure": 0,
+    "content_mismatch": 0,
+    "network_unverified": 0,
+    "blocked_or_transient": 0,
+    "project_permalinks": 50,
+    "cv_record_pages": 61,
+    "cover_images": 24
+  },
+  "results": [
+    {
+      "path": "/",
+      "kind": "homepage",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/cv/Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
+      "kind": "pdf",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/cv/Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
+      "kind": "pdf",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/data/cv-records-2026-11.json",
+      "kind": "source-json",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/data/project-registry-2026-11.json",
+      "kind": "source-json",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/digital-garden/digital-garden-xian-mixc-01.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/ether-fragment/ether-fragment-westbund-2023.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/home/featured-dropflow-main.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/home/featured-timer-main.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/home/glimpse-canfest-zhoushan.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/home/greenhouse-in-transit-mg17.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/home/vrplay-world-remix-2025.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/mke-terminal/pdf-p02-01.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/rain-singapore/gallery/its-raining-wide-05.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/chinatime-water-music-visual.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/derive-dual-city-poster.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/ewan-event-phantom-resonance.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/floating-life-ii-performance.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/glance-thousand-anchang-bridge-projection.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/observation-symbiosis-large.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-library/xiexin-sixiang-poster.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/raw-picks/titan-bolive-clean-16x9.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/xtep-xdna/xtep-selected-01.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+      "kind": "cover-image",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/content/cv-records-2026-11.json",
+      "kind": "source-json",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/content/project-registry-2026-11.json",
+      "kind": "source-json",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/ar-shenzhen-2022.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/archive-2026.html",
+      "kind": "project-index",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/cv-print-en.html",
+      "kind": "print-cv",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/cv-print-zh.html",
+      "kind": "print-cv",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/cv-records.html",
+      "kind": "cv-index",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/cv.html",
+      "kind": "cv-page",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/dialogue-of-forms.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/digital-tundra.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/drop-flow.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/mke-terminal.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/no-further-input-required.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/observation-and-symbiosis.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/onefive-semicolonc.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/ar-shenzhen-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/china-ai-gala-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/derive-2024.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/dialogue-of-forms-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/digital-garden-visual-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/digital-tundra-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/digitalfutures-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/drop-flow.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/entropy-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/ether-fragment-2023.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/flatland-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/future-string-tianhua-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/glance-thousand-install-2023.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/illusion-matrix-2024.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/illusion-resonance-2024.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/kashiwa-band-visual-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/kashiwa-titan-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/life-praise-install-2023.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/lonely-av-live-2023.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/matrix-navi-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/meta-speaker-install-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/migu-olympic-vfx-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/mke-terminal.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/natgeo-crystal-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/nature-numeral-install-2023.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/new-media-artist-simulator-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/no-further-input-required.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/obs-symbiosis-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/performable-music-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/rain-singapore-visual-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/reactor-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/rythem-newyear-live-2021.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/semicolon-c-onefive.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/shanhaifusheng2-visual-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/sre-realtime-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/stage-casting-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/system-ersha-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/timer.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/transit.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/urkl-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/vaoe-2023.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/vrplay-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/watermusic-multi-visual-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/wavefilm-hackathon-staff-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/waves-cross-2026.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/westbund-ambient-visual-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/xiexindance-sixiang-gong-visual-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/xtep-xdna22aw-visual-2022.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/yujiayun-45ping-visual-2025.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/projects/zcool-hp-live-2021.html",
+      "kind": "project-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/award-chinagraph-2024-timer.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/award-hangzhou-2024-timer-live.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/awards-003-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/awards-004-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/awards-005-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/education-aalto-introduction-to-vr-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/education-hen-an-university-2017-2021.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-007-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-008-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-009-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-010-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-011-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-012-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-013-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-014-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-015-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-016-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-017-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-018-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-019-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-020-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-021-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-022-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-023-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/exhibitions-024-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-025-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-026-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-027-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-028-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-029-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-030-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-031-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-032-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-033-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-034-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-035-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/live-036-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-042-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-043-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-044-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-045-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-046-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-047-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-048-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-049-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-050-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-051-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-052-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-053-2023.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-054-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-055-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-056-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/production-057-2022.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/research-058-2024.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/research-059-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/research-060-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/workshops-037-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/workshops-038-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/workshops-039-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/workshops-040-2026.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/records/workshops-041-2025.html",
+      "kind": "cv-record",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/sre-realtime-liveset.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/system-ersha.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/timer.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/titan.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    },
+    {
+      "path": "/works/vaoe.html",
+      "kind": "editorial-work",
+      "status": 200,
+      "ok": true,
+      "issue": null,
+      "category": "verified"
+    }
+  ]
+}

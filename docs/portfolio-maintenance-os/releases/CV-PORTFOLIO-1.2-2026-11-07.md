@@ -24,7 +24,14 @@ Not claimed: full Works catalog semantic unification, native Google Docs regener
 `node scripts/build-content.js` → `python scripts/render-cv-publication.py` → `node scripts/audit-cv-data.mjs` → normal CV/graph/preservation gates → `npm run build --prefix react` → inspect six PDF pages → publish → production HTTP and visual checks.
 
 ## Production
-Pending this release commit; record actual run URLs and outcome here after deployment. Do not equate local160/160 with production acceptance.
+Release commit: https://github.com/ewanqian/portfolio/commit/302e99461e48fb9ae3b37a5d2f6476139fab442f . Concurrent retrospective and bilingual fixes retained; no force push.
+- Publisher success: https://github.com/ewanqian/portfolio/actions/runs/42349226296
+- Build/archive smoke success: https://github.com/ewanqian/portfolio/actions/runs/42349226298
+- Prepare/custom-domain artifact success: https://github.com/ewanqian/portfolio/actions/runs/42349226291
+- Graph health success: https://github.com/ewanqian/portfolio/actions/runs/42349226288
+- Actual production runner:160/160 passed. Both PDF SHA-256 match manifest. Full per-URL results in `evidence/r1.2-live-http.json`.
+- First probe during deployment found four SPA fallbacks; after production updated, the same strict checks passed. No test weakened.
+- New browser visual check was blocked because the origin approval gate could not grant access. No security controls bypassed; full responsive UI verification remains pending. Prior desktop/mobile checks apply only to the previous UI, not a complete R1.2 pass.
 
 ## Estimate
 One to two follow-up rounds for full formal pipeline/visual acceptance after this delivery; historical media/rights audit has no fixed-chat guarantee. Pitfall retrospective already committed separately.

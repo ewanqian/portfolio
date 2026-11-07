@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "r1-2-generated-awaiting-production-verification",
+  "status": "r1-2-shared-cv-published-http-verified-visual-partial",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -39,7 +39,7 @@
   "quality_gates": {
     "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
-    "live_links": "154/154 checks passed in https://github.com/ewanqian/portfolio/actions/runs/42345740506 and independent local runner against production; validates route/content/JSON IDs/images, not video playback or ownership.",
+    "live_links": "R1.2 production:160/160 passed on 2026-11-07, including new print pages, old/new JSON routes and exact published PDF SHA-256. Evidence:docs/portfolio-maintenance-os/releases/evidence/r1.2-live-http.json. Full responsive/video verification pending.",
     "bilingual_cv": "61 records contain English; 60 selected IDs drive web rows, print templates and both three-page PDFs; selection, source and PDF hashes checked.",
     "media_rights": "incomplete",
     "human_factual_review": "required",
@@ -47,7 +47,7 @@
     "internal_workgraph": "50 unique project IDs, 50 evidence entries, 61 record IDs, 60 public CV links; no broken CV project IDs (repository-source static check).",
     "preservation": "11 mandatory historic media/source presence rules passed by source string checks; real HTTP / video playback not verified.",
     "permanent_archive": "50 committed generated project HTML files; all 50 project IDs in sitemap; 61 CV record URLs in sitemap; 24 CV-to-project related links; 25 local project cover paths present in repository.",
-    "generated_script_syntax": "Five build/audit JavaScript scripts parsed successfully during source checks; full CI workflow and live host QA unverified."
+    "generated_script_syntax": "CV generators, live auditor and React build passed; production workflow outcomes recorded in release report."
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
   "release": "CV / Portfolio Release 1.2",
@@ -55,7 +55,7 @@
   "release_policy": {
     "public_records": 60,
     "total_persisted_records": 61,
-    "unverified_award_handling": "2024 ChinaGraph documented as collaborative Electronic Theater presentation without unverified rank; Hangzhou 2024 award-ranking record excluded from R1 CV because the performance already appears under live events",
+    "unverified_award_handling": "ChinaGraph 2024 certificate supports Outstanding Musical Work (Second Prize), jointly credited to Xu Hao and Ewan Qian. Historical Hangzhou 2024 award-ranking record remains excluded from selected CV.",
     "project_pages": "existing static project URLs retained",
     "pdf_links": "target original stable works/records/<id>.html",
     "site_assets": "portrait uses existing repository source; No Further Input Required cover not substituted with unrelated artwork",
@@ -77,21 +77,16 @@
   ],
   "release_sources": {
     "zh_html": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH_Source.html",
-      "drive_url": "https://drive.google.com/file/d/1Pz1bPvtVG0GWh6_29pOX90VH4D32-JOT/view",
-      "portable_self_contained": true
+      "repository_path": "works/cv-print-zh.html"
     },
     "en_html": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN_Source.html",
-      "drive_url": "https://drive.google.com/file/d/1d6ekfUnqEp0SI1HiUOYo-2f-4K_1HQrQ/view",
-      "portable_self_contained": true
+      "repository_path": "works/cv-print-en.html"
     },
-    "generator": {
-      "file_name": "regenerate_cv_r1_1.py",
-      "drive_url": "https://drive.google.com/file/d/1lIe1o6_RZxXgpkqOk9GbtJppeSs6tIVK/view",
-      "requirements": "weasyprint 68+, PyMuPDF"
-    },
-    "note": "These HTML files reproduce the archived R1.1 layout; they are not yet generated automatically from the canonical CV record database. Exact release PDF hashes are recorded above."
+    "templates": "docs/cv-publication/templates/",
+    "generator": "scripts/build-cv-publication.mjs",
+    "pdf_generator": "scripts/render-cv-publication.py",
+    "selection": "content/cv-selection.json",
+    "note": "Both language editions share selected record IDs and bilingual content. Previous R1.1 Drive sources retained under previous_release_sources."
   },
   "project_registry_status": {
     "snapshot_date": "2026-11-07",
@@ -122,8 +117,8 @@
     "generator": "scripts/build-public-archive.mjs",
     "outputs": "assets/data/{cv-records,project-registry}-2026-11.json",
     "compatibility": "dist/content/ and dist/portfolio/content/ contain public projections only",
-    "local_validation": "React build; CV publication; graph (0 errors,115 warnings); preservation (11/11); portfolio-os; deterministic generation; built artifact HTTP 154/154 passed",
-    "live_validation": "2026-11-07: production QA run 42345740506 passed 154/154; independent runner repeated 154/154. Desktop archive loads 50 records and TITAN filter returns 1; CV loads 61 and 南昌路 filter returns 1; mobile CV detail navigation verified without horizontal overflow. Full six-template visual QA and playback remain pending.",
+    "local_validation": "R1.2: React build; CV publication; graph 0 errors/58 warnings; preservation14/14; public data and source/PDF hash gate; built artifactHTTP160/160; all six PDF pages inspected.",
+    "live_validation": "R1.2 production:160/160 passed on 2026-11-07, including new print pages, old/new JSON routes and exact published PDF SHA-256. Evidence:docs/portfolio-maintenance-os/releases/evidence/r1.2-live-http.json. Full responsive/video verification pending.",
     "remaining": "Full Works project catalog still uses separate content/works objects; Google Docs not regenerated; complete six-template visual QA, media playback and historical evidence/rights audit remain.",
     "pdf_regenerated": true
   },
@@ -155,6 +150,25 @@
     "selected_missing_english": 0,
     "data_sha256": "ba818500061d8affda408ec7d9321a42b4b4073b0546b516e13e0886a5fec2c6",
     "selection_sha256": "655dd10fa9566ac3d17d05d41eaa7a85c7a0c5ffc394b2944d412836644d2451",
-    "scope": "CV rows, 61 bilingual record pages, React profile recognition section, Chinese/English print HTML and PDFs share record data. Full Works catalog and Google Docs are separate."
+    "scope": "CV rows, 61 bilingual record pages, React profile recognition section, Chinese/English print HTML and PDFs share record data. Full Works catalog and Google Docs are separate.",
+    "production_http": "160/160 passed; exact PDF signature/checksums confirmed"
+  },
+  "previous_release_sources": {
+    "zh_html": {
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH_Source.html",
+      "drive_url": "https://drive.google.com/file/d/1Pz1bPvtVG0GWh6_29pOX90VH4D32-JOT/view",
+      "portable_self_contained": true
+    },
+    "en_html": {
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN_Source.html",
+      "drive_url": "https://drive.google.com/file/d/1d6ekfUnqEp0SI1HiUOYo-2f-4K_1HQrQ/view",
+      "portable_self_contained": true
+    },
+    "generator": {
+      "file_name": "regenerate_cv_r1_1.py",
+      "drive_url": "https://drive.google.com/file/d/1lIe1o6_RZxXgpkqOk9GbtJppeSs6tIVK/view",
+      "requirements": "weasyprint 68+, PyMuPDF"
+    },
+    "note": "These HTML files reproduce the archived R1.1 layout; they are not yet generated automatically from the canonical CV record database. Exact release PDF hashes are recorded above."
   }
 }
