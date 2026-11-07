@@ -99,3 +99,10 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 - 41 个 Atlas 独立词条、1 件 Cabinet 实物、按 61 条 CV 组织的 Timeline 均已公开；主页/全站导航链接已接入，搜索隐藏、作者关系、空白占位及 @onefive CD 错配已修。
 - 站点发布、graph health 和 archive smoke 均成功。正式域名 [205/205 HTTP/内容/媒体类型核验通过](https://github.com/ewanqian/portfolio/actions/runs/42388082724)，41 个词条页逐条覆盖；这是机器 HTTP 验证，**不是移动端完整视觉验收**。
 - [本轮具体交接](docs/portfolio-maintenance-os/handoffs/2026-11-07-personal-atlas-first-release.md)。接下来的 PORT-01 仍做 390px 手机与桌面视觉检查、媒体播放器人工核验，不再重复造词条或导入社交数据。
+
+## 2026-11-08 · PORT-01 六类模板真实 Chromium QA
+
+- 由 Actions 运行真实 Chromium：1440px 桌面和 390px 手机各 6 页，**最终 12/12 通过**，附全页 PNG 截图及机器 JSON 诊断：[visual QA run 42402410843](https://github.com/ewanqian/portfolio/actions/runs/42402410843)。
+- 修复首页语义 `h1`、TIMER 归档图像加载和图片源登记表不同步；旧缓存与懒加载图片造成的误判已经在检测流程中区分。
+- 之前已通过 205/205 正式域名内容/路由检查。现在 PORT-01 的工程性视觉/交互回归完成，**尚未逐张人工审美核对截图、未测试 Bilibili/MANA 实际播放，未完成媒体权利确认**，不可标注整项 done。
+- 详情：[2026-11-08-browser-qa-12-of-12.md](docs/portfolio-maintenance-os/handoffs/2026-11-08-browser-qa-12-of-12.md)。下一步仅做重点视频播放或已存截图的人工视觉复核；若被访问权限阻塞，启动 PORT-02 原片恢复。
