@@ -7,10 +7,10 @@ const manifest=json('content/publication-manifest-2026-11.json');
 const selected=profile.sections.flatMap(s=>s.record_ids),byId=new Map(records.map(r=>[r.id,r]));
 const fail=m=>{throw Error(m)};
 if(new Set(selected).size!==selected.length)fail('duplicate selected IDs');
-for(const id of selected){const r=byId.get(id);if(!r?.zh?.trim()||!r?.en?.trim())fail('missing bilingual copy '+id);}
+for(const id of selected){const r=byId.get(id);if(!r?.zh?.trim()||!r?.en?.trim()||!r?.cv_zh?.trim()||!r?.cv_en?.trim())fail('missing full/display bilingual copy '+id);}
 const publicRows=json('assets/data/cv-records-2026-11.json').records;
 if(publicRows.length!==records.length)fail('public projection count');
-for(const r of publicRows){if('source' in r||'evidence_status' in r||'note' in r)fail('internal field leak');if(r.en!==byId.get(r.id)?.en)fail('English projection drift '+r.id);}
+for(const r of publicRows){if('source' in r||'evidence_status' in r||'note' in r)fail('internal field leak');if(r.en!==(byId.get(r.id)?.cv_en||byId.get(r.id)?.en)||r.zh!==(byId.get(r.id)?.cv_zh||byId.get(r.id)?.zh))fail('public CV projection drift '+r.id);}
 const web=fs.readFileSync('works/cv.html','utf8');
 const webIds=[...web.matchAll(/class="cv-row" href="records\/([^"/]+)\.html"/g)].map(m=>m[1]);
 if(JSON.stringify(webIds)!==JSON.stringify(selected))fail('screen CV selection/order drift');

@@ -28,16 +28,16 @@ for(const lang of ['zh','en']){
 }
 const critical=[
  {id:'award-chinagraph-2024-timer',terms:['ChinaGraph 2024','优秀音乐作品（二等）','徐昊、钱誉文']},
- {id:'exhibitions-018-2023',terms:['四组影像作品','AR','南昌路 312 号']},
+ {id:'exhibitions-018-2023',terms:['四组影像','AR','南昌路 312 号']},
  {id:'production-042-2026',terms:['二砂包豪斯','空间采集','三维重建']},
  {id:'workshops-037-2026',terms:['舞台复刻','Stage Replica']},
- {id:'exhibitions-024-2022',terms:['AI PLAZA','新媒体影像展览参与']}
+ {id:'exhibitions-024-2022',terms:['AI PLAZA','新媒体影像参展']}
 ];
 for(const x of critical){
  const rec=byId.get(x.id);
  if(!rec){complain('CRITICAL_RECORD_MISSING',x.id);continue;}
  for(const t of x.terms){
-  if(!rec.zh.includes(t))complain('RECORD_CONTENT_DRIFT',x.id+' '+t);
+  if(!(rec.cv_zh||rec.zh).includes(t))complain('RECORD_CONTENT_DRIFT',x.id+' '+t);
   if(!web.includes(t))complain('WEB_CONTENT_DRIFT',x.id+' '+t);
  }
 }

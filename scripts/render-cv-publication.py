@@ -37,6 +37,6 @@ for lang in ('zh','en'):
 manifest['cv_pdf']=artifacts
 manifest['release']='CV / Portfolio Release '+profile['release']
 manifest['release_date']='2026-11-07'
-manifest['status']='r1-2-generated-awaiting-production-verification'
+manifest['status']='r'+profile['release']+'-generated-awaiting-production-verification'
 manifest['bilingual_publication']={'generator_input_sha256':input_hash,'selection':'content/cv-selection.json','records':'content/cv-records-2026-11.json','generator':'scripts/build-cv-publication.mjs','pdf_generator':'scripts/render-cv-publication.py','selected_records':len(ids),'selected_missing_english':0,'data_sha256':hashlib.sha256((ROOT/'content/cv-records-2026-11.json').read_bytes()).hexdigest(),'selection_sha256':hashlib.sha256((ROOT/'content/cv-selection.json').read_bytes()).hexdigest(),'scope':'CV rows, 61 bilingual record pages, React profile recognition section, Chinese/English print HTML and PDFs share record data. Full Works catalog and Google Docs are separate.'}
 manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
