@@ -41,7 +41,10 @@ try{
    const resourceErrors=[];
    page.on('pageerror',error=>resourceErrors.push(error.message.slice(0,180)));
    try{
-    const response=await page.goto(entry.url,{waitUntil:'domcontentloaded',timeout:35000});
+    const visitUrl=target.id==='project'
+      ? entry.url+'?visual_qa='+encodeURIComponent(process.env.GITHUB_SHA||'latest')
+      : entry.url;
+    const response=await page.goto(visitUrl,{waitUntil:'domcontentloaded',timeout:35000});
     if(!response||!response.ok())entry.issues.push('HTTP '+(response?.status()??'no response'));
     await page.evaluate(()=>document.fonts.ready);
     await page.waitForTimeout(250);
@@ -93,6 +96,10 @@ try{
     if(target.id==='cabinet'){
      const signed=page.locator('img[src*="onefive-classy-crush-signed"]');
      if(!await signed.count())entry.issues.push('Signed CD image absent');
+    }
+    if(target.id==='project'){
+     entry.projectImageSrc=await page.locator('figure.art img').first().getAttribute('src').catch(()=>null);
+     if(entry.projectImageSrc?.includes('featured-timer-main.webp'))entry.issues.push('Old TIMER cover still served; verify deployment/cache propagation');
     }
     if(target.id==='timeline'){
      entry.recordLinks=await page.locator('a[href^="records/"]').count();
