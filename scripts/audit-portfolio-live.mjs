@@ -19,8 +19,8 @@ const checks=[
  {path:'/works/cv.html',kind:'cv-page',expected:/Curriculum Vitae|完整履历/},
  {path:'/works/archive-2026.html',kind:'project-index',expected:/project-registry-2026-11\.json/},
  {path:'/works/cv-records.html',kind:'cv-index',expected:/cv-records-2026-11\.json/},
- {path:'/content/cv-records-2026-11.json',kind:'source-json',expected:/"records"/},
- {path:'/content/project-registry-2026-11.json',kind:'source-json',expected:/"projects"/}
+ {path:'/assets/data/cv-records-2026-11.json',kind:'source-json',expected:/"records"/},
+ {path:'/assets/data/project-registry-2026-11.json',kind:'source-json',expected:/"projects"/}
 ];
 for(const p of projects){
  checks.push({path:'/works/projects/'+p.id+'.html',kind:'project-record',expected:'name="archive-project-id" content="'+p.id+'"'});
@@ -66,6 +66,19 @@ async function worker(){
     const ct=response.headers.get('content-type')||'';
     if(check.kind==='source-json' && !/json/i.test(ct)){
      result.ok=false;result.issue='Expected JSON response, got '+ct;
+    }
+    if(check.kind==='source-json'){
+     try{
+      const parsed=JSON.parse(body);
+      const key=check.path.includes('cv-records')?'records':'projects';
+      const expectedIds=(key==='records'?records:projects).map(x=>x.id).sort();
+      const actualIds=Array.isArray(parsed[key])?parsed[key].map(x=>x.id).sort():[];
+      if(JSON.stringify(actualIds)!==JSON.stringify(expectedIds)){
+       result.ok=false;result.issue='JSON record IDs differ from deployment source';
+      }
+     }catch{
+      result.ok=false;result.issue='Response is not valid archive JSON (possible SPA fallback)';
+     }
     }
     if(!result.ok&&!result.issue)result.issue='200 response has wrong content (possible SPA fallback / outdated page)';
     result.category=result.ok?'verified':'content_mismatch';

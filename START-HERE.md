@@ -37,10 +37,12 @@
 
 | ID | 优先级/状态 | 工作与第一步 | 验收标准 |
 | --- | --- | --- | --- |
-| PORT-01 | P0 / ready | 发布验收：先读取 publisher 与 health 最新 Actions run，再检查正式域名 CV、archive、项目和履历路径 | 保存 run URL/commit/conclusion；逐URL结果；六类页面手机/桌面截图；失败与未测明确区分 |
+| PORT-01 | P0 / active | 发布验收：先读取 publisher 与 health 最新 Actions run，再检查正式域名 CV、archive、项目和履历路径 | 保存 run URL/commit/conclusion；逐URL结果；六类页面手机/桌面截图；失败与未测明确区分 |
 | PORT-02 | P0 / ready | 重点媒体恢复：从 TIMER、Drop Flow、VAOE、Kashiwa、观察与共生、二砂中选一项，对照旧文档、Git历史、团队库和现有证据 | 每项有稳定ID、影像清单、来源、署名/权利状态；既有视频和版本关系不丢；相关保护检查通过 |
 | PORT-03 | P1 / ready | 双语统一生成：先对照 R1.1 HTML、正式60条记录及现有构建器，列字段差异 | 同一审核数据生成网页/中英PDF；保留认可的三页肖像排版；文字/链接/渲染检查及manifest同步 |
 | PORT-04 | P1 / ready | 其余项目证据审计：读取证据账本，按缺口逐项搜索一手来源 | 每条记录搜索日期、候选出处、支持范围和未解决问题；搜索不到不等于不存在 |
+
+PORT-01 当前已定位两份 JSON 未复制到自定义域名发布目录，修复已通过本地154项HTTP检查，等待本次部署后的线上复验；桌面/手机视觉验收仍未完成。
 
 默认先做 PORT-01。若网络/权限阻塞，留下具体失败信息，推进 PORT-02 的仓库历史恢复。不要反复增加数据库、框架或新样式来代替交付。
 
@@ -54,7 +56,7 @@
 - 无新进展时不虚增版本、不把待办改为 done。
 
 ## 最近交接
-2026-11-07：建立固定续接入口，将其连接到 README、AGENTS、既有 handoff 和 NOW；沿用已存档 R1.1 / permalink 基线。此次仅核对维护文档与仓库回读，不代表执行了构建、HTTP、视觉或视频验收。下一步：PORT-01 读取最新 Actions 运行记录。
+2026-11-07：建立固定续接入口，将其连接到 README、AGENTS、既有 handoff 和 NOW；沿用已存档 R1.1 / permalink 基线。本轮已读取 Actions：部署成功，线上旧版154项中152通过、两份JSON落入SPA首页。新增公开字段导出、61个记录页清理、发布目录兼容JSON。React构建、CV/graph/preservation/portfolio-os检查、本地发布包154项HTTP检查通过；线上修复复验与视觉/视频验收待做。57条结构化英文仍缺，PDF保持R1.1。详见 handoffs/2026-11-07-public-output-pipeline.md。
 
 ## 详细依据
 - [操作规约](docs/portfolio-maintenance-os/AGENT-HANDOFF-v2.md)

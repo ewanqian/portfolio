@@ -71,3 +71,14 @@ const controlModelFrom = path.join(root, 'research', 'performance-control-model'
 const controlModelTo = path.join(root, 'dist', 'research', 'performance-control-model')
 const controlModelCount = copyDirRecursive(controlModelFrom, controlModelTo)
 console.log(`Copied ${controlModelCount} control-model file(s) → dist/research/performance-control-model/`)
+
+// Legacy archive JSON endpoints: explicit public allowlist only.
+for (const target of [path.join(root, 'dist')]) {
+  fs.mkdirSync(path.join(target, 'content'), { recursive: true });
+  fs.mkdirSync(path.join(target, 'assets/data'), { recursive: true });
+  for (const name of ['cv-records-2026-11.json', 'project-registry-2026-11.json']) {
+    const source = path.join(root, 'assets/data', name);
+    for (const folder of ['content', 'assets/data'])
+      fs.copyFileSync(source, path.join(target, folder, name));
+  }
+}

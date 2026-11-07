@@ -115,5 +115,14 @@
     "trigger": ".github/workflows/publish-portfolio-root.yml",
     "policy": "Generated canonical project pages never overwrite hand-authored work pages; CV record generator only edits marked related-project sections.",
     "caveat": "Files committed to GitHub and checked at source level; GitHub Pages HTTP and device UI have not been independently verified."
+  },
+  "public_archive_pipeline": {
+    "generator": "scripts/build-public-archive.mjs",
+    "outputs": "assets/data/{cv-records,project-registry}-2026-11.json",
+    "compatibility": "dist/content/ and dist/portfolio/content/ contain public projections only",
+    "local_validation": "React build; CV publication; graph (0 errors,115 warnings); preservation (11/11); portfolio-os; deterministic generation; built artifact HTTP 154/154 passed",
+    "live_validation": "Prior run 42344542429: 152/154, two source JSON URLs returned SPA HTML. Fixed deployment copy awaiting new live validation.",
+    "remaining": "57 CV records missing English; React project catalog and R1.1 PDF are not yet generated from the same CV publication dataset; Google Docs unchanged",
+    "pdf_regenerated": false
   }
 }

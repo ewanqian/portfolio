@@ -202,3 +202,14 @@ if (fs.existsSync(appIndexPath)) {
 } else {
   throw new Error('Missing built application index.html')
 }
+
+// Legacy archive JSON endpoints: explicit public allowlist only.
+for (const target of [distRoot, portfolioDistRoot]) {
+  fs.mkdirSync(path.join(target, 'content'), { recursive: true });
+  fs.mkdirSync(path.join(target, 'assets/data'), { recursive: true });
+  for (const name of ['cv-records-2026-11.json', 'project-registry-2026-11.json']) {
+    const source = path.join(repoRoot, 'assets/data', name);
+    for (const folder of ['content', 'assets/data'])
+      fs.copyFileSync(source, path.join(target, folder, name));
+  }
+}
