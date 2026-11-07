@@ -12,6 +12,11 @@ const publicRows=json('assets/data/cv-records-2026-11.json').records;
 if(publicRows.length!==records.length)fail('public projection count');
 for(const r of publicRows){if('source' in r||'evidence_status' in r||'note' in r)fail('internal field leak');if(r.en!==(byId.get(r.id)?.cv_en||byId.get(r.id)?.en)||r.zh!==(byId.get(r.id)?.cv_zh||byId.get(r.id)?.zh))fail('public CV projection drift '+r.id);}
 const web=fs.readFileSync('works/cv.html','utf8');
+for(const lang of ['ZH','EN']){
+ const expected='Ewan_Qian_CV_2026-11_R'+profile.release+'_'+lang+'.pdf';
+ if(!web.includes(expected))fail('website CV PDF link not current: '+expected);
+}
+if(!web.includes('Release '+profile.release))fail('website CV release label drift');
 const webIds=[...web.matchAll(/class="cv-row" href="records\/([^"/]+)\.html"/g)].map(m=>m[1]);
 if(JSON.stringify(webIds)!==JSON.stringify(selected))fail('screen CV selection/order drift');
 for(const lang of ['zh','en']){
