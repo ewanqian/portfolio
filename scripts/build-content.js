@@ -1,3 +1,4 @@
+import './build-cv-publication.mjs'
 import './build-public-archive.mjs'
 import fs from 'fs'
 import path from 'path'

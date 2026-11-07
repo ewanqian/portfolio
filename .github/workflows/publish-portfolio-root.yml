@@ -8,6 +8,9 @@ on:
       - "content/**"
       - "scripts/build-content.js"
       - "scripts/build-public-archive.mjs"
+      - "scripts/build-cv-publication.mjs"
+      - "scripts/render-cv-publication.py"
+      - "docs/cv-publication/**"
       - "scripts/build-project-record-pages.mjs"
       - "scripts/build-cv-project-links.mjs"
       - "scripts/build-portfolio-sitemap.mjs"
@@ -47,6 +50,19 @@ jobs:
         run: |
           npm ci
           npm ci --prefix react
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible CV renderer and CJK fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk libpango-1.0-0 libpangoft2-1.0-0
+          python -m pip install weasyprint==68.0 PyMuPDF==1.26.6
+      - name: Generate bilingual CV and validate three-page PDFs
+        run: |
+          python scripts/render-cv-publication.py
+          node scripts/build-public-archive.mjs
+          node scripts/audit-cv-data.mjs
       - name: Guard against mismatched covers and missing media
         run: node scripts/audit-media-publication.mjs
       - name: Build permanent project records and canonical sitemap
@@ -91,7 +107,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- index.html portfolio/index.html sitemap.xml
-          git add -- works/projects/ works/records/ assets/data/
+          git add -- works/projects/ works/records/ assets/data/ assets/cv/ works/cv.html works/cv-print-*.html content/publication-manifest-2026-11.json
           git add -- assets/*.js assets/*.css portfolio/assets/*.js portfolio/assets/*.css
 
           if git diff --cached --quiet; then

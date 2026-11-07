@@ -8,10 +8,12 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const root=process.cwd();
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const projects=read('content/project-registry-2026-11.json').projects;
+const release=read('content/publication-manifest-2026-11.json');
 const records=read('content/cv-records-2026-11.json').records;
 const site=(process.env.PORTFOLIO_SITE_BASE||'https://ewanqian.site').replace(/\/+$/,'');
 const checks=[
@@ -37,6 +39,13 @@ for(const r of records){
 for(const file of new Set(projects.map(p=>p.image).filter(x=>typeof x==='string' && x.startsWith('/assets/')))){
  checks.push({path:file,kind:'cover-image'});
 }
+for(const lang of ['zh','en']){
+ checks.push({path:'/works/cv-print-'+lang+'.html',kind:'print-cv',expected:'CV Release '+(release.release?.split(' ').at(-1)||'1.2')});
+ const pdf=release.cv_pdf?.[lang];
+ if(pdf?.public_url)checks.push({path:new URL(pdf.public_url).pathname,kind:'pdf',sha256:pdf.sha256});
+}
+checks.push({path:'/content/cv-records-2026-11.json',kind:'source-json',expected:/"records"/});
+checks.push({path:'/content/project-registry-2026-11.json',kind:'source-json',expected:/"projects"/});
 const unique=[...new Map(checks.map(c=>[c.path,c])).values()];
 const results=[];let cursor=0;
 async function worker(){
@@ -53,6 +62,11 @@ async function worker(){
     result.issue='HTTP '+response.status;
     result.category=[401,403,429,503].includes(response.status)?'blocked_or_transient':'http_failure';
     await response.body?.cancel();
+   }else if(check.kind==='pdf'){
+    const bytes=Buffer.from(await response.arrayBuffer());
+    result.ok=bytes.subarray(0,5).toString()==='%PDF-' && crypto.createHash('sha256').update(bytes).digest('hex')===check.sha256;
+    result.issue=result.ok?null:'PDF signature/checksum differs from release manifest';
+    result.category=result.ok?'verified':'content_mismatch';
    }else if(check.kind==='cover-image'){
     const ct=response.headers.get('content-type')||'';
     result.ok=ct.toLowerCase().startsWith('image/');

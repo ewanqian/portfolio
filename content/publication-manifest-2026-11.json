@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "r1-1-public-archive-http-verified-partial-visual-qa",
+  "status": "r1-2-generated-awaiting-production-verification",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -18,37 +18,39 @@
   },
   "cv_pdf": {
     "zh": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
       "pages": 3,
-      "size_bytes": 364499,
-      "sha256": "c412c9e742cd0956daa99aa55ee9debfba98490af7fda2b8643f7bc1c16d0943",
-      "drive_url": "https://drive.google.com/file/d/1keAienWYQ3U0ZcHZDLFI_8r-Hn7el90l/view",
-      "distinct_record_links": 60
+      "size_bytes": 367621,
+      "sha256": "5373cc264152078ae4e14540b3444be8a45aed0bebb5f5f0e086adfffb376a74",
+      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
+      "distinct_record_links": 60,
+      "source_html": "works/cv-print-zh.html"
     },
     "en": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
       "pages": 3,
-      "size_bytes": 283558,
-      "sha256": "e2abe93df45a43f6c15fc45ce405f8ecf10390f938e4998de46fd4c1e855f2eb",
-      "drive_url": "https://drive.google.com/file/d/1a9P6iK5Sk0XDMcoaBy1hkdWnAPNdcmWQ/view",
-      "distinct_record_links": 60
+      "size_bytes": 283095,
+      "sha256": "66232535661bb7646d52d0e6db1beac6dc039c6056b7d3fe8381c59247037740",
+      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
+      "distinct_record_links": 60,
+      "source_html": "works/cv-print-en.html"
     }
   },
   "quality_gates": {
     "identity": "crosswalk and 60 R1 record IDs checked against 61 public records",
     "static_build": "npm run build",
     "live_links": "154/154 checks passed in https://github.com/ewanqian/portfolio/actions/runs/42345740506 and independent local runner against production; validates route/content/JSON IDs/images, not video playback or ownership.",
-    "bilingual_cv": "R1.1 PDF and website content reconciled for five corrections; full database-to-PDF deterministic generator remains pending.",
+    "bilingual_cv": "61 records contain English; 60 selected IDs drive web rows, print templates and both three-page PDFs; selection, source and PDF hashes checked.",
     "media_rights": "incomplete",
     "human_factual_review": "required",
-    "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed",
+    "pdf": "R1.2: 3 pages per language, 60 unique permanent record targets, six pages rendered and inspected.",
     "internal_workgraph": "50 unique project IDs, 50 evidence entries, 61 record IDs, 60 public CV links; no broken CV project IDs (repository-source static check).",
     "preservation": "11 mandatory historic media/source presence rules passed by source string checks; real HTTP / video playback not verified.",
     "permanent_archive": "50 committed generated project HTML files; all 50 project IDs in sitemap; 61 CV record URLs in sitemap; 24 CV-to-project related links; 25 local project cover paths present in repository.",
     "generated_script_syntax": "Five build/audit JavaScript scripts parsed successfully during source checks; full CI workflow and live host QA unverified."
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
-  "release": "CV / Portfolio Release 1.1",
+  "release": "CV / Portfolio Release 1.2",
   "release_date": "2026-11-07",
   "release_policy": {
     "public_records": 60,
@@ -122,7 +124,37 @@
     "compatibility": "dist/content/ and dist/portfolio/content/ contain public projections only",
     "local_validation": "React build; CV publication; graph (0 errors,115 warnings); preservation (11/11); portfolio-os; deterministic generation; built artifact HTTP 154/154 passed",
     "live_validation": "2026-11-07: production QA run 42345740506 passed 154/154; independent runner repeated 154/154. Desktop archive loads 50 records and TITAN filter returns 1; CV loads 61 and 南昌路 filter returns 1; mobile CV detail navigation verified without horizontal overflow. Full six-template visual QA and playback remain pending.",
-    "remaining": "57 CV records missing English; React project catalog and R1.1 PDF are not yet generated from the same CV publication dataset; Google Docs unchanged",
-    "pdf_regenerated": false
+    "remaining": "Full Works project catalog still uses separate content/works objects; Google Docs not regenerated; complete six-template visual QA, media playback and historical evidence/rights audit remain.",
+    "pdf_regenerated": true
+  },
+  "previous_cv_pdf": {
+    "zh": {
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH.pdf",
+      "pages": 3,
+      "size_bytes": 364499,
+      "sha256": "c412c9e742cd0956daa99aa55ee9debfba98490af7fda2b8643f7bc1c16d0943",
+      "drive_url": "https://drive.google.com/file/d/1keAienWYQ3U0ZcHZDLFI_8r-Hn7el90l/view",
+      "distinct_record_links": 60
+    },
+    "en": {
+      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN.pdf",
+      "pages": 3,
+      "size_bytes": 283558,
+      "sha256": "e2abe93df45a43f6c15fc45ce405f8ecf10390f938e4998de46fd4c1e855f2eb",
+      "drive_url": "https://drive.google.com/file/d/1a9P6iK5Sk0XDMcoaBy1hkdWnAPNdcmWQ/view",
+      "distinct_record_links": 60
+    }
+  },
+  "bilingual_publication": {
+    "generator_input_sha256": "76e0d8cfffb3242ba32d53acd41e2428f2f10de4cea44d13882981fcaab38ea5",
+    "selection": "content/cv-selection.json",
+    "records": "content/cv-records-2026-11.json",
+    "generator": "scripts/build-cv-publication.mjs",
+    "pdf_generator": "scripts/render-cv-publication.py",
+    "selected_records": 60,
+    "selected_missing_english": 0,
+    "data_sha256": "ba818500061d8affda408ec7d9321a42b4b4073b0546b516e13e0886a5fec2c6",
+    "selection_sha256": "655dd10fa9566ac3d17d05d41eaa7a85c7a0c5ffc394b2944d412836644d2451",
+    "scope": "CV rows, 61 bilingual record pages, React profile recognition section, Chinese/English print HTML and PDFs share record data. Full Works catalog and Google Docs are separate."
   }
 }

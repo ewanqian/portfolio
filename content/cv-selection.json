@@ -1,0 +1,102 @@
+{
+  "schema": "ewanqian.cv-selection.v1",
+  "release": "1.2",
+  "based_on": "R1.1 approved print sources; preserve ID/order and wording",
+  "sections": [
+    {
+      "id": "education",
+      "record_ids": [
+        "education-hen-an-university-2017-2021",
+        "education-aalto-introduction-to-vr-2024"
+      ]
+    },
+    {
+      "id": "awards",
+      "record_ids": [
+        "awards-003-2025",
+        "awards-004-2025",
+        "awards-005-2025",
+        "award-chinagraph-2024-timer"
+      ]
+    },
+    {
+      "id": "exhibitions",
+      "record_ids": [
+        "exhibitions-007-2026",
+        "exhibitions-008-2026",
+        "exhibitions-009-2026",
+        "exhibitions-010-2025",
+        "exhibitions-011-2025",
+        "exhibitions-012-2025",
+        "exhibitions-013-2025",
+        "exhibitions-014-2024",
+        "exhibitions-015-2024",
+        "exhibitions-016-2024",
+        "exhibitions-017-2023",
+        "exhibitions-018-2023",
+        "exhibitions-019-2023",
+        "exhibitions-020-2023",
+        "exhibitions-021-2023",
+        "exhibitions-022-2022",
+        "exhibitions-023-2022",
+        "exhibitions-024-2022"
+      ]
+    },
+    {
+      "id": "live",
+      "record_ids": [
+        "live-025-2026",
+        "live-026-2026",
+        "live-027-2026",
+        "live-028-2026",
+        "live-029-2026",
+        "live-030-2026",
+        "live-031-2025",
+        "live-032-2025",
+        "live-033-2025",
+        "live-034-2024",
+        "live-035-2024",
+        "live-036-2023"
+      ]
+    },
+    {
+      "id": "workshops",
+      "record_ids": [
+        "workshops-037-2026",
+        "workshops-038-2026",
+        "workshops-039-2026",
+        "workshops-040-2026",
+        "workshops-041-2025"
+      ]
+    },
+    {
+      "id": "production",
+      "record_ids": [
+        "production-042-2026",
+        "production-043-2026",
+        "production-044-2026",
+        "production-045-2025",
+        "production-046-2025",
+        "production-047-2025",
+        "production-048-2025",
+        "production-049-2025",
+        "production-050-2025",
+        "production-051-2025",
+        "production-052-2024",
+        "production-053-2023",
+        "production-054-2022",
+        "production-055-2022",
+        "production-056-2022",
+        "production-057-2022"
+      ]
+    },
+    {
+      "id": "research",
+      "record_ids": [
+        "research-058-2024",
+        "research-059-2025",
+        "research-060-2026"
+      ]
+    }
+  ]
+}

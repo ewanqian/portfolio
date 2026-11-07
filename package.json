@@ -23,7 +23,10 @@
     "audit:preservation": "node scripts/audit-archive-preservation.mjs",
     "audit:sources": "node scripts/audit-external-evidence.mjs",
     "audit:cv": "node scripts/audit-cv-publication.mjs",
-    "audit:media": "node scripts/audit-media-publication.mjs"
+    "audit:media": "node scripts/audit-media-publication.mjs",
+    "build:cv": "node scripts/build-cv-publication.mjs",
+    "build:cv-pdf": "python3 scripts/render-cv-publication.py",
+    "audit:cv-data": "node scripts/audit-cv-data.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

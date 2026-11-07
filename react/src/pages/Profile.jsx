@@ -1,3 +1,4 @@
+import cvPublication from '../data/generated/cv.js'
 import { Link } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
@@ -394,6 +395,17 @@ function Profile() {
                     <li key={method}>{method}</li>
                   ))}
                 </ol>
+              </section>
+
+              <section id="profile-cv" className="profile-essay-section">
+                <span>CV · {cvPublication.release}</span>
+                <h2>{isZh ? '入选与荣誉' : 'Selections & Recognition'}</h2>
+                <div className="profile-paragraphs">
+                  {cvPublication.records.filter(record => record.section === 'awards').map(record => (
+                    <p key={record.id}><a href={'/works/records/' + record.id + '.html'}>{record.year} · {isZh ? record.zh : record.en}</a></p>
+                  ))}
+                  <a href={isZh ? '/works/cv.html' : '/works/cv-print-en.html'}>{isZh ? '完整履历与 PDF' : 'Full CV and printable version'}</a>
+                </div>
               </section>
 
               <section id="profile-network" className="profile-essay-section profile-network">

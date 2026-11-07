@@ -22,8 +22,8 @@ for(const id of unique){
 }
 if(ids.length!==unique.length)complain('DUPLICATE_RECORD_LINK',String(ids.length-unique.length));
 for(const lang of ['zh','en']){
- const url=release.cv_pdf?.[lang]?.drive_url;
- if(!url || !url.startsWith('https://drive.google.com/file/d/'))complain('MISSING_PDF_URL',lang);
+ const url=release.cv_pdf?.[lang]?.public_url || release.cv_pdf?.[lang]?.drive_url;
+ if(!url || !/^https:\/\/(?:drive\.google\.com\/file\/d\/|ewanqian\.site\/assets\/cv\/)/.test(url))complain('MISSING_PDF_URL',lang);
  else if(!web.includes(url))complain('PDF_URL_MISMATCH',lang+' '+url);
 }
 const critical=[
