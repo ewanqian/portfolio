@@ -32,6 +32,19 @@ for lang in ('zh','en'):
     if actual!=ids: raise RuntimeError(f'{lang}: PDF record links differ from selection')
     text=''.join(page.get_text() for page in doc)
     if '\ufffd' in text: raise RuntimeError(f'{lang}: replacement glyph in PDF')
+    if lang == 'zh':
+        forbidden = set('，、。：；！？）》」』】”’')
+        bad_lines = []
+        for page_no, page in enumerate(doc, 1):
+            for block in page.get_text('dict')['blocks']:
+                if block.get('type') != 0:
+                    continue
+                for line in block['lines']:
+                    label = ''.join(span['text'] for span in line['spans']).strip()
+                    if label and label[0] in forbidden:
+                        bad_lines.append((page_no, label[:40]))
+        if bad_lines:
+            raise RuntimeError(f'{lang}: forbidden punctuation at beginning of PDF line: {bad_lines[:8]}')
     artifacts[lang]={'file_name':name,'pages':3,'size_bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'public_url':'https://ewanqian.site/assets/cv/'+name,'distinct_record_links':len(actual),'source_html':'works/cv-print-'+lang+'.html'}
     print(lang, '3 pages,',len(actual),'record targets,',target.stat().st_size,'bytes')
 manifest['cv_pdf']=artifacts
