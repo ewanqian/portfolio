@@ -6,7 +6,8 @@
     "purpose": "Track which media file represents which work; no claim of copyright ownership or publication permission is inferred from a file path.",
     "git_sha_warning": "git_blob_sha1 is Git object identity, NOT SHA-256, a license or copyright evidence.",
     "no_fallback": "No generic stock/image reused for unrelated projects; if no project-specific image exists, keep image null.",
-    "public_credits": "Never auto-invent photographers or licenses. Add confirmed credit/permission before reusing a photo in a new context."
+    "public_credits": "Never auto-invent photographers or licenses. Add confirmed credit/permission before reusing a photo in a new context.",
+    "caption_rule": "Site captions should describe the image's media role (e.g., group exhibition poster vs artist's artwork), not infer personal creative credit. If unknown, omit."
   },
   "assets": [
     {
@@ -21,7 +22,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-timer",
@@ -35,7 +39,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-system-ersha-2026",
@@ -49,7 +56,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "team_case_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-natgeo-crystal-2026",
@@ -63,7 +73,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "team_case_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-china-ai-gala-2026",
@@ -77,7 +90,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "team_case_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-kashiwa-titan-2025",
@@ -91,7 +107,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-ar-shenzhen-2022",
@@ -105,7 +124,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-ether-fragment-2023",
@@ -119,7 +141,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-obs-symbiosis-2025",
@@ -133,7 +158,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-new-media-artist-simulator-2025",
@@ -147,7 +175,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "group_exhibition_poster",
+      "caption_zh": "《巴别瓶》群展海报；证明参展，不作为个人作品静帧",
+      "caption_en": "Group exhibition poster; not an artwork still"
     },
     {
       "asset_id": "cover-illusion-resonance-2024",
@@ -161,7 +192,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-derive-2024",
@@ -175,7 +209,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-vrplay-2025",
@@ -189,7 +226,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-sre-realtime-2026",
@@ -203,7 +243,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-digital-garden-visual-2025",
@@ -217,7 +260,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-glance-thousand-install-2023",
@@ -231,7 +277,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "installation_documentation",
+      "caption_zh": "《一眼万千》现场光影投影记录",
+      "caption_en": "Installation documentation"
     },
     {
       "asset_id": "cover-kashiwa-band-visual-2025",
@@ -245,7 +294,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-mke-terminal",
@@ -259,7 +311,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-rain-singapore-visual-2026",
@@ -273,7 +328,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "stage_visual_frame",
+      "caption_zh": "Rain 新加坡专场相关舞台视觉画面",
+      "caption_en": "Stage visual frame for Rain Singapore"
     },
     {
       "asset_id": "cover-shanhaifusheng2-visual-2025",
@@ -287,7 +345,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "official_event_poster",
+      "caption_zh": "《山海浮生 II：八荒祭》演出宣传海报；不表示个人承担海报设计",
+      "caption_en": "Official performance poster; not an individual design credit"
     },
     {
       "asset_id": "cover-transit",
@@ -301,7 +362,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-xtep-xdna22aw-visual-2022",
@@ -315,7 +379,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-yujiayun-45ping-visual-2025",
@@ -329,7 +396,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-zcool-hp-live-2021",
@@ -343,7 +413,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-lonely-av-live-2023",
@@ -357,7 +430,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-xiexindance-sixiang-gong-visual-2022",
@@ -371,7 +447,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     },
     {
       "asset_id": "cover-watermusic-multi-visual-2022",
@@ -385,7 +464,10 @@
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
       "verified_at": "2026-11-07",
-      "notes": null
+      "notes": null,
+      "media_role": "project_archive_image",
+      "caption_zh": null,
+      "caption_en": null
     }
   ]
 }
