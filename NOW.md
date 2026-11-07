@@ -1,5 +1,7 @@
 # NOW / Current Practice
 
+> CV / 网站维护的最新进度与新会话入口见 [START-HERE.md](START-HERE.md)（2026-11-07 起）。以下内容保留为创作研究方向及其原始日期，不代表网站发布的最新验收状态。
+
 Last updated: 2026-10-29
 
 This page is the public-safe working layer between finished portfolio projects and research that is still changing.
