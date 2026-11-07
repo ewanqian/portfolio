@@ -370,7 +370,7 @@
       "year": "2025",
       "category": "Exhibition",
       "url": null,
-      "image": "/assets/home/featured-perceptual-environments.webp",
+      "image": "/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp",
       "note": "待补展览记录",
       "variants": []
     },
@@ -591,7 +591,7 @@
       "year": "2023",
       "category": "Exhibition",
       "url": null,
-      "image": "/assets/home/archive-observation-clean.webp",
+      "image": "/assets/raw-library/glance-thousand-anchang-bridge-projection.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
@@ -624,7 +624,7 @@
       "year": "2026",
       "category": "Production",
       "url": null,
-      "image": "/assets/home/posterwall.webp",
+      "image": "/assets/rain-singapore/gallery/its-raining-wide-05.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
@@ -635,7 +635,7 @@
       "year": "2025",
       "category": "Production",
       "url": null,
-      "image": "/assets/home/posterwall.webp",
+      "image": "/assets/raw-library/floating-life-ii-performance.webp",
       "note": "由现有网站生成数据合并；详细来源待清理",
       "variants": []
     },
@@ -723,7 +723,7 @@
       "year": "2023–2024",
       "category": "Production",
       "url": "https://ewanqian.site/works/onefive-semicolonc.html",
-      "image": "/assets/raw-library/onefive-classy-crush-signed.webp",
+      "image": null,
       "note": "2023 Underground/Overground 演出视觉、2024 ChocoLove 歌词视频；制作署名为分号 C",
       "variants": [
         {
@@ -769,7 +769,8 @@
           "type": "artist_statement",
           "supports": "Ewan personally contributed during Semicolon C; exact task docs pending"
         }
-      ]
+      ],
+      "image_status": "2026-11-07: previously used a Classy Crush image not shown to document ChocoLove or Underground/Overground; awaiting exact deliverable imagery."
     },
     {
       "id": "lonely-av-live-2023",
