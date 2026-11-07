@@ -36,6 +36,7 @@ for(const section of profile.sections){
 }
 web=web.replace(/Ewan_Qian_CV_2026-11_R[0-9.]+_(ZH|EN)\.pdf/g,(_,lang)=>'Ewan_Qian_CV_2026-11_R'+profile.release+'_'+lang+'.pdf');
 web=web.replace(/Release [0-9.]+(?=<\/span>)/,'Release '+profile.release);
+web=web.replace(/RELEASE [0-9.]+ · NOVEMBER 2026/,'RELEASE '+profile.release+' · NOVEMBER 2026');
 fs.writeFileSync(path.join(root,'works/cv.html'),web);
 // React can consume the same public selection without importing internal source notes.
 fs.mkdirSync(path.join(root,'react/src/data/generated'),{recursive:true});
