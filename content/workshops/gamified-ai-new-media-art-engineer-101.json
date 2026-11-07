@@ -1,35 +1,49 @@
 {
   "slug": "gamified-ai-new-media-art-engineer-101",
-  "kind": "current-edition",
-  "order": 1,
+  "kind": "past-edition",
+  "order": 2,
   "title": {
-    "zh": "游戏化 AI 新媒体艺术工程师 101",
-    "en": "Gamified AI New Media Art Engineer 101"
+    "zh": "极简输入：构建视听系统",
+    "en": "Minimal Input — Building an Audiovisual System"
   },
   "short": {
-    "zh": "2026 年 8 月 29 日 MANA 先导课：3 小时完成 AI / 工程化语境、最小 Sound + Visual Mapping、个人原型与快速 Showcase。",
-    "en": "MANA pilot on Aug 29, 2026: a three-hour introduction to AI-assisted project framing, minimal sound-visual mapping, personal prototyping, and a quick showcase."
+    "zh": "2026 年 8 月 29 日 MANA 公开工作坊。由钱誉文与 yiyisogreen 共同主讲，从一个动作开始，制作可被操作的网页视听原型，并通过试玩完成 V1 → V2。",
+    "en": "Delivered on Aug 29, 2026 with MANA. Ewan Qian and yiyisogreen explored minimal input, audiovisual mapping and playable browser prototypes, followed by V1–V2 revision."
   },
   "premise": {
-    "zh": "第一小时建立共同语境与控制观念，第二小时完成最小音画系统，第三小时用个人材料制作、测试并展示自己的版本。",
-    "en": "Hour one establishes context and control concepts, hour two builds a minimal audiovisual system, and hour three turns it into a personal prototype that is tested and shown."
+    "zh": "从按键、鼠标等简单输入出发，理解声音、视觉、时间与反馈之间的关系；AI 帮助实现，人的操作和判断仍是核心。",
+    "en": "Start with a simple input and connect sound, image, timing and feedback. AI assists implementation while human interaction and judgment remain central."
   },
-  "tags": ["MANA", "101", "AI", "Creative Coding", "Audiovisual", "Mapping", "Showcase"],
+  "tags": [
+    "MANA",
+    "Minimal Input",
+    "Audiovisual",
+    "Creative Coding",
+    "V1 / V2"
+  ],
   "date": "2026-08-29",
   "time": "13:30–16:30",
   "format": {
-    "zh": "3 小时工作坊 + 快速 Showcase",
-    "en": "3-hour workshop + quick showcase"
+    "zh": "已举办 · 3 小时",
+    "en": "Delivered · 3-hour workshop"
   },
   "guest": {
     "name": "yiyisogreen",
     "role_zh": "特邀艺术家 / 线上分享嘉宾",
     "affiliation_zh": "华南农业大学珠江学院录音艺术系讲师；芝加哥艺术学院科技与艺术（声音）专业背景"
   },
-  "readmePath": "workshops/gamified-ai-new-media-art-engineer-101/README.md",
-  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/gamified-ai-new-media-art-engineer-101/README.md",
-  "editions": [],
+  "readmePath": "workshops/minimal-input-lab/mana-20260829-public-record.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/minimal-input-lab/mana-20260829-public-record.md",
+  "editions": [
+    {
+      "date": "2026-08-29",
+      "status": "held",
+      "context": "MANA public workshop; co-instructors Ewan Qian and yiyisogreen"
+    }
+  ],
   "resources": [
-    "workshops/gamified-ai-new-media-art-engineer-101/dashboard/README.md"
-  ]
+    "mana-0829/index.html",
+    "workshops/minimal-input-lab/README.md"
+  ],
+  "publicVisibility": "listed"
 }
