@@ -15,6 +15,7 @@ on:
       - "scripts/build-cv-project-links.mjs"
       - "scripts/build-portfolio-sitemap.mjs"
       - "scripts/build-personal-atlas.mjs"
+      - "scripts/audit-personal-atlas.mjs"
       - "public/data/ewan-encyclopedia.json"
       - "database/active_practice.json"
       - "database/evidence-reconciliation-2026-11.json"
@@ -74,6 +75,7 @@ jobs:
           node scripts/build-project-record-pages.mjs
           node scripts/build-cv-project-links.mjs
           node scripts/build-personal-atlas.mjs
+          node scripts/audit-personal-atlas.mjs
           node scripts/build-portfolio-sitemap.mjs
       - name: Build canonical Vite site
         run: npm run build --prefix react
@@ -111,7 +113,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- index.html portfolio/index.html sitemap.xml
-          git add -- works/projects/ works/records/ works/atlas/ works/atlas.html works/cabinet.html assets/data/ assets/cv/ works/cv.html works/cv-print-*.html content/publication-manifest-2026-11.json
+          git add -- works/projects/ works/records/ works/atlas/ works/atlas.html works/cabinet.html works/timeline.html assets/data/ assets/cv/ works/cv.html works/cv-print-*.html content/publication-manifest-2026-11.json
           git add -- assets/*.js assets/*.css portfolio/assets/*.js portfolio/assets/*.css
 
           if git diff --cached --quiet; then
