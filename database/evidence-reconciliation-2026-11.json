@@ -2,7 +2,7 @@
   "schema": "ewanqian.evidence-reconciliation.v1",
   "as_of": "2026-11-07",
   "policy": {
-    "purpose": "A claim-scoped audit crosswalk, not a substitute for original project facts or a web research claim for all 49 projects.",
+    "purpose": "Living work-by-work evidence register, expanded from 49 to 50 by restoring Dialogue of Forms as distinct artwork; not evidence of complete external verification for all items.",
     "verification_levels": [
       "artist_named_in_external_source",
       "event_verified_not_individual",
@@ -354,7 +354,7 @@
       "display_name": "数字苔原：观察与共生、形态的对话",
       "category": "Exhibition",
       "year": "2026",
-      "source_status": "event_verified_not_individual",
+      "source_status": "artist_named_in_external_source",
       "external_search_status": "priority_search_completed_for_listed_scope",
       "sources": [
         {
@@ -364,10 +364,18 @@
           "credit_scope": "event_only",
           "checked": "2026-11-07",
           "state": "source_found; specific claims only"
+        },
+        {
+          "kind": "cultural_center_online_guide",
+          "url": "https://www.sohu.com/a/1041385483_121106991",
+          "verified_scope": "names Ewan Qian & Shen Xuan as creators of two separate works",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "public_organizer_republication"
         }
       ],
       "existing_references": {
-        "public_url": null,
+        "public_url": "https://ewanqian.site/works/digital-tundra.html",
         "cover_path": null,
         "legacy_ids": [],
         "source_docs": []
@@ -375,15 +383,15 @@
       "media_review": "approved_public_cover_missing",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P1-verify-media-and-role",
-      "next_action": "artist and coauthor label plus documented artworks/certificates"
+      "next_action": "reconcile 2026 exhibition photos, separate two artwork titles and film screenshots"
     },
     {
       "project_id": "obs-symbiosis-2025",
       "display_name": "观察与共生",
       "category": "Exhibition",
       "year": "2025–2026",
-      "source_status": "internal_archive_only",
-      "external_search_status": "external_source_not_yet_confirmed_in_this_pass",
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "two public organizer/event listings with named coauthors and distinct exhibition dates",
       "sources": [
         {
           "kind": "collaboration_team_archive",
@@ -392,10 +400,26 @@
           "credit_scope": "team_claim",
           "checked": "2026-11-07",
           "state": "team_archive_indexed"
+        },
+        {
+          "kind": "public_event_listing",
+          "url": "https://www.topys.cn/activity/728",
+          "verified_scope": "2026-01-09 to 11 Symbiosis Protocols at Gwantsi Art Space, Observation and Symbiosis, Shen Xuan & Ewan Qian and description",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "source_read"
+        },
+        {
+          "kind": "cultural_center_online_guide",
+          "url": "https://www.sohu.com/a/1041385483_121106991",
+          "verified_scope": "2026 Digital Tundra names both Observation and Symbiosis and Dialogue of Forms, 2025 creations by Ewan Qian and Shen Xuan",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "public_organizer_republication"
         }
       ],
       "existing_references": {
-        "public_url": null,
+        "public_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
         "cover_path": "/assets/raw-library/observation-symbiosis-large.webp",
         "legacy_ids": [
           "observe-symbiosis-exhibit-2025",
@@ -411,7 +435,35 @@
       "media_review": "image_path_registered_rights_and_file_not_fully_audited",
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
-      "next_action": "confirm museum/venue artist credit and actual exhibition documentation for Shenzhen Pingshan and 2026 Henan; distinguish continuous versions"
+      "next_action": "assign precise licensed photos and original render to 2025/2026 versions; 2023 K11 namesake relationship not assumed"
+    },
+    {
+      "project_id": "dialogue-of-forms-2025",
+      "display_name": "形态的对话",
+      "category": "Exhibition",
+      "year": "2025",
+      "source_status": "artist_named_in_external_source",
+      "external_search_status": "online exhibition guide confirms title, media and coauthors",
+      "sources": [
+        {
+          "kind": "cultural_center_online_guide",
+          "url": "https://www.sohu.com/a/1041385483_121106991",
+          "verified_scope": "2025 moving-image work Dialogue of Forms, credited to Ewan Qian and Shen Xuan, 2026 Henan exhibition",
+          "credit_scope": "direct_named_artist",
+          "checked": "2026-11-07",
+          "state": "public_organizer_republication"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/works/dialogue-of-forms.html",
+        "cover_path": null,
+        "legacy_ids": [],
+        "source_docs": []
+      },
+      "media_review": "approved separate cover not yet registered; no substitution from Observation and Symbiosis",
+      "credit_review": "independently named coauthors",
+      "priority": "P1-verify-media-and-role",
+      "next_action": "recover original greenhouses/plant scan video, exhibition stills, credits and art paper materials"
     },
     {
       "project_id": "new-media-artist-simulator-2025",
