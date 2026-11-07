@@ -41,7 +41,9 @@
     "bilingual_cv": "R1.1 PDF and website content reconciled for five corrections; full database-to-PDF deterministic generator remains pending.",
     "media_rights": "incomplete",
     "human_factual_review": "required",
-    "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed"
+    "pdf": "3 pages each; linked 60 record IDs; searchable Unicode; portrait embedded; Chinese forbidden-leading-punctuation visual/text check passed",
+    "internal_workgraph": "50 unique project IDs, 50 evidence entries, 61 record IDs, 60 public CV links; no broken CV project IDs (repository-source static check).",
+    "preservation": "11 mandatory historic media/source presence rules passed by source string checks; real HTTP / video playback not verified."
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
   "release": "CV / Portfolio Release 1.1",
@@ -86,5 +88,17 @@
       "requirements": "weasyprint 68+, PyMuPDF"
     },
     "note": "These HTML files reproduce the archived R1.1 layout; they are not yet generated automatically from the canonical CV record database. Exact release PDF hashes are recorded above."
+  },
+  "project_registry_status": {
+    "snapshot_date": "2026-11-07",
+    "root_or_presentation_entries": 50,
+    "previous_baseline": 49,
+    "added": "dialogue-of-forms-2025",
+    "reason": "Digital Tundra is an exhibition presenting two separate coauthored works; it is not a second title for Observation and Symbiosis.",
+    "independent_artwork_pages": [
+      "/works/observation-and-symbiosis.html",
+      "/works/dialogue-of-forms.html"
+    ],
+    "exhibition_page": "/works/digital-tundra.html"
   }
 }
