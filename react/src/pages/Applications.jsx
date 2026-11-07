@@ -35,9 +35,23 @@ const APPLICATIONS = [
     test:'捏合持续控制滤波和音色 → 双手 HOLD → 区域 ENTER / EXIT 触发音效'
   },
   {
+    id:'organic-fields',name:'Organic Fields · Three Instruments',
+    category:'AV Performance',kind:'Gesture Score / Web Audio / WebXR',
+    type:'Playable Music Maps',number:'03',
+    subtitleZh:'在空间中画八字，演奏三种原创声场',subtitleEn:'Draw paths through three original sound worlds',
+    summaryZh:'从 iPad PlayGround 的触控演奏逻辑出发，提供器物打击、工业电子、程序化交响三个音乐地图；支持鼠标拖动、多指划动、Quest 手部输入与可选 OSC。',
+    summaryEn:'PlayGround-style spatial sound maps: synthesized cookware, industrial electronic percussion and orchestral phrases. Play with mouse, multi-touch or Quest tracked fingertips.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/playground.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'IPAD · DESKTOP · QUEST MR',
+    icon:'field',tone:'silver',
+    features:['3 SOUND WORLDS','SWIPE / ∞ PATH','WEB AUDIO · OSC'],
+    test:'滑动穿过器物区域 → 切换 Metal / Electro / Orchestra → 八字演奏'
+  },
+  {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'03',
+    type:'Performance Playground',number:'04',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
@@ -100,7 +114,7 @@ function Applications(){
         {!filtered.length&&<p className="applications-empty">{zh?'没有找到匹配的应用。':'No matching applications.'}</p>}
         <section className="applications-notes">
           <div><span className="applications-eyebrow">RESEARCH ARCHITECTURE</span><h2>{zh?'应用与研究归属':'Application ownership'}</h2></div>
-          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
+          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Organic Fields</strong> — Spatial Gesture Scores / Performable Music。{zh?'三种原创音色和图形空间演奏，不复用已停更 iPad App 的音色包；实机 Quest 延迟仍须验证。':'Three new sound worlds and gesture-based music maps, without reproducing the historic iPad app audio packs; headset latency remains unverified.'}</p><p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
         </section>
       </div>
     </main>
