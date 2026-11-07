@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section className="editorial-intro" data-page-motion>
       <div className="container editorial-intro-grid">
-        <div className="editorial-intro-name">
+        <h1 className="editorial-intro-name">
           <span>Ewan Qian</span>
           <span>钱誉文</span>
         </div>
