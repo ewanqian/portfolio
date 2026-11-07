@@ -1,0 +1,43 @@
+{
+  "slug": "stage-replica",
+  "kind": "past-edition",
+  "publicVisibility": "listed",
+  "order": 1,
+  "title": {
+    "zh": "舞台复刻",
+    "en": "Stage Replica"
+  },
+  "short": {
+    "zh": "2026 年 10 月 31 日于上海 The Point 举办的演出预演工作坊。由钱誉文主讲，MANA 提供宣传支持；通过灰盒、空间编排与预演，把演出想法改进为 V2。",
+    "en": "Stage previsualization workshop delivered on Oct 31, 2026 at The Point, Shanghai. Led by Ewan Qian with MANA promotional support; grayboxing, spatial composition and review informed a revised V2."
+  },
+  "premise": {
+    "zh": "不是单纯建模，而是让人物、屏幕、光和时间在数字空间中先运行一次，再从观看中发现问题。",
+    "en": "Beyond stage modeling: rehearse the relationships among performer, screens, light and time in a digital space, then revise after viewing."
+  },
+  "tags": [
+    "Stage Replica",
+    "Previsualization",
+    "Graybox",
+    "AI-assisted",
+    "V1 / V2"
+  ],
+  "date": "2026-10-31",
+  "format": {
+    "zh": "已举办 · 工作坊",
+    "en": "Delivered workshop"
+  },
+  "readmePath": "workshops/minimal-input-lab/stage-replica-20261031-public-record.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/workshops/minimal-input-lab/stage-replica-20261031-public-record.md",
+  "editions": [
+    {
+      "date": "2026-10-31",
+      "status": "held",
+      "context": "Lead Ewan Qian; MANA promotional support; The Point Shanghai venue support"
+    }
+  ],
+  "resources": [
+    "workshops/audiovisual-engineer-simulator/stage-replica/README.md",
+    "workshops/minimal-input-lab/reader-02-scene-forge.md"
+  ]
+}

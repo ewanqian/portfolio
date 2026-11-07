@@ -1,168 +1,28 @@
-# 长期工作坊项目内容介绍
-## Ewan Qian / 钱誉文｜2026
+# 工作坊 / Public Workshops
+## 2026 已举办与长期研究
 
-# 最新项目｜视听工程师模拟器
-## Audiovisual Engineer Simulator
+本页按**实际举办的公开活动**整理，不把课程研发名称、教材章节或 Demo 当作已举办场次。具体时间、主讲与合作关系以 [工作坊履历记录](../../docs/bio/education-and-public-workshops-2026.md) 为准。
 
-《视听工程师模拟器》从《极简输入》继续往真实现场推进。科目一解决“我能演了”，科目二解决“我能搭了”。
+## 已举办
 
-《现场副驾》打开 Ewan 自己演出时使用的 Resolume Arena 工程，学习怎样组织爆闪、节拍与控制层，准备时间参考，再进入 DJ 现场模拟。
+### 2026-08-29｜极简输入：构建视听系统
+**Minimal Input — Building an Audiovisual System**
 
-《舞台复刻》从参考图、现场视频、虚拟世界或自己的视觉作品开始，学习观察、解构、组织和重构，让同一个舞台拥有不同状态，最后通过网页预演和分享。
+MANA 公开工作坊；钱誉文 Ewan Qian 与 yiyisogreen 共同主讲。围绕按键、鼠标与最小输入展开声音、画面、节拍、状态及反馈的联系；制作可操作的网页视听原型，并通过试玩完成版本修改。
 
-AI / MCP 辅助整理控制与空间；参与者练习现场判断和创作编排。
+[课程记录](../../workshops/minimal-input-lab/mana-20260829-public-record.md) · [活动资源](../../mana-0829/index.html)
 
-[系列课程](../../workshops/audiovisual-engineer-simulator/README.md) · [MANA 编辑稿](../../workshops/audiovisual-engineer-simulator/mana-editorial-2026-09-29.md)
+### 2026-10-31｜舞台复刻
+**Stage Replica**
 
----
+钱誉文主讲的舞台空间预演工作坊；MANA 宣传支持，The Point 上海场地支持。通过参考分析、数字灰盒、空间及时间编排，让演出先运行一次，再根据观察修改 V1 / V2。
 
-当前工作坊项目分成三个层级：
+[课程记录](../../workshops/minimal-input-lab/stage-replica-20261031-public-record.md) · [研究与 Demo 生产记录](../../workshops/audiovisual-engineer-simulator/stage-replica/README.md)
 
-1. **《游戏化 AI 新媒体艺术工程师 101》｜MANA 8 月 29 日先导课**：13:30–16:30，3 小时工作坊，结尾进行快速 Showcase。
-2. **《游戏化 AI 新媒体艺术工程师》**：继续深入 AI 协作、工程化开发、版本、测试与新媒体创作基础。
-3. **《音画同源乐器》**：进一步进入声音、图像、Mapping、实时系统与演奏。
+## 持续发展的教学方法
 
-它们不是三门互不相关的课程，而是一条逐渐升级的路径：
+[极简输入实验室 / Minimal Input Lab](../../workshops/minimal-input-lab/README.md) 是后续的研究、练习与教材体系，不是单独新增的已举办工作坊。《一键输入》和《场景铸造》为教学 Reader；《现场副驾 / Live Show Copilot》仍在研发。
 
-```text
-101：AI + 新媒体项目基础
-          ↓
-游戏化 AI 新媒体艺术工程师
-          ↓
-声音 / 图像 / Mapping
-          ↓
-Personal A/V Instrument
-          ↓
-Advanced / Combined Course
-          ↓
-After Party / Performance
-```
+[早期课程规划原文（历史存档）](./archive-2026-proposals.md) 保留“游戏化 AI 新媒体艺术工程师”“音画同源乐器”“视听工程师模拟器”等旧名及先前课纲，供追溯，不作为当前课程宣传。
 
 ---
-
-# 00｜游戏化 AI 新媒体艺术工程师 101
-## Gamified AI New Media Art Engineer 101
-### AI 协作、工程化创作与音画原型｜MANA 先导工作坊
-
-**日期：** 2026 年 8 月 29 日  
-**时间：** 13:30–16:30  
-**形式：** 3 小时工作坊 + 快速 Showcase
-
-> 三小时走完一次最小但完整的新媒体创作循环：理解、搭建、替换个人材料、测试并展示。
-
-这是两条长期工作坊的第一期基础入口。课程只抽取最必要的能力：
-
-- 怎样和 AI 一起开始一个项目
-- 为什么先做框架、再填细节
-- 怎样保存 V1、测试并进入 V2
-- 怎样快速建立一个可操作的视觉系统
-- 怎样把自己的声音和图像接到一起
-- 怎样在大屏幕上完成一次 30–60 秒 Showcase
-
-第一期不安排 After Party。结课展示直接包含在三小时课程内，避免把初级课程的制作量和晚间演出压力绑在一起。
-
-After Party 将保留给后续初级 + 进阶组合课程，或《音画同源乐器》有更充分制作、排练时间后的公开版本。
-
-- [查看《游戏化 AI 新媒体艺术工程师 101》完整公开介绍](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
-- [公开工作坊讲义｜从一个动作，到一场演出](../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
-- [新媒体工程控制论｜公开讲义](../../research/performance-control-model/index.html)
-
----
-
-# 01｜游戏化 AI 新媒体艺术工程师
-## Gamified AI New Media Art Engineer
-
-> 先制造一辆能跑的车，再决定给它加什么。
-
-2025 杭州中心美术馆《游戏化 AI 生活解构师》的重点，是让零基础参与者第一次使用 AI Agent 制作自己的模拟器。
-
-2026 版本继续往前一步：当 AI 已经越来越会执行以后，参与者更需要一套最基础的工程化创作方法。
-
-核心流程：
-
-**FRAME → SKELETON → FILL → TEST → REFINE → PUBLISH / PERFORM**
-
-工作坊会建立：
-
-- AI Coding 的最低可用理解
-- Human-in-the-loop
-- 项目文件 / README / V1 / V2
-- Git / GitHub 的基本意义
-- “先框架、后细节”的开发顺序
-- 新媒体作品怎样从 Demo 变成可以继续维护的项目
-
-这项工作坊既可以独立举行，也可以作为《音画同源乐器》的基础层。
-
-[游戏化 AI 新媒体艺术工程师｜详细介绍](../../workshops/gamified-life-engineer/README.md)
-
----
-
-# 02｜音画同源乐器
-## Personal A/V Instrument
-
-> 把自己的声音、图像和动作制造成一件可以玩的数字乐器。
-
-参与者从个人声音、照片、视频、扫描、文字或 Generative Art 出发，通过键盘、鼠标和可选 MIDI Controller 建立自己的声音—视觉 Mapping。
-
-核心不是效果数量，而是：
-
-- 一个动作控制什么
-- 声音和图像为什么一起变化
-- Quiet / Active / Peak 等状态怎样切换
-- 别人第一次拿到作品时能不能直接玩
-- 它是否值得继续练习并进入演出
-
-已有实践包括 2026 年 Found Video VJ Battle Royale 第八轮中开发的 Found VJ Deck。
-
-完整版本推荐采用：
-
-**Build → Continue → Rehearse → Showcase**
-
-当参与者经过更长时间开发和排练后，再进入：
-
-**After Party / Public Performance**
-
-[音画同源乐器｜详细介绍](../../workshops/personal-av-instrument/README.md)
-
----
-
-# 两条长期工作坊的关系
-
-《游戏化 AI 新媒体艺术工程师》解决的是：
-
-> **怎样把想法变成一个能够运行、修改和继续开发的新媒体项目？**
-
-《音画同源乐器》继续解决：
-
-> **怎样让这个项目拥有声音、图像、操作方式和演奏性？**
-
-因此前者是基础方法与技术铺垫，后者进入更明确的 Audiovisual Instrument / Live Performance。
-
-《游戏化 AI 新媒体艺术工程师 101》则是两者共同的入门层：先让参与者完整走过一次制作循环，再决定后续向系统开发或音画演奏继续深入。
-
----
-
-## 基本形式
-
-- **MANA 101：** 2026-08-29，13:30–16:30，3 小时 + 快速 Showcase
-- **长期公众版：** 单个工作坊约 3–6 小时，可按场地和参与者调整
-- **组合版本：** 可扩展为多日课程、排练与最终公开展示
-- **建议人数：** 12–20 人
-- **门槛：** 不要求编程或音乐基础
-- **基本设备：** 参与者自带笔记本电脑；稳定网络、投影 / 大屏、电源、桌椅
-- **音画项目：** 建议基础扩声；MIDI Controller 为增强项，不是门槛
-
----
-
-## 阅读顺序
-
-1. [游戏化 AI 新媒体艺术工程师 101｜MANA 2026-08-29](../../workshops/gamified-ai-new-media-art-engineer-101/README.md)
-2. [公开工作坊讲义｜从一个动作，到一场演出](../../workshops/gamified-ai-new-media-art-engineer-101/runbook-20260829.html)
-3. [新媒体工程控制论](../../research/performance-control-model/index.html)
-4. [游戏化 AI 新媒体艺术工程师](../../workshops/gamified-life-engineer/README.md)
-5. [音画同源乐器](../../workshops/personal-av-instrument/README.md)
-6. [Issue #14｜AI 新媒体工程工作坊长期研发](https://github.com/ewanqian/portfolio/issues/14)
-7. [Issue #15｜音画同源乐器长期研发](https://github.com/ewanqian/portfolio/issues/15)
-8. [Issue #18｜MANA 101 内部执行清单](https://github.com/ewanqian/portfolio/issues/18)
-
-**合作联络：Ewan Qian / 钱誉文**
