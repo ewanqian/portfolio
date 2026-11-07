@@ -15,7 +15,7 @@ for(const p of projects){
  }
 }
 for(const r of records)paths.add('/works/records/'+r.id+'.html');
-for(const p of ['works/atlas.html','works/cabinet.html'])if(fs.existsSync(path.join(ROOT,p)))paths.add('/'+p);
+for(const p of ['works/atlas.html','works/cabinet.html','works/timeline.html'])if(fs.existsSync(path.join(ROOT,p)))paths.add('/'+p);
 const atlasDir=path.join(ROOT,'works/atlas');
 if(fs.existsSync(atlasDir))for(const name of fs.readdirSync(atlasDir).filter(n=>/^[a-z0-9-]+\.html$/.test(n)))paths.add('/works/atlas/'+name);
 for(const pathSuffix of [

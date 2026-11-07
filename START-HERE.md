@@ -85,3 +85,11 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 
 ## 2026-11-07 · CV 文字校样补丁 R1.2.1
 已逐条建立 60 组 cv_zh/cv_en 简版字段，原 61 条 zh/en 详情完整保留；删除 CV 中赘述式“六位合作创作者”“与沈轩合作”等重复短语，保留证书和详细页。见 [文字规范](docs/cv-publication/CV-COPY-STYLE-2026-11.md) 和 [版本报告](docs/portfolio-maintenance-os/releases/CV-PORTFOLIO-1.2.1-2026-11-07.md)。新版仍为 3 页/60 链接；网站发布链接已自动切换到 R1.2.1。**R1.2.1 的新一轮线上 160 路由 HTTP 和手机端逐页审阅仍待完成**，不要把旧 R1.2 的 160/160 记录套用到本版。
+
+## 2026-11-07 · Personal Atlas / Timeline / Cabinet 扩展
+- 已建立 32 个公开百科与研究词条（沿用 `public/data/ewan-encyclopedia.json` 和 `database/active_practice.json`），生成 `works/atlas/*.html` 和 `works/atlas.html`。
+- `works/cabinet.html` 首件藏品：@onefive《CLASSY CRUSH》签名 CD 封套原有照片，关联分号 C 制作档案；不能据此证明该唱片封套的设计或 ChocoLove 的个人职务。
+- `works/timeline.html` 已按年份分组 61 条正式 CV，不是假设所有日期精确可排序。
+- 微信个人朋友圈当前无已连接官方数据入口；Instagram 专业号需单独 OAuth，普通个人号从官方数据下载入手。私人素材必须先存在 `inbox/private/`（Git 忽略）经审阅再公开。
+- 61 履历内容补充基础账本：24 条母项目关系、26 条外部来源候选、20 条项目影像候选。模板已更新为短标题＋完整中英文记录＋关系与候选出处；实际部署须按本轮最新提交检查。
+- 参照 `docs/portfolio-maintenance-os/SOCIAL-ATLAS-INGESTION.md` 与 `docs/portfolio-maintenance-os/CV-61-RECORD-ENRICHMENT-2026-11-07.md`。
