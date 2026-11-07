@@ -121,6 +121,42 @@
         "observation-and-symbiosis.html"
       ],
       "source": "database/evidence-reconciliation-2026-11.json"
+    },
+    {
+      "id": "nfi-final-vs-development-distinction",
+      "file": "works/no-further-input-required.html",
+      "required_literals": [
+        "约 90 秒单通道影像",
+        "semicolonc.art/event/inclusion2026/no-further-input",
+        "A001/front-board.png",
+        "非最终参展影像"
+      ],
+      "source": "projects/no-further-input-required/PUBLIC-PORTFOLIO-2026-09-11.md"
+    },
+    {
+      "id": "vaoe-four-moving-image-units-not-fake-photos",
+      "file": "works/vaoe.html",
+      "required_literals": [
+        "四组影像作品",
+        "影像组一",
+        "影像组二",
+        "影像组三",
+        "影像组四",
+        "二维码",
+        "why.com.cn/wx/article/2023/07/16"
+      ],
+      "source": "projects/vaoe-exhibition-2023.md"
+    },
+    {
+      "id": "dialogue-of-forms-official-source-separate-project",
+      "file": "works/dialogue-of-forms.html",
+      "required_literals": [
+        "形态的对话",
+        "观察与共生",
+        "www.sohu.com/a/1041385483_121106991",
+        "digital-tundra.html"
+      ],
+      "source": "content/project-registry-2026-11.json"
     }
   ]
 }
