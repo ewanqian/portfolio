@@ -1,7 +1,7 @@
 {
   "schema": "ewanqian.publication-manifest.v1",
   "snapshot": "2026-11-06",
-  "status": "r1-2-shared-cv-published-http-verified-visual-partial",
+  "status": "r1-2-generated-awaiting-production-verification",
   "canonical_site": "https://ewanqian.site",
   "internal_object_store": "database/works.json",
   "canonical_name_overrides": "database/canonical_names.json",
@@ -18,20 +18,20 @@
   },
   "cv_pdf": {
     "zh": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.2.1_ZH.pdf",
       "pages": 3,
-      "size_bytes": 367621,
-      "sha256": "5373cc264152078ae4e14540b3444be8a45aed0bebb5f5f0e086adfffb376a74",
-      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
+      "size_bytes": 367637,
+      "sha256": "3b82760fbef724740ee2d7bd832c6b75a874586609953786b852a65bf0f40a3d",
+      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2.1_ZH.pdf",
       "distinct_record_links": 60,
       "source_html": "works/cv-print-zh.html"
     },
     "en": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.2.1_EN.pdf",
       "pages": 3,
-      "size_bytes": 283095,
-      "sha256": "66232535661bb7646d52d0e6db1beac6dc039c6056b7d3fe8381c59247037740",
-      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
+      "size_bytes": 283101,
+      "sha256": "3acf743814e4ca13f332794fb1d87609ab41f2ab8eab7fdcc9ccf0d2b8bd72ee",
+      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2.1_EN.pdf",
       "distinct_record_links": 60,
       "source_html": "works/cv-print-en.html"
     }
@@ -50,7 +50,7 @@
     "generated_script_syntax": "R1.2 build/CI and HTTP QA passed per published Actions report; added release consistency gate prevents stale counts and mismatched repository PDF hashes."
   },
   "policy": "Snapshot is an audit anchor and publication status registry; future updates must change this manifest together with actual verified artifacts, never claim all layers synchronized without testing.",
-  "release": "CV / Portfolio Release 1.2",
+  "release": "CV / Portfolio Release 1.2.1",
   "release_date": "2026-11-07",
   "release_policy": {
     "public_records": 60,
@@ -124,34 +124,35 @@
   },
   "previous_cv_pdf": {
     "zh": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.1_ZH.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
       "pages": 3,
-      "size_bytes": 364499,
-      "sha256": "c412c9e742cd0956daa99aa55ee9debfba98490af7fda2b8643f7bc1c16d0943",
-      "drive_url": "https://drive.google.com/file/d/1keAienWYQ3U0ZcHZDLFI_8r-Hn7el90l/view",
-      "distinct_record_links": 60
+      "size_bytes": 367621,
+      "sha256": "5373cc264152078ae4e14540b3444be8a45aed0bebb5f5f0e086adfffb376a74",
+      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2_ZH.pdf",
+      "distinct_record_links": 60,
+      "source_html": "works/cv-print-zh.html"
     },
     "en": {
-      "file_name": "Ewan_Qian_CV_2026-11_R1.1_EN.pdf",
+      "file_name": "Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
       "pages": 3,
-      "size_bytes": 283558,
-      "sha256": "e2abe93df45a43f6c15fc45ce405f8ecf10390f938e4998de46fd4c1e855f2eb",
-      "drive_url": "https://drive.google.com/file/d/1a9P6iK5Sk0XDMcoaBy1hkdWnAPNdcmWQ/view",
-      "distinct_record_links": 60
+      "size_bytes": 283095,
+      "sha256": "66232535661bb7646d52d0e6db1beac6dc039c6056b7d3fe8381c59247037740",
+      "public_url": "https://ewanqian.site/assets/cv/Ewan_Qian_CV_2026-11_R1.2_EN.pdf",
+      "distinct_record_links": 60,
+      "source_html": "works/cv-print-en.html"
     }
   },
   "bilingual_publication": {
-    "generator_input_sha256": "76e0d8cfffb3242ba32d53acd41e2428f2f10de4cea44d13882981fcaab38ea5",
+    "generator_input_sha256": "fda91a498e8600b3b1620bbaa4b547ac43018ed24dd8cb7ad80f9ed7bf286ece",
     "selection": "content/cv-selection.json",
     "records": "content/cv-records-2026-11.json",
     "generator": "scripts/build-cv-publication.mjs",
     "pdf_generator": "scripts/render-cv-publication.py",
     "selected_records": 60,
     "selected_missing_english": 0,
-    "data_sha256": "ba818500061d8affda408ec7d9321a42b4b4073b0546b516e13e0886a5fec2c6",
-    "selection_sha256": "655dd10fa9566ac3d17d05d41eaa7a85c7a0c5ffc394b2944d412836644d2451",
-    "scope": "CV rows, 61 bilingual record pages, React profile recognition section, Chinese/English print HTML and PDFs share record data. Full Works catalog and Google Docs are separate.",
-    "production_http": "160/160 passed; exact PDF signature/checksums confirmed"
+    "data_sha256": "b25be0583f0101ee74702eb634acefe4d0d0554d2c1adc2d44f667a22c6cb36e",
+    "selection_sha256": "6c582a19a33fc45709e69715bb8647119d7889b69fe29c4a66ab7261a21fa48a",
+    "scope": "CV rows, 61 bilingual record pages, React profile recognition section, Chinese/English print HTML and PDFs share record data. Full Works catalog and Google Docs are separate."
   },
   "previous_release_sources": {
     "zh_html": {
