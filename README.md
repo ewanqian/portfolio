@@ -19,6 +19,10 @@
 
 ## Start Here
 
+**继续维护 / 新对话入口： [START-HERE.md](./START-HERE.md)**  
+连接此仓库后说：“读取 START-HERE.md 和 AGENTS.md，告诉我现在有什么能做的。”  
+这里保存 CV / 网站维护进度、任务顺序和每轮交接要求；创作研究方向继续见 NOW.md。
+
 ### 第一次了解 Ewan
 
 - [当前实践方向 / Current Directions](./about/current-directions.md)
