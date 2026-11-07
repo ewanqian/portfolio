@@ -11,7 +11,7 @@ function Hero() {
         <h1 className="editorial-intro-name">
           <span>Ewan Qian</span>
           <span>钱誉文</span>
-        </div>
+        </h1>
 
         <div className="editorial-intro-copy">
           <p>
