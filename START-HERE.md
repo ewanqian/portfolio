@@ -93,3 +93,9 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 - 微信个人朋友圈当前无已连接官方数据入口；Instagram 专业号需单独 OAuth，普通个人号从官方数据下载入手。私人素材必须先存在 `inbox/private/`（Git 忽略）经审阅再公开。
 - 61 履历内容补充基础账本：24 条母项目关系、26 条外部来源候选、20 条项目影像候选。模板已更新为短标题＋完整中英文记录＋关系与候选出处；实际部署须按本轮最新提交检查。
 - 参照 `docs/portfolio-maintenance-os/SOCIAL-ATLAS-INGESTION.md` 与 `docs/portfolio-maintenance-os/CV-61-RECORD-ENRICHMENT-2026-11-07.md`。
+
+## 2026-11-07 · Personal Atlas v1 已完成可访问的第一版
+
+- 41 个 Atlas 独立词条、1 件 Cabinet 实物、按 61 条 CV 组织的 Timeline 均已公开；主页/全站导航链接已接入，搜索隐藏、作者关系、空白占位及 @onefive CD 错配已修。
+- 站点发布、graph health 和 archive smoke 均成功。正式域名 [205/205 HTTP/内容/媒体类型核验通过](https://github.com/ewanqian/portfolio/actions/runs/42388082724)，41 个词条页逐条覆盖；这是机器 HTTP 验证，**不是移动端完整视觉验收**。
+- [本轮具体交接](docs/portfolio-maintenance-os/handoffs/2026-11-07-personal-atlas-first-release.md)。接下来的 PORT-01 仍做 390px 手机与桌面视觉检查、媒体播放器人工核验，不再重复造词条或导入社交数据。
