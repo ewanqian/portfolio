@@ -46,6 +46,12 @@ for (const project of projects) {
       add('error','CROSSWALK_VARIANT_DISAGREE',v.legacy_id,aliasToRoot.get(v.legacy_id)+' vs '+project.id);
     }
   }
+  const permalink = 'works/projects/' + project.id + '.html';
+  if (!exists(permalink)) add('error','MISSING_PROJECT_PERMALINK',project.id,permalink);
+  else {
+    const projectHtml = fs.readFileSync(path.join(ROOT,permalink),'utf8');
+    if (!projectHtml.includes('name="archive-project-id" content="' + project.id + '"')) add('error','WRONG_PROJECT_PERMALINK',project.id,permalink);
+  }
   if (!project.zh) add('warning','NO_ZH_TITLE',project.id,'missing canonical Chinese title');
   if (!project.en) add('warning','NO_EN_TITLE',project.id,'missing English title');
   if (!project.image) add('warning','NO_COVER',project.id,'missing approved cover');
@@ -79,6 +85,9 @@ for (const rec of records) {
     add('warning','LEGACY_CV_URL',rec.id,rec.project_url);
   }
 }
+const sitemap = exists('sitemap.xml') ? fs.readFileSync(path.join(ROOT,'sitemap.xml'),'utf8') : '';
+for (const p of projects) if(!sitemap.includes('/works/projects/' + p.id + '.html')) add('error','PROJECT_MISSING_IN_SITEMAP',p.id,'sitemap.xml');
+for (const rec of records) if(!sitemap.includes('/works/records/' + rec.id + '.html')) add('error','RECORD_MISSING_IN_SITEMAP',rec.id,'sitemap.xml');
 for (const required of ['works/archive-2026.html','works/cv-records.html','AGENTS.md','database/README.md']) {
   if (!exists(required)) add('error','MISSING_SITE_ENTRY',required,required);
 }
