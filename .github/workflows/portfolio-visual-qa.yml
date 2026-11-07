@@ -1,0 +1,44 @@
+name: Portfolio visual QA — desktop and mobile
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit-portfolio-browser.mjs"
+      - ".github/workflows/portfolio-visual-qa.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-visual-qa
+  cancel-in-progress: true
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install screenshot test runner and browser
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Check live site in desktop and 390px Chromium
+        env:
+          PORTFOLIO_SITE_BASE: https://ewanqian.site
+        run: node scripts/audit-portfolio-browser.mjs
+      - name: Save screenshots and DOM diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-desktop-mobile-visual-qa
+          path: |
+            reports/portfolio-browser-qa.json
+            reports/portfolio-browser-qa/*.png
+          if-no-files-found: warn
+          retention-days: 30
