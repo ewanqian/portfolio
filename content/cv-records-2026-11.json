@@ -101,10 +101,15 @@
       "year": "2026",
       "zh": "《观察与共生 / Observation and Symbiosis》与《形态的对话 / Dialogue of Forms》，「数字苔原」AI 群落影像展，河南省文化馆青年艺术展览招募计划第五期，河南省文化馆，郑州，6 月 13 日—7 月 19 日；与沈轩共同创作，两件作品均创作于 2025 年。",
       "en": null,
-      "project_id": null,
-      "project_url": null,
+      "project_id": "digital-tundra-2026",
+      "project_url": "https://ewanqian.site/works/digital-tundra.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "Henan Provincial Cultural Center online guide lists both work titles, creators and media, republished by Sohu; event dates also documented by provincial cultural center",
+      "related_work_ids": [
+        "obs-symbiosis-2025",
+        "dialogue-of-forms-2025"
+      ],
+      "external_evidence": "https://www.sohu.com/a/1041385483_121106991"
     },
     {
       "id": "exhibitions-009-2026",
@@ -112,10 +117,11 @@
       "year": "2026",
       "zh": "《观察与共生》，「共生协议：算法公地」，愚见观池艺术空间，上海，1 月 9—11 日；与沈轩合作。",
       "en": null,
-      "project_id": null,
-      "project_url": null,
+      "project_id": "obs-symbiosis-2025",
+      "project_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "TOPYS public event notice names Shen Xuan and Ewan Qian in Observation and Symbiosis, Shanghai Jan 9-11 2026",
+      "external_evidence": "https://www.topys.cn/activity/728"
     },
     {
       "id": "exhibitions-010-2025",
@@ -156,10 +162,10 @@
       "year": "2025",
       "zh": "《观察与共生》，「数字水族馆」，坪山展览馆 3F · PSEG 数字场，深圳；与沈轩合作。",
       "en": null,
-      "project_id": null,
-      "project_url": null,
+      "project_id": "obs-symbiosis-2025",
+      "project_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
       "source": "Google Docs Master CV, snapshot 2026-11-06",
-      "evidence_status": "self-reported; requires supporting source for independent verification"
+      "evidence_status": "historic artist/team record for Pingshan edition; organizer named credit to be independently verified"
     },
     {
       "id": "exhibitions-014-2024",
