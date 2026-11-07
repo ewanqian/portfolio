@@ -27,6 +27,7 @@ on:
       - "scripts/build-cv-project-links.mjs"
       - "scripts/build-portfolio-sitemap.mjs"
       - "scripts/build-personal-atlas.mjs"
+      - "scripts/audit-personal-atlas.mjs"
       - "content/collection-items.json"
       - "public/data/ewan-encyclopedia.json"
       - "sitemap.xml"
@@ -65,10 +66,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Verify public Atlas, Timeline and Cabinet integrity
+        run: node scripts/audit-personal-atlas.mjs
       - name: Verify published Atlas and Cabinet entrypoints
         run: |
           test -s works/atlas.html
           test -s works/cabinet.html
+          test -s works/timeline.html
           test -s works/atlas/series-timer.html
           grep -q "CLASSY CRUSH" works/cabinet.html
       - name: Audit ID, CV, project, evidence and media relations
