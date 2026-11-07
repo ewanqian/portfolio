@@ -15,6 +15,13 @@ const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const projects=read('content/project-registry-2026-11.json').projects;
 const release=read('content/publication-manifest-2026-11.json');
 const records=read('content/cv-records-2026-11.json').records;
+const enc=read('public/data/ewan-encyclopedia.json');
+const atlasIds=[
+ ...enc.records.filter(x=>new Set(['verified-public','ongoing','presented']).has(x.status)).map(x=>x.id),
+ ...read('database/active_practice.json').items.filter(x=>x.publicVisibility!=='archive-until-packaged').map(x=>'concept-'+x.id),
+ ...read('database/notes_index.json').filter(x=>x.status==='published').map(x=>'note-'+x.id),
+ ...read('database/assets_index.json').filter(x=>x.filename?.startsWith('assets/')).map(x=>'scene-'+x.id)
+];
 const site=(process.env.PORTFOLIO_SITE_BASE||'https://ewanqian.site').replace(/\/+$/,'');
 const checks=[
  {path:'/',kind:'homepage',expected:/<html/i},
@@ -33,6 +40,11 @@ for(const p of projects){
    }
  }
 }
+for(const id of atlasIds)checks.push({path:'/works/atlas/'+id+'.html',kind:'atlas-record',expected:'href="../atlas.html"'});
+checks.push({path:'/works/atlas.html',kind:'atlas-index',expected:'id="entries"'});
+checks.push({path:'/works/cabinet.html',kind:'collection-index',expected:'CLASSY CRUSH'});
+checks.push({path:'/works/timeline.html',kind:'timeline-index',expected:'href="records/'});
+checks.push({path:'/assets/raw-library/onefive-classy-crush-signed.webp',kind:'cover-image'});
 for(const r of records){
  checks.push({path:'/works/records/'+r.id+'.html',kind:'cv-record',expected:r.id});
 }
@@ -112,7 +124,7 @@ const stats={
  content_mismatch:results.filter(x=>x.category==='content_mismatch').length,
  network_unverified:results.filter(x=>x.category==='network_unverified').length,
  blocked_or_transient:results.filter(x=>x.category==='blocked_or_transient').length,
- project_permalinks:projects.length,cv_record_pages:records.length,
+ project_permalinks:projects.length,cv_record_pages:records.length,atlas_record_pages:atlasIds.length,
  cover_images:[...new Set(projects.map(p=>p.image).filter(x=>x?.startsWith('/assets/')))].length
 };
 const report={schema:'portfolio-live-health.v2',checked_at:new Date().toISOString(),site,stats,results};
@@ -128,6 +140,7 @@ const lines=['## Portfolio OS · Live post-deployment verification','',
  '- Blocked/transient: '+stats.blocked_or_transient,
  '- Project permalinks: '+stats.project_permalinks+' · CV records: '+stats.cv_record_pages,
  '- Cover images tested: '+stats.cover_images,
+ '- Atlas records tested: '+stats.atlas_record_pages,
  '', '**An inaccessible crawler is not proof of a missing web page.**',
  ...results.filter(x=>!x.ok).slice(0,35).map(x=>'- '+x.category+' · '+x.path+' · '+(x.status??'?')+' · '+x.issue)];
 const summary=lines.join('\n')+'\n';
