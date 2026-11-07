@@ -64,7 +64,7 @@ Version 0.1 · 2026-11-07
 
 ## 当前实际落地
 - `works/timeline.html`：按 2017–2026 年份组织 61 条 CV 事件（同年没有确切日期不推断排序），未来仅接入经许可的社会媒体片段；
-- `works/atlas.html`：从 26 个已经公开的百科记录及 6 条现有研究主题生成 32 个独立词条页；
+- `works/atlas.html`：从 26 个已经公开的百科记录及 6 条现有研究主题生成 41 个独立词条页；
 - `works/cabinet.html`：从已有实体照片发布第一件 @onefive《CLASSY CRUSH》签名 CD 封套；
 - `content/collection-items.json`：第一件实物，关联分号 C 制作项目与对应 CV，而不冒充具体歌曲制作证据；
 - 卡西瓦签名 CD 没有在仓库找到可准确确认的专属照片，所以暂不补假图；
