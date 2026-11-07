@@ -8,6 +8,13 @@ const selected=profile.sections.flatMap(s=>s.record_ids),byId=new Map(records.ma
 const fail=m=>{throw Error(m)};
 if(new Set(selected).size!==selected.length)fail('duplicate selected IDs');
 for(const id of selected){const r=byId.get(id);if(!r?.zh?.trim()||!r?.en?.trim()||!r?.cv_zh?.trim()||!r?.cv_en?.trim())fail('missing full/display bilingual copy '+id);}
+const archivalPhrases=/六位合作创作者|与沈轩合作|参与团队制作|共同署名|待官方文件核验/;
+for(const id of selected){
+ const r=byId.get(id);
+ if(!r.cv_zh?.includes('｜')||!r.cv_en?.includes(' — '))fail('copy-style separator mismatch '+id);
+ if(/[。；，]$/.test(r.cv_zh)||/[.;,]$/.test(r.cv_en))fail('copy-style trailing punctuation '+id);
+ if(archivalPhrases.test(r.cv_zh))fail('archival prose leaked into compact CV '+id);
+}
 const publicRows=json('assets/data/cv-records-2026-11.json').records;
 if(publicRows.length!==records.length)fail('public projection count');
 for(const r of publicRows){if('source' in r||'evidence_status' in r||'note' in r)fail('internal field leak');if(r.en!==(byId.get(r.id)?.cv_en||byId.get(r.id)?.en)||r.zh!==(byId.get(r.id)?.cv_zh||byId.get(r.id)?.zh))fail('public CV projection drift '+r.id);}
