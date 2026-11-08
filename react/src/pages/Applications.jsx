@@ -55,7 +55,7 @@ const APPLICATIONS = [
     subtitleZh:'伴奏自动化、精细合成器与六指节音序',
     subtitleEn:'Accompaniment, advanced web synthesis and a six-joint musical sigil',
     summaryZh:'三项独立实验：四路编排与自有音频分轨导入、Tone.js FM/AM 效果链，以及拇指触碰六个指节组成 3345655643 的符号演奏。可选 WSS→OSC；Quest 实机待验收。',
-    summaryEn:'Three linked studies: four-lane score and user-owned audio stems, Tone.js FM/AM sound design, and a thumb-to-six-joint ritual-like sequence. Optional WSS/OSC; headset acceptance remains open.',
+    summaryEn:'Three linked studies: four-lane score and user-owned audio stems, Tone.js FM/AM sound design, and a thumb-to-six-joint musical sequence. Optional WSS/OSC; headset acceptance remains open.',
     href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/studies.html?lab=score',
     github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
     platform:'DESKTOP · IPAD · QUEST MR',
@@ -64,9 +64,38 @@ const APPLICATIONS = [
     test:'Studio 伴奏 → Tone.js 音色 → 掐指触发序列'
   },
   {
+    id:'gestural-atlas-perform',name:'Gestural Atlas · Performance',
+    category:'AV Performance',kind:'Hand Gesture / Musical Expression',
+    type:'Four Music Instruments',number:'05',
+    subtitleZh:'四种可演奏的手部动作语法',subtitleEn:'Four musical hand-gesture interaction studies',
+    summaryZh:'持续捏合合成器、双手距离与相位、八字路径记谱、六指节音序。以可演奏性和声画表现为目标，与传统文化图谱分开研究。',
+    summaryEn:'Sustained hand-controlled synth, bimanual phase/spacing, figure-eight score and six-phalanx sequencer. Music-only research, separate from cultural interpretation.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/atlas-music.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'DESKTOP · IPAD · QUEST MR',
+    icon:'hand',tone:'lime',
+    features:['4 PLAY METHODS','BIMANUAL + TRACE','WEB AUDIO · OSC'],
+    test:'捏合演奏 → 双手相位 → 画八字 → 触碰指节构成乐句'
+  },
+  {
+    id:'gestural-atlas-culture',name:'Gestural Atlas · Cultural Symbols',
+    category:'XR Interaction',kind:'Cinematic Choreography / Cultural Research',
+    type:'Four Symbolic Interaction Studies',number:'06',
+    subtitleZh:'剑诀、河图洛书、八卦和北斗星图',
+    subtitleEn:'Sword fingers, Hetu-Luoshu, Bagua and seven-star routes',
+    summaryZh:'参考林正英港式灵幻电影的动作与场景编排，结合有文献依据的剑诀、洛书九宫、河图数对、六爻和七星名称，转译为独立的现代交互页面。不复原法事。',
+    summaryEn:'Film choreography and documented cultural diagrams reinterpreted as interactive gesture systems, not ritual reenactments. Sword-form drawing, numeric grids, hexagram combinations and star routes.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/atlas-culture.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'DESKTOP · IPAD · QUEST MR',
+    icon:'field',tone:'silver',
+    features:['SWORD FORM','HETU / BAGUA','SEVEN-STAR MAP'],
+    test:'剑诀姿态 → 自创轨迹符形；九宫十五 → 六爻组合 → 七星连线'
+  },
+  {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'05',
+    type:'Performance Playground',number:'07',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
@@ -129,7 +158,9 @@ function Applications(){
         {!filtered.length&&<p className="applications-empty">{zh?'没有找到匹配的应用。':'No matching applications.'}</p>}
         <section className="applications-notes">
           <div><span className="applications-eyebrow">RESEARCH ARCHITECTURE</span><h2>{zh?'应用与研究归属':'Application ownership'}</h2></div>
-          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Organic Fields</strong> — Spatial Gesture Scores / Performable Music。{zh?'三种原创音色和图形空间演奏，不复用已停更 iPad App 的音色包；实机 Quest 延迟仍须验证。':'Three new sound worlds and gesture-based music maps, without reproducing the historic iPad app audio packs; headset latency remains unverified.'}</p><p><strong>Spatial Instrument Studies 05</strong> — Score / Studio / Tone.js / Sigil。{zh?'展示从原始手部输入到伴奏组织、声音塑形与指节序列的三个完整可测试方向；正式 Strudel 双向同步与硬件音频验收尚未完成。':'Three testable directions: arrangement, synthesis and phalanx-coded gestures. Bidirectional Strudel sync and real hardware audio QA are still open.'}</p><p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
+          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Organic Fields</strong> — Spatial Gesture Scores / Performable Music。{zh?'三种原创音色和图形空间演奏，不复用已停更 iPad App 的音色包；实机 Quest 延迟仍须验证。':'Three new sound worlds and gesture-based music maps, without reproducing the historic iPad app audio packs; headset latency remains unverified.'}</p><p><strong>Spatial Instrument Studies 05</strong> — Score / Studio / Tone.js / Sigil。{zh?'展示从原始手部输入到伴奏组织、声音塑形与指节序列的三个完整可测试方向；正式 Strudel 双向同步与硬件音频验收尚未完成。':'Three testable directions: arrangement, synthesis and phalanx-coded gestures. Bidirectional Strudel sync and real hardware audio QA are still open.'}</p><p><strong>Gestural Atlas / Performance</strong> — {zh?'四种音画演奏手势，以可演奏性为主要验收目标。':'Four musical gestures evaluated for expressive performance.'}</p>
+<p><strong>Gestural Atlas / Cultural Symbols</strong> — {zh?'港式灵幻电影动作与传统数字图式的当代交互研究；区分史料、电影表达与原创设计。':'Cinematic gesture research and interpreted traditional diagrams, with separate source provenance.'}</p>
+<p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
         </section>
       </div>
     </main>
