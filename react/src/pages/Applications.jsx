@@ -163,6 +163,7 @@ function Applications(){
   const {language}=useLanguage(),zh=language!=='en'
   const [query,setQuery]=useState('')
   const [category,setCategory]=useState('ALL')
+  const [density,setDensity]=useState(4)
   const filtered=useMemo(()=>APPLICATIONS.filter(a=>
     (category==='ALL'||a.category===category)&&
     [a.name,a.category,a.kind,a.subtitleZh,a.summaryZh,a.platform].join(' ').toLowerCase().includes(query.toLowerCase())
@@ -183,8 +184,12 @@ function Applications(){
             {['ALL','XR Interaction','AV Performance'].map(c=><button type="button" key={c} aria-pressed={category===c} onClick={()=>setCategory(c)} className={category===c?'active':''}>{c==='ALL'?(zh?'全部 / All':'All'):c}</button>)}
           </div>
           <label className="applications-search"><span aria-hidden="true">⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} aria-label={zh?'搜索应用':'Search apps'} placeholder={zh?'查找应用 / Search':'Search applications'}/></label>
+          <div className="applications-density" role="group" aria-label={zh?'每行数量':'Columns per row'}>
+            <span>{zh?'每行':'COLS'}</span>
+            {[4,5,6].map(n=><button type="button" key={n} aria-pressed={density===n} className={density===n?'active':''} onClick={()=>setDensity(n)}>{n}</button>)}
+          </div>
         </div>
-        <div className="applications-grid">{filtered.map(app=><ApplicationCard key={app.id} app={app} zh={zh}/>)}</div>
+        <div className="applications-grid" data-density={density}>{filtered.map(app=><ApplicationCard key={app.id} app={app} zh={zh}/>)}</div>
         {!filtered.length&&<p className="applications-empty">{zh?'没有找到匹配的应用。':'No matching applications.'}</p>}
         <section className="applications-notes">
           <div><span className="applications-eyebrow">RESEARCH ARCHITECTURE</span><h2>{zh?'应用与研究归属':'Application ownership'}</h2></div>
