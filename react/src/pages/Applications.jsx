@@ -7,9 +7,24 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
+    id:'xr-cast',name:'XR Cast · 星宿场',
+    category:'AV Performance',kind:'WebXR / Spatial Audio / Symbolic Field',
+    type:'One-Take XR Experience',number:'01',
+    subtitleZh:'戴上就玩：十二辰、五行、二十八宿与四声部',
+    subtitleEn:'Put it on and play: twelve branches, five elements, 28 mansions and four voices',
+    summaryZh:'一次进入，声音自动开始。左手十二辰标签沿环形排布并带引导线，右手五行与八卦，四周是二十八宿文字星环，前方是四声部圆环和一张手部图示。不需要再点“开启音频”。',
+    summaryEn:'One entry, audio starts by itself. Ring-laid labels with leader lines on the left hand, five elements and trigrams on the right, a text-only 28-mansion ring, four voice pads and a drawn hand diagram in front.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/xr-cast.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST MR · AVP VR · DESKTOP',
+    icon:'field',tone:'lime',
+    features:['ONE-CLICK ENTER','AUTO AUDIO','RING LABEL LAYOUT','4 VOICES'],
+    test:'戴头显 → 按一次进入 → 声音自动开始 → 手指穿过四声部圆环 → 拇指掐十二辰'
+  },
+  {
     id:'hand-space-osc',name:'Hand / Space / OSC',
     category:'XR Interaction',kind:'Spatial Input / WebXR',
-    type:'Research Instrument',number:'01',
+    type:'Research Instrument',number:'02',
     subtitleZh:'手部关节、空间区域与 OSC',subtitleEn:'Hand joints, spatial regions and OSC',
     summaryZh:'低面数手部骨架、逐关节角度、三维区域 ENTER / EXIT、WSS → OSC。Quest MR 优先。',
     summaryEn:'Fine joint skeleton, spatial enter/exit events and WSS-to-OSC. Quest passthrough first.',
@@ -23,7 +38,7 @@ const APPLICATIONS = [
   {
     id:'organic-fields',name:'Organic Fields · Three Instruments',
     category:'AV Performance',kind:'Gesture Score / Web Audio / WebXR',
-    type:'Playable Music Maps',number:'02',
+    type:'Playable Music Maps',number:'03',
     subtitleZh:'在空间中画八字，演奏三种原创声场',subtitleEn:'Draw paths through three original sound worlds',
     summaryZh:'从 iPad PlayGround 的触控演奏逻辑出发，提供器物打击、工业电子、程序化交响三个音乐地图；支持鼠标拖动、多指划动、Quest 手部输入与可选 OSC。',
     summaryEn:'PlayGround-style spatial sound maps: synthesized cookware, industrial electronic percussion and orchestral phrases. Play with mouse, multi-touch or Quest tracked fingertips.',
@@ -37,7 +52,7 @@ const APPLICATIONS = [
   {
     id:'hand-synth-v2',name:'Hand / Synth / Space V2',
     category:'AV Performance',kind:'Gesture Synth / Web Audio / OSC',
-    type:'Performance Instrument',number:'03',
+    type:'Performance Instrument',number:'04',
     subtitleZh:'双手手势驱动的实时合成器',subtitleEn:'A continuous synthesizer controlled by both hands',
     summaryZh:'保留 25 关节实时追踪，增加双手捏合、指节触碰、区域进出、滤波与延迟反馈；100 BPM 量化与 OSC 可选。不是空中钢琴。',
     summaryEn:'Original 25-joint tracking plus bimanual gestures, finger-to-joint contact, zone crossing, continuous filter/delay control and optional 100 BPM quantized OSC.',
@@ -51,7 +66,7 @@ const APPLICATIONS = [
   {
     id:'spatial-studies-05',name:'Spatial Instrument Studies · 05',
     category:'AV Performance',kind:'Score / Tone.js / Spatial Pads',
-    type:'Three Research Instruments',number:'04',
+    type:'Three Research Instruments',number:'05',
     subtitleZh:'四个可触控的伴奏声部与精细网页合成器',
     subtitleEn:'Touchable spatial score pads and advanced web synthesis',
     summaryZh:'四路伴奏现在有真正可触控的 PULSE / METAL / SHIMMER / DRONE 声音区域、即时声部触发与混音控制；还包括 Tone.js FM/AM 效果链。指节模拟器已经拆到独立页面。',
@@ -66,7 +81,7 @@ const APPLICATIONS = [
   {
     id:'phalanx-approach',name:'Phalanx Approach · Three Strategies',
     category:'XR Interaction',kind:'Hand Contact / Threshold Research',
-    type:'Strategy Comparison',number:'05',
+    type:'Strategy Comparison',number:'06',
     subtitleZh:'同一动作，三种指节判定策略对比',
     subtitleEn:'Three contact strategies compared on one gesture',
     summaryZh:'11 个目标（6 指节 + 4 指尖 + 掌心），重叠会同时触发，强度是渐变的而不是开关；并提供最近优先、按指长缩放、接近速度三种策略对比，失败原因逐条显示。',
@@ -81,7 +96,7 @@ const APPLICATIONS = [
   {
     id:'hand-seal-trainer',name:'Hand Seal Trainer · 掌诀训练器',
     category:'XR Interaction',kind:'Hand Joint / Cultural Gesture Learning',
-    type:'Guided Hand Practice',number:'06',
+    type:'Guided Hand Practice',number:'07',
     subtitleZh:'十二辰掌中认位与剑指姿势教学',
     subtitleEn:'Twelve-branch palm map and guided sword-finger pose training',
     summaryZh:'在现有 25 关节 WebXR 手部骨架上渲染宋体十二辰标签，检测拇指掐位、停留与松开；支持单手校准（导出的校准文件可跨设备复用）、十二辰顺序跟练、剑指五项姿势纠错，以及可打印的十二辰对照卡。',
@@ -96,7 +111,7 @@ const APPLICATIONS = [
   {
     id:'gestural-atlas-perform',name:'Gestural Atlas · Performance',
     category:'AV Performance',kind:'Hand Gesture / Musical Expression',
-    type:'Four Music Instruments',number:'07',
+    type:'Four Music Instruments',number:'08',
     subtitleZh:'四种可演奏的手部动作语法',subtitleEn:'Four musical hand-gesture interaction studies',
     summaryZh:'持续捏合合成器、双手距离与相位、八字路径记谱、六指节音序。以可演奏性和声画表现为目标，与传统文化图谱分开研究。',
     summaryEn:'Sustained hand-controlled synth, bimanual phase/spacing, figure-eight score and six-phalanx sequencer. Music-only research, separate from cultural interpretation.',
@@ -110,7 +125,7 @@ const APPLICATIONS = [
   {
     id:'gestural-atlas-culture',name:'Gestural Atlas · Cultural Symbols',
     category:'XR Interaction',kind:'Cinematic Choreography / Cultural Research',
-    type:'Four Symbolic Interaction Studies',number:'08',
+    type:'Four Symbolic Interaction Studies',number:'09',
     subtitleZh:'剑诀、河图洛书、八卦和北斗星图',
     subtitleEn:'Sword fingers, Hetu-Luoshu, Bagua and seven-star routes',
     summaryZh:'参考林正英港式灵幻电影的动作与场景编排，结合有文献依据的剑诀、洛书九宫、河图数对、六爻和七星名称，转译为独立的现代交互页面。不复原法事。',
@@ -125,7 +140,7 @@ const APPLICATIONS = [
   {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'09',
+    type:'Performance Playground',number:'10',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
