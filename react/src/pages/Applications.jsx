@@ -7,6 +7,36 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
+    id:'spatial-waves-01',name:'Spatial Waves · 3D Sound Instrument',
+    category:'AV Performance',kind:'Volumetric Hand Instrument / HRTF',
+    type:'Spatial Performance Candidate',number:'S01',
+    subtitleZh:'四个真正三维的声音体积与可演奏的双手场',
+    subtitleEn:'Four real XYZ sound volumes, playable with both hands',
+    summaryZh:'将 touch:waves 的动作—声音—视觉即时反馈转成独立的三维乐器：四个不同深度的声音体积、手指进入／退出、双手拉伸和四路 HRTF 空间声源；可导入本人拥有权利的四路等长音轨。WebAudio 时钟驱动 100 BPM 节奏；Quest 实机声像仍需验证。',
+    summaryEn:'A spatial instrument with four genuine XYZ interaction volumes, XR index fingertip contact, dual-hand spread, independent HRTF PannerNodes, synchronized user-owned audio stems and an original 100 BPM sketch. Headset perceptual QA pending.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/spatial-waves.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST MR · DESKTOP · IPAD',
+    icon:'hand',tone:'lime',
+    features:['4 TRUE XYZ VOLUMES','HRTF SPATIAL AUDIO','IMPORT 4 STEMS','100 BPM'],
+    test:'点击四个声音体积 → 启用空间音频 → 导入等长分轨 → 进入 Quest 用真实食指穿越三维场'
+  },
+  {
+    id:'neural-field-01',name:'Neural Field · Spatial Brain AV',
+    category:'AV Performance',kind:'Schematic Cortex / Synthetic Signal / WebXR',
+    type:'Brain-Signal Themed Stage Study',number:'S02',
+    subtitleZh:'四种脑结构观察模式与手势视听演奏',
+    subtitleEn:'Four schematic brain layers controlled as an audiovisual instrument',
+    summaryZh:'结构、剖面、电极示意和信号场四模式，复用 25 关节 XR 输入；捏合选择脑区，双手距离调节空间，内置 60 秒演出提示与本地合成声音。明确标注 SYNTHETIC：不是实测 EEG、MRI 模型或临床分析。',
+    summaryEn:'Four legible modes—structure, section, illustrative sensors and synthetic signal—using existing WebXR hand inputs, a 60-second stage cue sketch and local audio. No EEG hardware or medical reconstruction claimed.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/neural.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST MR · DESKTOP',
+    icon:'field',tone:'silver',
+    features:['4 SPATIAL MODES','SYNTHETIC · NOT EEG','PINCH + SPREAD','60s CUE'],
+    test:'切换 STRUCTURE / SECTION / ELECTRODES / SIGNAL → 手势聚焦 → 录制 60 秒合成信号声画演奏'
+  },
+  {
     id:'xr-cast',name:'XR Cast · 星宿场',
     category:'AV Performance',kind:'WebXR / Spatial Audio / Symbolic Field',
     type:'One-Take XR Experience',number:'01',
