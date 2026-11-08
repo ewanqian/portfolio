@@ -123,9 +123,24 @@ const APPLICATIONS = [
     test:'拇指靠近目标指节，观察毫米距离与确认进度；也可在桌面按住模拟并编辑序列'
   },
   {
+    id:'phalanx-approach',name:'Phalanx Approach · Three Strategies',
+    category:'XR Interaction',kind:'Hand Contact / Threshold Research',
+    type:'Strategy Comparison',number:'09',
+    subtitleZh:'同一动作，三种指节判定策略对比',
+    subtitleEn:'Three contact strategies compared on one gesture',
+    summaryZh:'最近优先、按指长缩放阈值、接近速度判定三种策略并排比较。每个指节显示毫米距离、自己的阈值、确认进度和失败原因（太远 / 歧义 / 需先抬起 / 无接近动作）。',
+    summaryEn:'Nearest-joint, reach-scaled and closing-velocity strategies side by side, with per-joint millimetre distance, threshold, dwell progress and an explicit rejection reason.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/phalanx-approach.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'DESKTOP · IPAD · QUEST MR',
+    icon:'hand',tone:'lime',
+    features:['3 STRATEGIES','MM / DWELL / REASON','AMBIGUITY GUARD'],
+    test:'拖动拇指接近指节 → 切换三种策略 → 观察阈值与失败原因变化'
+  },
+  {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'09',
+    type:'Performance Playground',number:'10',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
