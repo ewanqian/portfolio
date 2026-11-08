@@ -50,18 +50,18 @@ const APPLICATIONS = [
   },
   {
     id:'spatial-studies-05',name:'Spatial Instrument Studies · 05',
-    category:'AV Performance',kind:'Score / Tone.js / Six-Phalanx Sigil',
+    category:'AV Performance',kind:'Score / Tone.js / Spatial Pads',
     type:'Three Research Instruments',number:'04',
-    subtitleZh:'伴奏自动化、精细合成器与六指节音序',
-    subtitleEn:'Accompaniment, advanced web synthesis and a six-joint musical sigil',
-    summaryZh:'三项独立实验：四路编排与自有音频分轨导入、Tone.js FM/AM 效果链，以及拇指触碰六个指节组成 3345655643 的符号演奏。可选 WSS→OSC；Quest 实机待验收。',
-    summaryEn:'Three linked studies: four-lane score and user-owned audio stems, Tone.js FM/AM sound design, and a thumb-to-six-joint musical sequence. Optional WSS/OSC; headset acceptance remains open.',
+    subtitleZh:'四个可触控的伴奏声部与精细网页合成器',
+    subtitleEn:'Touchable spatial score pads and advanced web synthesis',
+    summaryZh:'四路伴奏现在有真正可触控的 PULSE / METAL / SHIMMER / DRONE 声音区域、即时声部触发与混音控制；还包括 Tone.js FM/AM 效果链。指节模拟器已经拆到独立页面。',
+    summaryEn:'Four touchable score lanes with sonic accents, dynamic layer mixing, optional user audio stems and Tone.js FM/AM patches. Phalanx simulator is now a separate application.',
     href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/studies.html?lab=score',
     github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
     platform:'DESKTOP · IPAD · QUEST MR',
     icon:'field',tone:'lime',
-    features:['SCORE / STEMS','TONE FX','6-DIGIT SIGIL'],
-    test:'Studio 伴奏 → Tone.js 音色 → 掐指触发序列'
+    features:['4 REAL SOUND PADS','SCORE / STEMS','TONE FX'],
+    test:'点击 PLAY ARRANGEMENT → 穿越四个声音圆圈 → 增加各层节奏 / 调节混音'
   },
   {
     id:'gestural-atlas-perform',name:'Gestural Atlas · Performance',
@@ -93,9 +93,24 @@ const APPLICATIONS = [
     test:'剑诀姿态 → 自创轨迹符形；九宫十五 → 六爻组合 → 七星连线'
   },
   {
+    id:'phalanx-dial-simulator',name:'Phalanx Dial · Finger Contact Simulator',
+    category:'XR Interaction',kind:'Hand Joint Contact / Spatial Input',
+    type:'Standalone Contact Research',number:'07',
+    subtitleZh:'六指节接近识别、确认时间与音序实验',
+    subtitleEn:'Six-joint proximity, dwell and phrase recognition simulator',
+    summaryZh:'独立展示拇指到六个指节的实时距离（mm）、最接近点、识别候选、确认进度及追踪丢失；支持模拟按住/放开、自由定义数字序列和 Quest 手部输入。',
+    summaryEn:'Standalone hand contact lab: actual per-joint distances, candidate and dwell progress, loss-of-tracking state, desktop hold/release simulator and editable sequence.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/sigil.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST MR · DESKTOP · IPAD',
+    icon:'hand',tone:'silver',
+    features:['6 JOINT CONTACTS','DISTANCE / DWELL','EDITABLE SEQUENCE'],
+    test:'拇指靠近目标指节，观察毫米距离与确认进度；也可在桌面按住模拟并编辑序列'
+  },
+  {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'07',
+    type:'Performance Playground',number:'08',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
