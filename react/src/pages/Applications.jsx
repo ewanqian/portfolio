@@ -93,9 +93,24 @@ const APPLICATIONS = [
     test:'剑诀姿态 → 自创轨迹符形；九宫十五 → 六爻组合 → 七星连线'
   },
   {
+    id:'hand-seal-trainer',name:'Hand Seal Trainer · 掌诀训练器',
+    category:'XR Interaction',kind:'Hand Joint / Cultural Gesture Learning',
+    type:'Guided Hand Practice',number:'07',
+    subtitleZh:'十二辰掌中认位与剑指姿势教学',
+    subtitleEn:'Twelve-branch palm map and guided sword-finger pose training',
+    summaryZh:'在现有 25 关节 WebXR 手部骨架上直接渲染十二辰中文标签，检测拇指掐位、停留与松开；提供十二辰顺序跟练、剑指五项姿势纠错，以及六种雷诀的来源阅读卡片。',
+    summaryEn:'CJK labels anchored to 25 WebXR hand joints, thumb-to-point contact and dwell detection, guided twelve-branch practice, explainable sword-finger pose coaching and six source-attributed Thunder Seal reading cards.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/handseal-trainer.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST MR · AVP VR · DESKTOP',
+    icon:'hand',tone:'silver',
+    features:['12 CJK JOINT LABELS','THUMB CONTACT / DWELL','POSE COACH / SOURCE ATLAS'],
+    test:'拇指逐位掐点 → 十二辰跟练 → 剑指姿势纠错 → 雷诀文献对照'
+  },
+  {
     id:'phalanx-dial-simulator',name:'Phalanx Dial · Finger Contact Simulator',
     category:'XR Interaction',kind:'Hand Joint Contact / Spatial Input',
-    type:'Standalone Contact Research',number:'07',
+    type:'Standalone Contact Research',number:'08',
     subtitleZh:'六指节接近识别、确认时间与音序实验',
     subtitleEn:'Six-joint proximity, dwell and phrase recognition simulator',
     summaryZh:'独立展示拇指到六个指节的实时距离（mm）、最接近点、识别候选、确认进度及追踪丢失；支持模拟按住/放开、自由定义数字序列和 Quest 手部输入。',
@@ -110,7 +125,7 @@ const APPLICATIONS = [
   {
     id:'critical-field-xr',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
-    type:'Performance Playground',number:'08',
+    type:'Performance Playground',number:'09',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
     summaryZh:'INITIAL CONDITION / FIELD / OVERRIDE / AFTERIMAGE。立体空间、Show Score、桌面与头显预览。',
     summaryEn:'Four spatial acts, shared Show Score, desktop preview and immersive headset view.',
