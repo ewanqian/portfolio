@@ -123,3 +123,7 @@
 - [SRE Lab](../../archive/sre-lab/README.md)
 - [Entropy Post-show Closeout](../../works/entropy-0905-performance/POST-SHOW-CLOSEOUT.md)
 - [Knowledge Map](../../docs/encyclopedia/KNOWLEDGE-MAP.md)
+
+## 续篇：Entropy 后的制作成熟度与音频转向
+
+2026-11-09 同日口述又补充了 Entropy 后的 REACTOR、HERO DOME、Ableton Live 音源与混音、二砂点云穿行镜头和九组灯光并行筛选。详见：[Entropy → REACTOR → HERO DOME 作者口述续篇](./2026-11-09-artist-account-reactor-hero-dome-audio-ersha.md)，及[本地资产恢复任务](./2026-11-09-local-agent-followup-reactor-audio-ersha.md)。它们是独立于 Drop Flow Simulation Zone 的另一组值得继承的生产能力。
