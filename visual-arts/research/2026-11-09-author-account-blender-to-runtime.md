@@ -85,6 +85,8 @@
 
 该项目已有正式档案：[BPM Link Experiment](../../projects/bpm-link-experiment-2026.md)、[SRE Realtime Lab](../../archive/sre-lab/README.md)；不要另建同名正式作品。
 
+**新找到的一手公开影像来源**：[MANA｜BPM Link Experiment SRE 主机位正式视频](https://www.manamana.net/video/detail?id=3001136)，页面标注发布日期 2026-08-18，并展示完整说明与三人 credit；这一发现证明线上已有对应的公开视频页，但**尚未验证网页播放是否正常，也不代表本地原始视频已入 GitHub**。
+
 ## 8. Entropy / Atmospheric Escape（2026）：跨屏终端与太空行程
 
 作者希望打造类似电脑操作终端的太空旅程：由地球出发，向月球和外太空推进。制作中进一步继承 SRE 的快速原型与实时控制经验，也加入 3D 模型、状态切换动画、星空与航天器观察、跨屏幕图像编排，让画面接近信息系统或沙盘的体验。
