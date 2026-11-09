@@ -7,6 +7,36 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
+    id:'spellcraft-east',updatedAt:'2026-11-09T17:00:31+08:00',name:'Spellcraft Atelier · Chinese Fantasy',
+    category:'XR Interaction',kind:'WebXR / Hand Pose / Symbolic Action',
+    type:'Six Playable Spell Gestures',number:'S05',
+    subtitleZh:'六种中国术师玩法：画符发遣、御剑、剑阵、五行、封印和七星',
+    subtitleEn:'Six interactive Chinese-fantasy hand spells, not decorative trigrams',
+    summaryZh:'六种真正可触发的施法机制：剑指画圈后再指发符、蓄力九剑齐射、双掌列阵、五行命中相克目标、手掌镇定与剑指封印、七星顺序连招。包含三维浮动靶、评分与即时反馈；Quest 3 手势实测待完成。',
+    summaryEn:'Six playable mechanics: draw/launch talismans, nine sword volleys, bimanual sword circle, five-element target interactions, binding seals and seven-star paths. Real volumetric targets, hit scoring and hand gestures; Quest 3 QA pending.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/spellcraft.html?line=east',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST 3 MR · VR · DESKTOP',
+    icon:'hand',tone:'silver',
+    features:['6 PLAYABLE SPELLS','DRAW → RELEASE','BIMANUAL SWORD ARRAY','TARGET / SCORE'],
+    test:'选择画符 → 剑指画圈 → 松开再剑指发射；切换御剑/阵法/五行/封印/七星并观察命中与分数'
+  },
+  {
+    id:'spellcraft-west',updatedAt:'2026-11-09T17:00:31+08:00',name:'Spellcraft Atelier · European Fantasy',
+    category:'XR Interaction',kind:'Hand Spell / Projectile / WebXR',
+    type:'Six Playable Magic Studies',number:'S04',
+    subtitleZh:'六种欧洲奇幻施法：火球、冰冻、雷链、护盾、引力与空间门',
+    subtitleEn:'Six hand-cast fantasy spells with real projectile and target feedback',
+    summaryZh:'从 VR 游戏中提炼可验证的手势→释放→命中循环：掌心蓄火投掷、剑指冰冻后碎裂、指向雷链、掌心格挡、握拳引力聚拢、画圈后穿门射击。可桌面模拟和 Quest MR 交互；实机帧率与误触尚未验收。',
+    summaryEn:'Six interactive spell studies: palm fireball throw, frost-lattice shatter, chain lightning, active ward blocking, fist gravity attraction and draw-to-open rift portal. Targets, scoring and spatial hand input; headset QA pending.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/spellcraft.html?line=west',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST 3 MR · VR · DESKTOP',
+    icon:'field',tone:'silver',
+    features:['6 SPELLS / LIVE TARGETS','PALM THROW / SHIELD','CHAIN LIGHTNING','DRAW RIFT'],
+    test:'选择火球 → 张掌蓄能 → 握拳投出；切换冰/雷/盾/引力/空间门，并观察积分反馈'
+  },
+  {
     id:'gesture-dynamics',updatedAt:'2026-11-09T16:47:07+08:00',name:'Gesture Dynamics · Spatial Particles',
     category:'XR Interaction',kind:'Hand Gesture / Particle Physics / WebXR',
     type:'Quest 3 MR Prototype',number:'S03',
