@@ -80,6 +80,12 @@ Entropy 查核两组星空、三组航天器观察、3D 模型、状态过渡与
 
 关键事实：Simulation Zone 将前一帧状态供下一帧读取；输入的初始模拟状态与从区外连接进入的逐帧驱动要区分；Delta Time、Bake/Cache、字段和几何数据类型都影响移植。**这不等于直接把 Blender 整个评估器编译为 GPU Kernel。**
 
+**截至 2026-11 的上游 GPU 进展，务必核对，不可混淆产品能力与 WIP：**
+- Blender 2026-10 [Geometry Nodes Workshop](https://code.blender.org/2026/10/geometry-nodes-workshop-september-2026/) 将 GN GPU Evaluation 归为长期目标；需重构 field evaluation、GPU attributes 等部分。
+- [GPU fields WIP PR #165697](https://projects.blender.org/blender/blender/pulls/165697) 仅列出部分支持的 field/attribute/数据域，且在不支持条件下会退回 CPU；它**不代表整个 Simulation Zone 已获得 GPU 实时模拟**，也不意味着当前稳定 Blender 可直接启用全部功能。
+- GPU fields WIP 列出的后端与自研 Windows OpenGL Compute + SSBO Runtime 是**两条不同路径**：Blender 上游开发倾向 Vulkan/Metal，不应因此断言独立应用的 OpenGL Compute 不可用。最终按具体场景图、数据传输、GPU Kernel 开销和实际画面比较选择。
+
+
 研究输出两张图：
 
 **Blender 实际机制图**：从已找到的具体连接精确画出每个状态字段的来源、更新和输出；未知部分写 UNKNOWN。
