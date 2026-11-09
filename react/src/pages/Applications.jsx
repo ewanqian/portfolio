@@ -7,19 +7,19 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
-    id:'gesture-dynamics',updatedAt:'2026-11-09T16:27:12+08:00',name:'Gesture Dynamics · Spatial Particles',
+    id:'gesture-dynamics',updatedAt:'2026-11-09T16:47:07+08:00',name:'Gesture Dynamics · Spatial Particles',
     category:'XR Interaction',kind:'Hand Gesture / Particle Physics / WebXR',
     type:'Quest 3 MR Prototype',number:'S03',
-    subtitleZh:'剑指驱动粒子，张掌爆散，握拳聚合',
-    subtitleEn:'Point, scatter and attract a physical 3D particle field',
-    summaryZh:'基于现有 25 关节 WebXR 输入的轻量三维粒子动力学：剑指引导连续运动、张掌触发一次爆散、握拳吸引回聚。480 粒子、三种空间形态、可复现桌面模拟。Quest 3 实机手势精度与帧率尚待验证。',
-    summaryEn:'A 480-particle 3D dynamics study using the existing 25-joint WebXR hand inputs. Sword-finger propulsion, one-shot palm blast, fist attraction, three field arrangements and a transparent desktop mock. Quest headset QA pending.',
+    subtitleZh:'剑指生成主粒子并远距发射，张掌爆散，双拳连招快速回收',
+    subtitleEn:'Launch, blast and recall a particle swarm with both hands',
+    summaryZh:'V2：优化 25 关节剑指方向与识别延迟。剑指从指尖发射主粒子，120 个随从粒子围绕飞行；张掌爆散；先右手握拳再左手握拳，约 230ms 直接召回。480 粒子、三种队形。Quest 3 实机性能仍需复核。',
+    summaryEn:'V2: quicker 25-joint sword recognition, a lead projectile with orbiting followers, open-palm burst, and ordered right-fist then left-fist straight-line recall in about 230ms. Four 120-particle swarms; Quest headset QA pending.',
     href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/gesture-dynamics.html',
     github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
     platform:'QUEST 3 MR · VR · DESKTOP',
     icon:'field',tone:'silver',
-    features:['480 PHYSICAL PARTICLES','SWORD / PALM / FIST','3 FIELD SHAPES','QUEST MR'],
-    test:'桌面用 1/2/3/0 模拟 → Quest Browser 进入 MR → 验证剑指方向、一次爆散、握拳回聚与丢追踪'
+    features:['4 × 120 FOLLOWERS','6.2 M/S CAST','PALM BURST · DUAL-FIST RECALL','QUEST MR'],
+    test:'桌面 1 发射 → 2 爆散 → 3 右拳 → 4 左拳回收；Quest Browser 进入 MR 验证指向、回收和跟踪丢失'
   },
   {
     id:'spatial-waves-01',updatedAt:'2026-11-08T23:26:00+08:00',name:'Spatial Waves · 3D Sound Instrument',
