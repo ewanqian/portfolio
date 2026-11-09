@@ -1,0 +1,603 @@
+{
+  "schema": "ewanqian.public-projects.v1",
+  "projects": [
+    {
+      "id": "no-further-input-required",
+      "zh": "无需进一步输入",
+      "en": "No Further Input Required",
+      "year": "2026",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/no-further-input-required.html",
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "drop-flow",
+      "zh": "滴流",
+      "en": "Drop Flow",
+      "year": "2024–2026",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/drop-flow.html",
+      "image": "/assets/home/featured-dropflow-main.webp",
+      "variants": [
+        {
+          "year": "2025",
+          "title": "Drop Flow 3.0 / UFO Terminal"
+        },
+        {
+          "year": "2025",
+          "title": "Drop Flow / 杭州双年展开幕节点"
+        },
+        {
+          "year": "2025",
+          "title": "重庆「流光绘影」光影科技艺术节「滴流」"
+        }
+      ]
+    },
+    {
+      "id": "timer",
+      "zh": "控时者",
+      "en": "TIMER",
+      "year": "2024–",
+      "category": "Live",
+      "url": "https://ewanqian.site/works/timer.html",
+      "image": "/assets/home/archive-timer-clean.webp",
+      "variants": [
+        {
+          "year": "2024.11–12",
+          "title": "TIMER 控时者 影像环形版"
+        }
+      ]
+    },
+    {
+      "id": "system-ersha-2026",
+      "zh": "二砂包豪斯：时间是空间恒久的观察者",
+      "en": "Ersha Bauhaus — Time Is the Eternal Observer of Space",
+      "year": "2026",
+      "category": "Production",
+      "url": "https://ewanqian.site/works/system-ersha.html",
+      "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp",
+      "variants": []
+    },
+    {
+      "id": "natgeo-crystal-2026",
+      "zh": "中国国家地理·矿晶空间影像",
+      "en": "National Geographic — Crystal Landscape",
+      "year": "2026",
+      "category": "Production",
+      "url": "https://virtura.space/work/natgeo-crystal.html",
+      "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/02_NATGEO_CRYSTAL/space-lobby.jpg",
+      "variants": []
+    },
+    {
+      "id": "china-ai-gala-2026",
+      "zh": "中国·AI 盛典开场秀",
+      "en": "China AI Gala",
+      "year": "2026",
+      "category": "Production",
+      "url": "https://virtura.space/work/ai-gala.html",
+      "image": "https://virtura.space/VIRTURA_WEBSITE_ASSETS/01_AI_GALA/detail_01_mapping.jpg",
+      "variants": []
+    },
+    {
+      "id": "kashiwa-titan-2025",
+      "zh": "机械光合：TITAN 的全息声林",
+      "en": "TITAN — Holographic Sound Forest",
+      "year": "2025",
+      "category": "Live",
+      "url": "https://ewanqian.site/works/titan.html",
+      "image": "/assets/raw-picks/titan-bolive-clean-16x9.webp",
+      "variants": [
+        {
+          "year": "2025",
+          "title": "《机械光合：TITAN 的全息声林》"
+        }
+      ]
+    },
+    {
+      "id": "ar-shenzhen-2022",
+      "zh": "AR 深圳计划",
+      "en": "AR Shenzhen Project",
+      "year": "2022",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/ar-shenzhen-2022.html",
+      "image": "/assets/web-candidates/ar-shenzhen-info-resort-sohu.webp",
+      "variants": [
+        {
+          "year": "2022",
+          "title": "AR 深圳计划"
+        }
+      ]
+    },
+    {
+      "id": "ether-fragment-2023",
+      "zh": "以太碎片",
+      "en": "Ether Fragment",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/ether-fragment/ether-fragment-westbund-2023.webp",
+      "variants": [
+        {
+          "year": "2023",
+          "title": "Ether Fragment / 西岸艺博会"
+        }
+      ]
+    },
+    {
+      "id": "vaoe-2023",
+      "zh": "虚拟航线",
+      "en": "VAOE",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/vaoe.html",
+      "image": null,
+      "variants": [
+        {
+          "year": "2023",
+          "title": "虚拟航线 VAOE"
+        }
+      ]
+    },
+    {
+      "id": "digital-tundra-2026",
+      "zh": "数字苔原：观察与共生、形态的对话",
+      "en": "Digital Tundra — Two Works",
+      "year": "2026",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/digital-tundra.html",
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "obs-symbiosis-2025",
+      "zh": "观察与共生",
+      "en": "Observation and Symbiosis",
+      "year": "2025–2026",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/observation-and-symbiosis.html",
+      "image": "/assets/raw-library/observation-symbiosis-large.webp",
+      "variants": [
+        {
+          "year": "2025",
+          "title": "Observation and Symbiosis / 深圳坪山"
+        },
+        {
+          "year": "2026",
+          "title": "Observation and Symbiosis / Workshop"
+        },
+        {
+          "year": "2023",
+          "title": "上海 K11「观察与共生」"
+        }
+      ]
+    },
+    {
+      "id": "dialogue-of-forms-2025",
+      "zh": "形态的对话",
+      "en": "Dialogue of Forms",
+      "year": "2025",
+      "category": "Exhibition",
+      "url": "https://ewanqian.site/works/dialogue-of-forms.html",
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "new-media-artist-simulator-2025",
+      "zh": "新媒体艺术家模拟器",
+      "en": "New Media Artist Simulator",
+      "year": "2025",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/raw-library/event-2025-babel-bottle-new-media-artist-simulator-exhibition.webp",
+      "variants": []
+    },
+    {
+      "id": "illusion-matrix-2024",
+      "zh": "幻觉矩阵",
+      "en": "Illusion Matrix",
+      "year": "2024",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "variants": [
+        {
+          "year": "2024",
+          "title": "THE BOXX「幻觉矩阵」沉浸式多媒体展"
+        }
+      ]
+    },
+    {
+      "id": "illusion-resonance-2024",
+      "zh": "幻觉共振",
+      "en": "Illusion Resonance",
+      "year": "2024",
+      "category": "Live",
+      "url": null,
+      "image": "/assets/raw-library/ewan-event-phantom-resonance.webp",
+      "variants": [
+        {
+          "year": "2024",
+          "title": "THE BOXX「幻觉共振」"
+        }
+      ]
+    },
+    {
+      "id": "derive-2024",
+      "zh": "Dérive / 双城记",
+      "en": "Dérive / Tale of Two Cities",
+      "year": "2024",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/raw-library/derive-dual-city-poster.webp",
+      "variants": [
+        {
+          "year": "2024",
+          "title": "FutureLab 2024「Dérive 双城记」"
+        }
+      ]
+    },
+    {
+      "id": "entropy-2026",
+      "zh": "ENTROPY — ATMOSPHERIC ESCAPE",
+      "en": "ENTROPY",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "waves-cross-2026",
+      "zh": "WAVES CROSS VOL.3",
+      "en": "WAVES CROSS Vol.3",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "urkl-2026",
+      "zh": "URKL 机器人格斗赛 VJ",
+      "en": "URKL Robot Fighting — Live Visuals",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "reactor-2026",
+      "zh": "REACTOR GRAND OPENING",
+      "en": "REACTOR",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "digitalfutures-2026",
+      "zh": "DigitalFUTURES 2026",
+      "en": "DigitalFUTURES 2026",
+      "year": "2026",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "flatland-2025",
+      "zh": "Flatland: Mixed Reality Dreams",
+      "en": "Flatland",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": null,
+      "variants": [
+        {
+          "year": "2025",
+          "title": "WWDC Flatland: Mixed Reality Dreams"
+        }
+      ]
+    },
+    {
+      "id": "vrplay-2025",
+      "zh": "WORLD REMIX XR 黑客松视觉",
+      "en": "WORLD REMIX Visual Identity",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/home/vrplay-world-remix-2025.webp",
+      "variants": [
+        {
+          "year": "2026 — ongoing",
+          "title": "VR Play Hackathon / WORLD REMIX 2026"
+        },
+        {
+          "year": "2025",
+          "title": "VR Play WORLD REMIX XR 黑客松"
+        }
+      ]
+    },
+    {
+      "id": "stage-casting-2026",
+      "zh": "场景铸造",
+      "en": "Stage Casting",
+      "year": "2026–",
+      "category": "Research",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "performable-music-2026",
+      "zh": "可表演音乐研究",
+      "en": "Performable Music",
+      "year": "2026–",
+      "category": "Research",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "sre-realtime-2026",
+      "zh": "实时音画系统研究",
+      "en": "Real-time Audiovisual Systems",
+      "year": "2026–",
+      "category": "Research",
+      "url": "https://ewanqian.site/works/sre-realtime-liveset.html",
+      "image": "/assets/sre-realtime-liveset/sre-benchmark-all-visible.webp",
+      "variants": [
+        {
+          "year": "2026",
+          "title": "SRE / UFO Terminal Realtime Liveset"
+        }
+      ]
+    },
+    {
+      "id": "digital-garden-visual-2025",
+      "zh": "Digital Garden / 西安万象城「数字游园」",
+      "en": "Digital Garden / 西安万象城「数字游园」",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/digital-garden/digital-garden-xian-mixc-01.webp",
+      "variants": []
+    },
+    {
+      "id": "glance-thousand-install-2023",
+      "zh": "安昌光影艺术季「一眼万千」",
+      "en": "安昌光影艺术季「一眼万千」",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/raw-library/glance-thousand-anchang-bridge-projection.webp",
+      "variants": []
+    },
+    {
+      "id": "kashiwa-band-visual-2025",
+      "zh": "Kashiwa Daisuke / CAN Festival Zhoushan",
+      "en": "Kashiwa Daisuke / CAN Festival Zhoushan",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/home/glimpse-canfest-zhoushan.webp",
+      "variants": []
+    },
+    {
+      "id": "mke-terminal",
+      "zh": "Mikael Lind × KASHIWA Daisuke × Qian Yuwen",
+      "en": "Mikael Lind × KASHIWA Daisuke × Qian Yuwen",
+      "year": "2026",
+      "category": "Live",
+      "url": "https://ewanqian.site/works/mke-terminal.html",
+      "image": "/assets/mke-terminal/pdf-p02-01.webp",
+      "variants": []
+    },
+    {
+      "id": "rain-singapore-visual-2026",
+      "zh": "Rain 新加坡跨年专场",
+      "en": "Rain 新加坡跨年专场",
+      "year": "2026",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/rain-singapore/gallery/its-raining-wide-05.webp",
+      "variants": []
+    },
+    {
+      "id": "shanhaifusheng2-visual-2025",
+      "zh": "爱丁堡《山海浮生II》",
+      "en": "爱丁堡《山海浮生II》",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/raw-library/floating-life-ii-performance.webp",
+      "variants": []
+    },
+    {
+      "id": "transit",
+      "zh": "箱中温室 / Greenhouse in Transit",
+      "en": "箱中温室 / Greenhouse in Transit",
+      "year": "2025–2026",
+      "category": "Exhibition",
+      "url": null,
+      "image": "/assets/home/greenhouse-in-transit-mg17.webp",
+      "variants": []
+    },
+    {
+      "id": "xtep-xdna22aw-visual-2022",
+      "zh": "XTEP XDNA / Shanghai Fashion Week",
+      "en": "XTEP XDNA / Shanghai Fashion Week",
+      "year": "2022",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/xtep-xdna/xtep-selected-01.webp",
+      "variants": []
+    },
+    {
+      "id": "yujiayun-45ping-visual-2025",
+      "zh": "余佳运「45㎡」演唱会 宁波站",
+      "en": "余佳运「45㎡」演唱会 宁波站",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/yujiayun-45ping/final-intro-wide/intro-46s-orange-arc.webp",
+      "variants": []
+    },
+    {
+      "id": "zcool-hp-live-2021",
+      "zh": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+      "en": "ZCOOL CUBE 2021 / HP G8 Workstation Launch",
+      "year": "2021",
+      "category": "Live",
+      "url": null,
+      "image": "/assets/zcool-hp-g8/zcool-hp-g8-live-collage.webp",
+      "variants": []
+    },
+    {
+      "id": "future-string-tianhua-2025",
+      "zh": "中央音乐学院王楚婷博士毕业音乐会",
+      "en": "中央音乐学院王楚婷博士毕业音乐会",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "wavefilm-hackathon-staff-2025",
+      "zh": "海浪电影周艺动 AI 电影黑客松",
+      "en": "海浪电影周艺动 AI 电影黑客松",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "westbund-ambient-visual-2025",
+      "zh": "上海西岸漩心",
+      "en": "上海西岸漩心",
+      "year": "2025",
+      "category": "Production",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "semicolon-c-onefive",
+      "zh": "@onefive — 分号 C 时期视觉制作",
+      "en": "@onefive — Visual production, Semicolon C period",
+      "year": "2023–2024",
+      "category": "Production",
+      "url": "https://ewanqian.site/works/onefive-semicolonc.html",
+      "image": null,
+      "variants": [
+        {
+          "year": "2024",
+          "title": "@onefive「ChocoLove」/ Release Visual Record"
+        },
+        {
+          "year": "2023",
+          "title": "@onefive「Underground」/ Live Visual Record"
+        },
+        {
+          "year": "2023",
+          "title": "@onefive「Overground」/ Live Visual Record"
+        }
+      ]
+    },
+    {
+      "id": "lonely-av-live-2023",
+      "zh": "上海广播艺术中心「孤独？」",
+      "en": "上海广播艺术中心「孤独？」",
+      "year": "2023",
+      "category": "Live",
+      "url": null,
+      "image": "/assets/raw-library/event-2023-10-lonely-audiovisual-shanghai-broadcast-02.webp",
+      "variants": []
+    },
+    {
+      "id": "life-praise-install-2023",
+      "zh": "上海世纪汇广场《生命的礼赞》",
+      "en": "上海世纪汇广场《生命的礼赞》",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "nature-numeral-install-2023",
+      "zh": "龙湖上海奉贤天街「数字空间与自然共生」",
+      "en": "龙湖上海奉贤天街「数字空间与自然共生」",
+      "year": "2023",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "xiexindance-sixiang-gong-visual-2022",
+      "zh": "谢欣舞蹈剧场《四相》《汞》",
+      "en": "谢欣舞蹈剧场《四相》《汞》",
+      "year": "2022",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/raw-library/xiexin-sixiang-poster.webp",
+      "variants": []
+    },
+    {
+      "id": "watermusic-multi-visual-2022",
+      "zh": "CHINATIME Hamburg《Water Music》",
+      "en": "CHINATIME Hamburg《Water Music》",
+      "year": "2022",
+      "category": "Production",
+      "url": null,
+      "image": "/assets/raw-library/chinatime-water-music-visual.webp",
+      "variants": []
+    },
+    {
+      "id": "migu-olympic-vfx-2022",
+      "zh": "中国移动咪咕冬奥宣传片",
+      "en": "中国移动咪咕冬奥宣传片",
+      "year": "2022",
+      "category": "Production",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "meta-speaker-install-2022",
+      "zh": "西岸凤巢 AI PLAZA《元语者・棱镜现实》",
+      "en": "西岸凤巢 AI PLAZA《元语者・棱镜现实》",
+      "year": "2022",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "matrix-navi-2022",
+      "zh": "上海青年艺术博览会「矩阵导航」",
+      "en": "上海青年艺术博览会「矩阵导航」",
+      "year": "2022",
+      "category": "Exhibition",
+      "url": null,
+      "image": null,
+      "variants": []
+    },
+    {
+      "id": "rythem-newyear-live-2021",
+      "zh": "上海新天地 Rythem 新年跨年演出",
+      "en": "上海新天地 Rythem 新年跨年演出",
+      "year": "2021",
+      "category": "Live",
+      "url": null,
+      "image": null,
+      "variants": []
+    }
+  ]
+}
