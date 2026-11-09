@@ -21,6 +21,10 @@
 4. 按 AGENT-HANDOFF-v2.md 执行对应 preflight；只加载相关项目历史、媒体索引和证据，不从头重新规划网站。
 5. 本页负责续接；NOW.md 保留创作研究方向；manifest 负责发行产物；database/ 负责事实。遇冲突查原始来源并记录差异，不让进度笔记覆盖事实。
 
+## 2026-11-09 艺术史料与本地工程恢复（独立研究线）
+
+作者口述与待查的 Blender/GPU/Ableton/点云创作研究已保存在 [art-works 草稿 PR #2](https://github.com/ewanqian/art-works/pull/2)。该仓库是创作概念、跨作品谱系与偏好的正式归档入口；本 Portfolio 只建立导航，不复制作者口述正文。后续本地 Agent 先检查 art-works 的两份口述、创作偏好 JSON 和两份工程交接，再找 Drop Flow Simulation Zone 真实状态、REACTOR/HERO DOME 灯光材质、Ableton 声音版本和二砂源文件。真实商业素材和精细配方先留本地/受控私有库；未做本机验证，不得宣布已完成。该研究队列不覆盖现有 PORT-01 发布验收。
+
 ## 当前进度基线
 依据本轮读取的 manifest 与发布报告，未重新运行原有网站检查：
 | 层 | 已记录结果 | 尚未关闭 |
@@ -106,25 +110,3 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 - 修复首页语义 `h1`、TIMER 归档图像加载和图片源登记表不同步；旧缓存与懒加载图片造成的误判已经在检测流程中区分。
 - 之前已通过 205/205 正式域名内容/路由检查。现在 PORT-01 的工程性视觉/交互回归完成，**尚未逐张人工审美核对截图、未测试 Bilibili/MANA 实际播放，未完成媒体权利确认**，不可标注整项 done。
 - 详情：[2026-11-08-browser-qa-12-of-12.md](docs/portfolio-maintenance-os/handoffs/2026-11-08-browser-qa-12-of-12.md)。下一步仅做重点视频播放或已存截图的人工视觉复核；若被访问权限阻塞，启动 PORT-02 原片恢复。
-
-
-## Artworks 研究线交接（2026-11-09，独立于 PORT-01 发布队列）
-
-本轮整理了作者本人关于 TIMER → 平面 Drop Flow → 三维 Drop Flow → KASHIWA 2025 → NFIR → SRE/BPM Link → Entropy 的技术/审美创作谱系。**这是研究入口，不是已审核公开事实或网站发布。**
-
-- [作者口述研究稿](visual-arts/research/2026-11-09-author-account-blender-to-runtime.md)：哪些做完、哪些尚未完成、哪些当时控制不足，尽量保留原始创作决策。
-- [本地 Codex 工程交接](visual-arts/research/2026-11-09-local-agent-brief.md)：搜索 Blender 版本、提取模拟状态、追踪 FCurve/音频 Bake/手 K、GPU Compute 移植和视觉忠实度。
-- [艺术审美偏好数据](visual-arts/research/2026-11-09-creative-preferences.json)：可供后续 Agent 查询；属于语境化的作者判断，不能替代原工程。
-
-**下一次 Artworks 对话的第一步**：读取上述三个文件，检查对应研究 PR 最新状态，先从 Drop Flow 的一条真实 Simulation Zone 全链、实际音频输入来源、旧 GPU 复现的差异入手；不要重新发明通用粒子效果。由本地代理在只读副本上核验，提供有图有参数有运行证据的反馈。独立研究线不会覆盖本站 PORT-01 等维护任务。
-
-
-
-### 2026-11-09 Artworks 研究补充：REACTOR、HERO DOME、音频与二砂
-
-作者同日补充了 Entropy 后的 REACTOR 托卡马克 GPT 辅助 Blender 模型、Curve 线框 Reveal/局部高亮、HERO DOME 超宽画面材质/合成、多版本 Ableton 音频、二砂点云镜头以及九组灯光并行筛选。
-
-- [创作口述续篇](visual-arts/research/2026-11-09-artist-account-reactor-hero-dome-audio-ersha.md)
-- [本地 Agent 素材恢复与敏感度分级](visual-arts/research/2026-11-09-local-agent-followup-reactor-audio-ersha.md)
-
-**独立研究队列下次动作**：恢复 REACTOR 的 Curve/Wireframe 与 HERO DOME Shader/Compositor 源链，定位二砂点云丢失/转存的镜头与模型，在 Mac 上找到 Ableton 最满意的项目和比较音频；仅同步脱敏证据。不要向公共仓库提交客户原件、完整配方、付费音源/插件或舞者数据。网站 PORT-01 等现有维护优先级不因本文被覆盖。
