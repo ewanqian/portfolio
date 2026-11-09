@@ -37,19 +37,19 @@ const APPLICATIONS = [
     test:'选择火球 → 张掌蓄能 → 握拳投出；切换冰/雷/盾/引力/空间门，并观察积分反馈'
   },
   {
-    id:'gesture-dynamics',updatedAt:'2026-11-09T17:32:54+08:00',name:'Gesture Dynamics · Spatial Particles',
+    id:'gesture-dynamics',updatedAt:'2026-11-09T18:14:52+08:00',name:'Gesture Dynamics · Spatial Particles',
     category:'XR Interaction',kind:'Hand Gesture / Particle Physics / WebXR',
     type:'Quest 3 MR Prototype',number:'S03',
-    subtitleZh:'挥手生灵气，握拳蓄能，剑指连续喷射紊流，张掌爆散',
-    subtitleEn:'Sweep to gather energy, clench to charge, point to stream and open to burst',
-    summaryZh:'V3 连续粒子流：快速挥手产生灵气拖尾并积累动能；任一手握拳吸附散落能量、持续蓄力；剑指从指尖连续喷射，蓄力越久爆发越强。张掌一次性爆散。1536 个上限的三维运动粒子、速度拖尾、涡旋力场、喷流/条带/紊流三模式；Quest 3 实机手势与帧率待验证。',
-    summaryEn:'V3 continuous 3D energy flow: hand sweep leaves kinetic trails, either fist collects and charges energy, a sword pose emits a live jet with charge-scaled discharge, and open palm triggers an outward burst. Bounded 1536-particle simulation, velocity streaks and jet/ribbon/vortex modes. Quest 3 device QA pending.',
+    subtitleZh:'剑指识别更稳定；挥手蓄力、持续喷流与原创实时配乐',
+    subtitleEn:'Stable hand tracking, turbulent energy flow and an original interactive score',
+    summaryZh:'V4：保持 V3 的三维紊流喷射与张掌爆散，新增剑指识别滞回、手势平滑与短暂遮挡连续保持；可调整稳定度。原创 96 BPM 实时配乐含氛围和声、低音、鼓组、琶音与动作音色，随蓄力和喷流变化。桌面点击开启音乐，Quest 进入 MR 时尝试启动。真实头显识别与听感待验收。',
+    summaryEn:'V4 retains the interactive 3D turbulent particle simulation with stable pose hysteresis, short hand-occlusion tolerance, smoothing and adjustable stability. Original 96 BPM generative backing score layers pads, bass, percussion, arpeggios and gesture accents. User-activated music and Quest MR audio unlock; hardware QA pending.',
     href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/gesture-dynamics.html',
     github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
     platform:'QUEST 3 MR · VR · DESKTOP',
     icon:'field',tone:'silver',
-    features:['CONTINUOUS ENERGY JET','FIST → CHARGE → SWORD','CURL FLOW / RIBBON / VORTEX','QUEST MR'],
-    test:'桌面移动鼠标挥手 → 3 握拳蓄力 2 秒 → 1 剑指连续喷射 → 2 张掌爆散；切换喷流/条带/紊流。Quest Browser MR 需核查 25 关节指向与帧率'
+    features:['ROBUST SWORD POSE','96 BPM ORIGINAL MUSIC','CHARGE → FLOW → BURST','QUEST MR'],
+    test:'桌面点击开启配乐 → 3 握拳蓄力 → 1 剑指喷流 → 2 张掌爆散；调节 POSE STABILITY、音乐音量。Quest Browser 实机测剑指断续、恢复与声音输出'
   },
   {
     id:'spatial-waves-01',updatedAt:'2026-11-08T23:26:00+08:00',name:'Spatial Waves · 3D Sound Instrument',
