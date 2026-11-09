@@ -7,6 +7,21 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
+    id:'warlock-six-elements',updatedAt:'2026-11-09T21:36:50+08:00',name:'Warlock · Six Elements',
+    category:'XR Interaction',kind:'Fan Interaction / WebXR / Elemental Abilities',
+    type:'Six-element Fan Study',number:'W01',
+    subtitleZh:'冰杖冻结与碎冰，六系术士手势体验',
+    subtitleEn:'Six elemental hand-cast studies, starting with an ice staff',
+    summaryZh:'独立粉丝交互实验：冰杖冻结与碎冰、烈日飞刃、虚空引力弹、电弧雷链、缚丝追踪体和棱镜混合能力。原创程序化模型与分层音效，支持本地授权声音替换、Quest MR/VR、桌面及 90 秒挑战。不是 1:1 原作资产还原，头显实测待完成。',
+    summaryEn:'Independent fan interaction study with six distinct elemental loops, a hand-bound crystal staff, original synthesized SFX, local authorized audio slots and a 90-second trial. Desktop/browser QA passed; not a 1:1 port or hardware-validated product.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/warlock-lab/',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/warlock-lab',
+    platform:'QUEST 3 MR · VR · DESKTOP',
+    icon:'field',tone:'silver',
+    features:['6 ELEMENTAL LOOPS','ICE STAFF / FREEZE / SHATTER','ORIGINAL SFX','90s CHALLENGE'],
+    test:'默认冰影 → 握拳召唤 → 剑指冻结 → 张掌碎冰；左掌打开轮盘，右拳选系。桌面 1 蓄力、2 发射、3 次级、4 超能。'
+  },
+  {
     id:'spellcraft-east',updatedAt:'2026-11-09T18:34:01+08:00',name:'Spellcraft Atelier · Chinese Fantasy',
     category:'XR Interaction',kind:'WebXR / Hand Pose / Symbolic Action',
     type:'Six Playable Spell Gestures',number:'S05',
