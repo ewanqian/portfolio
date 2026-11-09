@@ -7,7 +7,22 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
-    id:'spatial-waves-01',name:'Spatial Waves · 3D Sound Instrument',
+    id:'gesture-dynamics',updatedAt:'2026-11-09T16:27:12+08:00',name:'Gesture Dynamics · Spatial Particles',
+    category:'XR Interaction',kind:'Hand Gesture / Particle Physics / WebXR',
+    type:'Quest 3 MR Prototype',number:'S03',
+    subtitleZh:'剑指驱动粒子，张掌爆散，握拳聚合',
+    subtitleEn:'Point, scatter and attract a physical 3D particle field',
+    summaryZh:'基于现有 25 关节 WebXR 输入的轻量三维粒子动力学：剑指引导连续运动、张掌触发一次爆散、握拳吸引回聚。480 粒子、三种空间形态、可复现桌面模拟。Quest 3 实机手势精度与帧率尚待验证。',
+    summaryEn:'A 480-particle 3D dynamics study using the existing 25-joint WebXR hand inputs. Sword-finger propulsion, one-shot palm blast, fist attraction, three field arrangements and a transparent desktop mock. Quest headset QA pending.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/gesture-dynamics.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST 3 MR · VR · DESKTOP',
+    icon:'field',tone:'silver',
+    features:['480 PHYSICAL PARTICLES','SWORD / PALM / FIST','3 FIELD SHAPES','QUEST MR'],
+    test:'桌面用 1/2/3/0 模拟 → Quest Browser 进入 MR → 验证剑指方向、一次爆散、握拳回聚与丢追踪'
+  },
+  {
+    id:'spatial-waves-01',updatedAt:'2026-11-08T23:26:00+08:00',name:'Spatial Waves · 3D Sound Instrument',
     category:'AV Performance',kind:'Volumetric Hand Instrument / HRTF',
     type:'Spatial Performance Candidate',number:'S01',
     subtitleZh:'四个真正三维的声音体积与可演奏的双手场',
@@ -22,7 +37,7 @@ const APPLICATIONS = [
     test:'点击四个声音体积 → 启用空间音频 → 导入等长分轨 → 进入 Quest 用真实食指穿越三维场'
   },
   {
-    id:'neural-field-01',name:'Neural Field · Spatial Brain AV',
+    id:'neural-field-01',updatedAt:'2026-11-08T23:17:54+08:00',name:'Neural Field · Spatial Brain AV',
     category:'AV Performance',kind:'Schematic Cortex / Synthetic Signal / WebXR',
     type:'Brain-Signal Themed Stage Study',number:'S02',
     subtitleZh:'四种脑结构观察模式与手势视听演奏',
@@ -37,7 +52,7 @@ const APPLICATIONS = [
     test:'切换 STRUCTURE / SECTION / ELECTRODES / SIGNAL → 手势聚焦 → 录制 60 秒合成信号声画演奏'
   },
   {
-    id:'xr-cast',name:'XR Cast · 星宿场',
+    id:'xr-cast',updatedAt:'2026-11-08T22:46:15+08:00',name:'XR Cast · 星宿场',
     category:'AV Performance',kind:'WebXR / Spatial Audio / Symbolic Field',
     type:'One-Take XR Experience',number:'01',
     subtitleZh:'戴上就玩：十二辰、五行、二十八宿与四声部',
@@ -52,7 +67,7 @@ const APPLICATIONS = [
     test:'戴头显 → 按一次进入 → 声音自动开始 → 手指穿过四声部圆环 → 拇指掐十二辰'
   },
   {
-    id:'neuro-field',name:'Neuro Field · 脑电信号场',
+    id:'neuro-field',updatedAt:'2026-11-08T22:11:18+08:00',name:'Neuro Field · 脑电信号场',
     category:'AV Performance',kind:'Procedural Brain / Spike Audio / WebXR',
     type:'Spatial Data Instrument',number:'02',
     subtitleZh:'程序化脑结构与电信号，用手去刺激它',
@@ -67,7 +82,7 @@ const APPLICATIONS = [
     test:'点击或捏合 → 局部能量升高 → 脉冲沿连接扩散 → 声音密度上升'
   },
   {
-    id:'hand-space-osc',name:'Hand / Space / OSC',
+    id:'hand-space-osc',updatedAt:'2026-11-05T05:50:28+08:00',name:'Hand / Space / OSC',
     category:'XR Interaction',kind:'Spatial Input / WebXR',
     type:'Research Instrument',number:'03',
     subtitleZh:'手部关节、空间区域与 OSC',subtitleEn:'Hand joints, spatial regions and OSC',
@@ -81,7 +96,7 @@ const APPLICATIONS = [
     test:'手指穿过空间控制区 → 区域事件 → OSC'
   },
   {
-    id:'organic-fields',name:'Organic Fields · Three Instruments',
+    id:'organic-fields',updatedAt:'2026-11-08T04:36:40+08:00',name:'Organic Fields · Three Instruments',
     category:'AV Performance',kind:'Gesture Score / Web Audio / WebXR',
     type:'Playable Music Maps',number:'04',
     subtitleZh:'在空间中画八字，演奏三种原创声场',subtitleEn:'Draw paths through three original sound worlds',
@@ -95,7 +110,7 @@ const APPLICATIONS = [
     test:'滑动穿过器物区域 → 切换 Metal / Electro / Orchestra → 八字演奏'
   },
   {
-    id:'hand-synth-v2',name:'Hand / Synth / Space V2',
+    id:'hand-synth-v2',updatedAt:'2026-11-08T04:50:44+08:00',name:'Hand / Synth / Space V2',
     category:'AV Performance',kind:'Gesture Synth / Web Audio / OSC',
     type:'Performance Instrument',number:'05',
     subtitleZh:'双手手势驱动的实时合成器',subtitleEn:'A continuous synthesizer controlled by both hands',
@@ -109,7 +124,7 @@ const APPLICATIONS = [
     test:'捏合持续控制滤波和音色 → 双手 HOLD → 区域 ENTER / EXIT 触发音效'
   },
   {
-    id:'spatial-studies-05',name:'Spatial Instrument Studies · 05',
+    id:'spatial-studies-05',updatedAt:'2026-11-08T14:10:19+08:00',name:'Spatial Instrument Studies · 05',
     category:'AV Performance',kind:'Score / Tone.js / Spatial Pads',
     type:'Three Research Instruments',number:'06',
     subtitleZh:'四个可触控的伴奏声部与精细网页合成器',
@@ -124,7 +139,7 @@ const APPLICATIONS = [
     test:'点击 PLAY ARRANGEMENT → 穿越四个声音圆圈 → 增加各层节奏 / 调节混音'
   },
   {
-    id:'phalanx-approach',name:'Phalanx Approach · Three Strategies',
+    id:'phalanx-approach',updatedAt:'2026-11-08T14:10:19+08:00',name:'Phalanx Approach · Three Strategies',
     category:'XR Interaction',kind:'Hand Contact / Threshold Research',
     type:'Strategy Comparison',number:'07',
     subtitleZh:'同一动作，三种指节判定策略对比',
@@ -139,7 +154,7 @@ const APPLICATIONS = [
     test:'拖动拇指接近指节 → 切换三种策略 → 观察阈值与失败原因变化'
   },
   {
-    id:'hand-seal-trainer',name:'Hand Seal Trainer · 掌诀训练器',
+    id:'hand-seal-trainer',updatedAt:'2026-11-08T13:41:25+08:00',name:'Hand Seal Trainer · 掌诀训练器',
     category:'XR Interaction',kind:'Hand Joint / Cultural Gesture Learning',
     type:'Guided Hand Practice',number:'08',
     subtitleZh:'十二辰掌中认位与剑指姿势教学',
@@ -154,7 +169,7 @@ const APPLICATIONS = [
     test:'拇指逐位掐点 → 十二辰跟练 → 剑指姿势纠错 → 雷诀文献对照'
   },
   {
-    id:'gestural-atlas-perform',name:'Gestural Atlas · Performance',
+    id:'gestural-atlas-perform',updatedAt:'2026-11-08T11:49:03+08:00',name:'Gestural Atlas · Performance',
     category:'AV Performance',kind:'Hand Gesture / Musical Expression',
     type:'Four Music Instruments',number:'09',
     subtitleZh:'四种可演奏的手部动作语法',subtitleEn:'Four musical hand-gesture interaction studies',
@@ -168,7 +183,7 @@ const APPLICATIONS = [
     test:'捏合演奏 → 双手相位 → 画八字 → 触碰指节构成乐句'
   },
   {
-    id:'gestural-atlas-culture',name:'Gestural Atlas · Cultural Symbols',
+    id:'gestural-atlas-culture',updatedAt:'2026-11-08T11:49:03+08:00',name:'Gestural Atlas · Cultural Symbols',
     category:'XR Interaction',kind:'Cinematic Choreography / Cultural Research',
     type:'Four Symbolic Interaction Studies',number:'10',
     subtitleZh:'剑诀、河图洛书、八卦和北斗星图',
@@ -183,7 +198,7 @@ const APPLICATIONS = [
     test:'剑诀姿态 → 自创轨迹符形；九宫十五 → 六爻组合 → 七星连线'
   },
   {
-    id:'critical-field-xr',name:'Critical Field XR',
+    id:'critical-field-xr',updatedAt:'2026-11-05T04:48:03+08:00',name:'Critical Field XR',
     category:'AV Performance',kind:'Spatial Audiovisual / WebXR',
     type:'Performance Playground',number:'11',
     subtitleZh:'四幕空间视听场景',subtitleEn:'Four-act immersive audiovisual space',
@@ -204,7 +219,7 @@ function Glyph({kind}){
 }
 function ApplicationCard({app,zh}){
   return <article className={`application-card application-card--${app.tone}`}>
-    <div className="application-card-top"><span>{app.number} / {app.category.toUpperCase()}</span><span className="application-type">{app.type}</span></div>
+    <div className="application-card-top"><span>{app.number} / {app.category.toUpperCase()}</span><time className="application-updated" dateTime={app.updatedAt} title="Source application last updated (Asia/Shanghai)">{zh?'更新':'UPDATED'} {app.updatedAt.slice(0,16).replace('T',' ')}</time></div>
     <div className="application-icon"><Glyph kind={app.icon}/></div>
     <div className="application-body">
       <h2>{app.name}</h2>
@@ -227,7 +242,7 @@ function Applications(){
   const filtered=useMemo(()=>APPLICATIONS.filter(a=>
     (category==='ALL'||a.category===category)&&
     [a.name,a.category,a.kind,a.subtitleZh,a.summaryZh,a.platform].join(' ').toLowerCase().includes(query.toLowerCase())
-  ),[query,category])
+  ).sort((a,b)=>Date.parse(b.updatedAt)-Date.parse(a.updatedAt)),[query,category])
   return <>
     <Header/>
     <main className="applications-page">
@@ -236,10 +251,11 @@ function Applications(){
         <header className="applications-hero">
           <div className="applications-eyebrow">PERSONAL RESEARCH SYSTEM / APPLICATION INDEX</div>
           <h1>Applications<span className="applications-period">.</span></h1>
-          <p>{zh?'一个快速进入实时影像、XR 交互与可演奏音乐实验的应用目录。每个应用都直接打开可运行的测试页面，不复制工程、不混淆研究归属。':'A launchpad for live image, XR interaction and performable music experiments. Open runnable research tools without duplicating their source.'}</p>
+          <p>{zh?'一个快速进入实时影像、XR 交互与可演奏音乐实验的应用目录。每个应用都直接打开可运行的测试页面，不复制工程、不混淆研究归属。 按各应用的源代码最后更新日期倒序排列。':'A launchpad for live image, XR interaction and performable music experiments. Open runnable research tools without duplicating their source. Sorted by the latest source update of each app.'}</p>
           <div className="applications-count"><span className="applications-dot"></span>{String(APPLICATIONS.length).padStart(2,'0')} {zh?'个应用 / 持续迭代':'APPLICATIONS / IN DEVELOPMENT'}<span>WEBXR · SPATIAL INPUT · AUDIOVISUAL</span></div>
         </header>
         <div className="applications-toolbar">
+          <span className="applications-sort-label">{zh?'最近更新优先 ↓':'LATEST UPDATE FIRST ↓'}</span>
           <div className="applications-filters" aria-label={zh?'应用分类':'App categories'}>
             {['ALL','XR Interaction','AV Performance'].map(c=><button type="button" key={c} aria-pressed={category===c} onClick={()=>setCategory(c)} className={category===c?'active':''}>{c==='ALL'?(zh?'全部 / All':'All'):c}</button>)}
           </div>
