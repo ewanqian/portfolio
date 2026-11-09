@@ -325,7 +325,7 @@ function Applications(){
             <h2>XR Works <span>/ Research & Test Table</span></h2>
             <p>{zh?'手部追踪、空间输入、可交互视觉与实验性 XR 创作统一归入独立研究仓库。此处仅保留两个曾公开分享的 Demo；新仓库的独立试玩网站将在完成迁移和测试后启用。':'Hand tracking, spatial input, playable visual systems and emerging XR works now have an independent research home. Two legacy demos stay listed here; the standalone test-table website is not deployed yet.'}</p>
           </div>
-          <a href="https://github.com/ewanqian/xr-works" target="_blank" rel="noopener noreferrer">{zh?'进入 XR Works 研究索引':'Open XR Works research index'} <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ewanqian/xr-works/blob/main/docs/TEST_TABLE.md" target="_blank" rel="noopener noreferrer">{zh?'打开 XR Works / Test Table':'Open XR Works / Test Table'} <span aria-hidden="true">↗</span></a>
         </section>
         <div className="applications-toolbar">
           <span className="applications-sort-label">{zh?'最近更新优先 ↓':'LATEST UPDATE FIRST ↓'}</span>
