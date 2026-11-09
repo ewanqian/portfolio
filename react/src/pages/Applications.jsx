@@ -319,6 +319,14 @@ function Applications(){
           <p>{zh?'个人作品集只保留两个已公开分享的核心手部交互入口。其他 WebXR 试验从展示目录撤下，原有技术页面和外链保持有效；后续归入独立研究仓库。':'Only two previously shared hand-interaction entry points are featured here. Other WebXR experiments stay accessible at their original URLs and will be organized in a dedicated research repository.'}</p>
           <div className="applications-count"><span className="applications-dot"></span>{String(PUBLIC_APPLICATIONS.length).padStart(2,'0')} {zh?'个应用 / 持续迭代':'APPLICATIONS / IN DEVELOPMENT'}<span>WEBXR · SPATIAL INPUT · AUDIOVISUAL</span></div>
         </header>
+        <section className="applications-xr-gateway" aria-label="XR Works research gateway">
+          <div>
+            <div className="applications-eyebrow">XR WORKS / INDEPENDENT RESEARCH</div>
+            <h2>XR Works <span>/ Research & Test Table</span></h2>
+            <p>{zh?'手部追踪、空间输入、可交互视觉与实验性 XR 创作统一归入独立研究仓库。此处仅保留两个曾公开分享的 Demo；新仓库的独立试玩网站将在完成迁移和测试后启用。':'Hand tracking, spatial input, playable visual systems and emerging XR works now have an independent research home. Two legacy demos stay listed here; the standalone test-table website is not deployed yet.'}</p>
+          </div>
+          <a href="https://github.com/ewanqian/xr-works" target="_blank" rel="noopener noreferrer">{zh?'进入 XR Works 研究索引':'Open XR Works research index'} <span aria-hidden="true">↗</span></a>
+        </section>
         <div className="applications-toolbar">
           <span className="applications-sort-label">{zh?'最近更新优先 ↓':'LATEST UPDATE FIRST ↓'}</span>
           <div className="applications-filters" aria-label={zh?'应用分类':'App categories'}>
