@@ -18,6 +18,13 @@
 
 ---
 
+
+## Artist Research / 创作谱系与原生实时研究
+
+- [2026-11-09：从 TIMER、Drop Flow、KASHIWA、NFIR 到 SRE / Entropy 的作者口述研究](./research/2026-11-09-author-account-blender-to-runtime.md) — 作者回忆 / needs-source，保留实际创作方法、未完成实验与技术瓶颈；不自动作为正式作品事实。
+- [本地 Codex：Blender Simulation Zone → GPU Runtime 工程考察交接](./research/2026-11-09-local-agent-brief.md) — 只读审计、音频 Bake / 手 K 识别、节点状态、原生 GPU 移植与视觉对照。
+- [可供 Agent 调用的情境化创作偏好 JSON](./research/2026-11-09-creative-preferences.json) — 作品级审美判断，不能取代原始作品与作者的审阅。
+
 ## Public Viewing Links / 公开观看入口
 
 ### Timer
