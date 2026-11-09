@@ -272,6 +272,11 @@ const APPLICATIONS = [
     test:'进入空间 → 切换四幕 → 导出 Show Score'
   }
 ]
+// The research registry above is preserved for backward traceability, but the
+// personal Portfolio publishes only the two already circulated entry points.
+// No underlying demo URL or GitHub Pages route is deleted or redirected here.
+const PUBLIC_APPLICATION_IDS = new Set(['hand-space-osc','hand-synth-v2'])
+const PUBLIC_APPLICATIONS = APPLICATIONS.filter(app=>PUBLIC_APPLICATION_IDS.has(app.id))
 function Glyph({kind}){
   return <svg className="applications-glyph" viewBox="0 0 80 80" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round">
     {kind==='hand'? <><path d="M22 56L20 40Q20 37 23 36Q26 36 28 41L29 25Q29 21 32 21Q35 21 35 25L36 36L39 17Q40 14 43 15Q46 16 45 20L43 37L48 23Q50 20 53 22Q55 24 53 27L49 40L55 35Q58 33 60 36Q62 39 59 42L47 59L41 63L28 62Z"/><circle cx="24" cy="42" r="2.8"/><circle cx="32" cy="25" r="2.8"/><circle cx="43" cy="18" r="2.8"/><circle cx="52" cy="26" r="2.8"/><circle cx="57" cy="39" r="2.8"/><circle cx="42" cy="57" r="3"/><path strokeDasharray="2 4" d="M24 42L42 57L57 39L52 26L43 18L32 25L24 42"/><circle cx="57" cy="39" r="15" strokeDasharray="2 4" opacity=".5"/></>:<><ellipse cx="40" cy="40" rx="31" ry="13" transform="rotate(-28 40 40)"/><ellipse cx="40" cy="40" rx="31" ry="13" transform="rotate(25 40 40)"/><ellipse cx="40" cy="40" rx="28" ry="28"/><circle cx="40" cy="40" r="5" fill="currentColor" stroke="none"/><path d="M40 3V77M3 40H77" strokeDasharray="2 5" opacity=".6"/></>}
@@ -299,7 +304,7 @@ function Applications(){
   const [query,setQuery]=useState('')
   const [category,setCategory]=useState('ALL')
   const [density,setDensity]=useState(4)
-  const filtered=useMemo(()=>APPLICATIONS.filter(a=>
+  const filtered=useMemo(()=>PUBLIC_APPLICATIONS.filter(a=>
     (category==='ALL'||a.category===category)&&
     [a.name,a.category,a.kind,a.subtitleZh,a.summaryZh,a.platform].join(' ').toLowerCase().includes(query.toLowerCase())
   ).sort((a,b)=>Date.parse(b.updatedAt)-Date.parse(a.updatedAt)),[query,category])
@@ -311,8 +316,8 @@ function Applications(){
         <header className="applications-hero">
           <div className="applications-eyebrow">PERSONAL RESEARCH SYSTEM / APPLICATION INDEX</div>
           <h1>Applications<span className="applications-period">.</span></h1>
-          <p>{zh?'一个快速进入实时影像、XR 交互与可演奏音乐实验的应用目录。每个应用都直接打开可运行的测试页面，不复制工程、不混淆研究归属。 按各应用的源代码最后更新日期倒序排列。':'A launchpad for live image, XR interaction and performable music experiments. Open runnable research tools without duplicating their source. Sorted by the latest source update of each app.'}</p>
-          <div className="applications-count"><span className="applications-dot"></span>{String(APPLICATIONS.length).padStart(2,'0')} {zh?'个应用 / 持续迭代':'APPLICATIONS / IN DEVELOPMENT'}<span>WEBXR · SPATIAL INPUT · AUDIOVISUAL</span></div>
+          <p>{zh?'个人作品集只保留两个已公开分享的核心手部交互入口。其他 WebXR 试验从展示目录撤下，原有技术页面和外链保持有效；后续归入独立研究仓库。':'Only two previously shared hand-interaction entry points are featured here. Other WebXR experiments stay accessible at their original URLs and will be organized in a dedicated research repository.'}</p>
+          <div className="applications-count"><span className="applications-dot"></span>{String(PUBLIC_APPLICATIONS.length).padStart(2,'0')} {zh?'个应用 / 持续迭代':'APPLICATIONS / IN DEVELOPMENT'}<span>WEBXR · SPATIAL INPUT · AUDIOVISUAL</span></div>
         </header>
         <div className="applications-toolbar">
           <span className="applications-sort-label">{zh?'最近更新优先 ↓':'LATEST UPDATE FIRST ↓'}</span>
@@ -328,10 +333,12 @@ function Applications(){
         <div className="applications-grid" data-density={density}>{filtered.map(app=><ApplicationCard key={app.id} app={app} zh={zh}/>)}</div>
         {!filtered.length&&<p className="applications-empty">{zh?'没有找到匹配的应用。':'No matching applications.'}</p>}
         <section className="applications-notes">
-          <div><span className="applications-eyebrow">RESEARCH ARCHITECTURE</span><h2>{zh?'应用与研究归属':'Application ownership'}</h2></div>
-          <div><p><strong>Hand / Space / OSC</strong> — XR Interaction / Spatial Input。{zh?'是通用的空间输入研究，可用于音乐、装置、舞台控制。':'A reusable spatial input system for music, installations and stage control.'}</p><p><strong>Hand / Synth / Space V2</strong> — Gesture Synth / Web Audio。{zh?'保留原始传感器实验，加入实时合成、双手手势、轻量反馈与可选 OSC，不宣称已完成实机验收。':'Preserves the original sensor lab while adding continuous synthesis, bimanual gestures, light FX and optional OSC; hardware QA remains open.'}</p><p><strong>Organic Fields</strong> — Spatial Gesture Scores / Performable Music。{zh?'三种原创音色和图形空间演奏，不复用已停更 iPad App 的音色包；实机 Quest 延迟仍须验证。':'Three new sound worlds and gesture-based music maps, without reproducing the historic iPad app audio packs; headset latency remains unverified.'}</p><p><strong>Spatial Instrument Studies 05</strong> — Score / Studio / Tone.js / Sigil。{zh?'展示从原始手部输入到伴奏组织、声音塑形与指节序列的三个完整可测试方向；正式 Strudel 双向同步与硬件音频验收尚未完成。':'Three testable directions: arrangement, synthesis and phalanx-coded gestures. Bidirectional Strudel sync and real hardware audio QA are still open.'}</p><p><strong>Gestural Atlas / Performance</strong> — {zh?'四种音画演奏手势，以可演奏性为主要验收目标。':'Four musical gestures evaluated for expressive performance.'}</p>
-<p><strong>Gestural Atlas / Cultural Symbols</strong> — {zh?'港式灵幻电影动作与传统数字图式的当代交互研究；区分史料、电影表达与原创设计。':'Cinematic gesture research and interpreted traditional diagrams, with separate source provenance.'}</p>
-<p><strong>Critical Field XR</strong> — Audiovisual Performance / Spatial Instrument。{zh?'是上述输入技术在可演奏音乐中的一个应用场景。':'A performance use case for the same spatial interaction methods.'}</p><p className="applications-small">{zh?'目前源代码由 Performable Music 仓库管理，应用启动台只负责索引。是否可以进入透视 MR、读取关节和发送 OSC，取决于具体设备、浏览器权限以及本地桥接服务。':'Source currently remains in Performable Music. Device support and OSC delivery require actual headset permissions and a local secure bridge.'}</p></div>
+          <div><span className="applications-eyebrow">PUBLIC RESEARCH ENTRIES</span><h2>{zh?'精选入口与技术档案':'Selected entrances and research archive'}</h2></div>
+          <div>
+            <p><strong>Hand / Space / OSC</strong> — {zh?'已公开分享的基础手部追踪与空间 OSC 入口，保持原始链接与协议测试路径。':'Existing public entry for hand tracking and spatial OSC; original URL and protocol tests stay intact.'}</p>
+            <p><strong>Hand / Synth / Space V2</strong> — {zh?'第二个可公开试玩的手部声音控制演示，继续使用原网址。':'The second public hand-controlled sound instrument, continuing at its original URL.'}</p>
+            <p className="applications-small">{zh?'其余实验属于持续开发中的技术草稿，不作为完整艺术作品或个人履历项目展示。旧分享链接不会因目录精简而失效。':'Other experiments are ongoing technical drafts, not completed artworks or CV entries. Existing shared direct links are preserved.'}</p>
+          </div>
         </section>
       </div>
     </main>
