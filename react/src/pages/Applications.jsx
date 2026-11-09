@@ -7,6 +7,21 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
+    id:'gesture-dynamics',name:'Gesture Dynamics · Spatial Particles',
+    category:'XR Interaction',kind:'Hand Gesture / Particle Physics / WebXR',
+    type:'Quest 3 MR Prototype',number:'S03',
+    subtitleZh:'剑指驱动粒子，张掌爆散，握拳聚合',
+    subtitleEn:'Point, scatter and attract a physical 3D particle field',
+    summaryZh:'基于现有 25 关节 WebXR 输入的轻量三维粒子动力学：剑指引导连续运动、张掌触发一次爆散、握拳吸引回聚。480 粒子、三种空间形态、可复现桌面模拟。Quest 3 实机手势精度与帧率尚待验证。',
+    summaryEn:'A 480-particle 3D dynamics study using the existing 25-joint WebXR hand inputs. Sword-finger propulsion, one-shot palm blast, fist attraction, three field arrangements and a transparent desktop mock. Quest headset QA pending.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/gesture-dynamics.html',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
+    platform:'QUEST 3 MR · VR · DESKTOP',
+    icon:'field',tone:'silver',
+    features:['480 PHYSICAL PARTICLES','SWORD / PALM / FIST','3 FIELD SHAPES','QUEST MR'],
+    test:'桌面用 1/2/3/0 模拟 → Quest Browser 进入 MR → 验证剑指方向、一次爆散、握拳回聚与丢追踪'
+  },
+  {
     id:'spatial-waves-01',name:'Spatial Waves · 3D Sound Instrument',
     category:'AV Performance',kind:'Volumetric Hand Instrument / HRTF',
     type:'Spatial Performance Candidate',number:'S01',
