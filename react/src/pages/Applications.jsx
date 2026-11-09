@@ -251,7 +251,7 @@ function Applications(){
         <header className="applications-hero">
           <div className="applications-eyebrow">PERSONAL RESEARCH SYSTEM / APPLICATION INDEX</div>
           <h1>Applications<span className="applications-period">.</span></h1>
-          <p>{zh?'一个快速进入实时影像、XR 交互与可演奏音乐实验的应用目录。每个应用都直接打开可运行的测试页面，不复制工程、不混淆研究归属。 按各应用的源代码最后更新日期倒序排列。':'A launchpad for live image, XR interaction and performable music experiments. Open runnable research tools without duplicating their source. Ordered by each application's latest source update.'}</p>
+          <p>{zh?'一个快速进入实时影像、XR 交互与可演奏音乐实验的应用目录。每个应用都直接打开可运行的测试页面，不复制工程、不混淆研究归属。 按各应用的源代码最后更新日期倒序排列。':'A launchpad for live image, XR interaction and performable music experiments. Open runnable research tools without duplicating their source. Sorted by the latest source update of each app.'}</p>
           <div className="applications-count"><span className="applications-dot"></span>{String(APPLICATIONS.length).padStart(2,'0')} {zh?'个应用 / 持续迭代':'APPLICATIONS / IN DEVELOPMENT'}<span>WEBXR · SPATIAL INPUT · AUDIOVISUAL</span></div>
         </header>
         <div className="applications-toolbar">
