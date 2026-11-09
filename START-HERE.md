@@ -118,3 +118,13 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 
 **下一次 Artworks 对话的第一步**：读取上述三个文件，检查对应研究 PR 最新状态，先从 Drop Flow 的一条真实 Simulation Zone 全链、实际音频输入来源、旧 GPU 复现的差异入手；不要重新发明通用粒子效果。由本地代理在只读副本上核验，提供有图有参数有运行证据的反馈。独立研究线不会覆盖本站 PORT-01 等维护任务。
 
+
+
+### 2026-11-09 Artworks 研究补充：REACTOR、HERO DOME、音频与二砂
+
+作者同日补充了 Entropy 后的 REACTOR 托卡马克 GPT 辅助 Blender 模型、Curve 线框 Reveal/局部高亮、HERO DOME 超宽画面材质/合成、多版本 Ableton 音频、二砂点云镜头以及九组灯光并行筛选。
+
+- [创作口述续篇](visual-arts/research/2026-11-09-artist-account-reactor-hero-dome-audio-ersha.md)
+- [本地 Agent 素材恢复与敏感度分级](visual-arts/research/2026-11-09-local-agent-followup-reactor-audio-ersha.md)
+
+**独立研究队列下次动作**：恢复 REACTOR 的 Curve/Wireframe 与 HERO DOME Shader/Compositor 源链，定位二砂点云丢失/转存的镜头与模型，在 Mac 上找到 Ableton 最满意的项目和比较音频；仅同步脱敏证据。不要向公共仓库提交客户原件、完整配方、付费音源/插件或舞者数据。网站 PORT-01 等现有维护优先级不因本文被覆盖。
