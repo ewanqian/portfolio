@@ -37,12 +37,12 @@ const APPLICATIONS = [
     test:'选择火球 → 张掌蓄能 → 握拳投出；切换冰/雷/盾/引力/空间门，并观察积分反馈'
   },
   {
-    id:'gesture-dynamics',updatedAt:'2026-11-09T17:29:06+08:00',name:'Gesture Dynamics · Spatial Particles',
+    id:'gesture-dynamics',updatedAt:'2026-11-09T17:32:54+08:00',name:'Gesture Dynamics · Spatial Particles',
     category:'XR Interaction',kind:'Hand Gesture / Particle Physics / WebXR',
     type:'Quest 3 MR Prototype',number:'S03',
     subtitleZh:'挥手生灵气，握拳蓄能，剑指连续喷射紊流，张掌爆散',
     subtitleEn:'Sweep to gather energy, clench to charge, point to stream and open to burst',
-    summaryZh:'V3 连续粒子流：真实手部位移形成灵气拖尾；任一手握拳吸附散落能量、持续蓄力；剑指从指尖连续喷射，蓄力越久爆发越强。张掌一次性爆散。1536 个上限的三维运动粒子、速度拖尾、涡旋力场、喷流/条带/紊流三模式；Quest 3 实机手势与帧率待验证。',
+    summaryZh:'V3 连续粒子流：快速挥手产生灵气拖尾并积累动能；任一手握拳吸附散落能量、持续蓄力；剑指从指尖连续喷射，蓄力越久爆发越强。张掌一次性爆散。1536 个上限的三维运动粒子、速度拖尾、涡旋力场、喷流/条带/紊流三模式；Quest 3 实机手势与帧率待验证。',
     summaryEn:'V3 continuous 3D energy flow: hand sweep leaves kinetic trails, either fist collects and charges energy, a sword pose emits a live jet with charge-scaled discharge, and open palm triggers an outward burst. Bounded 1536-particle simulation, velocity streaks and jet/ribbon/vortex modes. Quest 3 device QA pending.',
     href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/gesture-dynamics.html',
     github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
