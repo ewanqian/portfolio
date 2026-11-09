@@ -7,7 +7,7 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
-    id:'spellcraft-east',updatedAt:'2026-11-09T16:59:05+08:00',name:'Spellcraft Atelier · Chinese Fantasy',
+    id:'spellcraft-east',updatedAt:'2026-11-09T17:00:31+08:00',name:'Spellcraft Atelier · Chinese Fantasy',
     category:'XR Interaction',kind:'WebXR / Hand Pose / Symbolic Action',
     type:'Six Playable Spell Gestures',number:'S05',
     subtitleZh:'六种中国术师玩法：画符发遣、御剑、剑阵、五行、封印和七星',
@@ -22,7 +22,7 @@ const APPLICATIONS = [
     test:'选择画符 → 剑指画圈 → 松开再剑指发射；切换御剑/阵法/五行/封印/七星并观察命中与分数'
   },
   {
-    id:'spellcraft-west',updatedAt:'2026-11-09T16:59:05+08:00',name:'Spellcraft Atelier · European Fantasy',
+    id:'spellcraft-west',updatedAt:'2026-11-09T17:00:31+08:00',name:'Spellcraft Atelier · European Fantasy',
     category:'XR Interaction',kind:'Hand Spell / Projectile / WebXR',
     type:'Six Playable Magic Studies',number:'S04',
     subtitleZh:'六种欧洲奇幻施法：火球、冰冻、雷链、护盾、引力与空间门',
