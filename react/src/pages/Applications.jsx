@@ -7,6 +7,21 @@ import './Applications.css'
 
 const APPLICATIONS = [
   {
+    id:'sixfold-warlock',updatedAt:'2026-11-09T21:41:35+08:00',name:'Sixfold / Warlock · 术士六系',
+    category:'XR Interaction',kind:'Fan Interaction / Hand-held Staff / WebXR',
+    type:'Playable Fan Study',number:'S06',
+    subtitleZh:'冰杖召唤、冻结与碎冰；六种元素能力的空间粉丝体验',
+    subtitleEn:'Summon an ice staff, freeze and shatter targets across six elemental schools',
+    summaryZh:'独立的 Quest 3 MR / VR 粉丝交互原型：冰影冻结碎裂、烈日焰剑、虚空追踪新星、电弧雷链、缚丝追踪体与棱镜明暗积蓄。左掌菜单、右拳六方向选系。模型与音效为原创重建，非游戏原资产或 1:1 复刻；真实头显精度待验收。',
+    summaryEn:'An independent six-school fan interaction prototype: ice staff freeze/shatter, solar blades, homing nova, arc chains, strand seekers and prismatic charge. Palm menu, six-way fist selection, original geometry and synthesized SFX. Not game assets or a 1:1 replica; physical Quest QA pending.',
+    href:'https://ewanqian.github.io/performable-music/spatial-playground/warlock-immersion/',
+    github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/warlock-immersion',
+    platform:'QUEST 3 MR · VR · DESKTOP',
+    icon:'hand',tone:'silver',
+    features:['ICE STAFF → FREEZE → SHATTER','6 DISTINCT SCHOOLS','ORIGINAL SOUND FX','PALM / FIST MENU'],
+    test:'桌面按 1 召唤 → 鼠标瞄准后按 2 冻结 → 按 3 碎冰；Quest 3 进入 MR，握拳召唤、剑指发射、张掌释放第二段。'
+  },
+  {
     id:'warlock-six-elements',updatedAt:'2026-11-09T21:36:50+08:00',name:'Warlock · Six Elements',
     category:'XR Interaction',kind:'Fan Interaction / WebXR / Elemental Abilities',
     type:'Six-element Fan Study',number:'W01',
