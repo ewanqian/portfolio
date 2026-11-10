@@ -4,45 +4,73 @@ on:
     branches: [main]
     paths:
       - "scripts/qa-home-nine.mjs"
+      - "scripts/qa-profile-entry.mjs"
       - ".github/workflows/homepage-nine-qa.yml"
       - "react/**"
       - "content/**"
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Publish React homepage to GitHub Pages root"]
+    types: [completed]
+    branches: [main]
 permissions:
   contents: read
 jobs:
   homepage:
-    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
+    env:
+      QA_PLAYWRIGHT: /tmp/portfolio-browser/node_modules/playwright/index.mjs
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install, build and prepare font
+      - name: Install reproducible browser and build site
         run: |
           npm ci
           npm ci --prefix react
           npm run build --prefix react
-          sudo apt-get update -qq
+          npm install --prefix /tmp/portfolio-browser --no-save --package-lock=false playwright@1.64.1
+          /tmp/portfolio-browser/node_modules/.bin/playwright install --with-deps chromium
           sudo apt-get install -y -qq fonts-noto-cjk
-      - name: Render and inspect actual homepage
+      - name: Check archive integrity
+        run: |
+          npm run audit:graph
+          npm run audit:preservation
+          npm run audit:portfolio-os
+          npm run audit:cv
+          node scripts/audit-release-consistency.mjs
+      - name: Render homepage and exercise profile navigation
         shell: bash
         run: |
           set -euo pipefail
-          (cd react && npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/home-preview.log 2>&1) &
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory react/dist > /tmp/profile-preview.log 2>&1 &
           PID=$!
           trap 'kill "$PID" 2>/dev/null || true' EXIT
           for i in $(seq 1 30); do
             if curl --silent --fail http://127.0.0.1:4173/ >/dev/null; then break; fi
             sleep 1
           done
-          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
-          if [ -z "$CHROME" ]; then echo "Chrome NOT RUN"; exit 2; fi
+          CHROME="$(node -e "console.log(require('/tmp/portfolio-browser/node_modules/playwright').chromium.executablePath())")"
+          test -x "$CHROME"
+          "$CHROME" --version
           CHROME_BIN="$CHROME" node scripts/qa-home-nine.mjs
+          node scripts/qa-profile-entry.mjs
+      - name: Check actual production after publisher
+        if: github.event_name == 'workflow_run'
+        env:
+          QA_ORIGIN: https://ewanqian.site
+          QA_ARTIFACT_DIR: docs/media-intake/profile-entry-live
+        run: node scripts/qa-profile-entry.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: home-nine-review
-          path: docs/media-intake/home-nine-qa/*
+          name: profile-and-home-browser-review
+          path: |
+            docs/media-intake/home-nine-qa/
+            docs/media-intake/profile-entry-qa/
+            docs/media-intake/profile-entry-live/
+            /tmp/profile-preview.log
           if-no-files-found: warn
