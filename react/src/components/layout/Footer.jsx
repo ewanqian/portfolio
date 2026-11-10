@@ -15,6 +15,7 @@ function Footer() {
         </div>
         <nav className="footer-system-links" aria-label={isZh ? '次级导航' : 'Secondary navigation'}>
           <Link to="/archive">{isZh ? '归档' : 'Archive'}</Link>
+          <a href="/works/cv.html">{isZh ? '履历与 PDF' : 'CV & PDFs'}</a>
           <a href="/works/atlas.html">{isZh ? '个人图谱' : 'Atlas'}</a>
           <a href="/works/cabinet.html">{isZh ? '收藏室' : 'Cabinet'}</a>
           <a href="/works/timeline.html">{isZh ? '时间线' : 'Timeline'}</a>
