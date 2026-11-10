@@ -170,18 +170,18 @@ const APPLICATIONS = [
     test:'滑动穿过器物区域 → 切换 Metal / Electro / Orchestra → 八字演奏'
   },
   {
-    id:'hand-synth-v2',updatedAt:'2026-11-08T04:50:44+08:00',name:'Hand / Synth / Space V2',
+    id:'hand-synth-v2',updatedAt:'2026-11-11T01:00:00+08:00',name:'Hand / Synth / Space V2',
     category:'AV Performance',kind:'Gesture Synth / Web Audio / OSC',
     type:'Performance Instrument',number:'05',
-    subtitleZh:'双手手势驱动的实时合成器',subtitleEn:'A continuous synthesizer controlled by both hands',
-    summaryZh:'保留 25 关节实时追踪，增加双手捏合、指节触碰、区域进出、滤波与延迟反馈；100 BPM 量化与 OSC 可选。不是空中钢琴。',
-    summaryEn:'Original 25-joint tracking plus bimanual gestures, finger-to-joint contact, zone crossing, continuous filter/delay control and optional 100 BPM quantized OSC.',
+    subtitleZh:'捏合激发，松手留响',subtitleEn:'A hand gesture excites a sound; release lets it fade',
+    summaryZh:'瓷、弦、空气三种声音，由捏合与空间触碰激发。保留双手与 25 关节追踪、音量和音色控制、节奏量化与可选 OSC。',
+    summaryEn:'Three sound materials—ceramic, string and air—excited by intentional gestures and spatial contact. Two-hand tracking, volume and timbre controls, quantization and optional OSC.',
     href:'https://ewanqian.github.io/performable-music/spatial-playground/hand-osc-lab/instrument.html',
     github:'https://github.com/ewanqian/performable-music/tree/main/spatial-playground/hand-osc-lab',
     platform:'QUEST MR · AVP VR · DESKTOP',
     icon:'hand',tone:'lime',
-    features:['WEB AUDIO SYNTH','BIMANUAL GESTURES','BPM / OSC'],
-    test:'捏合持续控制滤波和音色 → 双手 HOLD → 区域 ENTER / EXIT 触发音效'
+    features:['3 SOUND MATERIALS','GESTURE → RESONANCE','BPM / OSC'],
+    test:'开启声音 → 选择音色 → 捏合或区域触碰 → 松手衰减'
   },
   {
     id:'spatial-studies-05',updatedAt:'2026-11-08T14:10:19+08:00',name:'Spatial Instrument Studies · 05',
@@ -303,7 +303,6 @@ function Applications(){
   const {language}=useLanguage(),zh=language!=='en'
   const [query,setQuery]=useState('')
   const [category,setCategory]=useState('ALL')
-  const [density,setDensity]=useState(4)
   const filtered=useMemo(()=>PUBLIC_APPLICATIONS.filter(a=>
     (category==='ALL'||a.category===category)&&
     [a.name,a.category,a.kind,a.subtitleZh,a.summaryZh,a.platform].join(' ').toLowerCase().includes(query.toLowerCase())
@@ -316,16 +315,16 @@ function Applications(){
         <header className="applications-hero">
           <div className="applications-eyebrow">PERSONAL RESEARCH SYSTEM / APPLICATION INDEX</div>
           <h1>Applications<span className="applications-period">.</span></h1>
-          <p>{zh?'个人作品集只保留两个已公开分享的核心手部交互入口。其他 WebXR 试验从展示目录撤下，原有技术页面和外链保持有效；后续归入独立研究仓库。':'Only two previously shared hand-interaction entry points are featured here. Other WebXR experiments stay accessible at their original URLs and will be organized in a dedicated research repository.'}</p>
+          <p>{zh?'从手部动作进入声音与空间。这里是两个常用工具的快捷入口；在 XR Creations 探索完整的交互实验与作品研究。':'Move from hand gestures into sound and space. Start with two core tools here, or explore interactive studies and emerging works in XR Creations.'}</p>
           <div className="applications-count"><span className="applications-dot"></span>{String(PUBLIC_APPLICATIONS.length).padStart(2,'0')} {zh?'个应用 / 持续迭代':'APPLICATIONS / IN DEVELOPMENT'}<span>WEBXR · SPATIAL INPUT · AUDIOVISUAL</span></div>
         </header>
-        <section className="applications-xr-gateway" aria-label="XR Works research gateway">
+        <section className="applications-xr-gateway" aria-label="XR Creations">
           <div>
-            <div className="applications-eyebrow">XR WORKS / INDEPENDENT RESEARCH</div>
-            <h2>XR Works <span>/ Research & Test Table</span></h2>
-            <p>{zh?'手部追踪、空间输入、可交互视觉与实验性 XR 创作统一归入独立研究仓库。此处仅保留两个曾公开分享的 Demo；新仓库的独立试玩网站将在完成迁移和测试后启用。':'Hand tracking, spatial input, playable visual systems and emerging XR works now have an independent research home. Two legacy demos stay listed here; the standalone test-table website is not deployed yet.'}</p>
+            <div className="applications-eyebrow">XR CREATIONS / INTERACTION & SPATIAL ART</div>
+            <h2>XR Creations <span>/ Hand Lab & Spatial Studies</span></h2>
+            <p>{zh?'掌中残响、空间铸谱、掌上星图、共生之庭。四种从一个动作开始的作品实验，与 Hand Lab、空间声音和交互研究相连。支持桌面与触屏试玩，头显入口随设备提供。':'Held Resonance, Score Foundry, Palm Atlas and Garden of Signals: four playable studies beginning with one action, alongside Hand Lab, spatial sound and interaction research. Explore with a pointer or touch; headset modes appear on compatible devices.'}</p>
           </div>
-          <a href="https://github.com/ewanqian/xr-works/blob/main/docs/TEST_TABLE.md" target="_blank" rel="noopener noreferrer">{zh?'打开 XR Works / Test Table':'Open XR Works / Test Table'} <span aria-hidden="true">↗</span></a>
+          <a href="https://ewanqian.site/xr-creations/">{zh?'进入 XR Creations':'Explore XR Creations'} <span aria-hidden="true">↗</span></a>
         </section>
         <div className="applications-toolbar">
           <span className="applications-sort-label">{zh?'最近更新优先 ↓':'LATEST UPDATE FIRST ↓'}</span>
@@ -333,19 +332,15 @@ function Applications(){
             {['ALL','XR Interaction','AV Performance'].map(c=><button type="button" key={c} aria-pressed={category===c} onClick={()=>setCategory(c)} className={category===c?'active':''}>{c==='ALL'?(zh?'全部 / All':'All'):c}</button>)}
           </div>
           <label className="applications-search"><span aria-hidden="true">⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} aria-label={zh?'搜索应用':'Search apps'} placeholder={zh?'查找应用 / Search':'Search applications'}/></label>
-          <div className="applications-density" role="group" aria-label={zh?'每行数量':'Columns per row'}>
-            <span>{zh?'每行':'COLS'}</span>
-            {[4,5,6].map(n=><button type="button" key={n} aria-pressed={density===n} className={density===n?'active':''} onClick={()=>setDensity(n)}>{n}</button>)}
-          </div>
         </div>
-        <div className="applications-grid" data-density={density}>{filtered.map(app=><ApplicationCard key={app.id} app={app} zh={zh}/>)}</div>
+        <div className="applications-grid applications-grid--featured">{filtered.map(app=><ApplicationCard key={app.id} app={app} zh={zh}/>)}</div>
         {!filtered.length&&<p className="applications-empty">{zh?'没有找到匹配的应用。':'No matching applications.'}</p>}
         <section className="applications-notes">
-          <div><span className="applications-eyebrow">PUBLIC RESEARCH ENTRIES</span><h2>{zh?'精选入口与技术档案':'Selected entrances and research archive'}</h2></div>
+          <div><span className="applications-eyebrow">TWO WAYS IN</span><h2>{zh?'从输入到演奏':'From input to performance'}</h2></div>
           <div>
-            <p><strong>Hand / Space / OSC</strong> — {zh?'已公开分享的基础手部追踪与空间 OSC 入口，保持原始链接与协议测试路径。':'Existing public entry for hand tracking and spatial OSC; original URL and protocol tests stay intact.'}</p>
-            <p><strong>Hand / Synth / Space V2</strong> — {zh?'第二个可公开试玩的手部声音控制演示，继续使用原网址。':'The second public hand-controlled sound instrument, continuing at its original URL.'}</p>
-            <p className="applications-small">{zh?'其余实验属于持续开发中的技术草稿，不作为完整艺术作品或个人履历项目展示。旧分享链接不会因目录精简而失效。':'Other experiments are ongoing technical drafts, not completed artworks or CV entries. Existing shared direct links are preserved.'}</p>
+            <p><strong>Hand / Space / OSC</strong> — {zh?'观察手部关节与空间事件，将动作连接到本地 OSC 工作流。':'Observe hand joints and spatial events, then connect movement to a local OSC workflow.'}</p>
+            <p><strong>Hand / Synth / Space V2</strong> — {zh?'在浏览器里直接演奏三种声音材料，也可接入自己的音乐系统。':'Play three sound materials directly in the browser, or connect your own music system.'}</p>
+            <p className="applications-small">{zh?'桌面模拟用于了解操作。MR / VR 的可用模式由浏览器和设备决定。':'Desktop simulation introduces the controls. Available MR / VR modes depend on the browser and device.'}</p>
           </div>
         </section>
       </div>

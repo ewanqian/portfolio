@@ -2,6 +2,10 @@
 更新：2026-11-07（Asia/Shanghai）  
 范围：作品集、CV、媒体恢复和发布维护。此页只保存公开安全的工作状态，不是作品事实数据库。
 
+## 2026-11-11 · XR Creations 入口修复（active）
+
+本轮范围：Apps 指向真正的 XR Creations 网页，保留两个已分享 Hand Lab URL；XR 源码保存在 `ewanqian/xr-works`，本站只发布指定提交构建的静态产物。分支 `fix/xr-creations-entry-20261111`，基线 `f34a468`。详细验收与发布记录将保存到 `docs/portfolio-maintenance-os/handoffs/2026-11-11-xr-creations.md`。不据此改变作品/CV事实或头显验收状态。
+
 ## 新对话怎么唤起
 连接 GitHub 后说：
 > 读取 ewanqian/portfolio 的 START-HERE.md 和 AGENTS.md，告诉我现在有什么能做的。

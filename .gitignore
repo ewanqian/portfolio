@@ -52,3 +52,6 @@ archive/
 # React build
 react/dist/
 dist/
+
+# Canonical XR source checkout used only by the release builder.
+.xr-creations-source/

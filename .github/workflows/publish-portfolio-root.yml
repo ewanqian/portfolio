@@ -23,6 +23,8 @@ on:
       - "scripts/audit-media-publication.mjs"
       - "works/**"
       - ".github/workflows/publish-portfolio-root.yml"
+      - ".github/xr-creations-source.json"
+      - "scripts/sync-xr-creations.mjs"
   workflow_dispatch:
 
 permissions:
@@ -50,6 +52,19 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             react/package-lock.json
+      - name: Read the reviewed XR Creations source revision
+        id: xr-source
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; const s=JSON.parse(fs.readFileSync('.github/xr-creations-source.json','utf8')); if(s.repository!=='ewanqian/xr-works'||!/^[0-9a-f]{40}$/.test(s.ref)) throw Error('Invalid XR source pin'); fs.appendFileSync(process.env.GITHUB_OUTPUT,'ref='+s.ref+'\n');"
+      - name: Check out the canonical XR source
+        uses: actions/checkout@v4
+        with:
+          repository: ewanqian/xr-works
+          ref: ${{ steps.xr-source.outputs.ref }}
+          path: .xr-creations-source
+          persist-credentials: false
+      - name: Build the pinned XR Creations release
+        run: node scripts/sync-xr-creations.mjs
       - name: Install workspace and React dependencies
         run: |
           npm ci
@@ -113,6 +128,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- index.html portfolio/index.html sitemap.xml
+          git add -- xr-creations/ portfolio/xr-creations/
           git add -- works/projects/ works/records/ works/atlas/ works/atlas.html works/cabinet.html works/timeline.html assets/data/ assets/cv/ works/cv.html works/cv-print-*.html content/publication-manifest-2026-11.json
           git add -- assets/*.js assets/*.css portfolio/assets/*.js portfolio/assets/*.css
 
@@ -125,4 +141,6 @@ jobs:
           # dirty working tree before rebasing the intentionally narrow deploy commit.
           git stash push --include-untracked -m "temporary postbuild generated files"
           git pull --rebase origin main
+          # A queued source change must never be paired with an older snapshot.
+          node --input-type=module -e "import fs from 'node:fs'; const pin=JSON.parse(fs.readFileSync('.github/xr-creations-source.json','utf8')); for(const p of ['xr-creations/release.json','portfolio/xr-creations/release.json']) { const actual=JSON.parse(fs.readFileSync(p,'utf8')); if(actual.sourceCommit!==pin.ref) throw Error('XR pin changed during publication; the queued build will publish the new revision'); }"
           git push origin HEAD:main

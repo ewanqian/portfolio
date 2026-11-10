@@ -66,6 +66,21 @@
 .applications-notes .applications-small{font-size:10px;color:#89938a}
 .applications-empty{padding:28px 0;color:#68746a}
 
+/* Two permanent tools need readable room, not an empty six-column gallery. */
+.applications-grid--featured{--app-cols:2;gap:20px}
+.applications-grid--featured .application-body{padding:20px 22px 16px}
+.applications-grid--featured .application-body h2{font-size:24px}
+.applications-grid--featured .application-subtitle{font-size:15px}
+.applications-grid--featured .application-description{font-size:13px;line-height:1.8;display:block;overflow:visible}
+.applications-grid--featured .application-icon{height:100px;background:#e7e7e3;color:#4b5155}
+.applications-grid--featured .applications-glyph{width:56px;height:56px}
+.applications-grid--featured .application-tags span{font-size:10px;padding:5px 7px}
+.applications-grid--featured .application-availability{font-size:10px;padding:12px 22px}
+.applications-grid--featured .application-actions a{font-size:12px;min-height:48px;padding:12px 22px}
+.applications-grid--featured .application-launch{background:#343b40;color:#f3f2ed}
+.applications-grid--featured .application-source{color:#444b50;background:#f4f4f1}
+.applications-grid--featured a:focus-visible{outline:3px solid #9c624a;outline-offset:3px}
+
 @media(max-width:1280px){.applications-grid[data-density="5"],.applications-grid[data-density="6"]{--app-cols:4}}
 @media(max-width:1080px){.applications-hero{grid-template-columns:1fr;gap:10px}.applications-grid[data-density="4"],.applications-grid[data-density="5"],.applications-grid[data-density="6"]{--app-cols:3}}
 @media(max-width:850px){.applications-container{width:calc(100% - 32px)}.applications-grid{--app-cols:2}.applications-notes{grid-template-columns:1fr;gap:6px}.applications-nav span{display:none}.application-icon{height:64px}}

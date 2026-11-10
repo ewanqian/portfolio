@@ -31,6 +31,7 @@ const portfolioControlModelDir = path.join(portfolioDistRoot, 'research', 'perfo
 // explicitly after Vite finishes. Mirror them under /portfolio as well because
 // older generated links still use that compatibility prefix.
 const workshopPublicDirs = [
+  'xr-creations',
   'mana-0829',
   'workshop-knowledge',
   'workshop-toys',
