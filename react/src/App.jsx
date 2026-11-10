@@ -8,6 +8,7 @@ import Archive from './pages/Archive.jsx'
 import GaussianScenes from './pages/GaussianScenes.jsx'
 import Works from './pages/Works.jsx'
 import Profile from './pages/Profile.jsx'
+import CV from './pages/CV.jsx'
 import Workshops from './pages/Workshops.jsx'
 import WorkshopSeries from './pages/WorkshopSeries.jsx'
 import YuJiayun45m2 from './pages/YuJiayun45m2.jsx'
@@ -27,81 +28,57 @@ import './styles/navigation-adjustments.css'
 import './styles/editorial-home.css'
 
 const STATIC_WORK_SLUGS = {
-  'drop-flow': true,
-  'timer': true,
-  'titan': true,
-  'kashiwa': true,
-  'mke-terminal': true,
-  'sre-realtime-liveset': true,
-  'no-further-input-required': true,
+  'drop-flow': true, 'timer': true, 'titan': true, 'kashiwa': true,
+  'mke-terminal': true, 'sre-realtime-liveset': true, 'no-further-input-required': true,
 }
 
 function App() {
   const location = useLocation()
-  const { key, pathname, state } = location
-
+  const { key, pathname, state, hash } = location
   useEffect(() => {
     const match = pathname.match(/^\/works\/([^/?#]+)/)
-    if (!match) {
-      return
-    }
-
+    if (!match) return
     const slug = decodeURIComponent(match[1]).replace(/\.html$/i, '')
-    if (!STATIC_WORK_SLUGS[slug]) {
-      return
-    }
-
+    if (!STATIC_WORK_SLUGS[slug]) return
     const base = window.location.pathname.indexOf('/portfolio') === 0 ? '/portfolio' : ''
     window.location.replace(`${base}/works/${slug}.html`)
   }, [pathname])
-
   useEffect(() => {
-    const targetId = state?.scrollTo
-
+    const targetId = state?.scrollTo || (pathname === '/cv' ? decodeURIComponent(hash.slice(1)) : null)
     const frame = window.requestAnimationFrame(() => {
       if (targetId) {
         const element = document.getElementById(targetId)
-
-        if (element) {
-          element.scrollIntoView({ behavior: 'auto', block: 'start' })
-          return
-        }
+        if (element) { element.scrollIntoView({ behavior: 'auto', block: 'start' }); return }
       }
-
       window.scrollTo({ top: 0, behavior: 'auto' })
     })
-
     return () => window.cancelAnimationFrame(frame)
-  }, [key, pathname, state])
-
-  return (
-    <MotionSystem routeKey={key}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/works" element={<Works />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/workshops" element={<Workshops />} />
-        <Route path="/workshops/:slug" element={<WorkshopSeries />} />
-        <Route path="/writing" element={<Writing />} />
-        <Route path="/writing/:slug" element={<WritingDetail />} />
-        <Route path="/production" element={<Production />} />
-        <Route path="/archive" element={<Archive />} />
-        <Route path="/gaussian-scenes" element={<GaussianScenes />} />
-        <Route path="/playground" element={<TopologicalPlayground />} />
-        <Route path="/apps" element={<Applications />} />
-        <Route path="/projects/titan" element={<KashiwaTitan />} />
-        <Route path="/projects/kashiwa-titan" element={<KashiwaTitan />} />
-        <Route path="/projects/yujiayun-45m2" element={<YuJiayun45m2 />} />
-        <Route path="/projects/rain-singapore" element={<RainSingapore />} />
-        <Route path="/projects/digital-garden" element={<DigitalGarden />} />
-        <Route path="/projects/natgeo-crystal" element={<NatGeoCrystal />} />
-        <Route path="/projects/system-ersha" element={<SystemErsha />} />
-        <Route path="/projects/china-ai-gala" element={<ChinaAIGala />} />
-        <Route path="/projects/xtep-xdna" element={<CommissionedVisualProject projectId="xtep" />} />
-        <Route path="/projects/zcool-hp-g8" element={<CommissionedVisualProject projectId="zcool" />} />
-      </Routes>
-    </MotionSystem>
-  )
+  }, [key, pathname, state, hash])
+  return <MotionSystem routeKey={key}><Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/works" element={<Works />} />
+    <Route path="/profile" element={<Profile />} />
+    <Route path="/cv" element={<CV />} />
+    <Route path="/workshops" element={<Workshops />} />
+    <Route path="/workshops/:slug" element={<WorkshopSeries />} />
+    <Route path="/writing" element={<Writing />} />
+    <Route path="/writing/:slug" element={<WritingDetail />} />
+    <Route path="/production" element={<Production />} />
+    <Route path="/archive" element={<Archive />} />
+    <Route path="/gaussian-scenes" element={<GaussianScenes />} />
+    <Route path="/playground" element={<TopologicalPlayground />} />
+    <Route path="/apps" element={<Applications />} />
+    <Route path="/projects/titan" element={<KashiwaTitan />} />
+    <Route path="/projects/kashiwa-titan" element={<KashiwaTitan />} />
+    <Route path="/projects/yujiayun-45m2" element={<YuJiayun45m2 />} />
+    <Route path="/projects/rain-singapore" element={<RainSingapore />} />
+    <Route path="/projects/digital-garden" element={<DigitalGarden />} />
+    <Route path="/projects/natgeo-crystal" element={<NatGeoCrystal />} />
+    <Route path="/projects/system-ersha" element={<SystemErsha />} />
+    <Route path="/projects/china-ai-gala" element={<ChinaAIGala />} />
+    <Route path="/projects/xtep-xdna22aw" element={<CommissionedVisualProject projectId="xtep" />} />
+    <Route path="/projects/xtep-xdna" element={<CommissionedVisualProject projectId="xtep" />} />
+    <Route path="/projects/zcool-hp-g8" element={<CommissionedVisualProject projectId="zcool" />} />
+  </Routes></MotionSystem>
 }
-
 export default App

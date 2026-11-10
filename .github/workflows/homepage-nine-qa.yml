@@ -5,9 +5,11 @@ on:
     paths:
       - "scripts/qa-home-nine.mjs"
       - "scripts/qa-profile-entry.mjs"
+      - "scripts/qa-cv-screen.mjs"
       - ".github/workflows/homepage-nine-qa.yml"
       - "react/**"
       - "content/**"
+      - "scripts/build-cv-publication.mjs"
   workflow_dispatch:
   workflow_run:
     workflows: ["Publish React homepage to GitHub Pages root"]
@@ -42,7 +44,7 @@ jobs:
           npm run audit:portfolio-os
           npm run audit:cv
           node scripts/audit-release-consistency.mjs
-      - name: Render homepage and exercise profile navigation
+      - name: Render homepage, profile and bilingual CV
         shell: bash
         run: |
           set -euo pipefail
@@ -55,15 +57,16 @@ jobs:
           done
           CHROME="$(node -e "console.log(require('/tmp/portfolio-browser/node_modules/playwright').chromium.executablePath())")"
           test -x "$CHROME"
-          "$CHROME" --version
           CHROME_BIN="$CHROME" node scripts/qa-home-nine.mjs
           node scripts/qa-profile-entry.mjs
+          node scripts/qa-cv-screen.mjs
       - name: Check actual production after publisher
         if: github.event_name == 'workflow_run'
         env:
           QA_ORIGIN: https://ewanqian.site
-          QA_ARTIFACT_DIR: docs/media-intake/profile-entry-live
-        run: node scripts/qa-profile-entry.mjs
+        run: |
+          QA_ARTIFACT_DIR=docs/media-intake/profile-entry-live node scripts/qa-profile-entry.mjs
+          QA_ARTIFACT_DIR=docs/media-intake/cv-screen-live node scripts/qa-cv-screen.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -72,5 +75,7 @@ jobs:
             docs/media-intake/home-nine-qa/
             docs/media-intake/profile-entry-qa/
             docs/media-intake/profile-entry-live/
+            docs/media-intake/cv-screen-qa/
+            docs/media-intake/cv-screen-live/
             /tmp/profile-preview.log
           if-no-files-found: warn
