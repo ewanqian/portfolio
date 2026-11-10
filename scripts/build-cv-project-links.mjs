@@ -32,7 +32,9 @@ for(const r of cv){
   const p=projects.find(p=>p.id===id);
   return '<a href="../projects/'+esc(id)+'.html">'+esc(p.zh)+' / '+esc(p.en)+'</a>';
  });
- const section=start+'<section class="section" aria-label="Related projects"><h2>Related projects / 关联项目</h2><p>'+targets.join(' · ')+'</p>'+projectMedia(refs)+'</section>'+end;
+ const media=projectMedia(refs);
+ const layout=media?' style="grid-column:1/-1;min-width:0"':'';
+ const section=start+'<section class="section" aria-label="Related projects"'+layout+'><h2>Related projects / 关联项目</h2><p>'+targets.join(' · ')+'</p>'+media+'</section>'+end;
  const filename=path.join(root,'works/records',r.id+'.html');
  if(!fs.existsSync(filename))throw Error('Missing CV record page: '+filename);
  let html=fs.readFileSync(filename,'utf8');
