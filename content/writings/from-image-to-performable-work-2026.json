@@ -1,0 +1,25 @@
+{
+  "id": "from-image-to-performable-work-2026",
+  "slug": "from-image-to-performable-work-2026",
+  "title": "让作品再次发生｜从 TIMER 与 Drop Flow 到可演奏的实时视觉",
+  "titleEn": "Let the Work Happen Again — From TIMER and Drop Flow to Performable Visuals",
+  "type": "Research Proposal / Practice Study",
+  "category": "research",
+  "date": "2026-11-06",
+  "summary": "从 TIMER 的时间结构、Drop Flow 的身体与粒子流动出发，研究如何把既有影像作品的形式与运动语言转译成可演奏的实时规则，并谨慎比较镜头、舞台与空间版本。",
+  "summaryEn": "A practice-led proposal for translating the visual languages of TIMER and Drop Flow into playable realtime rules across film, stage and spatial media.",
+  "articlePath": "docs/journal/from-image-to-performable-work-2026.md",
+  "githubUrl": "https://github.com/ewanqian/portfolio/blob/main/docs/journal/from-image-to-performable-work-2026.md",
+  "status": "draft",
+  "featured": false,
+  "order": 3,
+  "relatedWorks": [
+    "timer",
+    "drop-flow"
+  ],
+  "editorial": {
+    "reviewedOn": "2026-11-06",
+    "decision": "research-in-progress",
+    "note": "Concept and source-backed direction only; no new WebXR or WebGPU implementation is claimed."
+  }
+}
