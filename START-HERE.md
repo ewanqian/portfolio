@@ -21,6 +21,10 @@
 4. 按 AGENT-HANDOFF-v2.md 执行对应 preflight；只加载相关项目历史、媒体索引和证据，不从头重新规划网站。
 5. 本页负责续接；NOW.md 保留创作研究方向；manifest 负责发行产物；database/ 负责事实。遇冲突查原始来源并记录差异，不让进度笔记覆盖事实。
 
+## 2026-11-09 艺术史料与本地工程恢复（独立研究线）
+
+作者口述与待查的 Blender/GPU/Ableton/点云创作研究已保存在 [art-works 草稿 PR #2](https://github.com/ewanqian/art-works/pull/2)。该仓库是创作概念、跨作品谱系与偏好的正式归档入口；本 Portfolio 只建立导航，不复制作者口述正文。后续本地 Agent 先检查 art-works 的两份口述、创作偏好 JSON 和两份工程交接，再找 Drop Flow Simulation Zone 真实状态、REACTOR/HERO DOME 灯光材质、Ableton 声音版本和二砂源文件。真实商业素材和精细配方先留本地/受控私有库；未做本机验证，不得宣布已完成。该研究队列不覆盖现有 PORT-01 发布验收。
+
 ## 当前进度基线
 依据本轮读取的 manifest 与发布报告，未重新运行原有网站检查：
 | 层 | 已记录结果 | 尚未关闭 |
