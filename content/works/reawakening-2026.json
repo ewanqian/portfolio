@@ -1,0 +1,57 @@
+{
+  "id": "reawakening-2026",
+  "title": "Reawakening / 复苏",
+  "titleEn": "Reawakening",
+  "subtitle": "电子音乐单曲",
+  "subtitleEn": "Electronic music single",
+  "years": "2026",
+  "type": "music-single",
+  "summary": "Ewan Qian 的电子音乐单曲，发布于 SoundCloud。",
+  "summaryEn": "An electronic music single by Ewan Qian, released on SoundCloud.",
+  "practiceLine": "temporal-structure",
+  "tags": [
+    "electronic",
+    "experimental",
+    "ambient",
+    "glitch"
+  ],
+  "image": "/assets/music/reawakening/cover-square.jpg",
+  "showOnHome": false,
+  "lifecycle": "public_ready",
+  "relatedNodes": [],
+  "relatedWritings": [],
+  "displayModes": [
+    "stereo audio",
+    "web audio player"
+  ],
+  "sourceDocs": [
+    "projects/reawakening-2026.md",
+    "https://soundcloud.com/ewan-qian/reawakening"
+  ],
+  "repoLink": "/#/music/reawakening",
+  "links": [
+    {
+      "text": "试听 / Listen",
+      "url": "/#/music/reawakening"
+    },
+    {
+      "text": "SoundCloud",
+      "url": "https://soundcloud.com/ewan-qian/reawakening"
+    }
+  ],
+  "priority": 20,
+  "release": {
+    "artist": "ewan qian",
+    "durationSeconds": 110,
+    "format": "Single",
+    "soundcloudUrl": "https://soundcloud.com/ewan-qian/reawakening",
+    "audioUrl": "/assets/music/reawakening/reawakening.mp3",
+    "embedUrl": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fewan-qian%2Freawakening&auto_play=false&color=%23a8322d&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false",
+    "descriptionZh": "《Reawakening》捕捉休眠中的躯体开始恢复活动的时刻。低频脉冲、碎片化节奏与回响中的合成器纹理，在机械与有机之间，勾勒复苏最初的变化。",
+    "descriptionEn": "Reawakening explores the first movements of a dormant body. Low-frequency pulses, fragmented rhythms and reverberant synthesizer textures trace a gradual return to motion, between the mechanical and the organic.",
+    "creditZh": "编曲／Ewan Qian",
+    "creditEn": "Arranged by Ewan Qian",
+    "artworkUrl": "/assets/music/reawakening/cover-square.jpg",
+    "genre": "Electronic"
+  }
+}

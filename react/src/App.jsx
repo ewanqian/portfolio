@@ -21,6 +21,7 @@ import ChinaAIGala from './pages/ChinaAIGala.jsx'
 import CommissionedVisualProject from './pages/CommissionedVisualProject.jsx'
 import TopologicalPlayground from './pages/TopologicalPlayground.jsx'
 import Applications from './pages/Applications.jsx'
+import MusicRelease from './pages/MusicRelease.jsx'
 import MotionSystem from './motion/MotionSystem.jsx'
 import './styles/global.css'
 import './styles/home-system.css'
@@ -68,6 +69,7 @@ function App() {
     <Route path="/gaussian-scenes" element={<GaussianScenes />} />
     <Route path="/playground" element={<TopologicalPlayground />} />
     <Route path="/apps" element={<Applications />} />
+        <Route path="/music/reawakening" element={<MusicRelease />} />
     <Route path="/projects/titan" element={<KashiwaTitan />} />
     <Route path="/projects/kashiwa-titan" element={<KashiwaTitan />} />
     <Route path="/projects/yujiayun-45m2" element={<YuJiayun45m2 />} />

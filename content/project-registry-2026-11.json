@@ -873,6 +873,30 @@
       "image": null,
       "note": "归档中发现的历史项目；官方图像与职责详情待规范",
       "variants": []
+    },
+    {
+      "id": "reawakening-2026",
+      "zh": "复苏",
+      "en": "Reawakening",
+      "year": "2026",
+      "category": "Music",
+      "url": "https://ewanqian.site/#/music/reawakening",
+      "image": "/assets/music/reawakening/cover-square.jpg",
+      "note": "Ewan Qian 的电子音乐单曲，发布于 SoundCloud。",
+      "credits": [
+        {
+          "name": "Ewan Qian",
+          "role": "Arrangement"
+        }
+      ],
+      "external_media": [
+        {
+          "type": "soundcloud_track",
+          "url": "https://soundcloud.com/ewan-qian/reawakening"
+        }
+      ],
+      "variants": [],
+      "image_status": "artist_supplied_square_crop"
     }
   ]
 }

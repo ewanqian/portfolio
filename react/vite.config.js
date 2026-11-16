@@ -39,6 +39,7 @@ function workspaceAssetsPlugin() {
           '.webp': 'image/webp',
           '.avif': 'image/avif',
           '.gif': 'image/gif',
+          '.mp3': 'audio/mpeg',
           '.svg': 'image/svg+xml',
           '.mp4': 'video/mp4',
           '.mov': 'video/quicktime'

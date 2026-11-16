@@ -1373,6 +1373,36 @@
       "credit_review": "individual_role_requires_original_credit_or_artist_confirmed_internal_document",
       "priority": "P2-source-discovery",
       "next_action": "locate reliable artwork/event source, then approve individual credit and an editorial page"
+    },
+    {
+      "project_id": "reawakening-2026",
+      "display_name": "Reawakening / 复苏",
+      "category": "Music",
+      "year": "2026",
+      "source_status": "published_on_artist_soundcloud",
+      "external_search_status": "artist_release_browser_verified",
+      "sources": [
+        {
+          "kind": "artist_provided_soundcloud_release",
+          "url": "https://soundcloud.com/ewan-qian/reawakening",
+          "verified_scope": "SoundCloud track title Reawakening, Electronic genre, ewan qian artist profile, published description and arrangement credit. The supplied audio export measures 110 seconds in stereo.",
+          "credit_scope": "arrangement_only",
+          "checked": "2026-11-17",
+          "state": "browser_verified"
+        }
+      ],
+      "existing_references": {
+        "public_url": "https://ewanqian.site/#/music/reawakening",
+        "cover_path": "/assets/music/reawakening/cover-square.jpg",
+        "legacy_ids": [],
+        "source_docs": [
+          "projects/reawakening-2026.md"
+        ]
+      },
+      "media_review": "artist_linked_soundcloud_artwork_and_supplied_audio_for_personal_site",
+      "credit_review": "arrangement_confirmed_by_artist",
+      "priority": "release",
+      "next_action": "check_public_player_on_desktop_and_mobile"
     }
   ]
 }

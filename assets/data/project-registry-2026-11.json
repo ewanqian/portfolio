@@ -598,6 +598,16 @@
       "url": null,
       "image": null,
       "variants": []
+    },
+    {
+      "id": "reawakening-2026",
+      "zh": "复苏",
+      "en": "Reawakening",
+      "year": "2026",
+      "category": "Music",
+      "url": "https://ewanqian.site/#/music/reawakening",
+      "image": "/assets/music/reawakening/cover-square.jpg",
+      "variants": []
     }
   ]
 }

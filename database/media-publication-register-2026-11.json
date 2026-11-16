@@ -468,6 +468,24 @@
       "media_role": "project_archive_image",
       "caption_zh": null,
       "caption_en": null
+    },
+    {
+      "asset_id": "cover-reawakening-2026",
+      "project_id": "reawakening-2026",
+      "url_or_path": "/assets/music/reawakening/cover-square.jpg",
+      "origin": "artist_supplied_cover_center_crop",
+      "bytes": 137627,
+      "git_blob_sha1": null,
+      "credit_status": "media_author_not_recorded",
+      "photographer_or_media_author": null,
+      "permission_status": "confirmed_for_portfolio",
+      "editorial_status": "artist_linked_release_artwork",
+      "verified_at": "2026-11-17",
+      "notes": "Artist-supplied artwork, centered square crop at x315/y0, 810×810 pixels.",
+      "media_role": "music_release_artwork",
+      "caption_zh": "《Reawakening》发行封面。",
+      "caption_en": "Reawakening release artwork.",
+      "sha256": "2d1a2a810e4340b8b27324cbfcfb9f6409cd8c4dbb5df44f23900e4e6c49771c"
     }
   ]
 }
