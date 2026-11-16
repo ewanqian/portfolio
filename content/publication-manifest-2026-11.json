@@ -89,8 +89,8 @@
     "note": "Both language editions share selected record IDs and bilingual content. Previous R1.1 Drive sources retained under previous_release_sources."
   },
   "project_registry_status": {
-    "snapshot_date": "2026-11-07",
-    "root_or_presentation_entries": 50,
+    "snapshot_date": "2026-11-17",
+    "root_or_presentation_entries": 51,
     "previous_baseline": 49,
     "added": "dialogue-of-forms-2025",
     "reason": "Digital Tundra is an exhibition presenting two separate coauthored works; it is not a second title for Observation and Symbiosis.",
@@ -173,13 +173,13 @@
     "note": "These HTML files reproduce the archived R1.1 layout; they are not yet generated automatically from the canonical CV record database. Exact release PDF hashes are recorded above."
   },
   "maintenance_metrics": {
-    "as_of": "2026-11-07",
-    "projects": 50,
+    "as_of": "2026-11-17",
+    "projects": 51,
     "cv_records": 61,
     "published_cv": 60,
     "bilingual_records": 61,
     "archive_preservation_rules": 14,
-    "public_cover_assignments": 27,
+    "public_cover_assignments": 28,
     "photo_author_and_usage_rights_review_pending": 27,
     "production_http": "160/160 source-confirmed by recorded production QA",
     "release_integrity_check": "scripts/audit-release-consistency.mjs",
@@ -210,5 +210,21 @@
     "format_guide": "docs/cv-publication/CV-COPY-STYLE-2026-11.md",
     "release_report": "docs/portfolio-maintenance-os/releases/CV-PORTFOLIO-1.2.1-2026-11-07.md",
     "gate": "PDF three pages and 60 unique record URLs per language; source generated and linked, independent new live HTTP pending"
+  },
+  "music_release": {
+    "id": "reawakening-2026",
+    "title": "Reawakening",
+    "year": 2026,
+    "format": "Single",
+    "website_url": "https://ewanqian.site/#/music/reawakening",
+    "soundcloud_url": "https://soundcloud.com/ewan-qian/reawakening",
+    "audio_path": "/assets/music/reawakening/reawakening.mp3",
+    "cover_path": "/assets/music/reawakening/cover-square.jpg",
+    "cover_dimensions": [
+      810,
+      810
+    ],
+    "source_build_status": "validated",
+    "production_status": "pending"
   }
 }

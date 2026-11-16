@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24",
+  "updatedAt": "2026-11-17",
   "purpose": "Canonical public/CV naming overrides for project series and presentation records. Internal ids remain stable.",
   "projects": {
     "drop-flow": {
@@ -21,6 +21,10 @@
       "publicTitleZh": "TIMER / 控时者 —「加载…权限 2」",
       "publicTitleEn": "TIMER · Loading… Access 2",
       "cvLineZh": "《控时者 TIMER》— UFO Terminal「加载…权限 2」，2024"
+    },
+    "reawakening-2026": {
+      "publicTitleZh": "Reawakening / 复苏",
+      "publicTitleEn": "Reawakening"
     }
   },
   "rules": [

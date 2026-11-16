@@ -1,4 +1,12 @@
 # 从这里继续 / Portfolio Resume
+
+## 2026-11-17 · Reawakening 音乐发行页
+
+- 新增 `reawakening-2026` 单曲记录，网页入口 `/#/music/reawakening`，接入音乐导航与首页链接。
+- 原图居中裁切为 810×810 封面，网页音源沿用艺术家提供的 110 秒 MP3，附 SoundCloud 外链与按需加载的播放器。
+- 构建、graph、preservation、portfolio-os、CV、media、release-consistency 和公开文案检查通过。桌面 1440px、手机 390px、双语、音源播放与进度跳转已检查。
+- 正式部署与线上播放验收进行中。详见 [本轮交接](docs/portfolio-maintenance-os/handoffs/2026-11-17-reawakening-release.md)。
+
 更新：2026-11-07（Asia/Shanghai）  
 范围：作品集、CV、媒体恢复和发布维护。此页只保存公开安全的工作状态，不是作品事实数据库。
 

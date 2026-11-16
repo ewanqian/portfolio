@@ -907,5 +907,46 @@
     "featured": false,
     "description": "《元语者・棱镜现实》在上海西岸凤巢 AI PLAZA 的地面数字艺术装置呈现。",
     "filePath": "projects/meta-speaker-install-2022.md"
+  },
+  {
+    "id": "reawakening-2026",
+    "name": "Reawakening / 复苏",
+    "slug": "reawakening-2026",
+    "year": 2026,
+    "type": "music-single",
+    "category": "temporal-structure",
+    "role": "编曲",
+    "practiceLine": "Temporal Structures",
+    "status": "done",
+    "featured": false,
+    "description": "Ewan Qian 的电子音乐单曲，发布于 SoundCloud。",
+    "aliases": [
+      "FUSU",
+      "复苏"
+    ],
+    "collaboratorIds": [
+      "ewan-qian"
+    ],
+    "venueId": null,
+    "relatedNodeIds": [],
+    "awards": [],
+    "sourceDocs": [
+      "projects/reawakening-2026.md",
+      "https://soundcloud.com/ewan-qian/reawakening"
+    ],
+    "filePath": "projects/reawakening-2026.md",
+    "release": {
+      "format": "Single",
+      "durationSeconds": 110,
+      "channels": 2,
+      "soundcloudUrl": "https://soundcloud.com/ewan-qian/reawakening",
+      "genre": "Electronic"
+    },
+    "credits": [
+      {
+        "name": "Ewan Qian",
+        "role": "Arrangement"
+      }
+    ]
   }
 ]
