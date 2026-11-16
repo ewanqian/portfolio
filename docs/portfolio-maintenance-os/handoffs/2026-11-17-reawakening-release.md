@@ -37,3 +37,11 @@
 新增独立静态发行页与微信签名服务，源码位于 scripts/build-music-release.mjs、music/reawakening/player.js 和 react/public/_worker.js。只为 /api/wechat-share 启用 Pages Function。访问令牌及 JSAPI ticket 保留在服务端。AppSecret 等待 Production 加密变量配置，JS 安全域名等待公众号后台确认，微信实际分享效果尚未验收。
 
 Cloudflare 字节范围响应测试发现跳转55秒回到开头。页面改为完整请求原始4.4MB MP3并通过临时 Blob URL播放，本地浏览器复验跳转55秒成功。签名算法、URL允许列表、缺少配置返回503、ticket缓存均通过隔离检查。
+
+## 2026-11-17 · 正式链接验收与 Cloudflare 接入
+
+PR160、PR161已合并。Cloudflare Production部署3418d303已激活，来源主分支288eacc。正式地址 https://ewanqian.site/music/reawakening/ 返回独立作品HTML和正确的标题、简介、810px封面元数据，微信User-Agent读取通过。原始MP3返回audio/mpeg，SHA-256与艺术家提供文件相同。正式浏览器解码110.0016秒、播放与跳转55秒通过。
+
+/api/wechat-share已部署，当前503 JSON提示wechat_configuration_required。待艺术家在Cloudflare Production配置加密变量WECHAT_APP_SECRET，在公众号设置ewanqian.site为JS接口安全域名。若收到MP_verify域名校验文件，发布到根目录后继续验证签名及真实微信卡片。朋友圈客户端图文卡片尚未验收。
+
+Cloudflare官方22项技能已安装到~/.agents/skills，MCP已登记~/.codex/config.toml并完成OAuth，Wrangler也已登录且核验实际项目ewanqian-portfolio。旧CLI兼容问题通过单次命令覆盖解决，原有模型设置保留。重启Codex后载入新MCP工具。配置修改前备份保存在本地Codex备份目录。

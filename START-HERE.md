@@ -121,3 +121,11 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 - 完整 MP3 通过 Blob 交给原生播放器，修复 Cloudflare 缺少字节范围响应时跳转进度回到开头的问题。
 - 微信签名接口使用 Cloudflare Pages Worker。AppID 已记录，AppSecret 等待艺术家在 Production 加密变量中配置。JS 接口安全域名及真实微信卡片仍待后台配置与客户端核验。
 - 已完成 Cloudflare 官方22项技能、MCP注册、OAuth授权，实际项目为 ewanqian-portfolio。
+
+## 2026-11-17 · 正式链接验收与 Cloudflare 接入
+
+PR160、PR161已合并。Cloudflare Production部署3418d303已激活，来源主分支288eacc。正式地址 https://ewanqian.site/music/reawakening/ 返回独立作品HTML和正确的标题、简介、810px封面元数据，微信User-Agent读取通过。原始MP3返回audio/mpeg，SHA-256与艺术家提供文件相同。正式浏览器解码110.0016秒、播放与跳转55秒通过。
+
+/api/wechat-share已部署，当前503 JSON提示wechat_configuration_required。待艺术家在Cloudflare Production配置加密变量WECHAT_APP_SECRET，在公众号设置ewanqian.site为JS接口安全域名。若收到MP_verify域名校验文件，发布到根目录后继续验证签名及真实微信卡片。朋友圈客户端图文卡片尚未验收。
+
+Cloudflare官方22项技能已安装到~/.agents/skills，MCP已登记~/.codex/config.toml并完成OAuth，Wrangler也已登录且核验实际项目ewanqian-portfolio。旧CLI兼容问题通过单次命令覆盖解决，原有模型设置保留。重启Codex后载入新MCP工具。配置修改前备份保存在本地Codex备份目录。
