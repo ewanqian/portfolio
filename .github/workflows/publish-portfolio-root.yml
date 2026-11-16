@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "react/**"
+      - "music/**"
+      - "scripts/build-music-release.mjs"
       - "content/**"
       - "scripts/build-content.js"
       - "scripts/build-public-archive.mjs"
@@ -113,6 +115,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- index.html portfolio/index.html sitemap.xml
+          git add -- music/
           git add -- works/projects/ works/records/ works/atlas/ works/atlas.html works/cabinet.html works/timeline.html assets/data/ assets/cv/ works/cv.html works/cv-print-*.html content/publication-manifest-2026-11.json
           git add -- assets/*.js assets/*.css portfolio/assets/*.js portfolio/assets/*.css
 

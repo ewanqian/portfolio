@@ -2,7 +2,7 @@
 
 ## 2026-11-17 · Reawakening 音乐发行页
 
-- 新增 `reawakening-2026` 单曲记录，网页入口 `/#/music/reawakening`，接入音乐导航与首页链接。
+- 新增 `reawakening-2026` 单曲记录，网页入口 `/music/reawakening/`，接入音乐导航与首页链接。
 - 原图居中裁切为 810×810 封面，网页音源沿用艺术家提供的 110 秒 MP3，附 SoundCloud 外链与按需加载的播放器。
 - 构建、graph、preservation、portfolio-os、CV、media、release-consistency 和公开文案检查通过。桌面 1440px、手机 390px、双语、音源播放与进度跳转已检查。
 - 正式部署与线上播放验收进行中。详见 [本轮交接](docs/portfolio-maintenance-os/handoffs/2026-11-17-reawakening-release.md)。
@@ -114,3 +114,10 @@ R1.2提交：302e99461e48fb9ae3b37a5d2f6476139fab442f；publisher/build/prepare/
 - 修复首页语义 `h1`、TIMER 归档图像加载和图片源登记表不同步；旧缓存与懒加载图片造成的误判已经在检测流程中区分。
 - 之前已通过 205/205 正式域名内容/路由检查。现在 PORT-01 的工程性视觉/交互回归完成，**尚未逐张人工审美核对截图、未测试 Bilibili/MANA 实际播放，未完成媒体权利确认**，不可标注整项 done。
 - 详情：[2026-11-08-browser-qa-12-of-12.md](docs/portfolio-maintenance-os/handoffs/2026-11-08-browser-qa-12-of-12.md)。下一步仅做重点视频播放或已存截图的人工视觉复核；若被访问权限阻塞，启动 PORT-02 原片恢复。
+
+## 2026-11-17 · 微信分享链接
+
+- 规范地址改为 `https://ewanqian.site/music/reawakening/`，静态 HTML 提供标题、简介、810px 封面、Open Graph、Twitter 与通用图片元数据。旧 HashRouter 地址跳转到新页面。
+- 完整 MP3 通过 Blob 交给原生播放器，修复 Cloudflare 缺少字节范围响应时跳转进度回到开头的问题。
+- 微信签名接口使用 Cloudflare Pages Worker。AppID 已记录，AppSecret 等待艺术家在 Production 加密变量中配置。JS 接口安全域名及真实微信卡片仍待后台配置与客户端核验。
+- 已完成 Cloudflare 官方22项技能、MCP注册、OAuth授权，实际项目为 ewanqian-portfolio。

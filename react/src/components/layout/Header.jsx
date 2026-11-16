@@ -13,7 +13,7 @@ function Header() {
 
   const routeNavItems = [
     { id: 'work', label: language === 'en' ? 'Work' : '项目', to: '/works', activeOn: ['/works', '/projects'] },
-    { id: 'music', label: language === 'en' ? 'Music' : '音乐', to: '/music/reawakening', activeOn: ['/music'] },
+    { id: 'music', label: language === 'en' ? 'Music' : '音乐', href: '/music/reawakening/' },
     {
       id: 'archive',
       label: language === 'en' ? 'Archive' : '归档',

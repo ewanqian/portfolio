@@ -7,6 +7,8 @@ const reactRoot = path.resolve(dirname, '..')
 const repoRoot = path.resolve(reactRoot, '..')
 const distRoot = path.join(reactRoot, 'dist')
 const portfolioDistRoot = path.join(distRoot, 'portfolio')
+const musicDir = path.join(repoRoot, 'music')
+if (fs.existsSync(musicDir)) fs.cpSync(musicDir, path.join(distRoot, 'music'), { recursive: true })
 
 const sourceAssetsDir = path.join(repoRoot, 'assets')
 const targetAssetsDir = path.join(distRoot, 'assets')

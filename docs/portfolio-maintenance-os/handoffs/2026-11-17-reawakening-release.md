@@ -8,7 +8,7 @@
 
 源记录保存于 `database/works.json`、`database/canonical_names.json`、`projects/reawakening-2026.md`。公开视图使用 `content/works/reawakening-2026.json`，同期更新项目、媒体、来源登记及 publication manifest 项目计数。
 
-页面使用现有 React HashRouter、Header、Footer、LanguageContext。地址为 `https://ewanqian.site/#/music/reawakening`，可从音乐导航、首页链接和项目档案进入。
+页面使用现有 React HashRouter、Header、Footer、LanguageContext。地址为 `https://ewanqian.site/music/reawakening/`，可从音乐导航、首页链接和项目档案进入。
 
 ## 资产
 
@@ -31,3 +31,9 @@
 源码已完成本地验收，正在提交与部署。正式站点 HTTP、音源、封面及播放验收结果在完成后回写。
 
 回滚使用本轮功能提交的 Git revert。既有作品与履历永久地址继续保留。
+
+## 微信分享后续
+
+新增独立静态发行页与微信签名服务，源码位于 scripts/build-music-release.mjs、music/reawakening/player.js 和 react/public/_worker.js。只为 /api/wechat-share 启用 Pages Function。访问令牌及 JSAPI ticket 保留在服务端。AppSecret 等待 Production 加密变量配置，JS 安全域名等待公众号后台确认，微信实际分享效果尚未验收。
+
+Cloudflare 字节范围响应测试发现跳转55秒回到开头。页面改为完整请求原始4.4MB MP3并通过临时 Blob URL播放，本地浏览器复验跳转55秒成功。签名算法、URL允许列表、缺少配置返回503、ticket缓存均通过隔离检查。

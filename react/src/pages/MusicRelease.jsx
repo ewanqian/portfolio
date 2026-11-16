@@ -17,6 +17,7 @@ function MusicRelease() {
   const release = work.release
 
   useEffect(() => {
+    window.location.replace('/music/reawakening/')
     const previousTitle = document.title
     document.title = 'Reawakening — Ewan Qian'
     return () => { document.title = previousTitle }
