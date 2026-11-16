@@ -27,5 +27,5 @@ Arranged by Ewan Qian.
 
 ## Listen
 
-- [个人网站试听](https://ewanqian.site/#/music/reawakening)
+- [个人网站试听](https://ewanqian.site/music/reawakening/)
 - [SoundCloud](https://soundcloud.com/ewan-qian/reawakening)

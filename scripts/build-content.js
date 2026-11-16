@@ -1,5 +1,6 @@
 import './build-cv-publication.mjs'
 import './build-public-archive.mjs'
+import './build-music-release.mjs'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'

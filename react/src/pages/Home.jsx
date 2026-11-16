@@ -22,7 +22,7 @@ function HomeInfo() {
           </p>
           <div className="home-info-links">
             <Link to="/profile">{isZh ? '个人资料' : 'Profile'}</Link>
-            <Link to="/music/reawakening">{isZh ? '音乐发行 / Reawakening' : 'Music / Reawakening'}</Link>
+            <a href="/music/reawakening/">{isZh ? '音乐发行 / Reawakening' : 'Music / Reawakening'}</a>
             <a href="/works/archive-2026.html">{isZh ? '完整项目档案' : 'Project archive'}</a> 
             <a href="/works/atlas.html">{isZh ? '个人图谱 / Atlas' : 'Personal Atlas'}</a>
             <a href="/works/cabinet.html">{isZh ? '收藏室 / Cabinet' : 'Cabinet'}</a>
