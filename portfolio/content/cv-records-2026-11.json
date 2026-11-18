@@ -1,0 +1,558 @@
+{
+  "schema": "ewanqian.public-cv.v1",
+  "records": [
+    {
+      "id": "education-hen-an-university-2017-2021",
+      "section": "education",
+      "year": "2017–2021",
+      "project_id": null,
+      "project_url": null,
+      "zh": "河南工程学院｜数字媒体艺术，艺术学学士，郑州",
+      "en": "B.A. in Digital Media Art — Henan University of Engineering, Zhengzhou"
+    },
+    {
+      "id": "education-aalto-introduction-to-vr-2024",
+      "section": "education",
+      "year": "2024",
+      "project_id": null,
+      "project_url": null,
+      "zh": "Aalto University Summer School｜Introduction to VR（短期课程，芬兰）",
+      "en": "Introduction to VR — Aalto University Summer School, Finland (short course)"
+    },
+    {
+      "id": "awards-003-2025",
+      "section": "awards",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流 / Drop Flow》｜中国（杭州）艺术与科技国际双年展入选，余杭美术馆，杭州",
+      "en": "Drop Flow — Selected, China–Hangzhou Art and Technology Biennale, Yuhang Art Museum, Hangzhou"
+    },
+    {
+      "id": "awards-004-2025",
+      "section": "awards",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流 / Drop Flow》｜杭州国际电子音乐作曲比赛 C 组一等奖（合作作品）",
+      "en": "Drop Flow — First Prize, Category C, Hangzhou International Electronic Music Composition Competition (collaborative work)"
+    },
+    {
+      "id": "awards-005-2025",
+      "section": "awards",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流》异形屏版｜「流光绘影」光影科技艺术节优秀作品奖，重庆",
+      "en": "Drop Flow (special-format screen edition) — Outstanding Work Award, Liuguang Huiying Light and Technology Art Festival, Chongqing"
+    },
+    {
+      "id": "award-chinagraph-2024-timer",
+      "section": "awards",
+      "year": "2024",
+      "project_id": "timer",
+      "project_url": "https://ewanqian.site/works/timer.html",
+      "zh": "《控时者 / TIMER》｜ChinaGraph 2024 电子剧场优秀音乐作品（二等）；徐昊、钱誉文",
+      "en": "TIMER — ChinaGraph 2024 Electronic Theater, Outstanding Musical Work (Second Prize); Xu Hao and Ewan Qian"
+    },
+    {
+      "id": "award-hangzhou-2024-timer-live",
+      "section": "awards",
+      "year": "2024",
+      "project_id": "timer",
+      "project_url": "https://ewanqian.site/works/timer.html",
+      "zh": "2024 杭州国际电子音乐节，《控时者 / TIMER》现场展演及相关获奖记录；奖项名称、等级和获奖主体待官方文件核验。",
+      "en": "TIMER — Musicacoustica Hangzhou 2024, live audiovisual presentation and user-reported award; official award designation pending verification."
+    },
+    {
+      "id": "exhibitions-007-2026",
+      "section": "exhibitions",
+      "year": "2026",
+      "project_id": "no-further-input-required",
+      "project_url": "https://ewanqian.site/works/no-further-input-required.html",
+      "zh": "《无需进一步输入》｜外滩大会 AI 概念艺术展，上海（单通道生成影像）",
+      "en": "No Further Input Required — Bund Summit AI Concept Art Exhibition, Shanghai (single-channel moving image)"
+    },
+    {
+      "id": "exhibitions-008-2026",
+      "section": "exhibitions",
+      "year": "2026",
+      "project_id": "digital-tundra-2026",
+      "project_url": "https://ewanqian.site/works/digital-tundra.html",
+      "related_work_ids": [
+        "obs-symbiosis-2025",
+        "dialogue-of-forms-2025"
+      ],
+      "zh": "《观察与共生》、《形态的对话》｜「数字苔原」AI 群落影像展，河南省文化馆，郑州（沈轩 × 钱誉文）",
+      "en": "Observation and Symbiosis; Dialogue of Forms — Digital Tundra, Henan Provincial Cultural Center, Zhengzhou (Shen Xuan × Ewan Qian)"
+    },
+    {
+      "id": "exhibitions-009-2026",
+      "section": "exhibitions",
+      "year": "2026",
+      "project_id": "obs-symbiosis-2025",
+      "project_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
+      "zh": "《观察与共生》｜「共生协议：算法公地」，愚见观池艺术空间，上海",
+      "en": "Observation and Symbiosis — Symbiosis Protocols: Algorithmic Commons, Gwantsi Art Space, Shanghai"
+    },
+    {
+      "id": "exhibitions-010-2025",
+      "section": "exhibitions",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流 / Drop Flow》｜中国（杭州）艺术与科技国际双年展，余杭美术馆，杭州",
+      "en": "Drop Flow — China–Hangzhou Art and Technology Biennale, Yuhang Art Museum, Hangzhou"
+    },
+    {
+      "id": "exhibitions-011-2025",
+      "section": "exhibitions",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流》异形屏版｜「流光绘影」光影科技艺术节，重庆",
+      "en": "Drop Flow (special-format screen edition) — Liuguang Huiying Light and Technology Art Festival, Chongqing"
+    },
+    {
+      "id": "exhibitions-012-2025",
+      "section": "exhibitions",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《新媒体艺术家模拟器》｜「巴别瓶：人工智能时代的语用、创造与生活形式」，杭州中心美术馆",
+      "en": "New Media Artist Simulator — Babel Bottle, Hangzhou Center Art Museum"
+    },
+    {
+      "id": "exhibitions-013-2025",
+      "section": "exhibitions",
+      "year": "2025",
+      "project_id": "obs-symbiosis-2025",
+      "project_url": "https://ewanqian.site/works/observation-and-symbiosis.html",
+      "zh": "《观察与共生》｜「数字水族馆」，坪山展览馆 PSEG 数字场，深圳",
+      "en": "Observation and Symbiosis — Digital Aquarium, Pingshan Exhibition Hall / PSEG, Shenzhen"
+    },
+    {
+      "id": "exhibitions-014-2024",
+      "section": "exhibitions",
+      "year": "2024",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《幻觉矩阵》｜THE BOXX 沉浸式多媒体 XR 展，上海",
+      "en": "Hallucination Matrix — THE BOXX Immersive Multimedia XR Exhibition, Shanghai"
+    },
+    {
+      "id": "exhibitions-015-2024",
+      "section": "exhibitions",
+      "year": "2024",
+      "project_id": "timer",
+      "project_url": "https://ewanqian.site/works/timer.html",
+      "zh": "《控时者 / TIMER》｜UFO Terminal「加载…权限 2」，上海（环形沉浸影像）",
+      "en": "TIMER — Loading… Permission 2, UFO Terminal, Shanghai (circular immersive image)"
+    },
+    {
+      "id": "exhibitions-016-2024",
+      "section": "exhibitions",
+      "year": "2024",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《Dérive / 双城记》｜FutureLab，上海西岸艺术中心（空间采集与 Apple Vision Pro 展示）",
+      "en": "Dérive — FutureLab, West Bund Art Center, Shanghai (spatial capture and Apple Vision Pro presentation)"
+    },
+    {
+      "id": "exhibitions-017-2023",
+      "section": "exhibitions",
+      "year": "2023",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《以太碎片》｜上海西岸艺术与设计博览会 DREAM·video，上海",
+      "en": "Ether Fragment — DREAM·video, West Bund Art & Design, Shanghai"
+    },
+    {
+      "id": "exhibitions-018-2023",
+      "section": "exhibitions",
+      "year": "2023",
+      "project_id": "vaoe-2023",
+      "project_url": "https://ewanqian.site/works/vaoe.html",
+      "zh": "《虚拟航线 / VAOE》｜个人展览，南昌路 312 号，上海（四组影像、二维码 AR）",
+      "en": "VAOE — Solo exhibition, 312 Nanchang Road, Shanghai (four moving-image groups and QR-based AR)"
+    },
+    {
+      "id": "exhibitions-019-2023",
+      "section": "exhibitions",
+      "year": "2023",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《观察与共生》｜「看见生命力」艺术展，上海 K11（影像装置）",
+      "en": "Observation and Symbiosis — Seeing Vitality, Shanghai K11 (moving-image installation)"
+    },
+    {
+      "id": "exhibitions-020-2023",
+      "section": "exhibitions",
+      "year": "2023",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《生命的礼赞》｜上海世纪汇广场（气膜装置视觉）",
+      "en": "Tribute to Life — Century Link Plaza, Shanghai (inflatable installation visuals)"
+    },
+    {
+      "id": "exhibitions-021-2023",
+      "section": "exhibitions",
+      "year": "2023",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《数字空间与自然共生》｜龙湖上海奉贤天街（影像装置）",
+      "en": "Digital Space and Natural Symbiosis — Longfor Fengxian Paradise Walk, Shanghai (video installation)"
+    },
+    {
+      "id": "exhibitions-022-2022",
+      "section": "exhibitions",
+      "year": "2022",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《矩阵导航》｜第八届上海青年艺术博览会「虚实于众」，海派艺术馆",
+      "en": "Matrix Navigation — 8th Shanghai Youth Art Fair, Haipai Art Museum, Shanghai"
+    },
+    {
+      "id": "exhibitions-023-2022",
+      "section": "exhibitions",
+      "year": "2022",
+      "project_id": "ar-shenzhen-2022",
+      "project_url": "https://ewanqian.site/works/ar-shenzhen-2022.html",
+      "zh": "「AR 深圳计划」｜深圳光影艺术季，香蜜公园（陈瑛楠 × 钱誉文）",
+      "en": "AR Shenzhen Project — Shenzhen Light and Art Festival, Xiangmi Park (Chen Yingnan × Ewan Qian)"
+    },
+    {
+      "id": "exhibitions-024-2022",
+      "section": "exhibitions",
+      "year": "2022",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《元语者·棱镜现实》｜西岸凤巢 AI PLAZA，上海（新媒体影像参展）",
+      "en": "Meta Speaker: Prism Reality — West Bund AI PLAZA, Shanghai (new-media exhibition participation)"
+    },
+    {
+      "id": "live-025-2026",
+      "section": "live",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "URKL 城市巡回赛·众擎机器人格斗比赛｜宝山体育馆，上海（现场 VJ）",
+      "en": "URKL City Tour / EngineAI Robot Combat — Baoshan Gymnasium, Shanghai (live VJ)"
+    },
+    {
+      "id": "live-026-2026",
+      "section": "live",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "REACTOR GRAND OPENING DAY 1｜上海（现场视觉）",
+      "en": "REACTOR Grand Opening, Day 1 — Shanghai (live visuals)"
+    },
+    {
+      "id": "live-027-2026",
+      "section": "live",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "ENTROPY — ATMOSPHERIC ESCAPE｜上海（实时视觉）",
+      "en": "ENTROPY — ATMOSPHERIC ESCAPE — Shanghai (real-time visuals)"
+    },
+    {
+      "id": "live-028-2026",
+      "section": "live",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "WAVES CROSS VOL.3｜Cedar Land，上海（现场视听）",
+      "en": "WAVES CROSS Vol. 3 — Cedar Land, Shanghai (live audiovisual performance)"
+    },
+    {
+      "id": "live-029-2026",
+      "section": "live",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "DigitalFUTURES 2026 闭幕音画演出｜同济大学，上海",
+      "en": "DigitalFUTURES 2026 Closing Audiovisual Performance — Tongji University, Shanghai"
+    },
+    {
+      "id": "live-030-2026",
+      "section": "live",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "Found Video VJ Battle Royale Round 8｜UFO Terminal，上海（现场 VJ）",
+      "en": "Found Video VJ Battle Royale, Round 8 — UFO Terminal, Shanghai (live VJ)"
+    },
+    {
+      "id": "live-031-2025",
+      "section": "live",
+      "year": "2025",
+      "project_id": "kashiwa-titan-2025",
+      "project_url": "https://ewanqian.site/works/titan.html",
+      "zh": "《机械光合：TITAN 的全息声林》｜BO LIVE，深圳（KASHIWA Daisuke / Yuki Murata；现场视觉）",
+      "en": "Mechanical Photosynthesis: TITAN's Holographic Forest — BO LIVE, Shenzhen (live visuals for KASHIWA Daisuke and Yuki Murata)"
+    },
+    {
+      "id": "live-032-2025",
+      "section": "live",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "CAN Festival｜舟山（KASHIWA Daisuke 乐队现场视觉）",
+      "en": "CAN Festival — Zhoushan (live visuals for KASHIWA Daisuke's band)"
+    },
+    {
+      "id": "live-033-2025",
+      "section": "live",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流 / Drop Flow》现场视听版｜UFO Terminal × PRE / Rooooooom719，上海",
+      "en": "Drop Flow (live audiovisual edition) — UFO Terminal × PRE / Rooooooom719, Shanghai"
+    },
+    {
+      "id": "live-034-2024",
+      "section": "live",
+      "year": "2024",
+      "project_id": "timer",
+      "project_url": "https://ewanqian.site/works/timer.html",
+      "zh": "《控时者 / TIMER》｜杭州国际电子音乐节，浙江音乐学院，杭州（现场音画）",
+      "en": "TIMER — Musicacoustica Hangzhou, Zhejiang Conservatory of Music (live audiovisual performance)"
+    },
+    {
+      "id": "live-035-2024",
+      "section": "live",
+      "year": "2024",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《幻觉共振》｜THE BOXX，上海（现场视觉）",
+      "en": "Hallucination Resonance — THE BOXX, Shanghai (live visuals)"
+    },
+    {
+      "id": "live-036-2023",
+      "section": "live",
+      "year": "2023",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《孤独？》｜上海广播艺术中心（舞台视觉）",
+      "en": "Loneliness? — Shanghai Broadcasting Art Center (stage visuals)"
+    },
+    {
+      "id": "workshops-037-2026",
+      "section": "workshops",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《舞台复刻 / Stage Replica》｜The Point，上海（主讲）",
+      "en": "Stage Replica — The Point, Shanghai (lead instructor)"
+    },
+    {
+      "id": "workshops-038-2026",
+      "section": "workshops",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "Create Your Own Real-Time Audiovisual System｜上海（主讲）",
+      "en": "Create Your Own Real-Time Audiovisual System — Shanghai (lead instructor)"
+    },
+    {
+      "id": "workshops-039-2026",
+      "section": "workshops",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《极简输入：构建视听系统》｜MANA，上海（合作主讲）",
+      "en": "Minimal Input: Building an Audiovisual System — MANA, Shanghai (co-led workshop)"
+    },
+    {
+      "id": "workshops-040-2026",
+      "section": "workshops",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《情感容器构建：高斯扫描与数字记忆空间》｜愚见观池艺术空间，上海（合作工作坊）",
+      "en": "Building Emotional Containers: Gaussian Scanning and Digital Memory Spaces — Gwantsi Art Space, Shanghai (co-led workshop)"
+    },
+    {
+      "id": "workshops-041-2025",
+      "section": "workshops",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《游戏化 AI 生活解构师》｜杭州中心美术馆（工作坊导师）",
+      "en": "Gamified AI Life Deconstructor — Hangzhou Center Art Museum (workshop instructor)"
+    },
+    {
+      "id": "production-042-2026",
+      "section": "production",
+      "year": "2026",
+      "project_id": "system-ersha-2026",
+      "project_url": "https://ewanqian.site/works/system-ersha.html",
+      "zh": "《时间是空间恒久的观察者》｜二砂包豪斯 / SYSTEM（空间采集、三维重建及部分影像制作）",
+      "en": "Time Is the Enduring Observer of Space — Ersha Bauhaus / SYSTEM (spatial capture, 3D reconstruction and selected visuals)"
+    },
+    {
+      "id": "production-043-2026",
+      "section": "production",
+      "year": "2026",
+      "project_id": "china-ai-gala-2026",
+      "project_url": "https://virtura.space/work/ai-gala.html",
+      "zh": "中国·AI 盛典「AI 在一起」开场秀｜视觉制作（放射能制作）",
+      "en": "China AI Gala, AI Together Opening Show — visual production with Fangshe Neng"
+    },
+    {
+      "id": "production-044-2026",
+      "section": "production",
+      "year": "2026",
+      "project_id": "natgeo-crystal-2026",
+      "project_url": "https://virtura.space/work/natgeo-crystal.html",
+      "zh": "中国国家地理矿晶空间影像｜视觉制作（T-ZONE 图域）",
+      "en": "National Geographic Crystal Spatial Imagery — visual production with T-ZONE"
+    },
+    {
+      "id": "production-045-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "Flatland: Mixed Reality Dreams｜Cupertino（Story 团队；360° 全景背景影像）",
+      "en": "Flatland: Mixed Reality Dreams — Cupertino (360° panoramic background visuals for Story team)"
+    },
+    {
+      "id": "production-046-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "WORLD REMIX 社区 XR 黑客松｜活动视觉、动态及印刷物料",
+      "en": "WORLD REMIX Community XR Hackathon — event visuals, motion and print materials"
+    },
+    {
+      "id": "production-047-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "王楚婷博士毕业音乐会《未来弦诗》《天华流光》｜中央音乐学院，北京（视觉制作）",
+      "en": "Wang Chuting Doctoral Recital, Future String Poetry / Radiance of Tianhua — Central Conservatory of Music, Beijing (visual production)"
+    },
+    {
+      "id": "production-048-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "《山海浮生 II：八荒祭》｜爱丁堡艺穗节「聚焦中国」（部分舞台视觉与海报制作）",
+      "en": "Floating Life II: Eight Wildernesses Ritual — Focus China, Edinburgh Festival Fringe (selected stage visuals and poster production)"
+    },
+    {
+      "id": "production-049-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "Singland Festival 开场短片、Rain 演出视觉｜新加坡（视觉制作）",
+      "en": "Singland Festival Opening Film and Rain Concert — Singapore (visual production)"
+    },
+    {
+      "id": "production-050-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "余佳运「45㎡」演唱会｜宁波奥体中心体育馆（视觉制作）",
+      "en": "Yu Jiayun, 45 m² Concert — Ningbo Olympic Sports Center Gymnasium (visual production)"
+    },
+    {
+      "id": "production-051-2025",
+      "section": "production",
+      "year": "2025",
+      "project_id": null,
+      "project_url": null,
+      "zh": "西安万象城「数字游园」｜Unity VFX Graph 视觉制作",
+      "en": "Digital Garden — Xi'an MixC (Unity VFX Graph visuals)"
+    },
+    {
+      "id": "production-052-2024",
+      "section": "production",
+      "year": "2024",
+      "project_id": "semicolon-c-onefive",
+      "project_url": "https://ewanqian.site/works/onefive-semicolonc.html",
+      "zh": "@onefive《ChocoLove》歌词视频｜分号 C（Semicolon C）",
+      "en": "@onefive, ChocoLove — lyric video, Semicolon C"
+    },
+    {
+      "id": "production-053-2023",
+      "section": "production",
+      "year": "2023",
+      "project_id": "semicolon-c-onefive",
+      "project_url": "https://ewanqian.site/works/onefive-semicolonc.html",
+      "zh": "@onefive《Underground》《Overground》｜日本演出视觉（分号 C）",
+      "en": "@onefive, Underground / Overground — concert visuals, Japan (Semicolon C)"
+    },
+    {
+      "id": "production-054-2022",
+      "section": "production",
+      "year": "2022",
+      "project_id": null,
+      "project_url": null,
+      "zh": "CHINATIME 汉堡音乐会：谭盾《Water Music》｜Laeiszhalle，汉堡（分号 C）",
+      "en": "CHINATIME Hamburg Concert, Tan Dun's Water Music — Laeiszhalle, Hamburg (Semicolon C)"
+    },
+    {
+      "id": "production-055-2022",
+      "section": "production",
+      "year": "2022",
+      "project_id": null,
+      "project_url": null,
+      "zh": "中国移动咪咕纪录片（北京冬奥会期间）｜部分 VFX 制作",
+      "en": "China Mobile Migu Documentary (during Beijing 2022 Winter Olympics) — selected VFX production"
+    },
+    {
+      "id": "production-056-2022",
+      "section": "production",
+      "year": "2022",
+      "project_id": null,
+      "project_url": null,
+      "zh": "谢欣舞蹈剧场《四相》《汞》｜上海国际舞蹈中心（部分舞台影像制作）",
+      "en": "Xie Xin Dance Theatre, Four Aspects / Mercury — Shanghai International Dance Center (selected stage visuals)"
+    },
+    {
+      "id": "production-057-2022",
+      "section": "production",
+      "year": "2022",
+      "project_id": null,
+      "project_url": null,
+      "zh": "XTEP XDnA｜上海时装周（视觉影像制作）",
+      "en": "XTEP XDnA — Shanghai Fashion Week (visual production)"
+    },
+    {
+      "id": "research-058-2024",
+      "section": "research",
+      "year": "2024",
+      "project_id": "timer",
+      "project_url": "https://ewanqian.site/works/timer.html",
+      "zh": "《控时者 / TIMER》｜声音、时间结构与空间影像研究",
+      "en": "TIMER — ongoing research in sound, temporal structures and spatial imagery"
+    },
+    {
+      "id": "research-059-2025",
+      "section": "research",
+      "year": "2025",
+      "project_id": "drop-flow",
+      "project_url": "https://ewanqian.site/works/drop-flow.html",
+      "zh": "《滴流 / Drop Flow》｜现场音画、动作捕捉与空间影像研究",
+      "en": "Drop Flow — research in live audiovisual performance, motion capture and spatial imagery"
+    },
+    {
+      "id": "research-060-2026",
+      "section": "research",
+      "year": "2026",
+      "project_id": null,
+      "project_url": null,
+      "zh": "场景铸造 / Stage Casting｜空间输入、实时表演系统与 Performable Music 研究",
+      "en": "Stage Casting — spatial input, real-time performance systems and Performable Music research"
+    }
+  ]
+}
