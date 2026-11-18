@@ -129,3 +129,8 @@ PR160、PR161已合并。Cloudflare Production部署3418d303已激活，来源�
 /api/wechat-share已部署，当前503 JSON提示wechat_configuration_required。待艺术家在Cloudflare Production配置加密变量WECHAT_APP_SECRET，在公众号设置ewanqian.site为JS接口安全域名。若收到MP_verify域名校验文件，发布到根目录后继续验证签名及真实微信卡片。朋友圈客户端图文卡片尚未验收。
 
 Cloudflare官方22项技能已安装到~/.agents/skills，MCP已登记~/.codex/config.toml并完成OAuth，Wrangler也已登录且核验实际项目ewanqian-portfolio。旧CLI兼容问题通过单次命令覆盖解决，原有模型设置保留。重启Codex后载入新MCP工具。配置修改前备份保存在本地Codex备份目录。
+
+## 2026-11-18 · 外部图片失败处理（草稿）
+- 独立分支 `fix/virtura-image-failure-fallback`：仅在 SYSTEM 二砂、中国 AI 盛典的外部图片加载失败时隐藏破图，保留原图源、版式框架和署名；没有复制素材或修改团队站。
+- 构建、graph、preservation、portfolio-os、定向 ESLint 与 DOM 事件测试通过；浏览器启动受环境限制，桌面/手机视觉回归待执行。未合并、未发布。
+- [验证范围与续接步骤](docs/portfolio-maintenance-os/handoffs/2026-11-18-external-image-fallback.md)。

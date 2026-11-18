@@ -1,3 +1,4 @@
+import ResilientImage from '../components/media/ResilientImage'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
@@ -52,7 +53,7 @@ function SystemErsha() {
                 : 'A spatial capture of the multi-level architecture, façade, and interior structure of the China Second Grinding Wheel Factory in Zhengzhou. Scan data was cleaned, separated, scaled, and aligned into a working 3D model for spatial study, camera previsualisation, and point-cloud moving image.'}</p>
             </div>
             <div className="project-hero-media">
-              <img src="https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp" alt={isZh ? '郑州二砂建筑空间扫描点云' : 'ERSHA architectural point-cloud capture'} />
+              <ResilientImage src="https://virtura.space/VIRTURA_WEBSITE_ASSETS/06_SYSTEM_ERSHA/hero.webp" alt={isZh ? '郑州二砂建筑空间扫描点云' : 'ERSHA architectural point-cloud capture'} />
             </div>
           </div>
         </section>
@@ -78,7 +79,7 @@ function SystemErsha() {
             <div className="project-gallery-grid">
               {media.map(([src, zh, en]) => (
                 <article className="project-gallery-card" key={src}>
-                  <div className="project-gallery-image"><img src={src} alt={isZh ? zh : en} loading="lazy" /></div>
+                  <div className="project-gallery-image"><ResilientImage src={src} alt={isZh ? zh : en} loading="lazy" /></div>
                   <div className="project-gallery-copy"><h3>{isZh ? zh : en}</h3></div>
                 </article>
               ))}

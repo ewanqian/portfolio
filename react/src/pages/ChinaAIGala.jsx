@@ -1,3 +1,4 @@
+import ResilientImage from '../components/media/ResilientImage'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
@@ -45,7 +46,7 @@ function ChinaAIGala() {
                 : 'Robotic structures, figure imagery and three-dimensional environments form an opening sequence for a box-shaped LED stage. Perspective mapping is developed around the primary audience view.'}</p>
             </div>
             <div className="project-hero-media">
-              <img src={prefix + 'detail_01_mapping.jpg'} alt={isZh ? '机械臂与盒体舞台的空间视觉画面' : 'Robotic arm inside a mapped box-stage visual'} />
+              <ResilientImage src={prefix + 'detail_01_mapping.jpg'} alt={isZh ? '机械臂与盒体舞台的空间视觉画面' : 'Robotic arm inside a mapped box-stage visual'} />
             </div>
           </div>
         </section>
@@ -73,7 +74,7 @@ function ChinaAIGala() {
             <div className="project-gallery-grid">
               {media.map(([filename, zh, en]) => (
                 <article className="project-gallery-card" key={filename}>
-                  <div className="project-gallery-image"><img src={prefix + filename} alt={isZh ? zh : en} loading="lazy" /></div>
+                  <div className="project-gallery-image"><ResilientImage src={prefix + filename} alt={isZh ? zh : en} loading="lazy" /></div>
                   <div className="project-gallery-copy"><h3>{isZh ? zh : en}</h3></div>
                 </article>
               ))}

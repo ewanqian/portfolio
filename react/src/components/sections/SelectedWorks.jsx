@@ -1,3 +1,4 @@
+import ResilientImage from '../media/ResilientImage'
 import works from '../../data/generated/works'
 import { getDisplayImage, getWorkTargetUrl } from '../../data/siteDisplay'
 import { homeMainlineWorkIds, pickWorksByIds } from '../../data/siteTaxonomy'
@@ -102,7 +103,9 @@ function ProjectGrid({ items, language }) {
         return (
           <article key={work.id} className={`selected-project-card editorial-work-card selected-project-card-${index + 1}`}>
             <a href={targetUrl} className="selected-project-thumb editorial-work-image" aria-label={title}>
-              <img src={getDisplayImage(work)} alt={title} />
+              {['system-ersha-2026', 'china-ai-gala-2026'].includes(work.id)
+                ? <ResilientImage src={getDisplayImage(work)} alt={title} />
+                : <img src={getDisplayImage(work)} alt={title} />}
             </a>
             <div className="selected-project-content editorial-work-copy">
               <div className="editorial-work-meta">
