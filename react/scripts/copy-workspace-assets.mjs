@@ -184,6 +184,25 @@ if (fs.existsSync(sourceControlModel)) {
 for (const name of workshopPublicDirs) publishWorkshopDirectory(name)
 for (const name of workshopPublicFiles) publishWorkshopFile(name)
 
+// Book readers are public static publications, not React routes. Copy the
+// full self-contained reader, history atlas and original MP3 studies into
+// both production paths, before Cloudflare's SPA fallback can rewrite them.
+const sourceSoundOrganizationDir = path.join(repoRoot, 'sound-organization')
+if (fs.existsSync(sourceSoundOrganizationDir)) {
+  for (const target of [
+    path.join(distRoot, 'sound-organization'),
+    path.join(portfolioDistRoot, 'sound-organization')
+  ]) {
+    copyWithCloudflareLimit(sourceSoundOrganizationDir, target)
+    for (const required of ['index.html', 'knowledge.html', 'labs.html', 'audio/echo.mp3']) {
+      if (!fs.existsSync(path.join(target, required))) {
+        throw new Error(`Missing Sound Organization publication asset: ${target}/${required}`)
+      }
+    }
+  }
+  console.log('Published Sound Organization digital reader and audio studies')
+}
+
 if (skippedLargeFiles.length > 0) {
   console.warn(
     `Skipped ${skippedLargeFiles.length} asset(s) larger than 25 MiB for Cloudflare Pages: ${skippedLargeFiles.join(', ')}`
