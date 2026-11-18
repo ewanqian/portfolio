@@ -1,0 +1,34 @@
+name: Sound Organization public reader smoke
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sound-organization/**'
+      - '.github/workflows/sound-organization-public-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify published reader and audio without modifying site
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://ewanqian.site/sound-organization'
+          for path in / /knowledge.html /labs.html; do
+            echo "Checking ${base}${path}"
+            curl --retry 4 --retry-all-errors --retry-delay 5 --max-time 20 --fail -sSL "${base}${path}" -o "/tmp/book-page"
+            test -s /tmp/book-page
+            case "${path}" in
+              /) grep -q '声音的组织' /tmp/book-page ;;
+              /knowledge.html) grep -q '历史' /tmp/book-page ;;
+              /labs.html) grep -q '声音' /tmp/book-page ;;
+            esac
+          done
+          code=$(curl --retry 3 --retry-all-errors --retry-delay 4 --max-time 25 -L -s -o /tmp/echo.mp3 -w '%{http_code}' "${base}/audio/echo.mp3")
+          test "${code}" = '200'
+          test $(wc -c </tmp/echo.mp3) -gt 90000
+          echo 'SOUND_ORGANIZATION_PUBLIC_PASS'
