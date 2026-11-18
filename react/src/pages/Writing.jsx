@@ -25,16 +25,19 @@ function summaryFor(item, language) {
 }
 
 function EditorialEntry({ item, language, featured = false, kind = '' }) {
+  const destination = item.publicationUrl || `/writing/${item.slug || item.id}`
+  const TitleLink = item.publicationUrl ? 'a' : Link
+  const titleLinkProps = item.publicationUrl ? { href: destination } : { to: destination }
   return (
     <article className={featured ? 'writing-editorial-entry featured' : 'writing-editorial-entry'}>
       <div className="writing-editorial-index">{kind || item.type}</div>
       <div className="writing-editorial-content">
-        <h3><Link to={`/writing/${item.slug || item.id}`}>{titleFor(item, language)}</Link></h3>
+        <h3><TitleLink {...titleLinkProps}>{titleFor(item, language)}</TitleLink></h3>
         <p>{summaryFor(item, language)}</p>
         {featured ? (
-          <Link className="writing-editorial-read" to={`/writing/${item.slug || item.id}`}>
-            {language === 'en' ? 'Read article' : '阅读全文'} <span aria-hidden="true">↗</span>
-          </Link>
+          <TitleLink {...titleLinkProps} className="writing-editorial-read">
+            {language === 'en' ? 'Read publication' : '阅读出版物'} <span aria-hidden="true">↗</span>
+          </TitleLink>
         ) : null}
       </div>
       <div className="writing-editorial-date">{item.date}</div>
@@ -47,7 +50,7 @@ function Writing() {
   const records = writings.map((writing) => localizeWriting(writing, language))
   const published = records.filter((item) => item.articlePath && item.status === 'published')
   const featured = byOrder(published.filter((item) => item.featured === true))
-  const musicSeries = byOrder(published.filter((item) => item.series === PERFORMABLE_MUSIC_SERIES_NAME))
+  const musicSeries = byOrder(published.filter((item) => item.series === PERFORMABLE_MUSIC_SERIES_NAME && item.featured !== true))
   const otherPublished = byOrder(published.filter((item) => item.featured !== true && item.series !== PERFORMABLE_MUSIC_SERIES_NAME))
   const research = byOrder(records.filter((item) => item.articlePath && item.status === 'draft' && item.category === 'research'))
 
@@ -73,7 +76,7 @@ function Writing() {
             </div>
             <div className="writing-editorial-feature-grid">
               {featured.map((item) => (
-                <EditorialEntry key={item.id} item={item} language={language} featured kind={item.id === 'scene-forge-reader-02' ? 'WORKSHOP / READER' : 'LIVE SYSTEM / RESEARCH'} />
+                <EditorialEntry key={item.id} item={item} language={language} featured kind={item.id === 'sound-organization' ? 'BOOK / READER' : item.id === 'scene-forge-reader-02' ? 'WORKSHOP / READER' : 'LIVE SYSTEM / RESEARCH'} />
               ))}
             </div>
           </div>

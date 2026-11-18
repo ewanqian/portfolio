@@ -1,0 +1,956 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>声音的组织：从聆听到实时演奏</title><style>
+:root{--paper:#fbfaf7;--ink:#242529;--muted:#696b71;--line:#d9d8d3;--accent:#ad482f;--soft:#f0eee9;--serif:"Songti SC","Noto Serif CJK SC",serif;--sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 var(--sans)}a{color:inherit;text-underline-offset:4px}a:hover{color:var(--accent)}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.wrap{max-width:1120px;padding:0 32px;margin:auto}.mast{padding:52px 0 32px;border-bottom:1px solid var(--line)}.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--accent)}h1{font:600 clamp(42px,6vw,70px)/1.25 var(--serif);margin:22px 0 8px}.subtitle{font:24px/1.6 var(--serif);margin:0}.deck{font-size:17px;color:var(--muted);max-width:680px}.notice{font-size:12px;color:var(--muted)}nav{position:sticky;top:0;z-index:3;background:var(--paper);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:25px;overflow:auto;white-space:nowrap;padding-top:12px;padding-bottom:12px}nav a{text-decoration:none;font-size:14px}.entry{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:28px 0}.card{border:1px solid var(--line);padding:20px;text-decoration:none}.card.preface-card{grid-column:1/-1;background:var(--soft)}.card small{color:var(--accent)}.card h2{font:600 21px/1.6 var(--serif);margin:7px 0}.card p{font-size:13px;color:var(--muted)}section{padding:20px 0}.atlas>summary,.course>summary{cursor:pointer;padding:17px 0;font:600 22px/1.5 var(--serif)}.atlas{border-top:1px solid var(--ink)}.part{display:grid;grid-template-columns:220px 1fr;gap:22px;border-top:1px solid var(--line);padding:18px 0}.part h3{font:600 21px/1.6 var(--serif);margin:0}.part ul{list-style:none;padding:0;margin:0}.part li{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}.state{font-size:11px;color:var(--muted);margin-left:12px}.routes{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.route{padding:12px 16px;border:1px solid var(--line);font-size:13px}.route p{margin:4px 0}.article{max-width:780px;margin:65px auto 0;padding-top:30px;border-top:3px solid var(--ink);font:18px/2 var(--serif)}.article h2{font:600 36px/1.45 var(--serif);margin:15px 0 22px}.article h3{font:600 25px/1.5 var(--serif);margin:40px 0 16px}.article p{margin:19px 0}.article blockquote{margin:0 0 30px;color:#626165;font-size:21px;line-height:1.8}.article blockquote p{margin:0}.article li{margin:10px 0}.article a{overflow-wrap:anywhere}.article sup{font:11px var(--sans);line-height:0}.article sup a{color:var(--accent);text-decoration:none}.article .kicker{font:12px var(--sans);color:var(--accent);letter-spacing:.08em}.footnotes{font:13px/1.9 var(--sans);color:var(--muted);border-top:1px solid var(--line);margin-top:35px;overflow-wrap:anywhere}.footnotes summary{padding:15px 0;cursor:pointer}.footnotes ol{padding-left:25px}.media{font:14px/1.8 var(--sans);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin:28px 0}.media h4{margin:0 0 7px;font-size:17px}.media p{font:13px/1.8 var(--sans);margin:8px 0;color:var(--muted)}.load-media{border:0;background:var(--ink);color:white;padding:10px 15px;margin-right:12px;border-radius:3px}.player iframe{width:100%;aspect-ratio:16/9;border:0;margin-top:18px}.back{font:13px var(--sans);display:block;margin:34px 0}.courses{display:grid;grid-template-columns:1fr 1fr;gap:18px}.courses>div{border:1px solid var(--line);padding:20px}.courses h3{font:600 22px var(--serif)}.courses li{font-size:14px}footer{padding:30px 0 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:60px}
+@media(max-width:800px){.wrap{padding:0 20px}.mast{padding-top:30px}.entry,.courses{grid-template-columns:1fr}.entry{gap:10px}.card{padding:15px 19px}.part{grid-template-columns:1fr;gap:10px}.article{font-size:17px;margin-top:44px}.article h2{font-size:29px}.article h3{font-size:23px}.article blockquote{font-size:19px}.routes{display:block}.route{margin:10px 0}.state{float:right}nav .wrap{gap:22px}}
+
+.figure{margin:36px 0;padding:0;clear:both}.figure img{display:block;max-width:100%;width:100%;height:auto;background:#e9e6df}.figure.narrow{max-width:650px;margin-left:auto;margin-right:auto}.figure figcaption{font:13px/1.8 var(--sans);color:var(--muted);margin-top:12px}.figure .figure-title{display:block;color:var(--ink);font-weight:600;font-size:14px;margin-bottom:5px}.credit{display:block;font-size:11px;margin-top:7px}.image-failure{display:none;border:1px solid var(--line);padding:24px;font:14px/1.8 var(--sans);background:var(--soft)}.figure.failed img{display:none}.figure.failed .image-failure{display:block}.timeline{background:#efede5;border-top:2px solid var(--accent);padding:24px 26px;font-family:var(--sans)}.timeline .timeline-title{font-size:19px;line-height:1.6;margin:0 0 20px;font-weight:600}.timeline ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 24px}.timeline li{margin:0;padding:0 0 14px;border-bottom:1px solid #d3cfc6}.timeline time{display:block;color:var(--accent);font-size:13px;letter-spacing:.06em}.timeline strong{font-size:16px;font-weight:500;display:block;margin:4px 0}.timeline span{font-size:13px;line-height:1.8;display:block;color:var(--muted)}.timeline figcaption{font-size:11px}.featured-card{border:1px solid var(--accent);grid-column:1/-1}.chapter-nav{display:flex;gap:16px;flex-wrap:wrap;font:13px/1.7 var(--sans);padding-top:18px;margin-top:34px;border-top:1px solid var(--line)}.sources-note{font-size:11px;line-height:1.8;color:var(--muted)}
+@media(max-width:600px){.timeline{padding:20px}.timeline ol{grid-template-columns:1fr}.featured-card{grid-column:auto}.figure{margin:26px 0}.figure figcaption{font-size:12px}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.context-row{display:grid;grid-template-columns:minmax(0,710px) minmax(230px,290px);gap:56px;align-items:start;padding:0;margin:0 0 12px}
+.context-main{min-width:0}.article{max-width:1060px}.article>h2,.article>.kicker{max-width:710px}.article>p{max-width:710px}.article>h3{max-width:710px}
+.context-aside{position:relative;margin-top:46px;padding:3px 0 8px 20px;border-left:1px solid #bab5a8;font:14px/1.9 var(--sans);color:#55534e}
+.context-aside:before,.context-aside:after{content:"";position:absolute;width:9px;height:1px;background:#bab5a8;left:0}.context-aside:before{top:0}.context-aside:after{bottom:0}
+.context-aside .note-type{font-size:11px;letter-spacing:.08em;color:var(--accent);margin:0 0 8px}.context-aside h4{font:600 17px/1.6 var(--serif);margin:0 0 10px;color:var(--ink)}
+.context-aside p{font:14px/1.9 var(--sans);margin:8px 0 12px}.note-links{font:11px/1.8 var(--sans)}.note-links a{display:inline-block;margin:0 10px 4px 0}.article>.media,.article>.footnotes,.article>.back{max-width:710px}
+.bridge-call{max-width:710px;border-top:1px solid var(--line);margin:28px 0;padding:20px 0;font:15px/1.8 var(--sans)}.bridge-call strong{display:block;font:600 20px/1.5 var(--serif);margin-bottom:9px}
+.layer-strip{display:flex;justify-content:space-between;gap:24px;padding:12px 0;margin:5px 0 16px;font:12px var(--sans);color:var(--muted);max-width:1060px;border-bottom:1px solid var(--line)}.layer-strip span:last-child{width:290px}
+.section-tools{font:12px/1.7 var(--sans);margin:20px 0;display:flex;gap:18px;flex-wrap:wrap}
+@media(max-width:1080px){.context-row{grid-template-columns:minmax(0,1fr);gap:0}.context-aside{margin:0 0 22px;background:#f1eee7;padding:14px 18px 12px;border-left:2px solid #b5a58e}.context-aside:before,.context-aside:after{display:none}.article{max-width:760px}.layer-strip span:last-child{width:auto}.context-main>h3{margin-top:32px}.article>h2,.article>.kicker{max-width:none}}
+@media(min-width:1081px){.context-row.empty-aside .context-main{grid-column:1}.context-row .context-main>h3{margin-top:34px}}
+
+.edition{font:12px/1.6 var(--sans);color:var(--muted)}.part-entry{margin:70px 0 0;border-top:1px solid var(--line);padding-top:28px}.part-entry h2{font:600 30px/1.5 var(--serif)}.part-entry p{color:var(--muted);max-width:710px}.edition-links{display:flex;gap:18px;flex-wrap:wrap;font:14px/1.8 var(--sans)}.jump-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}.jump-grid a{border:1px solid var(--line);padding:18px;text-decoration:none}.jump-grid small{display:block;color:var(--accent);margin-bottom:6px}.chapter-nav{justify-content:space-between}.workbench-link{padding:20px;border:1px solid var(--line);font:16px/1.8 var(--sans);max-width:710px;margin:30px 0}.workbench-link strong{display:block}.toc-search{width:100%;padding:12px;border:1px solid var(--line);font:16px var(--sans);margin:10px 0 20px}.article .footnotes{font:13px/1.85 var(--sans)}.part-title{font:12px var(--sans);color:var(--accent);letter-spacing:.06em}.audio-card{border:1px solid var(--line);padding:20px;margin:24px 0}.audio-card audio{width:100%}.audio-card h3{margin:0 0 10px}.audio-card p{font:15px/1.8 var(--sans)}.lab-table{width:100%;border-collapse:collapse;font:14px/1.8 var(--sans)}.lab-table th,.lab-table td{border-bottom:1px solid var(--line);padding:10px;text-align:left}.lab-table th{background:var(--soft)}.lab-text{max-width:800px;margin:auto}.lab-text p,.lab-text li{font:17px/1.95 var(--serif)}.lab-text h2{font:600 28px/1.6 var(--serif);margin-top:54px}.lab-text code{font:14px/1.5 monospace}.toc-hidden{display:none}@media(max-width:750px){.jump-grid{grid-template-columns:1fr 1fr}.part-entry{margin-top:42px}}@media print{nav,.edition-links,.jump-grid,.back,.load-media,.chapter-nav{display:none}.context-row{display:block}.context-aside{border-left:2px solid #aaa;padding-left:12px}.article{page-break-before:always}.article p{orphans:3;widows:3}body{background:white}.wrap{padding:0}}
+</style></head><body><header class="mast" id="top"><div class="wrap"><div class="eyebrow">艺术家的创作经验与 Ableton Live 实践</div><h1>声音的组织</h1><p class="subtitle">从聆听到实时演奏</p><p class="deck">从发现一个声音，到写成一件作品，再让音乐在现场继续发生。</p><p class="edition">六组版 1.0 · 前言与24章</p><div class="edition-links"><a href="#preface">开始阅读</a><a href="knowledge.html">历史与知识地图</a><a href="labs.html">制作工作台</a></div></div></header><nav aria-label="阅读导航"><div class="wrap"><a href="#atlas">全书目录</a><a href="#preface">前言</a><a href="#chapter-10">进入制作</a><a href="#chapter-18">走向现场</a><a href="knowledge.html">历史与术语</a><a href="labs.html">试听与材料</a></div></nav><main class="wrap"><div class="jump-grid"><a href="#part-I"><small>I</small>进入声音的世界</a><a href="#part-II"><small>II</small>在作品中听见选择</a><a href="#part-III"><small>III</small>用 Live 塑造材料</a><a href="#part-IV"><small>IV</small>把材料写成音乐</a><a href="#part-V"><small>V</small>让音乐发生在现场</a><a href="#part-VI"><small>VI</small>形成持续的创作实践</a></div><details class="atlas" id="atlas"><summary>六组24章 · 完整目录</summary><input class="toc-search" id="toc-search" type="search" aria-label="查找章节" placeholder="查找人物、工具或章节"><div class="part"><h3>I · 进入声音的世界</h3><ul><li><a href="#chapter-1">01　从一场演出开始</a></li><li><a href="#chapter-2">02　池田亮司：机器与身体之间</a></li><li><a href="#chapter-3">03　科隆、东京与穿越国界的声音</a></li><li><a href="#chapter-4">04　厂牌如何形成一种语言</a></li><li><a href="#chapter-5">05　舞台上的集体：Dumb Type</a></li></ul></div><div class="part"><h3>II · 在作品中听见选择</h3><ul><li><a href="#chapter-6">06　Alva Noto：声音被复制之后</a></li><li><a href="#chapter-7">07　坂本龙一：钢琴以外的世界</a></li><li><a href="#chapter-8">08　柏大辅：让音乐自己讲故事</a></li><li><a href="#chapter-9">09　Robert Henke：为作品发明工具</a></li></ul></div><div class="part"><h3>III · 用 Live 塑造材料</h3><ul><li><a href="#chapter-10">10　Ableton Live：一个可演奏的工作室</a></li><li><a href="#chapter-11">11　从一个声音到一片声场</a></li><li><a href="#chapter-12">12　让声音产生距离</a></li><li><a href="#chapter-13">13　重采样：让一次变化成为新材料</a></li></ul></div><div class="part"><h3>IV · 把材料写成音乐</h3><ul><li><a href="#chapter-14">14　节奏、旋律与和声的作用</a></li><li><a href="#chapter-15">15　悬停、断裂与回返</a></li><li><a href="#chapter-16">16　混音：安排注意力与尺度</a></li><li><a href="#chapter-17">17　一件作品，几种呈现</a></li></ul></div><div class="part"><h3>V · 让音乐发生在现场</h3><ul><li><a href="#chapter-18">18　Session View：开放音乐的行进方式</a></li><li><a href="#chapter-19">19　真锅大度：动作如何成为音乐决定</a></li><li><a href="#chapter-20">20　黑川良一：同时作曲的声音与影像</a></li><li><a href="#chapter-21">21　房间、观众与表演者</a></li></ul></div><div class="part"><h3>VI · 形成持续的创作实践</h3><ul><li><a href="#chapter-22">22　Agent加入工作室之后</a></li><li><a href="#chapter-23">23　品味怎样变得具体</a></li><li><a href="#chapter-24">24　把创作放回生活与共同体</a></li></ul></div></details><article class="article" id="preface"><div class="kicker">前言</div><h2>前言｜音乐尚未决定的地方</h2>
+<p>录音把一段时间保存下来，演出却让时间重新变得不可预知。排练充分的音乐家仍然要听同伴怎样结束一个音，决定下一句进入的分寸；摆在电脑里的声音虽然已经录好，也可能在新的顺序中获得不同的意义。作品既包含已经完成的劳动，也容纳尚未作出的决定。</p>
+<p>《声音的组织》关心的，正是这两者相遇的地方。</p>
+<p>这种相遇有时十分普通：一句旋律换了伴奏，原来安稳的结尾忽然变得悬而未决；一段录音留下了椅子移动的响声，房间从背景进入了音乐。有时，它发生在陌生的条件中：一件乐器失去了原来的调律，一束光需要与声音共同描绘形状，一组重复序列把作曲者带到了事先没有预料的地方。创作并不总从完整的构想开始。材料先提出一个问题，判断在反复聆听和修改中逐渐成形。</p>
+<p>本书中的人物来自不同环境。有人从唱片、乐队和俱乐部进入制作，有人在剧场协作中认识灯光与身体，有人一边作曲，一边改造发声的工具。把这些经历放在一起，不是为了寻找一种共同的成功性格。它们使一些原本看不见的工作变得具体：一个声音为何被留下，一段结构为何重写，一项技术为何在作品中得到位置，又为何在下一次创作中被放弃。</p>
+<p>经验的传递，发生在这些选择之中。模仿一个音色能够训练耳朵和操作；理解它在作品里的作用，则使模仿不再是终点。回声可以维持脉搏，也可以扰乱脉搏。循环能够使微小差异显露，也能够把音乐困在原地。同一项手段产生相反结果，取决于材料、前后关系和聆听的条件。技术知识帮助人辨认可能，品味决定哪些可能值得成为一段共同经历的时间。</p>
+<p>Ableton Live 是本书反复返回的工作台。它使录音、音符、效果与现场触发能够在同一环境中交换角色：演奏可以留下编排，编排也可以重新开放为演奏。学习这件工具，意味着逐渐理解声音经过哪些路径，以及什么变化仍然握在创作者手里。更细的操作留在相连的制作课程中；人物和作品的阅读，不以完成练习为通行条件。</p>
+<p>当软件能够更快地产生节奏、音色乃至完整段落，创作的困难并不会只剩挑选。材料之间的联系、一个段落何时结束、合作中的决定权、作品进入哪一种现场，依然需要人在具体情境里承担。自动化和 Agent 可以扩大尝试的范围，也会使制作意图变得含混。亲手塑造声音的意义，在于获得辨认这种含混的能力。</p>
+<p>这条旅程从一架钢琴开始。它已经不能按照原来的标准履行职责，却使一位熟悉钢琴的音乐家重新思考，乐器还能是什么。</p><a class="back" href="#chapter-1">从第一章开始 →</a></article><section class="part-entry" id="part-I"><div class="part-title">I</div><h2>进入声音的世界</h2><p>从一架钢琴进入，认识作品发生的时代、场景与共同工作。</p></section><article class="article" id="chapter-1"><div class="kicker">第01章</div><h2>从一场演出开始</h2>
+
+<div class="context-row"><div class="context-main"><h3>钢琴来到展厅</h3>
+<p>日本作曲家坂本龙一既写唱片与电影配乐，也创作声音装置。2017年，他与视觉艺术家高谷史郎在东京的 NTT InterCommunication Center（ICC，跨媒介艺术机构）展出《IS YOUR TIME》。展厅里有一架来自宫城县名取市的钢琴。2011年的海啸浸泡过它，有些琴键已经不能发声，调律也无法恢复如初。对习惯以准确音高衡量乐器的人来说，这是一架严重损坏的钢琴；坂本却把它理解为经过自然重新调律的乐器。<sup><a href="#c1-note-piano" aria-label="注释1">〔1〕</a></sup></p>
+<p>钢琴通常把注意力引向演奏者。手指落下，琴弦振动，一个音符成为乐句的一部分。这架钢琴却让另一段时间先被听见：声音不仅来自此刻的动作，也来自乐器已经经历的事情。琴声带着一段具体的历史；损伤也成了它的音色。</p>
+<p>坂本在为展览写下的文字中，把乐器的变化与城市的材料联系起来。木、金属与其他材料被人组织成具有功能的物体，时间与自然的力量又使它们离开原来的安排。<sup><a href="#c1-note-piano" aria-label="注释1">〔1〕</a></sup> 乐器原来的功能退后，材料的变化成为作曲的起点。坂本把注意力转向这架琴此刻能够发出的声音。</p>
+<p>《IS YOUR TIME》把这个问题变成了发声的关系。世界各地采集的地震数据参与触发钢琴，原本改造过乐器的自然力量，成为它再次发声的依据。2017年的版本还让重新编排的《async》音乐与钢琴共同存在，声音、扬声器位置和光构成了展厅中的运动。<sup><a href="#c1-note-sakamoto-work" aria-label="注释2">〔2〕</a></sup></p>
+<p>触发的规则、扬声器的位置、其他声部进入的时刻，共同决定了地震数据怎样成为展厅中的声音。坂本在这里设计了一种聆听的条件，让来自远处的变化与眼前的钢琴相遇。</p>
+<p>同一展览期间，坂本又在装置中举行了一场即兴演出。受灾钢琴、《async》的材料、合成器，以及通过接触麦克风采集的玻璃摩擦声，进入了同一次表演。<sup><a href="#c1-note-concert" aria-label="注释3">〔3〕</a></sup> 已经存在的声音环境成了演奏的条件。音乐家进入其中，让新加入的声音与装置相互回应。</p>
+<p>一架钢琴由此穿过了几个身份：学校里的乐器、受灾的物体、数据驱动的装置，以及即兴演出的参与者。改变的不只是它在哪里被看见，也包括什么能够让它发声、谁与它共同发声，以及听者怎样理解那些声音。</p>
+</div><aside class="context-aside" aria-label="背景：坂本龙一的另一段来路"><p class="note-type">人物与时代</p><h4>坂本龙一的另一段来路</h4><p>1978年，坂本发表《Thousand Knives》，同年与细野晴臣、高桥幸宏组成 Yellow Magic Orchestra（YMO）。合成器、编程与乐队演奏由此成为他早期实践的一部分。2017年的《async》和装置，则把注意力放到环境、物体与聆听之中。</p><div class="note-links"><a href="https://www.universal-music.co.jp/ymo/biography/" target="_blank" rel="noopener noreferrer">YMO 年表 ↗</a><a href="https://www.universal-music.co.jp/sakamoto-ryuichi/biography/" target="_blank" rel="noopener noreferrer">坂本人物档案 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>谁决定音乐停留多久</h3>
+<p>一段持续的声音可以有几种不同的生命。</p>
+<p>在固定录音里，它的起点和结尾已经被安排。后来出现的材料会改变前面的意义，听者可以回放，也可以跳过，但录音本身不会等待。在开放的现场结构里，同一段声音可能继续停留，直到表演者决定下一种关系已经成熟。素材没有改变，决定何时离开的权利却改变了。</p>
+<p>这种分工并非电脑音乐才有。作曲家 Steve Reich 在《十八位音乐家的音乐》中，把钢琴与打击乐器的规律脉搏，同人声和管乐的呼吸长度放在一起；颤音琴的一次特定音型还会提示乐队进入下一部分。结构已经写作，部分时间则通过人的呼吸与相互聆听实现。<sup><a href="#c1-note-reich" aria-label="注释4">〔4〕</a></sup></p>
+<p>重复已经写定，下一次改变却要等演奏者发出提示。音乐家通过呼吸与相互聆听共同承担时间，执行乐谱与临场判断发生在一起。</p>
+<p>Ableton Live 把固定时间线与可随时启动的片段并置，提供了处理这类决定的另一种环境。Arrangement 适合沿时间线组织材料；Session 允许重新选择片段及其组合。<sup><a href="#c1-note-session" aria-label="注释5">〔5〕</a></sup> 从录音进入现场，不必推翻已经写好的音乐，可以只开放其中少数值得当场决定的地方。</p>
+<p>两种方式各有要求。固定录音能够精心安排细小的前后关系；开放结构则需要准备足以支撑停留的材料。一个可以无限延长的循环，未必在每个时刻都值得继续。即兴的自由，也包括听见一个段落已经完成。</p>
+</div><aside class="context-aside" aria-label="背景：固定作品，也可以由人决定时间"><p class="note-type">术语与比较</p><h4>固定作品，也可以由人决定时间</h4><p>《十八位音乐家的音乐》写于1974—1976年。重复的脉搏、呼吸长度与乐器提示一起安排进程。乐谱保存结构，演奏者完成具体的时间；这与电脑中把某段材料留给现场延长，可以并读。</p><div class="note-links"><a href="https://www.boosey.com/cr/music/Steve-Reich-Music-for-18-Musicians/548" target="_blank" rel="noopener noreferrer">Reich 的作品说明 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>台上究竟发生了什么</h3>
+<p>电子音乐进入现场以后，常常遇到一种观看上的困难：听到的变化可能很大，表演者的动作却很小。</p>
+<p>Robert Henke 是以 Monolake 发表音乐的德国音乐家，也是 Ableton Live 的主要创造者之一。他在一篇讨论电脑演出的文章中，把软件里的演奏结构形容为不容易被观众看见的乐器。琴键、鼓槌与声音之间已有长期形成的观看习惯；鼠标的一次移动，却可能是在切换素材、改变合成，或处理一项演出之外的事务。<sup><a href="#c1-note-invisible" aria-label="注释6">〔6〕</a></sup></p>
+<p>这些小动作仍然可能承担重要的决定。有时他让一个声部退出，使另一个声部显露；有时改变声音内部的运动；有时只等待，直到先前的尾音不再遮住下一次进入。这些工作不一定都能在远处被看见，却会改变听者所经历的音乐。</p>
+<p>控制器因此不仅是效率工具。它把哪些关系放在手边，哪些状态显示出来，会影响音乐家愿意在现场开放哪些选择。键盘、旋钮、触摸或动作追踪都可能有用；一种控制方式的意义，应由它在作品中承担的决定来说明。</p>
+</div><aside class="context-aside" aria-label="背景：看不见的是演奏关系"><p class="note-type">访谈摘意</p><h4>看不见的是演奏关系</h4><p>Henke 在2007年讨论电脑表演：观众能看见电脑，却不容易看见里面的软件怎样成为乐器。他关注的是动作与音乐决定之间的可读性。此后本书会把控制界面与实际发声分开讨论。</p><div class="note-links"><a href="https://roberthenke.com/interviews/supercomputing.html" target="_blank" rel="noopener noreferrer">Henke：电脑现场表演 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从排练室走进演出场地</h3>
+<p>一次表演的准备，并不在声音文件导出时结束。</p>
+<p>在耳机里，两个短音之间可能留着清楚的间隔。把它们送进一个反射较长的房间，前一个声音尚未退去，后一个已经到达，原来的断句便可能连起来。扬声器的位置、墙面反射和听者所站的地方，都进入了实际的结果。房间不会把声音原封不动地交还给观众。</p>
+<p>试音要处理的就是这种差别。乐器可以保持原音色，演奏者却需要重估音头、密度、尾音和声部比例。持续声层如果占住了所有空隙，另一层声音即使被提高，也未必变得清楚。反过来，作品依赖的延续感在较干的场地消失时，过于谨慎的短尾也可能使音乐失去联系。</p>
+<p>Henke 的《Lumière》演出把操作者放在观众席后方，使他能够从观众的方向感受和调整声音与激光。每个场地都要适配，而非只把相同文件送往不同房间。<sup><a href="#c1-note-lumiere" aria-label="注释7">〔7〕</a></sup> 这将创作与现场之间的距离缩短了一点：调音不只是保障播放，还可能重新界定作品的尺度。</p>
+<p>持续多久、何时停止、哪些声音留在前景，都要根据实际到达耳朵的结果重新判断。编排与现场混音，就在试音时相遇。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>声音与影像可以一起诞生</h3>
+<p>如果作品同时使用声音与影像，关系又多了一层：两边可以共享什么，又需要保留怎样的独立性？</p>
+<p>Henke 在《Lumière》中以共同的视听事件来作曲。一项触发可以同时唤起声音与形状，两边的具体生成方式却不必完全相同。<sup><a href="#c1-note-lumiere" aria-label="注释7">〔7〕</a></sup> 于是，画面并非一定要等音乐完成后才加入，音乐也不只是解释画面的伴奏。</p>
+<p>共同作曲也允许不同的速度。一次触发之后，声音可以缓慢消散，图像可以先行收束；一边保持时，另一边开始变化。作品的联系，既存在于同时出现的瞬间，也存在于此后各自展开的时间。</p>
+</div><aside class="context-aside" aria-label="背景：先抓住一个共同事件"><p class="note-type">阅读连接</p><h4>先抓住一个共同事件</h4><p>“出现”“停住”“转向下一段”，都可以成为声音与画面共同承担的事件。音乐制作部分先把这些关系做清楚；现场部分再讨论它们怎样被触发、显示和共同修改。</p><div class="note-links"><a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">Lumière 项目说明 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>技术之后，仍然要作曲</h3>
+<p>一段录音可以被减速、倒放、拉长、切开，或经过一串效果器成为陌生的声音。技术扩大了材料的范围，也改变了创作者能够采取的行动。录音可以不再从头播到尾，已经完成的段落也可以被拆开重新组合。</p>
+<p>但获得新材料，与完成作品是两回事。一个声音初次出现时令人惊讶，反复出现以后却可能没有新的作用；另一段材料看似平静，放在不同背景里仍然会不断显露变化。它们需要怎样的前后关系，要在编排、演奏和完整聆听中判断。</p>
+<p>在东京都现代美术馆呈现《IS YOUR TIME》时，《async》的声部被移去，钢琴得到更单独的空间。<sup><a href="#c1-note-sakamoto-work" aria-label="注释2">〔2〕</a></sup> 撤去一层音乐，使乐器自身的声音重新成为中心。</p>
+<p>从这架钢琴出发，本书将进入不同的工作室与舞台。池田亮司把数据转成有篇章的经验，Alva Noto 追问复制后还留下什么，Henke 为演奏修改工具。每一次技术变化都要回到同一个具体问题：这些声音在一起，使什么值得被听见？</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>本章作品</h3>
+<ul>
+<li><a href="https://www.ntticc.or.jp/en/exhibitions/2017/sakamoto-ryuichi-with-takatani-shiro-installation-music-2-is-your-time/" target="_blank" rel="noopener noreferrer">《IS YOUR TIME》展览与官方预告</a></li>
+<li><a href="https://www.ntticc.or.jp/en/archive/works/sakamoto-ryuichi-with-takatani-shiro-installation-music-2-is-your-time-concert/" target="_blank" rel="noopener noreferrer">《IS YOUR TIME Concert》演出档案</a></li>
+<li><a href="https://www.boosey.com/cr/music/Steve-Reich-Music-for-18-Musicians/548" target="_blank" rel="noopener noreferrer">《十八位音乐家的音乐》作曲家说明与录音入口</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c1-note-piano">NTT ICC，《Piano 20110311》，含高谷史郎的作品说明与坂本龙一2017年展览文字。 <a href="https://www.ntticc.or.jp/en/archive/works/piano-20110311/" target="_blank" rel="noopener noreferrer">https://www.ntticc.or.jp/en/archive/works/piano-20110311/</a></li><li id="c1-note-sakamoto-work">Ryuichi Sakamoto，《IS YOUR TIME》，作品档案。 <a href="https://www.sitesakamoto.com/artworks/18/" target="_blank" rel="noopener noreferrer">https://www.sitesakamoto.com/artworks/18/</a></li><li id="c1-note-concert">NTT ICC，《IS YOUR TIME Concert》，2017年即兴演出档案。 <a href="https://www.ntticc.or.jp/en/archive/works/sakamoto-ryuichi-with-takatani-shiro-installation-music-2-is-your-time-concert/" target="_blank" rel="noopener noreferrer">https://www.ntticc.or.jp/en/archive/works/sakamoto-ryuichi-with-takatani-shiro-installation-music-2-is-your-time-concert/</a></li><li id="c1-note-reich">Steve Reich，《Music for 18 Musicians》，作曲家说明，Boosey &amp; Hawkes。 <a href="https://www.boosey.com/cr/music/Steve-Reich-Music-for-18-Musicians/548" target="_blank" rel="noopener noreferrer">https://www.boosey.com/cr/music/Steve-Reich-Music-for-18-Musicians/548</a></li><li id="c1-note-session">Ableton，《Live 12 Reference Manual》，Session View。 <a href="https://www.ableton.com/en/live-manual/12/session-view/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/session-view/</a></li><li id="c1-note-invisible">Robert Henke，《Live Performance in the Age of Super Computing》，2007，附2025年后记。 <a href="https://roberthenke.com/interviews/supercomputing.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/interviews/supercomputing.html</a></li><li id="c1-note-lumiere">Robert Henke，《Lumière》项目与版本说明。 <a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/concerts/lumiere.html</a></li></ol></details><div class="chapter-nav"><a href="#preface">← 前言</a><a href="#atlas">目录</a><a href="#chapter-2">下一章 →</a></div></article><article class="article" id="chapter-2"><div class="kicker">第02章</div><h2>池田亮司：机器与身体之间</h2>
+
+<div class="context-row"><div class="context-main"><h3>一张需要走着读的乐谱</h3>
+<p>池田亮司是日本作曲家与视觉艺术家。他用声音、数据和光创作唱片、演出与装置，也把精确的时间关系交给原声乐器演奏。<sup><a href="#c2-note-bio" aria-label="注释1">〔1〕</a></sup> 认识他的作品，可以从一个看似普通、却改变了演奏方式的问题开始：如果乐谱需要走着阅读，空间会怎样进入音乐？</p>
+<p>一张长而窄的桌子，桌面铺着乐谱。两位弦乐演奏者分处两侧，从相反的方向阅读同一份记谱，边走边演奏，直到在途中交错。这是池田亮司在2024年接受 Ensemble Modern 访谈时介绍的一种写法。行走既让眼睛追上乐谱，也把两条音乐的相遇变成了身体的相遇。<sup><a href="#c2-note-em" aria-label="注释2">〔2〕</a></sup></p>
+<p>纸上的安排改变了音乐家的动作，动作又使同一份乐谱得到两个方向的读法。两位演奏者之间的距离不断缩短，空间也随着读谱进入音乐。</p>
+<p>同一份谱面在两个方向被阅读，先后关系随着行进改变。严格的排列需要人的目光、脚步与手共同完成。</p>
+</div><aside class="context-aside" aria-label="背景：一份谱面，两个阅读方向"><p class="note-type">访谈摘意</p><h4>一份谱面，两个阅读方向</h4><p>2024年的 Ensemble Modern 对谈把池田的 DJ 起点、Dumb Type 经历和原声乐器写作连在一起。长桌的例子使“空间进入音乐”变得具体：改变读谱方向，就改变了身体怎样实现时间。</p><div class="note-links"><a href="https://www.ensemble-modern.com/en/media/interviews/2024-01-17/t-s-not-a-machinery-a-conversation-with-ryoji-ikeda" target="_blank" rel="noopener noreferrer">Ensemble Modern 对谈 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>从唱片之间走向舞台</h3>
+<p>池田自述从 DJ 与地下文化进入音乐，没有经过音乐学院或艺术学院的训练。20世纪90年代中期，他加入 Dumb Type，在集体工作中接触灯光、影像和舞台上的身体。<sup><a href="#c2-note-em" aria-label="注释2">〔2〕</a></sup> 他的学习路径因此不只发生在乐器面前，也发生在不同工种需要共同完成一段时间的时候。</p>
+<p>DJ 面对的是已经具有内部结构的录音。选择哪一段、在何处接入、让两份材料重叠多久，都会改变听者对它们的理解。剧场把这一类决定展开到更多媒介：声音到来的时候，舞台上有人正在移动，另一处灯光也可能已经开始变化。每一种材料都携带自己的速度，却必须在同一个现场相遇。</p>
+<p>剧场协作给精度以实际的要求：声音到来时灯光在哪里，重复怎样衬出身体的移动，一次转场如何被共同完成。进入数字制作以后，这些时间关系又获得了新的尺度。</p>
+</div><aside class="context-aside" aria-label="背景：Dumb Type 是什么"><p class="note-type">历史背景</p><h4>Dumb Type 是什么</h4><p>Dumb Type 是日本跨媒介艺术集体。1980年代的档案已经把表演、录像、装置和印刷放在一起；1990年的《pH》也以多种形式呈现。声音需要与舞台上的其他行动共用时间，排练因此成为创作的一部分。</p><div class="note-links"><a href="https://dumbtype.com/biography/" target="_blank" rel="noopener noreferrer">集体历史档案 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>黑白图案从哪里来</h3>
+<p>《test pattern》始于2008年。系统把文字、声音、照片、影像等数据转换成条码与二进制图案，考察设备表现的临界点与人的感知能力之间的关系。<sup><a href="#c2-note-testpattern" aria-label="注释3">〔3〕</a></sup> 黑白图案在这里连接着数据的编码、显示与读取。</p>
+<p>照片通常因为它呈现的人和物而被辨认，文字通常因为句子而被阅读。转换以后，这些熟悉的入口退后，变化的速度和显示的次序来到前面。同一批数据从一种读法进入另一种读法，观看也随之改变：来不及逐项理解的内容，可以作为密度、闪变和整体运动被感知。</p>
+<p>这里有一个与音乐相通的差别。许多短事件叠在一起，听者未必能数清每一个，却仍能感觉它们正在加密或稀疏。局部内容无法逐项辨认，不等于整个过程没有形状。作品可以在两种尺度之间来回移动：一处让单个事件清楚地站出来，另一处让事件汇成超过计数能力的整体。</p>
+<p>速度还与尺度一起起作用。同样的条纹，占据一小块屏幕时能够被当作图形观察，铺满身体周围时便改变了观看的位置。作品把显示设备的速度与人的辨认时间放到一起。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>硬盘错误、代码与数据的篇章</h3>
+<p>《datamatics》把数据进一步写成了一个跨越尺度的过程。在2006至2008年发展的演出版本中，图像从硬盘错误与软件代码研究衍生的二维图案，进入旋转的三维视图，再展开到四维数学处理产生的空间；声音则以多层材料的编排回应这些视觉尺度。<sup><a href="#c2-note-datamatics" aria-label="注释4">〔4〕</a></sup></p>
+<p>数据经过转换成为图案，图案继续被组织成运动；多层声音又为这段变化提供了另一种尺度。从材料到视听作品，需要经历相互衔接的制作。</p>
+<p>从二维进入更复杂空间，技术转换也获得了篇章。先前熟悉的平面关系被保留片刻，随后成为另一种空间运动的起点。变化的次序，让密集的材料仍然具有可以追随的方向。</p>
+<p>这种组织与音乐中更熟悉的办法并不遥远。一首曲子可以先让一个短动机清楚出现，再把它放进越来越复杂的背景；同一个动机仍在，听者抓住它的方法已经变化。重复、分层与对照，使陌生的材料也能建立可追随的方向。</p>
+</div><aside class="context-aside" aria-label="背景：先分清四个名字"><p class="note-type">作品索引</p><h4>先分清四个名字</h4><p>《dataplex》是2005年的录音发行；《datamatics》从2006年展开为跨媒介项目；《test pattern》从2008年发展；《cyclo.》则是池田与 Carsten Nicolai 的合作。名称相近，读者面对的载体和观看条件各不相同。</p><div class="note-links"><a href="https://www.ryojiikeda.com/archive/recordings/" target="_blank" rel="noopener noreferrer">录音目录 ↗</a><a href="https://www.ryojiikeda.com/" target="_blank" rel="noopener noreferrer">作品目录 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>图像也会选择声音</h3>
+<p>池田与音乐家、视觉艺术家 Carsten Nicolai 的合作《cyclo.》，让两个媒介的关系更进一步。项目利用原本用于立体声相位和幅度监测的方式，把声音呈现为图形；他们在构建声音材料时，也会依据这些声音产生的视觉结果作出选择。<sup><a href="#c2-note-cyclo" aria-label="注释5">〔5〕</a></sup></p>
+<p>图像因而不只是音乐完成后的伴随物。某种图形可能成为继续寻找一个声音的理由，声音则提供能够生成这种图形的条件。创作在两边往返：听到的结果改变视觉判断，看见的结果又影响声音的去留。</p>
+<p>这会使通常分开的两项评价发生摩擦。一个声音单独听来有吸引力，未必适合当前图形；一个形状十分清楚，也未必能在音乐中承担需要的角色。两种媒介共同工作，包含互相限制，而不只包含互相增强。</p>
+<p>在《cyclo.》中，图形参与了声音的筛选。一个原本用于观察声音的系统，由此成了寻找声音的方法。</p>
+</div><aside class="context-aside" aria-label="背景：相位图为何能够反过来选声音"><p class="note-type">概念补全</p><h4>相位图为何能够反过来选声音</h4><p>把立体声的左、右声道分别作为两条坐标，信号之间的关系就形成图形。《cyclo.》把这种分析图形带进选材：形状不只报告声音，也成为继续寻找声音的线索。</p><div class="note-links"><a href="https://www.ryojiikeda.com/project/cyclo/" target="_blank" rel="noopener noreferrer">cyclo. 官方说明 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>手掌和金属也能承载精度</h3>
+<p>2016年的《music for percussion》包含《BODY MUSIC》与《METAL MUSIC》，由 Eklekto 打击乐团演奏。身体、三角铁、古钹与钹成为发声材料。<sup><a href="#c2-note-percussion" aria-label="注释6">〔6〕</a></sup> 声音不必由电脑产生，精确的重复与差异依然可以成为作品的中心。</p>
+<p>打击乐使“相同”变得特别具体。节奏可以严格安排，但每一次接触都有位置、力度和衔接；一个声音的衰减，还会影响下一个声音被怎样听见。身体并非数字精度的对立面，它为精度提供了另一种可感知的条件。</p>
+<p>回到长桌上的乐谱，空间没有作为效果附加在音乐外部。它改变了阅读与行动的关系。两位演奏者必须沿桌面移动，才能继续完成各自的声部；相遇不仅是被看见的姿态，也发生在音乐的进程里。原先用计算和显示建立的关系，获得了一种可以由人在现场承担的形式。</p>
+<p>唱片中的脉冲、屏幕上的排列和演奏者的脚步，以不同材料处理相近的时间问题。换一种媒介，重复与差异也会显露另一种面貌。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>精密之后还有什么</h3>
+<p>池田把材料压缩到鲜明的关系，也让聆听承受这种集中。规则清楚时，微小的偏移会变得突出；刺激持续占据前景时，细节又可能退成整体强度。对这些作品的评价，可以落在一个具体的差别上：那种精确究竟使人听见了更多变化，还是主要让人感到了它的力量。</p>
+<p>《datamatics》以维度变化组织过程，《cyclo.》让图像进入选材，身体打击乐把严格的安排交给人的接触。三种不同的写法，都把材料带入一段具体的时间。</p>
+<p>数字可以无限延伸，聆听却总发生在此刻。长桌上的演奏者继续向前走，乐谱仍是那一张，两个方向的音乐却逐渐接近。精度在这里没有取消身体；它给身体留下了一段需要共同完成的路。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>本章作品</h3>
+<ul>
+<li><a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" rel="noopener noreferrer">《datamatics》：项目说明与官方录像</a></li>
+<li><a href="https://www.ryojiikeda.com/project/cyclo/" target="_blank" rel="noopener noreferrer">《cyclo.》：声音、图形与合作出版</a></li>
+<li><a href="https://www.ryojiikeda.com/project/music_percussion/" target="_blank" rel="noopener noreferrer">《music for percussion》：身体与金属打击乐</a></li>
+</ul></div></div><aside class="media"><h4>datamatics [prototype-ver.2.0] · 2006–08</h4><p>视听演出片段，2006—2008。含快速闪变。</p><button class="load-media" data-provider="vimeo" data-id="62242278" data-title="datamatics [prototype-ver.2.0] · 2006–08">播放作品</button><a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside><aside class="media"><h4>BODY MUSIC [for duo] I, II, III, Op.4 · 2016（片段）</h4><p>Eklekto 演出片段，2016。</p><button class="load-media" data-provider="vimeo" data-id="256060363" data-title="BODY MUSIC [for duo] I, II, III, Op.4 · 2016（片段）">播放作品</button><a href="https://www.ryojiikeda.com/project/music_percussion/" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside><details class="footnotes"><summary>本章注释</summary><ol><li id="c2-note-bio">Ryoji Ikeda，Biography，艺术家官网。 <a href="https://www.ryojiikeda.com/biography/" target="_blank" rel="noopener noreferrer">https://www.ryojiikeda.com/biography/</a></li><li id="c2-note-em">David Rittershaus，《T’S (NOT) A MACHINERY: A Conversation with Ryoji Ikeda》，Ensemble Modern Magazin 59，2024年1月。 <a href="https://www.ensemble-modern.com/en/media/interviews/2024-01-17/t-s-not-a-machinery-a-conversation-with-ryoji-ikeda" target="_blank" rel="noopener noreferrer">https://www.ensemble-modern.com/en/media/interviews/2024-01-17/t-s-not-a-machinery-a-conversation-with-ryoji-ikeda</a></li><li id="c2-note-testpattern">Ryoji Ikeda，《test pattern》项目说明。 <a href="https://www.ryojiikeda.com/project/testpattern/" target="_blank" rel="noopener noreferrer">https://www.ryojiikeda.com/project/testpattern/</a></li><li id="c2-note-datamatics">Ryoji Ikeda，《datamatics》，prototype-ver.2.0，2006—2008。 <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" rel="noopener noreferrer">https://www.ryojiikeda.com/project/datamatics/</a></li><li id="c2-note-cyclo">Ryoji Ikeda / Carsten Nicolai，《cyclo.》合作项目说明。 <a href="https://www.ryojiikeda.com/project/cyclo/" target="_blank" rel="noopener noreferrer">https://www.ryojiikeda.com/project/cyclo/</a></li><li id="c2-note-percussion">Ryoji Ikeda，《music for percussion》，2016年项目构成与演奏署名。 <a href="https://www.ryojiikeda.com/project/music_percussion/" target="_blank" rel="noopener noreferrer">https://www.ryojiikeda.com/project/music_percussion/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-1">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-3">下一章 →</a></div></article><article class="article" id="chapter-3"><div class="kicker">第03章</div><h2>科隆、东京与穿越国界的声音</h2>
+
+<div class="context-row"><div class="context-main"><h3>工作室也是一种乐器</h3>
+<p>磁带使声音的时间能够在工作台上被直接剪接。录音能够被剪开、接回、倒转，原本必须由演奏者连续完成的过程，可以在工作台上分开处理。一段脚步与一个乐器音没有共同的谱面，却可以在同一卷磁带上相邻。制作的困难从“怎样让它发出来”，扩展到“怎样让已经发生的声音重新组合”。</p>
+<p>这项变化发生在具体的机构里。广播需要录制、储存和传送声音，也因此积累了设备与技术人员。作曲家进入广播工作室，面对的是一整套连接：振荡器、滤波器、录音机、混音台，以及知道怎样让它们工作的工程师。工作室的条件决定了什么能够被试验，也影响一次试验需要多少时间。</p>
+<p>在科隆，作曲家 Herbert Eimert 从1951年开始推动电子音乐工作室的建立。战后的广播机构为这种工作提供了持续条件。<sup><a href="#c3-note-wdr" aria-label="注释1">〔1〕</a></sup> 由电子装置生成声音，可以使音高、持续与强弱成为逐项制作的对象；磁带又把这些结果保存下来，使短小材料能够进入较长的结构。</p>
+<p>设备带来的精度并不等于制作已经变得容易。一个如今可以由鼠标完成的变化，当时可能要经过录制、测量、剪接和再次播放。重复劳动使人必须提前考虑结构，也会让意外暴露出来：接缝产生了新的音头，速度改变了声音的身份，原本只作测试的材料忽然取得了音乐作用。</p>
+</div><aside class="context-aside" aria-label="背景：声音也能被剪接"><p class="note-type">时代坐标</p><h4>声音也能被剪接</h4><p>磁带把声音保存为可编辑的连续材料。剪辑决定相邻关系，变速改变时长与音高；这些办法后来进入数字工作站，但依然对应不同的音乐选择。</p><div class="note-links"><a href="https://ressources.ircam.fr/en/work/telemusik" target="_blank" rel="noopener noreferrer">IRCAM · Telemusik ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>东京的另一张工作台</h3>
+<p>日本的早期电子制作同样与广播有关。NHK在1954年开始相关工作室建设，1955年已有黛敏郎的电子音乐制作。后来的项目连接广播、电视、舞台以及大型公共活动。<sup><a href="#c3-note-nhk" aria-label="注释2">〔2〕</a></sup> 东京与科隆之间的差别，首先存在于工作任务、参与者和可以使用的资源中，而非某一种固定的民族听觉性格。</p>
+<p>录音技术可以把熟悉的乐器变成陌生材料，也可以使遥远的声音进入同一房间。1965至1966年间，德国作曲家 Karlheinz Stockhausen 在NHK制作《Telemusik》，作品于1966年在东京首演。<sup><a href="#c3-note-tele" aria-label="注释3">〔3〕</a></sup> 一个欧洲作曲家到日本的工作室制作磁带作品，已经使“德国电子音乐”和“日本电子音乐”的边界变得不那么整齐。工作方法随人移动，录音和设备也穿过国界。</p>
+<p>这样的交流并不意味着所有材料可以不加区别地使用。声音携带记录地点、原来的用途和人的行动。把一段材料纳入作品，会改变它被理解的环境。作曲者既在处理波形，也在决定一种来历怎样继续被听见。今日能够迅速下载素材，反而更需要认识这项选择。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从机构设备到乐队的时间</h3>
+<p>到了合成器与音序器更深入乐队制作的阶段，电子声音不再只属于专门工作室。Yellow Magic Orchestra于1978年由细野晴臣、高桥幸宏和坂本龙一组成；他们把编程、合成器与乐队演奏带进唱片和舞台。<sup><a href="#c3-note-ymo" aria-label="注释4">〔4〕</a></sup> 机器的重复与人的演奏开始以另一种方式相处：它们共同面对歌曲、节拍、巡演和听众。</p>
+<p>音序器能够不断重复一串事件，音乐家因而可以把双手移到其他地方：调整发音、改变层次，或在固定序列上演奏。一个已经准备好的部分，为另一部分保留了行动空间。现场的困难也随之变化。哪一层必须稳定，哪一层可以跟随当晚的演奏，成为编排与设备准备共同面对的问题。</p>
+<p>这与磁带剪接并不是互相取代的两条道路。制作仍然可以先录下，再选择；演出也可以在固定录音之上继续发生。不同技术使某些行动变得更容易，又使另一些行动需要重新设计。后来电脑把录音、音序与效果放在同一窗口中，继承的正是这些不同的时间观念。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>历史怎样进入今天的制作</h3>
+<p>在Live中复制一个Clip，看上去只是一项界面操作。它背后却同时包含保存、重复和重新安排的可能。一段录音能够原样回来，也能够被裁短、变速，成为新的材料；一组MIDI指令可以保持音高关系，而把发声交给另一件乐器。记录与演奏之间的边界因此可以不断移动。</p>
+<p>理解这些来路，有助于辨认制作中的选择。一位音乐家希望留下演奏的细微差别，可能选择处理完整录音；另一位希望继续改变每个音的长度与力度，便需要保留音符信息。两种方法各自保存了一部分自由。技术的历史，也是一部关于哪些自由被打开、哪些被固定的历史。</p>
+<p>科隆、东京、广播机构与乐队舞台，不是依次淘汰的站点。今天仍然存在精细的固定录音、由规则组织的过程、共同演奏的乐队，以及暂时无法归入其中的形式。进入一件作品之前，先认识它的制作条件，往往比先给它寻找风格名称更有帮助。</p>
+<p>下一章中的独立厂牌，将把这些制作结果带入另一层组织。声音怎样被完成之外，还需要有人决定它与哪些作品一起出现，以怎样的形式被出版，又在哪里遇到听众。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>延伸聆听与阅读</h3>
+<ul>
+<li><a href="https://ressources.ircam.fr/en/work/telemusik" target="_blank" rel="noopener noreferrer">Stockhausen《Telemusik》作品档案</a></li>
+<li><a href="https://www.universal-music.co.jp/ymo/biography/" target="_blank" rel="noopener noreferrer">Yellow Magic Orchestra 官方年表</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c3-note-wdr">WDR，Nordwestdeutscher Rundfunk，机构历史。<a href="https://www1.wdr.de/unternehmen/der-wdr/profil/chronik/nordwestdeutscher-rundfunk-100.html" target="_blank" rel="noopener noreferrer">https://www1.wdr.de/unternehmen/der-wdr/profil/chronik/nordwestdeutscher-rundfunk-100.html</a></li><li id="c3-note-nhk">日永田広，《NHK電子音楽スタジオの軌跡と未来への展望》，日本オーディオ協会 JAS Journal，2025年春。<a href="https://www.jas-audio.or.jp/journal_contents/journal202505_post20525" target="_blank" rel="noopener noreferrer">https://www.jas-audio.or.jp/journal_contents/journal202505_post20525</a></li><li id="c3-note-tele">IRCAM，Telemusik，作品档案。<a href="https://ressources.ircam.fr/en/work/telemusik" target="_blank" rel="noopener noreferrer">https://ressources.ircam.fr/en/work/telemusik</a></li><li id="c3-note-ymo">Universal Music Japan，Yellow Magic Orchestra，Biography。<a href="https://www.universal-music.co.jp/ymo/biography/" target="_blank" rel="noopener noreferrer">https://www.universal-music.co.jp/ymo/biography/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-2">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-4">下一章 →</a></div></article><article class="article" id="chapter-4"><div class="kicker">第04章</div><h2>厂牌如何形成一种语言</h2>
+
+<div class="context-row"><div class="context-main"><h3>一段胶片留下的节奏</h3>
+<p>Olaf Bender以Byetone的名字制作音乐。他早年的材料却包括胶片：在学校接触16毫米胶片以后，他曾直接刮擦、涂画，在放映中观察几何形状如何运动。后来加入AG Geige，音乐、影像与表演逐渐进入同一项工作。<sup><a href="#c4-note-byetone" aria-label="注释1">〔1〕</a></sup></p>
+<p>胶片上的一个痕迹只有经过投影，才变成屏幕上的时间。声音也有相似的条件：单独一声可能普通，经过重复、间隔和强弱安排，便拥有了推动力。把Bender的经历放在一起，能够理解他为什么会同时关心材料和排列，而不必把视觉与音乐当作两个后来才碰巧相遇的职业。</p>
+<p>发行同样参与了他的实践。Bender与Frank Bretschneider在1996年建立rastermusic，之后与Carsten Nicolai的noton合作，1999年合并为raster-noton。<sup><a href="#c4-note-byetone" aria-label="注释1">〔1〕</a></sup> 一个厂牌由此成为音乐、设计和不同创作者之间的接口。</p>
+</div><aside class="context-aside" aria-label="背景：Byetone 与 raster"><p class="note-type">人物位置</p><h4>Byetone 与 raster</h4><p>Olaf Bender 是使用 Byetone 名义工作的音乐家，也是 rastermusic 的共同创办者。唱片制作、设计与现场活动是这条实践中相邻的工作。</p><div class="note-links"><a href="https://raster-media.net/artist/byetone/" target="_blank" rel="noopener noreferrer">raster · Byetone ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>相邻的唱片怎样改变听法</h3>
+<p>唱片不会只以声音的形式来到听众面前。名字、封面、载体、发行顺序、演出场合和其他唱片共同提供了进入它的方式。相同的短促电子声音，放进舞曲合辑、画廊装置或实验唱片系列，听者可能带着不同期待接近它。</p>
+<p>厂牌的工作可以强化这些关系。它选择哪些作品彼此相邻，也选择怎样让差异显露。统一设计使听者认出一个系列，音乐中的不同做法又避免系列变成一种单一配方。共同语言存在于反复相遇中：某些声音、空间或时间处理被辨认出来，下一张唱片再改变对它们的理解。</p>
+<p>Byetone的《Death of a Typographer》和《Symeta》，与Nicolai的Xerrox系列同处相关发行网络，却提出不同问题。前者把节奏与声音力量放在显著位置，后者围绕录音材料的变形展开。<sup><a href="#c4-note-byetone" aria-label="注释1">〔1〕</a></sup> 把两者都叫“故障电子”，只能帮助粗略定位，无法解释音乐怎样行进。听者需要继续分辨：是事件之间的重复在推动，还是声音自身的变化在维持时间？</p>
+<p>这种辨别对制作十分实际。一个声音库可以提供共同质地，但把声音排进不同关系里，才会出现不同作品。来自同一套工具，并不要求它们具有相同的段落、密度或情绪。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>把发行也做成作品</h3>
+<p>raster的《source book 1》以1996至2016年的发行作为对象，为每项发行安排一个跨页。唱片、特殊包装和出版记录共同进入了目录。<sup><a href="#c4-note-sourcebook" aria-label="注释2">〔2〕</a></sup> 这种整理使发行历史成为可以被重新阅读的材料：作品不仅有内容，还有尺寸、载体、顺序和它在系列中的位置。</p>
+<p>对数字制作而言，这是一种容易忽略的经验。导出的WAV可以很快被复制，作品的版本关系却仍然需要组织。哪一段是现场摘录，哪一版是为完整聆听重新剪辑，哪一项素材只是制作过程中的片段，会影响听者怎样理解它。呈现并非音频完成后才添加的外壳。</p>
+<p>同样，一次现场录音未必适合直接成为唱片。演出中的等待可能受到房间、灯光或观众影响，离开现场以后，某些持续需要重估。反过来，录音中的密集剪辑也未必适合原样搬到舞台。作品的身份可以保持，呈现的时间却可能改变。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一个场景需要怎样的空间</h3>
+<p>raster后来持续组织Electric Campfire等活动，把厂牌中的音乐放回共同的现场。<sup><a href="#c4-note-raster" aria-label="注释3">〔3〕</a></sup> 发行与演出互相支持：唱片使作品能够反复聆听，现场让音乐在同一空间里相遇，也暴露录音里不容易显现的尺度。</p>
+<p>对于后来进入制作的人，厂牌可以成为一间延伸的听音室。重要的不是一次收集全部目录，而是逐渐听见同一语境里不同创作者怎样回答相近问题。有人强调强烈的脉搏，有人留下长时间的空隙；有人让噪声成为背景，有人把它放到前景。相同标签内部的差异，比标签本身更能训练判断。</p>
+<p>这种环境也需要批评。统一的视觉和措辞会提高辨识度，也可能使听众把外观当成价值。一个声音显得克制，不一定已经有结构；一种包装看起来严密，也不能替音乐完成时间。品味的发展，要能够从共同语言中辨认具体作品，而不是只确认它是否属于熟悉的阵营。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从发行网络走向共同制作</h3>
+<p>厂牌连接的是作品之间的关系。集体表演进一步要求人们在制作过程中就交换决定：灯光提前了，动作需要调整；声音继续保持，另一段影像便要等待。下一章的Dumb Type将把这种共同时间放到舞台中央。</p>
+<p>从这里返回个人制作，也能得到一个尺度。写出声音是工作的开始，怎样让它与其他材料、作品和人相遇，同样参与音乐的形成。一个文件的结束，并不必是创作的终点。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>作品与出版</h3>
+<ul>
+<li><a href="https://raster-media.net/artist/byetone/" target="_blank" rel="noopener noreferrer">Byetone：作品与经历</a></li>
+<li><a href="https://raster-media.net/project/source-book-1/" target="_blank" rel="noopener noreferrer">raster：《source book 1》</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c4-note-byetone">raster，Byetone，艺术家经历与作品档案。<a href="https://raster-media.net/artist/byetone/" target="_blank" rel="noopener noreferrer">https://raster-media.net/artist/byetone/</a></li><li id="c4-note-sourcebook">raster，source book 1，2017。<a href="https://raster-media.net/project/source-book-1/" target="_blank" rel="noopener noreferrer">https://raster-media.net/project/source-book-1/</a></li><li id="c4-note-raster">raster，About，厂牌与活动介绍。<a href="https://raster-media.net/about/" target="_blank" rel="noopener noreferrer">https://raster-media.net/about/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-3">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-5">下一章 →</a></div></article><article class="article" id="chapter-5"><div class="kicker">第05章</div><h2>舞台上的集体：Dumb Type</h2>
+
+<div class="context-row"><div class="context-main"><h3>一个比技术更早的问题</h3>
+<p>Dumb Type于1984年在京都形成，参与者来自视觉艺术、表演、声音和其他领域。<sup><a href="#c5-note-bio" aria-label="注释1">〔1〕</a></sup> 他们的工作使舞台上的身体与媒体技术同时进入视野，也使“谁在说话、谁被听见”成为作品的一部分。</p>
+<p>在1994年首演的《S/N》中，这个问题已经写进标题。S/N是信号与噪声的关系：通信系统希望传达的内容被当作信号，妨碍传递的成分被当作噪声。作品把这种划分带到社会中的差异，涉及性别、性取向、种族和疾病所形成的排斥。Teiji Furuhashi参与构思并执导这件作品。<sup><a href="#c5-note-sn" aria-label="注释2">〔2〕</a></sup></p>
+<p>技术术语在这里不只提供一种视觉风格。它使人重新审视一种分类的动作：谁有权决定什么是应被接收的内容，什么又可以被忽略？舞台同时呈现身体、语言、图像与声音，使这项判断发生在观众面前。</p>
+</div><aside class="context-aside" aria-label="背景：S/N：谁被当作信号"><p class="note-type">名词与时代</p><h4>S/N：谁被当作信号</h4><p>S/N 来自信噪比。Dumb Type 的舞台作品把接收与排除的技术问题带到身体、语言和社会处境中，媒介的安排也参与作品的提问。</p><div class="note-links"><a href="https://dumbtype.com/works/s-n/" target="_blank" rel="noopener noreferrer">Dumb Type · S/N ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>声音也在决定观看</h3>
+<p>在跨媒介作品中，声音可以为一个动作划出边界，也可以使动作暂时失去边界。连续的声场可能把多个画面连接成同一过程；突然的静默则会把注意力交给一处细小动作。图像正在讲述什么，与声音让人怎样感受这段时间，是两项互相影响的工作。</p>
+<p>从音乐制作的角度，重要的是媒介之间怎样分担注意力。每一层都持续强调自己，观众可能只剩整体强度；某一层暂时退后，另一层才有机会改变观看和聆听。声部之间的让位，到了舞台上扩展成了身体、灯光与投影之间的让位。</p>
+<p>这样的关系不能只靠最终对齐文件来完成。某个动作在排练中变慢，声音的持续便可能需要重写；一段文字需要被读完，图像就不能按照原先速度撤去。制作人员面对的不是几条独立时间线，而是同一段时间的不同条件。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>集体怎样写出共同时间</h3>
+<p>Dumb Type的《pH》于1990年首演，《S/N》则在后来的制作中继续发展身体与媒体的关系。<sup><a href="#c5-note-ph" aria-label="注释3">〔3〕</a></sup> 连续的作品并不要求所有成员始终使用同一方法。集体提供的是能够让不同工作相遇的场合，具体形式仍然要在每次制作中重新建立。</p>
+<p>共同时间通常需要一些可识别的节点。一个节点可以是某句话结束，也可以是表演者走到某处、音乐进入另一段或灯光发生变化。被确定下来的不一定是每一秒，而可能是这些事件的先后与依赖。</p>
+<p>现场行业常用cue表示一项需要执行的提示。它的意义来自关系：谁发出，谁接收，允许提前或延后多少，执行以后会改变什么。一条看似简单的提示，可能把声音、视觉和动作连在一起。只记录时间数值，却没有说明这种关系，系统在排练改变时就会变得脆弱。</p>
+<p>音乐家在这种合作中，也会重新认识自己的材料。一段单独听来完整的乐句，可能抢走场上关键动作的注意力；一处非常简单的持续音，反而能够保留其他媒介需要的空间。音乐的复杂程度，不再只用它内部包含多少变化来衡量。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>作品也会继承尚未结束的问题</h3>
+<p>2022年的威尼斯双年展项目把集体实践带入另一阶段，坂本龙一参与其中；随后在东京的《2022: remap》继续改变其呈现。<sup><a href="#c5-note-remap" aria-label="注释4">〔4〕</a></sup> 集体可以通过新的合作重新访问先前的问题，而不只是在原作品上添加设备。</p>
+<p>“重新映射”也是理解跨媒介制作的一种方式。材料被移到不同场所，扬声器、投影、身体和观众的位置改变，旧关系就需要重新安排。作品的连续性由此可以存在于问题和方法中，而不只是相同的文件与画面。</p>
+<p>对个人音乐制作而言，这项经验仍然有用。一位作者也在与不同角色协作：作曲时寻找方向，编辑时删去多余，混音时检查层次，现场时判断持续。电脑把这些工作集中在同一个人手上，并没有使它们变成同一种判断。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>留给下一次相遇的位置</h3>
+<p>集体创作的困难，常常不在于缺少想法，而在于不同想法争用同一段时间。有人需要等待，另一个人希望加速；一个声音希望被单独听见，画面却已经进入强烈变化。讨论由此不能停在“这部分很好”，还要问它在整体中什么时候发生。</p>
+<p>Dumb Type使这类问题具有公共的尺度。舞台上的身体并非被技术取代的旧材料，技术也不是身体的装饰。它们共同组织可见与不可见、被听见与被忽略。作品所包含的社会疑问，进入了它如何分配注意力的方式。</p>
+<p>前面几章由演出走到历史、厂牌和集体，建立了声音工作的环境。接下来，视线回到具体材料：一段录音被复制和改变之后，还能保留怎样的来历？这正是Alva Noto的Xerrox系列不断展开的问题。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>作品档案</h3>
+<ul>
+<li><a href="https://dumbtype.com/works/s-n/" target="_blank" rel="noopener noreferrer">Dumb Type《S/N》</a></li>
+<li><a href="https://dumbtype.com/works/ph/" target="_blank" rel="noopener noreferrer">Dumb Type《pH》</a></li>
+<li><a href="https://dumbtype.com/2022remap/en/" target="_blank" rel="noopener noreferrer">《2022: remap》</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c5-note-bio">Dumb Type，Biography。<a href="https://dumbtype.com/biography/" target="_blank" rel="noopener noreferrer">https://dumbtype.com/biography/</a></li><li id="c5-note-sn">Dumb Type，《S/N》，制作经过、作品说明与演出档案。<a href="https://dumbtype.com/works/s-n/" target="_blank" rel="noopener noreferrer">https://dumbtype.com/works/s-n/</a></li><li id="c5-note-ph">Dumb Type，《pH》，1990。<a href="https://dumbtype.com/works/ph/" target="_blank" rel="noopener noreferrer">https://dumbtype.com/works/ph/</a></li><li id="c5-note-remap">Dumb Type / Artizon Museum，《2022: remap》。<a href="https://dumbtype.com/2022remap/en/" target="_blank" rel="noopener noreferrer">https://dumbtype.com/2022remap/en/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-4">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-6">下一章 →</a></div></article><section class="part-entry" id="part-II"><div class="part-title">II</div><h2>在作品中听见选择</h2><p>几位创作者沿着不同材料形成各自的判断：复制、环境、长篇与工具。</p></section><article class="article" id="chapter-6"><div class="kicker">第06章</div><h2>Alva Noto：声音被复制之后</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>在日常用途之外</h3>
+<p>机场提示音、广告旋律和电话等待音乐，本来都在完成明确的任务：提醒、吸引，或让一段等待不至于完全安静。Carsten Nicolai以Alva Noto之名展开的Xerrox系列，把这类声音从原用途里移开。2007年的第一卷使用采样变换工具处理材料，相关开发由他与Christoph Brünggel合作完成。<sup><a href="#c6-note-x1" aria-label="注释1">〔1〕</a></sup></p>
+<p>进入作品以后，声音的出处可能逐渐模糊。原先让人辨认某项服务的旋律，变成一种延续的音色；一个为短暂提示准备的片段，获得了更长的时间。音乐仍然带着原材料的痕迹，却开始建立自己的关系。</p>
+<p>Nicolai同时从事声音、视觉和装置。他与池田亮司的《cyclo.》让图形参与选材；在Xerrox里，材料经过处理的历史则成为主要问题。<sup><a href="#c6-note-cyclo" aria-label="注释2">〔2〕</a></sup> 数字脉冲、图形筛选与缓慢变形，分别成为不同系列的写作条件。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>复制为何会改变声音</h3>
+<p>数字文件原样复制，内容可以完全保持。Xerrox所引出的创作问题，发生在另一个地方：复制之后继续处理，再把处理结果作为下一步的材料。</p>
+<p>设想一段有清楚音头和长尾的录音。第一次只保留尾部，事件的起因便退后；第二次把尾部拉长，原本经过的细节开始持续；第三次再剪出其中一段，新的边界出现。每一步都可以很简单，累积起来却改变了材料怎样被识别。</p>
+<p>这里有两种不同的记忆。一种是对来源的记忆：听者认出钢琴、人的声音或环境。另一种是作品内部建立的记忆：即使已经不知道原物是什么，仍能认出某个轮廓、间隔或音高关系。处理可以削弱第一种记忆，同时加强第二种。</p>
+<p>因此，声音变得陌生以后，编排的工作并没有结束。一个经过深度变形的片段，需要在作品中获得自己的身份：何时出现，留下什么特征，后来怎样再次被听见。如果每次进入都是全新的材料，听者可能只有不断经过的印象；保留少量联系，变化才有可以比较的对象。</p>
+</div><aside class="context-aside" aria-label="背景：复制之后，继续处理"><p class="note-type">制作关联</p><h4>复制之后，继续处理</h4><p>文件复制保留数据；剪辑、拉伸、滤波与再次录音会改变材料。将处理结果带回下一轮，才形成逐次累积的制作历史。</p><div class="note-links"><a href="https://noton.info/product/n-029/" target="_blank" rel="noopener noreferrer">NOTON · Xerrox Vol.1 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>颗粒也能够成为连续</h3>
+<p>颗粒常被理解为声音碎裂的效果。Nicolai在2011年的公开讲座中谈到另一方向：通过颗粒处理形成持续音，并在离线计算、聆听和选择之间工作。<sup><a href="#c6-note-rbma" aria-label="注释3">〔3〕</a></sup> 颗粒既能强调边缘，也能通过重叠使边缘暂时消失。</p>
+<p>这会改变“实验性”的听觉想象。实验不必始终表现为尖锐、突发和不断变化。一层持续声音内部可以有缓慢的不稳定：明暗轻微移动，两个频率之间产生起伏，局部纹理又逐渐退去。音乐的活动没有停止，只是转移到较细的尺度。</p>
+<p>在这种状态里，新的声音不一定需要更多。一处细小事件进入持续场，会使场的距离被重新感觉；持续层短暂撤去，又让此前被它掩盖的边界显现。处理后的材料，需要通过相遇和缺席形成时间，而非始终以最大密度展示自身。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从外部材料到自己的旋律</h3>
+<p>2024年的《Xerrox Vol.5》为系列收束。与早期广泛收集既有材料的方式相比，后期把更多注意力放在原创旋律及其变形上。Nicolai也把这一变化与电影、管弦乐合作的经验联系起来。<sup><a href="#c6-note-x5" aria-label="注释4">〔4〕</a></sup></p>
+<p>转变没有取消复制的问题，却改变了最初拿到手里的东西。处理外部录音时，创作者面对一个已经存在的身份；处理自己写出的旋律时，他同时决定身份怎样建立，以及它随后怎样失去确定的轮廓。</p>
+<p>这种差别能够返回普通制作。一条先被完整听见的旋律，后来只留下节奏轮廓，听者仍可能感到它回来；一层从未显露过原形的纹理，则需要通过其他方式建立联系。音色变化与音乐记忆在这里相互依赖。处理得更深，并不自动使联系更丰富；保留得更多，也不意味着作品更容易成立。</p>
+<p>系列的跨度还显示出一种长期工作的方式：同一个问题可以在不同阶段改变材料。创作者不必忠实保留最早的设备和取材办法，仍然可以继续追问经过处理之后还有什么留下。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一个可继续使用的制作问题</h3>
+<p>回到工作台，Xerrox提供的不是固定效果链，而是一种观察材料的方向。每次处理都改变某些属性，也保留某些属性：起音可能消失，音高关系留下；空间被拉长，原来的节奏变模糊；源声音变得难以辨认，一个新轮廓却逐渐稳定。</p>
+<p>重采样把这些决定保存下来。一旦处理结果成为新的录音，它就可以被重新裁切、调度和演奏。音色内部的历史，开始参与较长的音乐结构。后面的制作章节将用自有材料比较这种变化，使“处理”不只是一串设备名称。</p>
+<p>这一经验与下一章的坂本龙一相邻。一个方向不断改写录音的身份，另一个方向让熟悉的乐器和环境重新被听见。它们都要求创作者在声音进入音乐之前，再听一遍自己究竟拿到了什么。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>聆听</h3>
+<ul>
+<li><a href="https://noton.info/product/n-029/" target="_blank" rel="noopener noreferrer">Alva Noto《Xerrox Vol.1》</a></li>
+<li><a href="https://noton.info/product/n-062/" target="_blank" rel="noopener noreferrer">Alva Noto《Xerrox Vol.5》</a></li>
+<li><a href="https://www.redbullmusicacademy.com/lectures/carsten-nicolai-listening-to-10000-khz/" target="_blank" rel="noopener noreferrer">Carsten Nicolai：公开讲座</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c6-note-x1">NOTON，Xerrox Vol.1，2007。<a href="https://noton.info/product/n-029/" target="_blank" rel="noopener noreferrer">https://noton.info/product/n-029/</a></li><li id="c6-note-cyclo">Ryoji Ikeda / Carsten Nicolai，cyclo.。<a href="https://www.ryojiikeda.com/project/cyclo/" target="_blank" rel="noopener noreferrer">https://www.ryojiikeda.com/project/cyclo/</a></li><li id="c6-note-rbma">Red Bull Music Academy，Carsten Nicolai: Listening to 10000 kHz，2011。<a href="https://www.redbullmusicacademy.com/lectures/carsten-nicolai-listening-to-10000-khz/" target="_blank" rel="noopener noreferrer">https://www.redbullmusicacademy.com/lectures/carsten-nicolai-listening-to-10000-khz/</a></li><li id="c6-note-x5">NOTON，Xerrox Vol.5，2024。<a href="https://noton.info/product/n-062/" target="_blank" rel="noopener noreferrer">https://noton.info/product/n-062/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-5">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-7">下一章 →</a></div></article><article class="article" id="chapter-7"><div class="kicker">第07章</div><h2>坂本龙一：钢琴以外的世界</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>为一部不存在的电影写音乐</h3>
+<p>制作《async》时，坂本龙一曾把它想象成一部并不存在的塔可夫斯基电影的配乐。2017年发行的唱片，从日常物件、雕塑与自然获得材料，主要在纽约构思和录制，也包含不同地点的环境录音。<sup><a href="#c7-note-async" aria-label="注释1">〔1〕</a></sup></p>
+<p>没有实际电影，就没有已经完成的镜头替音乐确定进程。这个设想保留了影像带来的空间与时间想象，又把决定权交还给声音：一个事件出现后，音乐需要自己安排等待；一段连续声场中，听者需要自己寻找远近和变化。</p>
+<p>坂本熟悉写给影像的音乐，也熟悉歌曲、乐队和钢琴。到了《async》，这些经验没有被清空，而是与更宽的材料范围相遇。钢琴与其他乐器、录音与编程、带明确音高的声音与环境声，共同进入唱片。<sup><a href="#c7-note-async" aria-label="注释1">〔1〕</a></sup></p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一种声源，几种倾听</h3>
+<p>钢琴可以被听作旋律乐器，也可以被听作一次接触和随后发生的衰减。第一种听法把注意力放在音符之间，第二种会继续追问：这个音怎样出现，多久开始变暗，最后留下什么。</p>
+<p>两种听法并不互斥。一个音符的尾部可以影响下一句的进入，房间里的反射也可能延长和声的悬置。作曲与声音处理之所以难以彻底分开，正在于乐句始终通过某种具体发声被听见。</p>
+<p>环境录音又提出另一项选择。它可以维持一个场所的身份，让人认出雨、脚步或机器；也可以只保留声音的纹理，使原来记录了什么暂时退后。把环境声调低，并不会自动使它成为背景。一次很轻的突发，仍然可能改变整段音乐的重心。</p>
+<p>选择位置和持续时间，比简单地给声音分成“音乐”与“杂音”更有帮助。一段呼吸声可以成为节律，一段带音高的材料也可以像空气一样持续。它们的角色在相邻关系里形成。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>并非所有时间都需要一起走</h3>
+<p>《async》的发行说明将不同步、素数等观念列入作品的思考。<sup><a href="#c7-note-async" aria-label="注释1">〔1〕</a></sup> 在制作中，这可以引出一个明确的问题：不同声部必须在每次循环的同一点重新相遇吗？</p>
+<p>设想两段长度不同的录音。第一段回到开头时，第二段尚未走完；再次相遇，组合已经改变。材料各自保持稳定，关系却在继续移动。创作者可以使用这种过程延长作品，也可以在某处中断它，使一次新的进入取得清楚的作用。</p>
+<p>这样的音乐仍然需要边界。各层何时开始、什么时候退出、允许哪些声音同时出现，都会影响过程。不同步可以带来开放的关系，也可能使听者难以辨认方向。决定采用哪种持续，不是调一个“随机”按钮能够代替的工作。</p>
+<p>这里也能重新理解留白。留白不一定是所有声音归零；它可能是一层撤去以后，另一层终于有机会被辨认。持续场中的空隙，与钢琴乐句中的停顿，尺度不同，却都在安排下一次声音怎样被迎接。</p>
+</div><aside class="context-aside" aria-label="背景：不同长度的循环"><p class="note-type">概念补全</p><h4>不同长度的循环</h4><p>两层材料各自重复，长度不同，相遇位置便会持续变化。保持各层与选择它们共同开始、退出的时刻，是两种互相配合的作曲工作。</p><div class="note-links"><a href="https://milanrecords.com/release/async/" target="_blank" rel="noopener noreferrer">Milan · async ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>合作使熟悉的声音改变位置</h3>
+<p>坂本与Alva Noto的《Vrioon》于2002年发表。钢琴与电子声音在这项合作中相遇，随后延续为更长的共同实践。<sup><a href="#c7-note-vrioon" aria-label="注释2">〔2〕</a></sup> 两位作者并非只各自提供一种音色；合作要求彼此为对方的材料留下发生的条件。</p>
+<p>这种关系可以通过制作中的一个普通情境理解。钢琴的衰减需要时间，电子事件能够在更短的尺度上划出边界。短事件如果总在钢琴起音时出现，可能加强重音；如果出现在尾部，又会让原先的延续获得新的节律。相同的材料，仅仅改变相遇的位置，就会产生不同的对话。</p>
+<p>合作因而有一部分发生在不做什么之中。某一层保持稳定，使另一层可以改变；一位作者暂时不加入新材料，整体却可能更有前进感。倾听在此成为制作行为，而不是创作结束后才进行的评价。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>重新认识一件熟悉的乐器</h3>
+<p>第一章中的受灾钢琴，使乐器的历史成为声音的一部分。《async》把问题展开到更广的日常材料。一件物体不必先成为传统乐器，才值得录下；一段录音也不必保持完整的环境说明，才有音乐价值。</p>
+<p>但认识物体的来历，会改变处理的分寸。保留录音中的背景，可能使一个声音继续带着场所；截去背景，则可能把它变成较独立的事件。两种结果各有用途，创作者需要听见处理所带来的距离。</p>
+<p>这为后面的采样和混音准备了一种态度：素材并非等待被修正的空白。它已经具有持续、纹理、空间和动作。制作可以改变它们，也可以决定让其中某一种关系继续存在。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一段音乐怎样结束</h3>
+<p>声源越多，结束未必越容易。新的材料总能加入，新的处理也总能产生变化。一件作品却需要让某些变化得到充分的时间，然后允许它们离开。</p>
+<p>坂本的这些实践，使音乐家重新面对熟悉的动作：听一个音直到它消失，辨认一次进入是否过早，让环境声在不被旋律覆盖时保留自己的速度。看似简单的工作，因为没有显著的技术动作，反而容易在制作中被跳过。</p>
+<p>一段声音何时已经说够，需要完整聆听才能知道。下一章的柏大辅把这种判断带入长篇、电影与工程工作；相同的材料，在不同的时间结构中，将承担另一种责任。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>聆听</h3>
+<ul>
+<li><a href="https://milanrecords.com/release/async/" target="_blank" rel="noopener noreferrer">坂本龙一《async》与专辑预告</a></li>
+<li><a href="https://noton.info/product/n-020/" target="_blank" rel="noopener noreferrer">Alva Noto + Ryuichi Sakamoto《Vrioon》</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c7-note-async">Milan Records，Ryuichi Sakamoto: async，2017，发行说明。<a href="https://milanrecords.com/release/async/" target="_blank" rel="noopener noreferrer">https://milanrecords.com/release/async/</a></li><li id="c7-note-vrioon">NOTON，Vrioon，作品与发行说明。<a href="https://noton.info/product/n-020/" target="_blank" rel="noopener noreferrer">https://noton.info/product/n-020/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-6">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-8">下一章 →</a></div></article><article class="article" id="chapter-8"><div class="kicker">第08章</div><h2>柏大辅：让音乐自己讲故事</h2>
+
+<div class="context-row"><div class="context-main"><h3>琴声之前的一把吉他</h3>
+<p>柏大辅（KASHIWA Daisuke）是日本作曲家与声音工程师，创作过长篇电子音乐、钢琴唱片，也为新海诚的动画电影《言叶之庭》配乐。<sup><a href="#c8-note-bio" aria-label="注释1">〔1〕</a></sup><sup><a href="#c8-note-film" aria-label="注释2">〔2〕</a></sup> 这部以钢琴音乐给人留下印象的电影，配乐原案却大部分先在一把吉他上出现。</p>
+<p>柏大辅曾买过一把价格不高的 Bacchus 吉他，用旧以后，修了继续用。它很适合拿来作曲。多年后谈起这件乐器，他说，新海诚这部电影的音乐，也大多先在吉他上构思。<sup><a href="#c8-note-deviser" aria-label="注释3">〔3〕</a></sup></p>
+<p>吉他在这里像一张草稿纸。手指先找到和弦与旋律，最终的声音可以在后面的编排中改变。银幕上被记住的钢琴，背后可能有六根弦上的试探。一个想法能够离开最初的音色，继续保留自己的方向。</p>
+<p>这些工作把柏大辅带到不同位置：有时从头建立一件作品，有时进入别人已经写好的音乐，寻找还需要完成的部分。同一个想法在乐器、录音与作品之间迁移，也使他的制作经验不断相遇。</p>
+</div><aside class="context-aside" aria-label="背景：电影配乐是一项合作"><p class="note-type">作品背景</p><h4>电影配乐是一项合作</h4><p>《言叶之庭》是新海诚执导、2013年上映的动画电影。柏大辅负责配乐。电影的镜头、对白和环境声已经在组织时间，音乐需要与这些既有关系相处。</p><div class="note-links"><a href="https://www.kotonohanoniwa.jp/page/staff/004.html" target="_blank" rel="noopener noreferrer">影片：柏大辅介绍 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>乐队经验进入电脑</h3>
+<p>个人唱片之前，柏大辅在器乐摇滚乐队 yodaka 担任吉他手与作曲者。乐队的《Betrayal and Reincarnation》后来于2016年发行，吉他、贝斯、鼓与电子编程在其中共同构成音乐。<sup><a href="#c8-note-yodaka" aria-label="注释4">〔4〕</a></sup></p>
+<p>他对长曲的兴趣还可以追溯到高中。Yes 等前卫摇滚带来的吸引力，在于音乐能够经过很长的时间，展开近似故事的历程。<sup><a href="#c8-note-ototoy" aria-label="注释5">〔5〕</a></sup> 一段器乐不必急着回到主歌或副歌；它可以停留、蓄积，再进入与开头相距很远的地方。</p>
+<p>这样的时间感进入电脑制作以后，获得了更细的操作尺度。合奏中一次连续的演奏可以变成录音；录音可以被切开、重排，局部还可以被拉长到原来的演奏无法维持的程度。宏大的起伏与细小的声音编辑，由此出现在同一件作品里。</p>
+<p>2005年，《travelaroundstars》在坂本龙一主持的 J-WAVE《RADIO SAKAMOTO》试听环节播出。翌年，德国厂牌 onpa 发行他的首张个人专辑《april.#02》；2007年，《program music I》由日本厂牌 noble 发行。<sup><a href="#c8-note-radio" aria-label="注释6">〔6〕</a></sup><sup><a href="#c8-note-bio" aria-label="注释1">〔1〕</a></sup> 乐队之外的个人制作，逐渐通过广播和唱片进入更广的聆听网络。</p>
+<p>第一次发表也使不足变得清楚。柏大辅后来回忆，首张专辑让他意识到，作曲、演奏、编排和混音都还有许多需要学习的地方。<sup><a href="#c8-note-wsum" aria-label="注释7">〔7〕</a></sup> 声音可以先于完整的能力出现；完成一件作品，则会使下一步究竟要学什么变得具体。</p>
+</div><aside class="context-aside" aria-label="背景：广播与厂牌给个人作品一个位置"><p class="note-type">历史背景</p><h4>广播与厂牌给个人作品一个位置</h4><p>J-WAVE 是东京的广播电台。《RADIO SAKAMOTO》设有试听选曲环节，2005年9月4日播放《travelaroundstars》。2006年的 onpa 和2007年的 noble 发行，又把个人制作带入不同的唱片流通网络。</p><div class="note-links"><a href="https://www.j-wave.co.jp/original/radiosakamoto/songlist/050904.htm" target="_blank" rel="noopener noreferrer">J-WAVE 当日曲目表 ↗</a><a href="https://kashiwadaisuke.com/biography/" target="_blank" rel="noopener noreferrer">柏大辅 Biography ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>音乐怎样记住前面发生的事</h3>
+<p>《program music I》把整张唱片交给两部长篇：《stella》以宫泽贤治的《银河铁道之夜》为出发点，《write once, run melos》与太宰治的《奔跑吧，梅勒斯》相连。<sup><a href="#c8-note-programi" aria-label="注释8">〔8〕</a></sup></p>
+<p>柏大辅希望音乐能够自己讲故事。<sup><a href="#c8-note-wsum" aria-label="注释7">〔7〕</a></sup> 文学提供了想象的起点，声音还要找到自己的叙述方式。句子能够交代人物到了哪里，音乐则通过音型、速度、音区与质地的变化，使听者感到一段时间已经走过。</p>
+<p>关键在于记忆。旋律第一次出现时，听者尚不知道它将通向哪里；当它在新的背景里回来，前面的经历已经改变了它。一段柔和的声音经过强烈段落之后再次出现，可能显得脆弱，也可能令人安定。变化发生在声音之间，而不只发生在某个音色内部。</p>
+<p>长曲因而需要处理两种尺度。局部要使这一刻值得听，较长的结构则要使这一刻与之前、之后发生联系。连续增加新材料，很容易让作品失去可以返回的地方；保持相同材料，又需要让它在新的位置承担不同作用。叙事的力量，往往来自这两种需要之间的拉扯。</p>
+<p>这也给细密的电子处理找到了位置。一次打断、一层噪声或突然拉长的尾音，可以改变乐句的走向。它们不必始终占据前景；当处理改变了对下一个声音的期待，音色就已经进入了作曲。</p>
+</div><aside class="context-aside" aria-label="背景：长篇也可以让过程自己展开"><p class="note-type">比较阅读</p><h4>长篇也可以让过程自己展开</h4><p>柏大辅从文学获得长篇的出发点。Reich 的《Piano Phase》则围绕相位逐渐移动展开：重复音型不断改变相互位置。前者帮助讨论记忆与叙述，后者帮助讨论可被听见的过程。两种办法都能让少量材料延续。</p><div class="note-links"><a href="https://www.noble-label.net/catalog/?code=CXCA-1212&amp;en=" target="_blank" rel="noopener noreferrer">program music I ↗</a><a href="https://www.boosey.com/pages/teaching/composer/composer_main?composerid=2781&amp;ttype=INTRODUCTION" target="_blank" rel="noopener noreferrer">Reich 作品介绍 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>把一张唱片留给一个问题</h3>
+<p>2011年的《88》收拢了材料，把注意力集中到钢琴。<sup><a href="#c8-note-bio" aria-label="注释1">〔1〕</a></sup> 柏大辅借角色扮演游戏来形容自己的学习：节奏、钢琴、长曲、混音和母带，如同需要逐渐获得的能力；不同作品使他有机会分别深入其中。决定做钢琴唱片时，他便让这张作品尽量由钢琴承担。<sup><a href="#c8-note-ototoy" aria-label="注释5">〔5〕</a></sup></p>
+<p>限制带来的并不只是音轨变少。没有另一组鼓点替乐句推动，也没有新的电子纹理替它转移注意力，旋律的衔接、停顿的长度和和声的去向便显露出来。一段音乐原来依靠什么，减少材料以后会更容易听清。</p>
+<p>到《program music II》，他又从钢琴向原声合奏展开。起初只是想加入更多乐器，制作到中途，才发现音乐与自己喜爱的《水晶山脉》相通，专辑的故事随之清晰。<sup><a href="#c8-note-cinra" aria-label="注释9">〔9〕</a></sup> 这一次，声音先于完整的概念出现；后来找到的故事，又帮助他继续选择声音。</p>
+<p>乐器的选择也有具体的听觉理由。他喜欢 Jimanica 的鼓既紧凑又能突然奔放，坚持使用低音提琴而非电贝斯；那段时间经常聆听的爵士乐，进入了他的判断。<sup><a href="#c8-note-cinra" aria-label="注释9">〔9〕</a></sup> 合作者在这里带来的，是某种发音、推进和衔接的方式。</p>
+<p>从长篇电子制作，到钢琴，再到合奏，变化的同时也是注意力的落点。先前积累的能力没有消失，只是暂时退后，让另一件事能够被认真完成。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>在银幕的时间里</h3>
+<p>《program music I》发行后，柏大辅把唱片寄给自己喜爱的新海诚，此后继续寄送新作。到了《88》时期，新海回复，自己正在听着这张唱片工作。两人的往来最终成为《言叶之庭》的配乐合作。<sup><a href="#c8-note-cinra" aria-label="注释9">〔9〕</a></sup></p>
+<p>2013年上映的电影，把柏大辅带入另一种时间组织。<sup><a href="#c8-note-film" aria-label="注释2">〔2〕</a></sup> 个人唱片可以自行决定一句旋律停留多久，电影里却已经有人物的动作、对白的间隔和镜头的长度。音乐要在这些条件中找到位置。</p>
+<p>同一段旋律，提早进入可能成为预告，晚一些进入则可能成为回应。持续铺在画面下，会使场景获得连贯的情绪；撤去音乐，又会把注意力交还给环境声。写作配乐，需要不断听见音乐之外正在发生什么。</p>
+<p>那把用于构思的吉他也因此获得了新的去处。手上找到的原案经过编排，进入影像已经展开的世界。与导演的合作，使音乐家既能带入自己的语言，又需要听见另一件作品的节奏。</p>
+<aside class="media"><h4>《言叶之庭》官方预告</h4><p>新海诚执导，2013。</p><button class="load-media" data-provider="youtube" data-id="udDIkl6z8X0" data-title="《言叶之庭》官方预告">播放作品</button><a href="https://www.kotonohanoniwa.jp/page/trailer.html" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>完成别人的作品</h3>
+<p>在 Studio FLAT，柏大辅承担混音与母带工作。委托方与他讨论需求，在线交换文件，在各自熟悉的播放环境中反复听取修改结果。<sup><a href="#c8-note-studio" aria-label="注释10">〔10〕</a></sup> 音乐的最后一段路，由工程师和作者共同完成。</p>
+<p>world’s end girlfriend 回忆《SEVEN IDIOTS》的母带合作时，谈到双方逐曲交换文件、多次微调，并在录音室音箱、便携音响、耳机和汽车音响上确认结果。<sup><a href="#c8-note-studio" aria-label="注释10">〔10〕</a></sup> 一次在工作室里成立的判断，还要经受其他聆听条件的检验。</p>
+<p>这种工作要求改变倾听的位置。做自己的作品时，创作者知道某个声音为何被留下；面对别人的录音，这份意图需要通过交流逐渐明白。低频增加以后，整体可能更有力量，也可能遮住作者最在意的细节。每一项处理都同时影响局部质感与整体关系。</p>
+<p>因此，混音与母带的经验能够返回作曲：声部怎样相邻，哪些频段彼此拥挤，一个强烈段落之后需要留下多大空间，都会影响音乐最后能否被听清。编排与声音工程在这些问题上相遇。</p>
+</div><aside class="context-aside" aria-label="背景：混音、母带与写作"><p class="note-type">概念补全</p><h4>混音、母带与写作</h4><p>混音安排录下来的声部之间的关系；母带面向完成的混音及其发行呈现。Studio FLAT 的合作记录强调文件交换、反馈和多种播放条件的比较。工程师所调整的声音，始终属于一件需要被理解的作品。</p><div class="note-links"><a href="https://kashiwadaisuke.com/studio/" target="_blank" rel="noopener noreferrer">Studio FLAT ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>当声音开始带路</h3>
+<p>2024年的《TITAN》重新把钢琴与强烈的电子声响放在一起。柏大辅谈到一种新的制作感受：过去像把木材切开、加工和装配，这一次却更像树木自行伸展；长期积累的制作经验忽然连接起来，声音开始推动作品成形。他还特别强调了低频在这张唱片中的作用。<sup><a href="#c8-note-titan" aria-label="注释11">〔11〕</a></sup></p>
+<p>“生长”这个比喻，把创作者与材料之间的关系倒转了一点。原来的计划依然重要，但新出现的声音也有机会改变计划：一个延音提示下一层可以怎样进入，一次低频的重量使后面的留白需要延长。作品的方向在制作中被发现，而不必全部由最初的构想规定。</p>
+<p>从这个角度回看，早先各自集中的探索获得了联系。长曲训练持续与回返，钢琴让乐句独自承担时间，电影要求音乐与另一种叙事相处，声音工程则使细节接受完整的聆听。它们如今可以在同一次判断中发挥作用。</p>
+<p>这条路仍然与开头的吉他相通。手先找到一个能够继续的音，后来换了乐器、录音与处理，方向也可能随之改变。制作经验的作用，是让音乐家辨认出这种变化：什么时候继续原来的想法，什么时候停下来，听材料已经带来了什么。</p>
+<aside class="media"><h4>《TITAN》</h4><p>KASHIWA Daisuke，2024。</p><button class="load-media" data-provider="youtube" data-id="djjd28vcUmo" data-title="《TITAN》">播放作品</button><a href="https://kashiwadaisuke.com/2024/10/19/titan-kashiwa-daisuke-11th-new-album/" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>聆听</h3>
+<ul>
+<li><a href="https://riccolabel.bandcamp.com/album/betrayal-and-reincarnation" target="_blank" rel="noopener noreferrer">yodaka《Betrayal and Reincarnation》</a></li>
+<li><a href="https://kashiwadaisuke.bandcamp.com/album/program-music-i" target="_blank" rel="noopener noreferrer">《program music I》</a></li>
+<li><a href="https://virginbabylonrecords.bandcamp.com/album/88" target="_blank" rel="noopener noreferrer">《88》</a></li>
+<li><a href="https://virginbabylonrecords.bandcamp.com/album/titan" target="_blank" rel="noopener noreferrer">《TITAN》</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c8-note-bio">KASHIWA Daisuke，Biography。<a href="https://kashiwadaisuke.com/biography/" target="_blank" rel="noopener noreferrer">https://kashiwadaisuke.com/biography/</a></li><li id="c8-note-film">《言叶之庭》，官方 Staff：柏大辅，2013。<a href="https://www.kotonohanoniwa.jp/page/staff/004.html" target="_blank" rel="noopener noreferrer">https://www.kotonohanoniwa.jp/page/staff/004.html</a></li><li id="c8-note-deviser">柏大辅，Deviser 艺术家专页，吉他使用自述。<a href="https://www.deviser.co.jp/artist/kashiwa-daisuke" target="_blank" rel="noopener noreferrer">https://www.deviser.co.jp/artist/kashiwa-daisuke</a></li><li id="c8-note-yodaka">Ricco Label，yodaka《Betrayal and Reincarnation》，2016。<a href="https://fleursy.com/riccolabel/discography/ric029_english.html" target="_blank" rel="noopener noreferrer">https://fleursy.com/riccolabel/discography/ric029_english.html</a></li><li id="c8-note-ototoy">小川ワタル，KASHIWA Daisuke《Re:》访谈，OTOTOY，2012年11月22日。<a href="https://ototoy.jp/feature/2012112201" target="_blank" rel="noopener noreferrer">https://ototoy.jp/feature/2012112201</a></li><li id="c8-note-radio">J-WAVE，《RADIO SAKAMOTO》，2005年9月4日曲目表，Audition：M-17。<a href="https://www.j-wave.co.jp/original/radiosakamoto/songlist/050904.htm" target="_blank" rel="noopener noreferrer">https://www.j-wave.co.jp/original/radiosakamoto/songlist/050904.htm</a></li><li id="c8-note-wsum">Kolby Johnson，Kashiwa Daisuke Interview: Today’s Program，WSUM。<a href="https://wsum.org/kashiwa-daisuke-interview-todays-program/" target="_blank" rel="noopener noreferrer">https://wsum.org/kashiwa-daisuke-interview-todays-program/</a></li><li id="c8-note-programi">noble，《program music I》，2007。<a href="https://www.noble-label.net/catalog/?code=CXCA-1212&amp;en=" target="_blank" rel="noopener noreferrer">https://www.noble-label.net/catalog/?code=CXCA-1212&amp;en=</a></li><li id="c8-note-cinra">金子厚武，KASHIWA Daisuke《program music II》访谈，CINRA，2016年4月27日。<a href="https://www.cinra.net/article/interview-201604-kashiwadaisuke" target="_blank" rel="noopener noreferrer">https://www.cinra.net/article/interview-201604-kashiwadaisuke</a></li><li id="c8-note-studio">KASHIWA Daisuke，Studio FLAT，服务说明与 world’s end girlfriend 合作回忆。<a href="https://kashiwadaisuke.com/studio/" target="_blank" rel="noopener noreferrer">https://kashiwadaisuke.com/studio/</a></li><li id="c8-note-titan">KASHIWA Daisuke，《TITAN》发行自述，2024年10月19日。<a href="https://kashiwadaisuke.com/2024/10/19/titan-kashiwa-daisuke-11th-new-album/" target="_blank" rel="noopener noreferrer">https://kashiwadaisuke.com/2024/10/19/titan-kashiwa-daisuke-11th-new-album/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-7">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-9">下一章 →</a></div></article><article class="article" id="chapter-9"><div class="kicker">第09章</div><h2>Robert Henke：为作品发明工具</h2>
+
+<div class="context-row"><div class="context-main"><h3>录好的音乐，还能怎样演奏</h3>
+<p>Robert Henke 是德国电子音乐家，也是 Ableton Live 的主要创造者之一。他以 Monolake 之名发表唱片、进行现场演出，并开发了 Granulator——一种把录音切成短片段、重新组织为可演奏声音的乐器。<sup><a href="#c9-note-bio" aria-label="注释1">〔1〕</a></sup><sup><a href="#c9-note-granulator" aria-label="注释2">〔2〕</a></sup> 对使用 Live 的人来说，他并不遥远：将录音片段重新组合，或者让一个短暂的声音持续下去，正是他的音乐与工具反复处理的事情。</p>
+<p>这些工作面对着一个实际的困难。录音能够保存精心制作的音色，却也容易把声音锁在既定的时间里。按下播放，录音就沿着原来的顺序走向结束。音乐家若想多停留一会儿，让另一层先进入，或在演出中改变声音内部的运动，就需要重新安排录音的使用方式。</p>
+<p>Henke 希望保留工作室制作的细致，同时把一部分决定带到现场。这个需要先后落在软件、控制器和发声方法上：声音怎样被重新组合，手怎样接近重要的变化，一段录音内部又有什么可以继续演奏。工具的故事，从这些音乐问题开始。</p>
+</div><aside class="context-aside" aria-label="背景：音乐项目、软件、乐器"><p class="note-type">人物位置</p><h4>音乐项目、软件、乐器</h4><p>Monolake 是音乐项目，Ableton 是软件公司，Live 是音乐制作软件，Granulator 是 Henke 开发的颗粒乐器。这几种身份连接着同一位创作者，却各自承担不同的工作。</p><div class="note-links"><a href="https://roberthenke.com/interviews/bio.html" target="_blank" rel="noopener noreferrer">Henke Biography ↗</a><a href="https://roberthenke.com/technology/granulator.html" target="_blank" rel="noopener noreferrer">Granulator ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>两位音乐家的工作室</h3>
+<p>Monolake 最初是两个人的项目。1995年，Henke 与德国音乐家 Gerhard Behles 开始共同创作；Behles 后来成为 Ableton 的联合创办人。<sup><a href="#c9-note-bio" aria-label="注释1">〔1〕</a></sup><sup><a href="#c9-note-ableton" aria-label="注释3">〔3〕</a></sup> 在软件出现之前，两人已经一起处理声音、循环和演出。</p>
+<p>他们的相识并不顺利。两人曾在慕尼黑的乐器店碰面，后来又在柏林大学的讲堂重逢。交谈延续为合作，而工作习惯之间的差异也留了下来：Henke 倾向继续加入声音，Behles 更擅长整理和删减。<sup><a href="#c9-note-origins" aria-label="注释4">〔4〕</a></sup> 一个循环在两人之间反复修改，新增的层可能带来方向，删去的层则让某个细节显露。</p>
+<p>那时的电子乐器工作室，可以像一件同时运行的乐器。音序器负责重复音符，合成器持续发声，音乐家一边听，一边改变层次和效果。已经录下的片段却不总能以同样灵活的方式加入。两人需要让录音也参与这种不中断的组合，而不只是作为一首完成的曲子被重放。<sup><a href="#c9-note-origins" aria-label="注释4">〔4〕</a></sup></p>
+<p>这些需要逐渐进入 Live 的设计。Ableton 由 Behles、程序开发者 Bernd Roggendorf 与 Jan Bohl 创立，Henke 随后参与开发；2001年，第一版 Live 公开发行。<sup><a href="#c9-note-ableton" aria-label="注释3">〔3〕</a></sup><sup><a href="#c9-note-release" aria-label="注释5">〔5〕</a></sup> 循环与片段被放到可以单独启动的位置，原来写在录音里的时间，获得了重新安排的余地。</p>
+<p>音乐与软件从此保持着往返。一个演出中的不便，可以成为改进界面的理由；软件开放的一项动作，也可能使音乐家发现新的编排方式。这里的“发明”，与日常制作里反复遇到的小问题相连。</p>
+</div><aside class="context-aside" aria-label="背景：电脑工作室正在成形"><p class="note-type">时代坐标</p><h4>电脑工作室正在成形</h4><p>1983年，MIDI 使不同乐器交换控制消息；1989年 Cubase 推出；1996年 VST 把效果处理接入软件工作室；1997年 MSP 提供原生音频处理；2001年 Live 进入这个环境，侧重不中断的片段组合。</p><div class="note-links"><a href="https://midi.org/the-history-of-midi" target="_blank" rel="noopener noreferrer">MIDI 历史 ↗</a><a href="https://www.steinberg.net/company/?sid=0" target="_blank" rel="noopener noreferrer">Steinberg 年表 ↗</a><a href="https://cycling74.com/articles/msp-learns-to-ride-a-bike" target="_blank" rel="noopener noreferrer">MSP 开发回忆 ↗</a><a href="https://www.ableton.com/en/pages/press/releases/2002_01_10/" target="_blank" rel="noopener noreferrer">Live 早期发布 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>音符没有移动，律动已经变了</h3>
+<p>要理解这类工具为什么需要不断调整，还得回到声音本身。Henke 在一次早期访谈中描述过自己的制作方式：先建立一个律动，演奏、加入声音，直到某个元素给整体带来方向；完成时，最初的材料可能已经很少留下。<sup><a href="#c9-note-mono" aria-label="注释6">〔6〕</a></sup></p>
+<p>律动不只存在于音符的位置。一个低音短一些，下一次发声前的空隙就宽一些；音头软下来，原来的重拍可能退后；延迟彼此叠合，又会在音符之外生出新的节奏。即使钢琴卷帘中的方块没有移动，音乐的推动方式也可能改变。</p>
+<p>因此，选择音色与安排时间经常是同一次工作。Henke 把硬件发出的声音录进 Live，再比较和选择；保留下来的录音又可以成为下一次演奏的材料。<sup><a href="#c9-note-mono" aria-label="注释6">〔6〕</a></sup> 录制保存了一次发现，剪辑与重新组合继续改变它的作用。</p>
+<p>这使“能播放多少条轨道”与“能演奏哪些关系”成为不同的问题。一套系统即使装下了全部声音，也未必把最重要的变化放在手边。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>让双手找到重要的变化</h3>
+<p>电脑可以显示许多控件，鼠标却只能依次接近它们。演出中，一个声部正在退出，另一个声部可能已经需要调整。Henke 为此制作 Monodeck 控制器，将片段、混音和效果重新安排到双手可以触及的表面。第一台出现于2003年，Monodeck II 的设计从2005年继续展开。<sup><a href="#c9-note-monodeck" aria-label="注释7">〔7〕</a></sup></p>
+<p>这件设备既发送指令，也把状态显示回来。灯光让表演者知道哪些声音已经发声、哪些动作仍在等待。一次按键之后，注意力可以回到音乐，不必立刻转向屏幕查找结果。</p>
+<p>控制表面的安排会影响音乐。经常一起变化的声部放得近，双手便容易形成配合；一个变化若沿途都有可用的声音，旋钮就值得留给持续演奏；一个只需在两个状态之间切换的行为，用按钮可能更直接。工具把制作中的判断转成了身体可以反复完成的动作。</p>
+</div><aside class="context-aside" aria-label="背景：从两个人的工作方式理解工具"><p class="note-type">访谈摘意</p><h4>从两个人的工作方式理解工具</h4><p>2016年的 Behles／Henke 对谈介绍了两人的合作、工作室与现场需要。“一个增加，一个删减”描述制作中的互补；更重要的线索，是他们如何让已经录好的声音继续加入实时的组合。</p><div class="note-links"><a href="https://roberthenke.com/interviews/ableton.html" target="_blank" rel="noopener noreferrer">One Adds and the Other Subtracts ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>激光画出两个圆，声音为什么出了问题</h3>
+<p>在视听演出《Lumière》中，Henke 又遇到另一种限制。他想让激光图形与声音有直接的联系，早期便用控制光束的信号同时生成声音。这样的设计让听到和看到的结果出自同一个过程。<sup><a href="#c9-note-lumiere" aria-label="注释8">〔8〕</a></sup></p>
+<p>问题在图形变复杂时出现了。声音中的两个振荡可以叠加，但一束激光要画两个分开的圆，必须从一个圆移到另一个圆；移动途中还要关光。为画图所需的路径，并不一定产生音乐所需的声音。一个原本简洁的对应关系，开始限制两边能使用的材料。</p>
+<p>Henke 后来改用共同的 MIDI 事件连接图形与独立的声音引擎。MIDI 在这里传递的是触发和控制指令：一次事件可以同时叫出声音与形状，而各自的内部过程分别设计。<sup><a href="#c9-note-lumiere" aria-label="注释8">〔8〕</a></sup> 联系仍然存在，只是从“每一瞬间共用信号”，转到“一次出现由共同决定发起”。</p>
+<p>这种修改让声音能够拥有适合听觉的起音和尾部，图形也能沿适合激光的路线绘制。作品保留了共同的时间，同时给两个媒介留下独立设计的空间。</p>
+<p>分开发声与绘图之后，共同事件仍要维持两边的联系。两套过程若彼此脱节，结构修改就会重新变得困难。《Lumière》的不同版本持续调整预先编排与现场修改的比例；问题始终是，当前的音乐需要什么样的自由。<sup><a href="#c9-note-lumiere" aria-label="注释8">〔8〕</a></sup></p>
+</div><aside class="context-aside" aria-label="背景：共享信号与共享事件"><p class="note-type">概念补全</p><h4>共享信号与共享事件</h4><p>共享信号：同一条连续变化同时控制发声和绘图。共享事件：同一条“开始”指令启动两套过程。前者关联紧密，后者允许声音和图形各自设计细节。《Lumière》的修改发生在这两个层次之间。</p><div class="note-links"><a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">Lumière 的版本变化 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>让声音内部的一瞬间停留下来</h3>
+<p>演奏的自由，还可以深入一份录音内部。一个敲击的尾部可能藏着细密的振动，每次重放，它却总在起音之后很快消失。音乐家如果想让这段纹理独自存在，就需要改变读取录音的方式。</p>
+<p>Henke 从1997年起就在为自己的创作编写颗粒合成器，后来形成 Granulator 系列。<sup><a href="#c9-note-granulator-history" aria-label="注释9">〔9〕</a></sup> 这种乐器反复读取录音中的短片段，让片段交错、重叠。读取位置能够停住，也能够缓慢向前移动。<sup><a href="#c9-note-granulator" aria-label="注释2">〔2〕</a></sup></p>
+<p>以一声敲击为例：读取位置停在尾部时，许多短片段可以连成一层持续声；移回起音附近，声音又会逐渐显露更清楚的边缘。整段录音原来只有“播放到哪里”的顺序，现在增加了“在哪里停留、沿什么方向移动”的演奏。</p>
+<p>这里的作曲动作很具体。音乐家选择一个值得延续的局部，为它安排出现与消失；还可以把读取路线写成自动化，让一次移动形成可编辑的乐句。颗粒处理的意义，由这些时间选择体现出来。</p>
+<p>Live 开放片段之间的组合，Monodeck 帮助双手改变关系，Granulator 则开放声音内部的时间。三项工具并不相同，却共同回答了开篇的困难：已经保存的声音，如何继续容纳新的演奏。</p>
+</div><aside class="context-aside" aria-label="背景：微观时间还有另一条研究线"><p class="note-type">技术前史</p><h4>微观时间还有另一条研究线</h4><p>作曲家 Curtis Roads 从1974年起发展颗粒合成研究，2001年出版《Microsound》，把短时间片段放到作曲与声音研究中讨论。Henke 的 Granulator 则提供了读取、重叠和移动录音局部的演奏界面。</p><div class="note-links"><a href="https://www.curtisroads.net/bio" target="_blank" rel="noopener noreferrer">Roads Biography ↗</a><a href="https://roberthenke.com/technology/granulator.html" target="_blank" rel="noopener noreferrer">Granulator II ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>当工具已经足够</h3>
+<p>Henke 在回顾自己的 Max 程序时，谈过一个反复的过程：起初只做小程序，后来试图让它包办越来越多的事情，再后来，又回到解决主要需要的较小系统。Max 是通过连接模块来设计声音和控制过程的编程环境；程序能够继续增长，音乐却还需要时间被演奏和编辑。<sup><a href="#c9-note-max" aria-label="注释10">〔10〕</a></sup></p>
+<p>能否生成新声音、能否稳定控制，以及这段声音是否值得留下，是接连发生的不同判断。前两项已有答案之后，工作便可以回到一次转场、一个重音或一段尚未确定的结尾。</p>
+<p>工具的来历因此能够帮助理解它的用法。片段为什么独立，控制为什么集中在手边，录音为什么可以停留在局部，都与具体的音乐需要有关。进入 Live 的工作台以后，读者面对的将是这些需要在自己的材料中重新出现：怎样发现一个声音，怎样使它延续，又怎样把它放回更长的时间里。</p>
+</div><aside class="context-aside" aria-label="背景：1940：一架钢琴容纳打击乐"><p class="note-type">并读案例</p><h4>1940：一架钢琴容纳打击乐</h4><p>Cage 为舞蹈《Bacchanale》写音乐时，场地放不下打击乐合奏。他把物件放入钢琴弦间，改变乐器的发声。工具的方法论可以从这里理解：先有需要完成的音乐，现有条件迫使创作者改造手段。</p><div class="note-links"><a href="https://johncage.org/" target="_blank" rel="noopener noreferrer">John Cage Trust ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>聆听与制作</h3>
+<ul>
+<li><a href="https://roberthenke.com/concerts/monolake.html" target="_blank" rel="noopener noreferrer">Monolake：唱片与现场</a></li>
+<li><a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">Lumière：声音与激光</a></li>
+<li><a href="https://roberthenke.com/technology/granulator3.html" target="_blank" rel="noopener noreferrer">Granulator III</a></li>
+</ul></div></div><aside class="media"><h4>Robert Henke · Ableton Live、激光与限制</h4><p>Red Bull Music Academy 讲座。</p><button class="load-media" data-provider="youtube" data-id="8_EhTIxsOMQ" data-title="Robert Henke · Ableton Live、激光与限制">播放作品</button><a href="https://www.youtube.com/watch?v=8_EhTIxsOMQ" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside><details class="footnotes"><summary>本章注释</summary><ol><li id="c9-note-bio">Robert Henke，Biography。 <a href="https://roberthenke.com/interviews/bio.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/interviews/bio.html</a></li><li id="c9-note-granulator">Robert Henke，Granulator III。 <a href="https://roberthenke.com/technology/granulator3.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/technology/granulator3.html</a></li><li id="c9-note-ableton">Robert Henke，Ableton Live。 <a href="https://roberthenke.com/technology/ableton_live.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/technology/ableton_live.html</a></li><li id="c9-note-origins">Maya-Roisin Slater，《One Adds and the Other Subtracts》，2016，Gerhard Behles 与 Robert Henke 对谈。 <a href="https://roberthenke.com/interviews/ableton.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/interviews/ableton.html</a></li><li id="c9-note-release">Ableton，Live 1.1 新闻稿，2002年1月10日。 <a href="https://www.ableton.com/en/pages/press/releases/2002_01_10/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/pages/press/releases/2002_01_10/</a></li><li id="c9-note-mono">Ableton，《Robert Henke aka Monolake: Mono On Mono》。 <a href="https://www.ableton.com/en/pages/artists/monolake/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/pages/artists/monolake/</a></li><li id="c9-note-monodeck">Robert Henke，Monodeck II。 <a href="https://roberthenke.com/technology/monodeck.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/technology/monodeck.html</a></li><li id="c9-note-lumiere">Robert Henke，Lumière。 <a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/concerts/lumiere.html</a></li><li id="c9-note-granulator-history">Robert Henke，Granulator II。 <a href="https://roberthenke.com/technology/granulator.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/technology/granulator.html</a></li><li id="c9-note-max">Cycling ’74，《An Interview with Robert Henke》，2009。 <a href="https://cycling74.com/articles/an-interview-with-robert-henke" target="_blank" rel="noopener noreferrer">https://cycling74.com/articles/an-interview-with-robert-henke</a></li></ol></details><div class="chapter-nav"><a href="#chapter-8">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-10">下一章 →</a></div></article><section class="part-entry" id="part-III"><div class="part-title">III</div><h2>用 Live 塑造材料</h2><p>在同一组短声与余音上，逐渐认识路径、内部时间、空间和重采样。</p></section><article class="article" id="bridge-live"><div class="kicker">第三组 · 进入制作</div><h2>从作品的问题，走进工作台</h2>
+<p>同一段短音，放在密集的噪声之后，可能成为一处清晰的落点；放在漫长的安静之后，又可能显得突然。音符没有变，前后关系已经改变了它。前面的人物与作品，让这样的选择逐渐有了具体的来历：池田亮司怎样安排重复与尺度，柏大辅怎样让音乐记住先前发生的事，Henke 怎样把一份录音重新打开给演奏。</p>
+<p>接下来，录音、音符与效果将把这些选择带到工作台上。</p>
+
+<div class="context-row"><div class="context-main"><h3>跨媒介作品中的音乐问题</h3>
+<p>一件视听作品能够同时组织声音、图像、身体和空间。本书选取其中与音乐制作直接相连的部分，先在声音中建立足够清楚的关系，再讨论这些关系怎样与其他媒介共同发展。</p>
+<p>例如，声音和影像同时出现之前，需要知道这次出现究竟承担什么：是开篇的提示，是持续过程中的一次打断，还是段落已经改变的标志？同样的触发机制可以完成三件事，作曲却要分别安排它们的位置与后果。软件中的连接，只是这些选择的一种实现。</p>
+<p>因此，暂时把注意力集中到声音，是为了看清其中的工作。到现场与视听部分，同一组关系会重新与图像、动作和房间相遇。届时，声音既可以先被完成，也可以与视觉在排练中共同修改。</p>
+</div><aside class="context-aside" aria-label="背景：前面的选择，后面的操作"><p class="note-type">贯穿问题</p><h4>前面的选择，后面的操作</h4><p>池田：重复怎样改变尺度 → 音符、密度与结构。柏大辅：材料怎样被记住 → 乐句与回返。Henke：录音怎样继续演奏 → 切片、读取与控制。NONOTAK：两种媒介怎样一起修改 → 事件与现场状态。</p><div class="note-links"></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>一组材料贯穿制作</h3>
+<p>后面的制作围绕一组小材料展开：一个有清楚起音的短声，一段能够持续的余音，以及由它们改变而来的纹理。这组材料在课程中逐步发展成一件短作，前面的艺术家经验则提供观察和取舍的参照。</p>
+<p>在第十章，材料进入 Live：一份录音怎样被播放，音符指令怎样驱动乐器，声音又沿着哪些路径到达输出。到第十一章，注意力转向录音内部，比较起音、持续与片段重叠。一个短暂的声音，开始拥有几种不同的姿态。</p>
+<p>第十二章让这些声音产生距离。延迟与混响改变了事件之间的空隙，也改变哪一个声音靠近听者。第十三章把一次处理录下来，使它成为可以重新剪辑和组合的材料。前面的探索留下结果，后面的工作使用这些结果，而非每一章重新下载一套素材。</p>
+<p>随后，问题从“怎样改变这个声音”扩大到“这些声音怎样一起成为音乐”。节奏、音高和声部关系建立期待；段落让期待持续或改变；混音使关键关系能被听见。完成的短作再被打开成现场版本，一些次序保留下来，一些持续与进入交给当场决定。</p>
+</div><aside class="context-aside" aria-label="背景：从短声到现场版本"><p class="note-type">制作路线</p><h4>从短声到现场版本</h4><p>声音路径 → 内部时间 → 空间处理 → 重采样 → 乐句与段落 → 混音 → 现场开放 → 视听关系。每一站使用前一站留下的材料，改动都有可以回听的结果。</p><div class="note-links"></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>同一问题，可以有不同办法</h3>
+<p>人物经验提供的是可继续追问的问题。让一次敲击的尾音延长，可以使用颗粒重叠，也可以通过拉伸、循环或空间处理来实现。不同办法保留和改变的东西不一样，听觉上的选择因此比某个设备名称更重要。</p>
+<p>Live 在这里提供一张共同的工作台。材料、音符、效果与录制能够互相连接，选择能够留下可回听的结果。课程将把这些差别放到同一材料上比较，使一个参数的变化能够回到乐句、层次和作品之中。</p>
+<p>学习由此有了连续的方向：前面认识别人为什么这样做，接下来理解某种做法怎样发生，最后判断自己的材料在什么地方需要它。到音乐再次走向舞台时，软件里留下的将不只是一排设备，还有一组已经被听见、修改过的决定。</p></div></div><div class="workbench-link"><strong>同一组声音，贯穿后面的制作</strong><a href="labs.html">打开制作工作台：试听、分轨与 MIDI →</a></div></article><article class="article" id="chapter-10"><div class="kicker">第10章</div><h2>Ableton Live：一个可演奏的工作室</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>同一个声音的两种起点</h3>
+<p>本书的制作材料从一声短促激发开始。它有明确的起音、低处的主体和逐渐变暗的尾部。后面的声场、碎片与短作都由这组自有材料发展，不需要每章重新寻找声音。</p>
+<p>把这声激发作为WAV放进音频轨，它首先是一份已经发生过的录音。每次播放会再次经过原来的时间。另一条路径是把它放进采样乐器，由MIDI音符决定何时开始、持续多久，以及是否移调。材料相同，能够继续修改的部分已经不同。</p>
+<p>Live把音频片段、MIDI片段、乐器、效果与混音放在同一个工程里。MIDI本身保存音符和控制指令，乐器把这些指令转成音频，音频效果再处理发出的声音。<sup><a href="#c10-note-concepts" aria-label="注释1">〔1〕</a></sup> 理解这一条路径，能够使界面从一排设备名字变成一张可追踪的工作图。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>声音经过哪里</h3>
+<p>一条最简单的音频路径是：片段播放，经过效果，再进入轨道混音和主输出。使用MIDI时，路径前端多了一件乐器。音符触发了乐器，不代表主输出一定有声音；轨道电平、设备开关、输出选择和监听都可能改变结果。<sup><a href="#c10-note-routing" aria-label="注释2">〔2〕</a></sup></p>
+<p>制作时，观察路径比不断提高音量更有帮助。片段的播放指示在移动，说明时间正在走；乐器后出现电平，说明发声已经完成；主输出电平变化，才说明声音通过了后面的混音。每一处都有自己的工作。</p>
+<p>返回轨提供另一条路径。原声继续存在，其中一部分被送往共用效果，再与原声汇合。这样，几条不同声部可以进入同一个空间，而不必各自拥有完全独立的混响。关系清楚以后，路由也成为作曲的一部分：哪个声音进入空间，进入多少，什么时候离开，都可以被安排。</p>
+</div><aside class="context-aside" aria-label="背景：音频与 MIDI"><p class="note-type">工具关系</p><h4>音频与 MIDI</h4><p>音频是声音的数字记录；MIDI 是音符和控制消息。MIDI 需要乐器发声，音频则可以直接播放或进入效果器。电平表帮助观察声音经过了哪一段路径。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/live-concepts/" target="_blank" rel="noopener noreferrer">Live 12 · Concepts ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>时间线与可选择的片段</h3>
+<p>Arrangement把事件放在一条横向时间线上。制作一件固定短作时，这使前后关系容易检查：先前的声音是否已经结束，新的层是否进入太早，结尾是否留出了余音。</p>
+<p>Session则把材料放在能够重新启动的片段中。两者使用同一组轨道，适合从不同方向接近作品。<sup><a href="#c10-note-concepts" aria-label="注释1">〔1〕</a></sup> 本书先在时间线上把关系写清楚，再把部分决定交给Session。即兴时发现的组合，也可以录回时间线继续编辑。</p>
+<p>在80 BPM、4/4拍下，一小节为三秒。随书的32小节示范因此持续96秒，后面另外保留自然尾音。固定的速度和长度让几种处理能够对照，同一段材料在不同位置的作用也更容易听清。</p>
+<p>开头只有一个能够保持的层，随后短促声音进入。中段逐渐增加细节，在某处撤去新的激发，再使一个熟悉声音回来。这些变化先由音符与片段位置完成；效果器随后参与塑造它们，不替代全部编排。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一次制作需要留下哪些东西</h3>
+<p>工程保存的是关系：片段位置、设备、路由和控制变化。音频导出保存的是某一次具体结果。两者各有用途。只留下成品WAV，之后很难重新分开声部；只留下工程文件，若采样位置改变，又可能无法重开原来的声音。</p>
+<p>随书材料因此同时提供短作、分轨和MIDI。分轨从同一起点导出，导入后保持位置，就能重新组成参考录音。MIDI则让部分音符关系可以换用不同乐器。制作记录说明每一项材料从哪里来，避免几个文件名相似的版本在下一次打开时失去区别。</p>
+<p>录制输入与把Session演奏写进Arrangement，是不同的记录工作。<sup><a href="#c10-note-recording" aria-label="注释3">〔3〕</a></sup> 同样，记录一条参数曲线和录下实际音频，也不是同一份证据：前者能继续编辑动作，后者能回听这一次发声的全部结果。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从操作转向判断</h3>
+<p>一份工程可以很复杂，音乐却只需要少数关系被听清。在这件短作里，最先要辨认的不是轨道数量，而是材料的职责：哪一层使空间保持，哪一声给出边界，哪一段处理让关系改变。</p>
+<p>当这些职责变得清楚，设备才有选择的理由。短声太尖，可以改变源、包络或频谱；尾音挡住下一次进入，可以缩短持续，改变空间比例，或者把下一声移开。一个听觉问题可能有多种操作答案，工程图帮助人找到它们各自发生的位置。</p>
+<p>下一章暂时留在一个声音内部。相同的激发，经过读取位置、包络与重叠的变化，会从事件逐渐成为声场。先理解这种转变，后面的颗粒参数才不只是需要记住的陌生名词。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#workbench">打开随书工作台与音频、MIDI材料</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c10-note-concepts">Ableton，Live 12 Manual，Live Concepts。<a href="https://www.ableton.com/en/live-manual/12/live-concepts/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/live-concepts/</a></li><li id="c10-note-routing">Ableton，Live 12 Manual，Routing and I/O。<a href="https://www.ableton.com/en/live-manual/12/routing-and-i-o/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/routing-and-i-o/</a></li><li id="c10-note-recording">Ableton，Live 12 Manual，Recording New Clips。<a href="https://www.ableton.com/en/live-manual/12/recording-new-clips/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/recording-new-clips/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-9">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-11">下一章 →</a></div></article><article class="article" id="chapter-11"><div class="kicker">第11章</div><h2>从一个声音到一片声场</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>起音之后还有什么</h3>
+<p>一声短促激发通常会把注意力集中在开头。起音告诉听者发生了一件事，随后，声音逐渐减弱。把录音放大以后，尾部仍然有细小的振动：频率之间的起伏、微弱噪声、空间反射，以及它们逐渐消散的过程。</p>
+<p>这段尾部可以被独立使用。原来只持续片刻的纹理，一旦被反复读取，就获得了新的时间。制作由此从“让声音再次响起”，转向“让声音内部某一处停留”。</p>
+<p>本章沿用上一章的短声。完整播放、只听尾部、将尾部重叠成持续层，构成三种容易比较的结果。它们使用同一来源，差别来自时间怎样被重新安排。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>包络给声音一个姿态</h3>
+<p>包络描述某个属性随时间怎样变化。最常遇到的是音量包络：声音怎样进入、经过多长的衰减、在保持阶段停在哪里，以及释放以后怎样结束。<sup><a href="#c11-note-synths" aria-label="注释1">〔1〕</a></sup></p>
+<p>一个很快进入、迅速衰减的声音容易被听作事件；较慢进入、保持较久的声音则可能成为环境。相同振荡器因此能承担不同角色。包络不是在音色外面套一个音量形状，它也会改变声音与其他声部相遇的方式。</p>
+<p>不过，音符长度与最终发声时长需要分别理解。短MIDI音符可以触发有长释放的声音；音符已经结束，延迟与混响也可能仍在发声。决定某一段是否真的撤去，要沿着完整声音路径来听。</p>
+<p>持续感也不只来自长包络。一系列短声如果足够密集、衔接足够平滑，可以被听成一个整体。事件数量增加时，注意力可能从“发生了几次”转向“这层声音是什么质地”。这就是进入颗粒处理的一个入口。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>颗粒首先取决于在哪里读</h3>
+<p>Granulator III把录音中的短片段重新组合为可由MIDI触发的声音。读取位置决定取哪一处，片段长度决定每次包含多少变化，重叠和扫描再决定这些片段怎样持续。Classic、Loop与Cloud提供不同的组织方式。<sup><a href="#c11-note-granulator" aria-label="注释2">〔2〕</a></sup></p>
+<p>用同一份录音，先比较起音、中部与尾部，比同时随机多个参数更容易建立听觉关系。起音含有显著的能量变化，反复读取可能产生细密边缘；尾部较平稳，可能更容易形成持续纹理。但录音里有什么，最终仍然决定可用结果。</p>
+<p>颗粒的尺寸也需要与材料相处。一段片段太短，可能无法保留原来低音的完整周期；尺寸变大，又可能把起音与尾部重新放在一起。所谓“更细”，并不自动意味着更细腻。选择的其实是：原声里的哪一种时间信息应当继续存在？</p>
+<p>随书示范把短声、尾部和持续云层放在一起。持续层保留了原声的频率关系，却减弱了明确的敲击感。读者能够先听见这种区别，再把它带回自己的采样。</p>
+</div><aside class="context-aside" aria-label="背景：乐器与音频效果"><p class="note-type">工具关系</p><h4>乐器与音频效果</h4><p>Granulator III 接收采样与 MIDI，重新生成声音；Grain Delay 处理流经它的音频。两者都使用短片段，但输入、触发与控制方式不同。</p><div class="note-links"><a href="https://roberthenke.com/technology/granulator3.html" target="_blank" rel="noopener noreferrer">Granulator III ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>密度与连续性</h3>
+<p>在 Cloud 模式中，Density 控制可同时播放的颗粒数量。<sup><a href="#c11-note-granulator" aria-label="注释2">〔2〕</a></sup> 增加重叠会改变连续性，也会改变电平，因此比较时需要补偿输出，避免把更响误认为更完整。</p>
+<p>密度增加以后，原声的轮廓可能逐渐退后。一处仍然分得开的短片段，能够给听者提供尺度；当所有片段都融入同一层声音，空间和内部运动便更重要。可以把两者安排成一个过程：从清楚事件进入纹理，再从纹理重新露出边缘。</p>
+<p>这与把所有东西调到最大不同。好的中间状态通常包含可以停留的地方。某一处不够稀疏，也不够密集，却保留了微小事件与连续背景的拉扯，可能比两个端点更值得演奏。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>让扫描具有方向</h3>
+<p>读取位置持续移动，可以使录音成为一条音色路线。若源声音先明亮、后暗淡，向尾部移动可能像逐渐远去；反向移动则可能重新显露起音。但是扫描速度和停留位置，决定这条路线是否能被听见。</p>
+<p>均匀扫过整段录音只是一个起点。真正有价值的区域可能很短，需要多停留；另一些位置则可以快速经过。自动化能够记录这条路线，现场手动控制则可以重新决定它的速度。Henke的人物章由此进入了具体制作：一份录音的内部时间，成为手能够继续处理的部分。</p>
+<p>Granulator是乐器，Grain Delay是处理流经音频的效果器。后者将短片段与延迟、移调和时间散布结合。<sup><a href="#c11-note-effects" aria-label="注释3">〔3〕</a></sup> 二者可以产生相近的质感，却处于不同路径：一个由音符重新发声，另一个改变正在经过的声音。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>保留一条可辨认的关系</h3>
+<p>当短声变成声场，原来的音乐角色也发生了变化。事件负责划出边界，持续层负责连接一段时间。如果低频主体仍然需要清楚，就可以保留完整原声，把颗粒处理放在尾部或另一条声部里。</p>
+<p>这样，颗粒不必同时承担冲击、背景和转折。原声的清晰与处理后的延续可以互相定义：原声出现时，听者重新获得尺度；它退去以后，云层保留了刚刚发生之事的余迹。</p>
+<p>下一章让这些声音进入不同距离。持续已经建立，接下来需要安排它们是靠近、远去，还是彼此回应。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#material">比较短声、尾部与云层</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c11-note-synths">Ableton，Learning Synths，Envelope。<a href="https://learningsynths.ableton.com/en/envelopes/attack-and-release" target="_blank" rel="noopener noreferrer">https://learningsynths.ableton.com/en/envelopes/attack-and-release</a></li><li id="c11-note-granulator">Robert Henke，Granulator III，2023。<a href="https://roberthenke.com/technology/granulator3.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/technology/granulator3.html</a></li><li id="c11-note-effects">Ableton，Live 12 Manual，Grain Delay。<a href="https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/#grain-delay" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/#grain-delay</a></li></ol></details><div class="chapter-nav"><a href="#chapter-10">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-12">下一章 →</a></div></article><article class="article" id="chapter-12"><div class="kicker">第12章</div><h2>让声音产生距离</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>一次声音，随后发生的声音</h3>
+<p>短声结束以后，一次清楚的重复能够被听作回应。重复越来越密，边界逐渐交叠，空间感也随之改变。延迟与混响都处理声音在时间里的延续，却给出不同的可辨认关系：一个让后来的副本较清楚，另一个把许多反射组织成较连续的尾部。</p>
+<p>前一章生成的声场，已经有内部运动。本章不急着把它送进最长的混响，而是先问：哪个声音需要保持清楚，哪个声音可以把边缘交给空间？</p>
+<p>参考短作保留了一个较干的低频事件，把较多空间留给上方纹理。这样，两层虽然来自同一组源材料，却拥有不同的距离。所谓深度，先由差别建立，而不是由所有声部一起变湿建立。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>重复也会写出节奏</h3>
+<p>在80 BPM下，一拍是750毫秒。一次延迟如果与拍长有简单关系，可能加强正在运行的周期；使用不同间隔，则可能在原来的触发之间产生新的位置。改变延迟时间，同时改变的是事件如何继续发生。</p>
+<p>一段只有两个短音的材料，经过延迟以后可能产生很多次声音。此时继续增加原始音符，很容易使段落失去空隙。处理链已经承担了一部分编排，原声需要为它留下空间。</p>
+<p>反馈使延迟结果再次进入处理过程。每次返回会继续改变声音，能量也可能累积。<sup><a href="#c12-note-effects" aria-label="注释1">〔1〕</a></sup> 起步时采用单次或少量重复，能够听清原声与后续事件的关系；更长的反馈应当有明确的进入、保持与结束方式。</p>
+<p>关闭新输入和关闭湿声输出，是两种不同的音乐动作。前者允许已有重复完成，后者让空间本身退出。后面制作Break时，这个差别会比增加一种新音色更重要。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>近处的起音，远处的尾音</h3>
+<p>混响的预延迟，可以在原声与尾音显著进入之间留下间隔；衰减时间决定空间能量退去的速度，干湿比例则改变原声与效果声的关系。<sup><a href="#c12-note-effects" aria-label="注释1">〔1〕</a></sup> 这些参数需要与原材料的长度一起听。</p>
+<p>一声本来已有长尾的录音，再加长混响，可能使声音越来越难以划出边界。短促、干燥的材料进入相同空间，结果则完全不同。混响不是一个脱离声源的房间贴纸，它与原来的音头、频谱和持续一起形成最终距离。</p>
+<p>所谓“更远”也不能只靠降低音量判断。音头变软、细节减少、反射比例变化，都可能参与距离感。一层很轻却极干的声音，仍然可能像在耳边；一层很响的湿声，也可能突然成为前景。</p>
+<p>因此，空间处理需要在全体声部里判断。独奏时漂亮的尾音，可能遮住另一个乐句；在完整段落里只剩一丝的效果，却可能恰好维持连接。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>空间应该放在哪条路径上</h3>
+<p>效果直接插在轨道中时，Dry/Wet决定原声与处理声的混合。使用发送与返回时，原轨已经保留干声，效果返回通常以全湿声参与混音，避免再次叠入同一份干声。<sup><a href="#c12-note-routing" aria-label="注释2">〔2〕</a></sup></p>
+<p>这项路由选择使空间能够独立演奏。原声保持不变，发送量可以增加；新激发停止，返回上的余响仍然继续。多个声部共享返回，又可以让它们在听觉上相互关联。</p>
+<p>返回轨也需要被编排。若每一层都持续送入同一空间，混响可能越来越满。某个段落可以只让一项材料进入；到了转折，再改变谁获得空间。创作的对象不只是一台混响器，还包括声音进入它的次序。</p>
+</div><aside class="context-aside" aria-label="背景：发送与返回"><p class="note-type">信号路径</p><h4>发送与返回</h4><p>原轨保留干声，发送把部分信号交给共用效果，返回轨再加入湿声。停止发送以后，效果内部已存在的尾音仍可能继续。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/routing-and-i-o/" target="_blank" rel="noopener noreferrer">Live 12 · Routing ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>顺序改变了什么</h3>
+<p>同一份材料先被切碎，再进入混响，碎片会获得共同的尾音。先混响，再切碎，连空间的延续也会被分段。这两个处理顺序，分别保留了不同的边界。</p>
+<p>随书对照使用同一组确定事件，不额外改变随机序列。先比较哪一版仍能认出原始短声，再比较哪一版像一个持续环境正在断裂。差异不需要被评为高级或低级；它们适合的音乐任务不同。</p>
+<p>如果目标是让主体持续清楚，同时增加少量漂移，平行处理往往更容易管理。原声走一条稳定路径，变化只进入另一条较轻的声部。平行并不自动更好，它只是使原声身份与变化程度能够分别调整。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>空间要有离开的时刻</h3>
+<p>一段音乐可以允许尾音自然消散，也可以在某处明确撤走空间。前者保留连续感，后者改变了听者对于环境是否仍然存在的判断。</p>
+<p>在参考短作的中段，新的短事件先停止，空间仍然继续。稍后持续层也退后，熟悉的主体才重新出现。这几步使“减少”具有顺序。直接把主输出拉低，会得到另一种结果，却无法保留相同的关系。</p>
+<p>后处理到这里已经成为作曲的一部分。下一章把其中一次变化录下来，使它不必每次都依靠原来的效果链，也能够作为新的材料继续进入音乐。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#space">比较原声、回声与两种处理顺序</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c12-note-effects">Ableton，Live 12 Manual，Echo、Hybrid Reverb。<a href="https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/</a></li><li id="c12-note-routing">Ableton，Live 12 Manual，Routing and I/O。<a href="https://www.ableton.com/en/live-manual/12/routing-and-i-o/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/routing-and-i-o/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-11">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-13">下一章 →</a></div></article><article class="article" id="chapter-13"><div class="kicker">第13章</div><h2>重采样：让一次变化成为新材料</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>偶然终于有了地址</h3>
+<p>一次演奏中出现了漂亮的变化：短音被延迟拉开，尾部的纹理恰好形成一种持续。旋钮回到相同位置，结果却未必完全重现。前一段输入、调制的相位、反馈已经积累的内容，都可能参与了那一次声音。</p>
+<p>录音给这项发现一个地址。它不再只存在于“刚才那一下”的记忆里，而成为能够再次播放、剪辑和比较的材料。</p>
+<p>重采样是把已经生成或处理的音频再记录下来。Live可以通过内部路由接收另一条轨道，也可以使用Resampling录下主输出。<sup><a href="#c13-note-routing" aria-label="注释1">〔1〕</a></sup> 音频轨记录的是具体声音，工程则保留产生它的条件。两者并存，使创作者既能继续探索，也能回到已经认可的结果。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>固定一些自由，换取另一些自由</h3>
+<p>录下处理结果，会暂时固定合成器与效果器内部的动作。此后不能像原工程那样单独改变每个振荡器，但新的编辑能力出现了：某一秒可以被取出，位置可以改变，几个原本相隔很远的瞬间可以并置。</p>
+<p>这是一种自由的交换。创作者不必把所有东西始终保持为实时参数。需要继续演奏的变化留在设备里，已经成立的声音则可以成为录音。现场计算负担可能随之减少，注意力也能从重新制造声音转向它与其他材料的关系。</p>
+<p>在参考短作中，持续层来自已经处理过的尾音。它可以作为一份音频独立播放；短促主体则保留另一条可演奏路径。两者的来源相关，控制方式却不相同。作品不需要为了证明“全部实时”而让每项工作都在舞台上重做。</p>
+</div><aside class="context-aside" aria-label="背景：从声音过程到音频材料"><p class="note-type">前后连接</p><h4>从声音过程到音频材料</h4><p>第九章讨论录音可以重新开放的部分；本章先把一段变化固定下来。接下来的乐句与编排会使用这一结果，决定它在哪里出现。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/routing-and-i-o/" target="_blank" rel="noopener noreferrer">Live 12 · Routing ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>剪辑改变了事件的性格</h3>
+<p>从长录音中取出一小段，新的起点和结尾便出现了。保留原来的起音，片段容易继续像一次激发；从中间进入，声音可能显得已经发生了一会儿。结尾自然衰减或明确切断，又会改变下一项材料怎样出现。</p>
+<p>编辑接缝需要留意波形的连续性。突然的振幅跳变可能产生额外的点击声，短淡化可以帮助控制接缝。<sup><a href="#c13-note-editing" aria-label="注释2">〔2〕</a></sup> 有时这种边缘正是作品需要的事件，但它应当被有意使用，而不是混同于素材原来的质感。</p>
+<p>同一片段还可以在不同长度中承担不同角色。两秒钟时，它像一个完整动作；缩短以后，可能成为可以反复触发的音头；保留较长尾部，又能连接两个段落。文件内容并未改变，剪辑范围却已经重新作曲。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>速度、音高和时间</h3>
+<p>播放速度改变时，声音的持续与音高可能一起移动；时间伸缩则提供另一种处理方向。Live的Warp允许片段跟随工程时间，并以不同模式处理材料。<sup><a href="#c13-note-warping" aria-label="注释3">〔3〕</a></sup></p>
+<p>制作不必把这两类变化混成一个“拉长”按钮。降低播放速度，会使动作变慢、音区降低；时间伸缩试图以另一种方式重组持续，也会留下自己的质感。适合清楚节奏的设置，不一定适合细密尾音。</p>
+<p>比较时可以先问三个问题：原来的起音是否仍然存在，音高关系是否需要保留，新增的处理痕迹有没有音乐作用。某种算法的痕迹可能成为作品材料，也可能妨碍本来需要清楚的动作。选择要回到片段在整曲里的职责。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>给材料保留回去的路</h3>
+<p>一份处理后的音频，最好仍能找到它的来源。保留未处理录音、演奏版本与选中的片段，能够在下一次制作时区分：是声源本身改变了，还是后面的剪辑改变了它。</p>
+<p>这不是为了保存所有尝试。档案的价值在于使重要决定可以继续被理解。一个清楚的文件名、共同起点和简短说明，往往比几十个“final”更容易恢复作品。</p>
+<p>随书分轨全部从同一时刻开始，静音部分也被保留。重新导入时，声部之间的关系无需依靠手动猜测位置。若只导出每条轨道有声的区间，下一次组合便可能丢失原来的等待。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从音色库进入作品</h3>
+<p>保存声音只是中间一步。一组漂亮片段仍然需要相互作用：某一片段为何回应另一片段，哪一种材质适合反复回来，哪一次变化只应出现一次。</p>
+<p>重采样最有价值的时刻，往往是在它使作曲问题变得更清楚之后。原来需要同时控制许多旋钮的过程，现在可以作为一个事件被移动。创作者能够暂时离开发声机制，听见整段时间。</p>
+<p>下一章由此进入节奏、旋律与和声。同一组材料仍然在，但注意力转向它们怎样建立期待，怎样成为可被记住的乐句。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#resample">取得同起点分轨与MIDI</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c13-note-routing">Ableton，Live 12 Manual，Routing and I/O，Internal Routing。<a href="https://www.ableton.com/en/live-manual/12/routing-and-i-o/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/routing-and-i-o/</a></li><li id="c13-note-editing">Ableton，Live 12 Manual，Arrangement View，Audio Clip Fades and Crossfades。<a href="https://www.ableton.com/en/live-manual/12/arrangement-view/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/arrangement-view/</a></li><li id="c13-note-warping">Ableton，Live 12 Manual，Audio Clips, Tempo, and Warping。<a href="https://www.ableton.com/en/live-manual/12/audio-clips-tempo-and-warping/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/audio-clips-tempo-and-warping/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-12">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-14">下一章 →</a></div></article><section class="part-entry" id="part-IV"><div class="part-title">IV</div><h2>把材料写成音乐</h2><p>让声音建立乐句、记忆与段落，再通过混音使重要关系被听见。</p></section><article class="article" id="chapter-14"><div class="kicker">第14章</div><h2>节奏、旋律与和声的作用</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>三个音也会建立期待</h3>
+<p>短作里可以只有很少的音符，听者仍然会寻找它们之间的关系。两次相近的间隔建立一种预期，第三次稍晚到来，等待便进入了音乐。三个音依次上行，最后一个停留，音高也开始拥有方向。</p>
+<p>节奏、旋律与和声不是音色完成后才添加的传统装饰。它们帮助材料彼此作用，也帮助听者记住刚刚发生的东西。一个没有明确鼓点的声场，同样包含进入、持续与中断；一段不采用常见和弦的音乐，也仍然有不同频率同时存在时的关系。</p>
+<p>本章使用同一组短声，把变化分别放到时间、音高与声部。这样，听见的差别能够回到一个具体选择，而不被每次更换的预设掩盖。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>节奏是声音之间的距离</h3>
+<p>节拍提供一个可参照的脉搏，节奏则安排事件怎样靠近或离开这个参照。规律的低频可以帮助建立周期，另一些声音随后位于周期之间；也可以没有显著拍点，只通过不同间隔形成方向。</p>
+<p>在随书MIDI中，一个短动机占据四小节。大部分位置保持空白，少数事件在句尾形成回应。将第二次触发提前一点，前一个声音的尾部便会被挤压；延后它，空隙反而取得力量。音符的数量没变，时间关系已经不同。</p>
+<p>重音也不只由力度决定。更低的音区、更清楚的起音、更少的背景，都可能使同一声显得突出。若每个事件都同样明亮、同样响，增加音符未必增加推动，可能只是减少了可以被辨认的差异。</p>
+<p>静默是这些间隔的极端情况。一个本来应该出现的声音缺席，只有在此前建立了某种规律以后，才容易被感到。作品需要先给听者记住一些东西，再改变它。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>旋律首先是一条可以追随的线</h3>
+<p>旋律可以从少量音高开始。它有上行、下行、重复、跳跃和停留，像一条在时间里逐渐被画出的线。无需每一步都使用新音符，一个音的再次出现也能取得新的作用。</p>
+<p>随书示范以同一音高开始和结束，中间短暂上行。改变最后一个音的长度，结尾便可能从“继续向前”转为“暂时站住”；保持节奏而改变中间音，动机仍然有亲缘关系，方向却不同。</p>
+<p>DeSantis在《Making Music》中提出逐代变化的方法：复制一个想法，每代作出一项有意义的改动，让后来的材料继承先前的变化。<sup><a href="#c14-note-mutation" aria-label="注释1">〔1〕</a></sup> 这种方法能使差异具有来路。它并不要求每一代都更复杂，撤去一个音、缩短一次等待，也可能使关系更明确。</p>
+<p>旋律能否被记住，还与发音有关。长混响可能把相邻音高连在一起，极短包络则强调轮廓。一条音符序列换了乐器以后，需要重新听它的呼吸，而不能只确认音高没有改动。</p>
+</div><aside class="context-aside" aria-label="背景：逐代变奏"><p class="note-type">方法对照</p><h4>逐代变奏</h4><p>复制一个想法，每一代只改变一项有作用的关系。后来的材料可以继承先前的变化，也可以回到更早的版本。</p><div class="note-links"><a href="https://makingmusic.ableton.com/creating-variation-2-mutation-over-generations" target="_blank" rel="noopener noreferrer">Making Music · Mutation ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>和声让同一旋律改变位置</h3>
+<p>当多个音高同时存在，旋律会被放进某种背景。一条固定线条，下面换一个持续音，可能从稳定转为悬置。和声的作用不必等到完整和弦进行才出现。</p>
+<p>本书的持续层使用较少的音高关系，留出空间让短事件被听见。增加第三个音时，首先要判断它是否改变了整体重心；如果只让频谱变满，却没有新的作用，省去它同样是一项编排选择。</p>
+<p>音区需要单独考虑。同一组音挤在低处，可能难以分辨；把其中一声移高，关系就会显露。编配不仅决定用什么乐器，还决定谁占据哪一段音区、持续多久、怎样与其他声部相遇。</p>
+<p>较强的不协和也可以有清楚作用。一个持续摩擦的关系，如果后来得到改变，会使转折被听见。问题在于它与作品时间的联系，而不是预先把某种音程划为可以或不可以。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>音色怎样进入乐句</h3>
+<p>前面已经把短声变成持续纹理。此刻可以让两者分担同一句音乐：清楚的短音给出轮廓，纹理把它延续到下一次进入。音色差异开始承担句法。</p>
+<p>若每次短音之后都出现相同云层，听者会逐渐认识这种回应。某一次省去云层，短音就显得更孤立；某一次让云层提前出现，它又可能成为短音的准备。相同处理，在不同位置具有不同意义。</p>
+<p>这正是人物章节中“声音与律动相连”的具体形式。包络、尾长、频谱与触发位置一起决定乐句。作曲可以从音符开始，也可以从一个声音内部的运动开始，但最后仍然要形成可以经历的前后关系。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从一句走向下一句</h3>
+<p>一个动机完成以后，最容易想到的办法是复制。复制保留记忆，也带来新的问题：第二遍为什么需要存在？它可以确认第一次建立的规律，可以改变其中一项，也可以让另一个声部加入，使听者重新理解相同材料。</p>
+<p>连续发展需要控制变化的尺度。每次都换全部材料，亲缘关系会消失；始终不改变，又可能无法支撑需要的长度。下一章将把这些局部选择放大到段落，让保持、断裂与回返逐渐成为整首作品的形式。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#phrase">导入同一动机的MIDI与音频版本</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c14-note-mutation">Dennis DeSantis，Creating Variation 2: Mutation Over Generations，《Making Music》。<a href="https://makingmusic.ableton.com/creating-variation-2-mutation-over-generations" target="_blank" rel="noopener noreferrer">https://makingmusic.ableton.com/creating-variation-2-mutation-over-generations</a></li></ol></details><div class="chapter-nav"><a href="#chapter-13">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-15">下一章 →</a></div></article><article class="article" id="chapter-15"><div class="kicker">第15章</div><h2>悬停、断裂与回返</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>一段循环为什么还没有结束</h3>
+<p>在工作室里，一段好听的循环可以播放很久。创作者同时观察设备、尝试变化，自己的动作不断给它补充意义。听者只面对声音，未必经历了同样的过程。</p>
+<p>把循环发展成作品，并不一定要继续加层。需要先认识它在较长时间里能做什么：让人熟悉一种关系，让微小变化显露，形成方向，或为后来的一次改变准备条件。</p>
+<p>不同音乐可以采用不同形式。一种作品依靠主题与回返，另一种让过程逐渐改变材料，还有一种维持声场，使注意力在内部移动。有没有明显高潮，不足以判断结构是否成立；重要的是音乐怎样使用它所占据的时间。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>先知道要保留什么</h3>
+<p>随书96秒短作只有少量材料：低频事件、持续层、微型声音与空间余音。前几章分别塑造它们，此刻要决定哪些关系能够贯穿全曲。</p>
+<p>其中最稳定的，是低频事件的发音身份。它不必频繁出现，但再次回来时，应当让听者感觉到与先前相连。持续层负责把时间拉开，微型声音则改变局部活动。空间既能连接，也能在某一处被撤去。</p>
+<p>这四个角色为短作提供了清楚的分工：主体保持身份，持续层提供空间，细节改变活动，余响连接它们。发展由它们之间的关系产生。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>保持是一项主动工作</h3>
+<p>保持段并非音乐没有继续。一个旋律被反复听见，注意力可能从音高转到发音；持续场几乎不动，细小的拍频与噪声变化反而显露。保持需要值得停留的关系，也需要让它有足够时间被认识。</p>
+<p>如果每隔几秒就改变一个参数，听者可能始终停在“又发生了什么”的表面，尚未进入某一种状态。适当停手，能使前面的选择完成自己的作用。</p>
+<p>另一方面，保持也有边界。一个只在初次出现时有吸引力的声音，未必能够独自撑住很长时间。判断不应只依据作者操作时的兴奋，而要完整回听，认识什么时候已经没有新的关系可供注意。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>断开需要一个已经成立的东西</h3>
+<p>Break的力量来自此前建立的期待。稳定脉搏突然缺席，听者仍可能在心里继续它；一个持续空间被撤去，原先的边缘便重新出现。越清楚地建立了某种关系，越少的变化也能造成明确转折。</p>
+<p>参考短作在中段先停止新事件，再让空间退后。相同位置还有另一种可比较的处理：直接短淡出所有声部。前者像事物逐渐离开，后者像环境本身切换。两者使用相同材料，却有不同的时间姿态。</p>
+<p>一个安静段落也可以保持紧张。没有新的声音，不等于没有期待。若刚才的主题尚未得到回应，静默会把它留在记忆里。缓和则需要另一种关系：此前的压力已经被改变，后来的空隙允许注意力放松。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>回来以后，声音已经不同</h3>
+<p>柏大辅的人物章讨论过长曲如何利用记忆。这里不需要很长的时长，也能观察同样的关系：一个熟悉片段经过密集段落再回来，听者已经有了比较。</p>
+<p>回归可以完全重复，也可以只保留部分轮廓。保留节奏、改变音区，保留旋律、改变发音，或让一层原本在后面的声音来到前景，都能够使旧材料承担新的作用。变化需要让人认出它与先前的联系，而不只是一项全新的效果。</p>
+<p>一首作品也可以不回来。过程式结构可能从一种状态持续走向另一种状态，结尾所保留的是途中发生过的变化。这时需要关注方向是否清楚，以及过程有没有被不必要的事件打断。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>在时间线上看见删减</h3>
+<p>面对空白Arrangement，作者可能不断等待“足够好的下一段”。另一种办法，是先把已有材料展开，再通过撤去和缩短听清结构。DeSantis将这种工作称为减法编排。<sup><a href="#c15-note-subtract" aria-label="注释1">〔1〕</a></sup></p>
+<p>这个方法的作用，是把抽象的可能变成能够回听的时间。某一层持续过久，放进完整段落就容易发现；两个声音同时进入太拥挤，撤去其中一个也能直接比较。</p>
+<p>自动化则让一项变化沿时间发生。<sup><a href="#c15-note-automation" aria-label="注释2">〔2〕</a></sup> 它既可以缓慢打开音色，也可以改变发送量、声部比例和空间退出。但曲线是否漂亮与变化是否有音乐作用，需要分开判断。一个平滑上升的参数，不一定比一处短暂等待更适合当前段落。</p>
+</div><aside class="context-aside" aria-label="背景：先展开，再撤去"><p class="note-type">制作方法</p><h4>先展开，再撤去</h4><p>减法编排先把已有材料放入时间，再通过撤去、缩短与错开进入来寻找形式。音乐的发展可以来自层次的重新分配。</p><div class="note-links"><a href="https://makingmusic.ableton.com/arranging-as-a-subtractive-process" target="_blank" rel="noopener noreferrer">Making Music · Arrangement ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>结束不是只剩淡出</h3>
+<p>结尾可以让最后一个音自然完成，可以在一个明确关系上停住，也可以留下未被解决的空间。选择与整曲建立了什么有关。</p>
+<p>参考版本在最后撤去新的微型事件，保留原始材料的较少部分，使听者重新听见来源。它不是唯一正确的结束。另一个版本可以在主峰后立即离开，把过程的中断作为结尾。比较两版时，需要回到整个前文，而非只判断最后几秒是否漂亮。</p>
+<p>结构使材料获得先后，混音则决定这些关系能否被听见。下一章进入电平、频谱、动态与空间，但它们仍然服务于同一件作品。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#form">聆听96秒固定结构与分轨</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c15-note-subtract">Dennis DeSantis，Arranging as a Subtractive Process，《Making Music》。<a href="https://makingmusic.ableton.com/arranging-as-a-subtractive-process" target="_blank" rel="noopener noreferrer">https://makingmusic.ableton.com/arranging-as-a-subtractive-process</a></li><li id="c15-note-automation">Ableton，Live 12 Manual，Automation and Editing Envelopes。<a href="https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-14">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-16">下一章 →</a></div></article><article class="article" id="chapter-16"><div class="kicker">第16章</div><h2>混音：安排注意力与尺度</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>为何加大音量仍然听不清</h3>
+<p>短作的低频事件独奏时清楚，所有声部一起播放以后却显得无力。最直接的反应是把它调大。结果可能是主输出更满，细节仍然没有出现。</p>
+<p>这种情况提醒人们，听不清不一定来自单个声部不够响。持续层可能占住相近的频段，长尾可能填满音头前的空隙，另一个声部也可能总在同一时刻进入。混音需要在完整关系中寻找问题。</p>
+<p>前面的编排并没有在此结束。把持续层稍后引入，或缩短一个尾部，可能比新增效果更有效。电平、频谱、动态、空间和时间共同决定听者的注意力落在哪里。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>先听前景，再决定处理</h3>
+<p>在参考作品中，低频事件负责提供尺度，持续层维持空间，微型声音带来局部活动。混音首先要确认这些角色能否被听见，而不是让每条轨道都在独奏时最饱满。</p>
+<p>某一层可以单独听起来较薄，放在整体里却刚好。反之，一条漂亮的宽声场可能把其他层全部覆盖。轨道之间需要让位，独奏只能帮助定位问题，不能替完整混音作最后决定。</p>
+<p>静音是一种有用的观察方法。暂时撤去一层，整体是否更有方向？若是，需要判断它原本承担的角色是否仍然必要；若失去空间或联系，则再把它逐渐放回，找到关系成立的位置。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>低频的重量来自几个条件</h3>
+<p>低音有无力量，与频率、时值、音头和谐波共同有关。非常低的基频在某些播放设备上不容易重现，少量较高谐波却可以帮助辨认发声。与此同时，过长的低频持续可能遮住下一次事件，使整段更轰而非更结实。</p>
+<p>低切主要减少截止频率以下的成分。<sup><a href="#c16-note-effects" aria-label="注释1">〔1〕</a></sup> 它可以清理不需要的低频，也可能削掉主体。没有一个适用于所有声部的固定截止点。先确认要保留的频率和时值，再判断其他层是否需要让出空间。</p>
+<p>对低频事件的处理，可以从最小的改变开始：缩短尾部，降低另一条声场中的低频，或轻微增加可辨认谐波并补偿输出。一次只比较一种主要关系，才能知道力量来自哪里。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>明亮、尖锐与细节</h3>
+<p>高频并非天然等于清晰。一个持续占据前景的窄频峰，可能让其他细节更难被注意；极短的高频事件放在安静处，却能够提供非常清楚的边界。</p>
+<p>削减某段频率之前，可以先检查持续与位置。缩短一层噪声，减少重复次数，或让它避开主音的起点，都可能保留质地而减轻拥挤。频谱处理与编排在这里是互相补充的办法。</p>
+<p>低通削弱较高频成分，共振则强调截止附近的区域。<sup><a href="#c16-note-effects" aria-label="注释1">〔1〕</a></sup> 音色变暗不一定意味着距离自然增加，共振提高也不等于更有表现力。每一次改变都要放回作品，听它是否支持当前角色。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>动态处理在改变什么</h3>
+<p>压缩根据输入电平与设定改变增益，可以调整瞬态和持续部分的比例。<sup><a href="#c16-note-effects" aria-label="注释1">〔1〕</a></sup> 如果起音被压得更多，主体的存在方式会改变；释放过程与下一次触发相遇，又可能影响律动。</p>
+<p>因此，压缩不宜只是每条轨道上的习惯动作。原声已经符合需要时，可以保持不处理。处理以后较小的峰值，也不自动意味着较小的感知响度。对照时补偿电平，才能较清楚地判断声音的性格有没有改善。</p>
+<p>限幅能够约束数字输出峰值，却不能保证实际扬声器音量安全，也不能代替编排和混音。监听音量保持舒适，出现意外反馈时先降低实际输出并停止输入，再检查路径；无需用不适验证一种声音是否有力量。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>相同响度下再比较</h3>
+<p>一个处理版只要更响一点，就可能显得更厚、更清楚。随书对照将同一组材料的整体电平靠近，再比较遮蔽、尾音和动态；数字匹配仍需实际聆听，不能由单个统计值决定哪版更好。</p>
+<p>不同播放条件也会改变判断。较小音量能够暴露哪些关系过度依赖强度，普通扬声器能显示低频主体是否只有听不见的基频。单声道检查则帮助辨认某些依靠左右差异建立的声部是否消失。</p>
+<p>这不是要求所有设备听起来相同。作品需要的是核心关系在不同条件下仍然成立，而不必保留每一项细微差别。</p>
+</div><aside class="context-aside" aria-label="背景：电平与听感"><p class="note-type">聆听条件</p><h4>电平与听感</h4><p>电平、峰值和感知响度并非同一个量。先让对照版本的主观响度接近，再听音头、遮蔽和尾音，能减轻音量差对判断的干扰。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/" target="_blank" rel="noopener noreferrer">Live 12 · Audio Effects ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>完成一份能够带走的混音</h3>
+<p>混音接近完成时，回到整曲通常比继续逐轨微调更重要。开头是否建立了尺度，中段的变化是否过早，回归有没有被长尾遮住，结尾是否让最后一个事件完成，都属于完整聆听的问题。</p>
+<p>Studio FLAT的经历已经显示，制作判断需要进入不同的聆听环境。这里同样如此：导出一份明确命名的版本，离开工程窗口，再从头听到尾。听者面对的不是设备链，而是持续发生的音乐。</p>
+<p>下一章将把这个结果重新拆开。已经完成的录音不必成为唯一呈现；它也可以是现场版本的起点。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#mix">在相近电平下比较混音与分轨</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c16-note-effects">Ableton，Live 12 Manual，EQ Eight、Auto Filter、Compressor、Limiter。<a href="https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-15">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-17">下一章 →</a></div></article><article class="article" id="chapter-17"><div class="kicker">第17章</div><h2>一件作品，几种呈现</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>录音完成以后</h3>
+<p>一件作品导出为立体声，许多决定已经凝固：段落长度、进入时刻、声音之间的比例，以及最后一处余响。完成使它能够被反复聆听，也让作者暂时离开持续修改的过程。</p>
+<p>准备现场版本时，问题又重新打开。音乐家不一定希望照原样播放，也不必把一切推倒重新生成。首先要辨认：哪些关系维持着作品的身份，哪些地方仍然值得当场决定。</p>
+<p>参考短作的低频发音与短动机，是容易被认出的材料。它们可以保留。持续层停留多久、某些微型事件出现几次、空间怎样退出，则适合成为开放部分。这样的分工，使现场变化仍然围绕同一件作品。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从时间点变成条件</h3>
+<p>在固定录音里，可以写“第49秒进入下一段”。现场结构还可以写成另一种关系：“上一层已经退后，新的事件才进入”。前者提供准确位置，后者提供可以判断的条件。</p>
+<p>条件不能无限含糊。一个需要与乐句对齐的变化，应当具有明确音乐边界；一个孤立事件，则可能更适合立即响应。演出者需要知道自己是在等待拍点，还是在等待声音的状态。</p>
+<p>把这些条件整理出来，比先买一个控制器更接近现场编排。控制器只是让决定更容易执行，不能替作品解释为什么此时该继续，为什么另一处应当停住。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>分轨怎样保留关系</h3>
+<p>分轨可以把录音中的声部分开，使它们重新拥有独立的进入与退出。导出时保留共同起点，能够使关系准确恢复。某些共享效果则需要单独考虑：若每条分轨都带上一份相同空间，重组以后可能出现额外的叠加。</p>
+<p>现场可以使用干声分轨加共用效果，也可以保留已经写定的湿声；还可以把最复杂的层录成音频，让少量主体继续实时生成。选择取决于什么需要变化，以及现场是否能够稳定承担。</p>
+<p>文件的组织也在保护音乐。一个分轨名应当说明角色或来源，版本应当能够回到同一次导出。随书材料保留同起点音频与短动机MIDI，正是为了让重组不必重新猜测时间。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>自由可以分布在不同层</h3>
+<p>声音已经录好，进入顺序仍可以开放。合成器正在实时发声，整曲结构也可能已经写定。固定与自由不只是一条从播放到即兴的刻度，它们分布在音色、节奏、组合、段落和空间等不同位置。</p>
+<p>Henke的《Lumière》在不同版本中调整预先编排与现场修改的比例。<sup><a href="#c17-note-lumiere" aria-label="注释1">〔1〕</a></sup> 这种调整表明，一件作品可能需要长期重新判断哪些变化值得冒险，哪些部分应当稳定。</p>
+<p>风险并不总是缺点。一次不完全可预料的回应，能够使表演者真正需要倾听。但风险需要与音乐上的可能相称。若某项自由只有两个可用位置，中间全是无法控制的状态，它更适合明确切换；若中间状态丰富，持续演奏才有理由。</p>
+</div><aside class="context-aside" aria-label="背景：重新开放哪一项决定"><p class="note-type">阅读连接</p><h4>重新开放哪一项决定</h4><p>第十五章把时间写成结构，第十六章使层次清楚。现场版本保留这些经验，只把值得当场判断的进入、持续、组合与变化重新开放。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/session-view/" target="_blank" rel="noopener noreferrer">Live 12 · Session ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>为录音与现场安排不同的时间</h3>
+<p>现场的等待有身体和空间支持。演奏者停手，观众仍能感到一次行动刚刚结束；录音里没有同样的视觉条件，这段等待可能需要不同长度。反过来，唱片中的密集剪辑可以在瞬间穿过多个场所，现场则可能希望让一个过程多展开一些。</p>
+<p>版本转换因而不仅是文件格式转换。它改变作品怎样与听者相遇。某些材料适合在唱片里细听，某些关系需要共同处在一个房间里才能成立。</p>
+<p>同一作品也可以有较短和较长的现场版本。较短版本保留核心转折，较长版本允许中间状态被深入演奏。延长应当来自可发展的关系，而不只是把所有循环次数翻倍。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一场演奏还能返回工作室</h3>
+<p>Session中的演奏可以录入Arrangement，再经过编辑成为新的录音作品。<sup><a href="#c17-note-session" aria-label="注释2">〔2〕</a></sup> 演出因此不只消耗准备好的材料，也能够产生新的结构。</p>
+<p>回听时，作者可以把动作与结果暂时分开。某段操作非常复杂，音乐却没有相应变化；另一处只是等待，反而使前文获得了需要的时间。录音使这些差别能够被重新认识。</p>
+<p>作品、工程和演奏在这里形成循环：制作使某些关系稳定，现场让它们接受新的条件，回听又把经验带回制作。下一章进入Session的具体组织，但核心问题已经清楚：让必要的决定在现场保持开放，同时让作品仍然有可以辨认的方向。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>制作入口</h3>
+<p><a href="labs.html#live">从固定短作准备现场片段</a></p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c17-note-lumiere">Robert Henke，Lumière，作品版本与现场控制说明。<a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/concerts/lumiere.html</a></li><li id="c17-note-session">Ableton，Live 12 Manual，Session View，Recording Sessions into Arrangement。<a href="https://www.ableton.com/en/live-manual/12/session-view/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/session-view/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-16">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-18">下一章 →</a></div></article><section class="part-entry" id="part-V"><div class="part-title">V</div><h2>让音乐发生在现场</h2><p>把已经形成的作品重新开放，在控制、协作和实际场地中演奏。</p></section><article class="article" id="chapter-18"><div class="kicker">第18章</div><h2>Session View：开放音乐的行进方式</h2>
+
+<div class="context-row"><div class="context-main"><h3>一首做完的曲子，怎样重新打开</h3>
+<p>Ableton Live 的 Session View（会话视图）把音乐放进可以单独启动的片段与场景中。它服务于一个现场问题：怎样使用已经制作好的材料，同时把进入、停留和组合的一部分决定留给演奏者？<sup><a href="#c18-note-session" aria-label="注释1">〔1〕</a></sup></p>
+<p>录音完成以后，第三段的进入、上一层的退出和最后一个回声，都已经获得确定的位置。准备现场版本，则要重新打开其中一些决定，让它们能够回应眼前这一场演出。</p>
+<p>Four Tet，即英国音乐家 Kieran Hebden，在2013年的 Red Bull Music Academy 工作坊中讲解过自己的现场设置。那套包含 Ableton Live 的安排，使即兴与原曲中保持节拍关系的材料同时存在。<sup><a href="#c18-note-fourtet" aria-label="注释2">〔2〕</a></sup> 原曲提供熟悉的材料，即兴改变它们相遇的方式。</p>
+<p>一段音频已经录好，进入的时刻仍然可以开放；一个合成器正在实时发声，整曲顺序却可能已经写定。演出所开放的自由，可以落在声音的产生、材料的组合或段落的持续上。</p>
+<p>这种重新打开作品的过程，可以从很小的地方开始。录音里一个过早结束的声场，在现场可以多停留一会儿；两段原来不会相遇的材料，可以被允许重叠；某一个关键音符依然按原来的位置出现，因为它正是整个段落被辨认的原因。已写定的部分与开放的部分，共同维持作品的形状。</p>
+</div><aside class="context-aside" aria-label="背景：Four Tet 与现场改编"><p class="note-type">人物位置</p><h4>Four Tet 与现场改编</h4><p>Four Tet 是英国音乐家 Kieran Hebden 的音乐名义。2013年的公开工作坊展示了他怎样把原曲材料与即兴放在同一设置里。本章沿着这类问题，讨论录音版本怎样再次交给演奏。</p><div class="note-links"><a href="https://www.ableton.com/en/blog/four-tet-explains-his-live-setup/" target="_blank" rel="noopener noreferrer">Four Tet 现场工作坊 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>先决定哪些地方值得保持</h3>
+<p>设想一首作品里有一个连续的背景、一组短促事件，以及一次只应出现一次的转折。把它们全部拆成可以任意触发的格子，看似获得了最大的自由，实际上也把保证形式的责任全部推给了表演者。</p>
+<p>更有用的整理，是辨认它们各自怎样持续。背景可以循环，但循环接缝需要成立；短促事件可以被重新安排，但不必每次都出现；关键转折可以等待，却不适合在一个段落里反复启动。</p>
+<p>材料还需要带着自己的退出方式进入现场。有些声音停止接收新音符后会自然退去，有些会继续留在效果器里；一层背景可以逐渐变暗，一次切断则可能需要连空间尾音一起撤走。进入、保持与离开，是同一个声音的不同部分。</p>
+<p>这些持续与退出方式，可以先通过播放和手动切换确定。随后再选择控制器，使演奏者容易抵达需要当场改变的地方。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>Session 把哪些决定放在面前</h3>
+<p>Live 的 Session 将片段放进轨道与场景的格子。单条轨道一次播放一个 Clip，横向的一行 Scene 可以同时启动多条轨道上的材料。某一处空槽也可能具有停止按钮；要让正在播放的层越过该场景继续，必须处理这个停止行为。<sup><a href="#c18-note-session" aria-label="注释1">〔1〕</a></sup></p>
+<p>这些看似细小的规则，会直接影响音乐。把两个需要同时存在的声部放在同一轨，它们就成了替换关系；把每一个场景都设置成重启所有声音，原本应该不断延续的背景就会反复起音。工程的布局已经在安排可能的演奏。</p>
+<p>因此，轨道可以按需要独立改变的音乐关系划分，而不只是依照某台设备的名字。需要一起进入和退出的层，可以作为一组处理；需要持续存在的声音，应当有不被无意中切掉的位置。场景也不一定等于传统意义上的一整段歌曲，它可以是一种稳定配置，或者一次明确的转折。</p>
+<p>启动量化负责另一件事：把触发请求放到所选择的音乐边界上。按下按钮与片段实际发声可能并非同一时刻。<sup><a href="#c18-note-launch" aria-label="注释3">〔3〕</a></sup> 对依靠周期的音乐，这种等待可以保住节拍；对一个需要立即回应的孤立事件，它又可能显得迟钝。工程应当根据音乐角色选择行为，不能用一个统一设置代替所有判断。</p>
+</div><aside class="context-aside" aria-label="背景：Clip、轨道与 Scene"><p class="note-type">术语补全</p><h4>Clip、轨道与 Scene</h4><p>Clip 是可启动的音频或 MIDI 片段。轨道决定它通过哪一组设备发声。Scene 是横向的一组启动安排。同一轨上的片段通常形成替换关系，跨轨的片段可以一起发声。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/session-view/" target="_blank" rel="noopener noreferrer">Live：Session View ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>效果器也可以成为正在演奏的声部</h3>
+<p>实时音乐并不只发生在“哪个 Clip 正在播放”这一层。声音经过怎样的处理，也能构成持续演奏的内容。</p>
+<p>意大利音乐家 Caterina Barbieri 在谈及 Loop 2017 时期的设置时，描述了模块合成器进入 Ableton 继续处理的路径，尤其是多层延迟与混响。<sup><a href="#c18-note-barbieri" aria-label="注释4">〔4〕</a></sup> 这让软件不仅保存材料，也延伸正在发声的乐器。</p>
+<p>一次延迟可以复制触发，连续的重复又会形成另一条节奏。改变其中一层的长度或比例，会使原先简单的音型出现重叠与错位。这里的后处理不一定只是润色：它可能成为材料继续生长的地方。</p>
+<p>这种工作同样要求选择。让所有反馈同时增加，容易把层次推到难以分辨；只让一个关系缓慢改变，却可能使听者跟得上它的过程。现场宏的价值，在于把复杂的内部参数收成一种可理解的变化，而不是把每个旋钮都暴露出来。</p>
+<p>制作时可以保留许多探索，演出时则需要知道哪些范围可以反复进入。即兴依然可以有意外，但表演者应当能够区分有价值的意外与已经无法掌握的状态。</p>
+</div><aside class="context-aside" aria-label="背景：Caterina Barbieri 的多层回声"><p class="note-type">人物与方法</p><h4>Caterina Barbieri 的多层回声</h4><p>Barbieri 是意大利电子音乐家。她谈到 Loop 2017 时期的模块合成器进入 Live 的路径：多层延迟与混响继续发展已有音型。效果器因此能够成为推动材料的声部，而不只在末端装饰音色。</p><div class="note-links"><a href="https://www.ableton.com/en/blog/caterina-barbieri-minimalism-modular-and-live/" target="_blank" rel="noopener noreferrer">Ableton 对谈 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>NONOTAK：两台电脑之间怎样形成叙事</h3>
+<p>NONOTAK 由视觉艺术家 Noemi Schipfer 与建筑、音乐背景的 Takami Nakamoto 共同组成。他们的合作起点包括线条绘画、光和空间；音乐并不是后来才为装置补上的背景。<sup><a href="#c18-note-nonotak-origins" aria-label="注释5">〔5〕</a></sup></p>
+<p>在2022年的访谈中，Schipfer 介绍了一条具体路径：两人先讨论概念，Nakamoto 在 Ableton 中准备声音，她为项目建立基本视觉素材，随后以 MIDI 连接电脑，共同编排叙事。TouchDesigner 的灵活性，使修改能够在两边继续发生。<sup><a href="#c18-note-nonotak" aria-label="注释6">〔6〕</a></sup></p>
+<p>MIDI 连接使两边能够在同一次排练里修改。某个声音可能要求图形停留，某种光的运动也可能使音乐段落需要延长。共同时间在这些往返中形成。</p>
+<p>他们也为不同场地调整作品的形态。《ECLIPSE》的单屏形式考虑了音乐节换场和共享舞台的条件。<sup><a href="#c18-note-nonotak" aria-label="注释6">〔6〕</a></sup> 当一件作品必须与其他演出使用同一套场地设施时，创作不能假设空间会无限迁就自己。可适应性因此既是技术要求，也会参与决定作品如何表现。</p>
+<p>能够共同修改，使两人的创作持续发生在同一个时间里。声音与图像既有各自的材料，又能在排练中调整进入、保持和离开的关系。</p>
+</div><aside class="context-aside" aria-label="背景：NONOTAK 的两位创作者"><p class="note-type">合作背景</p><h4>NONOTAK 的两位创作者</h4><p>Noemi Schipfer 从绘画与线条出发，Takami Nakamoto 带来建筑和音乐经验。组合成立于2011年末，随后发展光与声音装置及现场表演。空间模型、声音材料和视觉程序逐渐成为同一协作过程。</p><div class="note-links"><a href="https://shapeplatform.eu/artist/nonotak/" target="_blank" rel="noopener noreferrer">SHAPE 介绍 ↗</a><a href="https://derivative.ca/community-post/nonotak/66933" target="_blank" rel="noopener noreferrer">Derivative 对谈 ↗</a></div></aside></div>
+<div class="context-row"><div class="context-main"><h3>让声音与画面共享一次决定</h3>
+<p>声音通路把录音或合成结果送进效果、混音和实际输出。它负责最终听见的内容。控制通路传递音符、触发、参数和场景状态，它描述的是某些决定。图像通路则根据自己的材料与规则产生画面。三条通路分别承担发声、决定和呈现。</p>
+<p>音频能量可以使图形随声音起伏，MIDI 音符可以使一个形状随事件出现，场景状态可以决定画面进入哪种构成。这三种映射分别关注材质、事件与结构。选哪一种，应当取决于作品需要被感知的关系。</p>
+<p>例如，音乐还在等待下一小节进入，图像却已经因为按钮按下而换到下一段，声画就出现了意图之外的提前。演奏者需要立即看到请求已被接收，观众看到的段落变化却可能应该等音乐实际开始。这两种反馈可以分开设计。</p>
+<p>在工具层面，TDAbleton 提供另一种 Live 与 TouchDesigner 的连接：通过 Remote Scripts、OSC 与配套的 Max for Live 功能，传递片段、场景和参数等信息。<sup><a href="#c18-note-tdableton" aria-label="注释7">〔7〕</a></sup> 它适合需要让视觉程序获得 Live 播放状态的系统。</p>
+<p>共享一个清楚的事件，可以使两种媒介展开各自的运动；只共享段落，则能保留细节上的先后。系统把作曲中选定的关系维持下来，让现场变化有共同的依据。</p>
+</div><aside class="context-aside" aria-label="背景：MIDI 与 OSC 传递的是什么"><p class="note-type">技术前史</p><h4>MIDI 与 OSC 传递的是什么</h4><p>MIDI 传递音符与控制消息；1997年提出的 OSC 提供另一种命名和组织控制消息的方法。这些消息可以让视觉系统知道“发生了什么”。声音本身仍沿音频通路输出。</p><div class="note-links"><a href="https://midi.org/the-history-of-midi" target="_blank" rel="noopener noreferrer">MIDI Association ↗</a><a href="https://cnmat.berkeley.edu/publications/open-sound-control-new-protocol-communicating-sound-synthesizers" target="_blank" rel="noopener noreferrer">CNMAT：OSC 论文 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>把一次演奏留下来</h3>
+<p>现场版本不必永远与录音版本分开。Session 中的演奏可以被录入 Arrangement，成为新的编排；实际听到的声音还可以另行录成音频，用来回听和编辑。<sup><a href="#c18-note-session" aria-label="注释1">〔1〕</a></sup> 前者保存安排，后者保存这一次具体的发声结果，两者各有用途。</p>
+<p>回放有时会暴露一个在操作时难以发现的问题：表演者记得某个动作多么复杂，听者却只听到变化发生得太早；一个停手的片刻，反而让先前的材料获得了需要的空间。录音把动作的劳动与结果暂时分开，使音乐能够重新接受聆听。</p>
+<p>开放结构也需要在结束和中断时保持清楚。网络失去联系、控制器暂时离开、某一条映射被关闭，都不应被误认为新的演奏指令。恢复时先确认正在播放的状态，比把旧动作重新发送一遍更重要。这样的准备不决定作品的美学，却保护表演者已经作出的音乐决定。</p>
+<p>一套实时工程最终像一份仍留有空位的乐谱。材料已经经过制作，重要的边界已有安排，而有些持续、相遇和离开仍然需要在现场完成。技术把这些空位放到手边，演奏使它们在某一晚成为不可重复的具体时间。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>本章现场与制作</h3>
+<ul>
+<li><a href="https://www.ableton.com/en/blog/four-tet-explains-his-live-setup/" target="_blank" rel="noopener noreferrer">Four Tet：2013年现场设置工作坊</a></li>
+<li><a href="https://www.ableton.com/en/blog/caterina-barbieri-minimalism-modular-and-live/" target="_blank" rel="noopener noreferrer">Caterina Barbieri：Loop 对谈与现场</a></li>
+<li><a href="https://derivative.ca/community-post/nonotak/66933" target="_blank" rel="noopener noreferrer">NONOTAK：合作与 TouchDesigner 的制作访谈</a></li>
+<li><a href="https://derivative.ca/UserGuide/TDAbleton" target="_blank" rel="noopener noreferrer">TDAbleton：实时系统连接文档</a></li>
+</ul></div></div><aside class="media"><h4>Four Tet · 现场设置工作坊</h4><p>Red Bull Music Academy 工作坊，2013。</p><button class="load-media" data-provider="youtube" data-id="9KIvnLBF7vU" data-title="Four Tet · 现场设置工作坊">播放作品</button><a href="https://www.ableton.com/en/blog/four-tet-explains-his-live-setup/" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside><aside class="media"><h4>Caterina Barbieri · Minimalism, Modular and Live</h4><p>Loop 2017 对谈与现场。</p><button class="load-media" data-provider="youtube" data-id="nxECAD3NwQE" data-title="Caterina Barbieri · Minimalism, Modular and Live">播放作品</button><a href="https://www.ableton.com/en/blog/caterina-barbieri-minimalism-modular-and-live/" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside><details class="footnotes"><summary>本章注释</summary><ol><li id="c18-note-session">Ableton，《Live 12 Reference Manual》，Session View。 <a href="https://www.ableton.com/en/live-manual/12/session-view/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/session-view/</a></li><li id="c18-note-fourtet">Ableton，《Four Tet Explains His Live Setup》，2013年5月21日，附 Red Bull Music Academy 工作坊录像。 <a href="https://www.ableton.com/en/blog/four-tet-explains-his-live-setup/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/blog/four-tet-explains-his-live-setup/</a></li><li id="c18-note-launch">Ableton，《Live 12 Reference Manual》，Launching Clips。 <a href="https://www.ableton.com/en/live-manual/12/launching-clips/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/launching-clips/</a></li><li id="c18-note-barbieri">Ableton，《Caterina Barbieri: Minimalism, Modular and Live》，2018年6月13日，讨论 Loop 2017 的演出与当时设置。 <a href="https://www.ableton.com/en/blog/caterina-barbieri-minimalism-modular-and-live/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/blog/caterina-barbieri-minimalism-modular-and-live/</a></li><li id="c18-note-nonotak-origins">Visual Atelier 8，《Interview with NONOTAK》，双人访谈。 <a href="https://visualatelier8.com/interview-with-nonotak/" target="_blank" rel="noopener noreferrer">https://visualatelier8.com/interview-with-nonotak/</a></li><li id="c18-note-nonotak">Derivative，《NONOTAK》，双人访谈，2022年12月13日。 <a href="https://derivative.ca/community-post/nonotak/66933" target="_blank" rel="noopener noreferrer">https://derivative.ca/community-post/nonotak/66933</a></li><li id="c18-note-tdableton">Derivative，TDAbleton 官方文档。 <a href="https://derivative.ca/UserGuide/TDAbleton" target="_blank" rel="noopener noreferrer">https://derivative.ca/UserGuide/TDAbleton</a></li></ol></details><div class="chapter-nav"><a href="#chapter-17">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-19">下一章 →</a></div></article><article class="article" id="chapter-19"><div class="kicker">第19章</div><h2>真锅大度：动作如何成为音乐决定</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>身体进入了哪一层</h3>
+<p>真锅大度的工作跨越音乐、编程、表演和视觉。他在2007年的《TRUE》中负责声音、振动与编程；舞蹈、灯光、影像和传感系统由多位创作者共同完成。<sup><a href="#c19-note-true" aria-label="注释1">〔1〕</a></sup> 身体并不是作品之外的一只遥控器，它与其他媒介一起构成舞台正在发生的关系。</p>
+<p>2008年的《Face Visualizer》《Face Instrument》把肌电传感与电刺激引入表情的读取和复制。<sup><a href="#c19-note-face" aria-label="注释2">〔2〕</a></sup> 这些作品使输入与输出的方向也成为可见的内容：身体可以产生控制信息，系统又可以反过来作用于身体。从表情的读取到声音的变化，动作的开始、持续与结束都需要获得可辨认的回应。</p>
+<p>当动作与声音发生联系，最容易被看见的是“动一下，响一下”。真正的乐器关系需要更多：开始如何被辨认，持续时能够改变什么，停止以后声音怎样离开，以及下一次是否仍能得到可理解的结果。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>连续的数值，还不是一个动作</h3>
+<p>手的位置、距离或速度可以每一刻都变化。音乐未必需要每一个微小变化。若把全部抖动直接变成音高或音量，表演者很难停住；若变化被抹得太慢，动作又会显得没有回应。</p>
+<p>输入处理首先是在选择时间。短促触发需要清楚的开始，持续参数需要能够稳定保持，章节切换则可能等待一个音乐边界。它们都来自身体，却不必采用相同的响应方式。</p>
+<p>以一个简单按压为例，可以分成尚未按下、刚刚按下、持续按住与释放。开始触发一个声音，持续阶段改变纹理，释放使它进入衰减。这样的划分，使一次动作具有完整的音乐姿态，而不只是一个反复发送的开关数值。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>映射是一种作曲</h3>
+<p>把输入连接到参数，通常称为映射。输入范围、变化曲线、上下限和反应速度，都会改变表演者实际能做的音乐。</p>
+<p>同样是手慢慢抬高，可以让声音更明亮，也可以移动采样读取位置，或使另一层材料逐渐进入。三种结果都能接通，却要求不同的动作经验。明暗变化容易连续辨认，读取位置可能经过很短的有效区域，材料混合则需要两层之间本来就有音乐关系。</p>
+<p>映射的起点应当是一项值得演奏的变化。前面制作出的自动化，可以帮助寻找它：哪一段过程的速度值得在现场改变，哪一个中间状态值得停留，哪一处只适合明确切换？控制系统随后把这些选择放到身体能够抵达的位置。</p>
+<p>一个动作也可以控制多个参数。重要的是结果仍然构成连贯的行为。例如，声音逐渐靠近时，空间比例降低、音头清楚一些，这些内部变化可以共同服务一个意图。若每个参数各自向无关方向移动，表演者就难以学习和重现。</p>
+</div><aside class="context-aside" aria-label="背景：输入范围就是演奏范围"><p class="note-type">概念补全</p><h4>输入范围就是演奏范围</h4><p>同一个动作可以经过不同曲线、平滑与上下限，再控制音色或场景。映射决定哪些状态容易抵达，哪些变化适合持续演奏。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/midi-and-key-remote-control/" target="_blank" rel="noopener noreferrer">Live 12 · MIDI and Key Remote Control ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>反馈让动作变得可学习</h3>
+<p>一件乐器需要告诉人刚才发生了什么。声音本身可以是主要反馈，界面则帮助区分正在保持、等待启动与输入失效。表演者看到的状态不必全部投向观众，但应当能够支持下一次判断。</p>
+<p>启动量化尤其需要这项区分。动作已经被系统接收，音乐仍在等待边界，并不意味着动作失败。相反，一个本应立即出现的短音若总要等待，身体与声音的联系就会变弱。不同角色需要不同的时间安排。</p>
+<p>反馈也让练习不必依赖盲目试探。某个动作太难保持，可以放宽舒适区域；某段变化过于敏感，可以重新分配输入范围。校准的目标是让音乐可控，而不只是使传感器数值覆盖最低与最高。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>丢失输入不是另一种表演动作</h3>
+<p>位置追踪消失、连接短暂中断，与音乐家有意松手是不同事件。持续声可以按既定规则回稳，已经运行的底层可以继续，新的触发则应暂时停止。恢复以后先确认当前状态，避免把断开期间的旧动作补发成一串声音。</p>
+<p>这一规则既保护演出，也保护表达。若一次失联被当作极端姿势，系统便在作者没有选择的地方改变音乐。恢复方式明确，表演者才有机会继续听，而不是不断担心连接。</p>
+<p>控制权同样需要清楚。同一参数已经有自动化，再被手动改变时，Live会暂时覆盖其自动化，重新启用后回到写定状态。<sup><a href="#c19-note-automation" aria-label="注释3">〔3〕</a></sup> 制作必须知道哪一时刻由谁决定，才能让固定结构与即兴可靠地交换位置。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从一个人到共同演奏</h3>
+<p>真锅在2007年哥德堡的I’mPULSE工作坊中，把节奏、效果、Ableton Live、Max/MSP和传感器乐器放在共同制作里，参与者最后组成演出单元。<sup><a href="#c19-note-impulse" aria-label="注释4">〔4〕</a></sup> 工具在这类环境中不只连接身体与机器，也连接不同人的决定。</p>
+<p>共同演奏会使映射的问题更具体。一个人掌握持续层，另一个人只能加入短事件，二者需要听彼此留下的空间。哪一次改变必须共同确认，哪一项可以独立发生，逐渐成为作品的规则。</p>
+<p>身体输入的价值因此不在数据种类有多少，而在它开放了哪些音乐关系。能够清楚地开始、保持、变化与结束，一项普通控制也可能成为值得长期练习的乐器。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>作品与延伸</h3>
+<ul>
+<li><a href="https://daito.ws/en/archive/true/" target="_blank" rel="noopener noreferrer">《TRUE》制作档案</a></li>
+<li><a href="https://www.daito.ws/archive/smiles/" target="_blank" rel="noopener noreferrer">《Face Visualizer》《Face Instrument》</a></li>
+<li><a href="https://daito.ws/en/archive/impulse-2007/" target="_blank" rel="noopener noreferrer">I’mPULSE 2007</a></li>
+</ul></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c19-note-true">Daito Manabe，《TRUE》，2007，作品与制作档案。<a href="https://daito.ws/en/archive/true/" target="_blank" rel="noopener noreferrer">https://daito.ws/en/archive/true/</a></li><li id="c19-note-face">Daito Manabe，《Face Visualizer》《Face Instrument》，2008。<a href="https://www.daito.ws/archive/smiles/" target="_blank" rel="noopener noreferrer">https://www.daito.ws/archive/smiles/</a></li><li id="c19-note-automation">Ableton，Live 12 Manual，Automation and Editing Envelopes。<a href="https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/" target="_blank" rel="noopener noreferrer">https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/</a></li><li id="c19-note-impulse">Daito Manabe，I’mPULSE 2007 in Goteborg。<a href="https://daito.ws/en/archive/impulse-2007/" target="_blank" rel="noopener noreferrer">https://daito.ws/en/archive/impulse-2007/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-18">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-20">下一章 →</a></div></article><article class="article" id="chapter-20"><div class="kicker">第20章</div><h2>黑川良一：同时作曲的声音与影像</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>八分钟里的恒星</h3>
+<p>黑川良一的《unfold》以八分钟为一个循环。2016年的装置使用三路投影、6.1声道声音和触觉振动装置，处理的却是恒星与星系形成和演化的材料。<sup><a href="#c20-note-unfold" aria-label="注释1">〔1〕</a></sup> 展厅里的时间与研究对象的时间相差悬殊，作品必须在二者之间建立一种可以经历的尺度。</p>
+<p>黑川1978年出生于日本。他的作品包括视听演出、装置、录音和影像，以现场录音与数字结构重新组织时间。<sup><a href="#c20-note-bio" aria-label="注释2">〔2〕</a></sup> 声音与图像在这里不是两个等待最终对齐的文件；它们共同决定哪些变化被感觉为一个过程，哪些瞬间取得边界。</p>
+<p>从天体数据到八分钟的循环，关键并不只是屏幕足够大、声音足够强。材料必须被选择，运动需要有顺序，不同输出还要在人的感知中形成关系。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>研究材料怎样成为作品</h3>
+<p>《unfold》的制作包含与天体物理学家Vincent Minier的合作，科学数据进入了声音、图像和振动的组织。<sup><a href="#c20-note-fact" aria-label="注释3">〔3〕</a></sup> 数据提供结构和变化，展厅则提出另外的条件：观众在什么位置，能够停留多久，哪些差异来得及被辨认。</p>
+<p>一份研究材料可能包含很多尺度。艺术处理需要决定从哪里开始，以及如何让一种尺度进入另一种。放大、压缩、重复与重组因而属于创作本身，而不只是把研究结果搬到投影机上的步骤。</p>
+<p>声音在其中能够提供清楚的时间边界，也能够维持连续。一个短促事件使图像变化取得起点，一层持续声又可能把多个画面连接起来。振动进一步把时间交给身体。不同媒介通过共同安排，使数据成为一次具体的经历。</p>
+</div><aside class="context-aside" aria-label="背景：unfold · 2016"><p class="note-type">作品坐标</p><h4>unfold · 2016</h4><p>八分钟循环，三路投影、6.1 声道与触觉振动。研究数据经过选择与时间安排，进入展厅中的身体经验。</p><div class="note-links"><a href="https://www.ryoichikurokawa.com/project/unfold.html" target="_blank" rel="noopener noreferrer">Ryoichi Kurokawa · unfold ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>同时发生以后，还要一起发展</h3>
+<p>最简单的同步，是两项内容同时开始。但共同作曲还要处理随后发生的事情：声音已经消散，形状是否继续存在？图像开始增加细节，声音是否也必须变密？一个媒介保持时，另一个能否取得前景？</p>
+<p>这些问题允许作品有不完全同步的部分。一个共同事件可以产生不同速度的结果，段落的转折又把它们重新连接。严格贴合会使因果鲜明，有意偏离则可能增加等待或张力。</p>
+<p>音乐中的乐句也能帮助理解这种关系。一次起音是事件，事件之间构成一句；一句与下一句之间，可以有呼应、延续或断裂。视听作品把这种分句扩展到图像和空间。没有必要让每一粒视觉元素都对应一个短音，重要的是作品在哪些尺度上共同呼吸。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>断裂为什么能够被感到</h3>
+<p>一处突然停止只有放在此前的持续里，才会产生清楚的后果。若声音、图像与灯光从始至终都在突变，听者与观看者可能逐渐失去对变化的尺度。</p>
+<p>断裂需要先建立某种规则：持续的运动、可以预期的重复，或一段相对稳定的材料。撤去其中一个条件，观众才会感到先前的关系已经结束。然后出现的新材料，也会被刚刚留下的空白改变。</p>
+<p>这种构成可以返回纯音乐。持续声场中撤去一个频段，节奏里省去一次预期的触发，或者让延迟尾部突然获得独立空间，都在重新安排边界。视觉提供另一种观察方式，但音乐内部仍然需要这些关系。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>作品的形态改变了听法</h3>
+<p>黑川2019年的《subassemblies》是视听演出，项目说明列出投影、4.1声道声音与频闪，以及约35至45分钟的呈现长度。<sup><a href="#c20-note-subassemblies" aria-label="注释4">〔4〕</a></sup> 相比八分钟循环装置，观众进入作品的方式不同：演出有共同开始和结束，装置则允许在不同位置进入。</p>
+<p>这会改变作曲的责任。固定开场可以逐渐建立前提，后来再使它变化；循环作品需要考虑从中途进入的人如何取得线索。作品的形式不是在内容写完后随意选择的容器，它会影响材料怎样被安排。</p>
+<p>多声道也不是把立体声简单放大。声音在哪些位置出现，移动需要多长时间，观众能否同时观察不同画面，都会改变事件之间的距离。录像保留了重要记录，但现场的身体位置仍是作品的一部分。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>从共同事件走向共同经验</h3>
+<p>前一章讨论动作如何成为决定，第十八章讨论声音与视觉程序怎样共享状态。黑川的作品使这些工具问题回到整体：系统所传递的事件，最后怎样成为可以停留的时间？</p>
+<p>系统能够准确连接，作品仍然需要被编排。一次非常精确的触发可能没有新的作用，一段缓慢而简单的变化却可能建立尺度。完成作品，需要同时面对局部材料和整体持续。</p>
+<p>《unfold》最终把庞大的研究时间交给八分钟的展厅经验。创作者选择的不只是展示什么，也包括怎样让人经历它。下一章从这里走向实际场地：扬声器、房间和观众的位置，将继续改变这些已经写好的关系。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>作品</h3>
+<ul>
+<li><a href="https://www.ryoichikurokawa.com/project/unfold.html" target="_blank" rel="noopener noreferrer">《unfold》官方片段与装置说明</a></li>
+<li><a href="https://www.ryoichikurokawa.com/project/sa.html" target="_blank" rel="noopener noreferrer">《subassemblies》官方片段</a></li>
+</ul></div></div><aside class="media"><h4>黑川良一 · unfold</h4><p>2016，装置片段。含快速闪变。</p><button class="load-media" data-provider="vimeo" data-id="160648305" data-title="黑川良一 · unfold">播放作品</button><a href="https://www.ryoichikurokawa.com/project/unfold.html" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><div class="player"></div></aside><details class="footnotes"><summary>本章注释</summary><ol><li id="c20-note-unfold">Ryoichi Kurokawa，unfold，2016。<a href="https://www.ryoichikurokawa.com/project/unfold.html" target="_blank" rel="noopener noreferrer">https://www.ryoichikurokawa.com/project/unfold.html</a></li><li id="c20-note-bio">Ryoichi Kurokawa，Biography。<a href="https://www.ryoichikurokawa.com/bio.html" target="_blank" rel="noopener noreferrer">https://www.ryoichikurokawa.com/bio.html</a></li><li id="c20-note-fact">FACT，unfold，科学合作与制作说明，2016。<a href="https://www.fact.co.uk/artwork/unfold-2016" target="_blank" rel="noopener noreferrer">https://www.fact.co.uk/artwork/unfold-2016</a></li><li id="c20-note-subassemblies">Ryoichi Kurokawa，subassemblies，2019。<a href="https://www.ryoichikurokawa.com/project/sa.html" target="_blank" rel="noopener noreferrer">https://www.ryoichikurokawa.com/project/sa.html</a></li></ol></details><div class="chapter-nav"><a href="#chapter-19">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-21">下一章 →</a></div></article><article class="article" id="chapter-21"><div class="kicker">第21章</div><h2>房间、观众与表演者</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>演出场地给出的另一个版本</h3>
+<p>一件作品在工作室完成，进入现场以后却会遇到新的比例。原来分得开的两个短音被反射连起来，低频在不同位置有不同重量，一层细节在观众席后方不再清楚。声音文件没有改变，实际听见的结果已经改变。</p>
+<p>Henke在《Lumière》中从观众席后方操作，使自己能够接近观众的方向调整作品；各个场地都需要适配。<sup><a href="#c21-note-lumiere" aria-label="注释1">〔1〕</a></sup> 创作与呈现之间因此没有一条绝对清楚的终点。试音可能重新决定作品的密度、距离与持续。</p>
+<p>这种工作也适用于没有投影和激光的音乐。扬声器与房间成为最终发声路径，演奏者需要听见它们带来的条件。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>试音先确认什么</h3>
+<p>试音可以从最简单的材料开始。一个清楚的短声帮助观察起音与反射，一段持续声音暴露低频与共振，一段真实作品则检查层次在完整条件下是否仍然成立。</p>
+<p>顺序很重要。只播放全曲最强烈的部分，容易遗漏安静细节；只用测试声，又无法判断音乐关系。基础检查使输出稳定，作品片段则让技术判断进入实际编排。</p>
+<p>监听位置也需要变化。坐在电脑前得到的平衡，未必与观众中央相同；靠近墙面或扬声器时，又可能听到另一种比例。不能把某个位置的所有问题都用全局均衡补偿，否则其他位置可能更差。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>场地改变了哪些选择</h3>
+<p>较长的反射会延续事件，作品中的人工混响可能需要减少；某一段的空隙被填满时，也可以调整声部持续，而不只是在主输出上寻找频率。较干的空间则可能需要保留更多延续，使材料仍然能够相互连接。</p>
+<p>这些调整不必都在演出中临时完成。可以为作品准备少数明确的空间状态，试音以后选定合适范围。现场还保留微调，避免所有声部都处于不断补救之中。</p>
+<p>音量是其中一项选择，却不能替代层次。持续增加主音量可能把遮蔽一起放大。先判断哪些声音需要成为前景，哪些可以退后，再处理整体强度。实际聆听应保持舒适，反馈或异常电平出现时立即降低输出并停止相关输入。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>让表演者知道正在发生什么</h3>
+<p>观众面对作品，表演者还需要看到系统状态。当前材料、待启动片段、控制是否有效、录音是否运行，都是下一次行动的条件。界面可以朴素，但不应让重要决定藏在多个页面后面。</p>
+<p>反馈不必全部进入观众画面。演奏者需要立即知道指令已被接收，音乐可能仍在等待下一个边界；观众看到的变化，则可以与实际发声一起发生。操作反馈和作品呈现各有职责。</p>
+<p>控制器的布置也应当配合作品。最常一起变化的关系放在相邻位置，需要迅速停止的操作能够直接触及，少用的设置则不必占据最容易误碰的地方。界面在支持动作，也在减少不必要的决定。</p>
+</div><aside class="context-aside" aria-label="背景：控制反馈与观众呈现"><p class="note-type">前后连接</p><h4>控制反馈与观众呈现</h4><p>表演者需要知道请求已收到；观众需要在音乐实际进入时感到转场。两种反馈可以使用不同的时间，不必同时切换所有画面。</p><div class="note-links"><a href="https://www.ableton.com/en/live-manual/12/launching-clips/" target="_blank" rel="noopener noreferrer">Live 12 · Launching Clips ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>给中断准备一条继续的路</h3>
+<p>现场可靠性不是要求永远不出问题，而是让问题不至于占据整场作品。某个输入失效时，底层能否继续，表演者能否用另一种方式进入下一段，结束操作是否仍然有效，都应当提前试过。</p>
+<p>后备录音可以维持作品，键盘或普通MIDI控制可以替代暂时失去的特殊输入。后备不是掩盖表演，而是保护已经完成的音乐。它应当在相近电平和明确位置进入，不能因为救场造成另一种突然变化。</p>
+<p>恢复同样需要设计。先确认Live当前正在播放什么，再恢复控制；不要把断开期间积累的旧指令全部重发。一次已经过去的动作，不应在稍后成为意外音符。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>排练让技术退出前景</h3>
+<p>完整排练与逐项测试不同。逐项测试可以确认一个按钮工作，完整排练才会暴露转场之间的关系、注意力负担和结束是否自然。</p>
+<p>排练可以分别检查声音路径与视觉输出，再回到完整呈现；以有后备的受控中断，检验演出怎样继续。录音帮助表演者回到听者的位置，辨认当时忙于操作而没有注意到的地方。</p>
+<p>当进入、停留与退出都能够被可靠执行，技术才有机会退到作品后面。演出者不必证明自己一直在操作，而可以把注意力交给房间和眼前的时间。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>演出之后</h3>
+<p>现场版本会留下新的判断。某个等待在房间里成立，回到录音却需要缩短；一次偶然组合也可能成为下一首作品的开头。保存实际音频与关键状态，使这些经验可以返回工作室。</p>
+<p>作品因此没有在演出结束时封闭。它进入了另一轮制作，只是创作者已经带着不同的听觉记忆回来。最后一组章节将讨论这种持续实践：当工具越来越能自动生成，人的问题、品味与合作又怎样继续发展。</p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c21-note-lumiere">Robert Henke，Lumière，场地适配与演出位置。<a href="https://roberthenke.com/concerts/lumiere.html" target="_blank" rel="noopener noreferrer">https://roberthenke.com/concerts/lumiere.html</a></li></ol></details><div class="chapter-nav"><a href="#chapter-20">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-22">下一章 →</a></div></article><section class="part-entry" id="part-VI"><div class="part-title">VI</div><h2>形成持续的创作实践</h2><p>让工具经验、品味与共同聆听返回下一次创作。</p></section><article class="article" id="chapter-22"><div class="kicker">第22章</div><h2>Agent加入工作室之后</h2>
+
+<div class="context-row"><div class="context-main"><h3>一项要求怎样改变制作</h3>
+<p>“把音乐做得更复杂”和“保留低频动机，让细节只在两次回归之间发生”，会引导完全不同的工作。前者容易不断增加材料，后者已经包含对结构的认识。</p>
+<p>当软件能够生成音符、编辑文件、配置参数并执行步骤，创作意图需要以更明确的方式进入过程。Agent可以承担连续的工具操作，音乐家仍然需要知道这些操作在解决什么。</p>
+<p>真锅大度在2026年的《Beyond Generation》中，把问题、探索与评价分开讨论，并追问生成的复杂性如何与作品价值发生关系。<sup><a href="#c22-note-daito" aria-label="注释1">〔1〕</a></sup> 这使关注点从“机器能做多少”转向“制作如何改变最初的问题”。</p>
+</div><aside class="context-aside" aria-label="背景：问题、探索与评价"><p class="note-type">观点背景</p><h4>问题、探索与评价</h4><p>真锅大度在《Beyond Generation》中区分问题如何成立、在何处探索以及什么被当作价值。候选数量与生成复杂度，并不直接决定作品的意义。</p><div class="note-links"><a href="https://projects.daito.ws/beyond-generation/" target="_blank" rel="noopener noreferrer">Beyond Generation ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>先把任务放在可以听见的范围里</h3>
+<p>一项可用的制作任务，应当有明确材料和可比较的改动。例如，使用已经写好的四小节动机，保留起始与结尾，只改变中间两处触发；或者保持所有音符，比较两种空间退出方式。</p>
+<p>范围并非为了限制想象，而是使结果能够被理解。若同时更换音色、音符、结构、混音和速度，作者即使喜欢新版本，也很难知道哪一项改变值得继续。局部问题先清楚，整体探索才不容易变成无限候选。</p>
+<p>随书材料提供两份相关的MIDI。一份保持固定动机，另一份只在预留位置增加少量事件。它们展示的是一种能够检查的修改范围。这样的材料也可以交给Agent处理，先确认它遵守了约束，再判断变化有没有音乐作用。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>建议与执行之间留一道门</h3>
+<p>Agent提出的结果，不应自动覆盖唯一工程。复制版本、保存差异和保留原始素材，使制作能够回退。读取到参数或成功写入音符，只能说明操作发生；声音需要通过实际播放才能进入判断。</p>
+<p>可以把工作分成三个位置：建议产生候选，编辑改变材料，播放系统稳定地运行已经选定的内容。演出时若仍要现场生成，也需要为生成结果规定允许范围、等待位置和退出方式。</p>
+<p>这并不要求创作者永远只在最后筛选。人可以改变提问，机器也可以提供意外的分析线索；一个原本不受重视的结果，可能让作者意识到另一种结构。关键是这些变化能够被保留、讨论和继续，而不是每次从一段新提示重新开始。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>音乐判断不能只看计数</h3>
+<p>轨道更多、音符更密、生成更快，都不是音乐必然变好的证据。技术指标能够回答有限问题：是否削波，文件是否存在，事件是否超过边界，某个控制是否被记录。它们保护过程，但不包办作品。</p>
+<p>一段变化为什么有效，需要放在前后关系里解释。重复可能使听者进入状态，也可能让作品停住；一个没有变化的片刻，可能是最需要的等待。评价必须允许同一技术动作在不同作品中取得不同意义。</p>
+<p>量化也不是敌人。明确时长、范围和版本，有助于检查候选；问题在于把可计数的东西当成全部价值。一个参数变化很大，听觉上的作用可能很小；一个音符移开少许，整句却可能获得新的呼吸。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>让Agent帮助解释，而不只帮助增加</h3>
+<p>完成一个候选以后，Agent可以整理改动：哪些音符被保留，哪些位置被移开，哪条处理链发生变化。作者则通过回听决定，哪些差异真正影响了作品。</p>
+<p>这种记录能够形成可用的经验。下一次遇到类似问题时，不必只记得“某版比较高级”，而可以回到具体关系：主体被空间遮住，撤去一层以后轮廓显露；节奏失去方向，重新固定句尾以后建立回返。</p>
+<p>同时，也应保留尚未理解却值得继续听的结果。过早把每一次变化归纳成规则，可能使探索只剩确认既有偏好。记录的作用是帮助返回，不是提前终结判断。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>手动能力仍然改变问题的质量</h3>
+<p>亲手移动一次音符、改变一次包络、录下一段效果演奏，会使作者知道什么容易改变，什么需要付出代价。工具经验因此不只是执行能力，也是提问的来源。</p>
+<p>不了解路由时，可能把无声误认为乐器不好；没有比较过包络，可能把力度问题全部交给均衡器。Agent能够加快操作，但作者对声音路径的理解仍然决定哪些问题能够被看见。</p>
+<p>最终，Agent进入的是一间已经有聆听、协作、编辑和演奏的工作室。它可以改变工作量，也可以改变创作的分工。下一章回到其中最难被简单交出的部分：当许多版本都能成立，创作者怎样逐渐形成自己的品味，又允许这种品味继续变化。</p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c22-note-daito">Daito Manabe，Beyond Generation，2026年9月12日。<a href="https://projects.daito.ws/beyond-generation/" target="_blank" rel="noopener noreferrer">https://projects.daito.ws/beyond-generation/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-21">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-23">下一章 →</a></div></article><article class="article" id="chapter-23"><div class="kicker">第23章</div><h2>品味怎样变得具体</h2>
+
+<div class="context-row empty-aside"><div class="context-main"><h3>“喜欢”之后还可以知道什么</h3>
+<p>一段声音让人愿意继续听，是制作的重要起点。但当作品需要修改，仅仅说喜欢或不喜欢还不够。需要进一步辨认：吸引力来自发音、空间、节奏，还是它出现的位置？</p>
+<p>这不是把感受翻译成一套冷静的公式。相反，描述使感受更容易被再次找到。一次低频回归带来的力量，可能并不来自更大的电平，而来自前面足够长的撤去；一层颗粒听起来细腻，也可能因为它只在关键位置出现。</p>
+<p>品味因此包含选择，也包含认识选择的条件。能够说清一项处理在当前作品中做了什么，才更容易把经验带到另一份材料，而不是只保存同一个预设。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>比较需要一个共同问题</h3>
+<p>两段完全不同的音乐可以提供广阔参照，制作中的局部比较则需要更明确的条件。同一声源、相近电平、相同时间范围，有助于听清某项改动的后果。</p>
+<p>例如，比较两个尾音版本，先保持原声与触发位置不变。一版自然消散，另一版在下一句之前退去。问题不是哪一版更贵、更专业，而是哪一种关系支持当前段落。若下一句需要明确起点，较短空间可能更合适；若两句需要融成一段，连续尾音又可能有作用。</p>
+<p>前面的制作材料提供这种对照，但比较不能永远停在独奏。一个声音在独奏里悦耳，可能在整体里没有位置；局部稍显粗糙的材料，也可能使整曲取得必要的边缘。</p>
+</div></div>
+<div class="context-row"><div class="context-main"><h3>从艺术家那里继承判断</h3>
+<p>人物章节没有提供同一套风格配方。池田的尺度、Nicolai的材料变形、坂本的倾听、柏大辅的长篇，以及Henke对工具的修改，分别面对不同问题。</p>
+<p>它们可以被转化成更精确的观察：材料最重要的关系是什么，什么变化使它显露，哪些条件正在妨碍它。继承这些经验，不必保留作品的外观，也不要求采用相同设备。</p>
+<p>模仿能够训练听辨与实现。随后需要改变材料、长度或场合，判断原方法是否仍然成立。若一换声音就失去作用，说明该方法依赖某种具体条件；把依赖关系听清，同样是学习。</p>
+</div><aside class="context-aside" aria-label="背景：同一个工具，不同的选择"><p class="note-type">并读路径</p><h4>同一个工具，不同的选择</h4><p>第六章关注材料的记忆，第八章关注长篇中的回返，第九章关注工具与演奏。三种经验会在制作中相遇，却不要求同一种音色。</p><div class="note-links"><a href="index.html#chapter-6" target="_blank" rel="noopener noreferrer">回到第六章 ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>分歧使作品的目标显露</h3>
+<p>同一个长尾，有人觉得营造了空间，另一个人觉得拖慢了音乐。两种意见都可能准确，却在关注不同目标。讨论应继续问：当前段落要使人停留，还是要使转场清楚？</p>
+<p>评价一个作品，不必把所有分歧消除。创作者需要理解意见来自哪里，再决定哪些与作品有关。若某个听者指出主体听不清，这是一项可以检验的观察；若他只是不喜欢这种持续形式，则未必需要把作品改成另一种音乐。</p>
+<p>互听最有用的反馈通常有具体位置和后果。“这里开始无法分清层次”“这一段回归让我认出开头”“停止以后还想多听一会儿”，都比替艺术家划等级更接近制作。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>允许作品改变原来的偏好</h3>
+<p>长期听同一类声音，会建立敏锐的判断，也可能使陌生材料过早被排除。一项尚未理解的变化，可以暂时保存，隔一段时间再听。第一次的困惑不必立即被判为失败。</p>
+<p>这与无条件接受随机结果不同。作品仍然需要形成关系，只是关系有时晚于材料出现。柏大辅在制作过程中逐渐发现叙事方向，Henke在工具限制中修改原来的原则，都说明经验并非只负责确认预先的计划。</p>
+<p>复听还会改变作者对劳动的估计。花费最多时间的部分，可能并非整曲最需要的部分；偶然得到的一处简单组合，反而可能成为中心。愿意撤去投入很多的材料，是让判断回到作品的一种方式。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>形成一个可以继续工作的环境</h3>
+<p>参考唱片、自己的版本、现场录音与讨论记录，可以共同构成听觉环境。它不必很大，但需要让材料能够再次相遇。某件作品为何被保留，某一版本为何不再使用，最好仍然能够从实际声音理解。</p>
+<p>持续创作的语言由此逐渐出现。它可能表现为某些音色，也可能表现为安排时间的习惯、对空间的处理，或愿意留下哪一种不确定性。个人语言不是提前写在简介里的宣言，而是在多次选择之后能够被听出的关系。</p>
+<p>本书的工具、人物和历史，最终都服务于这种能力：面对一个声音，既知道有哪些办法，也愿意听清它此刻需要什么。</p></div></div><div class="chapter-nav"><a href="#chapter-22">← 上一章</a><a href="#atlas">目录</a><a href="#chapter-24">下一章 →</a></div></article><article class="article" id="chapter-24"><div class="kicker">第24章</div><h2>把创作放回生活与共同体</h2>
+
+<div class="context-row"><div class="context-main"><h3>一件新乐器，需要另一个人来听</h3>
+<p>一位创作者可以独自完成很多工作，却很难同时处于所有聆听位置。他记得每一项操作，也知道一段声音原来想表达什么；第一次听的人没有这些背景，只会经历声音实际给出的关系。</p>
+<p>让作品进入另一双耳朵，并不是等它完美以后才进行的最后验收。它可以使创作中的盲点提早显露：界面上明确的变化没有被听见，某个自以为必要的层持续遮住主体，一段没有操作的等待反而使音乐获得完整感。</p>
+<p>真锅大度在2007年的I’mPULSE工作坊中，把软件制作、传感器乐器与共同演出连接起来。参与者最后组成表演单元，他也参与现场系统、混音与效果工作。<sup><a href="#c24-note-impulse" aria-label="注释1">〔1〕</a></sup> 学习由此不仅是各自完成操作，而是让这些操作在一个共同作品中取得位置。</p>
+</div><aside class="context-aside" aria-label="背景：I’mPULSE 2007"><p class="note-type">实践背景</p><h4>I’mPULSE 2007</h4><p>软件、效果、传感器与参与者共同演出，被放进同一次工作坊。知识在共同制作里取得用途，听众与合作者也带回新的问题。</p><div class="note-links"><a href="https://daito.ws/en/archive/impulse-2007/" target="_blank" rel="noopener noreferrer">Daito Manabe · I’mPULSE ↗</a></div></aside></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>把隐含知识变成可进入的过程</h3>
+<p>熟练作者往往跳过许多自己已经知道的判断。某种路由为何这样连接，哪一段材料已经完成，听见异常时先检查哪里，对初学者都可能陌生。</p>
+<p>一项好的示范需要先提供可以听见的结果，再解释关键选择。材料应当准备好，操作能在相同条件下复现，失败时也有可以定位的位置。示范之后再开放变式，学习者才有依据判断自己改变了什么。</p>
+<p>这种组织并不只适用于教学。为自己的工程写下清楚的来源与关系，也是在为下一次重开准备入口。隔一段时间回来，作者同样可能忘记当时为什么绕过某条路径。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>一次共同制作可以很小</h3>
+<p>设想两个人共享一组短声。一个人负责保持与退出，另一个人只决定事件的进入。最初的规则很少，却已经要求彼此倾听：持续层过满，短事件失去位置；事件不断出现，保持也无法成立。</p>
+<p>随后可以交换职责。原先只关注事件的人，会听见维持空间需要怎样的耐心；原先掌握背景的人，则会重新认识一次进入的重量。合作让同一材料出现不同的判断位置。</p>
+<p>再把结果录下来，双方都能暂时离开操作。讨论不必围绕谁做得更多，而可以回到哪种关系成立，哪一处需要改变。共同作品由此拥有可以修改的对象，而不只是一次活动的记录。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>舞台以外的时间</h3>
+<p>录音、阅读、参加演出、与合作者交流，都会继续影响制作。重要的不是不断扩大输入数量，而是让某项经验真正回到工作台。听见一个有力的转场，可以研究它前面建立了什么；看见一套清楚的现场控制，可以思考哪些决定被放在手边。</p>
+<p>日常环境也能提供材料。一个房间在清晨与夜晚有不同的声音，一件物体反复使用以后发音改变，一次对话中的等待也能使人重新认识时间。这些经验不必都被录下来，仍然能够改变作者对音乐的注意。</p>
+<p>作品公开以后，会进入不同的使用与解释。清楚的版本、署名和材料许可，使合作能够继续；可编辑源与录音分别保存，则让后来者能够认识作品的组织，而不只得到一个不可拆开的结果。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>经验如何继续传递</h3>
+<p>传递经验，需要知道哪些可以直接教，哪些必须在实践里逐渐形成。音频与MIDI的区别可以说明，录音怎样保存可以示范；一处等待需要多长，则必须与实际材料一起听。</p>
+<p>教学因而既需要准确，也需要开放。准确使学习者能够进入同一问题，开放则允许不同判断出现。要求每个人做出完全相同的风格，可能遮住原本最值得讨论的差异。</p>
+<p>本书的声音示范提供一个共同起点。完成之后，材料可以换成自己的录音，固定短作可以重新开放，声画关系可以进入另一种场地。方法在变化的条件中继续被使用，才真正离开了范例。</p>
+</div></div>
+<div class="context-row empty-aside"><div class="context-main"><h3>回到那架钢琴</h3>
+<p>开篇的钢琴经历过超出原来功能的改变。坂本龙一重新听见它，把损伤、数据、空间和人的演奏安排在一起。材料没有被恢复成最初的样子，却获得了另一种能够被共同经历的时间。</p>
+<p>从这架琴到电脑里的片段，从唱片到现场，从一个人的判断到两个人的合作，书中反复出现的是声音与条件的相遇。工具使某些关系成为可能，作品选择怎样使用它们，实际聆听又继续改变选择。</p>
+<p>一件音乐可以在工作室里形成，也可以在演奏中找到方向。已经完成的录音能够重新开放，现场的发现又能够成为下一次制作的材料。创作没有一种必须遵守的起点，但需要有持续返回声音的能力。</p>
+<p>下一次打开工程时，可能仍然只有一个短音。它在什么地方出现，等待谁的回应，怎样结束，已经有了更多可以认识的办法。</p></div></div><details class="footnotes"><summary>本章注释</summary><ol><li id="c24-note-impulse">Daito Manabe，I’mPULSE 2007 in Goteborg，工作坊与共同演出档案。<a href="https://daito.ws/en/archive/impulse-2007/" target="_blank" rel="noopener noreferrer">https://daito.ws/en/archive/impulse-2007/</a></li></ol></details><div class="chapter-nav"><a href="#chapter-23">← 上一章</a><a href="#atlas">目录</a><a href="labs.html">进入制作工作台 →</a></div></article></main><footer><div class="wrap">声音的组织 · 从聆听到实时演奏　｜　六组版 1.0<br>作品影音版权归原作者与发行机构。示范音频为本书原创。</div></footer><script>
+document.querySelectorAll('.figure img').forEach(img=>{img.addEventListener('error',()=>img.closest('.figure').classList.add('failed'));if(img.complete && !img.naturalWidth)img.closest('.figure').classList.add('failed');});
+
+document.querySelectorAll('.load-media').forEach(button=>button.addEventListener('click',()=>{
+ const {provider,id}=button.dataset;
+ if(!(/^[a-zA-Z0-9_-]+$/.test(id)))return;
+ const src=provider==='vimeo'?'https://player.vimeo.com/video/'+id+'?autoplay=0&dnt=1':'https://www.youtube-nocookie.com/embed/'+id+'?autoplay=0&rel=0';
+ const frame=document.createElement('iframe');frame.src=src;frame.title=button.dataset.title;frame.allow='fullscreen; picture-in-picture';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';
+ button.closest('.media').querySelector('.player').replaceChildren(frame);button.disabled=true;button.textContent='已请求载入播放器';
+}));
+
+document.querySelectorAll('.article sup a[href*="-note-"]').forEach(a=>a.addEventListener('click',()=>{const n=document.getElementById(a.getAttribute('href').slice(1));const d=n&&n.closest('details');if(d)d.open=true;}));
+
+const qs=document.getElementById('toc-search');if(qs)qs.addEventListener('input',()=>{const q=qs.value.toLocaleLowerCase();document.querySelectorAll('#atlas .part li').forEach(n=>n.hidden=!n.textContent.toLocaleLowerCase().includes(q))});document.addEventListener('play',e=>{document.querySelectorAll('audio').forEach(a=>{if(a!==e.target)a.pause()})},true);
+</script></body></html>
