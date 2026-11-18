@@ -18,6 +18,10 @@
 
 ---
 
+## 创作史料与源工程研究（Art Works）
+
+2026-11-09 的第一手创作谱系、审美偏好与本地工程交接由 [art-works 艺术创作档案](https://github.com/ewanqian/art-works/pull/2) 维护，不在作品展示站重复维护正文。包含 TIMER → Drop Flow / Simulation Zone、KASHIWA、NFIR、SRE / Entropy、REACTOR / HERO DOME、Ableton 与 SYSTEM × ERSHA 点云素材恢复。该 PR 为**待审核作者口述与研究计划**，不是已上线的文章或完成的 GPU Runtime。
+
 ## Public Viewing Links / 公开观看入口
 
 ### Timer
