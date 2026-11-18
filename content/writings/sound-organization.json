@@ -1,0 +1,18 @@
+{
+  "id": "sound-organization",
+  "slug": "sound-organization",
+  "title": "声音的组织｜从聆听到实时演奏",
+  "titleEn": "Organizing Sound — From Listening to Live Performance",
+  "type": "Book / Interactive Reader",
+  "category": "essay",
+  "date": "2026-11-18",
+  "summary": "从音乐史、艺术家与作品出发，走进声音制作、编排、混音与可演奏的现场。24章连续阅读，附背景知识地图与原创声音实验。",
+  "summaryEn": "A 24-chapter reader tracing how sound becomes composition and how a finished piece opens into live performance, with an interactive historical atlas and original audio studies.",
+  "articlePath": "writings/sound-organization/README.md",
+  "publicationUrl": "https://ewanqian.site/sound-organization/",
+  "githubUrl": "https://github.com/ewanqian/portfolio/tree/main/sound-organization",
+  "series": "Performable Music / 可表演音乐",
+  "status": "published",
+  "featured": true,
+  "order": 0
+}
