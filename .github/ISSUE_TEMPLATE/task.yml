@@ -1,0 +1,44 @@
+name: Portfolio task
+description: Propose a scoped, trackable change to the portfolio.
+title: "[Area] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use one Issue for one outcome. Keep private notes, credentials, raw paths, and unapproved material out of this public repository.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Intended outcome
+      description: What will be true when this task is complete?
+      placeholder: A visitor can explore the selected spatial scenes and understand their capture context.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: List the pages, content, assets, or systems that are in scope.
+      placeholder: |
+        - archive/gaussian-scenes/
+        - react/src/pages/GaussianScenes.jsx
+        - selected public-safe scene metadata
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance checks
+      description: How will we know the task is complete?
+      placeholder: |
+        - [ ] Public facts and credits are checked
+        - [ ] Build passes
+        - [ ] Relevant route is checked on desktop and mobile
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Related context
+      description: Link related Issues, PRs, public references, or working docs.
+      placeholder: "Related PR: #27"
