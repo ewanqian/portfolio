@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'sound-organization/**'
+      - 'react/scripts/copy-workspace-assets.mjs'
       - '.github/workflows/sound-organization-public-smoke.yml'
   workflow_dispatch:
 permissions:
@@ -11,23 +12,24 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 7
     steps:
-      - name: Diagnose live paths
+      - name: Confirm reader rather than SPA fallback
         shell: bash
         run: |
-          set -u
-          for url in \
-            'https://ewanqian.site/sound-organization/' \
-            'https://ewanqian.site/sound-organization/index.html' \
-            'https://ewanqian.site/sound-organization/knowledge.html' \
-            'https://ewanqian.github.io/portfolio/sound-organization/' \
-            'https://ewanqian.site/'; do
-            echo "::group::$url"
-            code=$(curl --max-time 15 --location --silent --show-error -o /tmp/sound-book-response -w '%{http_code} %{url_effective} %{content_type}' "$url") || true
-            echo "status = $code"
-            echo "bytes = $(wc -c < /tmp/sound-book-response 2>/dev/null || echo 0)"
-            head -c 180 /tmp/sound-book-response 2>/dev/null || true
-            echo
-            echo "::endgroup::"
+          set -euo pipefail
+          base='https://ewanqian.site/sound-organization'
+          for path in / /knowledge.html /labs.html; do
+            echo "Checking ${base}${path}"
+            curl --retry 3 --retry-all-errors --retry-delay 5 --max-time 25 --fail -sSL "${base}${path}" -o /tmp/book-page
+            bytes=$(wc -c </tmp/book-page)
+            echo "bytes=${bytes}"
+            case "${path}" in
+              /) test "${bytes}" -gt 110000; grep -q '声音的组织' /tmp/book-page ;;
+              /knowledge.html) test "${bytes}" -gt 90000; grep -q '历史' /tmp/book-page ;;
+              /labs.html) test "${bytes}" -gt 11000; grep -q '声音' /tmp/book-page ;;
+            esac
           done
+          curl --retry 3 --retry-all-errors --retry-delay 4 --max-time 25 --fail -sSL "${base}/audio/echo.mp3" -o /tmp/echo.mp3
+          test $(wc -c </tmp/echo.mp3) -gt 90000
+          echo SOUND_ORGANIZATION_PUBLIC_PASS
