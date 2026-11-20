@@ -1,0 +1,18 @@
+{
+  "project": "TITAN / BO LIVE Shenzhen",
+  "original_upload_commit": "b2e8e368073b62372c36c035edf1ec99a9a03d53",
+  "complete_link_revision": "25e77e7a1c00b1a9b13a1162888e4451c7fc5536",
+  "asset_base": "assets/kashiwa-titan/",
+  "tracks": [
+    {"id":"01","title":"Lead","cover":"01_Lead.jpeg","preview":"01_Lead_009.webp","original":"01_Lead_009.png","width":3840,"height":2160,"blob":"55d029debd8608c8c85faac5a85796ae2a4c0499","mana":"https://www.manamana.net/video/detail?id=2831761#!zh"},
+    {"id":"02","title":"Green","cover":"02_Green.jpeg","preview":"02_Green_009.webp","original":"02_Green_009.png","width":3840,"height":2160,"blob":"58a1ace732445b56aab4c7cc5d9fa4a61436fe00","mana":"https://www.manamana.net/video/detail?id=2903351#!zh"},
+    {"id":"03","title":"Haze","cover":"03_Haze.jpeg","preview":"03_Haze_004.webp","original":"03_Haze_004.png","width":3840,"height":2160,"blob":"6b5bb8d347d419f0890ce4fe3bf29405c8132357","mana":"https://www.manamana.net/video/detail?id=2903422#!zh"},
+    {"id":"04","title":"Infrared","cover":"04_Infrared.jpeg","preview":"04_Infrared_013.webp","original":"04_Infrared_013.png","width":3840,"height":2160,"blob":"e8aadf2debc754a192ad9881e11996c165eeb914","mana":"https://www.manamana.net/video/detail?id=2903434#!zh","bilibili":"https://www.bilibili.com/video/BV1wvZLBZEQS/"},
+    {"id":"05","title":"Whitenight","cover":"05_Whitenight.jpeg","preview":"05_white_night_014.webp","original":"05_white_night_014.png","width":3840,"height":2160,"blob":"d299d770d4a21f306381778244c5c72149a211ba","mana":"https://www.manamana.net/video/detail?id=2831703#!zh"},
+    {"id":"06","title":"Amb","cover":"06_Amb.jpeg","preview":"06_Amb_013.webp","original":"06_Amb_013.png","width":3840,"height":2160,"blob":"7917fe94499b94adc4561bcf523a631910590b7f","mana":"https://www.manamana.net/video/detail?id=2831826#!zh"},
+    {"id":"07","title":"Rose","cover":"07_Rose.jpeg","preview":"07_Rose_009.webp","original":"07_Rose_009.png","width":1920,"height":1080,"blob":"bd18ea4e5466f49dceb2539e0f6079e17465670d","mana":"https://www.manamana.net/video/detail?id=2903465#!zh"},
+    {"id":"08","title":"Titan","cover":"08_Titan.jpeg","preview":"08_Titan_010.webp","original":"08_Titan_010.png","width":3840,"height":2160,"blob":"cf625ccefcad4d67da56f7a7fbe77cc1fd0704c6","mana":"https://www.manamana.net/video/detail?id=2831892#!zh"},
+    {"id":"09","title":"Phantom","cover":"09_Phantom.jpeg","preview":"09_Phantom.webp","original":null,"mana":null,"related_video":"https://www.manamana.net/video/detail?id=2831944#!zh","related_edition":"CAN Festival"},
+    {"id":"10","title":"Aurora","cover":"10_Aurora.jpeg","preview":"10_Aurora_005.webp","original":"10_Aurora_005.png","width":7680,"height":4320,"blob":"267d8a27d9d2e20bd23111513842d7025c3e3f91","mana":null}
+  ]
+}
