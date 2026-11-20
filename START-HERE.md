@@ -1,5 +1,10 @@
 # 从这里继续 / Portfolio Resume
 
+## 2026-11-19 · 声音的组织下载入口修正（审查分支）
+
+- 分支 `fix/sound-reader-downloads`：移除返回 HTML 的 CSV/JSON 下载入口，保留历史地图；明确公开 MP3 试听与非公开制作材料的区别。
+- 未新增导出数据或制作素材，未改变正文与音频；未合并、未上线。详见 [交接](docs/portfolio-maintenance-os/handoffs/2026-11-19-sound-reader-downloads.md)。
+
 ## 2026-11-17 · Reawakening 音乐发行页
 
 - 新增 `reawakening-2026` 单曲记录，网页入口 `/music/reawakening/`，接入音乐导航与首页链接。
