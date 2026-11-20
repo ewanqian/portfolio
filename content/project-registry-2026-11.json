@@ -586,14 +586,17 @@
     },
     {
       "id": "glance-thousand-install-2023",
-      "zh": "安昌光影艺术季「一眼万千」",
-      "en": "安昌光影艺术季「一眼万千」",
+      "zh": "一眼万千",
+      "en": "One Glance, Ten Thousand",
       "year": "2023",
       "category": "Exhibition",
-      "url": null,
-      "image": "/assets/raw-library/glance-thousand-anchang-bridge-projection.webp",
-      "note": "由现有网站生成数据合并；详细来源待清理",
-      "variants": []
+      "url": "https://ewanqian.site/works/glance-thousand-install-2023.html",
+      "image": "/assets/glance-thousand-2023/04-staircase-full-installation.jpg",
+      "note": "古桥与青石台阶上的生成视觉投影作品，以花朵、流动的线与光点回应生命、时间和场所记忆。",
+      "variants": [],
+      "authors": [
+        "钱誉文 / Ewan Qian"
+      ]
     },
     {
       "id": "kashiwa-band-visual-2025",

@@ -15,7 +15,7 @@ const imageIdOverrides = {
   'drop-flow-ufo-2025': '/portfolio/assets/raw-library/ufo-terminal-drop-flow-creation-camp.webp',
   'derive-dual-city-2024': '/portfolio/assets/raw-library/derive-dual-city-poster.webp',
   'digital-garden-visual-2025': '/portfolio/assets/digital-garden/digital-garden-xian-mixc-01.webp',
-  'glance-thousand-install-2023': '/portfolio/assets/raw-library/glance-thousand-anchang-bridge-projection.webp',
+  'glance-thousand-install-2023': '/portfolio/assets/glance-thousand-2023/04-staircase-full-installation.jpg',
   'hallu-resonance-live-2024': '/portfolio/assets/raw-library/ewan-event-phantom-resonance.webp',
   'kashiwa': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',
   'titan': '/portfolio/assets/raw-picks/titan-bolive-clean-16x9.webp',

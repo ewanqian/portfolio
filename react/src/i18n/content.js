@@ -126,9 +126,9 @@ const workTranslations = {
       summary: 'Stage visual production and delivery for Shanhai Fusheng II: Bahuang Prayer in the Focus China context at the Edinburgh Festival.'
     },
     'glance-thousand-install-2023': {
-      title: 'Anchang Light Art Festival / A Glance of Thousands',
-      subtitle: 'Ground-projection public visual work',
-      summary: 'An early public light-art project presented through ground projection on an old bridge in Anchang.'
+      title: 'One Glance, Ten Thousand',
+      subtitle: 'Generative visuals and projection installation · Anchang, 2023',
+      summary: 'Generative floral forms and flowing lines move across the stone bridge and steps in Anchang, connecting digital imagery with the lives, memories and movements that shape the site.'
     }
   }
 }

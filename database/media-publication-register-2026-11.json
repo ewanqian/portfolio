@@ -268,19 +268,19 @@
     {
       "asset_id": "cover-glance-thousand-install-2023",
       "project_id": "glance-thousand-install-2023",
-      "url_or_path": "/assets/raw-library/glance-thousand-anchang-bridge-projection.webp",
+      "url_or_path": "/assets/glance-thousand-2023/04-staircase-full-installation.jpg",
       "origin": "public_repository_asset",
-      "bytes": 235026,
-      "git_blob_sha1": "25354e9581d1e01163ec2e0cd0494b8795ae9f88",
+      "bytes": 179363,
+      "git_blob_sha1": "f8da392fb8676a9702417ea64e5b8c61d1b78295",
       "credit_status": "not_confirmed",
       "photographer_or_media_author": null,
       "permission_status": "requires_review_before_external_redistribution",
       "editorial_status": "published_cover_path; identity_mapped; rights_not_audited",
-      "verified_at": "2026-11-07",
-      "notes": null,
+      "verified_at": "2026-11-21",
+      "notes": "Newly supplied by the artist in November 2026. Gallery consists of four artist-supplied installation JPGs; photographic author and permissions for third-party redistribution remain unconfirmed.",
       "media_role": "installation_documentation",
-      "caption_zh": "《一眼万千》现场光影投影记录",
-      "caption_en": "Installation documentation"
+      "caption_zh": "《一眼万千》在安昌青石桥与台阶上的现场投影",
+      "caption_en": "Projection installation on an ancient stone bridge in Anchang"
     },
     {
       "asset_id": "cover-kashiwa-band-visual-2025",

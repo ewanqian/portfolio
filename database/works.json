@@ -840,18 +840,18 @@
   },
   {
     "id": "glance-thousand-install-2023",
-    "name": "安昌光影艺术季",
+    "name": "一眼万千",
     "slug": "glance-thousand-install-2023",
     "year": 2023,
     "month": 1,
     "type": "exhibition",
     "category": "perceptual-environments",
-    "role": "古桥投影",
+    "role": "生成视觉、古桥投影装置",
     "practiceLine": "Perceptual Environments",
-    "location": "Anchang",
+    "location": "绍兴安昌",
     "status": "done",
     "featured": false,
-    "description": "安昌光影艺术季古桥投影",
+    "description": "《一眼万千》在绍兴安昌古桥石阶以生成视觉投影花朵与流动线条，连接桥面、行人和空间记忆。",
     "filePath": "projects/glance-thousand-install-2023.md"
   },
   {

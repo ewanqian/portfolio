@@ -37,7 +37,7 @@ export default {
     },
     {
       "id": "glance-thousand-install-2023",
-      "label": "安昌光影艺术季「一眼万千」",
+      "label": "一眼万千",
       "type": "work"
     },
     {
